@@ -31,17 +31,21 @@ flcdir  product_dir     fcl
 # With "product  version" table below, we now define depdendencies
 # Add the dependent product and version
 
-product          version
-sbndaq		v0_01_00
-artdaq          v3_03_00
-cetbuildtools   v7_02_01       -       only_for_build
+product              version
+sbndaq		     v0_01_00
+artdaq               v3_03_00
+sbndaq_artdaq_core   v0_01_00
+cetbuildtools        v7_02_01       -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes". 
-qualifier	artdaq	 	notes
-e15:debug	e15:s64:debug	
-e15:prof	e15:s64:prof	
+qualifier	  	 artdaq	 	sbndaq_artdaq_core notes
+e15:debug		 e15:s64:debug	e15:debug
+e15:prof		 e15:s64:prof	e15:prof
+e15:debug:icarus	 e15:s64:debug	e15:debug:icarus
+e15:prof:icarus		 e15:s64:prof	e15:prof:icarus
+
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:

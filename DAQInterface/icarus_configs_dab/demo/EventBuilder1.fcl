@@ -1,0 +1,101 @@
+
+services: {
+  scheduler: {
+    errorOnFailureToPut: false
+  }
+  NetMonTransportServiceInterface: {
+    service_provider: NetMonTransportService
+    #broadcast_sends: true
+	destinations: {	}
+
+	routing_table_config: {
+	    use_routing_master: false
+	}
+  }
+}
+
+daq: {
+  event_builder: {
+	expected_fragments_per_event: 0  # Will be set by DAQInterface
+    max_fragment_size_bytes: 16777216
+	use_art: true
+	print_event_store_stats: true
+	buffer_count: 20
+	max_incomplete_events: 75 # Same as boardreader sync interval
+	verbose: false
+	send_requests: true
+
+	routing_token_config: {
+	use_routing_master: false
+	}
+
+	sources: { }
+  }
+  metrics: {
+	evbFile: {
+	  metricPluginType: "file"
+	  level: 3
+	  fileName: "/home/nfs/artdaq/icarus_artdaq/metrics/eventbuilder/evb_%UID%_metrics.log"
+	  uniquify: true
+	}
+  }
+} 
+
+outputs: {
+  rootNetOutput: {
+    module_type: RootNetOutput
+    #SelectEvents: { SelectEvents: [ pmod2,pmod3 ] }
+  }
+  #normalOutput: {
+  #  module_type: RootOutput
+  #  fileName: "/tmp/artdaqdemo_eb00_r%06r_sr%02s_%to_%#.root"
+  #  #SelectEvents: { SelectEvents: [ pmod2,pmod3 ] }
+  #  fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+  #  compressionLevel: 3
+  #  fastCloning: false
+ #}
+}
+
+physics: {
+  analyzers: {
+    toy1Integ: {
+      module_type: CheckIntegrity
+      raw_data_label: "daq"
+      frag_type: "TOY1"      
+    }
+    toy2Integ: {
+      module_type: CheckIntegrity
+      raw_data_label: "daq"
+      frag_type: "TOY2"
+    }
+  }
+
+  producers: {
+  }
+
+  filters: {
+
+    prescaleMod2: {
+       module_type: NthEvent
+       nth: 2
+    }
+
+    prescaleMod3: {
+       module_type: NthEvent
+       nth: 3
+    }
+  }
+
+  pmod2: [ prescaleMod2 ]
+  pmod3: [ prescaleMod3 ]
+   
+  a1: [ toy1Integ, toy2Integ ]
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+}
+source: {
+  module_type: DemoInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

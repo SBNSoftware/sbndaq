@@ -1,0 +1,138 @@
+
+artdaq_processes: [{
+
+collection: RCEs 
+
+pattern: "^(?!.*common_code)(.*/)(rce\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: WIBs 
+
+pattern: "^(?!.*common_code)(.*/)(wib\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: WIBTests 
+
+pattern: "^(?!.*common_code)(.*/)(wibtest\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: SSPs 
+
+pattern: "^(?!.*common_code)(.*/)(ssp\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: PENs 
+
+pattern: "^(?!.*common_code)(.*/)(pen\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: Felixes 
+
+pattern: "^(?!.*common_code)(.*/)([Ff]elix\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: Timing 
+
+pattern: "^(?!.*common_code)(.*/)(timing[_|]\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: PMTs 
+
+pattern: "^(?!.*common_code)(.*/)(pmt\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: TPCs 
+
+pattern: "^(?!.*common_code)(.*/)(tpc\d+(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: Components 
+
+pattern: "^(?!.*common_code)(.*/)(component\d*(_hw_cfg|))(\.fcl$)" 
+
+}, {
+
+collection: BoardReaders 
+
+pattern: "^(?!.*common_code)(.*/)(BoardReader\d+)(\.fcl$)" 
+
+}, {
+
+collection: EventBuilders 
+
+pattern: "^(?!.*common_code)(.*/)(EventBuilder\d+)(\.fcl$)" 
+
+}, {
+
+collection: Aggregators 
+
+pattern: "^(?!.*common_code)(.*/)(Aggregator\d+)(\.fcl$)" 
+
+}, {
+
+collection: DataLoggers 
+
+pattern: "^(?!.*common_code)(.*/)(DataLogger\d+)(\.fcl$)" 
+
+}, {
+
+collection: Dispatchers 
+
+pattern: "^(?!.*common_code)(.*/)(Dispatcher\d+)(\.fcl$)" 
+
+}, {
+
+collection: expert_options 
+
+pattern: "^(?!.*common_code)(.*/)((rce_expert_run_options|ssp_expert_run_options|user_run_options).*)(\.fcl$)" 
+
+}] 
+
+artdaq_includes: [{
+
+collection: common_code 
+
+pattern: "(.*/)common_code\/(.*)(\.fcl$)" 
+
+}] 
+
+run_history: [{
+
+collection: RunHistory 
+
+pattern: "(.*/)((BoardReader_TOY\d+|BoardReader)_(.*[^_])_(\d+))(\.fcl$)" 
+
+entity: "match.group(3)+'_'+match.group(4)+'_'+match.group(5)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)((EventBuilder|Aggregator|DataLogger|Dispatcher)_(.*[^_])_(\d+))(\.fcl$)" 
+
+entity: "match.group(3)+'_'+match.group(4)+'_'+match.group(5)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(metadata)(\.fcl$)" 
+
+}] 
+
+system_layout: [{
+
+collection: SystemLayout 
+
+pattern: "^(?!.*common_code)(.*)(schema)(\.fcl$)" 
+
+}] 

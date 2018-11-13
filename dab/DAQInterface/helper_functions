@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function load_trace() {
+  export TRACE_MSGMAX=2048
+  export TRACE_NUMENTS=100000
+  export TRACE_SHOW=HxTnl
+  export TRACE_NAME=TRACE  
+  #rm -f /tmp/trace_buffer_$USER;
+}
+
+function run_testdriver(){
+  ls -al $(which readfhicl)
+  artdaqDriver -c ${HOME}/localproducts/icarus_artdaq/${icarusdaq_version}/fhicl/driver_test1.fcl
+}
+
+function debug_testdriver(){
+  ls -al $(which readfhicl)
+  gdb --args artdaqDriver -c ${HOME}/localproducts/icarus_artdaq/${icarusdaq_version}/fhicl/driver_test1.fcl
+}
+
+
+function info_testdriver(){
+  ls -al $(which readfhicl)
+  ldd $(which artdaqDriver)
+}
+
+
+function config_trace(){
+tonMg 0-63
+
+#kill noise
+toffM 0-63 -n SharedMemoryManager 
+toffM 0-63 -n TraceLock
+toffM 0-63 -n TraceLock
+toffM 0-63 -n SharedMemoryEventReceiver
+toffM 0-63 -n _SharedMemoryEventManager
+toffM 0-63 -n Aggregator2_CommandableInterface
+toffM 0-63 -n Aggregator1_CommandableInterface
+toffM 0-63 -n EventBuilder1_CommandableInterface
+toffM 0-63 -n BoardReader_CommandableInterface
+}

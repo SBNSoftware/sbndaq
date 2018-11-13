@@ -1,0 +1,28 @@
+DAQ setup script:  ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh
+
+PMT host: localhost
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+debug level: 1
+
+EventBuilder host: localhost
+EventBuilder label: EventBuilder1
+
+EventBuilder host: localhost
+EventBuilder label: EventBuilder2
+
+DataLogger host: localhost
+DataLogger label: DataLogger1
+
+# DataLogger host: localhost
+# DataLogger label: DataLogger2
+
+# DataLogger host: localhost
+# DataLogger label: DataLogger3
+
+# DataLogger host: localhost
+# DataLogger label: DataLogger4
+
+Dispatcher host: localhost
+Dispatcher label: Dispatcher1
+

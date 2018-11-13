@@ -1,0 +1,31 @@
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
+
+export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings
+export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/known_boardreaders_list
+export DAQINTERFACE_FHICL_DIRECTORY=$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs
+
+#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+
+if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
+   echo "Unable to find settings file \"$DAQINTERFACE_SETTINGS\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=1
+   return 
+fi
+
+if [[ ! -e $DAQINTERFACE_KNOWN_BOARDREADERS_LIST ]]; then
+   echo "Unable to find boardreaders list file \"$DAQINTERFACE_KNOWN_BOARDREADERS_LIST\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=2
+   return 
+fi
+
+if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_DIRECTORY ]]; then
+   echo "Unable to find FHiCL configuration directory \"$DAQINTERFACE_FHICL_DIRECTORY\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=3
+   return
+elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
+ 
+   echo "Put code here which sets up the database environment"
+
+fi
+
+export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
+
+source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
+export DAQINTERFACE_USER_SOURCEFILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_sourcefile
+source $ARTDAQ_DAQINTERFACE_DIR/source_me

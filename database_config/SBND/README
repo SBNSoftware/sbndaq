@@ -1,0 +1,3 @@
+Configuration files associated with databases for use by SBND. Currently
+just contains a configuration file used for redis during ther Vertical
+Slice Test. 

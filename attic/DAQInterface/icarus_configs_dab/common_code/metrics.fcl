@@ -1,0 +1,8 @@
+metrics: {
+    aggFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/home/nfs/artdaq/icarus_artdaq/metrics/aggregator/agg_%UID%_metrics.log"
+      uniquify: true
+    }
+}

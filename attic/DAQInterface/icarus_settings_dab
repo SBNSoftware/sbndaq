@@ -13,11 +13,11 @@
 # directory containing the xmlrpc_c package (needed for DAQInterface
 # to receive commands)
 
-log_directory: /log
-record_directory: /run_records
-package_hashes_to_save: [ ]
-productsdir_for_bash_scripts: /software/products
-max_configurations_to_list: 20
+log_directory: $HOME/icarus_artdaq/log
+record_directory: $HOME/icarus_artdaq/run_records
+package_hashes_to_save: [ artdaq artdaq_core artdaq_utilities artdaq_daqinterface icarus_artdaq_base icarus_artdaq_core icarus_artdaq ]
+productsdir_for_bash_scripts: $HOME/icarus_artdaq/products
+
 boardreader timeout: 600
 eventbuilder timeout: 90
 aggregator timeout: 90

@@ -33,18 +33,19 @@ flcdir  product_dir     fcl
 
 product              version
 sbndaq_artdaq	     v0_01_00
+artdaq_mpich_plugin  v1_00_03
 cetbuildtools        v7_02_01       -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes". 
-qualifier	  	 sbndaq_artdaq      notes
-e15:debug		 e15:debug
-e15:prof		 e15:prof
-e15:debug:icarus	 e15:debug:icarus
-e15:prof:icarus		 e15:prof:icarus
-e15:debug:sbnd  	 e15:debug:sbnd
-e15:prof:sbnd		 e15:prof:sbnd
+qualifier	  	 sbndaq_artdaq      artdaq_mpich_plugin notes
+e15:debug		 e15:debug	    e15:eth:debug:s64
+e15:prof		 e15:prof	    e15:eth:prof:s64
+e15:debug:icarus	 e15:debug:icarus   e15:eth:debug:s64
+e15:prof:icarus		 e15:prof:icarus    e15:eth:prof:s64
+e15:debug:sbnd  	 e15:debug:sbnd	    e15:eth:debug:s64
+e15:prof:sbnd		 e15:prof:sbnd      e15:eth:prof:s64
 
 end_qualifier_list
 

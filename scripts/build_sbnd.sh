@@ -24,7 +24,7 @@ my_build_variants=( "e15:debug" "e15:prof" )
 my_release_version=${my_release_version:-"v0_01_03"}
 my_project_name=${my_mrb_project_name:-"sbnd"}
 my_products_repo_dir=${my_products_repo_dir:-"/software/products"}
-my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER))}
+my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER)}
 
 #available build configurations
 source_branches_develop=(

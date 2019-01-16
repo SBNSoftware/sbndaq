@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+function getStatus()
+{
+  status=`status.sh | sed -n '3p' | awk '{print $2}' | tr -d "'"`
+  echo $status
+}
+
+setdaqcomps.sh pmtx01 pmtx02
+send_transition.sh boot boot.txt
+getStatus
+while [ $status != 'booted' ]
+do
+  sleep 1
+  getStatus
+done
+
+send_transition.sh config standard
+getStatus
+while [ $status != 'ready' ]
+do
+  sleep 1
+  getStatus
+done
+
+send_transition.sh start
+getStatus
+sleep 1
+getStatus
+while [ $status != 'running' ]
+do
+  sleep 1
+  getStatus
+done
+
+

@@ -12,6 +12,9 @@ fragment_receiver: {
   Verbosity: 5
   SWTrigger: true
 
+  poll_hardware_status: true
+  separate_monitoring_thread: true
+  hardware_poll_interval_us: 500000
 
   link: 1
   enableReadout: 1

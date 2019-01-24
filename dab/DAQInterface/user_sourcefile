@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ulimit -S -c unlimited
+
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
 
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings

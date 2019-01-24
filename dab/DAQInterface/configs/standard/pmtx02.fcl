@@ -8,7 +8,7 @@ fragment_receiver: {
   fragment_id: 1
   board_id:    0
   Verbosity: 1
-  SWTrigger: true
+  SWTrigger: false
 
 
   link: 1
@@ -91,7 +91,7 @@ fragment_receiver: {
   CombineReadoutWindows: false
 
   triggerThreshold: 0x0000
-  CircularBufferSize: 1e9
+  CircularBufferSize: 500e6
 
   destinations: { }
 

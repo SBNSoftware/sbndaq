@@ -9,7 +9,7 @@ fragment_receiver: {
 
   fragment_id: 0
   board_id:    0
-  Verbosity: 1
+  Verbosity: 5
   SWTrigger: true
 
 
@@ -47,7 +47,7 @@ fragment_receiver: {
 
   readoutMode:          0
   analogMode:           1
-  testPattern:          1
+  testPattern:          0
   channelPedestal0:  32768
   channelPedestal1:  32768
   channelPedestal2:  32768
@@ -123,7 +123,7 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/scratch/wketchum/v1730_driver_test.root"
+    fileName: "/Data1/sbndaq_data/wketchum/v1730_driver_test.root"
     compressionLevel: 0
   }
 

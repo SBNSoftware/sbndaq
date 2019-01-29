@@ -1,5 +1,5 @@
-events_to_generate: 100
-run_number: 100
+events_to_generate: 30000000
+run_number: 1001
 
 fragment_receiver: {
 
@@ -14,13 +14,13 @@ fragment_receiver: {
 
   poll_hardware_status: true
   separate_monitoring_thread: true
-  hardware_poll_interval_us: 500000
+  hardware_poll_interval_us: 5000000
 
-  link: 1
+  link: 0
   enableReadout: 1
 
   boardId: 0
-  recordLength:         10000
+  recordLength:         1000
   maxEventsPerTransfer: 1
   runSyncMode:          0
   outputSignalMode:     0    
@@ -32,13 +32,16 @@ fragment_receiver: {
   nChannels:            16
 
   # extTrgMode: 0=no external triggers;   3=Front panel TRG input
-  extTrgMode:           3
+  extTrgMode:           0
 
   # swTrgMode:  0=no software generation; 3=software generated
   swTrgMode:            3
 
   # acqMode: 0=Software Controlled, 1=Front Panel S_IN
   acqMode:              0
+
+  #run calibration during startup?
+  CalibrateOnConfig:    true
 
   triggerPolarity:      1   
   debugLevel:           7
@@ -51,22 +54,29 @@ fragment_receiver: {
   readoutMode:          0
   analogMode:           1
   testPattern:          0
-  channelPedestal0:  32768
-  channelPedestal1:  32768
-  channelPedestal2:  32768
-  channelPedestal3:  32768
-  channelPedestal4:  32768
-  channelPedestal5:  32768
-  channelPedestal6:  32768
-  channelPedestal7:  32768
-  channelPedestal8:  32768
-  channelPedestal9:  32768
-  channelPedestal10: 32768
-  channelPedestal11: 32768
-  channelPedestal12: 32768
-  channelPedestal13: 32768
-  channelPedestal14: 32768
-  channelPedestal15: 32768
+
+  #0xF333 ~ 100 mV to -1.9V range
+  #0x7FFF ~ +1V to -1V range
+  channelPedestal0:  0xF333
+  channelPedestal1:  0xF333
+  channelPedestal2:  0xF333
+  channelPedestal3:  0xF333
+  channelPedestal4:  0xF333
+  channelPedestal5:  0xF333
+  channelPedestal6:  0xF333
+  channelPedestal7:  0xF333
+  channelPedestal8:  0xF333
+  channelPedestal9:  0xF333
+  channelPedestal10: 0xF333
+  channelPedestal11: 0xF333
+  channelPedestal12: 0xF333
+  channelPedestal13: 0xF333
+  channelPedestal14: 0xF333
+  channelPedestal15: 0xF333
+
+  #0 = 2 V dynamic range, 1 = 0.5 V 
+  #register 0x8028
+  dynamicRange: 0 
 
   channelEnable0:    true
   channelEnable1:    true
@@ -91,7 +101,7 @@ fragment_receiver: {
   InterruptLevel: 1
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1000000
+  GetNextSleep: 10000000   #time between triggers in us
   
   CombineReadoutWindows: false
 
@@ -126,7 +136,10 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/Data1/sbndaq_data/wketchum/v1730_driver_test.root"
+    fileName: "/data/icarus/sbndaq/pmt_readout_Jan25/caenv1730_readout_%R_%#.root"
+    fileProperties: {
+       maxEvents: 100
+    }
     compressionLevel: 0
   }
 

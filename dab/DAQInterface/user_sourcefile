@@ -2,6 +2,10 @@
 
 ulimit -S -c unlimited
 
+# Include the path to a built sbndaq-redis-plugin for use by the MetricManager.
+# Temporary until we include a release in /software/products
+export LD_LIBRARY_PATH=/home/nfs/gputnam/sbndaq2/build_slf7.x86_64/sbndaq-redis-plugin/lib:$LD_LIBRARY_PATH
+
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
 
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings

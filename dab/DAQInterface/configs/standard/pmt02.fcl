@@ -109,5 +109,11 @@ fragment_receiver: {
 	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
 	  uniquify: true
 	}
+        redis: {
+          metricPluginType: "redis"
+          level: 3
+          reporting_interval: 10.0
+          redis_key_postfix: ":pmt02" 
+        }
   }
 }

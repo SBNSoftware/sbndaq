@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+
 source /software/products/setup
 setup sbndaq v0_01_03 -q e15:prof
 setup mrb
 
-#your own local products directory:
-LOCAL_PRODUCTS="/home/nfs/sbnd/work.drivera/srcs/sbndaq/v00_01_03/localProducts_sbndaq_v0_01_03_e15_prof/"
+#your own local products directory (HACK):
+LOCAL_PRODUCTS="$(pwd)/../../../../localProducts*/"
 
 source $LOCAL_PRODUCTS/setup
 unsetup -j artdaq_daqinterface

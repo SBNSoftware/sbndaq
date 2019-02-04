@@ -10,6 +10,8 @@ fragment_receiver: {
   Verbosity: 1
   SWTrigger: false
 
+  allowTriggerOverlap: true
+
 
   link: 1
   enableReadout: 1

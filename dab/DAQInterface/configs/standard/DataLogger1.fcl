@@ -34,7 +34,8 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
+
+  	  fileName: "/data1/dl01_metrics.log"
       uniquify: true
     }
   }
@@ -47,7 +48,7 @@ source: {
 outputs: {
   normalOutput: {
     module_type: RootOutput
-    fileName: "/scratch/sbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/data1/sbndaq_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     fastCloning: false
     compressionLevel: 3
@@ -65,8 +66,8 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  my_output_modules: [ ]
+  #my_output_modules: [ ]
   #my_output_modules: [ normalOutput ]
-  #my_mpi_output_modules: [rootNetOutput]
+  my_output_modules: [rootNetOutput]
 }
 process_name: DAQDL

@@ -37,6 +37,12 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
   EXTRA_FLAGS -pedantic
   EXTRA_CXX_FLAGS -std=c++11 )
 
+SET ( SANITIZE_ADDRESS $ENV{SANITIZE_ADDRESS} )
+IF ( SANITIZE_ADDRESS )
+    MESSAGE (STATUS "Enable  -fsanitize=address  -Wno-unused-command-line-argument -fno-omit-frame-pointer")
+    cet_add_compiler_flags(-fsanitize=address  -Wno-unused-command-line-argument -fno-omit-frame-pointer)
+ENDIF()
+
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions

@@ -13,8 +13,8 @@
 # directory containing the xmlrpc_c package (needed for DAQInterface
 # to receive commands)
 
-log_directory: /log
-record_directory: /run_records
+log_directory: ${MRB_TOP}/log
+record_directory: ${MRB_TOP}/run_records
 package_hashes_to_save: [ ]
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20

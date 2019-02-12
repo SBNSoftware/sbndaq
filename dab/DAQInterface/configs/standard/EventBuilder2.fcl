@@ -35,7 +35,7 @@ daq: {
 	evbFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/log/metrics/eventbuilder/evb_%UID%_metrics.log"
+	  fileName: "/data1/evb02_metrics.log"
 	  uniquify: true
 	}
   }

@@ -1,22 +1,107 @@
 #!/bin/bash
 
+export TRACE_FILE=/tmp/trace_buffer_$USER
+export TRACE_NAME=TRACE
+
+tlvls
+tenv
+wholink
+
+setup valgrind v3_13_0
+setup gdb v8_1
+timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+
+
+
 function load_trace() {
-  export TRACE_MSGMAX=2048
-  export TRACE_NUMENTS=100000
-  export TRACE_SHOW=HxTnl
-  export TRACE_NAME=TRACE  
-  #rm -f /tmp/trace_buffer_$USER;
+  rm -rf $TRACE_FILE
+  export TRACE_MSGMAX=800
+  export TRACE_NUMENTS=2000000
+  export TRACE_NAME=TRACE
 }
 
-function run_testdriver(){
-  ls -al $(which readfhicl)
-  artdaqDriver -c ${HOME}/localproducts/icarus_artdaq/${icarusdaq_version}/fhicl/driver_test1.fcl
+
+
+#function valgrind_pmtx01(){
+# local dev=pmtx01
+#timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+# valgrind  --tool=memcheck  \
+#           --error-limit=no \
+#           --demangle=yes \
+#           --track-origins=yes \
+#           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+#  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+# 
+#}
+
+
+function valgrind_pmtx01(){
+ local dev=pmtx01
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+ 
 }
 
-function debug_testdriver(){
-  ls -al $(which readfhicl)
-  gdb --args artdaqDriver -c ${HOME}/localproducts/icarus_artdaq/${icarusdaq_version}/fhicl/driver_test1.fcl
+
+function valgrind_pmtx02(){
+ local dev=pmtx02
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1  |tee  "./logs/$dev-$timestamp.log"
 }
+
+function pmtx01_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx01_metrics* |head -1) |grep Rate
+}
+
+
+function pmtx02_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx02_metrics* |head -1) |grep Rate
+}
+
+function pmtx01_monitor_trace(){
+ local dev=pmtx01
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function pmtx02_monitor_trace(){
+ local dev=pmtx02
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+
+function valgrind_pmtx01_log() {
+less  $(ls -t valgrind_*01 |head -1)
+}
+
+function valgrind_pmtx02_log() {
+less  $(ls -t valgrind_*02 |head -1)
+}
+
+
+function pmtx01(){
+	local dev=pmtx01
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx02(){
+	local dev=pmtx02
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
 
 
 function info_testdriver(){

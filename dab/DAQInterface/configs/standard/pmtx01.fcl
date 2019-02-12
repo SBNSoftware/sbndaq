@@ -86,8 +86,10 @@ fragment_receiver: {
   InterruptLevel: 1
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1
-  
+  GetNextSleep: 1e5
+   
+  allowTriggerOverlap: false 
+
   CombineReadoutWindows: false
 
   triggerThreshold: 0x0000
@@ -106,7 +108,7 @@ fragment_receiver: {
 	brFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+	  fileName: "/data1/pmtx01_metrics.log"
 	  uniquify: true
 	}
         redis: {

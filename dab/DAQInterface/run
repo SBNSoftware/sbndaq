@@ -7,31 +7,35 @@ function getStatus()
 }
 
 getStatus
+# [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
+
 setdaqcomps.sh pmtx02 pmtx01
 send_transition.sh boot boot.txt
 getStatus
 while [ $status != 'booted' ]
 do
-  sleep 1
+  sleep 3
   getStatus
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
 send_transition.sh config standard
 getStatus
 while [ $status != 'ready' ]
 do
-  sleep 1
+  sleep 3
   getStatus
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  # [ $status == 'stopped' ] && ( exit 1 )
 done
 
 send_transition.sh start
 getStatus
-sleep 1
+sleep 3
 getStatus
 while [ $status != 'running' ]
 do
-  sleep 1
+  sleep 3
   getStatus
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
-
-

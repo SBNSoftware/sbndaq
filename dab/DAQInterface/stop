@@ -6,7 +6,6 @@ function getStatus()
   echo $status
 }
 
-setStatus
 send_transition.sh stop
 getStatus
 while [ $status != 'ready' ]

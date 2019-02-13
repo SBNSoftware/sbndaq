@@ -88,7 +88,7 @@ fragment_receiver: {
   InterruptEventNumber: 1
   GetNextSleep: 1e5
  
-  allowTriggerOverlap: false 
+  allowTriggerOverlap: true 
 
   CombineReadoutWindows: false
 
@@ -115,7 +115,13 @@ fragment_receiver: {
           metricPluginType: "redis"
           level: 3
           reporting_interval: 10.0
-          redis_key_postfix: ":pmtx02" 
+          redis_key_postfix: ":pmtx02"
+          redis_password: B4730D6D9606E3EB37048EB017D4C69EFB56243CCC408E3BEC3BFDEEDF792876
         }
   }
 }
+
+
+
+
+

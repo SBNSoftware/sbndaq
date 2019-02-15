@@ -1,4 +1,4 @@
-tpc01 localhost -1
+tpc01 sbnd-daq34.fnal.gov -1
 tpc02 localhost -1
 tpc03 localhost -1
 tpc04 localhost -1
@@ -38,6 +38,10 @@ pmt17 localhost -1
 pmt18 localhost -1
 pmt19 localhost -1
 pmt20 localhost -1
+pmtx01 localhost -1
+pmtx02 localhost -1
+pmtx03 localhost -1
+pmtx04 localhost -1
 component01 localhost -1
 component02 localhost -1
 component03 localhost -1

@@ -1,0 +1,54 @@
+  daq: {
+fragment_receiver: {
+
+   # Parameters defining and configuring the fragment generator to be used
+   		    
+   generator: PhysCrateData 
+
+   # Parameters configuring the fragment generator's parent class
+   # artdaq::CommandableFragmentGenerator
+
+   fragment_id: 0
+   board_id: 0
+
+   nADCBits: 12   
+   SamplesPerChannel: 4096
+   ChannelsPerBoard: 64
+
+   nBoards: 8
+   BoardIDs: [ 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
+   CrateID: 0x1
+   RunNumber: 1
+   CompressionScheme: 0
+
+   VetoPort: 7654
+   VetoHost: "137.138.194.204"
+
+   DoVetoTest: true
+   DoVetoTest: false
+   VetoTestPeriod: 1e6
+
+   #throttle_usecs: 1e5
+   #throttle_usecs_check: 1e4
+
+   #random_seed: 314159
+
+
+  destinations: { }
+
+  routing_table_config: {
+  use_routing_master: false 
+  }
+
+}  		  
+
+
+  metrics: {
+	brFile: {
+	  metricPluginType: "file"
+	  level: 3
+	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+	  uniquify: true
+	}
+  }
+}

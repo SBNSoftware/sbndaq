@@ -36,7 +36,7 @@ source_branches_develop=(
 
 source_branches_tagged=(
    "icarus-artdaq-base:v0_06_01"
-   "sbndaq-artdaq-core:v0_01_01"
+   "sbndaq-artdaq-core:v0_01_03"
    "sbndaq-artdaq:v0_01_02"
    "sbndaq:v0_01_03"
 )

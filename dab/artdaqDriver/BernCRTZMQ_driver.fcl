@@ -18,8 +18,8 @@ fragment_receiver: {
    nChannels: 32
    ReaderID: 0x1
    
-   FEBIDs : [ 0x603712341e, 0x603712341a, 0x603712341b, 0x603712341c, 0x603712341d, 0x603712341f,
-              0x6037123434, 0x603712343d, 0x603712343c, 0x603712343a, 0x603712343b, 0x6037123439, 0x6037123438]
+   FEBIDs : [ 0x6037123452 ]
+   #FEBIDs : [ 0x603712345c ]
   
    MaxTimeDiffs : [ 1e8 ]
 
@@ -67,7 +67,7 @@ outputs:{
 }
 
 source:{
-  module_type: IcarusDAQInput
+  module_type: IcarusInput
   waiting_time: 900
   resume_after_timeout: true
 }

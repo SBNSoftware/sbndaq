@@ -10,7 +10,7 @@ fragment_receiver: {
   Verbosity: 1
   SWTrigger: false
 
-  allowTriggerOverlap: true
+  allowTriggerOverlap: false
 
   link: 1
   enableReadout: 1
@@ -84,12 +84,16 @@ fragment_receiver: {
   triggerPulseWidth: 10
  
   BoardChainNumber: 0
-  InterruptLevel: 1
+  InterruptLevel: 0
   InterruptStatusID: 0
   InterruptEventNumber: 1
   GetNextSleep: 1
   
   CombineReadoutWindows: false
+
+  #0 = 2 V dynamic range, 1 = 0.5 V 
+  #register 0x8028
+  dynamicRange: 0 
 
   triggerThreshold0:  0x0000
   triggerThreshold1:  0x0000

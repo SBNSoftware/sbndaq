@@ -109,11 +109,21 @@ fragment_receiver: {
 	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
 	  uniquify: true
 	}
-        redis: {
+        redis_10s: {
           metricPluginType: "redis"
           level: 3
           reporting_interval: 10.0
-          redis_key_postfix: ":pmt04" 
+          redis_key_postfix: ":10s" 
+          maxlen: 10000
+          redis_key_prefix: "DABBoardReader:pmt04:"
+        }
+        redis_5m: {
+          metricPluginType: "redis"
+          level: 3
+          reporting_interval: 300.0
+          redis_key_postfix: ":5m" 
+          maxlen: 10000
+          redis_key_prefix: "DABBoardReader:pmt04:"
         }
   }
 }

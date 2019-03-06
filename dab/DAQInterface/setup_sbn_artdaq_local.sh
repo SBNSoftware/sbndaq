@@ -2,16 +2,19 @@
 source /software/products/setup
 setup mrb
 
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
+
 #your own local products directory:
-LOCAL_PRODUCTS_TRY="$(pwd)/../../../../localProducts_sbndaq*/"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/localProducts_sbndaq*"
+LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq*/"
+LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq*"
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
     LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
 elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
     LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
 else
     echo "localProducts not found"
-    exit 1
+    exit 0
 fi
 
 source $LOCAL_PRODUCTS/setup

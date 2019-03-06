@@ -1,4 +1,4 @@
-DAQ setup script:  ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh
+DAQ setup script:  $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
 # DAQ setup script: /home/nfs/icaza/work/sbndaq-v0_01_04/srcs/sbndaq/dab/DAQInterface/setup_sbn_artdaq_local.sh
 PMT host: localhost
 

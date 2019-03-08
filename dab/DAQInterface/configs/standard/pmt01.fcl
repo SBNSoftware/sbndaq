@@ -116,6 +116,7 @@ fragment_receiver: {
           redis_key_postfix: ":10s" 
           maxlen: 10000
           redis_key_prefix: "DABBoardReader:pmt01:"
+          redis_passfile: "/var/adm/krb5/redis_password"
         }
         redis_5m: {
           metricPluginType: "redis"
@@ -124,6 +125,7 @@ fragment_receiver: {
           redis_key_postfix: ":5m" 
           maxlen: 10000
           redis_key_prefix: "DABBoardReader:pmt01:"
+          redis_passfile: "/var/adm/krb5/redis_password"
         }
   }
 }

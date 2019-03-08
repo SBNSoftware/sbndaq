@@ -51,8 +51,9 @@ fragment_receiver: {
   eventsPerInterrupt:   1
   irqWaitTime:          1
   eventCounterWarning:  1       
-  memoryAlmostFull:     2    
-
+  memoryAlmostFull:     2
+  dynamicRange:         0
+  
   readoutMode:          0
   analogMode:           1
   testPattern:          1
@@ -93,14 +94,31 @@ fragment_receiver: {
   triggerPulseWidth: 10
  
   BoardChainNumber: 0
-  InterruptLevel: 1
+  InterruptLevel: 0
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1e5
+  GetNextSleep: 1
   
   CombineReadoutWindows: false
-  allowTriggerOverlap: false 
-  triggerThreshold: 0x0000
+  allowTriggerOverlap: true
+  
+  triggerThreshold0: 0x0000
+  triggerThreshold1: 0x0000
+  triggerThreshold2: 0x0000
+  triggerThreshold3: 0x0000
+  triggerThreshold4: 0x0000
+  triggerThreshold5: 0x0000
+  triggerThreshold6: 0x0000
+  triggerThreshold7: 0x0000
+  triggerThreshold8: 0x0000
+  triggerThreshold9: 0x0000
+  triggerThreshold10: 0x0000
+  triggerThreshold11: 0x0000
+  triggerThreshold12: 0x0000
+  triggerThreshold13: 0x0000
+  triggerThreshold14: 0x0000
+  triggerThreshold15: 0x0000
+ 
   CircularBufferSize: 500e6
   
   destinations: { }
@@ -130,7 +148,7 @@ physics:
   a1: [  ]
   e1: [ rootout ]
   
-  #end_paths: [ e1 ]
+#  end_paths: [ e1 ]
   end_paths: [ ]
 }
 
@@ -164,11 +182,20 @@ source:
 	  fileName: "/data1/pmtx02_metrics.log"
 	  uniquify: true
 	}
+graphite: {
+level:5
+metricPluginType: "graphite"
+reporting_interval: 10.0
+host:"sbn-daq02.fnal.gov"
+port:2003
+namespace:"artdaq.pmtx02."
+}
 #        redis: {
 #          metricPluginType: "redis"
 #          level: 3
 #          reporting_interval: 10.0
 #          redis_key_postfix: ":pmtx02" 
+#          redis_password: B4730D6D9606E3EB37048EB017D4C69EFB56243CCC408E3BEC3BFDEEDF792876
 #        }
  
 } 

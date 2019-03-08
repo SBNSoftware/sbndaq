@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+use_mrb=true
 PWD_DIR=$(pwd)
 echo "PWD_DIR=$PWD_DIR"
 
@@ -15,17 +15,22 @@ source /software/products/setup 2>&1
 unset ARTDAQ_DAQINTERFACE_VERSION
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
-
-LOCAL_PRODUCTS="$PWD_DIR/localProducts*/"
+export MRB_TOP=$(dirname $PWD_DIR)
+LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_01_04_e15_prof"
+if [[ "$use_mrb" == "true" ]];  then
+ 	export PRODUCTS=$LOCAL_PRODUCTS:$PRODUCTS
+else	
 [[ -f $(dirname $PWD_DIR)/products/setup ]] && LOCAL_PRODUCTS=$(dirname $PWD_DIR)/products
 echo "LOCAL_PRODUCTS=${LOCAL_PRODUCTS}"
 [[ -f ${LOCAL_PRODUCTS}/setup ]] && source ${LOCAL_PRODUCTS}/setup || echo "No \"setup\" in $LOCAL_PRODUCTS."
+fi
 
+rqual=prof
 setup mrb
-setup sbndaq v0_01_03 -q e15:prof
+setup sbndaq v0_01_03 -q e15:$rqual
 unsetup -j artdaq_daqinterface 2>&1
 setup artdaq_daqinterface v3_03_01T111318
-setup sbndaq_redis_plugin v0_01_00 -q "e15:prof"
+setup sbndaq_redis_plugin v0_01_00 -q "e15:$rqual"
 
 ups active |grep sbndaq  2>&1
 

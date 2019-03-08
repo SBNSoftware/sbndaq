@@ -55,6 +55,26 @@ function valgrind_pmtx02(){
   artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1  |tee  "./logs/$dev-$timestamp.log"
 }
 
+function valgrind_pmtx03(){
+ local dev=pmtx03
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+ 
+}
+
+
+function valgrind_pmtx04(){
+ local dev=pmtx04
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1  |tee  "./logs/$dev-$timestamp.log"
+}
+
 function pmtx01_monitor_rate(){
  tail -10f  $(ls -t  /data1/pmtx01_metrics* |head -1) |grep Rate
 }
@@ -62,6 +82,15 @@ function pmtx01_monitor_rate(){
 
 function pmtx02_monitor_rate(){
  tail -10f  $(ls -t  /data1/pmtx02_metrics* |head -1) |grep Rate
+}
+
+function pmtx03_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx03_metrics* |head -1) |grep Rate
+}
+
+
+function pmtx04_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx04_metrics* |head -1) |grep Rate
 }
 
 function pmtx01_monitor_trace(){
@@ -82,6 +111,23 @@ function pmtx02_monitor_trace(){
  done 
 }
 
+function pmtx03_monitor_trace(){
+ local dev=pmtx03
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function pmtx04_monitor_trace(){
+ local dev=pmtx04
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
 
 function valgrind_pmtx01_log() {
 less  $(ls -t valgrind_*01 |head -1)
@@ -91,17 +137,37 @@ function valgrind_pmtx02_log() {
 less  $(ls -t valgrind_*02 |head -1)
 }
 
+function valgrind_pmtx03_log() {
+less  $(ls -t valgrind_*01 |head -1)
+}
+
+function valgrind_pmtx03_log() {
+less  $(ls -t valgrind_*02 |head -1)
+}
 
 function pmtx01(){
 	local dev=pmtx01
-  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+# LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
 
 function pmtx02(){
 	local dev=pmtx02
-  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+ #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
 
+function pmtx03(){
+	local dev=pmtx03
+# LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx04(){
+	local dev=pmtx04
+ #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
 
 
 function info_testdriver(){

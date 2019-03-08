@@ -3,35 +3,41 @@
 function getStatus()
 {
   status=`status.sh | sed -n '3p' | awk '{print $2}' | tr -d "'"`
-  echo $status
+  [ $1 != $status ] && (echo $status)
 }
 
-getStatus
+getStatus "nil"
+# [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
+
 setdaqcomps.sh pmtx02 pmtx01
 send_transition.sh boot boot.txt
-getStatus
+getStatus "booting"
 while [ $status != 'booted' ]
 do
-  sleep 1
-  getStatus
+  sleep 2
+  getStatus "booting"
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
 send_transition.sh config standard
-getStatus
+getStatus "configuring"
 while [ $status != 'ready' ]
 do
-  sleep 1
-  getStatus
+  sleep 2
+  getStatus "configuring"
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  # [ $status == 'stopped' ] && ( exit 1 )
 done
 
 send_transition.sh start
-getStatus
-sleep 1
-getStatus
+# getStatus "starting"
+sleep 2
+getStatus "starting"
 while [ $status != 'running' ]
 do
-  sleep 1
-  getStatus
+  sleep 2
+  getStatus "starting"
+  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
 

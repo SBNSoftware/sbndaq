@@ -8,8 +8,9 @@ fragment_receiver: {
   fragment_id: 3
   board_id:    0
   Verbosity: 1
-  SWTrigger: true
+  SWTrigger: false
 
+  allowTriggerOverlap: true
 
   link: 3
   enableReadout: 1
@@ -90,15 +91,31 @@ fragment_receiver: {
   
   CombineReadoutWindows: false
 
-  triggerThreshold: 0x0000
-  CircularBufferSize: 1e9
-  
+  triggerThreshold0:  0x0000
+  triggerThreshold1:  0x0000
+  triggerThreshold2:  0x0000
+  triggerThreshold3:  0x0000
+  triggerThreshold4:  0x0000
+  triggerThreshold5:  0x0000
+  triggerThreshold6:  0x0000
+  triggerThreshold7:  0x0000
+  triggerThreshold8:  0x0000
+  triggerThreshold9:  0x0000
+  triggerThreshold10: 0x0000
+  triggerThreshold11: 0x0000
+  triggerThreshold12: 0x0000
+  triggerThreshold13: 0x0000
+  triggerThreshold14: 0x0000
+  triggerThreshold15: 0x0000
+
+  CircularBufferSize: 500e6
+
   destinations: { }
 
   routing_table_config: {
   use_routing_master: false 
   }
-  
+
 }  
 
 

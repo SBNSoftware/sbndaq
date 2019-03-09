@@ -1,5 +1,5 @@
-#DAQ setup script:  ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh
-DAQ setup script: ./setup_sbn_artdaq_local.sh
+DAQ setup script:  $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
+# DAQ setup script: /home/nfs/icaza/work/sbndaq-v0_01_04/srcs/sbndaq/dab/DAQInterface/setup_sbn_artdaq_local.sh
 PMT host: localhost
 
 # debug level can range from 0 to 3 (increasing order of verbosity)
@@ -23,6 +23,7 @@ DataLogger label: DataLogger1
 # DataLogger host: localhost
 # DataLogger label: DataLogger4
 
-#Dispatcher host: localhost
-#Dispatcher label: Dispatcher1
+Dispatcher host: localhost
+Dispatcher port: 7166
+Dispatcher label: Dispatcher1
 

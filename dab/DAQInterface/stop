@@ -2,24 +2,23 @@
 
 function getStatus()
 {
-  status=`status.sh | sed -n '3p' | awk '{print $2}' | tr -d "'"`
-  echo $status
+    status=`status.sh | sed -n '3p' | awk '{print $2}' | tr -d "'"`
+    [ $1 != $status ] && (echo $status)
 }
 
-setStatus
 send_transition.sh stop
-getStatus
+getStatus "nil"
 while [ $status != 'ready' ]
 do
-  sleep 1
-  getStatus
+  sleep 2
+  getStatus "stopping"
 done
 
 send_transition.sh terminate
-getStatus
+getStatus "nil"
 while [ $status != 'stopped' ]
 do
-  sleep 1
-  getStatus
+  sleep 2
+  getStatus "terminating"
 done
 

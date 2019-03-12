@@ -6,11 +6,13 @@ ulimit -S -c unlimited
 # Temporary until we include a release in /software/products
 export LD_LIBRARY_PATH=/home/nfs/gputnam/sbndaq2/build_slf7.x86_64/sbndaq-redis-plugin/lib:$LD_LIBRARY_PATH
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$THIS_SBN_DAQ_DAQINTERFACE_DIR")
 
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings
 export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/known_boardreaders_list
 export DAQINTERFACE_FHICL_DIRECTORY=$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs
+export DAQINTERFACE_MESSAGEFACILITY_FHICL=$THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageFacility.fcl
 
 export DAQINTERFACE_PARTITION_NUMBER=0
 

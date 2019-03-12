@@ -65,8 +65,8 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  my_output_modules: [ ]
+  my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
-  #my_mpi_output_modules: [rootNetOutput]
+  my_mpi_output_modules: [rootNetOutput]
 }
 process_name: DAQDL

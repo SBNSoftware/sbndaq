@@ -27,22 +27,22 @@ fi
 
 rqual=prof
 setup mrb
-setup sbndaq v0_01_03 -q e15:$rqual
+setup sbndaq v0_01_05 -q e15:$rqual
 unsetup -j artdaq_daqinterface 2>&1
-setup artdaq_daqinterface v3_03_01T111318
-setup sbndaq_redis_plugin v0_01_00 -q "e15:$rqual"
+setup artdaq_daqinterface v3_04_00
+setup sbndaq_redis_plugin v0_01_01 -q "e15:$rqual"
 
 ups active |grep sbndaq  2>&1
 
 source ./helper_functions 2>&1
 
 export MRB_TOP=$(dirname $PWD_DIR)
-if [[ -e $LOCAL_PRODUCTS/../artdaq-utilities-daqinterface ]]; then
- unsetup -j artdaq_daqinterface  2>&1
- export ARTDAQ_DAQINTERFACE_DIR=$LOCAL_PRODUCTS/../artdaq-utilities-daqinterface
- export ARTDAQ_DAQINTERFACE_VERSION=1.0
- export PATH=$ARTDAQ_DAQINTERFACE_DIR/bin:$PATH
-fi
+#if [[ -e $LOCAL_PRODUCTS/../artdaq-utilities-daqinterface ]]; then
+# unsetup -j artdaq_daqinterface  2>&1
+# export ARTDAQ_DAQINTERFACE_DIR=$LOCAL_PRODUCTS/../artdaq-utilities-daqinterface
+# export ARTDAQ_DAQINTERFACE_VERSION=1.0
+# export PATH=$ARTDAQ_DAQINTERFACE_DIR/bin:$PATH
+#fi
 
 
 

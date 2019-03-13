@@ -208,7 +208,14 @@ function ttrig(){
      tinfo | egrep 'entries|full|mode|trig'
 }
 
+function mute_traces(){
+  tonMg 0-1; toffMg 2-63
+  tonSg 0-1; toffSg 2-63
+}
+
+
 function ttrig_configure(){
+#tonMg 0-3; toffMg 4-63
 treset; ttrig `tinfo | awk '/num_entries/{print$3;}'`
 }
 

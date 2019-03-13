@@ -57,9 +57,16 @@ outputs: {
   normalOutput: {
     module_type: RootOutput
     fileName: "/data1/gennadiysbndaq_r%06r_sr%02s_%to_%#.root"
-    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 200000 
+    }
+
     fastCloning: false
     compressionLevel: 0
+    
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -74,8 +81,8 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  my_output_modules: [ ]
-  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [rootNetOutput, normalOutput ]
 }
 process_name: DAQDL

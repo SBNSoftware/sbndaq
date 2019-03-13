@@ -12,37 +12,27 @@ unset LD_LIBRARY_PATH
 export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
 source /software/products/setup 2>&1
-unset ARTDAQ_DAQINTERFACE_VERSION
-unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
 export MRB_TOP=$(dirname $PWD_DIR)
 LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_01_04_e15_prof"
+
 if [[ "$use_mrb" == "true" ]];  then
- 	export PRODUCTS=$LOCAL_PRODUCTS:$PRODUCTS
-else	
-[[ -f $(dirname $PWD_DIR)/products/setup ]] && LOCAL_PRODUCTS=$(dirname $PWD_DIR)/products
-echo "LOCAL_PRODUCTS=${LOCAL_PRODUCTS}"
-[[ -f ${LOCAL_PRODUCTS}/setup ]] && source ${LOCAL_PRODUCTS}/setup || echo "No \"setup\" in $LOCAL_PRODUCTS."
+  export PRODUCTS=$LOCAL_PRODUCTS:$PRODUCTS
+else
+  [[ -f $(dirname $PWD_DIR)/products/setup ]] && LOCAL_PRODUCTS=$(dirname $PWD_DIR)/products
+  echo "LOCAL_PRODUCTS=${LOCAL_PRODUCTS}"
+  [[ -f ${LOCAL_PRODUCTS}/setup ]] && source ${LOCAL_PRODUCTS}/setup || echo "No \"setup\" in $LOCAL_PRODUCTS."
 fi
 
 rqual=prof
 setup mrb
 setup sbndaq v0_01_05 -q e15:$rqual
-unsetup -j artdaq_daqinterface 2>&1
-setup artdaq_daqinterface v3_04_00
-setup sbndaq_redis_plugin v0_01_01 -q "e15:$rqual"
+setup artdaq_daqinterface v3_04_00 2>&1
+setup sbndaq_redis_plugin v0_01_01 -q "e15:$rqual" 2>&1 
+ups active |grep daq  2>&1
 
-ups active |grep sbndaq  2>&1
+export DAQINTERFACE_PARTITION_NUMBER=1
 
-source ./helper_functions 2>&1
-
-export MRB_TOP=$(dirname $PWD_DIR)
-#if [[ -e $LOCAL_PRODUCTS/../artdaq-utilities-daqinterface ]]; then
-# unsetup -j artdaq_daqinterface  2>&1
-# export ARTDAQ_DAQINTERFACE_DIR=$LOCAL_PRODUCTS/../artdaq-utilities-daqinterface
-# export ARTDAQ_DAQINTERFACE_VERSION=1.0
-# export PATH=$ARTDAQ_DAQINTERFACE_DIR/bin:$PATH
-#fi
 
 
 

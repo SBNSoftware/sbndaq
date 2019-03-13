@@ -1,23 +1,19 @@
 #!/bin/bash
 
-THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
-#default setup file is:
-SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
-LOCAL_SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq_local.sh
+source /software/products/setup
+unsetup_all 2>&1 > /dev/null
 
-#if a local setup file exists, use that instead
-if [ -f $LOCAL_SETUP_FILE ]; then
-    SETUP_FILE=$LOCAL_SETUP_FILE
-fi
+unset PRODUCTS
+unset LD_LIBRARY_PATH
+export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
-echo "Setting up with : $SETUP_FILE"
+unset ARTDAQ_DAQINTERFACE_VERSION
+unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
+source /software/products/setup
+setup artdaq_daqinterface v3_04_00 2>&1
 
-
-#export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
-source $SETUP_FILE
-
-#export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
-export DAQINTERFACE_USER_SOURCEFILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_sourcefile
+export DAQINTERFACE_USER_SOURCEFILE=$(pwd)/user_sourcefile
 source $ARTDAQ_DAQINTERFACE_DIR/source_me
+
 

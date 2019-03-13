@@ -1,18 +1,26 @@
-#!/bin/sh
+#!/bin/bash
 
 ulimit -S -c unlimited
 
-# Include the path to a built sbndaq-redis-plugin for use by the MetricManager.
-# Temporary until we include a release in /software/products
-#export LD_LIBRARY_PATH=/home/nfs/gputnam/sbndaq2/build_slf7.x86_64/sbndaq-redis-plugin/lib:$LD_LIBRARY_PATH
+[[ $0 != $BASH_SOURCE ]] && export MYDAQ_CONFIG_DIR=$(dirname $(readlink -e $BASH_SOURCE))
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(pwd)
+if [[ -z ${MYDAQ_CONFIG_DIR+x} ]]; then
+   echo "Variable \"$MYDAQ_CONFIG_DIR\" is unset" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=4
+   return
+fi
 
-export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings
-export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/known_boardreaders_list
-export DAQINTERFACE_FHICL_DIRECTORY=$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs
+if [[ ! -d $MYDAQ_CONFIG_DIR  ]]; then
+   echo "Unable to find directory \"$MYDAQ_CONFIG_DIR\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=5
+   return
+fi
 
-export DAQINTERFACE_PARTITION_NUMBER=1
+export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
+export DAQINTERFACE_SETTINGS=$MYDAQ_CONFIG_DIR/user_settings
+export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$MYDAQ_CONFIG_DIR/known_boardreaders_list
+export DAQINTERFACE_FHICL_DIRECTORY=$MYDAQ_CONFIG_DIR/configs
+
 
 #export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 

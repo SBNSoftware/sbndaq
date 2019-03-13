@@ -1,6 +1,4 @@
-
 # JCF, Sep-16-2017
-
 # This file is an example of a settings file which would work with an
 # artdaq-demo installation, assuming the installation was performed
 # with artdaq-demo's quick-mrb-start.sh script. It is valid as of
@@ -15,13 +13,15 @@
 
 log_directory: ${MRB_TOP}/log
 record_directory: ${MRB_TOP}/run_records
-package_hashes_to_save: [ ]
+package_hashes_to_save: [ sbndaq_artdaq, sbndaq_artdaq_core, icarus_artdaq_base ]
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
-boardreader timeout: 600
-eventbuilder timeout: 90
-aggregator timeout: 90
 
-max_fragment_size_bytes: 10000000
+boardreader timeout: 60
+eventbuilder timeout: 30
+datalogger timeout: 30
+dispatche timeout: 30
+
+max_fragment_size_bytes: 1000000
 
 all_events_to_all_dispatchers: true

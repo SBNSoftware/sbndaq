@@ -1,10 +1,14 @@
 #!/bin/bash
 
+ups active |grep daq  2>&1
+
+source $TRACE_BIN/trace_functions.sh
+
 export TRACE_FILE=/tmp/trace_buffer_$USER
 export TRACE_NAME=TRACE
 
-tlvls
-tenv
+#tlvls 
+tenv |grep FILE
 wholink
 
 setup valgrind v3_13_0
@@ -147,24 +151,28 @@ less  $(ls -t valgrind_*02 |head -1)
 
 function pmtx01(){
 	local dev=pmtx01
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
 # LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
 
 function pmtx02(){
 	local dev=pmtx02
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
  #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
 
 function pmtx03(){
 	local dev=pmtx03
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
 # LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
 
 function pmtx04(){
 	local dev=pmtx04
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
  #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
 }
@@ -190,3 +198,25 @@ toffM 0-63 -n Aggregator1_CommandableInterface
 toffM 0-63 -n EventBuilder1_CommandableInterface
 toffM 0-63 -n BoardReader_CommandableInterface
 }
+
+function ttrig(){
+     post_entries=$1;
+     tonTg 0-63;
+     tmodeM 1;
+     cntl_ver=`tinfo | awk '/trace.h/{print$5;}'`;
+     test $cntl_ver -le 830 && tcntl trig -- -1 $post_entries || tcntl trig $post_entries;
+     tinfo | egrep 'entries|full|mode|trig'
+}
+
+function ttrig_configure(){
+treset; ttrig `tinfo | awk '/num_entries/{print$3;}'`
+}
+
+
+#if [[ -e $LOCAL_PRODUCTS/../artdaq-utilities-daqinterface ]]; then
+# unsetup -j artdaq_daqinterface  2>&1
+# export ARTDAQ_DAQINTERFACE_DIR=$LOCAL_PRODUCTS/../artdaq-utilities-daqinterface
+# export ARTDAQ_DAQINTERFACE_VERSION=1.0
+# export PATH=$ARTDAQ_DAQINTERFACE_DIR/bin:$PATH
+#fi
+

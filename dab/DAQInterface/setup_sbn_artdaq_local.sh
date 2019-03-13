@@ -4,8 +4,8 @@ PWD_DIR=$(pwd)
 echo "PWD_DIR=$PWD_DIR"
 
 source /software/products/setup 2>&1
-
 unsetup_all 2>&1 > /dev/null
+
 unset PRODUCTS
 unset LD_LIBRARY_PATH
 
@@ -27,9 +27,7 @@ fi
 rqual=prof
 setup mrb
 setup sbndaq v0_01_05 -q e15:$rqual
-setup artdaq_daqinterface v3_04_00 2>&1
 setup sbndaq_redis_plugin v0_01_01 -q "e15:$rqual" 2>&1 
-ups active |grep daq  2>&1
 
 export DAQINTERFACE_PARTITION_NUMBER=1
 

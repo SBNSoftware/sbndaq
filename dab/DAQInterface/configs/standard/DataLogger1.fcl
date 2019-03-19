@@ -61,7 +61,7 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 200000 
+      maxEvents: 10000 
     }
 
     fastCloning: false
@@ -81,8 +81,8 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  #my_output_modules: [ ]
-  my_output_modules: [ normalOutput ]
+  my_output_modules: [ ]
+  #my_output_modules: [ normalOutput ]
   #my_output_modules: [rootNetOutput, normalOutput ]
 }
 process_name: DAQDL

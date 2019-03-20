@@ -17,14 +17,16 @@ services: {
 daq: {
   event_builder: {
 	expected_fragments_per_event: 0  # Will be set by DAQInterface
-	max_fragment_size_bytes: 200000
-	use_art: true
-	print_event_store_stats: true
-	buffer_count: 1000
-	max_incomplete_events: 75 # Same as boardreader sync interval
-	verbose: true
-	send_requests: false
+	
+  stale_buffer_timeout_usec: 200000
+	buffer_count: 300
 
+	verbose: false
+  max_fragment_size_bytes: 400000
+  incomplete_event_report_interval_ms: 1000
+	send_requests: false
+	use_art: true
+	print_event_store_stats: false
 	routing_token_config: {
 	use_routing_master: false
 	}
@@ -38,30 +40,44 @@ daq: {
 	  fileName: "/data1/evb02_metrics.log"
 	  uniquify: true
 	}
-graphite: {
-level:5
-metricPluginType: "graphite"
-reporting_interval: 10.0
-host:"sbn-daq02.fnal.gov"
-port:2003
-namespace:"artdaq.evb02."
+  graphite: {
+    level:5
+    metricPluginType: "graphite"
+    reporting_interval: 10.0
+    host:"sbn-daq02.fnal.gov"
+    port:2003
+    namespace:"artdaq.evb02."
+  } 
 }
-  }
+
 } 
 
 outputs: {
   rootNetOutput: {
     module_type: RootNetOutput
   }
+  normalOutput: {
+    module_type: RootOutput
+    fileName: "/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+    compressionLevel: 0
+    fastCloning: false
+ }
 }
 
-physics: {}
+physics: {
+  analyzers: {}
+
   producers: {}
 
   filters: {}
 
+   
   a1: [ ]
+
+  #my_output_modules: [  ]
   my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
 }
 source: {
   module_type: SBNDDAQInput

@@ -17,10 +17,10 @@ package_hashes_to_save: [ sbndaq_artdaq, sbndaq_artdaq_core, icarus_artdaq_base 
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
 
-boardreader timeout: 60
-eventbuilder timeout: 30
-datalogger timeout: 30
-dispatche timeout: 30
+boardreader timeout: 90
+eventbuilder timeout: 60
+datalogger timeout: 60
+dispatcher timeout: 30
 
 max_fragment_size_bytes: 1000000
 

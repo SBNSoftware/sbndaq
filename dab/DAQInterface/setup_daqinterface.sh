@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export TRACE_FILE=/dev/shm/trace_buffer_$USER
+export TRACE_NAME=TRACE
+
+
 source /software/products/setup
 unsetup_all 2>&1 > /dev/null
 

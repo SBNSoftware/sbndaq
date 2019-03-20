@@ -37,7 +37,7 @@ daq: {
 	evbFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/data1/evb01_metrics.log"
+	  fileName: "/data1/evb03_metrics.log"
 	  uniquify: true
 	}
   graphite: {
@@ -46,7 +46,7 @@ daq: {
     reporting_interval: 10.0
     host:"sbn-daq02.fnal.gov"
     port:2003
-    namespace:"artdaq.evb01."
+    namespace:"artdaq.evb03."
   } 
 }
 

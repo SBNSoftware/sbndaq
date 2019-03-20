@@ -109,6 +109,8 @@ fragment_receiver: {
   
   CircularBufferSize: 500e6
 
+  #separate_data_thread: true
+  data_buffer_depth_fragments: 0   # only data_buffer_depth_mb matters
   dynamicRange:         0
   
   destinations: { }
@@ -145,6 +147,7 @@ namespace:"artdaq.pmtx01."
 }
 }
 }
+
 
 
 

@@ -24,6 +24,10 @@ else
   [[ -f ${LOCAL_PRODUCTS}/setup ]] && source ${LOCAL_PRODUCTS}/setup || echo "No \"setup\" in $LOCAL_PRODUCTS."
 fi
 
+export TRACE_FILE=/dev/shm/trace_buffer_$USER
+export TRACE_NAME=TRACE
+
+
 rqual=prof
 setup mrb
 setup sbndaq v0_01_05 -q e15:$rqual

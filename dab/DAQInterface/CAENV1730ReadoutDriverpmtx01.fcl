@@ -1,18 +1,27 @@
-  daq: {
-fragment_receiver: {
+# FHiCL document used to run the "driver" executable. To learn more
+#  about the FHiCL language, please look at
+#  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
 
+events_to_generate: 100000000
+run_number: 101
+debug_cout: true
+transition_timeout: 30
+
+services: {
+    TimeTracker: {}
+}
+
+fragment_receiver: {
   generator:   CAENV1730Readout
   fragment_type: CAENV1730
   max_fragment_size_bytes: 1000000
 
-  fragment_id: 3
+  fragment_id: 0
   board_id:    0
   Verbosity: 1
   SWTrigger: false
 
-  allowTriggerOverlap: true
-
-  link: 3
+  link: 0
   enableReadout: 1
 
   boardId: 0
@@ -87,29 +96,13 @@ fragment_receiver: {
   InterruptLevel: 1
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1
+  GetNextSleep: 1e5
   
   CombineReadoutWindows: false
-
-  triggerThreshold0:  0x0000
-  triggerThreshold1:  0x0000
-  triggerThreshold2:  0x0000
-  triggerThreshold3:  0x0000
-  triggerThreshold4:  0x0000
-  triggerThreshold5:  0x0000
-  triggerThreshold6:  0x0000
-  triggerThreshold7:  0x0000
-  triggerThreshold8:  0x0000
-  triggerThreshold9:  0x0000
-  triggerThreshold10: 0x0000
-  triggerThreshold11: 0x0000
-  triggerThreshold12: 0x0000
-  triggerThreshold13: 0x0000
-  triggerThreshold14: 0x0000
-  triggerThreshold15: 0x0000
-
+  allowTriggerOverlap: false 
+  triggerThreshold: 0x0000
   CircularBufferSize: 500e6
-
+  
   destinations: { }
 
   routing_table_config: {
@@ -118,31 +111,65 @@ fragment_receiver: {
 
 }  
 
+event_builder: {
+  expected_fragments_per_event: 1
+  max_fragment_size_bytes: 0x200000
+  buffer_count: 20  
+  use_art: true
+  print_event_store_stats: false
+  verbose: true
+  events_expected_in_SimpleQueueReader: @local::events_to_generate
+  send_requests: false
+}
 
-  metrics: {
+physics:
+{
+  analyzers:{}
+  producers:{}
+  p1: [  ]
+  a1: [  ]
+  e1: [ rootout ]
+  
+  #end_paths: [ e1 ]
+  end_paths: [ ]
+}
+
+outputs:
+{
+ rootout:
+  {
+    module_type: RootOutput
+    fileName: "/data1/sbnddriveir1.root"
+    fastCloning: false
+    compressionLevel: 0
+  }
+
+  out1:
+  {
+    module_type: FileDumperOutput
+    wantProductFriendlyClassName: true
+  }
+}
+
+source:
+{
+  module_type: SBNDDAQInput
+  waiting_time: 900
+  resume_after_timeout: true
+}
+ metrics: {
 	brFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+	  fileName: "/data1/pmtx01_metrics.log"
 	  uniquify: true
 	}
-        redis_10s: {
-          metricPluginType: "redis"
-          level: 3
-          reporting_interval: 10.0
-          redis_key_postfix: ":10s" 
-          maxlen: 10000
-          redis_key_prefix: "DABBoardReader:pmtx04:"
-          redis_passfile: "/var/adm/krb5/redis_password"
-        }
-        redis_5m: {
-          metricPluginType: "redis"
-          level: 3
-          reporting_interval: 300.0
-          redis_key_postfix: ":5m" 
-          maxlen: 10000
-          redis_key_prefix: "DABBoardReader:pmtx04:"
-          redis_passfile: "/var/adm/krb5/redis_password"
-        }
-  }
-}
+#        redis: {
+#          metricPluginType: "redis"
+#          level: 3
+#          reporting_interval: 10.0
+#          redis_key_postfix: ":pmtx01" 
+#        }
+ 
+} 
+process_name: CAENV1730ReadoutDriver

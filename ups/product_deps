@@ -2,7 +2,7 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_01_04
+parent sbndaq v0_01_05
 defaultqual e15
 
 # These optional lines define the installed directories where headers,
@@ -32,21 +32,26 @@ flcdir  product_dir     fcl
 # Add the dependent product and version
 
 product              version
-sbndaq_artdaq	     v0_01_03
-artdaq_mpich_plugin  v1_00_04
+sbndaq_artdaq	       v0_01_04
+artdaq_mpich_plugin  v1_00_06
 cetbuildtools        v7_02_01       -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes". 
-qualifier	  	 sbndaq_artdaq      artdaq_mpich_plugin notes
-e15:debug		 e15:debug	    e15:eth:debug:s64
-e15:prof		 e15:prof	    e15:eth:prof:s64
-e15:debug:icarus	 e15:debug:icarus   e15:eth:debug:s64
-e15:prof:icarus		 e15:prof:icarus    e15:eth:prof:s64
-e15:debug:sbnd  	 e15:debug:sbnd	    e15:eth:debug:s64
-e15:prof:sbnd		 e15:prof:sbnd      e15:eth:prof:s64
-
+qualifier	  	     sbndaq_artdaq      artdaq_mpich_plugin notes
+e15:debug          e15:debug	        e15:eth:debug:s67
+e15:prof		       e15:prof	          e15:eth:prof:s67
+e15:debug:icarus	 e15:debug:icarus   e15:eth:debug:s67
+e15:prof:icarus		 e15:prof:icarus    e15:eth:prof:s67
+e15:debug:sbnd  	 e15:debug:sbnd	    e15:eth:debug:s67
+e15:prof:sbnd		   e15:prof:sbnd      e15:eth:prof:s67
+e17:debug          e17:debug	        e17:eth:debug:s67
+e17:prof		       e17:prof	          e17:eth:prof:s67
+e17:debug:icarus	 e17:debug:icarus   e17:eth:debug:s67
+e17:prof:icarus		 e17:prof:icarus    e17:eth:prof:s67
+e17:debug:sbnd  	 e17:debug:sbnd	    e17:eth:debug:s67
+e17:prof:sbnd		   e17:prof:sbnd      e17:eth:prof:s67
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:

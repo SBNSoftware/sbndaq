@@ -1,4 +1,4 @@
-tpc01 sbnd-daq34.fnal.gov -1
+tpc01 sbnd-daq34 -1
 tpc02 localhost -1
 tpc03 localhost -1
 tpc04 localhost -1

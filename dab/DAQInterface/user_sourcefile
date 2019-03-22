@@ -22,7 +22,7 @@ export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$MYDAQ_CONFIG_DIR/known_boardreaders
 export DAQINTERFACE_FHICL_DIRECTORY=$MYDAQ_CONFIG_DIR/configs
 export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$MYDAQ_CONFIG_DIR/critical_process_list
 
-#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
    echo "Unable to find settings file \"$DAQINTERFACE_SETTINGS\"" >&2
@@ -41,9 +41,10 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=3
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
- 
-   echo "Put code here which sets up the database environment"
-
+	 echo "Configuring artdaq_database"
+   source /software/products/setup; setup artdaq_database v1_04_70 -q e15:prof:s67
+   export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:27037/sbn_db"
+	 export ARTDAQ_DATABASE_CONFDIR=/software/database/config
 fi
 
 export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

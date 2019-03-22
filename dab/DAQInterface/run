@@ -7,7 +7,7 @@ function getStatus()
 }
 
 getStatus
-setdaqcomps.sh pmtx02 pmtx01 pmtx03 pmtx04
+setdaqcomps.sh pmt01 pmt02 pmt03 pmt04
 send_transition.sh boot boot.txt
 getStatus
 while [ $status != 'booted' ]

@@ -1,16 +1,17 @@
+
   daq: {
 fragment_receiver: {
   generator:   CAENV1730Readout
   fragment_type: CAENV1730
   max_fragment_size_bytes: 100000
 
-  fragment_id: 1
+  fragment_id: 0
   board_id:    0
   Verbosity: 1
   SWTrigger: false
 
 
-  link: 1
+  link: 0
   enableReadout: 1
 
   boardId: 0
@@ -126,14 +127,14 @@ fragment_receiver: {
 	brFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/data1/pmtx02_metrics.log"
+	  fileName: "/data1/pmtx01_metrics.log"
 	  uniquify: true
 	}
   #      redis: {
   #        metricPluginType: "redis"
   #        level: 3
   #        reporting_interval: 10.0
-  #        redis_key_postfix: ":pmtx02"
+  #        redis_key_postfix: ":pmtx01"
   #        redis_password: B4730D6D9606E3EB37048EB017D4C69EFB56243CCC408E3BEC3BFDEEDF792876
    #     }
 
@@ -143,11 +144,10 @@ metricPluginType: "graphite"
 reporting_interval: 10.0
 host:"sbn-daq02.fnal.gov"
 port:2003
-namespace:"artdaq.pmtx02."
+namespace:"artdaq.pmtx01."
 }
 }
 }
-
 
 
 

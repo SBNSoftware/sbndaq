@@ -21,6 +21,8 @@ boardreader timeout: 90
 eventbuilder timeout: 60
 datalogger timeout: 60
 dispatcher timeout: 30
+fhicl_file_paths: ".:standard"
+use_messageviewer: false
 
 max_fragment_size_bytes: 1000000
 

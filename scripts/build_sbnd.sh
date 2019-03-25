@@ -21,24 +21,24 @@ my_selected_build_config=tagged
 my_build_variants=( "e15:debug" "e15:prof" )
 
 ##build settings
-my_release_version=${my_release_version:-"v0_01_03"}
+my_release_version=${my_release_version:-"v0_01_04"}
 my_project_name=${my_mrb_project_name:-"sbnd"}
 my_products_repo_dir=${my_products_repo_dir:-"/software/products"}
 my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER)}
 
 #available build configurations
 source_branches_develop=(
-   "icarus-artdaq-base:v0_06_01"
+   "icarus-artdaq-base:v0_06_05"
    "sbndaq-artdaq-core:develop"
    "sbndaq-artdaq:develop"
    "sbndaq:develop"
 )
 
 source_branches_tagged=(
-   "icarus-artdaq-base:v0_06_01"
-   "sbndaq-artdaq-core:v0_01_03"
-   "sbndaq-artdaq:v0_01_02"
-   "sbndaq:v0_01_03"
+   "icarus-artdaq-base:v0_06_05"
+   "sbndaq-artdaq-core:v0_01_04"
+   "sbndaq-artdaq:v0_01_04"
+   "sbndaq:v0_01_04"
 )
 
 source_branches_master=(
@@ -280,7 +280,7 @@ function run_buildtool_build()
 
         source ${source_dir}/${this_project_dir}/ups/setup_for_development ${daq_rel_rqual} ${daq_rel_bqual} ${daq_rel_oquals}
         
-        #setup icarus_artdaq_base v0_06_01 -q e15:prof
+        #setup icarus_artdaq_base v0_06_05 -q e15:prof
 
         printf "\n******* Active products......\n"
         ups active

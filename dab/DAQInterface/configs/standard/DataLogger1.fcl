@@ -47,10 +47,10 @@ source: {
 outputs: {
   normalOutput: {
     module_type: RootOutput
-    fileName: "/scratch/sbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/data1/sbndaq_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     fastCloning: false
-    compressionLevel: 3
+    compressionLevel: 0
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -65,7 +65,7 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  my_output_modules: [ rootNetOutput ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput ]
   my_mpi_output_modules: [rootNetOutput]
 }

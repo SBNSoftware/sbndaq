@@ -38,15 +38,15 @@ daq: {
   	  fileName: "/data1/dl01_metrics.log"
       uniquify: true
     } 
-    graphite: {
-      level:5
-      metricPluginType: "graphite"
-      reporting_interval: 10.0
-      host:"sbn-daq02.fnal.gov"
-      port:2003
-      namespace:"artdaq.dl01."
-    } 
-  }
+#    graphite: {
+#      level:5
+#      metricPluginType: "graphite"
+#      reporting_interval: 10.0
+#      host:"sbn-daq02.fnal.gov"
+#      port:2003
+#      namespace:"artdaq.dl01."
+#    } 
+#  }
 
 }
 

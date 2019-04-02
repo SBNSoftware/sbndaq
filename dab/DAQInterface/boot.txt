@@ -7,14 +7,14 @@ debug level: 2
 EventBuilder host: localhost
 EventBuilder label: EventBuilder1
 
-EventBuilder host: localhost
-EventBuilder label: EventBuilder2
+#EventBuilder host: localhost
+#EventBuilder label: EventBuilder2
 
 #EventBuilder host: localhost
 #EventBuilder label: EventBuilder3
 
-DataLogger host: localhost
-DataLogger label: DataLogger1
+#DataLogger host: localhost
+#DataLogger label: DataLogger1
 
 # DataLogger host: localhost
 # DataLogger label: DataLogger2

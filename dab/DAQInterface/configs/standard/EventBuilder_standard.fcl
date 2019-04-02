@@ -18,7 +18,7 @@ daq: {
   event_builder: {
 	expected_fragments_per_event: 0  # Will be set by DAQInterface
 	
-  stale_buffer_timeout_usec: 200000
+  stale_buffer_timeout_usec: 1000000
 	buffer_count: 300
 
 	verbose: false
@@ -40,14 +40,14 @@ daq: {
 	  fileName: "/data1/evb01_metrics.log"
 	  uniquify: true
 	}
-  graphite: {
-    level:5
-    metricPluginType: "graphite"
-    reporting_interval: 10.0
-    host:"sbn-daq02.fnal.gov"
-    port:2003
-    namespace:"artdaq.evb01."
-  } 
+#  graphite: {
+#    level:5
+#    metricPluginType: "graphite"
+#    reporting_interval: 10.0
+#    host:"sbn-daq02.fnal.gov"
+#    port:2003
+#    namespace:"artdaq.evb01."
+#  } 
 }
 
 } 

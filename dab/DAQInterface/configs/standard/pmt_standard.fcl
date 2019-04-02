@@ -138,14 +138,14 @@ fragment_receiver: {
   #        redis_password: B4730D6D9606E3EB37048EB017D4C69EFB56243CCC408E3BEC3BFDEEDF792876
    #     }
 
-graphite: {
-level:5
-metricPluginType: "graphite"
-reporting_interval: 10.0
-host:"sbn-daq02.fnal.gov"
-port:2003
-namespace:"artdaq.pmtx01."
-}
+#graphite: {
+#level:5
+#metricPluginType: "graphite"
+#reporting_interval: 10.0
+#host:"sbn-daq02.fnal.gov"
+#port:2003
+#namespace:"artdaq.pmtx01."
+#}
 }
 }
 

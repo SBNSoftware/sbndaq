@@ -185,14 +185,14 @@ source:
 	  uniquify: true
 	}
 
-graphite: {
-level:5
-metricPluginType: "graphite"
-reporting_interval: 10.0
-host:"sbn-daq02.fnal.gov"
-port:2003
-namespace:"artdaq.pmtx01."
-}
+#graphite: {
+#level:5
+#metricPluginType: "graphite"
+#reporting_interval: 10.0
+#host:"sbn-daq02.fnal.gov"
+#port:2003
+#namespace:"artdaq.pmtx01."
+#}
 #        redis: {
 #          metricPluginType: "redis"
 #          level: 3

@@ -4,12 +4,13 @@ ups active |grep daq  2>&1
 
 source $TRACE_BIN/trace_functions.sh
 
-export TRACE_FILE=/dev/shm/trace_buffer_$USER
+#export TRACE_FILE=/dev/shm/trace_buffer_$USER
+export  TRACE_FILE=/proc/trace/buffer
 export TRACE_NAME=TRACE
 
 #tlvls 
 tenv |grep FILE
-wholink
+#wholink
 
 setup valgrind v3_13_0
 setup gdb v8_1

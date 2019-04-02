@@ -14,7 +14,7 @@ services: {
 fragment_receiver: {
   generator:   CAENV1730Readout
   fragment_type: CAENV1730
-  max_fragment_size_bytes: 1000000
+  max_fragment_size_bytes: 100000
 
   fragment_id: 0
   board_id:    0
@@ -182,14 +182,14 @@ source:
 	  fileName: "/data1/pmtx03_metrics.log"
 	  uniquify: true
 	}
-graphite: {
-level:5
-metricPluginType: "graphite"
-reporting_interval: 10.0
-host:"sbn-daq02.fnal.gov"
-port:2003
-namespace:"artdaq.pmtx03."
-}
+#graphite: {
+#level:5
+#metricPluginType: "graphite"
+#reporting_interval: 10.0
+#host:"sbn-daq02.fnal.gov"
+#port:2003
+#namespace:"artdaq.pmtx03."
+#}
 #        redis: {
 #          metricPluginType: "redis"
 #          level: 3

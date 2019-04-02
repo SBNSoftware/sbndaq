@@ -8,6 +8,9 @@ function getStatus()
 
 getStatus
 setdaqcomps.sh pmt01 pmt02 pmt03 pmt04
+
+#setdaqcomps.sh pmt01
+#setdaqcomps.sh pmt03 pmt04
 send_transition.sh boot boot.txt
 getStatus
 while [ $status != 'booted' ]
@@ -34,4 +37,6 @@ do
   getStatus
 done
 
+for i in $(pgrep boardreader); do taskset -cp 1-15 $i; done
+for i in $(pgrep eventbuilder); do taskset -cp 1-15 $i; done
 

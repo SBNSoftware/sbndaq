@@ -27,6 +27,9 @@ do
   getStatus
 done
 
+for i in $(pgrep boardreader); do taskset -cp 1-15 $i; done
+for i in $(pgrep eventbuilder); do taskset -cp 1-15 $i; done
+
 send_transition.sh start
 getStatus
 sleep 1
@@ -37,6 +40,6 @@ do
   getStatus
 done
 
-for i in $(pgrep boardreader); do taskset -cp 1-15 $i; done
-for i in $(pgrep eventbuilder); do taskset -cp 1-15 $i; done
+#for i in $(pgrep boardreader); do taskset -cp 4-15 $i; done
+#for i in $(pgrep eventbuilder); do taskset -cp 4-15 $i; done
 

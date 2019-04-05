@@ -1,4 +1,4 @@
 #include "EventBuilder_standard.fcl"
 daq.metrics.evbFile.fileName : "/data1/evb02_metrics.log"
-#daq.metrics.graphite.namespace: "artdaq.evb02."
+daq.metrics.graphite.namespace: "artdaq.evb02."
 daq.outputs.normalOutput.fileName: "/data1/sbndaq_ebv02_r%06r_sr%02s_%to_%#.root"

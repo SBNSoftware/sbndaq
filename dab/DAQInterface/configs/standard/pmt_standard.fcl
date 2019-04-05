@@ -86,7 +86,9 @@ fragment_receiver: {
   InterruptLevel: 0
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 100
+  GetNextSleep: 10
+  GetNextFragmentsCount: 25
+
  
   allowTriggerOverlap: true 
   CombineReadoutWindows: false
@@ -108,7 +110,7 @@ fragment_receiver: {
   triggerThreshold14: 0x0000
   triggerThreshold15: 0x0000
   
-  CircularBufferSize: 500e6
+  CircularBufferSize: 200e6
 
   #separate_data_thread: true
   data_buffer_depth_fragments: 0   # only data_buffer_depth_mb matters
@@ -138,14 +140,14 @@ fragment_receiver: {
   #        redis_password: B4730D6D9606E3EB37048EB017D4C69EFB56243CCC408E3BEC3BFDEEDF792876
    #     }
 
-#graphite: {
-#level:5
-#metricPluginType: "graphite"
-#reporting_interval: 10.0
-#host:"sbn-daq02.fnal.gov"
-#port:2003
-#namespace:"artdaq.pmtx01."
-#}
+graphite: {
+level:5
+metricPluginType: "graphite"
+reporting_interval: 10.0
+host:"sbn-daq02.fnal.gov"
+port:2003
+namespace:"artdaq.pmtx01."
+}
 }
 }
 

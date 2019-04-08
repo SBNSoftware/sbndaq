@@ -46,7 +46,7 @@ fragment_receiver: {
 
   readoutMode:          0
   analogMode:           1
-  testPattern:          1
+  testPattern:          0
   channelPedestal0:  32768
   channelPedestal1:  32768
   channelPedestal2:  32768
@@ -87,7 +87,7 @@ fragment_receiver: {
   InterruptLevel: 0
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1
+  GetNextSleep: 100
   
   CombineReadoutWindows: false
 

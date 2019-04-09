@@ -110,7 +110,7 @@ fragment_receiver: {
   triggerThreshold14: 0x0000
   triggerThreshold15: 0x0000
   
-  CircularBufferSize: 200e6
+  CircularBufferSize: 1e9
 
   #separate_data_thread: true
   data_buffer_depth_fragments: 0   # only data_buffer_depth_mb matters

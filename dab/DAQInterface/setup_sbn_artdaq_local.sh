@@ -14,6 +14,9 @@ export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/loca
 source /software/products/setup 2>&1
 
 export MRB_TOP=$(dirname $PWD_DIR)
+
+export PRODUCTS=$MRB_TOP/products.testing:$PRODUCTS
+
 LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_01_04_e15_prof"
 
 if [[ "$use_mrb" == "true" ]];  then

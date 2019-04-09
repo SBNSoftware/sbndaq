@@ -17,7 +17,7 @@ daq: {
     event_queue_depth: 50
     event_queue_wait_time: 5
 	  max_fragment_size_bytes: 400000
-    buffer_count: 50
+    buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true
 
@@ -38,15 +38,15 @@ daq: {
   	  fileName: "/data1/dl01_metrics.log"
       uniquify: true
     } 
-#    graphite: {
-#      level:5
-#      metricPluginType: "graphite"
-#      reporting_interval: 10.0
-#      host:"sbn-daq02.fnal.gov"
-#      port:2003
-#      namespace:"artdaq.dl01."
-#    } 
-#  }
+    graphite: {
+      level:5
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"sbn-daq02.fnal.gov"
+      port:2003
+      namespace:"artdaq.dl01."
+    } 
+  }
 
 }
 
@@ -56,7 +56,7 @@ source: {
 outputs: {
   normalOutput: {
     module_type: RootOutput
-    fileName: "/data1/sbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -81,8 +81,8 @@ physics: {
 
   p2: [ ]
   a1: [ ]
-  my_output_modules: [ ]
-  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [rootNetOutput, normalOutput ]
 }
 process_name: DAQDL

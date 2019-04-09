@@ -17,10 +17,10 @@ package_hashes_to_save: [ sbndaq_artdaq, sbndaq_artdaq_core, icarus_artdaq_base 
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
 
-boardreader timeout: 45
-eventbuilder timeout: 30
-datalogger timeout: 30
-dispatcher timeout: 30
+boardreader timeout: 60
+eventbuilder timeout: 45
+datalogger timeout: 45
+dispatcher timeout: 45
 fhicl_file_paths: ".:standard"
 use_messageviewer: false
 

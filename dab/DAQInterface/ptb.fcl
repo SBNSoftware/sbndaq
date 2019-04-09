@@ -1,0 +1,341 @@
+# FHiCL document used to run the "driver" executable. To learn more
+#  about the FHiCL language, please look at
+#  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
+# Originally taken from protoDUNE and adapted for SBND
+#
+events_to_generate: 2
+run_number: 101
+transition_timeout: 30
+debug_cout: true 
+
+fragment_receiver: {
+
+   # Parameters defining and configuring the fragment generator to be used
+   		    
+   generator: TriggerBoardReader
+   fragment_type: TOY2        # Make sure downstream modules know about this fragment_type!
+
+   ##------------------------------------------------------------------------------
+   ## Variable of interest for the new PTB Fragment Generator
+   ##------------------------------------------------------------------------------
+
+   board_address: "sbnd-ptbmk2-01"
+
+   control_port  : 8991                               ## Default 8991 
+   
+   calibration_stream_output : "/data/ptb/ptb_testing.root"     ## this is the string that points to a writable directory if 
+                                                      ## if this option is not there, there won't be a calibration str
+   # calibration_update : 5. ## minimum amont of minutes that before updating the calibration stream file. Default 5 minutes
+
+   ## ------------------------------------------------------------------------
+   ## conditions to trigger a fragment generator. 
+   ## ------------------------------------------------------------------------
+   ## Ideally a fragment is created whenever a certain number of packages from the board is received. 
+   ## Packages in this context means everything between a TS word and the next, as they are regular in time. 
+   ## This minimum number of packages is called group_size and it's default value is 1 .
+   ## This option can be disabled simply requesting groupd_size = 0. In that case the fragment will contain all the 
+   ## words present in the buffer at the moment of getNext_() call without restrictions based on the number of TS words .
+   ## Anyway, to avoid the saturation of the buffers, a fragment is ALWAYS created whenever the number of words in the 
+   ## buffer is bigger than than max_words_per_frag. 
+
+   group_size : 30    ## this sets how many pakages from the board should be grouped to form a fragment. Default 1 
+   	      	      ## value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
+                      ## without restriction based on the number of TS words. 
+
+   max_words_per_frag : 3000 ## default 80 % of the capacity of the words buffer
+                          
+
+   max_frags_per_call : 3 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
+
+   # request_mode: "Window"   # the other interist possibility which is discussed is the "Buffer" mode
+   # request_window_offset: 2 # Request message contains tzero. Window will be from tzero - offset to tz-o + width
+   # request_window_width: 5  # These settings correspond to "two before, two after"
+
+   board_config : '{
+  "ptb":{
+    "sockets":{
+    "receiver":{
+        "rollover":500000,
+            "host":"192.168.230.88",
+            "port":8992
+      },
+      "monitor":{
+        "enable" : false,
+        "host": "localhost",
+        "port": 8993
+        },
+      "statistics": {
+        "enable":false,
+        "port":8994,
+        "updt_period": 1
+      }
+    },
+    "misc":{
+      "randomtrigger":{
+        "enable":true,
+        "fixed_freq":false,
+        "frequency":1000000
+      },
+      "pulser":{
+        "enable":true,
+        "frequency":10
+      },
+      "timing":{
+        "address":"0x0",
+        "group":"0x0",
+        "triggers":false
+      },
+      "ch_status":true
+    },
+    "HLT":{
+      "trigger": [                                        
+        { "id":"HLT_1",
+          "description": "Beam trigger, veto with high-rate muon CRT around beam pipe",
+          "enable":true,
+          "minc" : "0x1",
+          "mexc" : "0x2"
+        },
+        { "id":"HLT_2",
+          "description": "Reconstructable track beam trigger, high-rate muon veto with CRT around beam pipe", 
+          "enable":true,
+          "minc" : "0x1",
+          "mexc" : "0x2"
+        },
+        { "id":"HLT_3",
+          "description": "Medium beam energy pion trigger, cherenkov particle selection, high-rate muon CRT veto around beam pipe, no PDS",
+          "enable":true,
+          "minc" : "0x1",
+          "mexc" : "0x6"
+        },
+        { "id":"HLT_4",
+          "description": "Muon halo trigger, with PDS",
+          "enable":true,
+          "minc" : "0xF",
+          "mexc" : "0x0"
+        },
+        { "id":"HLT_5",
+          "description": "Cosmic trigger, high to lower, up to down stream muon on Jura-side CRT and PDS (no Beam)",
+          "enable":true,
+          "minc" : "0xE",
+          "mexc" : "0x1"
+        },
+        { "id":"HLT_6",
+          "description": "Low beam energy electron trigger, high-rate muon veto with CRT around beam pipe, no PDS",
+          "enable":true,
+          "minc" : "0x1",
+          "mexc" : "0x2"
+        },
+        { "id":"HLT_7",
+          "description": "Low beam energy hadron trigger, veto with high-rate muon CRT around beam pipe, no PDS",
+          "enable":true,
+          "minc" : "0x1",
+          "mexc" : "0x6"
+        }
+      ]
+    },
+    "subsystems":{
+      "pds":{
+        "channel_mask":"0xFFFFFF",
+        "reshape_length" : 1,
+        "delays":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "dac_thresholds":[2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250,2250, 2250],
+        "triggers": [
+          { "id":"LLT_14",
+            "description": "PDS at least 3 channels (on Jura side)",
+            "enable":true,
+            "mask" : "0xFFF",
+            "type" : "0x1",
+            "count" : "0x2"
+          }
+        ]
+      },
+      "crt":{
+        "channel_mask": "0xFFCFF3FF",
+        "pixelate": false,
+        "reshape_length" : 1,
+        "delays":[100,100,100,100,0,100,100,100,100,100,100,100,100,100,100,1,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100],
+        "triggers": [
+          { "id":"LLT_11",
+            "description": "Select CRT pixels around beam pipe",
+            "enable":true,
+            "mask" : "0xF000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_12",
+            "description": "CRT for through-going muons (upstream)",
+            "enable":false,
+            "mask" : "0x6000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_13",                                
+            "description": "CRT for through-going muons (downstream)",
+            "enable":true,
+            "mask" : "0x60000000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_15",
+            "description": "CRT upstream upper half of Jura supermodule",
+            "enable":true,
+            "mask" : "0x201C",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_16",
+            "description": "CRT downstream lower half of Jura supermodule",
+            "enable":true,
+            "mask" : "0x40E00000",
+            "type" : "0x1",
+            "count" : "0x0"
+          }
+        ]
+      },
+      "beam":{                     
+        "channel_mask": "0x1FF",
+        "reshape_length" : 1,
+        "delays":[1,1,1,1,1,1,1,1,1],
+        "triggers": [
+          { "id":"LLT_1",                           
+            "description": "Beam particle trigger",
+            "enable":true,
+            "mask" : "0x67"
+          },
+          { "id":"LLT_3",
+            "description": "Mask in all BI, except Cherenkov detector",
+            "enable":true,
+            "mask" : "0x7F"
+          },
+          { "id":"LLT_4",                           
+            "description": "Mask in all BI except C1",
+            "enable":true,
+            "mask" : "0x17F"
+          },
+          { "id":"LLT_5",
+            "description": "Mask in C1",
+            "enable":true,
+            "mask" : "0x80"
+          },
+          { "id":"LLT_6",
+            "description": "Beam gate selection",
+            "enable":true,
+            "mask" : "0x1"
+          },
+          { "id":"LLT_7",
+            "description": "Mask in all BI for trigger inclusion",
+            "enable":true,
+            "mask" : "0xFF"
+          },
+          { "id":"LLT_8",
+            "description": "Select only the Cherenkov detectors",
+            "enable":true,
+            "mask" : "0x180"
+          }
+        ]
+      }
+    }
+  }
+}'
+
+							
+   ##------------------------------------------------------------------------------
+				
+   nADCcounts: 100
+   throttle_usecs: 100  # Wait this many usecs before creating the next event
+   distribution_type: 1
+
+   # Parameters configuring the fragment generator's parent class
+   # artdaq::CommandableFragmentGenerator
+
+   fragment_ids: [0]  # In the case of just one fragment, "fragment_id: 0" would also work
+   board_id: 999 
+}  		  
+
+event_builder: {
+
+  expected_fragments_per_event: 1
+  max_fragment_size_bytes: 100000000
+  buffer_count: 10
+  use_art: true
+  print_event_store_stats: false
+  verbose: true
+}
+
+######################################################################
+# The ART code
+######################################################################
+
+physics:
+{
+  analyzers:
+  {
+  
+  # n.b. if you wish to generate more than one fragment per event, toyDump should be disabled
+
+    toyDump:
+    {
+      module_type: ToyDump
+      raw_data_label: daq
+      frag_type: @local::fragment_receiver.fragment_type
+      num_adcs_to_show: 10   # Obviously this should be no more than ADC counts per fragment
+    }
+
+#    printBuildInfo: {
+#      module_type: PrintBuildInfo 
+#      buildinfo_module_label: BuildInfo 
+#      buildinfo_instance_label: DuneArtdaq 
+#    }
+
+  }
+
+  producers:
+  {
+#    BuildInfo:
+#    {
+#     module_type: DuneArtdaqBuildInfo
+#     instance_name: DuneArtdaq
+#    }
+  }   
+
+
+#  p0: [ BuildInfo ] 
+
+#  a0: [ printBuildInfo]
+
+  a1: [ toyDump ]
+
+  e1: [ out1, rootout ]
+
+#  end_paths: [ a1, e1, p0, a0]
+  end_paths: [ a1, e1 ]
+}
+
+outputs:
+{
+  out1:
+  {
+    module_type: FileDumperOutput
+    wantProductFriendlyClassName: true
+  }
+
+  rootout:
+  {
+    module_type: RootOutput
+    fileName: "/data/ptb/ptb.root"
+    compressionLevel: 0
+  }
+
+}
+
+source:
+{
+  module_type: SBNDDAQInput
+  waiting_time: 900
+  resume_after_timeout: true
+}
+
+process_name: Driver
+
+
+

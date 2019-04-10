@@ -51,6 +51,7 @@ include(BuildPlugins)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(sbndaq)
+add_subdirectory(sbn-fd)
 
 # tests
 # add_subdirectory(test)

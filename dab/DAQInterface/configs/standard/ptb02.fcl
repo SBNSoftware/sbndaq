@@ -1,12 +1,4 @@
-# FHiCL document used to run the "driver" executable. To learn more
-#  about the FHiCL language, please look at
-#  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
-# Originally taken from protoDUNE and adapted for SBND
-#
-events_to_generate: 1
-run_number: 101
-transition_timeout: 30
-debug_cout: true 
+daq: {
 
 fragment_receiver: {
 
@@ -19,8 +11,8 @@ fragment_receiver: {
    ## Variable of interest for the new PTB Fragment Generator
    ##------------------------------------------------------------------------------
 
-   #board_address: "sbnd-ptbmk2-02"
-   board_address: "192.168.230.78"
+   board_address: "sbnd-ptbmk2-02"
+   #board_address: "192.168.230.78"
 
    control_port  : 8991                               ## Default 8991 
    
@@ -67,7 +59,7 @@ fragment_receiver: {
      "ctb":{
        "sockets":{
            "receiver":{
-               "rollover":500000,
+               "rollover":5000000,
                "host":"sbnd-daq33",
                "port":8992
          },
@@ -339,92 +331,15 @@ fragment_receiver: {
 
    fragment_ids: [0]  # In the case of just one fragment, "fragment_id: 0" would also work
    board_id: 999 
+
+   destinations: { } 
+
+   routing_table_config: {
+     use_routing_master: false
+   }
+
 }  		  
 
-event_builder: {
-
-  expected_fragments_per_event: 1
-  max_fragment_size_bytes: 100000000
-  buffer_count: 10
-  use_art: true
-  print_event_store_stats: false
-  verbose: true
-  events_expected_in_SimpleQueueReader: @local::events_to_generate
-}
-
-######################################################################
-# The ART code
-######################################################################
-
-physics:
-{
-  analyzers:{}
-  
-  # n.b. if you wish to generate more than one fragment per event, toyDump should be disabled
-#
-#    toyDump:
-#    {
-#      module_type: ToyDump
-#      raw_data_label: daq
-#      frag_type: @local::fragment_receiver.fragment_type
-#      num_adcs_to_show: 10   # Obviously this should be no more than ADC counts per fragment
-#    }
-#
-#    printBuildInfo: {
-#      module_type: PrintBuildInfo 
-#      buildinfo_module_label: BuildInfo 
-#      buildinfo_instance_label: DuneArtdaq 
-#    }
-
-
-  producers:{}
-#    BuildInfo:
-#    {
-#     module_type: DuneArtdaqBuildInfo
-#     instance_name: DuneArtdaq
-#    }
-
-  filters:{}
-#  p0: [ BuildInfo ] 
-
-#  a0: [ printBuildInfo]
-
-  #a1: [ toyDump ]
-  a1: [ ]
-
-#  e1: [ out1, rootout ]
-  e1: [ rootout ]
-
-#  end_paths: [ a1, e1, p0, a0]
-#  end_paths: [ a1, e1 ]
-  end_paths: [ e1 ]
-}
-
-outputs:
-{
- # out1:
- # {
- #   module_type: FileDumperOutput
- #   wantProductFriendlyClassName: true
- # }
-
-  rootout:
-  {
-    module_type: RootOutput
-    fileName: "/data/ptb/ptb.root"
-    compressionLevel: 0
-  }
+##add metrics stuff here:
 
 }
-
-source:
-{
-  module_type: SBNDDAQInput
-  waiting_time: 900
-  resume_after_timeout: true
-}
-
-process_name: Driver
-
-
-

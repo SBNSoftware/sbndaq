@@ -46,7 +46,7 @@ fragment_receiver: {
 
   readoutMode:          0
   analogMode:           1
-  testPattern:          1
+  testPattern:          0
   channelPedestal0:  32768
   channelPedestal1:  32768
   channelPedestal2:  32768
@@ -87,7 +87,7 @@ fragment_receiver: {
   InterruptLevel: 0
   InterruptStatusID: 0
   InterruptEventNumber: 1
-  GetNextSleep: 1
+  GetNextSleep: 100
   
   CombineReadoutWindows: false
 
@@ -137,6 +137,15 @@ fragment_receiver: {
           redis_key_postfix: ":10s" 
           maxlen: 10000
           redis_key_prefix: "DABBoardReader:pmtx02:"
+          redis_passfile: "/var/adm/krb5/redis_password"
+        }
+        redis_testing: {
+          metricPluginType: "redis"
+          level: 3
+          reporting_interval: 30.0
+          redis_key_postfix: ":testing"
+          maxlen: 10000
+          redis_key_prefix: "DABBoardReader:pmtx01:"
           redis_passfile: "/var/adm/krb5/redis_password"
         }
         redis_5m: {

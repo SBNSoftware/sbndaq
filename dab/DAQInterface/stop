@@ -2,13 +2,13 @@
 
 function getStatus()
 {
-    status=`status.sh | sed -n '3p' | awk '{print $2}' | tr -d "'"`
-    [ $1 != $status ] && (echo $status)
+    status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
+    [ $1 != "$status" ] && (echo $status)
 }
 
 send_transition.sh stop
 getStatus "nil"
-while [ $status != 'ready' ]
+while [ "$status" != 'ready' ]
 do
   sleep 2
   getStatus "stopping"
@@ -16,7 +16,7 @@ done
 
 send_transition.sh terminate
 getStatus "nil"
-while [ $status != 'stopped' ]
+while [ "$status" != 'stopped' ]
 do
   sleep 2
   getStatus "terminating"

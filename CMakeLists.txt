@@ -41,7 +41,7 @@ cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
 find_ups_product( artdaq v3_03_00 )
-find_ups_product( sbndaq_artdaq_core v0_01_00 )
+find_ups_product( sbndaq_artdaq_core v0_01_04 )
 find_ups_product( cetbuildtools v7_02_01 )
 
 # macros for dictionary and simple_plugin
@@ -51,6 +51,7 @@ include(BuildPlugins)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(sbndaq)
+add_subdirectory(sbn-fd)
 
 # tests
 # add_subdirectory(test)

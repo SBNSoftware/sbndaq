@@ -18,7 +18,7 @@ while [ "$status" != 'booted' ]
 do
   sleep 2
   getStatus "booting"
-  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
 send_transition.sh config standard

@@ -5,7 +5,9 @@ fragment_receiver: {
    # Parameters defining and configuring the fragment generator to be used
    		    
    generator: TriggerBoardReader
-   fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
+   #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
+   fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
+   fragment_id: 8        # Make sure downstream modules know about this fragment_type!
 
    ##------------------------------------------------------------------------------
    ## Variable of interest for the new PTB Fragment Generator
@@ -40,17 +42,18 @@ fragment_receiver: {
 
    max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   request_port: 3001
-   #request_mode: "Buffer"   # the other interist possibility which is discussed is the "Buffer" mode
-   request_mode: "Window"   # the other interist possibility which is discussed is the "Buffer" mode
-   # request_window_offset: 2 # Request message contains tzero. Window will be from tzero - offset to tz-o + width
-   # request_window_width: 5  # These settings correspond to "two before, two after"
-   request_window_width: 500000  # 1s of window width
-   request_window_offset: 375000     
+   request_address: "227.128.7.129"
+   request_port: 3001         #UDP request port
+   #request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
+   request_mode: "Window"     # the other interesting possibility which is discussed is the "Buffer" mode
+   ## request_window_offset -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
+   ## request_window_width: -- These settings correspond to "two before, two after"
+   request_window_width:  5000000  # 100ms of window width
+   request_window_offset: 1000000  # 200ms offset    
    request_window_are_unique: true
    circular_buffer_mode: true
    separate_data_thread: true
-   data_buffer_depth_fragments: 12000
+   data_buffer_depth_fragments: 200000
    word_buffer_size: 10000
    throw_exception: true
    run_trigger_output: "/data/ptb"
@@ -61,7 +64,7 @@ fragment_receiver: {
        "sockets":{
            "receiver":{
                "rollover":5000000,
-               "host":"sbnd-daq33",
+               "host":"sbnd-daq33-priv",
                "port":8992
          },
          "monitor":{
@@ -91,7 +94,7 @@ fragment_receiver: {
            "enable":true,
            "fixed_freq":true,
            "beam_mode":false,
-           "period":50000000,
+           "period":500000,
            "seed":"0x0000ACE1",
            "thresh_lo":"0x00000001",
            "thresh_hi":"0x000F00FF"
@@ -100,7 +103,7 @@ fragment_receiver: {
            "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
            "enable":true,
            "period":66666667,
-           "width" :26666667
+           "width" :0
          },
          "timing":{
            "description":"Unbiased Trigger Control.",
@@ -330,7 +333,7 @@ fragment_receiver: {
    # Parameters configuring the fragment generator's parent class
    # artdaq::CommandableFragmentGenerator
 
-   fragment_ids: [0]  # In the case of just one fragment, "fragment_id: 0" would also work
+   #fragment_ids: [8]  # In the case of just one fragment, "fragment_id: 0" would also work
    board_id: 999 
 
    destinations: { } 

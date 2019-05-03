@@ -29,6 +29,7 @@ setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}
 
 setup artdaq_daqinterface v3_05_00
 
+setup artdaq_daqinterface v3_04_00
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

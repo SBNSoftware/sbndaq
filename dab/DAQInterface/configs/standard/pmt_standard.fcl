@@ -1,0 +1,161 @@
+daq: {
+  fragment_receiver: {
+
+    generator:   CAENV1730Readout
+    fragment_type: CAENV1730
+    max_fragment_size_bytes: 1000000
+
+    fragment_id: 0
+    board_id:    0
+    Verbosity: 1
+    SWTrigger: false
+    
+    allowTriggerOverlap: false
+
+    link: 0
+    enableReadout: 1
+    
+    boardId: 0
+    recordLength:         2000
+    maxEventsPerTransfer: 1
+    runSyncMode:          0
+    outputSignalMode:     0    
+    usePedestals:         false
+    dacValue:             32768
+    
+    # ioLevel: 0=NIM, 1=TTL
+    ioLevel:              1
+    nChannels:            16
+    
+    # extTrgMode: 0=no external triggers;   3=Front panel TRG input
+    extTrgMode:           3
+    
+    # swTrgMode:  0=no software generation; 3=software generated
+    swTrgMode:            0
+    
+    # acqMode: 0=Software Controlled, 1=Front Panel S_IN
+    acqMode:              0
+    
+    triggerPolarity:      1   
+    debugLevel:           7
+    postPercent:          70
+    eventsPerInterrupt:   1
+    irqWaitTime:          1
+    eventCounterWarning:  1       
+    memoryAlmostFull:     2    
+    
+    readoutMode:          0
+    analogMode:           1
+    testPattern:          0
+    channelPedestal0:  32768
+    channelPedestal1:  32768
+    channelPedestal2:  32768
+    channelPedestal3:  32768
+    channelPedestal4:  32768
+    channelPedestal5:  32768
+    channelPedestal6:  32768
+    channelPedestal7:  32768
+    channelPedestal8:  32768
+    channelPedestal9:  32768
+    channelPedestal10: 32768
+    channelPedestal11: 32768
+    channelPedestal12: 32768
+    channelPedestal13: 32768
+    channelPedestal14: 32768
+    channelPedestal15: 32768
+
+    channelEnable0:    true
+    channelEnable1:    true
+    channelEnable2:    true
+    channelEnable3:    true
+    channelEnable4:    true
+    channelEnable5:    true
+    channelEnable6:    true
+    channelEnable7:    true
+    channelEnable8:    true
+    channelEnable9:    true
+    channelEnable10:   true
+    channelEnable11:   true
+    channelEnable12:   true
+    channelEnable13:   true
+    channelEnable14:   true
+    channelEnable15:   true
+
+    triggerPulseWidth: 10
+    
+    BoardChainNumber: 0
+    InterruptLevel: 0
+    InterruptStatusID: 0
+    InterruptEventNumber: 1
+    GetNextSleep: 100
+    
+    CombineReadoutWindows: false
+
+    # 0 = 2 V dynamic range, 1 = 0.5 V 
+    # register 0x8028
+    dynamicRange: 0 
+
+    triggerThreshold0:  0x0000
+    triggerThreshold1:  0x0000
+    triggerThreshold2:  0x0000
+    triggerThreshold3:  0x0000
+    triggerThreshold4:  0x0000
+    triggerThreshold5:  0x0000
+    triggerThreshold6:  0x0000
+    triggerThreshold7:  0x0000
+    triggerThreshold8:  0x0000
+    triggerThreshold9:  0x0000
+    triggerThreshold10: 0x0000
+    triggerThreshold11: 0x0000
+    triggerThreshold12: 0x0000
+    triggerThreshold13: 0x0000
+    triggerThreshold14: 0x0000
+    triggerThreshold15: 0x0000
+
+    CircularBufferSize: 500e6
+
+    destinations: { }
+
+    routing_table_config: {
+      use_routing_master: false 
+    }
+
+  }  
+
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+      uniquify: true
+    }
+    redis_10s: {
+          metricPluginType: "redis"
+      level: 3
+      reporting_interval: 10.0
+      redis_key_postfix: ":10s" 
+      maxlen: 10000
+      redis_key_prefix: "DABBoardReader:pmtx01:"
+      redis_passfile: "/var/adm/krb5/redis_password"
+    }
+    redis_testing: {
+      metricPluginType: "redis"
+      level: 3
+      reporting_interval: 30.0
+      redis_key_postfix: ":testing"
+      maxlen: 10000
+      redis_key_prefix: "DABBoardReader:pmtx01:"
+      redis_passfile: "/var/adm/krb5/redis_password"
+    }
+    redis_5m: {
+      metricPluginType: "redis"
+      level: 3
+      reporting_interval: 300.0
+      redis_key_postfix: ":5m" 
+      maxlen: 10000
+      redis_key_prefix: "DABBoardReader:pmtx01:"
+      redis_passfile: "/var/adm/krb5/redis_password"
+    }
+  }
+}

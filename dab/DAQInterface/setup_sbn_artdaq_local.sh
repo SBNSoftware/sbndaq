@@ -2,6 +2,8 @@
 source /daq/software/products/setup
 setup mrb
 
+export DAQINTERFACE_PARTITION_NUMBER=1
+
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
 SBNDAQ_VERSION="v0_02_01"

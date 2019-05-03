@@ -42,7 +42,7 @@ fragment_receiver: {
 
    max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   request_address: "227.128.7.129"
+   request_address: "227.128.1.129"
    request_port: 3001         #UDP request port
    #request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
    request_mode: "Window"     # the other interesting possibility which is discussed is the "Buffer" mode

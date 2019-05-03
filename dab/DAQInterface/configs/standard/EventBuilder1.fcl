@@ -23,8 +23,8 @@ daq: {
 	buffer_count: 200
 	max_incomplete_events: 75 # Same as boardreader sync interval
 	verbose: true
-	send_requests: true
-        request_address: "227.128.7.129"
+	send_requests: false
+        request_address: "227.128.1.129"
         request_port: 3001
         num_requests: 500
 

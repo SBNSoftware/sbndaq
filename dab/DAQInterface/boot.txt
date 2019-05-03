@@ -13,11 +13,11 @@ EventBuilder label: EventBuilder1
 DataLogger host: localhost
 DataLogger label: DataLogger1
 
-# DataLogger host: localhost
-# DataLogger label: DataLogger2
+DataLogger host: localhost
+DataLogger label: DataLogger2
 
-# DataLogger host: localhost
-# DataLogger label: DataLogger3
+DataLogger host: localhost
+DataLogger label: DataLogger3
 
 # DataLogger host: localhost
 # DataLogger label: DataLogger4

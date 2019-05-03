@@ -55,7 +55,7 @@ fragment_receiver: {
    separate_data_thread: true
    data_buffer_depth_fragments: 200000
    word_buffer_size: 10000
-   throw_exception: true
+   throw_exception: false
    run_trigger_output: "/data/ptb"
    receiver_timeout_scaling: 4
 

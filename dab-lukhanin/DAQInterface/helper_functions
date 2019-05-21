@@ -1,0 +1,230 @@
+#!/bin/bash
+
+ups active |grep daq  2>&1
+
+source $TRACE_BIN/trace_functions.sh
+
+export TRACE_FILE=/dev/shm/trace_buffer_$USER
+#export  TRACE_FILE=/proc/trace/buffer
+export TRACE_NAME=TRACE
+
+#tlvls 
+tenv |grep FILE
+#wholink
+
+setup valgrind v3_13_0
+setup gdb v8_1
+timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+
+
+
+function load_trace() {
+  rm -rf $TRACE_FILE
+  export TRACE_MSGMAX=800
+  export TRACE_NUMENTS=2000000
+  export TRACE_NAME=TRACE
+}
+
+
+
+#function valgrind_pmtx01(){
+# local dev=pmtx01
+#timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+# valgrind  --tool=memcheck  \
+#           --error-limit=no \
+#           --demangle=yes \
+#           --track-origins=yes \
+#           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+#  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+# 
+#}
+
+
+function valgrind_pmtx01(){
+ local dev=pmtx01
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+ 
+}
+
+
+function valgrind_pmtx02(){
+ local dev=pmtx02
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1  |tee  "./logs/$dev-$timestamp.log"
+}
+
+function valgrind_pmtx03(){
+ local dev=pmtx03
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+ 
+}
+
+
+function valgrind_pmtx04(){
+ local dev=pmtx04
+ timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ valgrind  --tool=memcheck  \
+           --error-limit=no \
+           --log-file="./logs/$dev-valgrind-$timestamp.log" \
+  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1  |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx01_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx01_metrics* |head -1) |grep Rate
+}
+
+
+function pmtx02_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx02_metrics* |head -1) |grep Rate
+}
+
+function pmtx03_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx03_metrics* |head -1) |grep Rate
+}
+
+
+function pmtx04_monitor_rate(){
+ tail -10f  $(ls -t  /data1/pmtx04_metrics* |head -1) |grep Rate
+}
+
+function pmtx01_monitor_trace(){
+ local dev=pmtx01
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function pmtx02_monitor_trace(){
+ local dev=pmtx02
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function pmtx03_monitor_trace(){
+ local dev=pmtx03
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function pmtx04_monitor_trace(){
+ local dev=pmtx04
+ brpid=$(wholink |grep $dev  |cut -d" " -f2)
+ while true ; do
+ sleep 1
+ tshow  |head -160 | grep $brpid |  grep Releasing |tdelta -ct 1 -d 1 |sort -k4  |awk '{printf ("%s Releasing event %s in buffer %s\n", $3 , $13, $16)}' |head -1
+ done 
+}
+
+function valgrind_pmtx01_log() {
+less  $(ls -t valgrind_*01 |head -1)
+}
+
+function valgrind_pmtx02_log() {
+less  $(ls -t valgrind_*02 |head -1)
+}
+
+function valgrind_pmtx03_log() {
+less  $(ls -t valgrind_*01 |head -1)
+}
+
+function valgrind_pmtx03_log() {
+less  $(ls -t valgrind_*02 |head -1)
+}
+
+function pmtx01(){
+	local dev=pmtx01
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+# LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx02(){
+	local dev=pmtx02
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx03(){
+	local dev=pmtx03
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+# LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so 
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+function pmtx04(){
+	local dev=pmtx04
+  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
+ #LD_PRELOAD=/software/products/gcc/v6_4_0/Linux64bit+3.10-2.17/lib64/libasan.so  
+ artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
+}
+
+
+function info_testdriver(){
+  ls -al $(which readfhicl)
+  ldd $(which artdaqDriver)
+}
+
+
+function config_trace(){
+tonMg 0-63
+
+#kill noise
+toffM 0-63 -n SharedMemoryManager 
+toffM 0-63 -n TraceLock
+toffM 0-63 -n TraceLock
+toffM 0-63 -n SharedMemoryEventReceiver
+toffM 0-63 -n _SharedMemoryEventManager
+toffM 0-63 -n Aggregator2_CommandableInterface
+toffM 0-63 -n Aggregator1_CommandableInterface
+toffM 0-63 -n EventBuilder1_CommandableInterface
+toffM 0-63 -n BoardReader_CommandableInterface
+}
+
+function ttrig(){
+     post_entries=$1;
+     tonTg 0-63;
+     tmodeM 1;
+     cntl_ver=`tinfo | awk '/trace.h/{print$5;}'`;
+     test $cntl_ver -le 830 && tcntl trig -- -1 $post_entries || tcntl trig $post_entries;
+     tinfo | egrep 'entries|full|mode|trig'
+}
+
+function mute_traces(){
+  tonMg 0-1; toffMg 2-63
+  tonSg 0-1; toffSg 2-63
+}
+
+
+function ttrig_configure(){
+#tonMg 0-3; toffMg 4-63
+treset; ttrig `tinfo | awk '/num_entries/{print$3;}'`
+}
+
+
+#if [[ -e $LOCAL_PRODUCTS/../artdaq-utilities-daqinterface ]]; then
+# unsetup -j artdaq_daqinterface  2>&1
+# export ARTDAQ_DAQINTERFACE_DIR=$LOCAL_PRODUCTS/../artdaq-utilities-daqinterface
+# export ARTDAQ_DAQINTERFACE_VERSION=1.0
+# export PATH=$ARTDAQ_DAQINTERFACE_DIR/bin:$PATH
+#fi
+

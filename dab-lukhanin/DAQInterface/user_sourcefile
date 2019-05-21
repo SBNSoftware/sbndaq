@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+ulimit -S -c unlimited
+
+[[ $0 != $BASH_SOURCE ]] && export MYDAQ_CONFIG_DIR=$(dirname $(readlink -e $BASH_SOURCE))
+
+if [[ -z ${MYDAQ_CONFIG_DIR+x} ]]; then
+   echo "Variable \"$MYDAQ_CONFIG_DIR\" is unset" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=4
+   return
+fi
+
+if [[ ! -d $MYDAQ_CONFIG_DIR  ]]; then
+   echo "Unable to find directory \"$MYDAQ_CONFIG_DIR\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=5
+   return
+fi
+
+export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
+export DAQINTERFACE_SETTINGS=$MYDAQ_CONFIG_DIR/user_settings
+export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$MYDAQ_CONFIG_DIR/known_boardreaders_list
+export DAQINTERFACE_FHICL_DIRECTORY=$MYDAQ_CONFIG_DIR/configs
+export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$MYDAQ_CONFIG_DIR/critical_process_list
+
+#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+
+if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
+   echo "Unable to find settings file \"$DAQINTERFACE_SETTINGS\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=1
+   return 
+fi
+
+if [[ ! -e $DAQINTERFACE_KNOWN_BOARDREADERS_LIST ]]; then
+   echo "Unable to find boardreaders list file \"$DAQINTERFACE_KNOWN_BOARDREADERS_LIST\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=2
+   return 
+fi
+
+if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_DIRECTORY ]]; then
+   echo "Unable to find FHiCL configuration directory \"$DAQINTERFACE_FHICL_DIRECTORY\"" >&2
+   export DAQINTERFACE_USER_SOURCEFILE_ERRNO=3
+   return
+elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
+	 echo "Configuring artdaq_database"
+   source /software/products/setup; setup artdaq_database v1_04_70 -q e15:prof:s67
+   export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:27037/sbn_db"
+	 export ARTDAQ_DATABASE_CONFDIR=/software/database/config
+fi
+
+export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

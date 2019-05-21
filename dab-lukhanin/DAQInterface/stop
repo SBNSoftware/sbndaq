@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function getStatus()
+{
+   status=$(status.sh | grep "String:" | awk '{print $2}' | tr -d "'")
+  echo $status
+}
+
+getStatus
+send_transition.sh stop
+getStatus
+while [ $status != 'ready' ]
+do
+  sleep 1
+  getStatus
+done
+
+send_transition.sh terminate
+getStatus
+while [ $status != 'stopped' ]
+do
+  sleep 1
+  getStatus
+done
+

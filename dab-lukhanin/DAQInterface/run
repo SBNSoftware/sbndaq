@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+function getStatus()
+{
+	status=$(status.sh | grep "String:" | awk '{print $2}' | tr -d "'")
+  echo $status
+}
+
+getStatus
+setdaqcomps.sh pmt01 pmt02 pmt03 pmt04
+
+#setdaqcomps.sh pmt01
+#setdaqcomps.sh pmt03 pmt04
+send_transition.sh boot boot.txt
+getStatus
+while [ $status != 'booted' ]
+do
+  sleep 1
+  getStatus
+done
+
+send_transition.sh config standard
+getStatus
+while [ $status != 'ready' ]
+do
+  sleep 1
+  getStatus
+done
+
+#for i in $(pgrep boardreader); do taskset -cp 1-15 $i; done
+#for i in $(pgrep eventbuilder); do taskset -cp 1-15 $i; done
+
+send_transition.sh start
+getStatus
+sleep 1
+getStatus
+while [ $status != 'running' ]
+do
+  sleep 1
+  getStatus
+done
+
+#for i in $(pgrep boardreader); do taskset -cp 4-15 $i; done
+#for i in $(pgrep eventbuilder); do taskset -cp 4-15 $i; done
+

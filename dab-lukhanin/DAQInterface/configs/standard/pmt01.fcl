@@ -1,0 +1,6 @@
+#include "pmt_standard.fcl"
+daq.fragment_receiver.fragment_id: 0
+daq.fragment_receiver.link: 0
+daq.metrics.brFile.fileName : "/data1/pmtx01_metrics.log"
+daq.metrics.graphite.namespace: "artdaq.pmtx01."
+

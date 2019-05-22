@@ -19,9 +19,9 @@ fi
 
 source $LOCAL_PRODUCTS/setup
 #unsetup -j artdaq_daqinterface
-setup sbndaq v0_01_07 -q e17:prof
+setup sbndaq v0_02_00 -q e17:prof
 
-setup artdaq_daqinterface v3_03_01T111318rc
+setup artdaq_daqinterface v3_05_00
 
 
 #Trace setup for debugging:

@@ -27,6 +27,9 @@ daq: {
         request_address: "227.128.1.129"
         request_port: 3001
         num_requests: 500
+        stale_buffer_timeout_usec: 10000000
+        # max_fragment_size_bytes: 400000
+        # incomplete_event_report_interval_ms: 1000
 
 	routing_token_config: {
 	use_routing_master: false

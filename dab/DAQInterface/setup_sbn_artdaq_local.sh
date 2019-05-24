@@ -2,7 +2,6 @@
 source /daq/software/products/setup
 setup mrb
 
-export DAQINTERFACE_PARTITION_NUMBER=1
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
@@ -29,7 +28,7 @@ setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}
 
 setup artdaq_daqinterface v3_05_00
 
-setup artdaq_daqinterface v3_04_00
+setup artdaq_daqinterface v3_05_00
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

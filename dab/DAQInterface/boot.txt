@@ -19,8 +19,8 @@ DataLogger label: DataLogger2
 DataLogger host: localhost
 DataLogger label: DataLogger3
 
-# DataLogger host: localhost
-# DataLogger label: DataLogger4
+DataLogger host: localhost
+DataLogger label: DataLogger4
 
 Dispatcher host: localhost
 Dispatcher label: Dispatcher1

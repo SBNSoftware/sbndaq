@@ -3,14 +3,15 @@
 function getStatus()
 {
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-  [ $1 != "$status" ] && (echo $status)
+#  [ $1 != "$status" ] && (echo $status)
+  echo $status
 }
 
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 
-#setdaqcomps.sh ptb01 pmtx01
+#setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01
+setdaqcomps.sh pmtx04
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -18,7 +19,7 @@ while [ "$status" != 'booted' ]
 do
   sleep 2
   getStatus "booting"
-  [ $status == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
 send_transition.sh config standard

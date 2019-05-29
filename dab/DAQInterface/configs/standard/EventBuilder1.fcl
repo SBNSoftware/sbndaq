@@ -20,10 +20,13 @@ daq: {
 	max_fragment_size_bytes: 16777216
 	use_art: true
 	print_event_store_stats: true
-	buffer_count: 20
+	buffer_count: 200
 	max_incomplete_events: 75 # Same as boardreader sync interval
 	verbose: true
-	send_requests: false
+	send_requests: true
+        request_address: "227.128.7.129"
+        request_port: 3001
+        num_requests: 500
 
 	routing_token_config: {
 	use_routing_master: false

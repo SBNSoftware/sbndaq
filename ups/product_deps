@@ -33,7 +33,7 @@ flcdir  product_dir     fcl
 
 product              version
 sbndaq_artdaq	     v0_02_01
-artdaq_mpich_plugin  v1_00_06
+artdaq_mpich_plugin  v1_00_07
 cetbuildtools        v7_02_01       -       only_for_build
 end_product_list
 

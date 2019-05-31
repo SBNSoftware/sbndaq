@@ -23,6 +23,5 @@ DataLogger label: DataLogger1
 # DataLogger label: DataLogger4
 
 Dispatcher host: localhost
-Dispatcher port: 7166
 Dispatcher label: Dispatcher1
 

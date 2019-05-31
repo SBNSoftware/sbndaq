@@ -3,7 +3,8 @@
 function getStatus()
 {
     status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-    [ $1 != "$status" ] && (echo $status)
+#    [ $1 != "$status" ] && (echo $status)
+  echo $status
 }
 
 send_transition.sh stop

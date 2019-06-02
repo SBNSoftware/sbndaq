@@ -94,8 +94,8 @@ fragment_receiver: {
            "enable":true,
            "fixed_freq":true,
            "beam_mode":false,
-           "period":500000,
-           "seed":"0x0000ACE1",
+           "period":50000000,
+           "seed":"0x0CDFACE1",
            "thresh_lo":"0x00000001",
            "thresh_hi":"0x000F00FF"
          },

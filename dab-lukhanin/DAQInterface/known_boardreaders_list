@@ -1,24 +1,24 @@
-ptb01 localhost -1 1 1-15
-ptb02 localhost -1 1 1-15
-gps   localhost -1 1 1-15
-tpc01 sbnd-daq34.fnal.gov -1 1 1-15
-tpc01 sbnd-daq34 -1 1 1-15
-tpc02 localhost -1 1 1-15
-tpc03 localhost -1 1 1-15
-tpc04 localhost -1 1 1-15 
-tpc05 localhost -1 1 1-15
-tpc06 localhost -1 1 1-15
-tpc07 localhost -1 1 1-15
-tpc08 localhost -1 1 1-15
-tpc09 localhost -1 1 1-15
-tpc10 localhost -1 1 1-15
-pmt01 localhost -1 1 1-15
-pmt02 localhost -1 1 1-15
-pmt03 localhost -1 1 1-15
-pmt04 localhost -1 1 1-15
-pmt05 localhost -1 1 1-15
-pmt06 localhost -1 1 1-15
-pmt07 localhost -1 1 1-15
-pmt08 localhost -1 1 1-15
-pmt09 localhost -1 1 1-15
-pmt10 localhost -1 1 1-15
+ptb01 localhost -1 
+ptb02 localhost -1 
+gps   localhost -1 
+tpc01 sbnd-daq34.fnal.gov -1 
+tpc01 sbnd-daq34 -1 
+tpc02 localhost -1 
+tpc03 localhost -1 
+tpc04 localhost -1
+tpc05 localhost -1
+tpc06 localhost -1
+tpc07 localhost -1
+tpc08 localhost -1
+tpc09 localhost -1
+tpc10 localhost -1
+pmt01 localhost -1
+pmt02 localhost -1
+pmt03 localhost -1
+pmt04 localhost -1
+pmt05 localhost -1
+pmt06 localhost -1
+pmt07 localhost -1
+pmt08 localhost -1
+pmt09 localhost -1
+pmt10 localhost -1

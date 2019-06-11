@@ -19,7 +19,7 @@ do
   getStatus
 done
 
-send_transition.sh config standard
+send_transition.sh config test_lukhanin
 getStatus
 while [ $status != 'ready' ]
 do

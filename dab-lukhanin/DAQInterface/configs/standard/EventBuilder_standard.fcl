@@ -19,11 +19,11 @@ daq: {
 	expected_fragments_per_event: 0  # Will be set by DAQInterface
 	
   stale_buffer_timeout_usec: 10000000
-	buffer_count: 25
+	buffer_count: 50
 
 	verbose: false
   max_fragment_size_bytes: 400000
-  incomplete_event_report_interval_ms: 1000
+  incomplete_event_report_interval_ms: 100
 	send_requests: false
 	use_art: true
 	print_event_store_stats: false
@@ -75,7 +75,7 @@ physics: {
    
   a1: [ ]
 
-  #my_output_modules: [  ]
+# my_output_modules: [  ]
   my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
 }

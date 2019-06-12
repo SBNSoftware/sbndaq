@@ -35,7 +35,7 @@ daq: {
       metricPluginType: "file"
       level: 3
 
-  	  fileName: "/data1/dl01_metrics.log"
+  	  fileName: "/scratch/log/dl01_metrics.log"
       uniquify: true
     } 
     graphite: {
@@ -56,7 +56,7 @@ source: {
 outputs: {
   normalOutput: {
     module_type: RootOutput
-    fileName: "/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/scratch/data/itestsbndaq_r%06r_sr%02s_%to_%#.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -84,5 +84,8 @@ physics: {
   #my_output_modules: [ ]
   #my_output_modules: [ normalOutput ]
   my_output_modules: [rootNetOutput, normalOutput ]
+
+  trigger_paths: [ p2 ]
+  end_paths: [ my_output_modules ]
 }
 process_name: DAQDL

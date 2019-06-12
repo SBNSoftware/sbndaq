@@ -1,3 +1,4 @@
+toy localhost -1
 ptb01 localhost -1
 ptb02 localhost -1
 gps   localhost -1

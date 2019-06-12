@@ -13,10 +13,10 @@
 # directory containing the xmlrpc_c package (needed for DAQInterface
 # to receive commands)
 
-log_directory: /log
-record_directory: /run_records
+log_directory: /home/nfs/gputnam/workshop/sbndaq/srcs/sbndaq/dab/DAQInterface/log
+record_directory: /home/nfs/gputnam/workshop/sbndaq/srcs/sbndaq/dab/DAQInterface/log/run_records
 package_hashes_to_save: [ ]
-productsdir_for_bash_scripts: /software/products
+productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
 boardreader timeout: 600
 eventbuilder timeout: 90

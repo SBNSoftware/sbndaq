@@ -1,0 +1,27 @@
+
+# JCF, Sep-16-2017
+
+# This file is an example of a settings file which would work with an
+# artdaq-demo installation, assuming the installation was performed
+# with artdaq-demo's quick-mrb-start.sh script. It is valid as of
+# artdaq-demo v2_10_02; more details on artdaq-demo installation can
+# be found in
+# https://cdcvs.fnal.gov/redmine/projects/artdaq-demo/wiki. Note that
+# the user will need to (A) make sure that a directory called
+# $HOME/run_records has been created and (B) make sure to set the
+# productsdir_for_bash_scripts variable, below, to a products
+# directory containing the xmlrpc_c package (needed for DAQInterface
+# to receive commands)
+
+log_directory: /log
+record_directory: /run_records
+package_hashes_to_save: [ ]
+productsdir_for_bash_scripts: /software/products
+max_configurations_to_list: 20
+boardreader timeout: 600
+eventbuilder timeout: 90
+aggregator timeout: 90
+
+max_fragment_size_bytes: 10000000
+
+all_events_to_all_dispatchers: true

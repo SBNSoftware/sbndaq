@@ -1,0 +1,29 @@
+  daq: {
+fragment_receiver: {
+
+   # Parameters defining and configuring the fragment generator to be used
+
+   generator: ToySimulator
+   fragment_type: TOY2        # Make sure downstream modules know about this fragment_type!
+   nADCcounts: 100
+   distribution_type: 1
+   throttle_usecs: 100000
+   random_seed: 6514
+
+   # Parameters configuring the fragment generator's parent class
+   # artdaq::CommandableFragmentGenerator
+
+   fragment_id: 0
+   board_id: 0
+
+  destinations: { }
+
+  routing_table_config: {
+  use_routing_master: false 
+  }
+
+}  
+
+
+  metrics: {}
+}

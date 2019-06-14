@@ -7,7 +7,7 @@ fragment_receiver: {
    fragment_type: TOY2        # Make sure downstream modules know about this fragment_type!
    nADCcounts: 100
    distribution_type: 1
-   throttle_usecs: 100000
+   throttle_usecs: 1000000
    random_seed: 6514
 
    # Parameters configuring the fragment generator's parent class

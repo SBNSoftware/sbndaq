@@ -64,10 +64,13 @@ physics: {
 
   filters: {}
 
-   
+  p1: [ ]   
   a1: [ ]
   my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
+
+  trigger_paths: [ p1 ]
+  end_paths: [ my_output_modules ]
 }
 source: {
   module_type: IcarusInput

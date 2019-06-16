@@ -4,16 +4,6 @@ daq: {
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
-   
-    ## Pull mode parameters
-    request_address: "227.128.7.129" # multicast request address
-    request_port: 3001   # UDP request port
-    request_mode: window # pull mode
-    request_window_offset: 1000000 
-    request_window_width: 5000000
-    request_windows_are_unique: true
-    separate_data_thread: true
-    stale_request_timeout: 200000000
 
     fragment_id: 0
     board_id:    0
@@ -137,7 +127,7 @@ daq: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/daq/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
       uniquify: true
     }
     # redis_10s: {

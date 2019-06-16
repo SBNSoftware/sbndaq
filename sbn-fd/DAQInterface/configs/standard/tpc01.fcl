@@ -5,8 +5,8 @@ daq:
 {
   fragment_receiver: 
   {
-    generator: NevisTPCNUXMIT # Generator of the XMIT NU stream
-    #  generator: NevisTPCData # fake triggers
+    #  generator: NevisTPCNUXMIT # Generator of the XMIT NU stream
+    generator: NevisTPCData
     fragment_type: NevisTPC
     fragment_id: 0 
     board_id: 0

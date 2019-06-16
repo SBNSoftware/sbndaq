@@ -1,29 +1,16 @@
-toy localhost -1
-ptb01 localhost -1
-ptb02 localhost -1
 gps   localhost -1
-tpc01 localhost -1
-tpc02 localhost -1
-tpc03 localhost -1
-tpc04 localhost -1
-tpc05 localhost -1
-tpc06 localhost -1
-tpc07 localhost -1
-tpc08 localhost -1
-tpc09 localhost -1
-tpc10 localhost -1
-tpc11 localhost -1
-tpc12 localhost -1
-tpc13 localhost -1
-tpc14 localhost -1
-tpc15 localhost -1
-tpc16 localhost -1
-tpc17 localhost -1
-tpc18 localhost -1
-tpc19 localhost -1
-tpc20 localhost -1
-icarustpc01 sbnd-daq34 -1
-pmt01 sbnd-daq33 -1
+
+icarustpc01 localhost -1
+icarustpc02 localhost -1
+icarustpc03 localhost -1
+icarustpc04 localhost -1
+icarustpc05 localhost -1
+icarustpc06 localhost -1
+icarustpc07 localhost -1
+icarustpc08 localhost -1
+icarustpc09 localhost -1
+
+pmt01 localhost -1
 pmt02 localhost -1
 pmt03 localhost -1
 pmt04 localhost -1
@@ -43,8 +30,10 @@ pmt17 localhost -1
 pmt18 localhost -1
 pmt19 localhost -1
 pmt20 localhost -1
+
 pmtx01 localhost -1
 pmtx02 localhost -1
 pmtx03 localhost -1
 pmtx04 localhost -1
+
 component01 localhost -1

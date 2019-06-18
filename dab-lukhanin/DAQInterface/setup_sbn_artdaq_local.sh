@@ -3,7 +3,7 @@ use_mrb=true
 PWD_DIR=$(pwd)
 echo "PWD_DIR=$PWD_DIR"
 
-source /software/products/setup 2>&1
+source /daq/software/products/setup 2>&1
 unsetup_all 2>&1 > /dev/null
 
 unset PRODUCTS
@@ -11,8 +11,8 @@ unset LD_LIBRARY_PATH
 
 export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
-source /software/products/setup 2>&1
-source /software/products_dev/setup 2>&1
+source /daq/software/products/setup 2>&1
+source /daq/software/products_dev/setup 2>&1
 
 export MRB_TOP=$(dirname $PWD_DIR)
 

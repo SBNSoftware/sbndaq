@@ -25,21 +25,6 @@ function load_trace() {
   export TRACE_NAME=TRACE
 }
 
-
-
-#function valgrind_pmtx01(){
-# local dev=pmtx01
-#timestamp=$(date -d "today" +"%Y%m%d%H%M%S")
-# valgrind  --tool=memcheck  \
-#           --error-limit=no \
-#           --demangle=yes \
-#           --track-origins=yes \
-#           --log-file="./logs/$dev-valgrind-$timestamp.log" \
-#  artdaqDriver -c ./CAENV1730ReadoutDriver$dev.fcl 2>&1 |tee  "./logs/$dev-$timestamp.log"
-# 
-#}
-
-
 function valgrind_pmtx01(){
  local dev=pmtx01
  timestamp=$(date -d "today" +"%Y%m%d%H%M%S")

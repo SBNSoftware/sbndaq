@@ -14,7 +14,7 @@
 log_directory: ${MRB_TOP}/log
 record_directory: ${MRB_TOP}/run_records
 package_hashes_to_save: [ sbndaq_artdaq, sbndaq_artdaq_core, icarus_artdaq_base ]
-productsdir_for_bash_scripts: /software/products
+productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
 
 boardreader timeout: 30

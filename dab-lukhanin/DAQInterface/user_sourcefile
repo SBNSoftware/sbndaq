@@ -43,9 +43,9 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
 	 echo "Configuring artdaq_database"
-   source /software/products/setup; setup artdaq_database v1_04_71 -q e15:prof:s67
+   source /software/products/setup; setup artdaq_database v1_04_71 -q e17:prof:s82
    export	ARTDAQ_DATABASE_URI="mongodb://sbndaq:g8Sgx5HkY3ZCgkQW2R2a@192.168.230.13:28047,192.168.230.14:28047/sbndaq_db?replicaSet=rs0&authSource=admin"
-	 export ARTDAQ_DATABASE_CONFDIR=/software/database/config
+	 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 fi
 
 export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

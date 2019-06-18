@@ -5,7 +5,7 @@ export TRACE_FILE=/dev/shm/trace_buffer_$USER
 export TRACE_NAME=TRACE
 
 
-source /software/products/setup
+source /daq/software/products/setup
 unsetup_all 2>&1 > /dev/null
 
 unset PRODUCTS
@@ -15,8 +15,8 @@ export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/loca
 unset ARTDAQ_DAQINTERFACE_VERSION
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
-source /software/products/setup
-source /software/products_dev/setup
+source /daq/software/products/setup
+source /daq/software/products_dev/setup
 
 setup artdaq_daqinterface v3_05_00_FB22258 2>&1
 

@@ -1,23 +1,23 @@
-ptb01 sbnd-daq33-priv -1 
-ptb02 sbnd-daq33-priv -1 
-gps   sbnd-daq33-priv -1 
-tpc01 sbn-daq01-priv -1 
-tpc02 sbn-daq01-priv -1 
-tpc03 sbnd-daq33-priv -1 
-tpc04 sbnd-daq33-priv -1
-tpc05 sbnd-daq33-priv -1
-tpc06 sbnd-daq33-priv -1
-tpc07 sbnd-daq33-priv -1
-tpc08 sbnd-daq33-priv -1
-tpc09 sbnd-daq33-priv -1
-tpc10 sbnd-daq33-priv -1
-pmt01 sbnd-daq33-priv -1
-pmt02 sbnd-daq33-priv -1
-pmt03 sbnd-daq33-priv -1
-pmt04 sbnd-daq33-priv -1
-pmt05 sbnd-daq33-priv -1
-pmt06 sbnd-daq33-priv -1
-pmt07 sbnd-daq33-priv -1
-pmt08 sbnd-daq33-priv -1
-pmt09 sbnd-daq33-priv -1
-pmt10 sbnd-daq33-priv -1
+ptb01 sbnd-daq33-priv -1 1 1-7
+ptb02 sbnd-daq33-priv -1 1 1-7
+gps   sbnd-daq33-priv -1 1 1-7
+tpc01 sbn-daq01-priv  -1 1 1-7
+tpc02 sbn-daq01-priv  -1 1 1-7
+tpc03 sbnd-daq33-priv -1 1 1-7
+tpc04 sbnd-daq33-priv -1 1 1-7
+tpc05 sbnd-daq33-priv -1 1 1-7
+tpc06 sbnd-daq33-priv -1 1 1-7
+tpc07 sbnd-daq33-priv -1 1 1-7
+tpc08 sbnd-daq33-priv -1 1 1-7
+tpc09 sbnd-daq33-priv -1 1 1-7
+tpc10 sbnd-daq33-priv -1 1 1-7
+pmt01 sbnd-daq33-priv -1 1 1-7
+pmt02 sbnd-daq33-priv -1 1 1-7
+pmt03 sbnd-daq33-priv -1 1 1-7
+pmt04 sbnd-daq33-priv -1 1 1-7
+pmt05 sbnd-daq33-priv -1 1 1-7
+pmt06 sbnd-daq33-priv -1 1 1-7
+pmt07 sbnd-daq33-priv -1 1 1-7
+pmt08 sbnd-daq33-priv -1 1 1-7
+pmt09 sbnd-daq33-priv -1 1 1-7
+pmt10 sbnd-daq33-priv -1 1 1-7

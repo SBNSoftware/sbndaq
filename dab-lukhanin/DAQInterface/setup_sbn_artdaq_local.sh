@@ -16,7 +16,7 @@ source /software/products_dev/setup 2>&1
 
 export MRB_TOP=$(dirname $PWD_DIR)
 
-LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_02_00_e17_prof"
+LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_02_01_e17_prof"
 
 if [[ "$use_mrb" == "true" ]];  then
   export PRODUCTS=$LOCAL_PRODUCTS:$PRODUCTS
@@ -32,8 +32,9 @@ export TRACE_NAME=TRACE
 
 
 rqual=prof
+squal=s82
 setup mrb
-setup sbndaq v0_01_08 -q e17:$rqual
+setup sbndaq v0_02_02 -q e17:$rqual:$squal
 
 export DAQINTERFACE_PARTITION_NUMBER=1
 

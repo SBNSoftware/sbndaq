@@ -1,54 +1,104 @@
-  daq: {
-fragment_receiver: {
+# Test the Nevis XMIT readout with external triggers
 
-   # Parameters defining and configuring the fragment generator to be used
-   		    
-   generator: PhysCrateData 
+dma_buffer_size:1000000
+daq:
+{
+  fragment_receiver: 
+  {
+    generator: NevisTPCNUXMIT # Generator of the XMIT NU stream
+    # generator: NevisTPCData # fake triggers
+    fragment_type: NevisTPC
+    fragment_id: 0 
+    board_id: 0
+  
+    SamplesPerChannel: 1861 # 7675
 
-   # Parameters configuring the fragment generator's parent class
-   # artdaq::CommandableFragmentGenerator
+    ChunkSize: @local::dma_buffer_size
+    MonitorPeriod: 12 # Period in seconds to read electronics status
+    DumpBinary: false # Write binary file before the artdaq back-end
+    DumpBinaryDir: "." # Directory for binary file dump
+    SubrunCheckPeriod: 10000 # Period in microseconds to check if a new subrun is needed 
 
-   fragment_id: 0
-   board_id: 0
+    ### Configuration of the Nevis Crate ###
+    ### For Nevis test stand ###
+    # Configuration of the Nevis Crate at the LArIAT VST test stand (location specific)
 
-   nADCBits: 12   
-   SamplesPerChannel: 4096
-   ChannelsPerBoard: 64
+    # Do not change block name
+    nevis_crate : 
+    { 
+      # Location of modules within crate
+      xmit_slot: 4 # Location of XMIT module
+      max_fem_slot: 14 # Location of leftmost FEM module
+      trigger_slot: 17 # Location of Trigger Board
+      # FPGA firmware
+      xmit_fpga: "/home/nfs/sbnd/jcrespo/VST/sbnddaq3/srcs/sbnddaq_readout/sbnddaq-readout/Generators/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
+      fem_fpga: "/home/nfs/sbnd/jcrespo/VST/sbnddaq3/srcs/sbnddaq_readout/sbnddaq-readout/Generators/NevisTPC/nevishwutils/fpga/feb_fpga_lar1nd"
+      # FEM settings
+      nu_compress: false
+      timesize: 621 # 2559 # Number of samples (minus one) for the 2 MHz clock
+    }
 
-   nBoards: 8
-   BoardIDs: [ 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
-   CrateID: 0x1
-   RunNumber: 1
-   CompressionScheme: 0
+    ### Configuration of the ControllerModule ###
+    # Configuration of the Nevis Controller Module
 
-   VetoPort: 7654
-   VetoHost: "137.138.194.204"
+    # Do not change block name
+    controller_module : 
+    { 
+      # Controller PCIe card settings
+      vendor_id : 0x1172 # Altera (Nevis PCIe card)
+      device_id : 0x4
+      bus : 0x9
+      device_name: neviscard_controller
+    }
 
-   DoVetoTest: true
-   DoVetoTest: false
-   VetoTestPeriod: 1e6
+    ### Configuration of the TriggerModule ###
+    # Configuration of the Nevis Trigger Module
 
-   #throttle_usecs: 1e5
-   #throttle_usecs_check: 1e4
+    # Do not change block name
+    trigger_module : 
+    {
+      # Example from MicroBooNE -- NEEDS TO BE EDITED --
+      deadtime : 0xfa
+      framesize : 4975 # 20479 # Number of samples (minus one) for the 16 MHz clock 
+      g1delay : 0x10
+      g1end : 0x1
+      g1start : 0x1
+      g1width : 0x20
+      g2delay : 0x10
+      g2end : 0x20
+      g2start : 0x1
+      g2width : 0x20
+      prescale0 : 0
+      prescale1 : 0
+      prescale8 : 0
+      prescale9 : 0
+      timeinfo_directory : "/data/uboonedaq/metadata"
+      trigmask0 : 0
+      trigmask1 : 0
+      trigmask8 : 0x132
+    }
 
-   #random_seed: 314159
+    ### Configuration of the XMITReader for the NU stream ###
+    # Configuration of the XMITReader for the Nevis XMIT NU stream
 
+    # The block name must match the name of the XMITReader instance of sbnddaq-readout/sbnddaq-readout/Generators/NevisTPCNUXMIT.hh
+    nu_xmit_reader : 
+    { 
+       # NU stream PCIe card settings
+       vendor_id : 0x1172 # Altera (Nevis PCIe card)
+       device_id : 0x4
+       bus : 0x5
+       device_name: neviscard_nu
+       # DMA settings
+       dma_buffer_size : @local::dma_buffer_size
+       maxpoll : 1e7  
+       profile_time : false
+    }
 
-  destinations: { }
-
-  routing_table_config: {
-  use_routing_master: false 
-  }
-
-}  		  
-
-
-  metrics: {
-	brFile: {
-	  metricPluginType: "file"
-	  level: 3
-	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
-	  uniquify: true
-	}
+    destinations: { }
+    routing_table_config:
+    {
+      use_routine_master: false
+    }
   }
 }

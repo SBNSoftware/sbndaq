@@ -7,7 +7,7 @@ function getStatus()
 }
 
 getStatus
-setdaqcomps.sh pmt01 pmt02 pmt03 pmt04
+setdaqcomps.sh tpc01 pmt01  
 
 #setdaqcomps.sh pmt01
 #setdaqcomps.sh pmt03 pmt04
@@ -19,7 +19,7 @@ do
   getStatus
 done
 
-send_transition.sh config test_lukhanin
+send_transition.sh config standard
 getStatus
 while [ $status != 'ready' ]
 do

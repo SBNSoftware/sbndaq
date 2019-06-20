@@ -38,14 +38,14 @@ daq: {
   	  fileName: "/data1/dl01_metrics.log"
       uniquify: true
     } 
-    graphite: {
-      level:5
-      metricPluginType: "graphite"
-      reporting_interval: 10.0
-      host:"sbn-daq02.fnal.gov"
-      port:2003
-      namespace:"artdaq.dl01."
-    } 
+    # graphite: {
+    #   level:5
+    #   metricPluginType: "graphite"
+    #   reporting_interval: 10.0
+    #   host:"sbn-daq02.fnal.gov"
+    #   port:2003
+    #   namespace:"artdaq.dl01."
+    # } 
   }
 
 }
@@ -55,13 +55,14 @@ source: {
 }
 outputs: {
   normalOutput: {
-    module_type: RootOutput
+    module_type: RootDAQOut
+    #module_type: RootOutput
     fileName: "/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
 
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 10000 
+      maxEvents: 10000
     }
 
     fastCloning: false

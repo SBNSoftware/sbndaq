@@ -49,7 +49,7 @@ daq: {
     triggerPolarity:      1   
     debugLevel:           7
     postPercent:          70
-    eventsPerInterrupt:   1
+    eventsPerInterrupt:   3
     irqWaitTime:          1
     eventCounterWarning:  1       
     memoryAlmostFull:     2    
@@ -98,6 +98,7 @@ daq: {
     InterruptStatusID: 0
     InterruptEventNumber: 1
     GetNextSleep: 100
+    GetNextFragmentsCount: 25
     
     CombineReadoutWindows: false
 

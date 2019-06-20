@@ -34,10 +34,10 @@ do
   # [ "$status" == 'stopped' ] && ( exit 1 )
 done
 
-echo "pgrep BoardReader: $(pgrep BoardReader)"
-echo "pgrep EventBuilder: $(pgrep EventBuilder)"
-for i in $(pgrep BoardReader); do taskset -cp 1-15 $i; done
-for i in $(pgrep EventBuilder); do taskset -cp 1-15 $i; done
+# echo "pgrep BoardReader: $(pgrep BoardReader)"
+# echo "pgrep EventBuilder: $(pgrep EventBuilder)"
+#for i in $(pgrep BoardReader); do taskset -cp 1-15 $i; done
+# for i in $(pgrep EventBuilder); do taskset -cp 1-15 $i; done
 
 send_transition.sh start
 # getStatus "starting"

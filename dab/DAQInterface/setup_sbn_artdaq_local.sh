@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source /daq/software/products/setup
+source /daq/software/products_dev/setup
 setup mrb
 
 
@@ -26,9 +27,8 @@ source $LOCAL_PRODUCTS/setup
 #unsetup -j artdaq_daqinterface
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}
 
-setup artdaq_daqinterface v3_05_00
-
-setup artdaq_daqinterface v3_05_00
+# setup artdaq_daqinterface v3_05_00
+setup artdaq_daqinterface v3_05_00_FB22258
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

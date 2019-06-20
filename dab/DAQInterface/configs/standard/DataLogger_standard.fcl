@@ -62,7 +62,7 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 100000
+      maxEvents: 10000
     }
 
     fastCloning: false

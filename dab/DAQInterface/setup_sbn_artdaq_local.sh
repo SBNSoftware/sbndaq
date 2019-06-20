@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source /software/products/setup
+source /daq/software/products/setup
 setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")

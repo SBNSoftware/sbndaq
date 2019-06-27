@@ -14,6 +14,8 @@ export PATH=/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/loca
 source /daq/software/products/setup 2>&1
 source /daq/software/products_dev/setup 2>&1
 
+
+#export MRB_TOP=/home/nfs/lukhanin/sbnd_artdaq/work_dirs/lukhanin-sbnd-v0_02_01-develop
 export MRB_TOP=$(dirname $PWD_DIR)
 
 LOCAL_PRODUCTS="$MRB_TOP/localProducts_sbnd_v0_02_01_e17_prof"

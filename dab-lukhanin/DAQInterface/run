@@ -12,6 +12,7 @@ setdaqcomps.sh tpc01 pmt01
 #setdaqcomps.sh pmt01
 #setdaqcomps.sh pmt03 pmt04
 send_transition.sh boot boot.txt
+
 getStatus
 while [ $status != 'booted' ]
 do
@@ -19,7 +20,9 @@ do
   getStatus
 done
 
-send_transition.sh config standard
+#send_transition.sh config standard
+send_transition.sh  config test_lukhanin
+
 getStatus
 while [ $status != 'ready' ]
 do
@@ -27,10 +30,8 @@ do
   getStatus
 done
 
-#for i in $(pgrep boardreader); do taskset -cp 1-15 $i; done
-#for i in $(pgrep eventbuilder); do taskset -cp 1-15 $i; done
-
 send_transition.sh start
+
 getStatus
 sleep 1
 getStatus
@@ -39,7 +40,3 @@ do
   sleep 1
   getStatus
 done
-
-#for i in $(pgrep boardreader); do taskset -cp 4-15 $i; done
-#for i in $(pgrep eventbuilder); do taskset -cp 4-15 $i; done
-

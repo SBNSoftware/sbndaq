@@ -18,8 +18,7 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 source /daq/software/products/setup
 source /daq/software/products_dev/setup
 
-setup artdaq_daqinterface v3_05_00_FB22258 2>&1
-
+setup artdaq_daqinterface v3_05_00_FB22785CHE8FFC2 2>&1
 
 export DAQINTERFACE_USER_SOURCEFILE=$(pwd)/user_sourcefile
 source $ARTDAQ_DAQINTERFACE_DIR/source_me

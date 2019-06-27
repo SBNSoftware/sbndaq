@@ -4,3 +4,4 @@
 
 **/core.*
 **/trace.*
+./dab-lukhanin/DAQInterface/MessageFacility.fcl

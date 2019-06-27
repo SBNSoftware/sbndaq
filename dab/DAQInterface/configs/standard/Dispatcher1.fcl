@@ -32,7 +32,7 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/aggregator/agg_%UID%_metrics.log"
       uniquify: true
     }
   }

@@ -47,7 +47,7 @@ fragment_receiver: {
 	brFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+	  fileName: "/daq/log/metrics/boardreader/br_%UID%_metrics.log"
 	  uniquify: true
 	}
   }

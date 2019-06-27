@@ -90,11 +90,11 @@ fragment_receiver: {
            "thresh_hi":"0x000F00FF"
          },
          "randomtrigger_2":{
-           "description":"Random trigger that can optionally be set to fire only outside of beam spill",
+           "description":"Random trigger @ 5Hz that can optionally be set to fire only outside of beam spill",
            "enable":true,
            "fixed_freq":true,
            "beam_mode":false,
-           "period":50000000,
+           "period": 10000000,
            "seed":"0x0CDFACE1",
            "thresh_lo":"0x00000001",
            "thresh_hi":"0x000F00FF"

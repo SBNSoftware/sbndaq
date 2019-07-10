@@ -32,9 +32,18 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
+      # fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
+      fileName: "/data1/dp01_metrics.log"
       uniquify: true
     }
+    # graphite: {
+    #   level:5
+    #   metricPluginType: "graphite"
+    #   reporting_interval: 10.0
+    #   host:"sbn-daq02.fnal.gov"
+    #   port:2003
+    #   namespace:"artdaq.dp01."
+    # } 
   }
 
 }

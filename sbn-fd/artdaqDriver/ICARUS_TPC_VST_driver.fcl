@@ -2,8 +2,8 @@
 #  about the FHiCL language, please look at
 #  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
 
-events_to_generate:500
-run_number: 2
+events_to_generate: 500
+run_number: 1
 debug_cout: true
 
 fragment_receiver: {
@@ -22,8 +22,8 @@ fragment_receiver: {
    SamplesPerChannel: 4096
    ChannelsPerBoard: 64
 
-   nBoards: 9
-   BoardIDs: [ 0x100, 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
+   # AssignBoardID: true
+   # BoardIDs: [ 0x100, 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
    CrateID: 0x1
    RunNumber: @local::run_number
    CompressionScheme: 0
@@ -34,12 +34,12 @@ fragment_receiver: {
    VetoTestPeriod: 1e6
 
    TestPulseType: 0 #0 - disable, 1 - external, 2 - internal_even, 3 - internal_odd
-   DCOffsetTestPulse: 0x8000   
+   # DACSetting: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]   
    
-   DCOffsetA: 0x8000
-   DCOffsetB: 0x8000
-   DCOffsetC: 0x8000
-   DCOffsetD: 0x8000
+   # TestPulseAmpODD:  [ 0x4000, 0x2000, 0x1000, 0x4010, 0x2010, 0x1010, 0x4100, 0x2100, 0x1100 ]
+   # TestPulseAmpEVEN: [ 0x8000, 0x6000, 0x5000, 0x8010, 0x6010, 0x5010, 0x8100, 0x6100, 0x5100 ]
+   DACOffset1: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
+   DACOffset2: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
 
    destinations:{console:{threshold:"DEBUG" type:"cout"}}
 
@@ -80,36 +80,14 @@ physics:
 {
   analyzers:
   {
-    dump:
-    {
-      module_type: PhysCrateDump
-      raw_data_label: "daq"
-      num_adcs_to_show: 1024   # Obviously this should be no more than ADC counts per fragment
-    }
-    qscan:
-    {
-      module_type: PhysCrateWriteICARUSDataFile
-      raw_data_label: "daq"
-      file_output_location: "/Data1/icartdaq"
-      file_output_name: "icartdaq_qscanFormat"
-    }
-    view:
-    {
-      module_type: PhysCrateViewer
-      raw_data_label: "daq"
-    }
-    
-}
+  }
 
   producers:
   {
   }
 
-  a1: [ dump, qscan, view ]
   p1: [ ]
   e1: [ out1, rootout ]
-  #end_paths: [ e1, a1 ]
-  #end_paths: [ e1 ]
   end_paths: [ e1 ]
 }
 
@@ -146,5 +124,4 @@ resume_after_timeout: true
 }
 
 process_name: Driver
-
 

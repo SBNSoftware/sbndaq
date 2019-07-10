@@ -1,2 +1,1 @@
- 
-udp : { type : "UDP" threshold : "INFO"  port : 30000 host : "localhost" }
+udp : { type : "UDP" threshold : "INFO"  port : 30000 host : "sbn-daq01-priv" }

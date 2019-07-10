@@ -1,16 +1,19 @@
-#!/usr/bin/env bash
-source /software/products/setup
+#!/bin/bash
+source /daq/software/products/setup
+source /daq/software/products_dev/setup
 setup mrb
+
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_02_01"
+SBNDAQ_VERSION="v0_02_02"
 SBNDAQ_QUAL1="e17"
 SBNDAQ_QUAL2="prof"
+SBNDAQ_QUAL3="s82"
 
 # your own local products directory:
-LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}"
+export LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+export LOCAL_PRODUCTS_TRY2="${HOME}/work/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
 
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
     LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
@@ -23,10 +26,10 @@ fi
 
 source $LOCAL_PRODUCTS/setup
 #unsetup -j artdaq_daqinterface
-setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}
+setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
-setup artdaq_daqinterface v3_05_00
-
+# setup artdaq_daqinterface v3_05_00
+setup artdaq_daqinterface v3_05_00_FB22258
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

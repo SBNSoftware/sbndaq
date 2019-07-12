@@ -21,7 +21,7 @@ elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
     LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
 else
     echo "localProducts not found"
-    exit 0
+    return 0
 fi
 
 source $LOCAL_PRODUCTS/setup

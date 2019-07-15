@@ -1,5 +1,7 @@
 
-# Default FEMB configuration, declared here as a local variable for later reference in the main block
+# Default FEMB configuration, declared here as a local variable for 
+#  later reference in the main block
+
 femb_config_default: 
 {
   # this must match the FEMB firmware version (hex)
@@ -52,6 +54,16 @@ femb_config_default:
   start_frame_swap: 1
 }
 
+femb_config_default_femb1: @local::femb_config_default
+femb_config_default_femb2: @local::femb_config_default
+femb_config_default_femb3: @local::femb_config_default
+femb_config_default_femb4: @local::femb_config_default
+ 
+femb_config_default_femb1.fake_word: 0xFE1
+femb_config_default_femb2.fake_word: 0xFE2
+femb_config_default_femb3.fake_word: 0xFE3
+femb_config_default_femb4.fake_word: 0xFE4
+
 
 daq:
 {
@@ -65,21 +77,8 @@ daq:
     destinations: {}
     sends_no_fragments: true 
 
-    # Four FEMB configurations
-    # All just to set the fake_word without indexing arrays
-
-    # femb_config_default_femb1: @local::femb_config_default
-    # femb_config_default_femb2: @local::femb_config_default
-    # femb_config_default_femb3: @local::femb_config_default
-    # femb_config_default_femb4: @local::femb_config_default
- 
-    # daq.fragement_receiver.femb_config_default_femb1.fake_word: 0xFE1
-    # daq.fragement_receiver.femb_config_default_femb2.fake_word: 0xFE2
-    # daq.fragement_receiver.femb_config_default_femb3.fake_word: 0xFE3
-    # daq.fragement_receiver.femb_config_default_femb4.fake_word: 0xFE4
-
     # WIB configuration
-    wib_config: 
+    WIB: 
     {
       # WIB network address string
       address: "" # can be either IP address or DNS address
@@ -93,6 +92,7 @@ daq:
       # this must match the WIB firmware version (hex)
       expected_wib_fw_version_rce: 0x18072501
       expected_wib_fw_version_felix: 0x18072501
+      expected_wib_fw_version: 0x108
 
       # this must match the WIB firmware version
       expected_daq_mode: "any" # "RCE", "FELIX", or "any"
@@ -116,7 +116,7 @@ daq:
       enable_FEMBs: [true,true,true,true] # list of 4 bools
 
       # FEMB configuration documents
-      #FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations
+      FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations
 
       # If these are true, then won't raise an exception--will keep going
       continueOnError: 

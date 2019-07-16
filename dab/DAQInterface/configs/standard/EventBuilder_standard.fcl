@@ -4,7 +4,7 @@ services: {
   }
   NetMonTransportServiceInterface: {
     service_provider: NetMonTransportService
-    #broadcast_sends: true
+    broadcast_sends: true
     destinations: {	}
 
     routing_table_config: {
@@ -12,6 +12,8 @@ services: {
     }
   }
 }
+
+## Use when running a multiple elements with one in push mode and the rest in pull mode
 daq: {
   event_builder: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
@@ -21,7 +23,8 @@ daq: {
     max_incomplete_events: 1500 # Same as boardreader sync interval
     verbose: true
     send_requests: true
-        request_address: "227.128.9.129"
+        request_address: "227.128.9.129"          # Multi-cast request address
+        multicast_interface_ip: "sbnd-daq33-priv" # needed to send requests successfully through the private network
         request_port: 3001
         num_requests: 1500
     print_event_store_stats: true
@@ -31,6 +34,7 @@ daq: {
     incomplete_event_report_interval_ms: 1000
     stale_buffer_timeout_usec: 10000000
 
+## Use when running a single subsystem in push mode
 #daq: {
 #  event_builder: {
 #    expected_fragments_per_event: 0  # Will be set by DAQInterface
@@ -41,7 +45,7 @@ daq: {
 #    verbose: false
 #    max_fragment_size_bytes: 40000000
 #    incomplete_event_report_interval_ms: 100
-#    send_requests: true
+#    send_requests: false
 #    use_art: true
 #    print_event_store_stats: false
 #    routing_token_config: {
@@ -57,14 +61,14 @@ daq: {
       fileName: "/data1/evb01_metrics.log"
       uniquify: true
     }
-    graphite: {
-      level:5
-      metricPluginType: "graphite"
-      reporting_interval: 10.0
-      host:"sbn-daq02.fnal.gov"
-      port:2003
-      namespace:"artdaq.evb01."
-    } 
+    #graphite: {
+    #  level:5
+    #  metricPluginType: "graphite"
+    #  reporting_interval: 10.0
+    #  host:"sbn-daq02.fnal.gov"
+    #  port:2003
+    #  namespace:"artdaq.evb01."
+    #} 
   }
 
 } 

@@ -1,4 +1,4 @@
-ptb01 sbn-daq01-priv -1
+ptb01 sbnd-daq33-priv -1
 ptb02 sbn-daq01-priv -1
 gps   sbnd-daq33-priv -1
 tpc01 sbn-daq01-priv -1

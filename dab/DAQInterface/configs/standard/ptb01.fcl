@@ -44,12 +44,12 @@ fragment_receiver: {
 
    request_address: "227.128.9.129"         ## -- Multi-cast request address
    request_port: 3001                       ## -- UDP request port
-   multicast_interface_ip: "sbn-daq01-priv" ## -- needed to send requests successfully through the private network
-                                            ##    should match the server where the PTB BR will run
+   multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
+                                            ##    this should match the private network address
    #request_mode: "Buffer"                  ## -- the other interesting possibility which is discussed is the "Window" mode
    request_mode: "Window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
    ## request_window_offset                 ## -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
-   ## request_window_width:                 ## -- These settings correspond to "two before, two after"
+   ## request_window_width                  ## -- These settings correspond to "two before, two after"
    request_window_width:  5000000           ## -- 5ms of window width. In ns units.
    request_window_offset: 1000000           ## -- 1ms offset. In ns units.
    request_window_are_unique: false

@@ -17,7 +17,8 @@ daq:
     MonitorPeriod: 12 # Period in seconds to read electronics status
     DumpBinary: false # Write binary file before the artdaq back-end
     DumpBinaryDir: "." # Directory for binary file dump
-    SubrunCheckPeriod: 10000 # Period in microseconds to check if a new subrun is needed 
+    #SubrunCheckPeriod: 10000 # Period in microseconds to check if a new subrun is needed 
+    SubrunCheckPeriod: -1 # Period in microseconds to check if a new subrun is needed 
 
     ### Configuration of the Nevis Crate ###
     ### For Nevis test stand ###
@@ -95,6 +96,8 @@ daq:
        profile_time : false
     }
 
+    
+    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
     destinations: { }
     routing_table_config:
     {

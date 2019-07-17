@@ -1,1 +1,2 @@
-udp : { type : "UDP" threshold : "INFO"  port : 30000 host : "sbnd-daq33-priv" }
+#udp : { type : "UDP" threshold : "INFO"  port : 30000 host : "sbnd-daq33-priv" }
+udp : { type : "UDP" threshold : "INFO"  port : 30000 host : "sbn-daq01-priv" }

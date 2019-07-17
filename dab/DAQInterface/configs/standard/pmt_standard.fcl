@@ -6,7 +6,8 @@ daq: {
     max_fragment_size_bytes: 1000000
    
     ## Pull mode parameters
-    #request_address: "227.128.9.129" # multicast request address
+    #request_address:        "227.128.9.129" # -- multicast request address
+    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
     #request_port: 3001   # UDP request port
     #request_mode: window # pull mode
     #request_window_width:  5000000 #5ms window

@@ -1,12 +1,13 @@
 #!/bin/bash
 source /daq/software/products/setup
-source /daq/software/products_dev/setup
+[[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
+
 setup mrb
 
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_02_03"
+SBNDAQ_VERSION="v0_02_04"
 SBNDAQ_QUAL1="e17"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s82"
@@ -29,7 +30,8 @@ source $LOCAL_PRODUCTS/setup
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 # setup artdaq_daqinterface v3_05_00
-setup artdaq_daqinterface v3_05_00_FB22258
+
+setup artdaq_daqinterface v3_05_00_FB22785CHE8FFC2
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

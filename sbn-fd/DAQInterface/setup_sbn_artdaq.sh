@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source /software/products/setup
-[[ -f /software/products_dev/setup ]] && /software/products_dev/setup
+[[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
 
 setup sbndaq v0_02_04 -q e17:prof:s82
 unsetup -j artdaq_daqinterface

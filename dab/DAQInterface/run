@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# change the localhost to the priv subnet
+sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility.fcl
+
 function getStatus()
 {
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`

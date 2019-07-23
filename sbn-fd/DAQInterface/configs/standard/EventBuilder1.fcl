@@ -38,7 +38,7 @@ daq: {
 	evbFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/scratch/log/evb_%UID%_metrics.log"
+	  fileName: "/scratch/log/metrics/evb_%UID%_metrics.log"
 	  uniquify: true
 	}
   }
@@ -50,7 +50,7 @@ outputs: {
   }
   normalOutput: {
     module_type: RootOutput
-    fileName: "/scratch/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileName: "/scratch/data/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 3
     fastCloning: false

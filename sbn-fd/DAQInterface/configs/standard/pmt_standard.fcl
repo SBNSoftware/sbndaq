@@ -127,7 +127,7 @@ daq: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/scratch/log/metrics/boardreader/br_%UID%_metrics.log"
       uniquify: true
     }
     # redis_10s: {

@@ -18,9 +18,9 @@ record_directory: ${HOME}/run_records
 package_hashes_to_save: [ ]
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
-boardreader timeout: 45
-eventbuilder timeout: 20
-aggregator timeout: 20
+boardreader timeout: 60
+eventbuilder timeout: 30
+aggregator timeout: 30
 
 max_fragment_size_bytes: 10000000
 

@@ -1,0 +1,79 @@
+
+services: {
+  scheduler: {
+    errorOnFailureToPut: false
+  }
+  NetMonTransportServiceInterface: {
+    service_provider: NetMonTransportService
+    #broadcast_sends: true
+	destinations: {	}
+
+	routing_table_config: {
+	    use_routing_master: false
+	}
+  }
+}
+
+daq: {
+  event_builder: {
+	expected_fragments_per_event: 0  # Will be set by DAQInterface
+
+  stale_buffer_timeout_usec: 10000000
+	buffer_count: 50
+
+	verbose: false
+  max_fragment_size_bytes: 400000
+  incomplete_event_report_interval_ms: 100
+	send_requests: false
+	use_art: true
+	print_event_store_stats: false
+	routing_token_config: {
+	use_routing_master: false
+	}
+
+	sources: { }
+  }
+  metrics: {
+	evbFile: {
+	  metricPluginType: "file"
+	  level: 3
+	  fileName: "/scratch/log/metrics/evb_%UID%_metrics.log"
+	  uniquify: true
+	}
+  }
+} 
+
+outputs: {
+  rootNetOutput: {
+    module_type: RootNetOutput
+  }
+  normalOutput: {
+    module_type: RootOutput
+    fileName: "/scratch/data/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+    compressionLevel: 3
+    fastCloning: false
+ }
+}
+
+physics: {
+  analyzers: {}
+
+  producers: {}
+
+  filters: {}
+
+  p1: [ ]   
+  a1: [ ]
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+
+  trigger_paths: [ p1 ]
+  end_paths: [ my_output_modules ]
+}
+source: {
+  module_type: IcarusInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

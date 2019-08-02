@@ -87,8 +87,10 @@ daq: {
     InterruptLevel: 0
     InterruptStatusID: 0
     InterruptEventNumber: 1
-    GetNextSleep: 100
-    
+
+    GetNextSleep: 10
+    GetNextFragmentsCount: 25    
+
     CombineReadoutWindows: false
 
     # 0 = 2 V dynamic range, 1 = 0.5 V 
@@ -112,7 +114,7 @@ daq: {
     triggerThreshold14: 0x0000
     triggerThreshold15: 0x0000
 
-    CircularBufferSize: 500e6
+    CircularBufferSize: 1e9
 
     destinations: { }
 

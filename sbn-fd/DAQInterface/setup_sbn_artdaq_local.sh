@@ -36,5 +36,7 @@ export TRACE_FILE=/tmp/trace_`whoami`
 echo "TRACE_FILE=$TRACE_FILE"
 # export TRACE_LIMIT_MS="5,1000,2000" 
 
+tonM 0-63 -n CAENV1730Readout
+
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 

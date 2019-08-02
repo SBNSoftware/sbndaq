@@ -5,23 +5,30 @@ PMT host: localhost
 debug level: 3
 
 EventBuilder host: localhost
+EventBuilder allowed_processors: 8-15
 EventBuilder label: EventBuilder1
 
-#EventBuilder host: localhost
-#EventBuilder label: EventBuilder2
+EventBuilder host: localhost
+EventBuilder allowed_processors: 8-15
+EventBuilder label: EventBuilder2
 
 DataLogger host: localhost
+DataLogger allowed_processors: 8-15
 DataLogger label: DataLogger1
 
-# DataLogger host: localhost
-# DataLogger label: DataLogger2
+DataLogger host: localhost
+DataLogger allowed_processors: 8-15
+DataLogger label: DataLogger2
 
 # DataLogger host: localhost
+# DataLogger allowed_processors: 8-15
 # DataLogger label: DataLogger3
 
 # DataLogger host: localhost
+# DataLogger allowed_processors: 8-15
 # DataLogger label: DataLogger4
 
 Dispatcher host: localhost
 Dispatcher label: Dispatcher1
+Dispatcher allowed_processors: 8-15
 Dispatcher port: 6020

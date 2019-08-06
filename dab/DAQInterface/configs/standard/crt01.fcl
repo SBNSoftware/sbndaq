@@ -4,7 +4,7 @@ fragment_receiver: {
 
    fragment_type: BERNCRTZMQ
    fragment_id: 4
-    generator: BernCRTZMQData
+   generator: BernCRTZMQData
     
    fragment_type: BERNCRTZMQ
    max_fragment_size_bytes: 1000000
@@ -19,13 +19,16 @@ fragment_receiver: {
    ReaderID: 0x1
    
    FEBIDs : [ 0x6037123452 ]
+   MAC5s : [ 0x52 ]
   
    MaxTimeDiffs : [ 1e8 ]
 
    FEBDequeBufferCapacity: 10e3
    FEBDTPBufferCapacity: 1024
 
-   zmq_data_pub_port: "tcp://localhost:5556"
+#   zmq_data_pub_port: "tcp://localhost:5556"
+#The listening port is the first port of febdrv. Data publishing, stats and stats2 ports are larger by, respectively, 1, 2, and 3
+   zmq_listening_port: 5555
    zmq_data_receive_timeout_ms: 500
    
    MaxDTPSleep: 1e8

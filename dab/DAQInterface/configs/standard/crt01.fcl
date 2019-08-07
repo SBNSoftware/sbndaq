@@ -19,7 +19,7 @@ fragment_receiver: {
    ReaderID: 0x1
    
    FEBIDs : [ 0x6037123452 ]
-   MAC5s : [ 0x52 ]
+   ethernet : enp5s0 
   
    MaxTimeDiffs : [ 1e8 ]
 

@@ -7,6 +7,26 @@ function getStatus()
   echo $status
 }
 
+
+function report_datafile_location()
+{
+  local this_script_file=$(readlink --canonicalize --no-newline $0)
+  local THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname $this_script_file)
+  local this_run_records_dir=$(eval echo $(cat $(
+      eval echo $(cat $DAQINTERFACE_USER_SOURCEFILE | grep "DAQINTERFACE_SETTINGS="|cut -d"=" -f2)
+    ) |grep record_directory |cut -d ":" -f2))
+
+  local this_run_record_dir=$(find $this_run_records_dir/*  -type d -exec stat -t {} \; |\
+	  sort -r -n -k 13,13 |head -1 |cut -d " " -f1)
+
+ for f in $( find $this_run_record_dir -name "DataLogger?.fcl" -type f -print );do 
+  ff=$(basename $f) &&
+  pattern=$(cat $f|grep -A8 "normalOutput:" | grep "fileName"|cut -d":" -f 2 ) &&
+  echo Info: ${ff%.*} writes data files into $(dirname $(echo $pattern| tr -d '"' )) 
+  done
+}
+
+
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
@@ -30,6 +50,8 @@ do
   [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
   # [ "$status" == 'stopped' ] && ( exit 1 )
 done
+ 
+report_datafile_location
 
 send_transition.sh start
 # getStatus "starting"

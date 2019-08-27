@@ -50,8 +50,8 @@ fragment_receiver: {
    request_mode: "Window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
    ## request_window_offset                 ## -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
    ## request_window_width                  ## -- These settings correspond to "two before, two after"
-   request_window_width:  5000000           ## -- 5ms of window width. In ns units.
-   request_window_offset: 1000000           ## -- 1ms offset. In ns units.
+   request_window_width:  50000000           ## -- 5ms of window width. In ns units.
+   request_window_offset: 2500000           ## -- 2.5ms offset. In ns units.
    request_window_are_unique: false
    circular_buffer_mode: true
    separate_data_thread: true
@@ -67,7 +67,7 @@ fragment_receiver: {
      "ctb":{
        "sockets":{
            "receiver":{
-               "rollover":25000000,
+               "rollover":500000,
                "host":"sbnd-daq33-priv",
                "port":8992
          },

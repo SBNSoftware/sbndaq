@@ -29,7 +29,8 @@ source $LOCAL_PRODUCTS/setup
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 # setup artdaq_daqinterface v3_05_00
-setup artdaq_daqinterface v3_05_00_FB22258
+##<--setup artdaq_daqinterface v3_05_00_FB22258
+setup artdaq_daqinterface v3_05_00_FB22785CHE8FFC2
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

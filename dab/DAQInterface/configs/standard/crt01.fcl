@@ -1,38 +1,48 @@
+#include "crt_common.fcl"
+
 daq: {
 
-fragment_receiver: {
+  fragment_receiver: {
 
-   fragment_type: BERNCRTZMQ
-   fragment_id: 4
-   generator: BernCRTZMQData
+#What is fragment type and id?
+    fragment_type: @local::fragment_type_global
+    fragment_id:   @local::fragment_id_global
+    generator:     @local::generator_global
     
-   fragment_type: BERNCRTZMQ
-   max_fragment_size_bytes: 1000000
+    max_fragment_size_bytes: @local::max_fragment_size_bytes_global
 
-   board_id: 1
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+    board_id: 1
 
-   SubrunTimeWindowSize: 1e8
-   SequenceTimeWindowSize: 1e8
+#What is it?
+    SubrunTimeWindowSize:   @local::SubrunTimeWindowSize_global
+    SequenceTimeWindowSize: @local::SequenceTimeWindowSize_global
 
-   nADCBits: 12
-   nChannels: 32
-   ReaderID: 0x1
+#Do we need it in the configuration file?
+    nADCBits: @local::nADCBits_global
+    nChannels: @local::nChannels_global
+#What is ReaderID? Another ID?
+    ReaderID: 0x1
    
+#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
    FEBIDs : [ 0x6037123452 ]
-   ethernet : enp5s0 
+#Ethernet port used by febdrv
+   ethernet : enp5s0
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
+   zmq_listening_port: 5555
   
+#What is it? Maximum time difference between what and what? What units? Why is it an array?
    MaxTimeDiffs : [ 1e8 ]
 
-   FEBDequeBufferCapacity: 10e3
-   FEBDTPBufferCapacity: 1024
+#What is it? Is it used by anything?
+   FEBDequeBufferCapacity: @local::FEBDequeBufferCapacity_global
+   FEBDTPBufferCapacity:   @local::FEBDTPBufferCapacity_global
 
-#   zmq_data_pub_port: "tcp://localhost:5556"
-#The listening port is the first port of febdrv. Data publishing, stats and stats2 ports are larger by, respectively, 1, 2, and 3
-   zmq_listening_port: 5555
-   zmq_data_receive_timeout_ms: 500
-   
-   MaxDTPSleep: 1e8
-   nFEBs: 1
+#This value is read by BernCRTZMQData but then not used apparently
+   zmq_data_receive_timeout_ms: @local::zmq_data_receive_timeout_ms_global
+
+#What is it?
+   MaxDTPSleep: @local::MaxDTPSleep_global
 
    destinations: { }
    routing_table_config:
@@ -40,20 +50,11 @@ fragment_receiver: {
      use_routing_master: false
    }
 
-# note about bitstream format:
-# 0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
+#PROBE register bitstream, monitoring configuration, not used for 
+    ProbeBitStream : @local::ProbeBitStream_global
 
-   ProbeBitStream : '
-00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
-00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
-00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
-00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
-00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
-'
-
-   SlowControlBitStream0 : '
+#Configuration of FEB, including MPPC HV, channel on/off status and more. Bitstream format:  0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
+    SlowControlBitStream0 : '
 0000 # Ch0 4-bit DAC_t ([0..3])#
 0000 # Ch1 4-bit DAC_t ([0..3])#
 0000 # Ch2 4-bit DAC_t ([0..3])#
@@ -124,18 +125,18 @@ fragment_receiver: {
 1 # Enable Discriminator Two#
 1 # Disable trigger discriminator power pulsing mode (force ON)#
 1 # EN_4b_dac#
-1 #PP: 4b_dac#
+1 # PP: 4b_dac#
 1 # EN_4b_dac_t#
-1 #PP: 4b_dac_t#
+1 # PP: 4b_dac_t#
 00000000000000000000000000000000 # Allows to Mask Discriminator (channel 0 to 31) [active low]#
 1 # Disable High Gain Track & Hold power pulsing mode (force ON)#
 1 # Enable High Gain Track & Hold#
 1 # Disable Low Gain Track & Hold power pulsing mode (force ON)#
 1 # Enable Low Gain Track & Hold#
 0 # SCA bias ( 1 = weak bias, 0 = high bias 5MHz ReadOut Speed)#
-0 #PP: HG Pdet#
+0 # PP: HG Pdet#
 0 # EN_HG_Pdet#
-0 #PP: LG Pdet#
+0 # PP: LG Pdet#
 0 # EN_LG_Pdet#
 1 # Sel SCA or PeakD HG#
 1 # Sel SCA or PeakD LG#

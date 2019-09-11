@@ -14,7 +14,7 @@ getStatus "nil"
 #setdaqcomps.sh pmtx02 pmtx01 ptb01
 #setdaqcomps.sh tpc01 ptb01
 #setdaqcomps.sh pmtx01 ptb01
-setdaqcomps.sh pmtx01 tpc01 ptb01 
+setdaqcomps.sh pmtx01 tpc01 ptb01
 
 send_transition.sh boot boot.txt
 getStatus "booting"

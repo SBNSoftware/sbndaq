@@ -6,7 +6,7 @@ daq:
   fragment_receiver: 
   {
     generator: NevisTPCNUXMIT # Generator of the XMIT NU stream
-    #  generator: NevisTPCData # fake triggers
+    # generator: NevisTPCData # fake triggers
     fragment_type: NevisTPC
     ##fragment_id: 0  
     fragment_id: 7 #changed to something different to the pmtxs and ptb

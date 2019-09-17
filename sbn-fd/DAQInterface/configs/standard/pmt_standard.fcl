@@ -9,7 +9,9 @@ daq: {
     board_id:    0
     Verbosity: 1
     SWTrigger: false
-    
+
+    ModeLVDS: 1
+
     allowTriggerOverlap: false
 
     link: 0

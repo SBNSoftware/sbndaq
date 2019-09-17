@@ -30,7 +30,7 @@ function report_datafile_location()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-setdaqcomps.sh icarustpc01
+setdaqcomps.sh pmtx01
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -51,7 +51,7 @@ do
   # [ "$status" == 'stopped' ] && ( exit 1 )
 done
  
-report_datafile_location
+# report_datafile_location
 
 send_transition.sh start
 # getStatus "starting"

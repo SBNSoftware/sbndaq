@@ -1,0 +1,13 @@
+daq:
+{
+  fragment_receiver:
+  {
+    generator: MBBReader 
+    partition_number: 999 
+    fragment_type: MBB 
+    fragment_id: 401 
+    board_id: 401 
+    destinations: {}
+    sends_no_fragments: true 
+  }
+}

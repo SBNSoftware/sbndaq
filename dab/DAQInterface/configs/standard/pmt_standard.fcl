@@ -24,6 +24,12 @@ daq: {
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     ModeLVDS: 1
 
+    # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
+    SelfTriggerMode: 3
+
+    # SelfTriggerMask One enable bit for each pair of channels
+    SelfTriggerMask: 255
+
     allowTriggerOverlap: false
 
     link: 0

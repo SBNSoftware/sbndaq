@@ -1,6 +1,7 @@
-daq: {
-  fragment_receiver: {
-
+daq: 
+{
+  fragment_receiver: 
+  {
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
@@ -13,13 +14,19 @@ daq: {
     # ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
     ModeLVDS: 1
 
+    # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
+    SelfTriggerMode: 3
+
+    # SelfTriggerMask One enable bit for each pair of channels
+    SelfTriggerMask: 255
+
     allowTriggerOverlap: false
 
     link: 0
     enableReadout: 1
     
     boardId: 0
-    recordLength:         2000
+    recordLength:         20000
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
@@ -98,22 +105,39 @@ daq: {
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  0x0000
-    triggerThreshold1:  0x0000
-    triggerThreshold2:  0x0000
-    triggerThreshold3:  0x0000
-    triggerThreshold4:  0x0000
-    triggerThreshold5:  0x0000
-    triggerThreshold6:  0x0000
-    triggerThreshold7:  0x0000
-    triggerThreshold8:  0x0000
-    triggerThreshold9:  0x0000
-    triggerThreshold10: 0x0000
-    triggerThreshold11: 0x0000
-    triggerThreshold12: 0x0000
-    triggerThreshold13: 0x0000
-    triggerThreshold14: 0x0000
-    triggerThreshold15: 0x0000
+    triggerThreshold0:  8000
+    triggerThreshold1:  8000
+    triggerThreshold2:  8000
+    triggerThreshold3:  8000
+    triggerThreshold4:  8000
+    triggerThreshold5:  8000
+    triggerThreshold6:  8000
+    triggerThreshold7:  8000
+    triggerThreshold8:  8000
+    triggerThreshold9:  8000
+    triggerThreshold10: 8000
+    triggerThreshold11: 8000
+    triggerThreshold12: 8000
+    triggerThreshold13: 8000
+    triggerThreshold14: 8000
+    triggerThreshold15: 8000
+
+#    triggerThreshold0:  0
+#    triggerThreshold1:  0
+#    triggerThreshold2:  0
+#    triggerThreshold3:  0
+#    triggerThreshold4:  0
+#    triggerThreshold5:  0
+#    triggerThreshold6:  0
+#    triggerThreshold7:  0
+#    triggerThreshold8:  0
+#    triggerThreshold9:  0
+#    triggerThreshold10: 0
+#    triggerThreshold11: 0
+#    triggerThreshold12: 0
+#    triggerThreshold13: 0
+#    triggerThreshold14: 0
+#    triggerThreshold15: 0
 
     CircularBufferSize: 500e6
 

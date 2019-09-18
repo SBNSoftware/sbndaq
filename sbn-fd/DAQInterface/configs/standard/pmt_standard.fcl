@@ -57,22 +57,22 @@ daq:
     readoutMode:          0
     analogMode:           1
     testPattern:          0
-    channelPedestal0:  32768
-    channelPedestal1:  32768
-    channelPedestal2:  32768
-    channelPedestal3:  32768
-    channelPedestal4:  32768
-    channelPedestal5:  32768
-    channelPedestal6:  32768
-    channelPedestal7:  32768
-    channelPedestal8:  32768
-    channelPedestal9:  32768
-    channelPedestal10: 32768
-    channelPedestal11: 32768
-    channelPedestal12: 32768
-    channelPedestal13: 32768
-    channelPedestal14: 32768
-    channelPedestal15: 32768
+    channelPedestal0:  58982
+    channelPedestal1:  58982
+    channelPedestal2:  58982
+    channelPedestal3:  58982
+    channelPedestal4:  58982
+    channelPedestal5:  58982
+    channelPedestal6:  58982
+    channelPedestal7:  58982
+    channelPedestal8:  58982
+    channelPedestal9:  58982
+    channelPedestal10: 58982
+    channelPedestal11: 58982
+    channelPedestal12: 58982
+    channelPedestal13: 58982
+    channelPedestal14: 58982
+    channelPedestal15: 58982
 
     channelEnable0:    true
     channelEnable1:    true
@@ -105,22 +105,22 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  8000
-    triggerThreshold1:  8000
-    triggerThreshold2:  8000
-    triggerThreshold3:  8000
-    triggerThreshold4:  8000
-    triggerThreshold5:  8000
-    triggerThreshold6:  8000
-    triggerThreshold7:  8000
-    triggerThreshold8:  8000
-    triggerThreshold9:  8000
-    triggerThreshold10: 8000
-    triggerThreshold11: 8000
-    triggerThreshold12: 8000
-    triggerThreshold13: 8000
-    triggerThreshold14: 8000
-    triggerThreshold15: 8000
+    triggerThreshold0:  58832
+    triggerThreshold1:  58832
+    triggerThreshold2:  58832
+    triggerThreshold3:  58832
+    triggerThreshold4:  58832
+    triggerThreshold5:  58832
+    triggerThreshold6:  58832
+    triggerThreshold7:  58832
+    triggerThreshold8:  58832
+    triggerThreshold9:  58832
+    triggerThreshold10: 58832
+    triggerThreshold11: 58832
+    triggerThreshold12: 58832
+    triggerThreshold13: 58832
+    triggerThreshold14: 58832
+    triggerThreshold15: 58832
 
 #    triggerThreshold0:  0
 #    triggerThreshold1:  0

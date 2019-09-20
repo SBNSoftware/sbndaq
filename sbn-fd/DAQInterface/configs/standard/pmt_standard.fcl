@@ -5,11 +5,15 @@ daq:
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
+    GetNextFragmentBunchSize: 20
 
     fragment_id: 0
     board_id:    0
     Verbosity: 1
     SWTrigger: false
+
+    # calibration
+    CalibrateOnConfig: true
 
     # ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
     ModeLVDS: 1
@@ -40,7 +44,7 @@ daq:
     # extTrgMode: 0=no external triggers;   3=Front panel TRG input
     extTrgMode:           3
     
-    # swTrgMode:  0=no software generation; 3=software generated
+    # swTrgMode:  0=no software generation; 3=allow software generated trigs
     swTrgMode:            0
     
     # acqMode: 0=Software Controlled, 1=Front Panel S_IN
@@ -105,22 +109,22 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  14595
-    triggerThreshold1:  14595
-    triggerThreshold2:  14595
-    triggerThreshold3:  14595
-    triggerThreshold4:  14595
-    triggerThreshold5:  14595
-    triggerThreshold6:  14595
-    triggerThreshold7:  14595
-    triggerThreshold8:  14595
-    triggerThreshold9:  14595
-    triggerThreshold10: 14595
-    triggerThreshold11: 14595
-    triggerThreshold12: 14595
-    triggerThreshold13: 14595
-    triggerThreshold14: 14595
-    triggerThreshold15: 14595
+    triggerThreshold0:  14545
+    triggerThreshold1:  14545
+    triggerThreshold2:  14545
+    triggerThreshold3:  14545
+    triggerThreshold4:  14545
+    triggerThreshold5:  14545
+    triggerThreshold6:  14545
+    triggerThreshold7:  14545
+    triggerThreshold8:  14545
+    triggerThreshold9:  14545
+    triggerThreshold10: 14545
+    triggerThreshold11: 14545
+    triggerThreshold12: 14545
+    triggerThreshold13: 14545
+    triggerThreshold14: 14545
+    triggerThreshold15: 14545
 
 #    triggerThreshold0:  0
 #    triggerThreshold1:  0

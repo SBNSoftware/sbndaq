@@ -1,0 +1,104 @@
+services: {
+  scheduler: {
+    errorOnFailureToPut: false
+  }
+  NetMonTransportServiceInterface: {
+    service_provider: NetMonTransportService
+    #broadcast_sends: true
+    destinations: {	}
+
+    routing_table_config: {
+      use_routing_master: false
+    }
+  }
+}
+daq: {
+  event_builder: {
+    expected_fragments_per_event: 0  # Will be set by DAQInterface
+    max_fragment_size_bytes: 16777216 #400000
+    use_art: true
+    buffer_count: 200
+    max_incomplete_events: 1500 # Same as boardreader sync interval
+    verbose: true
+    send_requests: true
+        request_address: "227.128.9.129"
+        request_port: 3001
+        num_requests: 1500
+    print_event_store_stats: true
+    routing_token_config: {
+    use_routing_master: false
+    }
+    incomplete_event_report_interval_ms: 1000
+    stale_buffer_timeout_usec: 10000000
+
+#daq: {
+#  event_builder: {
+#    expected_fragments_per_event: 0  # Will be set by DAQInterface
+#    
+#    stale_buffer_timeout_usec: 10000000
+#    buffer_count: 50
+#
+#    verbose: false
+#    max_fragment_size_bytes: 40000000
+#    incomplete_event_report_interval_ms: 100
+#    send_requests: true
+#    use_art: true
+#    print_event_store_stats: false
+#    routing_token_config: {
+#      use_routing_master: false
+#    }
+
+    sources: { }
+  }
+  metrics: {
+    evbFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "~/data1/evb01_metrics.log"
+      uniquify: true
+    }
+    graphite: {
+      level:5
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"sbn-daq02.fnal.gov"
+      port:2003
+      namespace:"artdaq.evb01."
+    } 
+  }
+
+} 
+
+outputs: {
+  rootNetOutput: {
+    module_type: RootNetOutput
+  }
+  normalOutput: {
+    module_type: RootOutput
+    fileName: "~/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+    compressionLevel: 0
+    fastCloning: false
+  }
+}
+
+physics: {
+  analyzers: {}
+
+  producers: {}
+
+  filters: {}
+
+  
+  a1: [ ]
+
+  # my_output_modules: [  ]
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+}
+source: {
+  module_type: SBNDDAQInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

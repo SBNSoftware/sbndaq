@@ -1,0 +1,4 @@
+#include "DataLogger_standard.fcl"
+daq.metrics.aggFile.fileName : "~/data1/dl02_metrics.log"
+#daq.metrics.graphite.namespace: "artdaq.dl02."
+outputs.normalOutput.fileName: "~/data1/sbndaq_dl02_r%06r_sr%02s_%to_%#.root"

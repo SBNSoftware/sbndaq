@@ -1,0 +1,265 @@
+#include "crt_common.fcl"
+
+#Configuration of FEB, including MPPC HV, channel on/off status and more. Bitstream format:  0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
+    SlowControlBitStream : '
+0000 # Ch0 4-bit DAC_t ([0..3])#
+0000 # Ch1 4-bit DAC_t ([0..3])#
+0000 # Ch2 4-bit DAC_t ([0..3])#
+0000 # Ch3 4-bit DAC_t ([0..3])#
+0000 # Ch4 4-bit DAC_t ([0..3])#
+0000 # Ch5 4-bit DAC_t ([0..3])#
+0000 # Ch6 4-bit DAC_t ([0..3])#
+0000 # Ch7 4-bit DAC_t ([0..3])#
+0000 # Ch8 4-bit DAC_t ([0..3])#
+0000 # Ch9 4-bit DAC_t ([0..3])#
+0000 # Ch10 4-bit DAC_t ([0..3])#
+0000 # Ch11 4-bit DAC_t ([0..3])#
+0000 # Ch12 4-bit DAC_t ([0..3])#
+0000 # Ch13 4-bit DAC_t ([0..3])#
+0000 # Ch14 4-bit DAC_t ([0..3])#
+0000 # Ch15 4-bit DAC_t ([0..3])#
+0000 # Ch16 4-bit DAC_t ([0..3])#
+0000 # Ch17 4-bit DAC_t ([0..3])#
+0000 # Ch18 4-bit DAC_t ([0..3])#
+0000 # Ch19 4-bit DAC_t ([0..3])#
+0000 # Ch20 4-bit DAC_t ([0..3])#
+0000 # Ch21 4-bit DAC_t ([0..3])#
+0000 # Ch22 4-bit DAC_t ([0..3])#
+0000 # Ch23 4-bit DAC_t ([0..3])#
+0000 # Ch24 4-bit DAC_t ([0..3])#
+0000 # Ch25 4-bit DAC_t ([0..3])#
+0000 # Ch26 4-bit DAC_t ([0..3])#
+0000 # Ch27 4-bit DAC_t ([0..3])#
+0000 # Ch28 4-bit DAC_t ([0..3])#
+0000 # Ch29 4-bit DAC_t ([0..3])#
+0000 # Ch30 4-bit DAC_t ([0..3])#
+0000 # Ch31 4-bit DAC_t ([0..3])#
+0000 # Ch0 4-bit DAC ([0..3])#
+0000 # Ch1 4-bit DAC ([0..3])#
+0000 # Ch2 4-bit DAC ([0..3])#
+0000 # Ch3 4-bit DAC ([0..3])#
+0000 # Ch4 4-bit DAC ([0..3])#
+0000 # Ch5 4-bit DAC ([0..3])#
+0000 # Ch6 4-bit DAC ([0..3])#
+0000 # Ch7 4-bit DAC ([0..3])#
+0000 # Ch8 4-bit DAC ([0..3])#
+0000 # Ch9 4-bit DAC ([0..3])#
+0000 # Ch10 4-bit DAC ([0..3])#
+0000 # Ch11 4-bit DAC ([0..3])#
+0000 # Ch12 4-bit DAC ([0..3])#
+0000 # Ch13 4-bit DAC ([0..3])#
+0000 # Ch14 4-bit DAC ([0..3])#
+0000 # Ch15 4-bit DAC ([0..3])#
+0000 # Ch16 4-bit DAC ([0..3])#
+0000 # Ch17 4-bit DAC ([0..3])#
+0000 # Ch18 4-bit DAC ([0..3])#
+0000 # Ch19 4-bit DAC ([0..3])#
+0000 # Ch20 4-bit DAC ([0..3])#
+0000 # Ch21 4-bit DAC ([0..3])#
+0000 # Ch22 4-bit DAC ([0..3])#
+0000 # Ch23 4-bit DAC ([0..3])#
+0000 # Ch24 4-bit DAC ([0..3])#
+0000 # Ch25 4-bit DAC ([0..3])#
+0000 # Ch26 4-bit DAC ([0..3])#
+0000 # Ch27 4-bit DAC ([0..3])#
+0000 # Ch28 4-bit DAC ([0..3])#
+0000 # Ch29 4-bit DAC ([0..3])#
+0000 # Ch30 4-bit DAC ([0..3])#
+0000 # Ch31 4-bit DAC ([0..3])#
+1 #Enable discriminator#
+1 # Disable trigger discriminator power pulsing mode (force ON)#
+0 # Select latched (RS : 1) or direct output (trigger : 0)#
+1 # Enable Discriminator Two#
+1 # Disable trigger discriminator power pulsing mode (force ON)#
+1 # EN_4b_dac#
+1 # PP: 4b_dac#
+1 # EN_4b_dac_t#
+1 # PP: 4b_dac_t#
+00000000000000000000000000000000 # Allows to Mask Discriminator (channel 0 to 31) [active low]#
+1 # Disable High Gain Track & Hold power pulsing mode (force ON)#
+1 # Enable High Gain Track & Hold#
+1 # Disable Low Gain Track & Hold power pulsing mode (force ON)#
+1 # Enable Low Gain Track & Hold#
+0 # SCA bias ( 1 = weak bias, 0 = high bias 5MHz ReadOut Speed)#
+0 # PP: HG Pdet#
+0 # EN_HG_Pdet#
+0 # PP: LG Pdet#
+0 # EN_LG_Pdet#
+1 # Sel SCA or PeakD HG#
+1 # Sel SCA or PeakD LG#
+1 # Bypass Peak Sensing Cell#
+0 # Sel Trig Ext PSC#
+1 # Disable fast shaper follower power pulsing mode (force ON)#
+1 # Enable fast shaper#
+1 # Disable fast shaper power pulsing mode (force ON)#
+1 # Disable low gain slow shaper power pulsing mode (force ON)#
+1 # Enable Low Gain Slow Shaper#
+110 # Low gain shaper time constant commands (0...2)  [active low] 100#
+1 # Disable high gain slow shaper power pulsing mode (force ON)#
+1 # Enable high gain Slow Shaper#
+110 # High gain shaper time constant commands (0...2)  [active low] 100#
+0 # Low Gain PreAmp bias ( 1 = weak bias, 0 = normal bias)#
+1 # Disable High Gain preamp power pulsing mode (force ON)#
+1 # Enable High Gain preamp#
+1 # Disable Low Gain preamp power pulsing mode (force ON)#
+1 # Enable Low Gain preamp#
+0 # Select LG PA to send to Fast Shaper#
+1 # Enable 32 input 8-bit DACs#
+1 # 8-bit input DAC Voltage Reference (1 = external 4,5V , 0 = internal 2,5V)#
+10001011 1 # Input 8-bit DAC Data channel 0 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10110011 1 # Input 8-bit DAC Data channel 1 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111101 1 # Input 8-bit DAC Data channel 2 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111100 1 # Input 8-bit DAC Data channel 3 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10011010 1 # Input 8-bit DAC Data channel 4 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001010 1 # Input 8-bit DAC Data channel 5 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001000 1 # Input 8-bit DAC Data channel 6 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111100 1 # Input 8-bit DAC Data channel 7 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111100 1 # Input 8-bit DAC Data channel 8 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000010 1 # Input 8-bit DAC Data channel 9 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 1 # Input 8-bit DAC Data channel 10 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111100 1 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001011 1 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10010010 1 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10011001 1 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10010001 1 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000000 1 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001110 1 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001110 1 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000100 1 # Input 8-bit DAC Data channel 19 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000101 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001010 1 # Input 8-bit DAC Data channel 21 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001100 1 # Input 8-bit DAC Data channel 22 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000010 1 # Input 8-bit DAC Data channel 23 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10010011 1 # Input 8-bit DAC Data channel 24 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001101 1 # Input 8-bit DAC Data channel 25 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001111 1 # Input 8-bit DAC Data channel 26 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10000100 1 # Input 8-bit DAC Data channel 27 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10001110 1 # Input 8-bit DAC Data channel 28 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10011001 1 # Input 8-bit DAC Data channel 29 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111100 1 # Input 8-bit DAC Data channel 30 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+10010000 1 # Input 8-bit DAC Data channel 31 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+100011 101111 000 # Ch0   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch1   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch2   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch3   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch4   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch5   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch6   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch7   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch8   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch9   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch10   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch11   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch12   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch13   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch14   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch15   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch16   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch17   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch18   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch19   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch20   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch21   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch22   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch23   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch24   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch25   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch26   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch27   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch28   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch29   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch30   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+100011 101111 000 # Ch31   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+1 # Disable Temperature Sensor power pulsing mode (force ON)#
+1 # Enable Temperature Sensor#
+1 # Disable BandGap power pulsing mode (force ON)#
+1 # Enable BandGap#
+1 # Enable DAC1#
+1 # Disable DAC1 power pulsing mode (force ON)#
+1 # Enable DAC2#
+1 # Disable DAC2 power pulsing mode (force ON)#
+00 1111 1010 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+00 1111 1010 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+1 # Enable High Gain OTA#  -- start byte 2
+1 # Disable High Gain OTA power pulsing mode (force ON)#
+1 # Enable Low Gain OTA#
+1 # Disable Low Gain OTA power pulsing mode (force ON)#
+1 # Enable Probe OTA#
+1 # Disable Probe OTA power pulsing mode (force ON)#
+0 # Otaq test bit#
+0 # Enable Val_Evt receiver#
+0 # Disable Val_Evt receiver power pulsing mode (force ON)#
+0 # Enable Raz_Chn receiver#
+0 # Disable Raz Chn receiver power pulsing mode (force ON)#
+0 # Enable digital multiplexed output (hit mux out)#
+0 # Enable digital OR32 output#
+0 # Enable digital OR32 Open Collector output#
+0 # Trigger Polarity#
+0 # Enable digital OR32_T Open Collector output#
+1 # Enable 32 channels triggers outputs#
+'
+
+daq: {
+
+  fragment_receiver: {
+
+#What is fragment type and id?
+    fragment_type: @local::fragment_type_global
+    fragment_id:   @local::fragment_id_global
+    generator:     @local::generator_global
+    
+    max_fragment_size_bytes: @local::max_fragment_size_bytes_global
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+    board_id: 1
+
+#What is it?
+    SubrunTimeWindowSize:   @local::SubrunTimeWindowSize_global
+    SequenceTimeWindowSize: @local::SequenceTimeWindowSize_global
+
+#Do we need it in the configuration file?
+    nADCBits: @local::nADCBits_global
+    nChannels: @local::nChannels_global
+#What is ReaderID? Another ID?
+    ReaderID: 0x1
+   
+#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
+   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234d7, 0x60371234d6, 0x60371234d5 ]
+#Ethernet port used by febdrv
+   ethernet : enp101s0f3
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
+   zmq_listening_port: 5530
+  
+#What is it? Maximum time difference between what and what? What units? Why is it an array?
+   MaxTimeDiffs : [ 1e8 ]
+
+#What is it? Is it used by anything?
+   FEBDequeBufferCapacity: @local::FEBDequeBufferCapacity_global
+   FEBDTPBufferCapacity:   @local::FEBDTPBufferCapacity_global
+
+#This value is read by BernCRTZMQData but then not used apparently
+   zmq_data_receive_timeout_ms: @local::zmq_data_receive_timeout_ms_global
+
+#What is it?
+   MaxDTPSleep: @local::MaxDTPSleep_global
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   }
+
+#PROBE register bitstream, monitoring configuration, not used for normal data taking 
+    ProbeBitStream : @local::ProbeBitStream_global
+
+
+
+
+    SlowControlBitStream0: @local::SlowControlBitStream #let's use the same config for all FEBs for now
+    SlowControlBitStream1: @local::SlowControlBitStream
+    SlowControlBitStream2: @local::SlowControlBitStream
+    SlowControlBitStream3: @local::SlowControlBitStream
+    SlowControlBitStream4: @local::SlowControlBitStream
+    SlowControlBitStream5: @local::SlowControlBitStream
+  }
+}

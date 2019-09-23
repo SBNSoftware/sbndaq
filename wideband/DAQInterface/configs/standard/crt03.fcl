@@ -1,60 +1,7 @@
 #include "crt_common.fcl"
 
-daq: {
-
-  fragment_receiver: {
-
-#What is fragment type and id?
-    fragment_type: @local::fragment_type_global
-    fragment_id:   @local::fragment_id_global
-    generator:     @local::generator_global
-    
-    max_fragment_size_bytes: @local::max_fragment_size_bytes_global
-
-#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
-    board_id: 1
-
-#What is it?
-    SubrunTimeWindowSize:   @local::SubrunTimeWindowSize_global
-    SequenceTimeWindowSize: @local::SequenceTimeWindowSize_global
-
-#Do we need it in the configuration file?
-    nADCBits: @local::nADCBits_global
-    nChannels: @local::nChannels_global
-#What is ReaderID? Another ID?
-    ReaderID: 0x1
-   
-#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
-   FEBIDs : [ 0x6037123452 ]
-#Ethernet port used by febdrv
-   ethernet : enp5s0
-#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
-   zmq_listening_port: 5555
-  
-#What is it? Maximum time difference between what and what? What units? Why is it an array?
-   MaxTimeDiffs : [ 1e8 ]
-
-#What is it? Is it used by anything?
-   FEBDequeBufferCapacity: @local::FEBDequeBufferCapacity_global
-   FEBDTPBufferCapacity:   @local::FEBDTPBufferCapacity_global
-
-#This value is read by BernCRTZMQData but then not used apparently
-   zmq_data_receive_timeout_ms: @local::zmq_data_receive_timeout_ms_global
-
-#What is it?
-   MaxDTPSleep: @local::MaxDTPSleep_global
-
-   destinations: { }
-   routing_table_config:
-   {
-     use_routing_master: false
-   }
-
-#PROBE register bitstream, monitoring configuration, not used for 
-    ProbeBitStream : @local::ProbeBitStream_global
-
 #Configuration of FEB, including MPPC HV, channel on/off status and more. Bitstream format:  0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
-    SlowControlBitStream0 : '
+    SlowControlBitStream : '
 0000 # Ch0 4-bit DAC_t ([0..3])#
 0000 # Ch1 4-bit DAC_t ([0..3])#
 0000 # Ch2 4-bit DAC_t ([0..3])#
@@ -251,5 +198,68 @@ daq: {
 0 # Enable digital OR32_T Open Collector output#
 1 # Enable 32 channels triggers outputs#
 '
-}
+
+daq: {
+
+  fragment_receiver: {
+
+#What is fragment type and id?
+    fragment_type: @local::fragment_type_global
+    fragment_id:   @local::fragment_id_global
+    generator:     @local::generator_global
+    
+    max_fragment_size_bytes: @local::max_fragment_size_bytes_global
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+    board_id: 1
+
+#What is it?
+    SubrunTimeWindowSize:   @local::SubrunTimeWindowSize_global
+    SequenceTimeWindowSize: @local::SequenceTimeWindowSize_global
+
+#Do we need it in the configuration file?
+    nADCBits: @local::nADCBits_global
+    nChannels: @local::nChannels_global
+#What is ReaderID? Another ID?
+    ReaderID: 0x1
+   
+#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
+   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234d7, 0x60371234d6, 0x60371234d5 ]
+#Ethernet port used by febdrv
+   ethernet : enp101s0f3
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
+   zmq_listening_port: 5530
+  
+#What is it? Maximum time difference between what and what? What units? Why is it an array?
+   MaxTimeDiffs : [ 1e8 ]
+
+#What is it? Is it used by anything?
+   FEBDequeBufferCapacity: @local::FEBDequeBufferCapacity_global
+   FEBDTPBufferCapacity:   @local::FEBDTPBufferCapacity_global
+
+#This value is read by BernCRTZMQData but then not used apparently
+   zmq_data_receive_timeout_ms: @local::zmq_data_receive_timeout_ms_global
+
+#What is it?
+   MaxDTPSleep: @local::MaxDTPSleep_global
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   }
+
+#PROBE register bitstream, monitoring configuration, not used for normal data taking 
+    ProbeBitStream : @local::ProbeBitStream_global
+
+
+
+
+    SlowControlBitStream0: @local::SlowControlBitStream #let's use the same config for all FEBs for now
+    SlowControlBitStream1: @local::SlowControlBitStream
+    SlowControlBitStream2: @local::SlowControlBitStream
+    SlowControlBitStream3: @local::SlowControlBitStream
+    SlowControlBitStream4: @local::SlowControlBitStream
+    SlowControlBitStream5: @local::SlowControlBitStream
+  }
 }

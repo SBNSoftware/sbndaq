@@ -6,7 +6,7 @@ services: {
     service_provider: NetMonTransportService
     broadcast_sends: true
     nonblocking_sends: true
-    destinations: { }
+	destinations: { }
   }
 }
 
@@ -14,37 +14,38 @@ daq: {
   aggregator: {
     expected_events_per_bunch: 1
     print_event_store_stats: true
-    event_queue_depth: 100
+    event_queue_depth: 50
     event_queue_wait_time: 5
-    max_fragment_size_bytes: 40000000
+	  max_fragment_size_bytes: 400000
     buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true
 
     auto_suppression_enabled: false
 
-    routing_token_config: {
-      use_routing_master: false
-    }
+	routing_token_config: {
+		use_routing_master: false
+	}
 
-    sources: { }
+	sources: { }
   }
 
   metrics: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/data1/dl01_metrics.log"
+
+  	  fileName: "~/data1/dl01_metrics.log"
       uniquify: true
-    }
+    } 
     # graphite: {
-      #   level:5
-      #   metricPluginType: "graphite"
-      #   reporting_interval: 10.0
-      #   host:"sbn-daq02.fnal.gov"
-      #   port:2003
-      #   namespace:"artdaq.dl01."
-      # }
+    #   level:5
+    #   metricPluginType: "graphite"
+    #   reporting_interval: 10.0
+    #   host:"sbn-daq02.fnal.gov"
+    #   port:2003
+    #   namespace:"artdaq.dl01."
+    # } 
   }
 
 }
@@ -56,17 +57,17 @@ outputs: {
   normalOutput: {
     module_type: RootDAQOut
     #module_type: RootOutput
-    fileName: "/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "~/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
 
-    fileProperties: {
-      maxSubRuns: 1
-      maxRuns: 1
-      maxEvents: 100000
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 10000
     }
 
     fastCloning: false
     compressionLevel: 0
-
+    
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -77,7 +78,7 @@ physics: {
   analyzers: { }
 
   producers: {
-  }
+   }
 
   p2: [ ]
   a1: [ ]

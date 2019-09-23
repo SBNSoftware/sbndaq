@@ -33,37 +33,41 @@ fragment_receiver: {
    ## Anyway, to avoid the saturation of the buffers, a fragment is ALWAYS created whenever the number of words in the 
    ## buffer is bigger than than max_words_per_frag. 
    group_size : 0
-   #group_size : 30    ## this sets how many pakages from the board should be grouped to form a fragment. Default 1 
-   	      	      ## value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
-                      ## without restriction based on the number of TS words. 
+   #group_size : 30    ## -- this sets how many pakages from the board should be grouped to form a fragment. Default 1 
+                       ##    value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
+                       ##    without restriction based on the number of TS words. 
 
-   max_words_per_frag : 3000 ## default 80 % of the capacity of the words buffer
+   max_words_per_frag : 3000 ## -- default 80 % of the capacity of the words buffer
                           
 
-   max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
+   max_frags_per_call : 100 ## -- this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   request_address: "227.128.9.129"
-   request_port: 3001         #UDP request port
-   #request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
-   request_mode: "Window"     # the other interesting possibility which is discussed is the "Buffer" mode
-   ## request_window_offset -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
-   ## request_window_width: -- These settings correspond to "two before, two after"
-   request_window_width:  5000000  # 100ms of window width
-   request_window_offset: 1000000  # 200ms offset    
-   request_window_are_unique: true
+   request_address: "227.128.9.129"         ## -- Multi-cast request address
+   request_port: 3001                       ## -- UDP request port
+   multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
+                                            ##    this should match the private network address
+   #request_mode: "Buffer"                  ## -- the other interesting possibility which is discussed is the "Window" mode
+   request_mode: "Window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
+   ## request_window_offset                 ## -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
+   ## request_window_width                  ## -- These settings correspond to "two before, two after"
+   request_window_width:  50000000           ## -- 5ms of window width. In ns units.
+   request_window_offset: 2500000           ## -- 2.5ms offset. In ns units.
+   request_window_are_unique: false
    circular_buffer_mode: true
    separate_data_thread: true
    data_buffer_depth_fragments: 200000
    word_buffer_size: 10000
-   throw_exception: false
+   throw_exception: true
    run_trigger_output: "/data/ptb"
-   receiver_timeout_scaling: 4
+   receiver_timeout_scaling: 40
+
+   ## -- No comments allowed below here! ------------------------------------------------------
 
    board_config : '{
      "ctb":{
        "sockets":{
            "receiver":{
-               "rollover":5000000,
+               "rollover":500000,
                "host":"sbnd-daq33-priv",
                "port":8992
          },
@@ -80,7 +84,7 @@ fragment_receiver: {
        },
        "misc":{
          "randomtrigger_1":{
-           "description":"Random trigger that can optionally be set to fire only during beam spill",
+           "description":"Random trigger that can optionally be set to fire only during beam spill. Period in 20ns ticks.",
            "enable":false,
            "fixed_freq":true,
            "beam_mode":true,
@@ -90,7 +94,7 @@ fragment_receiver: {
            "thresh_hi":"0x000F00FF"
          },
          "randomtrigger_2":{
-           "description":"Random trigger that can optionally be set to fire only outside of beam spill",
+           "description":"1Hz Random trigger that can optionally be set to fire only outside of beam spill. Period in 20ns ticks.",
            "enable":true,
            "fixed_freq":true,
            "beam_mode":false,
@@ -325,15 +329,16 @@ fragment_receiver: {
 
 							
    ##------------------------------------------------------------------------------
+   ## -- Comments are fine below here --------------------------------------------
 				
    nADCcounts: 100
-   throttle_usecs: 100  # Wait this many usecs before creating the next event
+   throttle_usecs: 100  ## -- Wait this many usecs before creating the next event
    distribution_type: 1
 
    # Parameters configuring the fragment generator's parent class
    # artdaq::CommandableFragmentGenerator
 
-   #fragment_ids: [8]  # In the case of just one fragment, "fragment_id: 0" would also work
+   #fragment_ids: [8]  ## -- In the case of just one fragment, "fragment_id: 0" would also work
    board_id: 999 
 
    destinations: { } 
@@ -344,6 +349,6 @@ fragment_receiver: {
 
 }  		  
 
-##add metrics stuff here:
+## -- add metrics stuff here:
 
 }

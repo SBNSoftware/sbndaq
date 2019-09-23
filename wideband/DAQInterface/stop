@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# change back localhost
-sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility.fcl
-
 function getStatus()
 {
     status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`

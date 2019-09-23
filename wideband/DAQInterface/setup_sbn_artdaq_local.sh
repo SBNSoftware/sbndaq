@@ -14,7 +14,7 @@ SBNDAQ_QUAL3="s82"
 
 # your own local products directory:
 export LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-export LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+export LOCAL_PRODUCTS_TRY2="${HOME}/work/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
 
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
     LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
@@ -29,7 +29,9 @@ source $LOCAL_PRODUCTS/setup
 #unsetup -j artdaq_daqinterface
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
-setup artdaq_daqinterface v3_06_00_FB23224
+# setup artdaq_daqinterface v3_05_00
+
+setup artdaq_daqinterface v3_05_00_FB22785CHE8FFC2
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

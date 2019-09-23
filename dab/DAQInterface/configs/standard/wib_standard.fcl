@@ -143,18 +143,18 @@ daq:
 
     metrics: 
     {
-      # Need to convert DIM to EPICS
-      dim: 
-      {
-        metricPluginType: dim 
-        level: 5 
-        reporting_interval: 5.0 
-        Verbose: false 
-        DNSPort: 2505 
-        DNSNode: "np04-srv-010.cern.ch" 
-        DIMServerName: WIBReader 
-        IDName: wibdefault
-      }
+      # Need to convert DIM to EPICS, comment out for now
+      #dim: 
+      #{
+      #  metricPluginType: dim 
+      #  level: 5 
+      #  reporting_interval: 5.0 
+      #  Verbose: false 
+      #  DNSPort: 2505 
+      #  DNSNode: "np04-srv-010.cern.ch" 
+      #  DIMServerName: WIBReader 
+      #  IDName: wibdefault
+      #}
     }
   }
 }

@@ -24,6 +24,13 @@ daq:
     # SelfTriggerMask One enable bit for each pair of channels
     SelfTriggerMask: 255
 
+    # Majority mode logic
+    # For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
+    MajorityLevel: 0
+
+    # Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
+    MajorityCoincidenceWindow: 1
+
     allowTriggerOverlap: false
 
     link: 0
@@ -158,7 +165,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "~/log/metrics/boardreader/br_%UID%_metrics.log"
       uniquify: true
     }
     # redis_10s: {

@@ -13,7 +13,6 @@ function getStatus()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-
 #setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01
 setdaqcomps.sh pmtx01 ptb01
 # setdaqcomps.sh pmtx01 ptb01 tpc01

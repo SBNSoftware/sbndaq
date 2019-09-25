@@ -1,4 +1,6 @@
-events_to_generate: 1
+events_to_generate: 4500
+
+
 run_number: 100
 
 debug_cout: true
@@ -137,8 +139,8 @@ bitstream: '
 01110010 1 # Input 8-bit DAC Data channel 26 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 27 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 28 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-00000001 1 # Input 8-bit DAC Data channel 29 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-11111111 1 # Input 8-bit DAC Data channel 30 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 29 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 30 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 31 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 101001 101111 000 # Ch0   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch1   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
@@ -180,8 +182,8 @@ bitstream: '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-01 0001 1000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
-01 0001 1000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#
@@ -208,7 +210,7 @@ fragment_receiver: {
    generator: BernCRTZMQData
    
    fragment_type: BERNCRTZMQ
-   max_fragment_size_bytes: 1000000
+   max_fragment_size_bytes: 1000
 
    board_id: 1
 
@@ -220,11 +222,14 @@ fragment_receiver: {
    nChannels: 32
    ReaderID: 0x1
    
-   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
+#   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
+   FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
    ethernet : enp101s0f3
    zmq_listening_port: 5530
   
    MaxTimeDiffs : [ 1e8 ]
+
+   FEBBufferCapacity: 98789
 
    FEBDequeBufferCapacity: 10e3
    FEBDTPBufferCapacity: 1024
@@ -257,8 +262,8 @@ SlowControlBitStream6 : @local::bitstream
 event_builder: {
 
   expected_fragments_per_event: 1
-  max_fragment_size_bytes: 10000000
-  buffer_count: 20
+  max_fragment_size_bytes: 1000
+  buffer_count: 10000
   use_art: true
   print_event_store_stats: false
   verbose: false
@@ -281,7 +286,7 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "~/data/berncrt_driver_test_b_%#.root"
+    fileName: "/home/nfs/aaduszki/data/berncrt_driver_test_b_%#.root"
     compressionLevel: 0
     fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
 

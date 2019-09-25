@@ -35,7 +35,7 @@ daq: {
       metricPluginType: "file"
       level: 3
 
-  	  fileName: "~/data1/dl01_metrics.log"
+  	  fileName: "/home/nfs/aaduszki/data1/dl01_metrics.log"
       uniquify: true
     } 
     # graphite: {
@@ -57,7 +57,7 @@ outputs: {
   normalOutput: {
     module_type: RootDAQOut
     #module_type: RootOutput
-    fileName: "~/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/home/nfs/aaduszki/data1/itestsbndaq_r%06r_sr%02s_%to_%#.root"
 
     fileProperties: { 
       maxSubRuns: 1 

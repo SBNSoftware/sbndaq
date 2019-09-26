@@ -286,7 +286,7 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/home/nfs/aaduszki/data/berncrt_driver_test_b_%#.root"
+    fileName: "/data1/crt_test_%#.root"
     compressionLevel: 0
     fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
 

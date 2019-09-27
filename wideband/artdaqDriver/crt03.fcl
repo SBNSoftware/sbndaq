@@ -1,7 +1,4 @@
-events_to_generate: 4500
-
-
-run_number: 100
+events_to_generate: 1
 
 debug_cout: true
 
@@ -204,24 +201,14 @@ bitstream: '
 '
 
 
-
 fragment_receiver: {
 
    generator: BernCRTZMQData
    
    fragment_type: BERNCRTZMQ
-   max_fragment_size_bytes: 1000
 
    board_id: 1
 
-   RunNumber: @local::run_number
-   SubrunTimeWindowSize: 1e8
-   SequenceTimeWindowSize: 1e8
-
-   nADCBits: 12
-   nChannels: 32
-   ReaderID: 0x1
-   
 #   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
    FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
    ethernet : enp101s0f3
@@ -230,13 +217,6 @@ fragment_receiver: {
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
-
-   FEBDequeBufferCapacity: 10e3
-   FEBDTPBufferCapacity: 1024
-
-   zmq_data_receive_timeout_ms: 500
-   
-   MaxDTPSleep: 1e8
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

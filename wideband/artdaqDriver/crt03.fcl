@@ -1,4 +1,4 @@
-events_to_generate: 1
+events_to_generate: 10001
 
 debug_cout: true
 
@@ -214,7 +214,7 @@ fragment_receiver: {
    ethernet : enp101s0f3
    zmq_listening_port: 5530
   
-   MaxTimeDiffs : [ 1e8 ]
+   MaxTimeDiffs : [ 1e8, 1e8, 1e8 ]
 
    FEBBufferCapacity: 98789
 
@@ -227,16 +227,13 @@ ProbeBitStream : '
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
 '
-SlowControlBitStream0 : @local::bitstream
-SlowControlBitStream1 : @local::bitstream
-SlowControlBitStream2 : @local::bitstream
-SlowControlBitStream3 : @local::bitstream
-SlowControlBitStream4 : @local::bitstream
-SlowControlBitStream5 : @local::bitstream
-SlowControlBitStream6 : @local::bitstream
-
-
-
+    SlowControlBitStream0 : @local::bitstream
+    SlowControlBitStream1 : @local::bitstream
+    SlowControlBitStream2 : @local::bitstream
+    SlowControlBitStream3 : @local::bitstream
+    SlowControlBitStream4 : @local::bitstream
+    SlowControlBitStream5 : @local::bitstream
+    SlowControlBitStream6 : @local::bitstream
 }
 
 event_builder: {
@@ -268,9 +265,7 @@ outputs:{
     module_type: RootOutput
     fileName: "/data1/crt_test_%#.root"
     compressionLevel: 0
-    fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
-
-    
+    fileProperties: { maxEvents: 1000 maxSubRuns: 1 maxRuns: 1  }
   }
 
 }

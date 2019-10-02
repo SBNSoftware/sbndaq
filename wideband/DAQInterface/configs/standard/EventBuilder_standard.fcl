@@ -54,7 +54,7 @@ daq: {
     evbFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "~/data1/evb01_metrics.log"
+      fileName: "/data1/evb01_metrics.log"
       uniquify: true
     }
     graphite: {
@@ -75,7 +75,7 @@ outputs: {
   }
   normalOutput: {
     module_type: RootOutput
-    fileName: "~/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileName: "/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 0
     fastCloning: false

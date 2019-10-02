@@ -5,7 +5,7 @@ daq:
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
-    GetNextFragmentBunchSize: 20
+    GetNextFragmentBunchSize: 40
 
     fragment_id: 0
     board_id:    0
@@ -17,6 +17,33 @@ daq:
 
     # ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
     ModeLVDS: 1
+
+    # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
+    LVDSLogicValueG1: 3
+    LVDSLogicValueG2: 3
+    LVDSLogicValueG3: 3
+    LVDSLogicValueG4: 3
+    LVDSLogicValueG5: 3
+    LVDSLogicValueG6: 3
+    LVDSLogicValueG7: 3
+    LVDSLogicValueG8: 3
+    # Aiwu added here to set LVDS output width: N*8ns will be the width!
+    LVDSOutWidthC1: 20
+    LVDSOutWidthC2: 8
+    LVDSOutWidthC3: 20
+    LVDSOutWidthC4: 20
+    LVDSOutWidthC5: 20
+    LVDSOutWidthC6: 20
+    LVDSOutWidthC7: 20
+    LVDSOutWidthC8: 20
+    LVDSOutWidthC9: 20
+    LVDSOutWidthC10: 20
+    LVDSOutWidthC11: 20
+    LVDSOutWidthC12: 20
+    LVDSOutWidthC13: 20
+    LVDSOutWidthC14: 20
+    LVDSOutWidthC15: 20
+    LVDSOutWidthC16: 20
 
     # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
     SelfTriggerMode: 3
@@ -30,6 +57,7 @@ daq:
 
     # Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
     MajorityCoincidenceWindow: 1
+    MajorityTimeWindow: 4 
 
     allowTriggerOverlap: false
 
@@ -37,12 +65,13 @@ daq:
     enableReadout: 1
     
     boardId: 0
-    recordLength:         20000
+    recordLength:         10000
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
-    usePedestals:         false
+    usePedestals:         false 
     dacValue:             32768
+    #32768
     
     # ioLevel: 0=NIM, 1=TTL
     ioLevel:              1
@@ -57,7 +86,7 @@ daq:
     # acqMode: 0=Software Controlled, 1=Front Panel S_IN
     acqMode:              0
     
-    triggerPolarity:      1   
+    triggerPolarity:      0   
     debugLevel:           7
     postPercent:          70
     eventsPerInterrupt:   1
@@ -102,7 +131,7 @@ daq:
     channelEnable14:   true
     channelEnable15:   true
 
-    triggerPulseWidth: 10
+    triggerPulseWidth: 20
     
     BoardChainNumber: 0
     InterruptLevel: 0
@@ -116,22 +145,22 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  14545
-    triggerThreshold1:  14545
-    triggerThreshold2:  14545
-    triggerThreshold3:  14545
-    triggerThreshold4:  14545
-    triggerThreshold5:  14545
-    triggerThreshold6:  14545
-    triggerThreshold7:  14545
-    triggerThreshold8:  14545
-    triggerThreshold9:  14545
-    triggerThreshold10: 14545
-    triggerThreshold11: 14545
-    triggerThreshold12: 14545
-    triggerThreshold13: 14545
-    triggerThreshold14: 14545
-    triggerThreshold15: 14545
+    triggerThreshold0:  14400
+    triggerThreshold1:  14400
+    triggerThreshold2:  14600
+    triggerThreshold3:  14600
+    triggerThreshold4:  14600
+    triggerThreshold5:  14600
+    triggerThreshold6:  14600
+    triggerThreshold7:  14600
+    triggerThreshold8:  14600
+    triggerThreshold9:  14600
+    triggerThreshold10: 14600
+    triggerThreshold11: 14600
+    triggerThreshold12: 14600
+    triggerThreshold13: 14600
+    triggerThreshold14: 14600
+    triggerThreshold15: 14600
 
 #    triggerThreshold0:  0
 #    triggerThreshold1:  0

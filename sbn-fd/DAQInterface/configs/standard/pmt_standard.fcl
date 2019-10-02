@@ -5,7 +5,7 @@ daq:
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
-    GetNextFragmentBunchSize: 40
+    GetNextFragmentBunchSize: 20
 
     fragment_id: 0
     board_id:    0
@@ -29,7 +29,7 @@ daq:
     LVDSLogicValueG8: 3
     # Aiwu added here to set LVDS output width: N*8ns will be the width!
     LVDSOutWidthC1: 20
-    LVDSOutWidthC2: 8
+    LVDSOutWidthC2: 20
     LVDSOutWidthC3: 20
     LVDSOutWidthC4: 20
     LVDSOutWidthC5: 20
@@ -44,6 +44,8 @@ daq:
     LVDSOutWidthC14: 20
     LVDSOutWidthC15: 20
     LVDSOutWidthC16: 20
+    # Aiwu added here: self trigger, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
+    SelfTrigBit: 16
 
     # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
     SelfTriggerMode: 3

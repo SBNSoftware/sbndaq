@@ -1,0 +1,29 @@
+fragment_type_global: BERNCRTZMQ
+fragment_id_global: 4
+generator_global: BernCRTZMQData
+
+max_fragment_size_bytes_global: 1000000
+
+SubrunTimeWindowSize_global: 1e8
+SequenceTimeWindowSize_global: 1e8
+
+nADCBits_global: 12
+nChannels_global: 32
+
+FEBDequeBufferCapacity_global: 10e3
+FEBDTPBufferCapacity_global: 1024
+
+zmq_data_receive_timeout_ms_global: 500
+
+MaxDTPSleep_global: 1e8
+
+#PROBE bitsream (FEB monitoring, not useful during normal CRT operation or tests). Bitstream format: 0s and 1s are accepted and whitespaces are ignored, until any other character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
+ProbeBitStream_global : '
+00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
+00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
+00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
+'

@@ -28,6 +28,8 @@ daq: {
 #List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
 #   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234d7, 0x60371234d6, 0x60371234d5 ]
    FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234d7]
+# Whether or not turn on SiPM HV on each FEB
+   TurnOnHV : [ true, true, true ]
 #Ethernet port used by febdrv
    ethernet : enp101s0f3
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively

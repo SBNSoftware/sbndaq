@@ -1,4 +1,4 @@
-events_to_generate: 10001
+events_to_generate: 11
 
 debug_cout: true
 
@@ -209,8 +209,11 @@ fragment_receiver: {
 
    board_id: 1
 
+#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
 #   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
    FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
+#Whether or not turn on bias HV on the individual FEBs
+   TurnOnHV : [ true, true, true ]
    ethernet : enp101s0f3
    zmq_listening_port: 5530
   

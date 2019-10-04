@@ -10,18 +10,9 @@ daq: {
     fragment_id:   @local::fragment_id_global
     generator:     @local::generator_global
     
-    max_fragment_size_bytes: @local::max_fragment_size_bytes_global
-
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
     board_id: 1
 
-#What is it?
-    SubrunTimeWindowSize:   @local::SubrunTimeWindowSize_global
-    SequenceTimeWindowSize: @local::SequenceTimeWindowSize_global
-
-#Do we need it in the configuration file?
-    nADCBits: @local::nADCBits_global
-    nChannels: @local::nChannels_global
 #What is ReaderID? Another ID?
     ReaderID: 0x1
    
@@ -37,16 +28,6 @@ daq: {
   
 #What is it? Maximum time difference between what and what? What units? Why is it an array?
    MaxTimeDiffs : [ 1e8 ]
-
-#What is it? Is it used by anything?
-   FEBDequeBufferCapacity: @local::FEBDequeBufferCapacity_global
-   FEBDTPBufferCapacity:   @local::FEBDTPBufferCapacity_global
-
-#This value is read by BernCRTZMQData but then not used apparently
-   zmq_data_receive_timeout_ms: @local::zmq_data_receive_timeout_ms_global
-
-#What is it?
-   MaxDTPSleep: @local::MaxDTPSleep_global
 
    destinations: { }
    routing_table_config:

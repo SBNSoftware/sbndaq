@@ -1,0 +1,48 @@
+#include "crt_common.fcl"
+#include "crt_bitstream_000.fcl"
+
+daq: {
+
+  fragment_receiver: {
+
+#What is fragment type and id?
+    fragment_type: @local::fragment_type_global
+    fragment_id:   @local::fragment_id_global
+    generator:     @local::generator_global
+    
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+    board_id: 1
+
+#What is ReaderID? Another ID?
+    ReaderID: 0x1
+   
+#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
+   FEBIDs : [ 0x60371234f0 ]
+# Whether or not turn on SiPM HV on each FEB
+   TurnOnHV : [ false ]
+#Ethernet port used by febdrv
+   ethernet : enp4s0
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
+   zmq_listening_port: 5550
+  
+#What is it? Maximum time difference between what and what? What units? Why is it an array?
+   MaxTimeDiffs : [ 1e8 ]
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   }
+
+#PROBE register bitstream, monitoring configuration, not used for normal data taking but required to be loaded
+    ProbeBitStream : @local::ProbeBitStream_global
+
+#SC bitstream, main FEB configuration
+    SlowControlBitStream0: @local::SlowControlBitStream_id_000 #let's use the same config for all FEBs for now
+    SlowControlBitStream1: @local::SlowControlBitStream_id_000
+    SlowControlBitStream2: @local::SlowControlBitStream_id_000
+    SlowControlBitStream3: @local::SlowControlBitStream_id_000
+    SlowControlBitStream4: @local::SlowControlBitStream_id_000
+    SlowControlBitStream5: @local::SlowControlBitStream_id_000
+  }
+}

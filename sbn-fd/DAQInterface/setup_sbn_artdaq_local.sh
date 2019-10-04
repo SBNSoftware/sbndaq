@@ -28,7 +28,7 @@ source $LOCAL_PRODUCTS/setup
 #unsetup -j artdaq_daqinterface
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
-setup artdaq_daqinterface v3_06_00_FB23224
+setup artdaq_daqinterface v3_06_01_FB23262
 
 
 #Trace setup for debugging:

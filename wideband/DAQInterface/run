@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# change the localhost to the priv subnet
-sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility.fcl
-
 function getStatus()
 {
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
@@ -13,13 +10,7 @@ function getStatus()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-#setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01 tpc01
-#setdaqcomps.sh pmtx02 pmtx01 ptb01
-#setdaqcomps.sh tpc01 ptb01
-#setdaqcomps.sh pmtx01 ptb01
-#setdaqcomps.sh crt05
-#setdaqcomps.sh pmtx01 tpc01 ptb01 crt05
-setdaqcomps.sh pmtx01 tpc01 ptb01
+setdaqcomps.sh crt03
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -44,9 +35,6 @@ done
 # echo "pgrep EventBuilder: $(pgrep EventBuilder)"
 #for i in $(pgrep BoardReader); do taskset -cp 1-15 $i; done
 # for i in $(pgrep EventBuilder); do taskset -cp 1-15 $i; done
-
-# change back localhost
-sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility.fcl
 
 send_transition.sh start
 # getStatus "starting"

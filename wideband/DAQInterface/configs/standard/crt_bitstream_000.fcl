@@ -104,70 +104,70 @@ SlowControlBitStream_id_000 : '
 0 # Select LG PA to send to Fast Shaper#
 1 # Enable 32 input 8-bit DACs#
 1 # 8-bit input DAC Voltage Reference (1 = external 4,5V , 0 = internal 2,5V)#
-10001011 1 # Input 8-bit DAC Data channel 0 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10110011 1 # Input 8-bit DAC Data channel 1 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111101 1 # Input 8-bit DAC Data channel 2 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111100 1 # Input 8-bit DAC Data channel 3 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10011010 1 # Input 8-bit DAC Data channel 4 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001010 1 # Input 8-bit DAC Data channel 5 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001000 1 # Input 8-bit DAC Data channel 6 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111100 1 # Input 8-bit DAC Data channel 7 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111100 1 # Input 8-bit DAC Data channel 8 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000010 1 # Input 8-bit DAC Data channel 9 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111111 1 # Input 8-bit DAC Data channel 10 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111100 1 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001011 1 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10010010 1 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10011001 1 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10010001 1 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000000 1 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001110 1 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001110 1 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000100 1 # Input 8-bit DAC Data channel 19 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000101 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001010 1 # Input 8-bit DAC Data channel 21 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001100 1 # Input 8-bit DAC Data channel 22 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000010 1 # Input 8-bit DAC Data channel 23 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10010011 1 # Input 8-bit DAC Data channel 24 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001101 1 # Input 8-bit DAC Data channel 25 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001111 1 # Input 8-bit DAC Data channel 26 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10000100 1 # Input 8-bit DAC Data channel 27 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10001110 1 # Input 8-bit DAC Data channel 28 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10011001 1 # Input 8-bit DAC Data channel 29 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111100 1 # Input 8-bit DAC Data channel 30 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-10010000 1 # Input 8-bit DAC Data channel 31 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-100011 101111 000 # Ch0   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch1   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch2   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch3   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch4   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch5   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch6   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch7   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch8   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch9   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch10   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch11   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch12   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch13   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch14   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch15   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch16   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch17   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch18   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch19   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch20   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch21   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch22   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch23   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch24   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch25   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch26   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch27   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch28   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch29   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch30   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-100011 101111 000 # Ch31   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+01111111 0 # Input 8-bit DAC Data channel 0 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 1 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 2 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 3 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 4 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 5 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 6 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 7 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 8 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 9 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 10 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 19 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 21 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 22 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 23 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 24 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 25 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 26 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 27 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 28 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 29 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 30 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 31 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+101001 101111 000 # Ch0   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch1   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch2   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch3   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch4   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch5   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch6   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch7   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch8   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch9   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch10   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch11   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch12   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch13   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch14   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch15   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch16   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch17   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch18   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch19   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch20   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch21   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch22   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch23   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch24   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch25   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch26   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch27   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch28   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch29   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch30   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch31   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 1 # Disable Temperature Sensor power pulsing mode (force ON)#
 1 # Enable Temperature Sensor#
 1 # Disable BandGap power pulsing mode (force ON)#
@@ -176,8 +176,8 @@ SlowControlBitStream_id_000 : '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-00 1111 1010 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
-00 1111 1010 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#

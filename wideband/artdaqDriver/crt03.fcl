@@ -214,7 +214,6 @@ fragment_receiver: {
    FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
 #Whether or not turn on bias HV on the individual FEBs
    TurnOnHV : [ true, true, true ]
-   ethernet : enp101s0f3
    zmq_listening_port: 5530
   
    MaxTimeDiffs : [ 1e8, 1e8, 1e8 ]

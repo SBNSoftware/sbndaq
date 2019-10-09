@@ -21,8 +21,6 @@ daq: {
    FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234d7]
 # Whether or not turn on SiPM HV on each FEB
    TurnOnHV : [ true, true, true ]
-#Ethernet port used by febdrv
-   ethernet : enp101s0f3
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5530
   

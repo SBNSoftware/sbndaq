@@ -190,7 +190,7 @@ SlowControlBitStream_id_000 : '
 0 # Enable Raz_Chn receiver#
 0 # Disable Raz Chn receiver power pulsing mode (force ON)#
 0 # Enable digital multiplexed output (hit mux out)#
-0 # Enable digital OR32 output#
+1 # Enable digital OR32 output#
 0 # Enable digital OR32 Open Collector output#
 0 # Trigger Polarity#
 0 # Enable digital OR32_T Open Collector output#

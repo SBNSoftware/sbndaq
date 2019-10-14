@@ -210,16 +210,23 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-#   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
-   FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
-#Whether or not turn on bias HV on the individual FEBs
-   TurnOnHV : [ true, true, true ]
-   ethernet : enp101s0f3
+   FEBIDs : [ 0x6037123455, 0x6037123456, 0x6037123457, 0x60371234D7, 0x60371234D6, 0x60371234D5 ]
+#   FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234D7 ]
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+   TurnOnHV : [ true, true, true, true, true, true ]
+#   TurnOnHV : [ true, true, true ]
    zmq_listening_port: 5530
-  
-   MaxTimeDiffs : [ 1e8, 1e8, 1e8 ]
+
+#I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
+   MaxTimeDiffs : [ 1e8, 1e8, 1e8, 1e8, 1e8, 1e8 ]
 
    FEBBufferCapacity: 98789
+   ZMQBufferCapacity: 1024 * 6
+   
+#Not sure (yet) what is it
+   throttle_usecs:       100000
+   throttle_usecs_check:  10000
+
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

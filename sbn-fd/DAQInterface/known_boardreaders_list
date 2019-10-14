@@ -1,8 +1,8 @@
-gps   localhost -1
-icarustpc01 localhost -1
-icarustpc02 localhost -1
-icarustpc03 localhost -1
-icarustpc04 localhost -1
+gps   icarus-vst02 -1
+icarustpc01 icarus-vst01-daq -1
+icarustpc02 icarus-vst01-daq -1
+icarustpc03 icarus-vst01-daq -1
+icarustpc04 icarus-vst01-daq -1
 icarustpc05 localhost -1
 icarustpc06 localhost -1
 icarustpc07 localhost -1
@@ -28,7 +28,7 @@ pmt17 localhost -1
 pmt18 localhost -1
 pmt19 localhost -1
 pmt20 localhost -1
-pmtx01 localhost -1
+pmtx01 icarus-vst02-priv -1
 pmtx02 localhost -1
 pmtx03 localhost -1
 pmtx04 localhost -1

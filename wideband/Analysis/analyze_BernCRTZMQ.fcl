@@ -8,7 +8,7 @@ services: {
 source:
 {
   module_type: RootInput
-  maxEvents:   360        # Number of events to create
+  maxEvents:   100000      # Number of events to create
 }
 
 outputs:

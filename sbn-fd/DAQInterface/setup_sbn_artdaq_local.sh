@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
@@ -8,13 +9,13 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
 SBNDAQ_VERSION="v0_03_00"
 SBNDAQ_QUAL1="e17"
-SBNDAQ_QUAL3="s82"
 SBNDAQ_QUAL2="prof"
+SBNDAQ_QUAL3="s82"
 
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}"
-LOCAL_PRODUCTS_TRY3="$(dirname  $(ls -d $(dirname $(pwd))/loca*/setup |head -1))"
+LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+LOCAL_PRODUCTS_TRY3="$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
 
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
    LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
@@ -41,3 +42,5 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 
+
+

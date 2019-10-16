@@ -1,9 +1,12 @@
-daq: {
-  fragment_receiver: {
+daq: 
+{
+  fragment_receiver: 
+  {
 
     generator:   CAENV1730Readout
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
+    GetNextFragmentBunchSize: 20
    
     # ## Pull mode parameters
     # request_address:        "227.128.9.129" # -- multicast request address
@@ -21,8 +24,24 @@ daq: {
     Verbosity: 1
     SWTrigger: false
 
+    # begin run ADC calibration
+    CalibrateOnConfig: true
+
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
-    ModeLVDS: 1
+    ModeLVDS: 0
+
+    # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
+    SelfTriggerMode: 2
+
+    # SelfTriggerMask One enable bit for each pair of channels
+    SelfTriggerMask: 255
+
+    # Majority mode logic
+    # For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
+    MajorityLevel: 0
+
+    # Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
+    MajorityCoincidenceWindow: 1
 
     allowTriggerOverlap: false
 

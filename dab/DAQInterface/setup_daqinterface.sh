@@ -22,3 +22,6 @@ if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
   echo "Sourcing " $ARTDAQ_DAQINTERFACE_DIR/source_me
   source $ARTDAQ_DAQINTERFACE_DIR/source_me
 fi
+
+sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' $THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageFacility_Local.fcl
+export DAQINTERFACE_MESSAGEFACILITY_FHICL=$THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageFacility_Local.fcl

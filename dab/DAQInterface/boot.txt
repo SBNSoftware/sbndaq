@@ -1,8 +1,8 @@
 DAQ setup script: $SETUP_FILE
 PMT host: sbnd-daq33-priv.fnal.gov
 
-# debug level can range from 0 to 3 (increasing order of verbosity)
-debug level: 3
+# debug level can range from 0 to 4 (increasing order of verbosity)
+debug level: 2
 
 EventBuilder host: sbnd-daq33-priv.fnal.gov
 EventBuilder allowed_processors: 3-15

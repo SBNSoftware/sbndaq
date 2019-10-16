@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # change the localhost to the priv subnet
-sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility.fcl
+sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility_Local.fcl
 
 function getStatus()
 {
@@ -46,7 +46,7 @@ done
 # for i in $(pgrep EventBuilder); do taskset -cp 1-15 $i; done
 
 # change back localhost
-sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility.fcl
+sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
 
 send_transition.sh start
 # getStatus "starting"

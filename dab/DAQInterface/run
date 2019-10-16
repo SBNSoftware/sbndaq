@@ -6,8 +6,11 @@ sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility_Local.fcl
 function getStatus()
 {
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-#  [ $1 != "$status" ] && (echo $status)
-  echo $status
+  if [ $1 ]; then
+      echo $status
+  else
+      [ $1 != "$status" ] && (echo $status)
+  fi
 }
 
 getStatus "nil"

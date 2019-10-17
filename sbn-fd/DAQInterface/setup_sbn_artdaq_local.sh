@@ -38,6 +38,10 @@ setup artdaq_daqinterface v3_06_02
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`
 echo "TRACE_FILE=$TRACE_FILE"
+
+#suppress debug messages
+toffSg 3-63 
+
 # export TRACE_LIMIT_MS="5,1000,2000" 
 
 # toffM 15 -n CommandableFragmentGenerator

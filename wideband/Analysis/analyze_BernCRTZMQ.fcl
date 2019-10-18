@@ -1,6 +1,7 @@
 process_name: Dump
 
 services: {
+#output file
   TFileService: { fileName: "berncrt_hist.root" }
 }
 

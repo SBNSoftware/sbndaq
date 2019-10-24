@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
+# if you want verbose output just pass any argument to this script
+verbose=$1
+
 # change back localhost
 sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
 
 function getStatus()
 {
-    status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-      if [ $1 ]; then
-	  echo $status
-      else
-	  [ $1 != "$status" ] && (echo $status)
-      fi
+  status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
+  if [ $verbose ]; then
+    echo $status
+  else
+    [ $1 != "$status" ] && (echo $status)
+  fi
 }
 
 send_transition.sh stop

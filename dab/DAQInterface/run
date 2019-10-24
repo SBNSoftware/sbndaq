@@ -8,6 +8,11 @@ sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility_Local.fcl
 
 function getStatus()
 {
+  local NODAQInterface=$(echo $(status.sh) | grep -q "No DAQInterface instances"; echo $?)
+  if [ $NODAQInterface -eq 0 ]; then
+    echo "No DAQInterface instances are found to exist; exiting."
+    exit 1
+  fi
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
   if [ $verbose ]; then
     echo $status

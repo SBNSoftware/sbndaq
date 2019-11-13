@@ -15,21 +15,21 @@ SBNDAQ_QUAL3="s82"
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
 LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-LOCAL_PRODUCTS_TRY3="$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
+#LOCAL_PRODUCTS_TRY3="$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
 
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
    LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
 elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
    LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
-elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
-   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
+#elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
+#   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
 else
    echo "localProducts not found"
-   exit 0
+  # exit 0
 fi
 
 
-source $LOCAL_PRODUCTS/setup
+[[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 setup artdaq_daqinterface v3_06_02

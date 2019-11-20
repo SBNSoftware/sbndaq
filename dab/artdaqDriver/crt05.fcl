@@ -218,6 +218,12 @@ fragment_receiver: {
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
+   ZMQBufferCapacity: 6543
+       
+   #Not sure (yet) what is it
+   throttle_usecs:       100000
+   throttle_usecs_check:  10000
+
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

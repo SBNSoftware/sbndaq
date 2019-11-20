@@ -42,9 +42,9 @@ daq: {
       level:5
       metricPluginType: "graphite"
       reporting_interval: 10.0
-      host:"sbn-daq02.fnal.gov"
+      host:"192.168.191.18"
       port:2003
-      namespace:"artdaq.dl01."
+      namespace:"icarus.dl.standard"
     } 
   }
 

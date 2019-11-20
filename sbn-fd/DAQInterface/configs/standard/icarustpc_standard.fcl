@@ -50,6 +50,16 @@ fragment_receiver: {
       fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
+
+    graphite: {
+     level:5
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.18"
+     port:2003
+     namespace:"icarus.tpc.standard."
+    }
+
 #    redis_10s: {
 #          metricPluginType: "redis"
 #      level: 3

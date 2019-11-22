@@ -271,7 +271,7 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/data1/crt_north_test_inner_%#.root"
+    fileName: "/data1/crt_north_test_outer_%#.root"
     compressionLevel: 0
     fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
   }

@@ -9,5 +9,12 @@ daq:
     board_id: 401 
     destinations: {}
     sends_no_fragments: true 
+
+    MBB:
+    {
+      address: "sbnd-mbb01"
+      mbb_table: "MBB.adt"
+      expected_mbb_fw_version: 108
+    }
   }
 }

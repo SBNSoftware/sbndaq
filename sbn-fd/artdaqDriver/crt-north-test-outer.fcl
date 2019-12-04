@@ -143,21 +143,21 @@ bitstream: '
 101001 101111 000 # Ch1   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch2   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch3   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch4   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch5   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch6   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch7   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch8   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch9   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch10   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch11   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch12   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch13   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch14   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch15   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch16   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch17   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
-101001 101111 001 # Ch18   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch4   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch5   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch6   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch7   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch8   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch9   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch10   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch11   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch12   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch13   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch14   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch15   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch16   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch17   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
+101001 101111 000 # Ch18   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch19   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch20   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
 101001 101111 000 # Ch21   PreAmp config (HG gain[5..0], LG gain [5..0], CtestHG, CtestLG, PA disabled)#
@@ -210,11 +210,11 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 4, 5, 8, 9 ]
+   FEBIDs : [ 5, 4, 8, 9 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
    TurnOnHV : [ true, true, true, true ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 0, 0, 0, 0 ]
+   PPS_offset_ns : [ 131, 151, 208, 228 ]
 
    zmq_listening_port: 5500
 

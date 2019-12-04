@@ -1,4 +1,4 @@
-events_to_generate: 500000
+events_to_generate: 10000
 
 debug_cout: false
 
@@ -210,9 +210,12 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 0x60371234ab, 0x60371234b1, 0x60371234b2, 0x60371234a1 ]
+   FEBIDs : [ 4, 5, 8, 9 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
    TurnOnHV : [ true, true, true, true ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 0, 0, 0, 0 ]
+
    zmq_listening_port: 5500
 
 #I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
@@ -271,8 +274,8 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/data1/crt_north_test_inner_%#.root"
-    compressionLevel: 0
+    fileName: "/data1/crt_north_outer_%#.root"
+    compressionLevel: 9
     fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
   }
 

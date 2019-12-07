@@ -251,7 +251,7 @@ event_builder: {
 
   expected_fragments_per_event: 1
   max_fragment_size_bytes: 1000
-  buffer_count: 10000
+  buffer_count: 1000
   use_art: true
   print_event_store_stats: false
   verbose: false

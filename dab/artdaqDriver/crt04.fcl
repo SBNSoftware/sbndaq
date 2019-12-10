@@ -210,9 +210,12 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 0x60371234f0 ]
+   FEBIDs : [ 0xf0 ]
 #Whether or not turn on bias HV on the individual FEBs
    TurnOnHV : [ false ] #I don't wan't to switch HV at D0, AA, 2019-10-03
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 0 ]
+
    zmq_listening_port: 5550
   
    MaxTimeDiffs : [ 1e8 ]

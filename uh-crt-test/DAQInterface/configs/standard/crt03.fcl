@@ -16,12 +16,13 @@ daq: {
 #What is ReaderID? Another ID?
     ReaderID: 0x1
    
-#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
-   FEBIDs : [ 0x6037123464, 0x6037123465 ]
-#   FEBIDs : [ 0x6037123455, 0x6037123457, 0x60371234d7]
+#List of full MAC addresses of FEBs read by given febdrv. The number of entries in this array will determine the numbers of FEBs we will read?
+   FEBIDs : [ 100, 101, 102 ]
 # Whether or not turn on SiPM HV on each FEB. Size must be equal to FEBIDs
-   TurnOnHV : [ false, false ]
-#   TurnOnHV : [ true, true, true ]
+   TurnOnHV : [ true, true, true ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 85, 86, 88]
+
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5530
   

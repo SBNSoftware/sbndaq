@@ -210,12 +210,13 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 0x64, 0x65 ]
+   FEBIDs : [ 100, 101, 102 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ false, false ]
+   TurnOnHV : [ false, false, false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 10, 20 ]
+   PPS_offset_ns : [ 85, 86, 88 ]
 
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5530
 
 #I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1

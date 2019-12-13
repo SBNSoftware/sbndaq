@@ -1,4 +1,4 @@
-events_to_generate: 11
+events_to_generate: 100
 
 debug_cout: true
 
@@ -210,20 +210,18 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 0x0f ]
-#Whether or not turn on bias HV on the individual FEBs
-   TurnOnHV : [ false ] #I don't wan't to switch HV at D0, AA, 2019-10-03
-#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 0 ]
+   FEBIDs : [ 0x6037123400 ]
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+   TurnOnHV : [ true ]
+   zmq_listening_port: 5530
 
-   zmq_listening_port: 5555
-  
+#I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
    ZMQBufferCapacity: 6543
-       
-   #Not sure (yet) what is it
+   
+#Not sure (yet) what is it
    throttle_usecs:       100000
    throttle_usecs_check:  10000
 

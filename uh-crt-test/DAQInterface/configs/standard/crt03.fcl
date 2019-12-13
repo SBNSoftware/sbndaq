@@ -17,25 +17,25 @@ daq: {
     ReaderID: 0x1
    
 #List of full MAC addresses of FEBs read by given febdrv. The number of entries in this array will determine the numbers of FEBs we will read?
-   FEBIDs : [ 0x0f ]
-# Whether or not turn on SiPM HV on each FEB
-   TurnOnHV : [ false ]
+   FEBIDs : [ 100, 101, 102 ]
+# Whether or not turn on SiPM HV on each FEB. Size must be equal to FEBIDs
+   TurnOnHV : [ true, true, true ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 0 ]
-
+   PPS_offset_ns : [ 85, 86, 88]
 
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
-   zmq_listening_port: 5555
+   zmq_listening_port: 5530
   
-#What is it? Maximum time difference between what and what? What units? Why is it an array?
+#What is it? Maximum time difference between what and what? What units? Why is it an array? Size must be equal to FEBIDs or exactly 1
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
-   ZMQBufferCapacity: 6543
-          
+   ZMQBufferCapacity: 6024
+      
    #Not sure (yet) what is it
    throttle_usecs:       100000
    throttle_usecs_check:  10000
+
 
    destinations: { }
    routing_table_config:

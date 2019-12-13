@@ -1,0 +1,86 @@
+
+artdaq_processes: [{
+
+collection: GPSs 
+
+pattern: "(.*/)(gps(\d*|_standard))(\.fcl$)" 
+
+}, {
+
+collection: PTBs 
+
+pattern: "(.*/)(ptb(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: PMTs 
+
+pattern: "(.*/)(pmt(\d+|x\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: TPCs 
+
+pattern: "(.*/)((icarustpc|icarustpcwe|icarustpcww|icarustpcew|icarustpcee|tpc)(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: EventBuilders 
+
+pattern: "(.*/)(EventBuilder(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: DataLoggers 
+
+pattern: "(.*/)(DataLogger(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: Dispatchers 
+
+pattern: "(.*/)(Dispatcher(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RoutingMasters 
+
+pattern: "(.*/)(RoutingMaster(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: Hashes 
+
+pattern: "(.*/)(hashes)(\.fcl$)" 
+
+}] 
+
+artdaq_includes: [] 
+
+run_history: [{
+
+collection: RunHistory 
+
+pattern: "(.*/)((pmt|tpc)(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingMaster)(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(metadata|boot|known_boardreaders_list|DataflowConfiguration|RunHistory)(\.fcl$)" 
+
+}] 
+
+system_layout: [{
+
+collection: SystemLayout 
+
+pattern: "(.*)(schema)(\.fcl$)" 
+
+}] 

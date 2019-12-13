@@ -22,3 +22,4 @@ if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
   echo "Sourcing " $ARTDAQ_DAQINTERFACE_DIR/source_me
   source $ARTDAQ_DAQINTERFACE_DIR/source_me
 fi
+export ARTDAQ_DATABASE_CONFDIR=/data/artdaq_database/config

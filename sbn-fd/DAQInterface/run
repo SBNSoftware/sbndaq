@@ -30,8 +30,16 @@ function report_datafile_location()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-#setdaqcomps.sh icarustpc01 icarustpc02 icarustpc03 icarustpc04
-setdaqcomps.sh  icarustpc04
+# setdaqcomps.sh icarustpc01 icarustpc02 icarustpc03 icarustpc04
+
+# BH MH: commenting out this line for now. For regular VST running, we want to use this...
+# setdaqcomps.sh icarustpc01 icarustpc04
+
+# BH MH: adding this line for now, to try using a 3rd crate
+# DM: changing name convention
+#setdaqcomps.sh icarustpc01 icarustpc04 icarustpcew07 icarustpcew09
+setdaqcomps.sh icarustpc01 icarustpc04 
+
 
 
 send_transition.sh boot boot.txt

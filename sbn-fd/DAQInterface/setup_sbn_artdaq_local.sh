@@ -33,7 +33,7 @@ fi
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 setup artdaq_daqinterface v3_06_02
-
+export ARTDAQ_DATABASE_CONFDIR=/data/artdaq_database/config
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
@@ -25,17 +24,17 @@ elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
 #elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
 #   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
 else
-   echo "localProducts not found"
-  # exit 0
+   echo "Warning: localProducts not found."
 fi
 
 
 [[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
+
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
-export ARTDAQ_DATABASE_CONFDIR=/data/artdaq_database/config
-#unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_07_01
+export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
+unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
+setup artdaq_daqinterface v3_07_00
 
 
 #Trace setup for debugging:
@@ -45,8 +44,7 @@ echo "TRACE_FILE=$TRACE_FILE"
 #suppress debug messages
 toffSg 3-63 
 
-# export TRACE_LIMIT_MS="5,1000,2000" 
-
+#export TRACE_LIMIT_MS="5,1000,2000" 
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 
 

@@ -5,7 +5,6 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
-  }
 }
 
 daq: {

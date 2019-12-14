@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
@@ -7,32 +6,35 @@ setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_03_00"
+SBNDAQ_VERSION="v0_04_00"
 SBNDAQ_QUAL1="e17"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s82"
+SBNDAQ_QUAL3="s83"
 
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
 LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-# LOCAL_PRODUCTS_TRY3="$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
+#LOCAL_PRODUCTS_TRY3="$(dirname $(pwd))/products"
+#"$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
 
 if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
    LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
 elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
    LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
-elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
-   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
+#elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
+#   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
 else
-   echo "localProducts not found"
-   exit 0
+   echo "Warning: localProducts not found."
 fi
 
 
-source $LOCAL_PRODUCTS/setup
+[[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
+
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
-setup artdaq_daqinterface v3_06_02
+export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
+unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
+setup artdaq_daqinterface v3_07_00
 
 
 #Trace setup for debugging:
@@ -42,9 +44,7 @@ echo "TRACE_FILE=$TRACE_FILE"
 #suppress debug messages
 toffSg 3-63 
 
-# export TRACE_LIMIT_MS="5,1000,2000" 
-
+#export TRACE_LIMIT_MS="5,1000,2000" 
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 
-
 

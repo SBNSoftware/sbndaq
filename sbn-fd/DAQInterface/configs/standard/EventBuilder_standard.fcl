@@ -3,14 +3,8 @@ services: {
   scheduler: {
     errorOnFailureToPut: false
   }
-  NetMonTransportServiceInterface: {
-    service_provider: NetMonTransportService
-    #broadcast_sends: true
-	destinations: {	}
-
-	routing_table_config: {
-	    use_routing_master: false
-	}
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
   }
 }
 
@@ -38,7 +32,7 @@ daq: {
 	evbFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/scratch/log/evb_%UID%_metrics.log"
+	  fileName: "/scratch/log/evb00_metrics.log"
 	  uniquify: true
 	}
 
@@ -48,7 +42,7 @@ daq: {
       reporting_interval: 10.0
       host:"192.168.191.18"
       port:2003
-      namespace:"icarus.eb.standard"
+      namespace:"icarus.evb00."
     } 
   }
 } 
@@ -56,10 +50,16 @@ daq: {
 outputs: {
   rootNetOutput: {
     module_type: RootNetOutput
-  }
+    #broadcast_sends: true
+  	destinations: {	}
+
+  	routing_table_config: {
+	    use_routing_master: false
+	 }
+
   normalOutput: {
     module_type: RootOutput
-    fileName: "/scratch/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileName: "/data/data_evb00_run%R_%#_%to.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 3
     fastCloning: false

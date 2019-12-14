@@ -9,6 +9,7 @@ transition_timeout: 30
 
 services: {
     TimeTracker: {}
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
 }
 
 fragment_receiver: {

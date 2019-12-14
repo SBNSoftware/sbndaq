@@ -2,6 +2,9 @@ icarustpc01
 icarustpc02
 icarustpc03
 icarustpc04
+icarustpcew07
+icarustpcew09
+icarustpcwe03
 pmt01
 pmt02
 pmt03
@@ -12,4 +15,4 @@ EventBuilder3
 DataLogger1
 DataLogger2
 DataLogger3
-
+Dispatcher1

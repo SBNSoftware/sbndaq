@@ -41,7 +41,6 @@ getStatus "nil"
 setdaqcomps.sh icarustpc01 icarustpc04 
 
 
-
 send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]

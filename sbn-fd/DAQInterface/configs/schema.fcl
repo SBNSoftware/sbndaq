@@ -1,0 +1,146 @@
+
+artdaq_processes: [{
+
+collection: GPSs 
+
+pattern: "(.*/)(gps(\d*|_standard))(\.fcl$)" 
+
+}, {
+
+collection: PTBs 
+
+pattern: "(.*/)(ptb(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: CRTs 
+
+pattern: "(.*/)((|icarus)crt(\d+|_bitstream_\d+|_standard|_common))(\.fcl$)" 
+
+}, {
+
+collection: PMTs 
+
+pattern: "(.*/)(pmt(\d+|x\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: TPCs 
+
+pattern: "(.*/)(((|icarus)tpc)((|we|ww|ew|ee)\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: EventBuilders 
+
+pattern: "(.*/)(EventBuilder(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: DataLoggers 
+
+pattern: "(.*/)(DataLogger(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: Dispatchers 
+
+pattern: "(.*/)(Dispatcher(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RoutingMasters 
+
+pattern: "(.*/)(RoutingMaster(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: UserSettings
+
+pattern: "(.*/)(user_setings)(\.fcl$)" 
+
+}, {
+
+collection: Boot
+
+pattern: "(.*/)(boot)(\.fcl$)" 
+
+}, {
+
+collection: KnownBoardreasers
+
+pattern: "(.*/)(known_boardreaders_list)(\.fcl$)" 
+
+}, {
+
+collection: CriticalProcesses
+
+pattern: "(.*/)(critical_process_list)(\.fcl$)" 
+
+}, {
+
+collection: DataflowConfiguration 
+
+pattern: "(.*/)(DataflowConfiguration)(\.fcl$)" 
+
+}, {
+
+collection: Hashes 
+
+pattern: "(.*/)(hashes)(\.fcl$)" 
+
+}] 
+
+artdaq_includes: [] 
+
+run_history: [{
+
+collection: RunHistory
+
+pattern: "(.*/)(gps(\d*|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(ptb(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)((|icarus)crt(\d+|_bitstream_\d+|_standard|_common))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(pmt(\d+|x\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(((|icarus)tpc)((|we|ww|ew|ee)\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingMaster)(\d+|_standard))(\.fcl$)" 
+
+}, {
+
+collection: RunHistory 
+
+pattern: "(.*/)(user_setings|metadata|boot|(known_boardreaders|critical_process)_list|DataflowConfiguration|RunHistory(|2))(\.fcl$)" 
+
+}] 
+
+system_layout: [{
+
+collection: SystemLayout 
+
+pattern: "(.*)(schema)(\.fcl$)" 
+
+}] 

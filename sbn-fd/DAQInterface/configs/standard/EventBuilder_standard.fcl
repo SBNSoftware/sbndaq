@@ -1,0 +1,90 @@
+services: {
+  scheduler: {
+    errorOnFailureToPut: false
+  }
+
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
+  }
+}
+
+daq: {
+  event_builder: {
+    expected_fragments_per_event: 0  # Will be set by DAQInterface
+    max_fragment_size_bytes: 0x10000000 #16777216
+    use_art: true
+    print_event_store_stats: true
+    buffer_count: 20
+    max_incomplete_events: 75 # Same as boardreader sync interval
+    verbose: true
+    send_requests: true
+    request_address: "227.128.7.129"
+    request_port: 3001
+    num_requests: 500
+
+    routing_token_config: {
+    use_routing_master: false
+    }
+
+    sources: { }
+  }
+  metrics: {
+    evbFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/evb00_metrics.log"
+      uniquify: true
+    }
+
+    graphite: {
+      level:5
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.191.18"
+      port:2003
+      namespace:"icarus.evb00."
+    } 
+  }
+} 
+
+outputs: {
+  rootNetOutput: {
+    module_type: RootNetOutput
+    #broadcast_sends: true
+    destinations: { }
+
+    routing_table_config: {
+        use_routing_master: false
+     }
+  }
+
+  normalOutput: {
+    module_type: RootOutput
+    fileName: "/data/data_evb00_run%R_%#_%to.root"
+    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+    compressionLevel: 3
+    fastCloning: false
+ }
+}
+
+physics: {
+  analyzers: {}
+
+  producers: {}
+
+  filters: {}
+
+  p1: [ ]   
+  a1: [ ]
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+
+  trigger_paths: [ p1 ]
+  end_paths: [ my_output_modules ]
+}
+source: {
+  module_type: IcarusInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

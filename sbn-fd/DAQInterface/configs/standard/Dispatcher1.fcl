@@ -2,8 +2,8 @@ services: {
   scheduler: {
     errorOnFailureToPut: false
   }
-  NetMonTransportServiceInterface: {
-    service_provider: NetMonTransportService
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
   }
 }
 
@@ -32,9 +32,18 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/aggregator/agg_%UID%_metrics.log"
+      fileName: "/scratch/log/disp01_%UID%_metrics.log"
       uniquify: true
     }
+    
+    graphite: {
+      level:5
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.191.18"
+      port:2003
+      namespace:"icarus.disp01."
+    } 
   }
 
 }

@@ -24,4 +24,5 @@ DataLogger label: DataLogger1
 
 Dispatcher host: icarus-evb01-daq
 Dispatcher label: Dispatcher1
+# port number must be unique accros all partitions
 Dispatcher port: 6020

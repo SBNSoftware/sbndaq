@@ -21,7 +21,7 @@ pattern: "(.*/)((|icarus)crt(\d+|_bitstream_\d+|_standard|_common))(\.fcl$)"
 
 collection: PMTs 
 
-pattern: "(.*/)(pmt(\d+|x\d+|_standard))(\.fcl$)" 
+pattern: "(.*/)((|icarus)pmt((|we|ww|ew|ee)(|top|bot)\d+|x\d+|_standard))(\.fcl$)" 
 
 }, {
 
@@ -115,8 +115,7 @@ pattern: "(.*/)((|icarus)crt(\d+|_bitstream_\d+|_standard|_common))(\.fcl$)"
 
 collection: RunHistory 
 
-pattern: "(.*/)(pmt(\d+|x\d+|_standard))(\.fcl$)" 
-
+pattern: "(.*/)((|icarus)pmt((|we|ww|ew|ee)(|top|bot)\d+|x\d+|_standard))(\.fcl$)" 
 }, {
 
 collection: RunHistory 

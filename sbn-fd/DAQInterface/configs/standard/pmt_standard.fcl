@@ -67,7 +67,7 @@ daq:
 
     allowTriggerOverlap: false
 
-    link: 0
+    link:0 
     enableReadout: 1
     
     boardId: 0

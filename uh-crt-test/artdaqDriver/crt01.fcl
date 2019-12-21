@@ -210,14 +210,14 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 100, 101, 102 ]
+   FEBIDs : [ 103, 104 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ false, false, false ]
+   TurnOnHV : [ false, false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 85, 86, 88 ]
+   PPS_offset_ns : [ 89, 91 ]
 
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
-   zmq_listening_port: 5530
+   zmq_listening_port: 5510
 
 #I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
    MaxTimeDiffs : [ 1e8 ]
@@ -275,7 +275,7 @@ outputs:{
 
   rootout:{
     module_type: RootOutput
-    fileName: "/data1/2019-12-20_crt03_%#.root"
+    fileName: "/data1/2019-12-19_crt01_%#.root"
     compressionLevel: 9
     fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
   }

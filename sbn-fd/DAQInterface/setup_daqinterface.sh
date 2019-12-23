@@ -22,3 +22,7 @@ if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
   echo "Sourcing " $ARTDAQ_DAQINTERFACE_DIR/source_me
   source $ARTDAQ_DAQINTERFACE_DIR/source_me
 fi
+
+if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; then 
+  $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
+fi

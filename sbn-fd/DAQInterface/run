@@ -18,7 +18,6 @@ getStatus "nil"
 
 # BH MH: adding this line for now, to try using a 3rd crate
 # DM: changing name convention
-#setdaqcomps.sh icarustpc01 icarustpc04 icarustpcew07 icarustpcew09
 setdaqcomps.sh icarustpc04 icarustpcwe07 icarustpcwe09 icarustpcew05 icarustpcew07 icarustpcew09
 
 

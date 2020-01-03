@@ -52,7 +52,7 @@ source: {
 }
 outputs: {
   normalOutput: {
-    module_type: RootOutput
+    module_type: RootDAQOut
     fileName: "/data/data_dl00_run%R_%#_%to.root"
 
     fileProperties: { 

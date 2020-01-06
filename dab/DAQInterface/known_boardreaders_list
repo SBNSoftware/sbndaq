@@ -48,6 +48,7 @@ pmtx03 sbnd-daq33-priv -1
 pmtx04 sbnd-daq33-priv -1
 component01 sbnd-daq33-priv -1
 wib101 localhost -1
+mbb01 localhost -1
 crt00 icarus-crt02.fnal.gov -1
 crt01 icarus-crt02.fnal.gov -1
 crt02 icarus-crt02.fnal.gov -1

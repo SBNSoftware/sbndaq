@@ -2,11 +2,8 @@ services: {
   scheduler: {
     errorOnFailureToPut: false
   }
-  NetMonTransportServiceInterface: {
-    service_provider: NetMonTransportService
-    broadcast_sends: true
-    nonblocking_sends: true
-	destinations: { }
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
   }
 }
 
@@ -35,16 +32,16 @@ daq: {
       metricPluginType: "file"
       level: 3
 
-  	  fileName: "/scratch/log/dl01_metrics.log"
+      fileName : "/scratch/log/dl00_metrics.log"
       uniquify: true
     } 
     graphite: {
       level:5
       metricPluginType: "graphite"
       reporting_interval: 10.0
-      host:"sbn-daq02.fnal.gov"
+      host:"192.168.191.18"
       port:2003
-      namespace:"artdaq.dl01."
+      namespace: "icarus.dl00."
     } 
   }
 
@@ -55,8 +52,8 @@ source: {
 }
 outputs: {
   normalOutput: {
-    module_type: RootOutput
-    fileName: "/scratch/data/itestsbndaq_r%06r_sr%02s_%to_%#.root"
+    module_type: RootDAQOut
+    fileName: "/data/data_dl00_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -70,6 +67,9 @@ outputs: {
   }
   rootNetOutput: {
     module_type: RootNetOutput
+    broadcast_sends: true
+    nonblocking_sends: true
+  	destinations: { }
   }
 
 }

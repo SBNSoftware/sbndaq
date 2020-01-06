@@ -9,6 +9,7 @@ transition_timeout: 30
 
 services: {
     TimeTracker: {}
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
 }
 
 fragment_receiver: {
@@ -153,7 +154,7 @@ outputs:
 
 source:
 {
-  module_type: SBNDDAQInput
+  module_type: SBNDInput
   waiting_time: 900
   resume_after_timeout: true
 }

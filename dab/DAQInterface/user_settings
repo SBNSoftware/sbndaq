@@ -14,7 +14,7 @@
 
 log_directory: /log
 record_directory: /run_records
-package_hashes_to_save: [ artdaq artdaq_core artdaq_utilities icarus_artdaq_base sbndaq_artdaq_core sbndaq_artdaq sbndaq ]
+package_hashes_to_save: [ artdaq, artdaq_core, artdaq_utilities, icarus_artdaq_base, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
 boardreader timeout: 45

@@ -1,4 +1,4 @@
-events_to_generate: 11
+events_to_generate: 300
 
 debug_cout: true
 
@@ -214,13 +214,17 @@ fragment_receiver: {
 #Whether or not turn on bias HV on the individual FEBs
    TurnOnHV : [ false ] #I don't wan't to switch HV at D0, AA, 2019-10-03
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 0 ]
+   PPS_offset_ns : [ 0 ] #0 - dummy value
 
    zmq_listening_port: 5550
   
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
+   ZMQBufferCapacity: 6543
+   
+   throttle_usecs:       100000
+   throttle_usecs_check:  10000
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
@@ -252,6 +256,26 @@ event_builder: {
 
 }
 
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+  }
+
+outputs:{
+  rootout:{
+    module_type: RootOutput
+    fileName: "/data1/crt04_%#.root"
+    compressionLevel: 5
+    fileProperties: {
+      maxEvents: 1000
+      maxSubRuns: 1
+      maxRuns: 1
+    }
+  }
+}
+
+
 physics:{
 
   analyzers: {}
@@ -263,17 +287,6 @@ physics:{
 
 }
 
-outputs:{
-
-  rootout:{
-    module_type: RootOutput
-    fileName: "/data1/crt_test_%#.root"
-    compressionLevel: 0
-    fileProperties: { maxEvents: 1000 maxSubRuns: 1 maxRuns: 1  }
-  }
-
-}
-
 source:{
   module_type: IcarusInput
   waiting_time: 900
@@ -281,4 +294,5 @@ source:{
 }
 
 process_name: Driver
+}
 

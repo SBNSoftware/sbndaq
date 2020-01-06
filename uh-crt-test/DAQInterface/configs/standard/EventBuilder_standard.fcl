@@ -4,12 +4,6 @@ services: {
   }
   NetMonTransportServiceInterface: {
     service_provider: NetMonTransportService
-    #broadcast_sends: true
-    destinations: {	}
-
-    routing_table_config: {
-      use_routing_master: false
-    }
   }
 }
 daq: {
@@ -72,7 +66,14 @@ daq: {
 outputs: {
   rootNetOutput: {
     module_type: RootNetOutput
+    #broadcast_sends: true
+    destinations: { }
+
+    routing_table_config: {
+        use_routing_master: false
+     }
   }
+
   normalOutput: {
     module_type: RootOutput
     fileName: "/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"

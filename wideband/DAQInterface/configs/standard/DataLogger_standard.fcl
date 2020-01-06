@@ -2,11 +2,8 @@ services: {
   scheduler: {
     errorOnFailureToPut: false
   }
-  NetMonTransportServiceInterface: {
-    service_provider: NetMonTransportService
-    broadcast_sends: true
-    nonblocking_sends: true
-	destinations: { }
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
   }
 }
 
@@ -71,6 +68,9 @@ outputs: {
   }
   rootNetOutput: {
     module_type: RootNetOutput
+    broadcast_sends: true
+    nonblocking_sends: true
+  	destinations: { }
   }
 
 }

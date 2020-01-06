@@ -4,24 +4,25 @@ PMT host: localhost
 # debug level can range from 0 to 3 (increasing order of verbosity)
 debug level: 3
 
-EventBuilder host: icarus-vst01-daq
+EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder1
 
-#EventBuilder host: localhost
-#EventBuilder label: EventBuilder2
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder2
 
-DataLogger host: icarus-vst01-daq
+DataLogger host: icarus-evb01-daq
 DataLogger label: DataLogger1
 
-# DataLogger host: localhost
-# DataLogger label: DataLogger2
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger2
 
-# DataLogger host: localhost
+# DataLogger host: icarus-evb01-daq
 # DataLogger label: DataLogger3
 
-# DataLogger host: localhost
+# DataLogger host: icarus-evb01-daq
 # DataLogger label: DataLogger4
 
-Dispatcher host: icarus-vst01-daq
+Dispatcher host: icarus-evb01-daq
 Dispatcher label: Dispatcher1
+# port number must be unique accros all partitions
 Dispatcher port: 6020

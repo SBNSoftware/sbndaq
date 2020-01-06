@@ -29,6 +29,13 @@ daq: {
 #What is it? Maximum time difference between what and what? What units? Why is it an array?
    MaxTimeDiffs : [ 1e8 ]
 
+   FEBBufferCapacity: 98789
+   ZMQBufferCapacity: 6543
+          
+   #Not sure (yet) what is it
+   throttle_usecs:       100000
+   throttle_usecs_check:  10000
+
    destinations: { }
    routing_table_config:
    {

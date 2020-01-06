@@ -261,19 +261,6 @@ art: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
   }
-}
-
-
-physics:{
-
-  analyzers: {}
-  producers: {}
-  filters:   {}
-
-  outstream: [ rootout ]
-  end_paths: [ outstream ]
-
-}
 
 outputs:{
   rootout:{
@@ -288,6 +275,18 @@ outputs:{
   }
 }
 
+
+physics:{
+
+  analyzers: {}
+  producers: {}
+  filters:   {}
+
+  outstream: [ rootout ]
+  end_paths: [ outstream ]
+
+}
+
 source:{
   module_type: IcarusInput
   waiting_time: 900
@@ -295,4 +294,5 @@ source:{
 }
 
 process_name: Driver
+}
 

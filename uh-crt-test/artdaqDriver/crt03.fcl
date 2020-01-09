@@ -219,9 +219,6 @@ fragment_receiver: {
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5530
 
-#I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
-   MaxTimeDiffs : [ 1e8 ]
-
    FEBBufferCapacity: 98789
    ZMQBufferCapacity: 6543
    

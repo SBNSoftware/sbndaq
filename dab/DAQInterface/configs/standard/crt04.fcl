@@ -5,6 +5,17 @@ daq: {
 
   fragment_receiver: {
 
+    ## Pull mode parameters
+    request_address:        "227.128.9.129" # -- multicast request address
+    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+    request_port: 3001   # UDP request port
+    request_mode: window # pull mode
+    request_window_width:  50000000 #5ms window
+    request_window_offset: 2500000 #1ms offset (??)
+    request_windows_are_unique: true
+    separate_data_thread: true
+    stale_request_timeout: 200000000
+
 #What is fragment type and id?
     fragment_type: @local::fragment_type_global
     fragment_id:   @local::fragment_id_global
@@ -16,19 +27,17 @@ daq: {
 #What is ReaderID? Another ID?
     ReaderID: 0x1
    
-#List of full MAC addresses of FEBs read by given febdrv. We can change only the last 8 bits. The number of entries in this array will determine the numbers of FEBs we will read?
-   FEBIDs : [ 0xf0 ]
+#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should cha
+    nge the name
+    FEBIDs : [ 0xf0 ]
 # Whether or not turn on SiPM HV on each FEB
    TurnOnHV : [ false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 0 ]
+   PPS_offset_ns : [ 0 ] # = dummy value
 
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5550
   
-#What is it? Maximum time difference between what and what? What units? Why is it an array?
-   MaxTimeDiffs : [ 1e8 ]
-
    FEBBufferCapacity: 98789
    ZMQBufferCapacity: 6543
           

@@ -45,8 +45,8 @@ echo "TRACE_FILE=$TRACE_FILE"
 toffSg 3-63 
 tonSg 0-2
 tonMg 0-3
-tmodeS 1
-tmodeM 1
+tmodeS 0
+tmodeM 0
 
 #export TRACE_LIMIT_MS="5,1000,2000" 
 # toffM 15 -n CommandableFragmentGenerator

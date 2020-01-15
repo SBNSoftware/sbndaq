@@ -27,8 +27,7 @@ daq: {
 #What is ReaderID? Another ID?
     ReaderID: 0x1
    
-#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should cha
-    nge the name
+#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
     FEBIDs : [ 0xf0 ]
 # Whether or not turn on SiPM HV on each FEB
    TurnOnHV : [ false ]

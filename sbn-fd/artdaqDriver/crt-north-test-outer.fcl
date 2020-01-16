@@ -218,9 +218,6 @@ fragment_receiver: {
 
    zmq_listening_port: 5500
 
-#I don't know what is it (yet). The size must be the same as FEBIDs, or exactly size 1
-   MaxTimeDiffs : [ 1e8 ]
-
    FEBBufferCapacity: 98789
    ZMQBufferCapacity: 6543
    
@@ -250,8 +247,8 @@ ProbeBitStream : '
 event_builder: {
 
   expected_fragments_per_event: 1
-  max_fragment_size_bytes: 1000
-  buffer_count: 1000
+  max_fragment_size_bytes: 256
+  buffer_count: 16
   use_art: true
   print_event_store_stats: false
   verbose: false
@@ -259,33 +256,36 @@ event_builder: {
 
 }
 
-physics:{
-
-  analyzers: {}
-  producers: {}
-  filters:   {}
-
-  outstream: [ rootout ]
-  end_paths: [ outstream ]
-
-}
-
-outputs:{
-
-  rootout:{
-    module_type: RootOutput
-    fileName: "/data1/crt_north_outer_%#.root"
-    compressionLevel: 9
-    fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
   }
 
-}
+  physics:{
+    analyzers: {}
+    producers: {}
+    filters:   {}
 
-source:{
-  module_type: IcarusInput
-  waiting_time: 900
-  resume_after_timeout: true
-}
+    outstream: [ rootout ]
+    end_paths: [ outstream ]
+  }
 
-process_name: Driver
+  outputs:{
+    rootout:{
+      module_type: RootDAQOut
+      fileName: "/data1/crt_north_outer_%#.root"
+      compressionLevel: 5
+      fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
+    }
+  }
+
+  source:{
+    module_type: IcarusInput
+    waiting_time: 900
+    resume_after_timeout: true
+  }
+
+  process_name: Driver
+}
 

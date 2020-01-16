@@ -2,7 +2,7 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_04_01
+parent sbndaq v0_04_02
 defaultqual e17
 
 # These optional lines define the installed directories where headers,
@@ -32,31 +32,25 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version
-sbndaq_artdaq        v0_04_01
+sbndaq_artdaq        v0_04_02
 cetbuildtools        v7_14_00       -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
 qualifier            sbndaq_artdaq          notes
-e17:debug:s82        e17:debug:s82
-e17:prof:s82         e17:prof:s82
-e17:debug:icarus:s82 e17:debug:icarus:s82
-e17:prof:icarus:s82  e17:prof:icarus:s82
-e17:debug:sbnd:s82   e17:debug:sbnd:s82
-e17:prof:sbnd:s82    e17:prof:sbnd:s82
 e17:debug:s83        e17:debug:s83
 e17:prof:s83         e17:prof:s83
 e17:debug:icarus:s83 e17:debug:icarus:s83
 e17:prof:icarus:s83  e17:prof:icarus:s83
 e17:debug:sbnd:s83   e17:debug:sbnd:s83
 e17:prof:sbnd:s83    e17:prof:sbnd:s83
-e19:debug:s82        e19:debug:s82
-e19:prof:s82         e19:prof:s82
-e19:debug:icarus:s82 e19:debug:icarus:s82
-e19:prof:icarus:s82  e19:prof:icarus:s82
-e19:debug:sbnd:s82   e19:debug:sbnd:s82
-e19:prof:sbnd:s82    e19:prof:sbnd:s82
+e19:debug:s83        e19:debug:s83
+e19:prof:s83         e19:prof:s83
+e19:debug:icarus:s83 e19:debug:icarus:s83
+e19:prof:icarus:s83  e19:prof:icarus:s83
+e19:debug:sbnd:s83   e19:debug:sbnd:s83
+e19:prof:sbnd:s83    e19:prof:sbnd:s83
 
 end_qualifier_list
 

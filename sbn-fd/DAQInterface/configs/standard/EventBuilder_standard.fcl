@@ -10,12 +10,14 @@ services: {
 
 daq: {
   event_builder: {
+    stale_buffer_timeout_usec: 10000000
     expected_fragments_per_event: 0  # Will be set by DAQInterface
-    max_fragment_size_bytes: 0x10000000 #16777216
+    #max_fragment_size_bytes: 0x10000000 #16777216
+    max_fragment_size_bytes: 5120000 #5MB
     use_art: true
     print_event_store_stats: true
-    buffer_count: 20
-    max_incomplete_events: 75 # Same as boardreader sync interval
+    buffer_count: 100
+    max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: true
     request_address: "227.128.7.129"
@@ -36,8 +38,12 @@ daq: {
       uniquify: true
     }
 
+
+send_system_metrics: true
+send_process_metrics: true
+
     graphite: {
-      level:5
+      level:10
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"192.168.191.18"

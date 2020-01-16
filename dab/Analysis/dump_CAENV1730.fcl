@@ -1,7 +1,7 @@
 process_name: Dump
 
 services: {
-  TFileService: { fileName: "caenv1730dump_hist.root" }
+  TFileService: { fileName: "caenv1730dump_hist_test.root" }
 }
 
 #source is a root file

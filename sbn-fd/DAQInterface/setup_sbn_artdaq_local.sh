@@ -6,7 +6,7 @@ setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_04_00"
+SBNDAQ_VERSION="v0_04_02"
 SBNDAQ_QUAL1="e17"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s83"
@@ -43,6 +43,10 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
 toffSg 3-63 
+tonSg 0-2
+tonMg 0-3
+tmodeS 1
+tmodeM 1
 
 #export TRACE_LIMIT_MS="5,1000,2000" 
 # toffM 15 -n CommandableFragmentGenerator

@@ -13,8 +13,9 @@ daq: {
     print_event_store_stats: true
     event_queue_depth: 50
     event_queue_wait_time: 5
-	  max_fragment_size_bytes: 0x10000000#400000
-    buffer_count: 20
+    #max_fragment_size_bytes: 0x10000000#400000
+    max_fragment_size_bytes: 51200000 #30MB --> OK for 8 TPC crates
+    buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true
 
@@ -34,9 +35,13 @@ daq: {
 
       fileName : "/scratch/log/dl00_metrics.log"
       uniquify: true
-    } 
+    }
+
+    send_system_metrics: true
+    send_process_metrics: true
+
     graphite: {
-      level:5
+      level:10
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"192.168.191.18"
@@ -52,8 +57,8 @@ source: {
 }
 outputs: {
   normalOutput: {
-    module_type: RootOutput
-    fileName: "/data/data_dl00_run%R_%#_%to.root"
+    module_type: RootDAQOut
+    fileName: "/data/daq/data_dl00_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 

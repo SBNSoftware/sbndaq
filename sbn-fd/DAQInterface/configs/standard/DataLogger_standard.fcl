@@ -35,9 +35,13 @@ daq: {
 
       fileName : "/scratch/log/dl00_metrics.log"
       uniquify: true
-    } 
+    }
+
+    send_system_metrics: true
+    send_process_metrics: true
+
     graphite: {
-      level:5
+      level:10
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"192.168.191.18"

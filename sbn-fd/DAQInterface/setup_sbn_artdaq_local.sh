@@ -36,7 +36,6 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface v3_07_00
 
-
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`
 echo "TRACE_FILE=$TRACE_FILE"

@@ -1,6 +1,6 @@
-events_to_generate: 300 
+events_to_generate: 300
 
-debug_cout: true
+debug_cout: false
 
 bitstream: '
 0000 # Ch0 4-bit DAC_t ([0..3])#
@@ -207,10 +207,16 @@ fragment_receiver: {
    
    fragment_type: BERNCRTZMQ
 
+#unused but required field, dummy value
    board_id: 1
 
-#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 103, 104 ]
+#First 8 bits of the 16 bit fragment id
+#first digit: 3 - ICARUS CRT, b - SBND CRT
+#second digit: 0 - bottom CRT, 1 - side CRT, 2 - top CRT
+#third and fourth digit will be replaced by the last 8 bits of the MAC address
+   fragment_id_base: 0x3100   # 0x3100 - ICARUS side CRT
+#Last 8 bits of the MAC addresses of all FEB connected to given ethernet port
+   MAC5s : [ 103, 104 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
    TurnOnHV : [ false, false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)

@@ -225,10 +225,10 @@ fragment_receiver: {
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5510
 
-   FEBBufferCapacity: 98789
-   ZMQBufferCapacity: 6543
+#Capacity of internal fragment generator buffer for one FEB
+   FEBBufferCapacity: 50000
    
-#Not sure (yet) what is it
+#Delay of getNext function
    throttle_usecs:       100000
    throttle_usecs_check:  10000
 

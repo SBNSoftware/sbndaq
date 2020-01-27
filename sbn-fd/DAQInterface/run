@@ -14,8 +14,11 @@ getStatus "nil"
 # set component to use
 #setdaqcomps.sh icarustpc04 icarustpcwe07 icarustpcwe09 icarustpcew05 icarustpcew07
 
-setdaqcomps.sh icarustpcwe05 icarustpcwe06 icarustpcwe07 icarustpcwe09 icarustpcew05 icarustpcew06 icarustpcew07 icarustpcew09
+#setdaqcomps.sh icarustpcwe05 icarustpcwe06 icarustpcwe07 icarustpcwe09 icarustpcew05 icarustpcew06 icarustpcew07 icarustpcew09
+#setdaqcomps.sh icaruspmtewtop01 icaruspmtewtop02 icaruspmtewtop03 icaruspmtewbot01 icaruspmtewbot02 icaruspmtewbot03 icaruspmteetop01 icaruspmteetop02 icaruspmteetop03 icaruspmteebot01 icaruspmteebot02 icaruspmteebot03
 
+# for tpc testing
+setdaqcomps.sh icarustpc01 icarustpcwe05
 
 send_transition.sh boot boot.txt
 getStatus "booting"

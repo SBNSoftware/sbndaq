@@ -15,6 +15,8 @@ daq: {
     event_queue_wait_time: 5
     #max_fragment_size_bytes: 0x10000000#400000
     max_fragment_size_bytes: 51200000 #30MB --> OK for 8 TPC crates
+    # BH AZ JM: we're changing this to try a larger number... 22 Jan 2020
+    #max_fragment_size_bytes: 61440000 #60MB?
     buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true

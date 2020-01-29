@@ -10,8 +10,8 @@ debug level: 3
 EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder1
 
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder2
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder2
 
 # Add 4 more event builders
 #EventBuilder host: icarus-evb02-daq
@@ -32,8 +32,8 @@ EventBuilder label: EventBuilder1
 DataLogger host: icarus-evb01-daq
 DataLogger label: DataLogger1
 
-#DataLogger host: icarus-evb01-daq
-#DataLogger label: DataLogger2
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger2
 
 # Add 4 more data loggersu#DataLogger host: icarus-evb02-daq
 #DataLogger host: icarus-evb02-daq

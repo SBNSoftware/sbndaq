@@ -1,0 +1,3 @@
+#include "EventBuilder_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.evb05."
+daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"

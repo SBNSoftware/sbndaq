@@ -2,6 +2,8 @@
 
 ulimit -S -c unlimited
 
+export DAQINTERFACE_LOGDIR="/daq/log"
+
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$THIS_SBN_DAQ_DAQINTERFACE_DIR")
 

@@ -36,6 +36,8 @@ fragment_receiver: {
    DACOffset1: [ 0xFFFF, 0x0000, 0x9000, 0xC010, 0xA010, 0x9010, 0xC100, 0xA100, 0xA100 ]
    DACOffset2: [ 0xF000, 0xD000, 0xC000, 0xF010, 0xD010, 0xC010, 0xF100, 0xD100, 0xC100 ]
    
+   separate_data_thread: true
+
    destinations:{ }
 
    routing_table_config: {
@@ -50,9 +52,11 @@ fragment_receiver: {
       fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
+send_system_metrics: true
+send_process_metrics: true
 
     graphite: {
-     level:5
+     level:10
      metricPluginType: "graphite"
      reporting_interval: 10.0
      host:"192.168.191.18"

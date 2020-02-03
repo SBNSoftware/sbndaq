@@ -6,7 +6,9 @@ setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_04_00"
+SBNDAQ_GIT_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR/../../.git
+
+SBNDAQ_VERSION="$(git --git-dir="$SBNDAQ_GIT_DIR" describe --tags $(git --git-dir="$SBNDAQ_GIT_DIR"  rev-list --tags --max-count=1))"
 SBNDAQ_QUAL1="e17"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s83"

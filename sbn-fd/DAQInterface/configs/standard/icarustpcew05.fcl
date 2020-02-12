@@ -9,3 +9,5 @@ daq.metrics.graphite.namespace: "icarus.tpcew05."
 #daq.redis_testing.redis_key_prefix: "DABBoardReader:icarustpc01:"
 #daq.redis_5m.redis_key_prefix: "DABBoardReader:icarustpc01:"
 
+#JM: For trigger testing.
+daq.fragment_receiver.issueStart: false

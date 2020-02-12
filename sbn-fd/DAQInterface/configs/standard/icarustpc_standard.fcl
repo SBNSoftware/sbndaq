@@ -38,6 +38,10 @@ fragment_receiver: {
    
    separate_data_thread: true
 
+   #whether or not to issue SOR and COMMA at begin of run
+   #true if pulser trigger input...false if trigger board provides TTLINK
+   issueStart: true
+
    destinations:{ }
 
    routing_table_config: {

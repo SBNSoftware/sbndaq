@@ -1,6 +1,6 @@
-#include "pmt_standard_pmt03link2.fcl"
+#include "pmt_standard.fcl"
 
-daq.fragment_receiver.fragment_id: 18 
+daq.fragment_receiver.fragment_id: 18
 daq.fragment_receiver.link: 2 
 daq.fragment_receiver.board_id: 18
 

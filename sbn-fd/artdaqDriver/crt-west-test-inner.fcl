@@ -1,4 +1,4 @@
-events_to_generate: 10000
+events_to_generate: 2000000
 
 debug_cout: false
 
@@ -234,6 +234,20 @@ fragment_receiver: {
    throttle_usecs:       100000
    throttle_usecs_check:  10000
 
+#Workarounds for issues with FEB.
+#Note that they are likely to remove legitimate data,
+#preserve corrupted data and hide problems
+
+#Omit events outside of the poll times
+   omit_out_of_sync_events: false
+#Maximum tolerance margin for events coming outside of the poll
+   out_of_sync_tolerance_ms: 10
+
+#Omit timestamps not increasing monotonically
+  omit_out_of_order_events: false
+
+#Restart febdrv periodically (febdrv issue workaround)
+  febdrv_restart_period_s:  300
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

@@ -1,5 +1,5 @@
 #include "DataLogger_standard.fcl"
-daq.metrics.aggFile.fileName : "/scratch/log/dl02_metrics.log"
+#daq.metrics.aggFile.fileName : "/scratch/log/dl02_metrics.log"
+daq.metrics.aggFile.fileName : "/data/log/dl02_metrics.log"
 daq.metrics.graphite.namespace: "icarus.dl02."
 outputs.normalOutput.fileName: "/data/daq/data_dl2_run%R_%#_%to.root"
-

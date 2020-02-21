@@ -65,7 +65,7 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 100 
+      maxEvents: 100
     }
 
     fastCloning: false
@@ -89,8 +89,8 @@ physics: {
   p2: [ ]
   a1: [ ]
   #my_output_modules: [ ]
-  #my_output_modules: [ normalOutput ]
-  my_output_modules: [rootNetOutput, normalOutput ]
+  my_output_modules: [ normalOutput ]
+  #my_output_modules: [rootNetOutput, normalOutput ]
 
   trigger_paths: [ p2 ]
   end_paths: [ my_output_modules ]

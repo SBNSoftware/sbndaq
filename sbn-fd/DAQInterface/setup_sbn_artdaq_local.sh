@@ -6,14 +6,15 @@ setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_04_03"
-SBNDAQ_QUAL1="e17"
+SBNDAQ_VERSION="v0_05_00"
+SBNDAQ_QUAL1="e19"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s83"
+SBNDAQ_QUAL3="s94"
+SBNDAQ_QUAL4="py2"
 
 # your own local products directory:
-LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}_${SBNDAQ_QUAL4} "
+LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}_${SBNDAQ_QUAL4}"
 #LOCAL_PRODUCTS_TRY3="$(dirname $(pwd))/products"
 #"$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
 
@@ -30,11 +31,11 @@ fi
 
 [[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
 
-setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
+setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}:${SBNDAQ_QUAL4}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_07_00
+setup artdaq_daqinterface v3_07_02
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

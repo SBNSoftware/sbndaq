@@ -47,5 +47,6 @@ elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    echo "Put code here which sets up the database environment"
    source /software/database/setup_database.sh
 fi
-
 export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0
+
+export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl

@@ -1,0 +1,10 @@
+#!/bin/bash
+#setup products to run artdaqDriver at icarus-crtXX servers on icarus account
+
+source /software/products/setup
+setup sbndaq v0_04_03 -qe17:prof:s83
+setup mrb
+cd  /home/nfs/icarus/crt/sidetop/present
+source localProducts_*/setup
+mrbslp
+cd -

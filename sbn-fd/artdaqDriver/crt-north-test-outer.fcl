@@ -1,4 +1,4 @@
-events_to_generate: 10000
+events_to_generate: 2000000
 
 debug_cout: false
 
@@ -179,8 +179,8 @@ bitstream: '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-01 0001 1000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
-01 0001 1000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+00 1111 0000 # 10-bit DAC1 (MSB-LSB): 01 0001 1000 for 280 DAC#
+00 1111 0000 # 10-bit DAC2 (MSB-LSB): 00 1111 0000 for 240 DAC#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#
@@ -245,6 +245,9 @@ fragment_receiver: {
 #Omit timestamps not increasing monotonically 
   omit_out_of_order_events: false
     
+#Restart febdrv periodically (febdrv issue workaround)
+  febdrv_restart_period_s:  300
+
 
 ProbeBitStream : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

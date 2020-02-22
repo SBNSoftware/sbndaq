@@ -11,12 +11,12 @@ SBNDAQ_GIT_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR/../../.git
 SBNDAQ_VERSION="$(git --git-dir="$SBNDAQ_GIT_DIR" describe --tags $(git --git-dir="$SBNDAQ_GIT_DIR"  rev-list --tags --max-count=1))"
 SBNDAQ_QUAL1="e19"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s94"
-SBNDAQ_QUAL4="py2"
+SBNDAQ_QUAL3="s87"
+
 
 # your own local products directory:
-LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}_${SBNDAQ_QUAL4}"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}_${SBNDAQ_QUAL4}"
+LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
 #LOCAL_PRODUCTS_TRY3="$(dirname $(pwd))/products"
 #"$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
 
@@ -33,7 +33,7 @@ fi
 
 [[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
 
-setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}:${SBNDAQ_QUAL4}
+setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED

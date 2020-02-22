@@ -27,3 +27,5 @@ sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' $THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageF
 export DAQINTERFACE_MESSAGEFACILITY_FHICL=$THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageFacility_Local.fcl
 
 export PYTHONPATH=$ARTDAQ_FQ_DIR/python:$PYTHONPATH
+
+setup artdaq_runcontrol_gui v1_00_01 -q e19:prof

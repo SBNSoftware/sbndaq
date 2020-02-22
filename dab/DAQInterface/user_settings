@@ -20,9 +20,11 @@ max_configurations_to_list: 20
 boardreader timeout: 45
 eventbuilder timeout: 20
 aggregator timeout: 20
-dispatcher timeout: 15
+dispatcher timeout: 25
 use_messageviewer: true
 
 max_fragment_size_bytes: 10000000
 
 all_events_to_all_dispatchers: true
+
+disable_unique_rootfile_labels: true

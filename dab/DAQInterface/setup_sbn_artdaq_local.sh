@@ -9,9 +9,10 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
 SBNDAQ_GIT_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR/../../.git
 
 SBNDAQ_VERSION="$(git --git-dir="$SBNDAQ_GIT_DIR" describe --tags $(git --git-dir="$SBNDAQ_GIT_DIR"  rev-list --tags --max-count=1))"
-SBNDAQ_QUAL1="e17"
+SBNDAQ_QUAL1="e19"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s83"
+SBNDAQ_QUAL3="s87"
+
 
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
@@ -36,8 +37,10 @@ setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_07_00
+setup artdaq_daqinterface v3_07_02
 
+setup artdaq_runcontrol_gui v1_00_00 -q e17:prof
+alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

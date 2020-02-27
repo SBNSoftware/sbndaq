@@ -1,4 +1,4 @@
-gps   icarus-pmt07 -1
+gps   icarus-vst02 -1
 icarustpc01 icarus-vst01-daq -1
 icarustpc02 icarus-vst01-daq -1
 icarustpc03 icarus-vst01-daq -1
@@ -8,16 +8,22 @@ icarustpc06 icarus-vst01-daq -1
 icarustpc07 icarus-vst01-daq -1
 icarustpc08 icarus-vst01-daq -1
 icarustpc09 icarus-vst01-daq -1
-icarustpcwe05 icarus-tpc10-daq -1 1 1-15
-icarustpcwe06 icarus-tpc10-daq -1 1 1-15
-icarustpcwe07 icarus-tpc10-daq -1 1 1-15
-icarustpcwe09 icarus-tpc10-daq -1 1 1-15
-icarustpcwe18 icarus-tpc08-daq -1
-icarustpcwe19 icarus-tpc07-daq -1
-icarustpcew05 icarus-tpc17-daq -1 
-icarustpcew06 icarus-tpc17-daq -1
-icarustpcew07 icarus-tpc16-daq -1
-icarustpcew09 icarus-tpc16-daq -1
+icarustpcwe05n1 icarus-tpc10-daq -1 1 1-15
+icarustpcwe06n1 icarus-tpc10-daq -1 1 1-15
+icarustpcwe07n1 icarus-tpc10-daq -1 1 1-15
+icarustpcwe09n1 icarus-tpc10-daq -1 1 1-15
+icarustpcew05n1 icarus-tpc17-daq -1 
+icarustpcew06n1 icarus-tpc17-daq -1
+icarustpcew07n1 icarus-tpc16-daq -1
+icarustpcew09n1 icarus-tpc16-daq -1
+icarustpcwe05n2 icarus-tpc10-daq -1 1 1-15
+icarustpcwe06n2 icarus-tpc10-daq -1 1 1-15
+icarustpcwe07n2 icarus-tpc10-daq -1 1 1-15
+icarustpcwe09n2 icarus-tpc10-daq -1 1 1-15
+icarustpcew05n2 icarus-tpc17-daq -1 
+icarustpcew06n2 icarus-tpc17-daq -1
+icarustpcew07n2 icarus-tpc16-daq -1
+icarustpcew09n2 icarus-tpc16-daq -1
 icaruspmtwwtop01 icarus-pmt01-daq -1
 icaruspmtwwtop02 icarus-pmt01-daq -1
 icaruspmtwwtop03 icarus-pmt01-daq -1
@@ -44,5 +50,3 @@ icaruspmteebot02 icarus-pmt03-daq -1
 icaruspmteebot03 icarus-pmt03-daq -1
 component01 localhost -1
 icaruscrt013 icarus-crt01 -1
-icarustrigger icarus-clk01-daq -1
-icarustriggertest icarus-clk01-daq -1

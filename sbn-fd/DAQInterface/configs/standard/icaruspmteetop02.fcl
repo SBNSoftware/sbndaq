@@ -1,4 +1,4 @@
-#include "pmt_standard_pmt03link3.fcl"
+#include "pmt_standard.fcl"
 
 daq.fragment_receiver.fragment_id: 19 
 daq.fragment_receiver.link: 3 

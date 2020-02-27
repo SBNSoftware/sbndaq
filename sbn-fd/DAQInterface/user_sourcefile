@@ -4,9 +4,7 @@ ulimit -S -c unlimited
 
 export DAQINTERFACE_LOGDIR="/daq/log"
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$THIS_SBN_DAQ_DAQINTERFACE_DIR")
-
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings
 export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/known_boardreaders_list
 export DAQINTERFACE_FHICL_DIRECTORY=$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs
@@ -23,7 +21,7 @@ export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/criti
 
 ######################################################
 ##Uncomment  the line below to enable artdaq_database.
-##export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 ######################################################
 
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
@@ -43,9 +41,11 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=3
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
- 
-   echo "Put code here which sets up the database environment"
+   #echo "Put code here which sets up the database environment"
    source /software/database/setup_database.sh
 fi
+
+export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl
+export HOSTNAME=$(hostname -s )-daq.fnal.gov
 
 export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

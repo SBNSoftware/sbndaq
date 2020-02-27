@@ -179,8 +179,8 @@ bitstream: '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-00 1111 0000 # 10-bit DAC1 (MSB-LSB): 01 0001 1000 for 280 DAC#
-00 1111 0000 # 10-bit DAC2 (MSB-LSB): 00 1111 0000 for 240 DAC#
+01 0001 1000 # 10-bit DAC1 (MSB-LSB): 01 0001 1000 for 280 DAC#
+01 0001 1000 # 10-bit DAC2 (MSB-LSB): 00 1111 0000 for 240 DAC#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#
@@ -217,11 +217,12 @@ fragment_receiver: {
    fragment_id_base: 0x3100   # 0x3100 - ICARUS side CRT
 
 #Last 8 bits of the MAC addresses of all FEB connected to given ethernet port
-   MAC5s : [ 3, 1, 6, 7 ]
+   MAC5s : [ 10, 11, 13, 14, 15, 16 ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ true, true, true, true ]
+   TurnOnHV : [ true, true, true, true, true, true ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
+#Note that these are purely a guess and need to be updated!
+   PPS_offset_ns : [ 134, 154, 174, 220, 240, 260 ] #values for JacksonLab GPS (Feb 17, 2020)
 
 #First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
    zmq_listening_port: 5510
@@ -242,7 +243,7 @@ fragment_receiver: {
 #Maximum tolerance margin for events coming outside of the poll
    out_of_sync_tolerance_ms: 10
 
-#Omit timestamps not increasing monotonically 
+#Omit timestamps not increasing monotonically
   omit_out_of_order_events: false
 
 #Restart febdrv periodically (febdrv issue workaround)
@@ -296,7 +297,7 @@ art: {
   outputs:{
     rootout:{
       module_type: RootDAQOut
-      fileName: "/data1/crt_north_inner_%#.root"
+      fileName: "/data1/crt_west_outer_%#.root"
       compressionLevel: 5
       fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
     }

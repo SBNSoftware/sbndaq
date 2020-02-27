@@ -43,6 +43,6 @@ icaruspmteebot01 icarus-pmt03-daq -1
 icaruspmteebot02 icarus-pmt03-daq -1
 icaruspmteebot03 icarus-pmt03-daq -1
 component01 localhost -1
-icaruscrt013 icarus-crt01 -1
+icaruscrt010 icarus-crt01 -1
 icarustrigger icarus-clk01-daq -1
 icarustriggertest icarus-clk01-daq -1

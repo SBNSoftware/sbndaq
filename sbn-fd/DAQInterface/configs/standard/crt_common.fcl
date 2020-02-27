@@ -1,9 +1,22 @@
-fragment_type_global: BERNCRTZMQ
-fragment_id_global: 4
-generator_global: BernCRTZMQData
+
+daq.fragment_receiver.fragment_type_global: BERNCRTZMQ
+daq.fragment_receiver.fragment_id_global: 4
+daq.fragment_receiver.generator_global: BernCRTZMQData
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+daq.fragment_receiver.board_id: 1
+
+#What is ReaderID? Another ID?
+daq.fragment_receiver.ReaderID: 0x1
+
+#First 8 bits of the 16 bit fragment id
+#first digit: 3 - ICARUS CRT, b - SBND CRT
+#second digit: 0 - bottom CRT, 1 - side CRT, 2 - top CRT
+#third and fourth digit will be replaced by the last 8 bits of the MAC address
+daq.fragment_receiver.fragment_id_base: 0x3100   # 0x3100 - ICARUS side CRT
 
 #PROBE bitsream (FEB monitoring, not useful during normal CRT operation or tests). Bitstream format: 0s and 1s are accepted and whitespaces are ignored, until any other character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
-ProbeBitStream_global : '
+daq.fragment_receiver.ProbeBitStream_global : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
 00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
 00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital

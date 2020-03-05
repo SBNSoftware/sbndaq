@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-source /software/products/setup
-[[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
+source /daq/software/products/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
-setup sbndaq v0_05_00 -q e19:prof:s87
-setup artdaq_daqinterface v3_07_02
+SBNDAQ_VERSION="v0_05_01"
+SBNDAQ_QUALS="e19:prof:s94:py2"
+DAQINTERFACE_VERSION="v3_07_02" 
 
+setup sbndaq $SBNDAQ_VERSION -q $SBNDAQ_QUALS
+setup artdaq_daqinterface $DAQINTERFACE_VERSION

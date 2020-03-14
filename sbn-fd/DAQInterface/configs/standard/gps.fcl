@@ -11,11 +11,19 @@ daq:
     Verbosity:   1
 
     # readoutMode:  1=push, 2=pull
-    readoutMode: 1
+    readoutMode: 2
 
     # statusMode: 1=full, 2=minimal  We have 2 flavors of GPS receivers
     statusMode:  1
     nextSleep: 100
     dataSleep: 100
+
+    destinations: { }
+
+    routing_table_config: 
+    {  
+      use_routing_master: false 
+    }
+    
   }
 }

@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v0_05_01"
 SBNDAQ_QUALS="e19:prof:s94:py2"
-DAQINTERFACE_VERSION="v3_07_02" 
+DAQINTERFACE_VERSION="v3_07_02CH11c7c4" 
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup

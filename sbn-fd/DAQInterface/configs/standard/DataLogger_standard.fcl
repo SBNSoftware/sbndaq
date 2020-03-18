@@ -91,6 +91,10 @@ outputs: {
     nonblocking_sends: true
   	destinations: { }
     SelectEvents: []
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
   }
 
 }

@@ -57,6 +57,10 @@ outputs: {
     module_type: RootNetOutput
     #broadcast_sends: true
     destinations: { }
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
 
     routing_table_config: {
         use_routing_master: false

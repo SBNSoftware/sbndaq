@@ -1,45 +1,35 @@
 #!/usr/bin/env bash
-source /software/products/setup
-[[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
+
+SBNDAQ_VERSION="v0_05_01"
+SBNDAQ_QUALS="e19:prof:s94:py2"
+DAQINTERFACE_VERSION="v3_07_02" 
+
+source /daq/software/products/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
 setup mrb
 
-THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
-THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_GIT_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR/../../.git
-
-SBNDAQ_VERSION="$(git --git-dir="$SBNDAQ_GIT_DIR" describe --tags $(git --git-dir="$SBNDAQ_GIT_DIR"  rev-list --tags --max-count=1))"
-SBNDAQ_QUAL1="e19"
-SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s87"
-
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 # your own local products directory:
-LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-LOCAL_PRODUCTS_TRY2="${HOME}/work/sbndaq*/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-#LOCAL_PRODUCTS_TRY3="$(dirname $(pwd))/products"
-#"$(tlp="$( ls $(dirname $(pwd))/*/setup |grep local |head -1 )" && [[ -n $tlp ]] && echo  $(dirname $tlp)|| echo "null")"
+LOCAL_MRB_PRODUCTS=$(ls -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}localProducts*${SBNDAQ_VERSION}* |head -1)
+LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
-if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
-   LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
-elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
-   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
-#elif [ -e $LOCAL_PRODUCTS_TRY3 ] ; then 
-#   LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY3"
+if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
+   source $LOCAL_INSTALLED_PRODUCTS/setup
+elif [ -f $LOCAL_MRB_PRODUCTS/setup ]; then
+   source $LOCAL_MRB_PRODUCTS/setup
 else
-   echo "Warning: localProducts not found."
+   echo "Warning: localProducts/products not found."
 fi
 
-
-[[ -f $LOCAL_PRODUCTS/setup ]] &&  source $LOCAL_PRODUCTS/setup
-
-setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
+setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_07_02
+setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_runcontrol_gui v1_00_00 -q e17:prof
+setup artdaq_runcontrol_gui v1_00_01 -q e19:prof
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
@@ -48,8 +38,12 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
 toffSg 3-63 
+tonSg 0-2
+tonMg 0-3
+tmodeS 1
+tmodeM 1
 
-#export TRACE_LIMIT_MS="5,1000,2000" 
+#export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 
 

@@ -63,6 +63,12 @@ e19:py2:debug:icarus:s94 e19:py2:debug:icarus:s94
 e19:py2:prof:icarus:s94  e19:py2:prof:icarus:s94
 e19:py2:debug:sbnd:s94   e19:py2:debug:sbnd:s94
 e19:py2:prof:sbnd:s94    e19:py2:prof:sbnd:s94
+e19:py2:debug:s96        e19:py2:debug:s96
+e19:py2:prof:s96         e19:py2:prof:s96
+e19:py2:debug:icarus:s96 e19:py2:debug:icarus:s96
+e19:py2:prof:icarus:s96  e19:py2:prof:icarus:s96
+e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96
+e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:

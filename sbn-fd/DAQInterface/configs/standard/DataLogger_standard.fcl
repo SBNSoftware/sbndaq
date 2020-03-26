@@ -1,9 +1,7 @@
 services: {
-  scheduler: {
-  }
-  ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
-  }
+  scheduler: {}
+  ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 
 daq: {

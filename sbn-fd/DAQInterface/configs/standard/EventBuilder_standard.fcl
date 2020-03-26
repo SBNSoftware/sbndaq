@@ -3,8 +3,10 @@ services: {
   }
 
   ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
-  }
+   service_provider: ArtdaqSharedMemoryService  
+ }
+
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 
 daq: {
@@ -92,7 +94,7 @@ physics: {
   end_paths: [ my_output_modules ]
 }
 source: {
-  module_type: IcarusInput
+  module_type: ArtdaqInput
   waiting_time: 2500000
   resume_after_timeout: true
 }

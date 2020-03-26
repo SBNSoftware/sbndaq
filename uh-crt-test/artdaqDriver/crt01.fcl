@@ -280,6 +280,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
   }
 
   physics:{
@@ -306,7 +307,7 @@ art: {
   }
 
   source:{
-    module_type: IcarusInput
+    module_type: ArtdaqInput
     waiting_time: 900
     resume_after_timeout: true
   }

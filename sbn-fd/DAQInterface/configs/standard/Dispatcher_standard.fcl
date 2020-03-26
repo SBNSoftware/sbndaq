@@ -4,6 +4,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 
 daq: {

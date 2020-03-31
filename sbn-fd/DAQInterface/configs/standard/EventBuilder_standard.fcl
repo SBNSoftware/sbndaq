@@ -1,7 +1,4 @@
 services: {
-  scheduler: {
-  }
-
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService  
  }

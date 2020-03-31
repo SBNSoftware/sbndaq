@@ -2,6 +2,6 @@
 daq.metrics.aggFile.fileName : "/data/log/dl01_metrics.log"
 daq.metrics.graphite.namespace: "icarus.dl01."
 
-outputs.normalOutput.fileName: "/data/daq/data_dl1_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/data/test_daq/data_dl1_run%R_%#_%to.root"
+outputs.normalOutput.fileName: "/data/galtests/data_dl1_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/galtests/testdata_dl1_run%R_%#_%to.root"
 physics.my_output_modules: [rootNetOutput, normalOutput, testOutput ]

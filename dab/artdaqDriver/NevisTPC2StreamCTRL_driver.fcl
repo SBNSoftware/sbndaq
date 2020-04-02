@@ -37,9 +37,12 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
-    zs_static_baseline: true
+    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
+    zs_static_baseline: true
+    # fem_fake_data: true (default is false)
+    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }

@@ -1,10 +1,9 @@
 services: {
-  scheduler: {
-  }
-
   ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
-  }
+   service_provider: ArtdaqSharedMemoryService  
+ }
+
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 
 daq: {
@@ -57,6 +56,10 @@ outputs: {
     module_type: RootNetOutput
     #broadcast_sends: true
     destinations: { }
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
 
     routing_table_config: {
         use_routing_master: false
@@ -88,7 +91,7 @@ physics: {
   end_paths: [ my_output_modules ]
 }
 source: {
-  module_type: IcarusInput
+  module_type: ArtdaqInput
   waiting_time: 2500000
   resume_after_timeout: true
 }

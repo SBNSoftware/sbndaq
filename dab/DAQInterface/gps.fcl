@@ -42,6 +42,13 @@ event_builder: {
   send_requests: false
 }
 
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
+  }
+
 physics:
 {
   analyzers:{}
@@ -73,7 +80,7 @@ outputs:
 
 source:
 {
-  module_type: SBNDInput
+  module_type: ArtdaqInput
   waiting_time: 900
   resume_after_timeout: true
 }
@@ -91,6 +98,6 @@ metrics:
 } 
 
 process_name: SpectraTimeDriver
-
+}
 
 

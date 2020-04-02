@@ -8,7 +8,7 @@ run_number: 101
 transition_timeout: 30
 debug_cout: true 
 
-fragment_receiver: {
+fragment_receiver: {OOOOOOOOOOOONNNNNN
 
    # Parameters defining and configuring the fragment generator to be used
    		    
@@ -419,7 +419,7 @@ outputs:
 
 source:
 {
-  module_type: SBNDInput
+  module_type: ArtdaqInput
   waiting_time: 900
   resume_after_timeout: true
 }

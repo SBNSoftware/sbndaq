@@ -37,7 +37,7 @@ bitstream: '
 0000 # Ch31 4-bit DAC_t ([0..3])#
 0000 # Ch0 4-bit DAC ([0..3])#
 0000 # Ch1 4-bit DAC ([0..3])#
-0000 # Ch2 4-bit DAC ([0..3])#
+0HHHHHH000 # Ch2 4-bit DAC ([0..3])#
 0000 # Ch3 4-bit DAC ([0..3])#
 0000 # Ch4 4-bit DAC ([0..3])#
 0000 # Ch5 4-bit DAC ([0..3])#
@@ -283,6 +283,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
   }
 
   physics:{
@@ -304,7 +305,7 @@ art: {
   }
 
   source:{
-    module_type: IcarusInput
+    module_type: ArtdaqInput
     waiting_time: 900
     resume_after_timeout: true
   }

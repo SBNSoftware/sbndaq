@@ -5,6 +5,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 
 ## Use when running a multiple elements with one in push mode and the rest in pull mode
@@ -105,7 +106,7 @@ physics: {
   #my_output_modules: [ normalOutput ]
 }
 source: {
-  module_type: SBNDInput
+  module_type: ArtdaqInput
   waiting_time: 2500000
   resume_after_timeout: true
 }

@@ -2,11 +2,12 @@
 #  about the FHiCL language, please look at
 #  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
 
-events_to_generate:5
-run_number: 2
+events_to_generate: 500
+run_number: 1
 debug_cout: true
 
 fragment_receiver: {
+
 
    # Parameters defining and configuring the fragment generator to be used
    		    
@@ -22,42 +23,54 @@ fragment_receiver: {
    SamplesPerChannel: 4096
    ChannelsPerBoard: 64
 
-   nBoards: 9
-   BoardIDs: [ 0x100, 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
+   # AssignBoardID: true
+   # BoardIDs: [ 0x100, 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
    CrateID: 0x1
-   RunNumber: @local::run_number
+   
    CompressionScheme: 0
 
    VetoPort: 7654
    VetoHost: "137.138.194.204"
-
-   #DoVetoTest: true
    DoVetoTest: false
    VetoTestPeriod: 1e6
 
+   pcieLinks: [ 0, 1 ]
+
+   TestPulseType: 0 #0 - disable, 1 - external, 2 - internal_even, 3 - internal_odd
+   # DACSetting: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
+
+   # TestPulseAmpODD:  [ 0x4000, 0x2000, 0x1000, 0x4010, 0x2010, 0x1010, 0x4100, 0x2100, 0x1100 ]
+   # TestPulseAmpEVEN: [ 0x8000, 0x6000, 0x5000, 0x8010, 0x6010, 0x5010, 0x8100, 0x6100, 0x5100 ]
+   DACOffset1: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
+   DACOffset2: [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+   
+   separate_data_thread: true
+
+   #whether or not to issue SOR and COMMA at begin of run
+   #true if pulser trigger input...false if trigger board provides TTLINK
+   issueStart: true
+
+   routing_table_config: {
+     use_routing_master: false 
+  }
    destinations:{console:{threshold:"DEBUG" type:"cout"}}
 
-   #throttle_usecs: 1e5
-   #throttle_usecs_check: 1e4
-
-   #random_seed: 314159
 }  		  
 
    metrics:{
-     verbosefile: {
-       level: 3
-       metricPluginType: "file"
-       fileMode: "Overwrite"
-       fileName: "metrics.out"
-       uniquify: false
-     }
+#     verbosefile: {
+#       level: 3
+#       metricPluginType: "file"
+#       fileMode: "Overwrite"
+#       fileName: "metrics.out"
+#       uniquify: false
+#     }
    }
 
 
 event_builder: {
 
   expected_fragments_per_event: 1
-  # max_fragment_size_bytes: 0x200000
   max_fragment_size_bytes: 0x10000000
   buffer_count: 20 
   use_art: true
@@ -80,37 +93,15 @@ physics:
 {
   analyzers:
   {
-    dump:
-    {
-      module_type: PhysCrateDump
-      raw_data_label: "daq"
-      num_adcs_to_show: 1024   # Obviously this should be no more than ADC counts per fragment
-    }
-    qscan:
-    {
-      module_type: PhysCrateWriteICARUSDataFile
-      raw_data_label: "daq"
-      file_output_location: "/Data1/icartdaq"
-      file_output_name: "icartdaq_qscanFormat"
-    }
-    view:
-    {
-      module_type: PhysCrateViewer
-      raw_data_label: "daq"
-    }
-    
-}
+  }
 
   producers:
   {
   }
 
-  a1: [ dump, qscan, view ]
   p1: [ ]
   e1: [ out1, rootout ]
-  #end_paths: [ e1, a1 ]
-  #end_paths: [ e1 ]
-  end_paths: [ e1 ]
+  end_paths: [ ]
 }
 
 outputs:
@@ -119,7 +110,7 @@ outputs:
  rootout:
   {
     module_type: RootOutput
-    fileName: "run001_%#.root"
+    fileName: "/home/nfs/icarus/VST_Data/data_run%R_%#_%to.root"
     compressionLevel: 0
 
     fileProperties:{
@@ -147,6 +138,9 @@ resume_after_timeout: true
 
 process_name: Driver
 }
-outputs.rootout.fileName: "run002_%#.root"
-
-
+#fragment_receiver.fragment_id: 0
+#fragment_receiver.CrateID: 0x59
+#fragment_receiver.pcieLinks: [ 0, 1 ]
+fragment_receiver.fragment_id: 6
+fragment_receiver.CrateID: 0x58
+fragment_receiver.pcieLinks: [ 4, 5 ]

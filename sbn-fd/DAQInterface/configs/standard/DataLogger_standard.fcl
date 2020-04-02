@@ -1,9 +1,5 @@
 services: {
-  scheduler: {
-  }
-  ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
-  }
+  ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
 }
 
 daq: {
@@ -54,7 +50,8 @@ daq: {
 }
 
 source: {
-  module_type: NetMonInput
+  module_type: ArtdaqInput
+  register_fragment_types: false
 }
 outputs: {
   normalOutput: {
@@ -64,18 +61,37 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: false
+    compressionLevel: 0
+    SelectEvents: [p2]    
+  }
+  testOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/test_daq/data_dl00_run%R_%#_%to.root"
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
       maxEvents: 100
     }
 
     fastCloning: false
     compressionLevel: 0
-    
+    SelectEvents: []    
   }
   rootNetOutput: {
     module_type: RootNetOutput
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
+    SelectEvents: []
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
   }
 
 }
@@ -85,11 +101,16 @@ physics: {
   producers: {
    }
 
-  p2: [ ]
-  a1: [ ]
-  my_output_modules: [ normalOutput ]
-  #my_output_modules: [rootNetOutput, normalOutput ]
+  filters: {
+    prescale50: { module_type: "Prescaler"
+    		  prescaleFactor: 50
+ 		  prescaleOffset: 0
+		}
+  }
 
+  p2: [ prescale50 ]
+  a1: [ ]
+  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
   end_paths: [ my_output_modules ]
 }
 process_name: DAQDL

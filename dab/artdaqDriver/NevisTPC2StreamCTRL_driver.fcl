@@ -1,7 +1,7 @@
 # Test configuration of 2 streams and readout of Nevis XMIT NU stream with Controller triggers using artdaq
 # and XMIT SN stream with a worker thread
 
-events_to_generate: 10
+events_to_generate: 30
 run_number: 200
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
@@ -41,7 +41,7 @@ fragment_receiver: {
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
-    # fem_fake_data: true (default is false)
+    # fem_fake_data: true # (default is false)
     # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock

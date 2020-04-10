@@ -1,7 +1,7 @@
 # Test configuration of 2 streams and readout of Nevis XMIT NU stream with Controller triggers using artdaq
 # and XMIT SN stream with a worker thread
 
-events_to_generate: 10
+events_to_generate: 30
 run_number: 200
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
@@ -37,9 +37,12 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
-    zs_static_baseline: true
+    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
+    zs_static_baseline: true
+    # fem_fake_data: true # (default is false)
+    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
@@ -91,7 +94,7 @@ fragment_receiver: {
     # NU stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb3
+    bus : 0xb4
     device_name: neviscard_nu
     # DMA settings
     dma_buffer_size : @local::nu_dma_buffer_size
@@ -108,7 +111,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb4
+    bus : 0xb3
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size
@@ -131,6 +134,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
   }
 
   physics: {
@@ -143,7 +147,7 @@ art: {
   }
 
   source: {
-    module_type: SBNDInput
+    module_type: ArtdaqInput
     waiting_time: 900
     resume_after_timeout: true
    }

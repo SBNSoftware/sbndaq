@@ -1,10 +1,10 @@
 services: {
   scheduler: {
-    errorOnFailureToPut: false
   }
   NetMonTransportServiceInterface: {
     service_provider: NetMonTransportService
   }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
 }
 daq: {
   event_builder: {
@@ -97,7 +97,7 @@ physics: {
   #my_output_modules: [ normalOutput ]
 }
 source: {
-  module_type: SBNDInput
+  module_type: ArtdaqInput
   waiting_time: 2500000
   resume_after_timeout: true
 }

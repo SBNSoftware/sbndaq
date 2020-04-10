@@ -13,19 +13,19 @@ bitstream: '
 0000 # Ch7 4-bit DAC_t ([0..3])#
 0000 # Ch8 4-bit DAC_t ([0..3])#
 0000 # Ch9 4-bit DAC_t ([0..3])#
-0000 # Ch10 4-bit DAC_t ([0..3])#
+0CCCCCC000 # Ch10 4-bit DAC_t ([0..3])#
 0000 # Ch11 4-bit DAC_t ([0..3])#
 0000 # Ch12 4-bit DAC_t ([0..3])#
 0000 # Ch13 4-bit DAC_t ([0..3])#
 0000 # Ch14 4-bit DAC_t ([0..3])#
 0000 # Ch15 4-bit DAC_t ([0..3])#
-0000 # Ch16 4-bit DAC_t ([0..3])#
+0000 # Ch16 4-bit DAC_t ([0..3]CCCCCC)#
 0000 # Ch17 4-bit DAC_t ([0..3])#
 0000 # Ch18 4-bit DAC_t ([0..3])#
 0000 # Ch19 4-bit DAC_t ([0..3])#
 0000 # Ch20 4-bit DAC_t ([0..3])#
 0000 # Ch21 4-bit DAC_t ([0..3])#
-0000 # Ch22 4-bit DAC_t ([0..3])#
+0000 # Ch22 4-bit DAC_t ([0..3])#CCCCCC
 0000 # Ch23 4-bit DAC_t ([0..3])#
 0000 # Ch24 4-bit DAC_t ([0..3])#
 0000 # Ch25 4-bit DAC_t ([0..3])#
@@ -121,13 +121,13 @@ bitstream: '
 01111111 0 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01111111 0 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DCCCCCCAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01111111 0 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 19 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01110010 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#CCCCCC
 01110010 1 # Input 8-bit DAC Data channel 21 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 22 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 23 - (DAC7...DAC0 + DAC ON), higher-higher bias#
@@ -260,6 +260,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
   }
 
 outputs:{
@@ -288,7 +289,7 @@ physics:{
 }
 
 source:{
-  module_type: IcarusInput
+  module_type: ArtdaqInput
   waiting_time: 900
   resume_after_timeout: true
 }

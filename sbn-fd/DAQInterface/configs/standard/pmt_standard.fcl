@@ -209,6 +209,9 @@ daq:
 
     CircularBufferSize: 500e6
 
+    UseTimeTagForTimeStamp: false
+    TimeOffsetNanoSec: 0
+
     destinations: { }
 
     routing_table_config: {
@@ -225,6 +228,15 @@ daq:
       fileName: "~/log/metrics/boardreader/br_%UID%_metrics.log"
       uniquify: true
     }
+    graphite:{
+      namespace: "icarus.icaruspmt00."
+      host: "192.168.191.18"
+      level: 10
+      metricPluginType: "graphite"
+      port: 2003
+      reporting_interval: 10
+    }
+
     # redis_10s: {
     #       metricPluginType: "redis"
     #   level: 3

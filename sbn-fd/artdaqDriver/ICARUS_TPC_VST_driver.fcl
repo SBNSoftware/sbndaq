@@ -70,11 +70,13 @@ event_builder: {
 ######################################################################
 # The ART code
 ######################################################################
+art: {
 
-services:
-{
-  TFileService: { fileName: "output_waveforms.root" }
-}
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+  }
 
 physics:
 {
@@ -117,11 +119,11 @@ outputs:
 
 source:
 {
-module_type: IcarusInput
+module_type: ArtdaqInput
 waiting_time: 900
 resume_after_timeout: true
 # fragment_type_map: [ [2, "PHYSCRATEDATA" ] , [3,"PHYSCRATESTAT"]]
 }
 
 process_name: Driver
-
+}

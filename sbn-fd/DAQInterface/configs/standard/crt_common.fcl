@@ -15,6 +15,24 @@ daq.fragment_receiver.ReaderID: 0x1
 #third and fourth digit will be replaced by the last 8 bits of the MAC address
 daq.fragment_receiver.fragment_id_base: 0x3100   # 0x3100 - ICARUS side CRT
 
+#Capacity of internal fragment generator buffer for one FEB
+daq.fragment_receiver.FEBBufferCapacity: 50000
+
+#Delay of getNext function
+daq.fragment_receiver.throttle_usecs:       100000
+daq.fragment_receiver.throttle_usecs_check:  10000
+
+#Omit events outside of the poll times
+daq.fragment_receiver.omit_out_of_sync_events: false
+#Maximum tolerance margin for events coming outside of the poll
+daq.fragment_receiver.out_of_sync_tolerance_ms: 10
+
+#Omit timestamps not increasing monotonically 
+daq.fragment_receiver.omit_out_of_order_events: false
+    
+#Restart febdrv periodically (febdrv issue workaround)
+daq.fragment_receiver.febdrv_restart_period_s:  300
+
 #PROBE bitsream (FEB monitoring, not useful during normal CRT operation or tests). Bitstream format: 0s and 1s are accepted and whitespaces are ignored, until any other character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
 daq.fragment_receiver.ProbeBitStream_global : '
 00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog

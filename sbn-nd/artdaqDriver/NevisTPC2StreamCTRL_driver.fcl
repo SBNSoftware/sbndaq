@@ -134,6 +134,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
   }
 
   physics: {
@@ -146,7 +147,7 @@ art: {
   }
 
   source: {
-    module_type: SBNDInput
+    module_type: ArtdaqInput
     waiting_time: 900
     resume_after_timeout: true
    }

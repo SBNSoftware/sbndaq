@@ -1,0 +1,103 @@
+# FHiCL document used to run the "driver" executable. To learn more
+#  about the FHiCL language, please look at
+#  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
+
+events_to_generate: 15
+run_number: 101
+debug_cout: true
+transition_timeout: 30
+
+services: {
+    TimeTracker: {}
+}
+
+fragment_receiver:
+{
+  generator:   SpectraTimeReadout
+  fragment_type: SpectratimeEvent
+  max_fragment_size_bytes: 1000000
+
+  fragment_id: 3
+  board_id:    0
+  Verbosity:   1
+
+  # readoutMode:  1=push, 2=pull
+  readoutMode: 1
+
+  # statusMode: 1=full, 2=minimal  We have 2 flavors of GPS receivers
+  statusMode:  1
+
+  nextSleep:   100
+  dataSleep:   100
+}
+
+event_builder: {
+  expected_fragments_per_event: 1
+  max_fragment_size_bytes: 0x200000
+  buffer_count: 20  
+  use_art: true
+  print_event_store_stats: false
+  verbose: true
+  events_expected_in_SimpleQueueReader: @local::events_to_generate
+  send_requests: false
+}
+
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
+  }
+
+physics:
+{
+  analyzers:{}
+  producers:{}
+  p1: [  ]
+  a1: [  ]
+  e1: [ rootout ]
+  
+  end_paths: [ e1 ]
+#  end_paths: [ ]
+}
+
+outputs:
+{
+  rootout:
+  {
+    module_type: RootOutput
+    fileName: "/data/gps.root"
+    fastCloning: false
+    compressionLevel: 0
+  }
+
+  out1:
+  {
+    module_type: FileDumperOutput
+    wantProductFriendlyClassName: true
+  }
+}
+
+source:
+{
+  module_type: ArtdaqInput
+  waiting_time: 900
+  resume_after_timeout: true
+}
+
+metrics: 
+{
+  brFile: 
+  {
+    metricPluginType: "file"
+    level: 3
+    fileName: "/data/gps_metrics.log"
+    uniquify: true
+  }
+
+} 
+
+process_name: SpectraTimeDriver
+}
+
+

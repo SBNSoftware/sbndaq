@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# if you want verbose output just pass any argument to this script
+verbose=$1
+
+# change back localhost
+sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
+
+function getStatus()
+{
+  local NODAQInterface=$(echo $(status.sh) | grep -q "No DAQInterface instances"; echo $?)
+  if [ $NODAQInterface -eq 0 ]; then
+    echo "No DAQInterface instances are found to exist; exiting."
+    exit 1
+  fi
+  status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
+  if [ $verbose ]; then
+    echo $status
+  else
+    [ $1 != "$status" ] && (echo $status)
+  fi
+}
+
+send_transition.sh stop
+getStatus "nil"
+while [ "$status" != 'ready' ]
+do
+  sleep 2
+  getStatus "stopping"
+done
+
+send_transition.sh terminate
+getStatus "nil"
+while [ "$status" != 'stopped' ]
+do
+  sleep 2
+  getStatus "terminating"
+done
+

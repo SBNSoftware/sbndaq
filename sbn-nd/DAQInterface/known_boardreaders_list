@@ -1,6 +1,6 @@
 ptb01 sbn-tpc12 -1
 gps   sbn-daq01-priv -1
-tpc01 sbnd-tpc01 -1
+tpc01 localhost -1
 tpc02 sbnd-tpc02 -1
 tpc03 sbnd-tpc03 -1
 tpc04 sbnd-tpc04 -1

@@ -6,7 +6,6 @@ verbose=$1
 # change the localhost to the priv subnet
 sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility_Local.fcl
 
-
 function getStatus()
 {
   local NODAQInterface=$(echo $(status.sh) | grep -q "No DAQInterface instances"; echo $?)
@@ -15,22 +14,7 @@ function getStatus()
     exit 1
   fi
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-  if [ $verbose ]; then
-    echo $status
-  else
-    [ $1 != "$status" ] && (echo $status)
-  fi
-}
-
-function waitStatus()
-{
-  getStatus $1
-  while [ "$status" != $1 ]
-  do
-    sleep 2
-    getStatus $1
-    [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
-  done
+  echo $status
 }
 
 getStatus "nil"
@@ -42,13 +26,26 @@ getStatus "nil"
 #setdaqcomps.sh pmtx01 ptb01
 #setdaqcomps.sh crt05
 #setdaqcomps.sh pmtx01 tpc01 ptb01 crt05
-setdaqcomps.sh mbb01 ptb01
+setdaqcomps.sh tpc01
 
 send_transition.sh boot boot.txt
-waitStatus "booted"
+getStatus "booting"
+while [ "$status" != 'booted' ]
+do
+  sleep 2
+  getStatus "booting"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+done
 
 send_transition.sh config standard
-waitStatus "ready"
+getStatus "configuring"
+while [ "$status" != 'ready' ]
+do
+  sleep 2
+  getStatus "configuring"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  # [ "$status" == 'stopped' ] && ( exit 1 )
+done
 
 # echo "pgrep BoardReader: $(pgrep BoardReader)"
 # echo "pgrep EventBuilder: $(pgrep EventBuilder)"
@@ -59,4 +56,14 @@ waitStatus "ready"
 sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
 
 send_transition.sh start
-waitStatus "running"
+# getStatus "starting"
+sleep 2
+getStatus "starting"
+while [ "$status" != 'running' ]
+do
+  sleep 2
+  getStatus "starting"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+done
+
+

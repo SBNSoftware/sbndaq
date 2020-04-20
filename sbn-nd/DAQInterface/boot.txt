@@ -2,7 +2,7 @@ DAQ setup script: $SETUP_FILE
 PMT host: localhost
 
 # debug level can range from 0 to 4 (increasing order of verbosity)
-debug level: 2
+debug level: 4
 
 EventBuilder host: localhost
 EventBuilder allowed_processors: 3-15
@@ -38,7 +38,5 @@ DataLogger label: DataLogger1
 
 Dispatcher host: localhost
 Dispatcher label: Dispatcher1
-
-#Dispatcher host: sbn-daq01-priv.fnal.gov
-#Dispatcher label: Dispatcher2
+Dispatcher port: 6020
 

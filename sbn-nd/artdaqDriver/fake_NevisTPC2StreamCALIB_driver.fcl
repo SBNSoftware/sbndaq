@@ -1,4 +1,4 @@
-# Test configuration of 2 streams and readout of Nevis XMIT NU stream with external triggers using artdaq
+# Test configuration of 2 streams and readout of Nevis XMIT NU stream with CALIB triggers using artdaq
 # and XMIT SN stream with a worker thread
 
 events_to_generate: 30
@@ -16,7 +16,7 @@ fragment_receiver: {
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
-  CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
+  CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
@@ -37,12 +37,12 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
-    # fem_fake_data: true # (default is false)
-    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
+    fem_fake_data: true # (default is false)
+    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
@@ -57,34 +57,16 @@ fragment_receiver: {
     device_id : 0x4
     bus : 0x66
     device_name: neviscard_controller
-  }
+   }
 
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
 
   # Do not change block name
   trigger_module : {
-  # Example from MicroBooNE -- NEEDS TO BE EDITED --
-    deadtime : 0xfa
-    # Must satisfy framesize = timesize * 8 - 1
-    framesize : 20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
-    g1delay : 0x10
-    g1end : 0x1
-    g1start : 0x1
-    g1width : 0x20
-    g2delay : 0x10
-    g2end : 0x20
-    g2start : 0x1
-    g2width : 0x20
-    prescale0 : 0
-    prescale1 : 0
-    prescale8 : 0
-    prescale9 : 0
-    timeinfo_directory : "/data/uboonedaq/metadata"
-    trigmask0 : 0
-    trigmask1 : 0
-    trigmask8 : 0x132
-  }
+  # Hardcoded in nevishwutils/Crate.cpp
+  # To do: move trigger configuration here
+}
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -101,7 +83,7 @@ fragment_receiver: {
     # Theoretically could be as high as 9.6e7
     maxpoll : 1e7  
     profile_time : false
-  }
+}
 
   ### Configuration of the XMITReader for the SN stream ###
   # Configuration of the XMITReader for the Nevis XMIT SN stream
@@ -117,7 +99,7 @@ fragment_receiver: {
     dma_buffer_size : @local::sn_dma_buffer_size
     maxpoll : 1e7
     profile_time : false
-  }
+   }
 }
 
 event_builder: {
@@ -155,7 +137,7 @@ art: {
   outputs: {
     rootout: {
       module_type: RootOutput
-      fileName: "nevistpc_2stream_nu_ext_test.root"
+      fileName: "nevistpc_2stream_nu_calib_test.root"
       compressionLevel: 0
      }
    }

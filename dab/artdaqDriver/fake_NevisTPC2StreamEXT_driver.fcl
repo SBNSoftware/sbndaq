@@ -28,9 +28,9 @@ fragment_receiver: {
   # Do not change block name
   nevis_crate : { 
     # Location of modules within crate
-    xmit_slot: 2 # Location of XMIT module
-    max_fem_slot: 18 # Location of leftmost FEM module
-    trigger_slot: 20 # Location of Trigger Board
+    xmit_slot: 4 # Location of XMIT module
+    max_fem_slot: 12 # Location of leftmost FEM module
+    trigger_slot: 17 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
     xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
@@ -41,8 +41,8 @@ fragment_receiver: {
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
-    # fem_fake_data: true # (default is false)
-    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
+    fem_fake_data: true # (default is false)
+    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
@@ -55,7 +55,7 @@ fragment_receiver: {
     # Controller PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0x66
+    bus : 0x9
     device_name: neviscard_controller
   }
 
@@ -94,7 +94,7 @@ fragment_receiver: {
     # NU stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb4
+    bus : 0x5
     device_name: neviscard_nu
     # DMA settings
     dma_buffer_size : @local::nu_dma_buffer_size
@@ -111,7 +111,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb3
+    bus : 0x4
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size
@@ -121,20 +121,20 @@ fragment_receiver: {
 }
 
 event_builder: {
-  expected_fragments_per_event: 16
+  expected_fragments_per_event: 8
   use_art: true
   print_event_store_stats: false
   verbose: false
   events_expected_in_SimpleQueueReader: @local::events_to_generate
   max_fragment_size_bytes: 0xb000000
-  buffer_count: 16
+  buffer_count: 8
 }
 
 art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
-    ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
   }
 
   physics: {

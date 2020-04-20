@@ -37,7 +37,7 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
@@ -64,27 +64,9 @@ fragment_receiver: {
 
   # Do not change block name
   trigger_module : {
-  # Example from MicroBooNE -- NEEDS TO BE EDITED --
-    deadtime : 0xfa
-    # Must satisfy framesize = timesize * 8 - 1
-    framesize : 20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
-    g1delay : 0x10
-    g1end : 0x1
-    g1start : 0x1
-    g1width : 0x20
-    g2delay : 0x10
-    g2end : 0x20
-    g2start : 0x1
-    g2width : 0x20
-    prescale0 : 0
-    prescale1 : 0
-    prescale8 : 0
-    prescale9 : 0
-    timeinfo_directory : "/data/uboonedaq/metadata"
-    trigmask0 : 0
-    trigmask1 : 0
-    trigmask8 : 0x132
-}
+  # Hardcoded in nevishwutils/Crate.cpp
+  # To do: move trigger configuration here
+  }
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -101,7 +83,7 @@ fragment_receiver: {
     # Theoretically could be as high as 9.6e7
     maxpoll : 1e7  
     profile_time : false
-}
+   }
 
   ### Configuration of the XMITReader for the SN stream ###
   # Configuration of the XMITReader for the Nevis XMIT SN stream
@@ -117,7 +99,7 @@ fragment_receiver: {
     dma_buffer_size : @local::sn_dma_buffer_size
     maxpoll : 1e7
     profile_time : false
-   }
+  }
 }
 
 event_builder: {

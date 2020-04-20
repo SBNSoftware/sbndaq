@@ -37,7 +37,7 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
@@ -57,7 +57,7 @@ fragment_receiver: {
     device_id : 0x4
     bus : 0x9
     device_name: neviscard_controller
-   }
+  }
 
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
@@ -84,7 +84,7 @@ fragment_receiver: {
     trigmask0 : 0
     trigmask1 : 0
     trigmask8 : 0x132
-}
+  }
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -101,7 +101,7 @@ fragment_receiver: {
     # Theoretically could be as high as 9.6e7
     maxpoll : 1e7  
     profile_time : false
-}
+  }
 
   ### Configuration of the XMITReader for the SN stream ###
   # Configuration of the XMITReader for the Nevis XMIT SN stream
@@ -117,7 +117,7 @@ fragment_receiver: {
     dma_buffer_size : @local::sn_dma_buffer_size
     maxpoll : 1e7
     profile_time : false
-   }
+  }
 }
 
 event_builder: {

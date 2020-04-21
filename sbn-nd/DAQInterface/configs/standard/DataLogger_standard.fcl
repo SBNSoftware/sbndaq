@@ -49,7 +49,7 @@ daq: {
 }
 
 source: {
-  module_type: NetMonInput
+  module_type: ArtdaqInput
 }
 outputs: {
   normalOutput: {
@@ -60,7 +60,7 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 100000
+      maxEvents: 100
     }
 
     fastCloning: false

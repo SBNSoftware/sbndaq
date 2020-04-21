@@ -117,6 +117,12 @@ fragment_receiver: {
   #   maxpoll : 1e7
   #   profile_time : false
   #  }
+    destinations: { }
+
+    routing_table_config: 
+    {
+      use_routing_master: false 
+    }
 }
 
 }

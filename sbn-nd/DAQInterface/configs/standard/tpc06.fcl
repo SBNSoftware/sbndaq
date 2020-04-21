@@ -1,3 +1,4 @@
 
 #include "tpc_standard.fcl"
 
+daq.fragment_receiver.fragment_ids: [601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616] 

@@ -65,17 +65,25 @@ outputs: {
 
     fastCloning: false
     compressionLevel: 0
-    
+    SelectEvents: []    
   }
+
   rootNetOutput: {
     module_type: RootNetOutput
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
+    SelectEvents: []
+    host_map:
+    [{ 
+      rank: -1
+      host: "sbnd-tpc01"
+    }]   
   }
 }
 
-physics: {
+physics: 
+{
   analyzers: { }
 
   producers: {
@@ -84,7 +92,9 @@ physics: {
   p2: [ ]
   a1: [ ]
   #my_output_modules: [ ]
-  my_output_modules: [ normalOutput ]
-  #my_output_modules: [rootNetOutput, normalOutput ]
+  #my_output_modules: [ normalOutput ]
+  my_output_modules: [rootNetOutput, normalOutput ]
+  end_paths: [ my_output_modules ]
+
 }
 process_name: DAQDL

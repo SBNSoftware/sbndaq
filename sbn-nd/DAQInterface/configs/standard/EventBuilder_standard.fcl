@@ -5,7 +5,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
-  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
 }
 
 ## Use when running a multiple elements with one in push mode and the rest in pull mode

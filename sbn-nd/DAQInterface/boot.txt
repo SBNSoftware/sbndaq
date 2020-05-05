@@ -38,5 +38,5 @@ DataLogger label: DataLogger1
 
 Dispatcher host: localhost
 Dispatcher label: Dispatcher1
-Dispatcher port: 6020
+#Dispatcher port: 6020
 

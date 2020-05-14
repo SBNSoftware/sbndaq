@@ -5,7 +5,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
-  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
 }
 
 ## Use when running a multiple elements with one in push mode and the rest in pull mode
@@ -22,7 +22,7 @@ daq: {
     send_requests: true
         request_address: "227.128.9.129"          # Multi-cast request address
         #multicast_interface_ip: "sbnd-daq33-priv" # needed to send requests successfully through the private network
-        multicast_interface_ip: "192.168.230.0" # needed to send requests successfully through the private network
+        multicast_interface_ip: "131.225.230.0" # needed to send requests successfully through the private network
         request_port: 3001
         num_requests: 1500
     print_event_store_stats: true
@@ -56,7 +56,7 @@ daq: {
     evbFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/data1/evb01_metrics.log"
+      fileName: "/scratch/evb01_metrics.log"
       uniquify: true
     }
     #graphite: {
@@ -84,7 +84,7 @@ outputs: {
 
   normalOutput: {
     module_type: RootOutput
-    fileName: "/data1/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileName: "/scratch/dabdaq_eb00_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 0
     fastCloning: false

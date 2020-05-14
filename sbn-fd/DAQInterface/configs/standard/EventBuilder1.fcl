@@ -3,3 +3,4 @@ daq.metrics.graphite.namespace: "icarus.evb01."
 daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"
 #outputs.normalOutput.fileName: "/data/galtests/data_evb1_run%R_%#_%to.root"
 #physics.my_output_modules: [ normalOutput ]
+process_name: DAQEVB01

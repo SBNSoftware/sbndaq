@@ -1,3 +1,4 @@
 #include "EventBuilder_standard.fcl"
 daq.metrics.graphite.namespace: "icarus.evb04."
 daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"
+process_name: DAQEVB04

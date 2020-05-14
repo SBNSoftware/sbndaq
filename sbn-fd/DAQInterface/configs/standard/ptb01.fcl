@@ -5,6 +5,7 @@ fragment_receiver: {
    # Parameters defining and configuring the fragment generator to be used
    		    
    generator: TriggerBoardReader
+   max_fragment_size_bytes: 1000000
    #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
    fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
    fragment_id: 8        # Make sure downstream modules know about this fragment_type!

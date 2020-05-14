@@ -1,7 +1,9 @@
 #include "DataLogger_standard.fcl"
+process_name: DAQDL01
 daq.metrics.aggFile.fileName : "/data/log/dl01_metrics.log"
 daq.metrics.graphite.namespace: "icarus.dl01."
 
 outputs.normalOutput.fileName: "/data/galtests/data_dl1_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/data/galtests/testdata_dl1_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/galtests/data_dl1_run%R_%#_%to.root"
 physics.my_output_modules: [rootNetOutput, normalOutput, testOutput ]
+#physics.my_output_modules: [ normalOutput, testOutput ]

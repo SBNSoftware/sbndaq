@@ -14,11 +14,7 @@ function getStatus()
     exit 1
   fi
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-  if [ $verbose ]; then
-    echo $status
-  else
-    [ $1 != "$status" ] && (echo $status)
-  fi
+  echo $status
 }
 
 getStatus "nil"
@@ -30,7 +26,7 @@ getStatus "nil"
 #setdaqcomps.sh pmtx01 ptb01
 #setdaqcomps.sh crt05
 #setdaqcomps.sh pmtx01 tpc01 ptb01 crt05
-setdaqcomps.sh pmtx01 tpc01 ptb01
+setdaqcomps.sh tpc01
 
 send_transition.sh boot boot.txt
 getStatus "booting"

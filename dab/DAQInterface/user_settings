@@ -17,7 +17,7 @@ record_directory: /run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_utilities, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /software/products
 max_configurations_to_list: 20
-boardreader timeout: 45
+boardreader timeout: 3000
 eventbuilder timeout: 20
 aggregator timeout: 20
 dispatcher timeout: 25

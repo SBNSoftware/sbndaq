@@ -22,7 +22,7 @@ daq: {
     send_requests: true
         request_address: "227.128.9.129"          # Multi-cast request address
         #multicast_interface_ip: "sbnd-daq33-priv" # needed to send requests successfully through the private network
-        multicast_interface_ip: "131.225.230.0" # needed to send requests successfully through the private network
+        multicast_interface_ip: "131.225.224.0" # needed to send requests successfully through the private network
         request_port: 3001
         num_requests: 1500
     print_event_store_stats: true

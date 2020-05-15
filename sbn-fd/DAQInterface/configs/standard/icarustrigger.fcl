@@ -3,7 +3,6 @@ daq:
   fragment_receiver: 
   {
     generator: ICARUSTriggerUDP
-    
     #fragment_type: ICARUSTRIG
     max_fragment_size_bytes: 100
     fragment_id: 0x4001
@@ -39,7 +38,7 @@ metrics: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "~/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
     

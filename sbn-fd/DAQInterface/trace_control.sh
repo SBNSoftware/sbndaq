@@ -21,10 +21,11 @@
 #EOF
 
 #exit 1
-
 # Program defaults
 # output file - eval'd locally (to resolve $run); escaping hostname moves
 # it's execution to remote nodes
+#echo "$(hostname -s).hello.$(date) " >> ~/trace.log
+
 trace_control_tshow_outfile='/scratch_local/traces/r$run.\`hostname -s\`.trc'
 trace_control_logfile='/scratch_local/traces/r$run.$transition'
 trace_control_nodelist='localhost'
@@ -126,6 +127,7 @@ if [ -f "$boot_txt" ];then
     grep partition "$boot_txt"
 fi
 
+#echo "$(hostname -s).$run.$transition.$(date) " >> ~/trace.log
 case $transition in
 start)  rgcmd=". $trace_control_upsdb/setup"
         rgcmd="$rgcmd; setup TRACE $trace_control_trace_version"
@@ -155,3 +157,4 @@ status)
         ;;
 *)      echo "Invalid transition ($transition) specified."; 
 esac
+

@@ -7,6 +7,7 @@ daq:
   {
     #  generator: NevisTPCNUXMIT # Generator of the XMIT NU stream
     generator: NevisTPCData
+    max_fragment_size_bytes: 1000000
     fragment_type: NevisTPC
     fragment_id: 0 
     board_id: 0

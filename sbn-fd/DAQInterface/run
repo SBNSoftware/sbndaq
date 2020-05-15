@@ -18,7 +18,9 @@ getStatus "nil"
 #setdaqcomps.sh icaruspmtewtop01 icaruspmtewtop02 icaruspmtewtop03 icaruspmtewbot01 icaruspmtewbot02 icaruspmtewbot03 icaruspmteetop01 icaruspmteetop02 icaruspmteetop03 icaruspmteebot01 icaruspmteebot02 icaruspmteebot03
 
 # for tpc testing
-setdaqcomps.sh icarustpcwe05
+#setdaqcomps.sh icarustpcwe05 icarustpcwe07  icaruspmteebot01 icaruspmteebot02 icaruspmteebot03 
+
+setdaqcomps.sh  icaruspmteebot01 icaruspmteebot02 icaruspmteebot03 icaruspmteetop01 icaruspmteetop02 icaruspmteetop03 icaruspmtewbot01 icaruspmtewbot02 icaruspmtewbot03 icaruspmtewtop02 icaruspmtewtop03 icaruspmtwebot01 icaruspmtwebot02 icaruspmtwebot03 icaruspmtwetop01 icaruspmtwetop02 icaruspmtwetop03 icaruspmtwwbot01 icaruspmtwwbot02 icaruspmtwwbot03 icaruspmtwwtop01 icaruspmtwwtop02 icaruspmtwwtop03 icarustpcwe05 icarustpcwe06 icarustpcwe07 icarustpcwe09 icarustpcwe18 icarustpcwe19
 
 send_transition.sh boot boot.txt
 getStatus "booting"

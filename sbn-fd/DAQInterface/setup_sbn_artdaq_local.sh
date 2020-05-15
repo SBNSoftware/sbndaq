@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_06_00"
+SBNDAQ_VERSION="v0_06_01"
 SBNDAQ_QUALS="e19:prof:s94:py2"
 DAQINTERFACE_VERSION="v3_08_00" 
 
@@ -30,6 +30,8 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
 setup artdaq_runcontrol_gui v1_00_01 -q e19:prof
+setup artdaq_mfextensions  v1_04_01BF24393 -q $SBNDAQ_QUALS
+
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:

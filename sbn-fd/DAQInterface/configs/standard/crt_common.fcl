@@ -43,3 +43,5 @@ daq.fragment_receiver.ProbeBitStream_global : '
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
 '
+
+daq.fragment_receiver.max_fragment_size_bytes: 512000

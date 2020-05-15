@@ -3,8 +3,8 @@ daq:
   fragment_receiver: 
   {
     generator:   CAENV1730Readout
-    fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
+    fragment_type: CAENV1730
     GetNextFragmentBunchSize: 20
 
     fragment_id: 0 
@@ -225,7 +225,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "~/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
     graphite:{

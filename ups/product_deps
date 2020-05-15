@@ -2,8 +2,8 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_06_00
-defaultqual e19:s87
+parent sbndaq v0_06_01
+defaultqual e19:s94:py2
 
 # These optional lines define the installed directories where headers,
 # libraries, and executables will be found.
@@ -31,8 +31,8 @@ flcdir  product_dir fcl
 # With "product  version" table below, we now define depdendencies
 # Add the dependent product and version
 
-product              version
-sbndaq_artdaq        v0_06_00
+product              version        optional
+sbndaq_artdaq        v0_06_01
 cetbuildtools        v7_14_00       -       only_for_build
 end_product_list
 
@@ -43,7 +43,7 @@ e17:debug:s83            e17:debug:s83
 e17:prof:s83             e17:prof:s83
 e17:debug:icarus:s83     e17:debug:icarus:s83
 e17:prof:icarus:s83      e17:prof:icarus:s83
-e17:debug:sbnd:s83       e17:debug:sbnd:s83
+e17:debug:sbnd:s83       e17:debug:sbnd:s84
 e17:prof:sbnd:s83        e17:prof:sbnd:s83
 e19:debug:s83            e19:debug:s83
 e19:prof:s83             e19:prof:s83

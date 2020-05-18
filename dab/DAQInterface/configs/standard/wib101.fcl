@@ -1,7 +1,7 @@
 #include "wib_standard.fcl"
 
-daq.fragment_receiver.WIB.fragment_id: 411 
-daq.fragment_receiver.WIB.board_id: 11 
-daq.fragment_receiver.WIB.address: "sbnd-wib01" 
+#daq.fragment_receiver.WIB.fragment_id: 411 
+#daq.fragment_receiver.WIB.board_id: 11 
+#daq.fragment_receiver.WIB.address: "sbnd-wib01" 
 #daq.fragment_receiver.WIB.metrics.dim.IDName: "wib101"
 

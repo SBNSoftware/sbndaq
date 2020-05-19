@@ -1,7 +1,5 @@
-BEGIN_PROLOG
-
 # SBND standard FEMB configuration
-
+daq: {
 femb_config_default: {
 
 # this must match the FEMB firmware version (hex)
@@ -101,16 +99,17 @@ phase_step: 1
 
 }
 }
+}
 
 # configuring 4 FEMBs attached to the WIB
 
-femb_config_default_femb1: @local::femb_config_default 
+femb_config_default_femb1: @local::daq
 
-femb_config_default_femb2: @local::femb_config_default 
+femb_config_default_femb2: @local::daq
 
-femb_config_default_femb3: @local::femb_config_default 
+femb_config_default_femb3: @local::daq
 
-femb_config_default_femb4: @local::femb_config_default 
+femb_config_default_femb4: @local::daq 
 
 
 # SBND standard WIB configuration
@@ -209,4 +208,3 @@ metrics: {
 wib000_standard: @local::wib_standard 
 wib000_standard.fragment_receiver.config.WIB.address: "192.168.230.50" 
 
-END_PROLOG

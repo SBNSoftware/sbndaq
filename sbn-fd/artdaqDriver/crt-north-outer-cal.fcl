@@ -298,7 +298,7 @@ art: {
   outputs:{
     rootout:{
       module_type: RootDAQOut
-      fileName: "/data1/crt_2020may26_north_outer_thr240_run01_%#.root"
+      fileName: "/data1/crt_yearmonthday_north_outer_thr240_run01_%#.root"
       compressionLevel: 5
       fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
     }

@@ -129,7 +129,8 @@ daq:
       address: "" # can be either IP address or DNS address
 
       # WIB register map
-      wib_table: "WIB.adt"
+      wib_table: "WIB_SBND_REGS.adt"
+      #WIB.adt
 
       # FEMB register map
       femb_table: "SBND_FEMB.adt"

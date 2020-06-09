@@ -129,11 +129,11 @@ daq:
       address: "" # can be either IP address or DNS address
 
       # WIB register map
-      wib_table: "/home/nfs/vmeddage/WIB_BOARD_READER_v0_06_01/srcs/wibtools/WIB/tables/WIB_SBND_REGS.adt"
+      wib_table: "WIB_SBND_REGS.adt"
       #WIB.adt
 
       # FEMB register map
-      femb_table: "/home/nfs/vmeddage/WIB_BOARD_READER_v0_06_01/srcs/wibtools/WIB/tables/SBND_FEMB.adt"
+      femb_table: "SBND_FEMB.adt"
 
       # If true, transmit fake data from WIB, if false data from FEMBs
       use_WIB_fake_data: [false,false,false,false] # list of 4 bools

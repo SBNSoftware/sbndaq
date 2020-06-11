@@ -5,10 +5,10 @@ PRODUCTS=${PRODUCTS:-'/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs
 #configure variables
 working_dir="${WORKSPACE:-$(pwd)}"
 selected_build_config=${1:-${BUILDCONFIG:-"testing"}}
-qual_set="${2:-${QUAL:-'s94-py-e19'}}"
+qual_set="${2:-${QUAL:-'s94:py:e19'}}"
 build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
-
+export PROJECT_SOURCE_GIT_PREFIX
 
 ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_08_00"}
 export ARTDAQ_VERSION
@@ -18,6 +18,11 @@ PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
 
+BUILDTYPE=${build_type}
+export BUILDTYPE
+
+WORKSPACE=${working_dir}
+export WORKSPACE
 
 #available configurations
 source_branchtages_testing=(
@@ -62,7 +67,6 @@ function main()
   local source_branchtages_var=source_branchtages_$selected_build_config[@]
   local source_branchtages=${!source_branchtages_var}
 
-  export WORKSPACE
   cd ${working_dir}
   local copybackall_dir=${working_dir}/copyBackAll
   [[ -d ${copybackall_dir} ]] && rm -rf ${copybackall_dir}
@@ -74,13 +78,12 @@ function main()
     local src_dir=${working_dir}/source
     local project_uri=${PROJECT_SOURCE_GIT_PREFIX}/$(echo $product_name | tr "_" "-")$( [[ ${PROJECT_SOURCE_GIT_PREFIX} =~ github ]] && echo ".git" || echo "" )
 
-    [[ ${product_name} =~ wibtools ]] && QUAL=$(echo $qual_set|sed 's/-py2//g') ||  QUAL=${qual_set}
+    [[ ${product_name} =~ "wibtools" ]] && QUAL=$(echo $qual_set|sed 's/:py2//g') || QUAL=${qual_set}
 
     [[ -d ${src_dir} ]] && rm -rf ${src_dir}
     mkdir -p ${src_dir}; cd ${src_dir}
     [[ -d  ${working_dir}/products/${product_name} ]] && rm -rf ${working_dir}/products/${product_name}
 
-    echo $source_branchtag
     if [[ ! -f ${working_dir}/build-${product_name}.sh ]]; then
       git clone ${project_uri} ${product_name} >/dev/null  2>&1
       [[ $? -eq 0 ]] \
@@ -100,10 +103,9 @@ function main()
 
 
     cd ${working_dir}
-
+    BRANCHTAG=${source_branchtag}
     echo Running build for $product_name
-    QUAL=$(echo $QUAL|sed 's/-/:/g')
-    ./build-${product_name}.sh "$source_branchtag" "$QUAL" "$BUILDTYPE" |tee ${copybackall_dir}/combined-build-${product_name}.log
+    ./build-${product_name}.sh "$BRANCHTAG" "$QUAL" "$BUILDTYPE" |tee ${copybackall_dir}/combined-build-${product_name}.log
 
     cp -f ${working_dir}/copyBack/{*-${product_name}.log,${product_name}*.tar.bz2} ${copybackall_dir}/
     [[ $(ls ${working_dir}/copyBack/${product_name}*.tar.bz2 |wc -l ) -eq 1 ]] \

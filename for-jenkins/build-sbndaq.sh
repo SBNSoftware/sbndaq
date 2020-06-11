@@ -119,7 +119,7 @@ src_dir=${working_dir}/source
 build_dir=${working_dir}/build
 products_dir=${working_dir}/products
 copyback_dir=${working_dir}/copyBack
-
+python3env_dir=${working_dir}/python3_env
 
 
 # start with clean directories

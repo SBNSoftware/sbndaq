@@ -98,18 +98,20 @@ function main()
 
       rm -rf ${working_dir}/build.sh >/dev/null 2>&1
       cp ./for-jenkins/build-${product_name}.sh ${working_dir}/ >/dev/null 2>&1
-      rm -f ${src_dir}
+      rm -rf ${src_dir}
     fi
 
 
     cd ${working_dir}
     BRANCHTAG=${source_branchtag}
-    echo Running build for $product_name
+    echo Running build for $product_name.
     ./build-${product_name}.sh "$BRANCHTAG" "$QUAL" "$BUILDTYPE" |tee ${copybackall_dir}/combined-build-${product_name}.log
+    [[ $? -eq 0 ]] \
+       || { echo "Error: Failed building ${product_name} with $QUAL."; return 3; }
 
     cp -f ${working_dir}/copyBack/{*-${product_name}.log,${product_name}*.tar.bz2} ${copybackall_dir}/
     [[ $(ls ${working_dir}/copyBack/${product_name}*.tar.bz2 |wc -l ) -eq 1 ]] \
-      ||  { echo "Error: Failed building ${product_name} with $QUAL."; return 3; }
+      ||  { echo "Error: No ${product_name}*.tar.bz2 found in the copyBack directory."; return 4; }
 
   done
 

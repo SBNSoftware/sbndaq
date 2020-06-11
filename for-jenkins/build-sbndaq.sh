@@ -1,23 +1,25 @@
 #!/bin/bash
 
 #parameters
+PROJECT_NAME=sbndaq
 
-PRODUCTS=/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs/fermilab.opensciencegrid.org/products/larsoft
+PROJECT_SOURCE_GIT_PREFIX=${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}
+PRODUCTS=${PRODUCTS:-'/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs/fermilab.opensciencegrid.org/products/larsoft'}
 
-artdaq_version="v3_08_00"
-
-project_name=sbndaq
-project_url=https://cdcvs.fnal.gov/projects/${project_name}
-
+ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_08_00"}
 
 #main script
+PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
+PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
+
+PROJECT_SOURCE_GIT=${PROJECT_SOURCE_GIT:-${PROJECT_SOURCE_GIT_PREFIX}/${PROJECT_NAME}$( [[ ${PROJECT_SOURCE_GIT_PREFIX} =~ github ]] && echo ".git")}
 
 usage() {
   cat 1>&2 <<EOF
 Usage: $(basename ${0}) [-h]
        $(basename ${0})  <branchtag> <qual_set> <buildtype>
-       env WORKSPACE=<workspace> BRANCHTAG=<develop|master|vN_NN_NN> QUAL=<qualifiers> BUILDTYPE=<debug|prof> $(basename ${0})
+        WORKSPACE=<workspace> BRANCHTAG=<develop|master|vN_NN_NN> QUAL=<qualifiers> BUILDTYPE=<debug|prof> $(basename ${0})
 EOF
 }
 
@@ -111,7 +113,7 @@ echo " flvr=${flvr}"
 
 #set -x
 
-product_name=${project_name//-/_}
+product_name=${PROJECT_NAME//-/_}
 
 src_dir=${working_dir}/source
 build_dir=${working_dir}/build
@@ -121,7 +123,6 @@ copyback_dir=${working_dir}/copyBack
 
 
 # start with clean directories
-(cd "${working_dir}"; ls -l; du -sh *)
 rm -rf ${build_dir}
 rm -rf ${src_dir}
 rm -rf ${copyback_dir}
@@ -129,7 +130,6 @@ rm -rf ${copyback_dir}
 mkdir -p ${src_dir} || exit 1
 mkdir -p ${build_dir} || exit 1
 mkdir -p ${copyback_dir} || exit 1
-(cd "${working_dir}"; ls -l; du -sh *)
 
 
 
@@ -137,8 +137,7 @@ echo
 echo "checkout source"
 echo
 cd ${src_dir} || exit 1
-ls -la
-git clone ${project_url} ${product_name}
+git clone ${PROJECT_SOURCE_GIT} ${product_name}
 cd ${product_name} || exit 1
 git checkout ${branchtag}
 
@@ -163,10 +162,11 @@ echo
 #unset PRODUCTS
 source ${products_dir}/setup || exit 1
 
+
 setup python v3_7_2
-[[ -d ${working_dir}/python3_env ]] && rm -rf ${working_dir}/python3_env
-python3 -m venv ${working_dir}/python3_env
-source  ${working_dir}/python3_env/bin/activate
+[[ -d ${python3env_dir} ]] && rm -rf ${python3env_dir}
+python3 -m venv ${python3env_dir}
+source  ${python3env_dir}/bin/activate
 pip install --upgrade pip
 pip install pandas
 

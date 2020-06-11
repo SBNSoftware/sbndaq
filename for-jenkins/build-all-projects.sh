@@ -84,7 +84,7 @@ function main()
     mkdir -p ${src_dir}; cd ${src_dir}
     [[ -d  ${working_dir}/products/${product_name} ]] && rm -rf ${working_dir}/products/${product_name}
 
-    if [[ ! -f ${working_dir}/build-${product_name}.sh ]]; then
+#    if [[ ! -f ${working_dir}/build-${product_name}.sh ]]; then
       git clone ${project_uri} ${product_name} >/dev/null  2>&1
       [[ $? -eq 0 ]] \
         || { echo "Error: Failed checking out source from ${project_url}."; return 1; }
@@ -99,7 +99,7 @@ function main()
       rm -rf ${working_dir}/build.sh >/dev/null 2>&1
       cp ./for-jenkins/build-${product_name}.sh ${working_dir}/ >/dev/null 2>&1
       rm -rf ${src_dir}
-    fi
+#    fi
 
 
     cd ${working_dir}

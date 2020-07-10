@@ -12,8 +12,6 @@ services: {
 daq: {
   event_builder: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
-    #max_fragment_size_bytes: 16777216 #400000
-    max_fragment_size_bytes: 16777216 #400000
     use_art: true
     #buffer_count: 200
     buffer_count: 100
@@ -41,7 +39,6 @@ daq: {
 #    buffer_count: 50
 #
 #    verbose: false
-#    max_fragment_size_bytes: 40000000
 #    incomplete_event_report_interval_ms: 100
 #    send_requests: false
 #    use_art: true
@@ -56,7 +53,7 @@ daq: {
     evbFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/wfb/evb01_metrics.log"
+      fileName: "/scratch/metrics/evb01_metrics.log"
       uniquify: true
     }
     #graphite: {
@@ -84,7 +81,7 @@ outputs: {
 
   normalOutput: {
     module_type: RootOutput
-    fileName: "/scratch/wfb/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
+    fileName: "/scratch_local/test_data/sbndaq_eb00_r%06r_sr%02s_%to_%#.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 0
     fastCloning: false

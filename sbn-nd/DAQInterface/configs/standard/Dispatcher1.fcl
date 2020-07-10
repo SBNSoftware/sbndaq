@@ -8,7 +8,6 @@ services: {
 daq: {
   aggregator: {
     expected_events_per_bunch: 1
-	max_fragment_size_bytes: 16777216
     print_event_store_stats: true
     buffer_count: 20
     event_queue_depth: 2
@@ -31,7 +30,7 @@ daq: {
       metricPluginType: "file"
       level: 3
       # fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
-      fileName: "/scratch/wfb/dp01_metrics.log"
+      fileName: "/scratch/metrics/dp01_metrics.log"
       uniquify: true
     }
     # graphite: {

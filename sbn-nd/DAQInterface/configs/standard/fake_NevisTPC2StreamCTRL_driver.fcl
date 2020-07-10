@@ -7,6 +7,7 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 daq:{
 fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
+  max_fragment_size_bytes: 2097152
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
   generated_fragments_per_event: 16
@@ -33,12 +34,12 @@ fragment_receiver: {
     trigger_slot: 20 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
-    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
+    xmit_fpga: "/home/nfs/sbnd/DAQ_DevAreas/firmware/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
     # Two-stream (dynamic baseline)
-    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
+    # fem_fpga: "/home/nfs/sbnd/DAQ_DevAreas/firmware/module1x.rbf"
     # Two-stream (static baseline)
-    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
-    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
+    #fem_fpga: "/home/nfs/sbnd/DAQ_DevAreas/firmware/module1x_static_baseline.rbf"
+    fem_fpga: "/home/nfs/sbnd/DAQ_DevAreas/firmware/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
     fem_fake_data: true # (default is false)

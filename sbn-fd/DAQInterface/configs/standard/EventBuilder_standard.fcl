@@ -60,6 +60,8 @@ outputs: {
       host: "icarus-evb01"
     }]   
 
+#		 SelectEvents: [p2]    
+
     routing_table_config: {
         use_routing_master: false
      }
@@ -79,9 +81,15 @@ physics: {
 
   producers: {}
 
-  filters: {}
+  filters: {
+    prescale: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
+  }
 
   p1: [ ]
+  p2: [ prescale ]
   a1: [ ]
   #my_output_modules: []
   my_output_modules: [ rootNetOutput ]

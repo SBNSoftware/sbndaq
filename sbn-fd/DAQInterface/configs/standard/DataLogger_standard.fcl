@@ -113,7 +113,10 @@ physics: {
 
   p2: [ prescale50 ]
   a1: [ ]
-  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+#  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+
+  my_output_modules: [  ]
+  #my_output_modules: [  testOutput ]
   end_paths: [ my_output_modules ]
 }
 process_name: DAQDL

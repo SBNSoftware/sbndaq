@@ -24,7 +24,7 @@ pattern: "(.*/)(ptb(\d+|_standard))(\.fcl$)"
 
 collection: CRTs 
 
-pattern: "(.*/)((|icarus)crt(\d+|_bitstream_\d+|_standard|_common))(\.fcl$)" 
+pattern: "(.*/)((|icarus)crt(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common))(\.fcl$)" 
 
 }, {
 

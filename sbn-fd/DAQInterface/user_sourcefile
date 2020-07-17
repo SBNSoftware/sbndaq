@@ -1,6 +1,9 @@
 #!/bin/sh
 
-ulimit -S -c unlimited
+#ulimit -S -c unlimited
+
+ulimit -S -c 0
+
 unset DAQINTERFACE_TRACE_SCRIPT
 
 export DAQINTERFACE_LOGDIR="/daq/log"

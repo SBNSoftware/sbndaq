@@ -1,4 +1,4 @@
-events_to_generate: 100000
+events_to_generate: 100
 
 debug_cout: true
 
@@ -15,13 +15,13 @@ fragment_receiver: {
 
    ethernet_port: eno1
 
+#Fragment id array
 #First 8 bits of the 16 bit fragment id
 #first digit: 3 - ICARUS CRT, b - SBND CRT
 #second digit: 0 - bottom CRT, 1 - side CRT, 2 - top CRT
-#third and fourth digit will be replaced by the last 8 bits of the MAC address
-   fragment_id_base: 0x3100   # 0x3100 - ICARUS side CRT
-#Last 8 bits of the MAC addresses of all FEB connected to given ethernet port
-   MAC5s : [ 205 ]
+#third and fourth digit - last 8 bits of the MAC address
+#e.g. ICARUS side CRT FEB 205 (0xcd) fragment id is 0x31cd
+   fragment_ids : [ 0x31cd ]
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
    TurnOnHV : [ false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)

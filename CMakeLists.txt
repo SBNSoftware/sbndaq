@@ -37,6 +37,16 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
   EXTRA_FLAGS -pedantic
   EXTRA_CXX_FLAGS -std=c++11 )
 
+#exception stack trace
+if(DEFINED ENV{USE_EXCEPTIONSTACKTRACE})
+        if($ENV{USE_EXCEPTIONSTACKTRACE} GREATER 0)
+                message("!!! Exception StackTrace Activated!!!")
+                add_definitions(-D EXCEPTIONSTACKTRACE)
+                set( EXCEPTIONSTACKTRACE_LIB  artdaq-core_Utilities_ExceptionStackTrace )
+                cet_add_compiler_flags( -rdynamic )
+        endif()
+endif()
+
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
@@ -45,7 +55,7 @@ find_ups_product( sbndaq_artdaq_core v0_03_00 )
 find_ups_product( cetbuildtools v7_13_02 )
 
 # macros for dictionary and simple_plugin
-include(ArtDictionary)
+#include(ArtDictionary)
 include(ArtMake)
 include(BuildPlugins)
 

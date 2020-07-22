@@ -1,69 +1,114 @@
-
 # Default FEMB configuration, declared here as a local variable for 
 #  later reference in the main block
 
 femb_config_default: 
 {
-  # this must match the FEMB firmware version (hex)
-  expected_femb_fw_version: 0x323
+ # this must match the FEMB firmware version (hex)
+ expected_femb_fw_version: 0x501
 
-  # if true, enables FEMB fake data mode, else real data
-  enable_fake_data: false
-  # Select the fake data type
-  fake_data_select: "fake_word" # options: fake_word, fake_waveform, femb_channel_id, or counter_channel_id
-  # The fake data word for fake_word mode
-  fake_word: 0xFEB # 12 bits
-  
-  # FE gain value select
-  gain: 2 # 0 (4.7 mV/fC), 1 (7.8 mV/fC), 2 (14 mV/fC), 3 (25 mV/fC)
 
-  # FE shaping time select
-  shape: 2 # 0 (0.5 us), 1 (1 us), 2 (2 us), 3 (3 us)
+ # if true, enables FEMB fake data mode, else real data
+ enable_fake_data: false 
 
-  # FE baseline select (don't need to change)
-  baselineHigh: 2 # 0 (200 mV), 1 (900 mV), 2 (200 mV for collection and 900 mV for induction channels)
 
-  # 1 for 500 pA FE leakage current, 0 for 100 pA (don't need to change)
-  leakHigh: 1 # 0 (100 pA), 1 (500 pA)
+ # Select the fake data type
+ fake_data_select: "fake_word" # options: fake_word, fake_waveform, femb_channel_id, or counter_channel_id
 
-  # 1 for 10x FE leakage current, 0 for 1x
-  leak10X: 0 # (if 1, multiply leakage by 10)
 
-  # 1 for AC coupling between FE and ADC channels, 0 for DC coupling
-  acCouple: 0 # 0 (DC coupling), 1 (AC coupling)
+ # The fake data word for fake_word mode
+ fake_word: 0xFEB # 12 bits
 
-  # 1 to use FE output buffer, 0 to bypass
-  buffer: 0 # 0 (bypass), 1 (use buffer)
 
-  # 0 to use ADC ASIC internal clocking, 1 to use external FPGA clocking
-  extClk: 1 # Almost always want 1
+ # FE gain value select
+ gain: 2 # 0 (4.7 mV/fC), 1 (7.8 mV/fC), 2 (14 mV/fC), 3 (25 mV/fC)
 
-  # List of 32 bit ADC FIFO clock phases, will try each phase until header bits line up
-  clk_phases: [0xFFFF,0xFDFF,0xEFEF,0xBFBF,0xBDFF]
 
-  # Calibration pulser mode
-  pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
+ # FE shaping time select
+ shape: 2 # 0 (0.5 us), 1 (1 us), 2 (2 us), 3 (3 us)
 
-  # Calibration pulser amplitude 
-  pls_dac_val: 0 # 6 bits in internal mode, 5 bits in external
 
-  # 1 to make FPGA to WIB header frame as BU WIB expects
-  start_frame_mode_sel: 1
+ # FE baseline select (don't need to change)
+ baselineHigh: 2 # 0 (200 mV), 1 (900 mV), 2 (200 mV for collection and 900 mV for induction channels)
 
-  # 1 to swap bytes in header frame
-  start_frame_swap: 1
+
+ # 1 for 500 pA FE leakage current, 0 for 100 pA (don't need to change)
+ leakHigh: 1 # 0 (100 pA), 1 (500 pA)
+
+
+ # 1 for 10x FE leakage current, 0 for 1x
+ leak10X: 0 # (if 1, multiply leakage by 10)
+
+
+ # 1 for AC coupling between FE and ADC channels, 0 for DC coupling
+ acCouple: 0 # 0 (DC coupling), 1 (AC coupling)
+
+
+ # 1 to use FE output buffer, 0 to bypass
+ buffer: 0 # 0 (bypass), 1 (use buffer)
+
+
+ # 0 to use ADC ASIC internal clocking, 1 to use external FPGA clocking
+ extClk: 1 # Almost always want 1
+
+
+ # List of 32 bit ADC FIFO clock phases, will try each phase until header bits line up
+ clk_phases: [0xFFFF, 0xFDFF, 0xEFEF, 0xBFBF, 0xBDFF] 
+
+
+ # Calibration pulser mode
+ pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
+
+
+ # Calibration pulser amplitude 
+ pls_dac_val: 0 # 6 bits in internal mode, 5 bits in external
+
+
+ # Calibration pulser phase
+ pls_phase_val: 219 # times 10 ns
+
+
+ # Calibration pulser period
+ pls_period_val: 497 # times 10 ns
+
+
+ # 1 to make FPGA to WIB header frame as BU WIB expects
+ start_frame_mode_sel: 1 
+
+
+ # 1 to swap bytes in header frame
+ start_frame_swap: 1 
+
+
+ # Config for stepping through calibration values
+ calibration_stepping: {
+ # master control for calibration stepping
+ mode: "disabled" # disabled, amplitude, phase
+ # time to run with a given setting
+ step_time: 2.0 # float seconds
+ # Amplitude step min
+ amp_min: 3 
+ # Amplitude step max
+ amp_max: 9 
+ # How much to step between amplitudes
+ amp_step: 1 
+ # Phase step min
+ phase_min: 189 
+ # Phase step max
+ phase_max: 249 
+ # How much to step between phases
+ phase_step: 1 
+ }
 }
 
-femb_config_default_femb1: @local::femb_config_default
-femb_config_default_femb2: @local::femb_config_default
-femb_config_default_femb3: @local::femb_config_default
-femb_config_default_femb4: @local::femb_config_default
- 
-femb_config_default_femb1.fake_word: 0xFE1
-femb_config_default_femb2.fake_word: 0xFE2
-femb_config_default_femb3.fake_word: 0xFE3
-femb_config_default_femb4.fake_word: 0xFE4
+# configuring 4 FEMBs attached to the WIB
 
+femb_config_default_femb1: @local::femb_config_default
+
+femb_config_default_femb2: @local::femb_config_default
+
+femb_config_default_femb3: @local::femb_config_default
+
+femb_config_default_femb4: @local::femb_config_default 
 
 daq:
 {
@@ -85,17 +130,10 @@ daq:
 
       # WIB register map
       wib_table: "WIB_SBND_REGS.adt"
+      #WIB.adt
 
       # FEMB register map
       femb_table: "SBND_FEMB.adt"
-
-      # this must match the WIB firmware version (hex)
-      expected_wib_fw_version_rce: 0x18072501
-      expected_wib_fw_version_felix: 0x18072501
-      expected_wib_fw_version: 0x108
-
-      # this must match the WIB firmware version
-      expected_daq_mode: "any" # "RCE", "FELIX", or "any"
 
       # If true, transmit fake data from WIB, if false data from FEMBs
       use_WIB_fake_data: [false,false,false,false] # list of 4 bools
@@ -139,22 +177,12 @@ daq:
 
       #Number of times to try configuring before giving up
       configuration_tries: 3
-    }
+      
+      #Start FELIX links in start transition, else during configure transition
+      start_links_FELIX_run_start: false 
 
-    metrics: 
-    {
-      # Need to convert DIM to EPICS, comment out for now
-      #dim: 
-      #{
-      #  metricPluginType: dim 
-      #  level: 5 
-      #  reporting_interval: 5.0 
-      #  Verbose: false 
-      #  DNSPort: 2505 
-      #  DNSNode: "np04-srv-010.cern.ch" 
-      #  DIMServerName: WIBReader 
-      #  IDName: wibdefault
-      #}
+      #Stop FELIX links in stop transition, else don't stop
+      stop_links_FELIX_run_stop: false 
     }
   }
 }

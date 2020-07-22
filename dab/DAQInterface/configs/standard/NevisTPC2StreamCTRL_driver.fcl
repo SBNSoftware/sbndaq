@@ -9,7 +9,7 @@ fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-  generated_fragments_per_event: 11
+  generated_fragments_per_event: 8
   board_id: 0
 
   SamplesPerChannel: 7675 # SBND drift time x 3
@@ -28,9 +28,9 @@ fragment_receiver: {
   # Do not change block name
   nevis_crate : { 
     # Location of modules within crate
-    xmit_slot: 2 # Location of XMIT module
-    max_fem_slot: 13 # Location of leftmost FEM module
-    trigger_slot: 20 # Location of Trigger Board
+    xmit_slot: 4 # Location of XMIT module
+    max_fem_slot: 12 # Location of leftmost FEM module
+    trigger_slot: 17 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
     xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
@@ -55,7 +55,7 @@ fragment_receiver: {
     # Controller PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0x66
+    bus : 0x9
     device_name: neviscard_controller
   }
 
@@ -67,7 +67,7 @@ fragment_receiver: {
     # NU stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb4
+    bus : 0x5
     device_name: neviscard_nu
     # DMA settings
     dma_buffer_size : @local::nu_dma_buffer_size
@@ -84,7 +84,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb3
+    bus : 0x4
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size

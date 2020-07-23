@@ -47,12 +47,12 @@ DataLogger label: DataLogger1
 DataLogger host: icarus-evb01-daq
 DataLogger label: DataLogger2
 
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger3
-#
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger4
-#
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger3
+
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger4
+
 #DataLogger host: icarus-evb01-daq
 #DataLogger label: DataLogger5
 

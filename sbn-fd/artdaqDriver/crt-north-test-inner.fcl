@@ -281,7 +281,7 @@ event_builder: {
 art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
-    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+    ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
     TimeTracker: {}
   }
 

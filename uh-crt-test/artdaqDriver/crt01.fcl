@@ -280,7 +280,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
-    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+    ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
   }
 
   physics:{

@@ -46,7 +46,7 @@ daq.fragment_receiver.ProbeBitStream : '
 '
 
 #pull mode configuration
-daq.fragment_receiver.request_address:        "227.128.10.129" # -- multicast request address
+daq.fragment_receiver.request_address:        "227.128.7.129" # -- multicast request address
 daq.fragment_receiver.multicast_interface_ip: "192.168.191.0" # -- should match the private net 
 daq.fragment_receiver.request_port: 3001   # UDP request port
 daq.fragment_receiver.request_mode: buffer # pull mode, will be 'window' in future

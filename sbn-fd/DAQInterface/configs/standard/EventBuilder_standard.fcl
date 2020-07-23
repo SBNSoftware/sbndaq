@@ -17,8 +17,9 @@ daq: {
     max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: true
-    request_address: "227.128.7.129"
-    request_port: 3001
+    request_address: "227.128.12.35"
+    request_port: 3502
+    multicast_interface_ip: "192.168.191.0" # -- should match the private net 
     num_requests: 500
 
     routing_token_config: {

@@ -1,0 +1,60 @@
+#include "icaruscrtbitstream000.fcl"
+#include "icaruscrtbitstream001.fcl"
+
+daq: {
+
+  fragment_receiver: {
+   fragment_ids: [ 0x3103, 0x3101, 0x3106, 0x3107 ]   
+   generated_fragments_per_event: 4
+#Last 8 bits of the MAC addresses of all FEB connected to given ethernet port
+   MAC5s : [ 3, 1, 6, 7 ]
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+   TurnOnHV : [ true, true, true, true ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
+
+#First port used by the febdrv. 3 consecutive ports are for sending data, stats and stats2, respectively
+   zmq_listening_port: 5510
+
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   }
+
+#SC bitstream, main FEB configuration
+    SlowControlBitStream0: @local::SlowControlBitStream_id_000
+    SlowControlBitStream1: @local::SlowControlBitStream_id_000
+    SlowControlBitStream2: @local::SlowControlBitStream_id_000
+    SlowControlBitStream3: @local::SlowControlBitStream_id_000
+    SlowControlBitStream4: @local::SlowControlBitStream_id_000
+    SlowControlBitStream5: @local::SlowControlBitStream_id_000
+  }
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/crt01nni_%UID%_metrics.log"
+      uniquify: true
+    }
+send_system_metrics: true
+send_process_metrics: true
+
+    graphite: {
+     level:10
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.18"
+     port:2003
+     namespace:"icarus.crt01nni."
+    }
+
+  }
+}
+
+
+#The common settings need to be included at the end
+#include "icaruscrtcommon.fcl"
+

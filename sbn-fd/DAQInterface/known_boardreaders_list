@@ -76,5 +76,9 @@ icaruspmteebot02 icarus-pmt03-daq -1
 icaruspmteebot03 icarus-pmt03-daq -1
 component01 localhost -1
 icaruscrt010 icarus-crt01 -1
+icaruscrt01nni icarus-crt01-daq -1
+icaruscrt01nno icarus-crt01-daq -1
+icaruscrt03wci icarus-crt03-daq -1
+icaruscrt03wco icarus-crt03-daq -1
 icarustrigger icarus-clk01-daq -1
 icarustriggertest icarus-clk01-daq -1

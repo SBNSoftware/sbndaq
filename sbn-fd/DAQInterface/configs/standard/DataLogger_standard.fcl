@@ -120,9 +120,13 @@ physics: {
  		  prescaleOffset: 0
 		}
 
+    prescale1: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
   }
 
-  p2: [ prescale5 ]
+  p2: [ prescale1 ]
   a1: [ ]
 #  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
 

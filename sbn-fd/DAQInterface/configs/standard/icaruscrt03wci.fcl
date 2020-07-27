@@ -34,7 +34,6 @@ daq: {
     FEBConfigurationMAC24 : {
 #include "icaruscrtfebstandard.fcl"
     }
-
   }
 }
 

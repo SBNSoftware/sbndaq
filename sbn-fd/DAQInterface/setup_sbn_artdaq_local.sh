@@ -2,7 +2,8 @@
 
 SBNDAQ_VERSION="v0_06_01"
 SBNDAQ_QUALS="e19:prof:s94:py2"
-DAQINTERFACE_VERSION="v3_08_00" 
+#DAQINTERFACE_VERSION="v3_08_00"
+DAQINTERFACE_VERSION="v3_08_00FB24312FB24420"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -42,8 +43,10 @@ echo "TRACE_FILE=$TRACE_FILE"
 toffSg 3-63 
 tonSg 0-2
 tonMg 0-3
+toffM 23 -n SharedMemoryManager
 tmodeS 1
 tmodeM 1
+
 
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator

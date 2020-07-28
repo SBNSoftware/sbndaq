@@ -26,7 +26,7 @@ daq.fragment_receiver.out_of_sync_tolerance_ms: 10
 daq.fragment_receiver.omit_out_of_order_events: false
     
 #Restart febdrv periodically (febdrv issue workaround), set to 0 to disable
-daq.fragment_receiver.febdrv_restart_period_s:  0
+daq.fragment_receiver.feb_restart_period_s:  0
 
 #Time between FEB polls
 daq.fragment_receiver.feb_poll_ms : 50

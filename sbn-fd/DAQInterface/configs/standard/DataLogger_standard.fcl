@@ -23,7 +23,7 @@ daq: {
 		use_routing_master: false
 	}
 
-  init_fragment_count: 10 # must match the number of running eventbuilders
+  init_fragment_count: 1 # must match the number of running eventbuilders
 
 	sources: { }
   }

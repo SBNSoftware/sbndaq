@@ -27,6 +27,9 @@ daq:
     # begin run ADC calibration
     CalibrateOnConfig: true
 
+    # Turn on or off automatic mid-run temperature correction
+    LockTempCalibration: false
+
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     ModeLVDS: 0
 

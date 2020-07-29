@@ -1,10 +1,8 @@
 services: {
-  scheduler: {
-    errorOnFailureToPut: false
-  }
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
+  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
 }
 
 daq: {
@@ -33,7 +31,7 @@ daq: {
       metricPluginType: "file"
       level: 3
       # fileName: "/log/metrics/aggregator/agg_%UID%_metrics.log"
-      fileName: "/data1/dp01_metrics.log"
+      fileName: "/scratch/wfb/dp01_metrics.log"
       uniquify: true
     }
     # graphite: {
@@ -49,7 +47,7 @@ daq: {
 }
 
 source: {
-  module_type: NetMonInput
+  module_type: ArtdaqInput
 }
 
 outputs: {

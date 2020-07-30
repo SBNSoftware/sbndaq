@@ -53,7 +53,7 @@ do
 done
 
 send_transition.sh config standard
-#send_transition.sh config testGALZ00004
+#send_transition.sh config testGALQ
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

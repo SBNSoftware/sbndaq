@@ -37,6 +37,26 @@ daq: {
     }
 
   }
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 10
+      fileName: "/scratch/log/crt03wco_%UID%_metrics.log"
+      uniquify: true
+    }
+    send_system_metrics: true
+    send_process_metrics: true
+
+    graphite: {
+     level:10
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.18"
+     port:2003
+     namespace:"icarus.crt03wco."
+    }
+  }
+
 }
 
 

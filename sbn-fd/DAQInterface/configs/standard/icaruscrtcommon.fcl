@@ -14,8 +14,8 @@ daq.fragment_receiver.FEBBufferCapacity: 100000
 
 
 #Delay of getNext function
-daq.fragment_receiver.throttle_usecs:       100000
-daq.fragment_receiver.throttle_usecs_check:  10000
+daq.fragment_receiver.throttle_usecs:       10
+daq.fragment_receiver.throttle_usecs_check:  1
 
 #Omit events outside of the poll times
 daq.fragment_receiver.omit_out_of_sync_events: false
@@ -30,6 +30,7 @@ daq.fragment_receiver.feb_restart_period_s:  0
 
 #Time between FEB polls
 daq.fragment_receiver.feb_poll_ms : 50
+
 
 
 #PROBE bitsream (FEB monitoring, not useful during normal CRT operation or tests). Bitstream format: 0s and 1s are accepted and whitespaces are ignored, until any other character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
@@ -53,8 +54,9 @@ daq.fragment_receiver.request_window_offset: 25000000
 daq.fragment_receiver.request_windows_are_unique: true
 daq.fragment_receiver.separate_data_thread: true
 daq.fragment_receiver.stale_request_timeout: 10000000000
+daq.fragment_receiver.receive_requests: true
 
 #advanced memory usage, max size in bytes
-daq.fragment_receiver.max_fragment_size_bytes: 512000
+daq.fragment_receiver.max_fragment_size_bytes: 0x800000
 
 daq.fragment_receiver.window_close_timeout_us: 4000000

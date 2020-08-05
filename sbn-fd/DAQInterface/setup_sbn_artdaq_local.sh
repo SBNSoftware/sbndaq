@@ -40,7 +40,7 @@ export TRACE_FILE=/tmp/trace_`whoami`
 echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
-treset
+#treset
 toffSg 3-63 
 toffMg 0-63
 tonSg 0-2
@@ -48,7 +48,10 @@ tonSg 0-2
 tonM 0-63 -n BernCRT_GeneratorBase
 toffM 6,11 -n BernCRT_GeneratorBase 
 tonM 0-63 -N*CommandableFragment*
+toffM 20 -N*CommandableFrag*
 #toffM 23 -n SharedMemoryManager
+tonM 0-63 -N*FragmentBuffer
+tonM 0-63 -N*RequestReceiver
 tmodeS 1
 tmodeM 1
 

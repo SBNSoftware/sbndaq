@@ -1,11 +1,11 @@
-#events_to_generate: 15000000
+events_to_generate: 15000000
 #events_to_generate:   500000
-events_to_generate:   10000
+#events_to_generate:   100000
 
 debug_cout: false
 #debug_cout: true
 
-run_number: 23
+run_number: 1
 
 fragment_receiver: {
 
@@ -20,16 +20,16 @@ fragment_receiver: {
 #first digit: 3 - ICARUS CRT, b - SBND CRT
 #second digit: 0 - bottom CRT, 1 - side CRT, 2 - top CRT
 #third and fourth digit - last 8 bits of the MAC address
-   fragment_ids: [ 0x3103, 0x3101, 0x3106, 0x3107 ]
+   fragment_ids: [ 0x3111, 0x3113, 0x3115, 0x3116, 0x3117, 0x3118 ]
 
    generated_fragments_per_event: 1
 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ true, true, true, true ]
+   TurnOnHV : [ true, true, true, true, true, true ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
-
-   ethernet_port: crt1
+   PPS_offset_ns : [ 134, 154, 174, 220, 240, 260 ] #values for JacksonLab GPS (Feb 17, 2020)
+   
+   ethernet_port: crt0
 
 #Capacity of internal fragment generator buffer for one FEB
    FEBBufferCapacity: 100000
@@ -51,10 +51,10 @@ fragment_receiver: {
   omit_out_of_order_events: false
 
 #Restart feb periodically (feb issue workaround)
-  feb_restart_period_s: 0
+  feb_restart_period_s:  300
 
 #Time between FEB polls
-  feb_poll_ms : 40
+  feb_poll_ms : 50
 
 
 
@@ -67,17 +67,23 @@ ProbeBitStream : '
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
 '
-    FEBConfigurationMAC3 : {
-#include "crt-configuration-standard.fcl"   
+    FEBConfigurationMAC17 : {
+#include "crt-configuration-cal.fcl"
     }
-    FEBConfigurationMAC1 : {
-#include "crt-configuration-standard.fcl"
+    FEBConfigurationMAC19 : {
+#include "crt-configuration-cal.fcl"
     }
-    FEBConfigurationMAC6 : {
-#include "crt-configuration-standard.fcl"
+    FEBConfigurationMAC21 : {
+#include "crt-configuration-cal.fcl"
     }
-    FEBConfigurationMAC7 : {
-#include "crt-configuration-standard.fcl"
+    FEBConfigurationMAC22 : {
+#include "crt-configuration-cal.fcl"
+    }
+    FEBConfigurationMAC23 : {
+#include "crt-configuration-cal.fcl"
+    }
+    FEBConfigurationMAC24 : {
+#include "crt-configuration-cal.fcl"
     }
 }
 
@@ -116,7 +122,7 @@ art: {
       module_type: RootDAQOut
 #      fileName: "/data1/crt_yearmonthday_north_inner_run01_%#.root"
 #      fileName: "/data1/crt_2020-07-10_antoniTest_%06r_%#_%to_%tc.root"
-      fileName: "/data1/crt-north-inner_%to_%tc_%06r_%#.root"
+      fileName: "/data1/crt-west-inner-cal_%to_%tc_%06r_%#.root"
       compressionLevel: 2
       fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
     }

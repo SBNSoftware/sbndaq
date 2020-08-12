@@ -1,11 +1,11 @@
-#events_to_generate: 15000000
+events_to_generate: 15000000
 #events_to_generate:   500000
-events_to_generate:   10000
+#events_to_generate:   10000
 
 debug_cout: false
 #debug_cout: true
 
-run_number: 23
+run_number: 2
 
 fragment_receiver: {
 
@@ -25,7 +25,7 @@ fragment_receiver: {
    generated_fragments_per_event: 1
 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ true, true, true, true ]
+   TurnOnHV : [ false, false, false, false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
 
@@ -68,16 +68,16 @@ ProbeBitStream : '
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
 '
     FEBConfigurationMAC3 : {
-#include "crt-configuration-standard.fcl"   
+#include "crt-configuration-noise.fcl"   
     }
     FEBConfigurationMAC1 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-noise.fcl"
     }
     FEBConfigurationMAC6 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-noise.fcl"
     }
     FEBConfigurationMAC7 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-noise.fcl"
     }
 }
 
@@ -116,7 +116,7 @@ art: {
       module_type: RootDAQOut
 #      fileName: "/data1/crt_yearmonthday_north_inner_run01_%#.root"
 #      fileName: "/data1/crt_2020-07-10_antoniTest_%06r_%#_%to_%tc.root"
-      fileName: "/data1/crt-north-inner_%to_%tc_%06r_%#.root"
+      fileName: "/data1/crt-north-inner-noise_%to_%tc_%06r_%#.root"
       compressionLevel: 2
       fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
     }

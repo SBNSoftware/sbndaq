@@ -1,6 +1,6 @@
 #events_to_generate: 15000000
 #events_to_generate:   500000
-events_to_generate:   10000
+events_to_generate:   200
 
 debug_cout: false
 #debug_cout: true
@@ -68,16 +68,16 @@ ProbeBitStream : '
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
 '
     FEBConfigurationMAC3 : {
-#include "crt-configuration-standard.fcl"   
+#include "crt-configuration-high_threshold.fcl"
     }
     FEBConfigurationMAC1 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-high_threshold.fcl"
     }
     FEBConfigurationMAC6 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-high_threshold.fcl"
     }
     FEBConfigurationMAC7 : {
-#include "crt-configuration-standard.fcl"
+#include "crt-configuration-high_threshold.fcl"
     }
 }
 
@@ -116,7 +116,7 @@ art: {
       module_type: RootDAQOut
 #      fileName: "/data1/crt_yearmonthday_north_inner_run01_%#.root"
 #      fileName: "/data1/crt_2020-07-10_antoniTest_%06r_%#_%to_%tc.root"
-      fileName: "/data1/crt-north-inner_%to_%tc_%06r_%#.root"
+      fileName: "/data1/crt-north-inner-high_threshold_%to_%tc_%06r_%#.root"
       compressionLevel: 2
       fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
     }

@@ -13,30 +13,30 @@ EventBuilder label: EventBuilder1
 EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder2
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder3
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder3
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder4
-#
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder5
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder4
 
-## Add 5 more event builders on  icarus-evb02-daq
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder6
-#
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder7
-#
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder8
-#
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder9
-#
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder10
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder5
+
+# Add 5 more event builders on  icarus-evb02-daq
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder6
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder7
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder8
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder9
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder10
 
 
 # DATA LOGGERS
@@ -53,24 +53,24 @@ DataLogger label: DataLogger3
 DataLogger host: icarus-evb01-daq
 DataLogger label: DataLogger4
 
-#DataLogger host: icarus-evb01-daq
-#DataLogger label: DataLogger5
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger5
 
-## Add 5 more data logger on icarus-evb02-daq
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger6
-#
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger7
-#
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger8
-#
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger9
-#
-#DataLogger host: icarus-evb02-daq
-#DataLogger label: DataLogger10
+# Add 5 more data logger on icarus-evb02-daq
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger6
+
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger7
+
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger8
+
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger9
+
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger10
 
 Dispatcher host: icarus-evb01-daq
 Dispatcher label: Dispatcher1

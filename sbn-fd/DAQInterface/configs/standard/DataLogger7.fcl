@@ -4,3 +4,5 @@ daq.metrics.aggFile.fileName : "/scratch/log/dl07_metrics.log"
 daq.metrics.graphite.namespace: "icarus.dl07."
 outputs.normalOutput.fileName: "/data/daq/data_dl7_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/data/test_daq/data_dl7_run%R_%#_%to.root"
+
+physics.my_output_modules: [rootNetOutput, testOutput ]

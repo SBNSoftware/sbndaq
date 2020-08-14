@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v0_07_00"
 SBNDAQ_QUALS="e19:prof:s94:py2"
-DAQINTERFACE_VERSION="v3_08_00"
+DAQINTERFACE_VERSION="v3_09_00"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -30,7 +30,7 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
 setup artdaq_runcontrol_gui v1_00_01 -q e19:prof
-setup artdaq_mfextensions  v1_04_02 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_05_00 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

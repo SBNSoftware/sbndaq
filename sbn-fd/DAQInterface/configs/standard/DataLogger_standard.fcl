@@ -16,14 +16,14 @@ daq: {
     onmon_event_prescal: 1
     is_data_logger: true
 
-    broadcast_buffer_size: 0x800000
+    broadcast_buffer_size: 0x1000000
     auto_suppression_enabled: false
 
 	routing_token_config: {
 		use_routing_master: false
 	}
 
-  init_fragment_count: 2 # must match the number of running eventbuilders
+  init_fragment_count: 1 # must match the number of running eventbuilders
 
 	sources: { }
   }
@@ -109,11 +109,29 @@ physics: {
     		  prescaleFactor: 50
  		  prescaleOffset: 0
 		}
+
+    prescale10: { module_type: "Prescaler"
+    		  prescaleFactor: 10
+ 		  prescaleOffset: 0
+		}
+
+    prescale5: { module_type: "Prescaler"
+    		  prescaleFactor: 5
+ 		  prescaleOffset: 0
+		}
+
+    prescale1: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
   }
 
-  p2: [ prescale50 ]
+  p2: [ prescale1 ]
   a1: [ ]
-  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+#  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+
+  #my_output_modules: [  ]
+  my_output_modules: [  testOutput ]
   end_paths: [ my_output_modules ]
 }
 process_name: DAQDL

@@ -1,14 +1,15 @@
 #include "icarustpc_standard.fcl"
 
 # Test nominal values
-#daq.fragment_receiver.fragment_id: 0x140E
+daq.fragment_receiver.fragment_id: 0x140E
 #daq.fragment_receiver.CrateID: 0x140E
 
 # Operating mode during	fill
-daq.fragment_receiver.fragment_id: 6
+#daq.fragment_receiver.fragment_id: 6
 daq.fragment_receiver.CrateID: 0x58
 
-daq.fragment_receiver.pcieLinks: [ 4, 5 ]
+#daq.fragment_receiver.pcieLinks: [ 4, 5 ] # values when located in alternate tpc server
+daq.fragment_receiver.pcieLinks: [ 0, 1 ]
 daq.metrics.graphite.namespace: "icarus.tpcwe06."
 #daq.redis_10s.redis_key_prefix: "DABBoardReader:icarustpc01:"
 #daq.redis_testing.redis_key_prefix: "DABBoardReader:icarustpc01:"

@@ -1,0 +1,132 @@
+events_to_generate: 15000000
+#events_to_generate:   500000
+#events_to_generate:   100000
+
+debug_cout: false
+#debug_cout: true
+
+run_number: 2
+
+fragment_receiver: {
+
+   generator: BernCRTData
+   
+   fragment_type: BERNCRT
+
+#unused but required field, dummy value
+   board_id: 1
+
+#First 8 bits of the 16 bit fragment id
+#first digit: 3 - ICARUS CRT, b - SBND CRT
+#second digit: 0 - bottom CRT, 1 - side CRT, 2 - top CRT
+#third and fourth digit - last 8 bits of the MAC address
+   fragment_ids: [ 0x3105, 0x3104, 0x3108, 0x3109 ]
+
+   generated_fragments_per_event: 1
+
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+   TurnOnHV : [ false, false, false, false ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
+
+   ethernet_port: crt0
+
+#Capacity of internal fragment generator buffer for one FEB
+   FEBBufferCapacity: 100000
+   
+#Delay of getNext function
+   throttle_usecs:       10
+   throttle_usecs_check:  1
+
+#Workarounds for issues with FEB.
+#Note that they are likely to remove legitimate data,
+#preserve corrupted data and hide problems
+
+#Omit events outside of the poll times
+   omit_out_of_sync_events: false
+#Maximum tolerance margin for events coming outside of the poll
+   out_of_sync_tolerance_ms: 10
+
+#Omit timestamps not increasing monotonically 
+  omit_out_of_order_events: false
+
+#Restart feb periodically (feb issue workaround)
+  feb_restart_period_s:  300
+
+#Time between FEB polls
+  feb_poll_ms : 50
+
+
+
+ProbeBitStream : '
+00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
+00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
+00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
+'
+    FEBConfigurationMAC5 : {
+#include "crt-configuration-noise.fcl"
+    }
+    FEBConfigurationMAC4 : {
+#include "crt-configuration-noise.fcl"
+    }
+    FEBConfigurationMAC8 : {
+#include "crt-configuration-noise.fcl"
+    }
+    FEBConfigurationMAC9 : {
+#include "crt-configuration-noise.fcl"
+    }
+}
+
+event_builder: {
+
+  expected_fragments_per_event: 1
+  max_fragment_size_bytes: 256
+  buffer_count: 256
+  use_art: true
+  print_event_store_stats: false
+  verbose: false
+  events_expected_in_SimpleQueueReader: @local::events_to_generate
+#how many init fragments we expect
+  init_fragment_count: 0
+}
+
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+#    TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+  }
+
+  physics:{
+    analyzers: {}
+    producers: {}
+    filters:   {}
+
+    outstream: [ rootout ]
+#    outstream: [ ]
+    end_paths: [ outstream ]
+  }
+
+  outputs:{
+    rootout:{
+      module_type: RootDAQOut
+#      fileName: "/data1/crt_yearmonthday_north_inner_run01_%#.root"
+#      fileName: "/data1/crt_2020-07-10_antoniTest_%06r_%#_%to_%tc.root"
+      fileName: "/data1/crt-north-outer-noise_%to_%tc_%06r_%#.root"
+      compressionLevel: 2
+      fileProperties: { maxEvents: 10000 maxSubRuns: 1 maxRuns: 1  }
+    }
+  }
+
+  source:{
+    module_type: ArtdaqInput
+    waiting_time: 900
+    resume_after_timeout: true
+  }
+
+  process_name: Driver
+}

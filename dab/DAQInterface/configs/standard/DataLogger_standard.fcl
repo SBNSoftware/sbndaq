@@ -5,7 +5,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
-  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
 }
 
 daq: {
@@ -14,7 +14,7 @@ daq: {
     print_event_store_stats: true
     event_queue_depth: 100
     event_queue_wait_time: 5
-	  max_fragment_size_bytes: 40000000
+    max_fragment_size_bytes: 40000000
     buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true

@@ -4,7 +4,7 @@ services: {
   NetMonTransportServiceInterface: {
     service_provider: NetMonTransportService
   }
-  ArtdaqFragmentNamingServiceInterface: {service_provider: IcarusFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
 }
 daq: {
   event_builder: {

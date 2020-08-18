@@ -1,11 +1,11 @@
 #include "icarustpc_standard.fcl"
 
 # Test nominal values
-#daq.fragment_receiver.fragment_id: 0x1410
+daq.fragment_receiver.fragment_id: 0x1410
 #daq.fragment_receiver.CrateID: 0x1410
 
 # Operating mode during fill
-daq.fragment_receiver.fragment_id: 1
+#daq.fragment_receiver.fragment_id: 1
 #51
 daq.fragment_receiver.CrateID: 0x52
 

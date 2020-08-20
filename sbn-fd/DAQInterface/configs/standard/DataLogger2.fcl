@@ -2,7 +2,9 @@
 process_name: DAQDL02
 daq.metrics.aggFile.fileName : "/data/log/dl02_metrics.log"
 daq.metrics.graphite.namespace: "icarus.dl02."
+
 outputs.normalOutput.fileName: "/data/daq/data_dl2_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/data/test_daq/data_dl2_run%R_%#_%to.root"
-#physics.my_output_modules: [rootNetOutput, testOutput ]
+
+physics.my_output_modules: [rootNetOutput, testOutput ]
 

@@ -7,6 +7,7 @@ local nic_alias=daq
 [[ ! -f  $this_mfconfig.bak ]] && cp -f $this_mfconfig $this_mfconfig.bak 2> /dev/null
 [[ ! -f  $this_mfconfig ]] && cp -f $this_mfconfig.bak $this_mfconfig 2> /dev/null
 
+local PATH=$PATH:/usr/bin/:/usr/sbin
 
 if [[ -f "$this_mfconfig" ]]; then
   local this_mfhostname=$(cat /etc/hosts |grep $(ifconfig |grep "$nic_alias:" -A 1|awk '$1 == "inet" {print $2}')| awk '{print $2}')

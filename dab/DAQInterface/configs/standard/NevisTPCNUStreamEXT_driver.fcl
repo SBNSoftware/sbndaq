@@ -12,6 +12,7 @@ fragment_receiver: {
   generated_fragments_per_event: 8
   board_id: 0
 
+  max_fragment_size_bytes: 16777216 #400000
   SamplesPerChannel: 7675 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size

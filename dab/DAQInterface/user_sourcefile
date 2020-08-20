@@ -52,4 +52,4 @@ export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0
 
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl
 
-#export HOSTNAME=$(hostname -s)-priv
+export HOSTNAME=$(hostname -s)

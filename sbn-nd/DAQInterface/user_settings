@@ -1,3 +1,4 @@
+
 # JCF, Sep-16-2017
 
 # This file is an example of a settings file which would work with an
@@ -12,10 +13,10 @@
 # directory containing the xmlrpc_c package (needed for DAQInterface
 # to receive commands)
 
-log_directory: /log
-record_directory: /run_records
-package_hashes_to_save: [ artdaq, artdaq_core, artdaq_utilities, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
-productsdir_for_bash_scripts: /software/products
+log_directory: /daq/log
+record_directory: /daq/run_records
+package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
+productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
 boardreader timeout: 3000
 eventbuilder timeout: 20
@@ -23,8 +24,11 @@ aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
-max_fragment_size_bytes: 10000000
+
+#max_fragment_size_bytes: 10000000
+advanced_memory_usage: true
 
 all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
+

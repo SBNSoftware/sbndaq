@@ -29,7 +29,7 @@ daq.fragment_receiver.omit_out_of_order_events: false
 daq.fragment_receiver.feb_restart_period_s:  0
 
 #Time between FEB polls
-daq.fragment_receiver.feb_poll_ms : 50
+daq.fragment_receiver.feb_poll_ms : 40
 
 
 

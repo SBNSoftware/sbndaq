@@ -18,16 +18,16 @@ daq: {
 
 #FEB configuration
     FEBConfigurationMAC5 : {
-#include "icaruscrtfebstandard.fcl"
+#include "icaruscrt_feb_standard.fcl"
     }
     FEBConfigurationMAC4 : {
-#include "icaruscrtfebstandard.fcl"
+#include "icaruscrt_feb_standard.fcl"
     }
     FEBConfigurationMAC8 : {
-#include "icaruscrtfebstandard.fcl"
+#include "icaruscrt_feb_standard.fcl"
     }
     FEBConfigurationMAC9 : {
-#include "icaruscrtfebstandard.fcl"
+#include "icaruscrt_feb_standard.fcl"
     }
 
   }
@@ -54,5 +54,5 @@ daq: {
 
 
 #The common settings need to be included at the end
-#include "icaruscrtcommon.fcl"
+#include "icarus_crt_common.fcl"
 

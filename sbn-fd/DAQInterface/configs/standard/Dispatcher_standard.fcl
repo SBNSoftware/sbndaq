@@ -20,7 +20,7 @@ daq: {
 		use_routing_master: false
 	}
 
-    init_fragment_count: 10 #must match the number of running dataloggers
+    init_fragment_count: 1 #0 #must match the number of running dataloggers
     auto_suppression_enabled: false
 
 	sources: { }

@@ -133,7 +133,8 @@ physics: {
 
   p2: [ prescale1 ]
   a1: [ ]
-  my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+  #my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+  my_output_modules: [ testOutput, rootNetOutput ]
 
   #my_output_modules: [  ]
   #my_output_modules: [  testOutput ]

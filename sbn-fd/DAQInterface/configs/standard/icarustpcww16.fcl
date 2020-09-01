@@ -9,4 +9,4 @@
 daq.fragment_receiver.fragment_id: 0x170A
 daq.fragment_receiver.CrateID: 0x5f
 daq.fragment_receiver.pcieLinks: [ 4, 5 ]
-daq.metrics.graphite.namespace: "icarus.tpcww16"
+daq.metrics.graphite.namespace: "icarus.tpcww16."

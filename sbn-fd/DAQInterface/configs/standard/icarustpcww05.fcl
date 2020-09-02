@@ -10,3 +10,6 @@ daq.fragment_receiver.fragment_id: 0x160C
 daq.fragment_receiver.CrateID: 0x12
 daq.fragment_receiver.pcieLinks: [ 2, 3 ]
 daq.metrics.graphite.namespace: "icarus.tpcww05."
+
+daq.fragment_receiver.receive_requests: false
+daq.fragment_receiver.request_mode: ignored

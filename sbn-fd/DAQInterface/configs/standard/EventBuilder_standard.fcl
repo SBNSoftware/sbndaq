@@ -10,7 +10,7 @@ daq: {
   event_builder: {
     stale_buffer_timeout_usec: 10000000
     expected_fragments_per_event: 0  # Will be set by DAQInterface
-#->>max_fragment_size_bytes: 5120000 #5MB
+    #->>max_fragment_size_bytes: 5120000 #5MB
     use_art: true
     print_event_store_stats: true
     buffer_count: 50
@@ -52,29 +52,50 @@ send_process_metrics: true
 } 
 
 outputs: {
+  normalOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/daq/data_dl00_run%R_%#_%to.root"
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: [p2]    
+  }
+  testOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/test_daq/data_dl00_run%R_%#_%to.root"
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 100
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: []    
+  }
   rootNetOutput: {
     module_type: RootNetOutput
-    #broadcast_sends: true
-    destinations: { }
+    broadcast_sends: true
+    nonblocking_sends: true
+  	destinations: { }
+    SelectEvents: []
     host_map: [{ 
       rank: -1
       host: "icarus-evb01"
     }]   
-
-#		 SelectEvents: [p2]    
-
+  }
     routing_table_config: {
         use_routing_master: false
      }
   }
 
-  normalOutput: {
-    module_type: RootOutput
-    fileName: "/data/data_evb00_run%R_%#_%to.root"
-    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
-    compressionLevel: 3
-    fastCloning: false
- }
 }
 
 physics: {
@@ -83,18 +104,39 @@ physics: {
   producers: {}
 
   filters: {
-    prescale: { module_type: "Prescaler"
+    prescale50: { module_type: "Prescaler"
+    		  prescaleFactor: 50
+ 		  prescaleOffset: 0
+		}
+
+    prescale10: { module_type: "Prescaler"
+    		  prescaleFactor: 10
+ 		  prescaleOffset: 0
+		}
+
+    prescale25: { module_type: "Prescaler"
+    		  prescaleFactor: 25
+ 		  prescaleOffset: 0
+		}
+
+    prescale5: { module_type: "Prescaler"
+    		  prescaleFactor: 5
+ 		  prescaleOffset: 0
+		}
+
+    prescale1: { module_type: "Prescaler"
     		  prescaleFactor: 1
  		  prescaleOffset: 0
 		}
   }
 
   p1: [ ]
-  p2: [ prescale ]
+  p2: [ prescale1 ]
   a1: [ ]
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
+  my_output_modules: [ testOutput, rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

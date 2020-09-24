@@ -1,0 +1,106 @@
+services: {
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService  
+ }
+
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
+}
+
+daq: {
+  event_builder: {
+    stale_buffer_timeout_usec: 10000000
+    expected_fragments_per_event: 0  # Will be set by DAQInterface
+#->>max_fragment_size_bytes: 5120000 #5MB
+    use_art: true
+    print_event_store_stats: true
+    buffer_count: 50
+    max_incomplete_events: 50 # Same as boardreader sync interval
+    verbose: true
+    send_requests: true
+    request_address: "227.128.12.35"
+    request_port: 3502
+    multicast_interface_ip: "192.168.191.0" # -- should match the private net 
+    num_requests: 500
+
+    routing_token_config: {
+    use_routing_master: false
+    }
+
+    sources: { }
+  }
+  metrics: {
+    evbFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/evb00_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+    graphite: {
+      level:10
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.191.18"
+      port:2003
+      namespace:"icarus.evb00."
+    } 
+  }
+} 
+
+outputs: {
+  rootNetOutput: {
+    module_type: RootNetOutput
+    #broadcast_sends: true
+    destinations: { }
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
+
+#		 SelectEvents: [p2]    
+
+    routing_table_config: {
+        use_routing_master: false
+     }
+  }
+
+  normalOutput: {
+    module_type: RootOutput
+    fileName: "/data/data_evb00_run%R_%#_%to.root"
+    fileProperties: { maxSubRuns: 1 maxRuns: 1  }
+    compressionLevel: 3
+    fastCloning: false
+ }
+}
+
+physics: {
+  analyzers: {}
+
+  producers: {}
+
+  filters: {
+    prescale: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
+  }
+
+  p1: [ ]
+  p2: [ prescale ]
+  a1: [ ]
+  #my_output_modules: []
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+
+  end_paths: [ my_output_modules ]
+}
+source: {
+  module_type: ArtdaqInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

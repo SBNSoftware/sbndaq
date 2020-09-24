@@ -23,7 +23,10 @@ daq: {
     num_requests: 500
 
     routing_token_config: {
-    use_routing_master: false
+      use_routing_master: false
+    }
+    routing_table_config: {
+      use_routing_master: false
     }
 
     sources: { }
@@ -85,17 +88,12 @@ outputs: {
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
-    SelectEvents: []
+    SelectEvents: [pd]
     host_map: [{ 
       rank: -1
       host: "icarus-evb01"
     }]   
   }
-    routing_table_config: {
-        use_routing_master: false
-     }
-  }
-
 }
 
 physics: {
@@ -132,6 +130,7 @@ physics: {
 
   p1: [ ]
   p2: [ prescale1 ]
+  pd: [ prescale5 ]
   a1: [ ]
   #my_output_modules: []
   #my_output_modules: [ rootNetOutput ]

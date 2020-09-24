@@ -8,11 +8,11 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder1
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder2
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder2
 
 #EventBuilder host: icarus-evb01-daq
 #EventBuilder label: EventBuilder3
@@ -27,8 +27,8 @@ EventBuilder label: EventBuilder2
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder6
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder7
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder7
 
 #EventBuilder host: icarus-evb02-daq
 #EventBuilder label: EventBuilder8
@@ -43,11 +43,11 @@ EventBuilder label: EventBuilder10
 EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder11
 
-#EventBuilder host: icarus-evb03-daq
-#EventBuilder label: EventBuilder12
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder12
 
-#EventBuilder host: icarus-evb03-daq
-#EventBuilder label: EventBuilder13
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder13
 
 #EventBuilder host: icarus-evb03-daq
 #EventBuilder label: EventBuilder14
@@ -59,11 +59,11 @@ EventBuilder label: EventBuilder15
 EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder16
 
-#EventBuilder host: icarus-evb04-daq
-#EventBuilder label: EventBuilder17
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder17
 
-#EventBuilder host: icarus-evb04-daq
-#EventBuilder label: EventBuilder18
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder18
 
 #EventBuilder host: icarus-evb04-daq
 #EventBuilder label: EventBuilder19

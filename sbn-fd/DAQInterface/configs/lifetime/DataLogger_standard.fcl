@@ -55,6 +55,8 @@ daq: {
 source: {
   module_type: ArtdaqInput
   register_fragment_types: false
+  waiting_time: 250000000
+  resume_after_timeout: true
 }
 outputs: {
   normalOutput: {
@@ -64,7 +66,7 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 100 #close files out a little faster for the prescaled stream
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
@@ -83,7 +85,7 @@ outputs: {
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: [p2]    
+    SelectEvents: []    
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -134,7 +136,8 @@ physics: {
   p2: [ prescale1 ]
   a1: [ ]
   #my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
-  my_output_modules: [ normalOutput, rootNetOutput ]
+  #my_output_modules: [ testOutput, rootNetOutput ]
+  my_output_modules: [ rootNetOutput ]
 
   #my_output_modules: [  ]
   #my_output_modules: [  testOutput ]

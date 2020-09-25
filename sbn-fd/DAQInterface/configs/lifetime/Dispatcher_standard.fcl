@@ -2,6 +2,7 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
 }
 
 daq: {
@@ -15,7 +16,8 @@ daq: {
     onmon_event_prescale: 1
     is_dispatcher: true
     overwrite_mode: true
-    broadcast_buffer_size: 0x10000000
+    #broadcast_buffer_size: 0x10000000
+    broadcast_buffer_size: 2.68435456e8
 	routing_token_config: {
 		use_routing_master: false
 	}
@@ -49,6 +51,8 @@ daq: {
 source: {
   module_type: ArtdaqInput
   register_fragment_types: false
+  waiting_time: 250000000
+  resume_after_timeout: true
 }
 
 outputs: {

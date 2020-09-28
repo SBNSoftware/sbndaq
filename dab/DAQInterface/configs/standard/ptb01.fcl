@@ -3,7 +3,9 @@ daq: {
 fragment_receiver: {
 
    # Parameters defining and configuring the fragment generator to be used
-   		    
+   		
+   max_fragment_size_bytes: 1000000
+    
    generator: TriggerBoardReader
    #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
    fragment_type: PTB        # Make sure downstream modules know about this fragment_type!

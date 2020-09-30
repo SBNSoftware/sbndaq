@@ -1,0 +1,8 @@
+#include "DataLogger_standard.fcl"
+process_name: DAQDL38
+daq.metrics.aggFile.fileName : "/data/log/dl38_metrics.log"
+daq.metrics.graphite.namespace: "icarus.dl38."
+
+outputs.normalOutput.fileName: "/data/daq/data_dl38_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl38_run%R_%#_%to.root"
+

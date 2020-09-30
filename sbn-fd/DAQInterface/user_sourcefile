@@ -23,7 +23,7 @@ export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/criti
 
 ######################################################
 ##Uncomment  the line below to enable artdaq_database.
-#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 ######################################################
 
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then

@@ -16,7 +16,7 @@ daq: {
     onmon_event_prescal: 1
     is_data_logger: true
 
-    broadcast_buffer_size: 0x10000000
+    broadcast_buffer_size: 0x40000000
     auto_suppression_enabled: false
 
 	routing_token_config: {
@@ -134,10 +134,10 @@ physics: {
   p2: [ prescale1 ]
   a1: [ ]
   #my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
-  my_output_modules: [ testOutput, rootNetOutput ]
+  #my_output_modules: [ testOutput, rootNetOutput ]
 
   #my_output_modules: [  ]
-  #my_output_modules: [  testOutput ]
+  my_output_modules: [  testOutput ]
   end_paths: [ my_output_modules ]
 }
 process_name: DAQDL

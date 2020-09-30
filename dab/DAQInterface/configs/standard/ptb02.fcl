@@ -342,4 +342,12 @@ fragment_receiver: {
 
 ##add metrics stuff here:
 
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/scratch/metrics/ptb02_%UID%_metrics.log"
+      uniquify: true
+    }
+  }
 }

@@ -39,10 +39,10 @@ channel_configuration : [
 
 HG_shaper_time_constant :           6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
 LG_shaper_time_constant :           6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
-charge_threshold :                  280 # DAC1
-time_threshold :                    280 # DAC2
-#charge_threshold :                  320 # DAC1
-#time_threshold :                    320 # DAC2
+#charge_threshold :                  280 # DAC1
+#time_threshold :                    280 # DAC2
+charge_threshold :                  320 # DAC1
+time_threshold :                    320 # DAC2
 HG_peak_detector_PP :               false # True: power pin, False: forced
 LG_peak_detector_PP :               false # True: power pin, False: forced
 LG_preamp_bias :                    true # True: normal, False: weak

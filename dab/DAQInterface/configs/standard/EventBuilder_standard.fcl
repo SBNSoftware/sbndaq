@@ -13,7 +13,6 @@ daq: {
     print_event_store_stats: true
     buffer_count: 200
     max_incomplete_events: 500 # Same as boardreader sync interval
-
     verbose: true
     send_requests: true
     num_requests: 500

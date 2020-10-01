@@ -48,6 +48,9 @@ tonMg 0-3
 toffM 23 -n SharedMemoryManager
 toffM 0-63 -n PTB_Receiver
 tonM 0-63 -n TriggerBoard
+tonM 0-63 -n CAENV1730Readout
+toffM 8 -n CAENV1730Readout
+toffM 30 -n CAENV1730Readout
 toffM 0-63 -n TRACE
 tmodeS 1
 tmodeM 1

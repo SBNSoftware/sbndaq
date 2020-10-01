@@ -1,4 +1,5 @@
 #include "DataLogger_standard.fcl"
-daq.metrics.aggFile.fileName : "/data1/dl013_metrics.log"
+process_name: DAQDL03
+daq.metrics.aggFile.fileName : "/daq/scratch/metrics/dl013_metrics.log"
 #daq.metrics.graphite.namespace: "artdaq.dl03."
-outputs.normalOutput.fileName: "/data1/sbndaq_dl03_r%06r_sr%02s_%to_%#.root"
+outputs.normalOutput.fileName: "/data1/data_dl03_run%R_%#_%to.root"

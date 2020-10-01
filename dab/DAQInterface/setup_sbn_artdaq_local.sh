@@ -4,6 +4,9 @@ SBNDAQ_VERSION="v0_07_00"
 SBNDAQ_QUALS="e19:prof:s94:py2"
 DAQINTERFACE_VERSION="v3_09_01"
 
+unset PRODUCTS
+unset DAQINTERFACE_TRACE_SCRIPT
+
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
@@ -43,6 +46,12 @@ toffSg 3-63
 tonSg 0-2
 tonMg 0-3
 toffM 23 -n SharedMemoryManager
+toffM 0-63 -n PTB_Receiver
+tonM 0-63 -n TriggerBoard
+tonM 0-63 -n CAENV1730Readout
+toffM 8 -n CAENV1730Readout
+toffM 30 -n CAENV1730Readout
+toffM 0-63 -n TRACE
 tmodeS 1
 tmodeM 1
 

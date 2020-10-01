@@ -1,32 +1,17 @@
 #!/usr/bin/env bash
-
-# if you want verbose output just pass any argument to this script
-verbose=$1
-
-# change the localhost to the priv subnet
-sed -i 's/LOCALHOST/'${HOSTNAME%%.*}'/g' MessageFacility_Local.fcl
+this_start=$(date +%s)
 
 function getStatus()
 {
-  local NODAQInterface=$(echo $(status.sh) | grep -q "No DAQInterface instances"; echo $?)
-  if [ $NODAQInterface -eq 0 ]; then
-    echo "No DAQInterface instances are found to exist; exiting."
-    exit 1
-  fi
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
+#  [ $1 != "$status" ] && (echo $status)
   echo $status
 }
 
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-#setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01 tpc01
-#setdaqcomps.sh pmtx02 pmtx01 ptb01
-#setdaqcomps.sh tpc01 ptb01
-#setdaqcomps.sh pmtx01 ptb01
-#setdaqcomps.sh crt05
-#setdaqcomps.sh pmtx01 tpc01 ptb01 crt05
-setdaqcomps.sh tpc01
+setdaqcomps.sh pmtx02 ptb01
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -38,6 +23,8 @@ do
 done
 
 send_transition.sh config standard
+#send_transition.sh config testGALQ
+
 getStatus "configuring"
 while [ "$status" != 'ready' ]
 do
@@ -46,14 +33,8 @@ do
   [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
   # [ "$status" == 'stopped' ] && ( exit 1 )
 done
-
-# echo "pgrep BoardReader: $(pgrep BoardReader)"
-# echo "pgrep EventBuilder: $(pgrep EventBuilder)"
-#for i in $(pgrep BoardReader); do taskset -cp 1-15 $i; done
-# for i in $(pgrep EventBuilder); do taskset -cp 1-15 $i; done
-
-# change back localhost
-sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
+ 
+# report_datafile_location
 
 send_transition.sh start
 # getStatus "starting"
@@ -65,5 +46,8 @@ do
   getStatus "starting"
   [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
+
+this_stop=$(date +%s)
+echo "DAQ started in $(( this_stop - this_start )) seconds."
 
 

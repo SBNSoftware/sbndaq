@@ -13,10 +13,6 @@ getStatus "nil"
 
 
 setdaqcomps.sh \
-icaruscrt01nni \
-icaruscrt01nno \
-icaruscrt03wci \
-icaruscrt03wco \
 icaruspmteebot01 \
 icaruspmteebot02 \
 icaruspmteebot03 \

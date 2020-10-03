@@ -12,7 +12,6 @@ daq: {
     onmon_event_prescal: 1
     is_data_logger: true
 
-    overwrite_mode: true
     broadcast_buffer_size: 0x10000000
     auto_suppression_enabled: false
 
@@ -90,7 +89,7 @@ outputs: {
     SelectEvents: []
     host_map: [{ 
       rank: -1
-      host: "icarus-evb01-daq"
+      host: "icarus-evb01"
     }]   
   }
 

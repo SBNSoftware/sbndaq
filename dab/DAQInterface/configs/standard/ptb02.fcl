@@ -40,8 +40,8 @@ fragment_receiver: {
 
    max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   #request_mode: "Buffer"   # the other interist possibility which is discussed is the "Buffer" mode
-   request_mode: "Window"   # the other interist possibility which is discussed is the "Buffer" mode
+   #request_mode: "buffer"   # the other interist possibility which is discussed is the "Buffer" mode
+   request_mode: "window"   # the other interist possibility which is discussed is the "Buffer" mode
    # request_window_offset: 2 # Request message contains tzero. Window will be from tzero - offset to tz-o + width
    # request_window_width: 5  # These settings correspond to "two before, two after"
    request_window_offset: 149875000     
@@ -342,4 +342,12 @@ fragment_receiver: {
 
 ##add metrics stuff here:
 
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/scratch/metrics/ptb02_%UID%_metrics.log"
+      uniquify: true
+    }
+  }
 }

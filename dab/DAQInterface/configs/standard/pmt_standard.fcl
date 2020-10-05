@@ -132,16 +132,16 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  0x0000
+    triggerThreshold0:  7400
     triggerThreshold1:  0x0000
     triggerThreshold2:  0x0000
     triggerThreshold3:  0x0000
-    triggerThreshold4:  0x0000
+    triggerThreshold4:  7400
     triggerThreshold5:  0x0000
     triggerThreshold6:  0x0000
     triggerThreshold7:  0x0000
-    triggerThreshold8:  0x0000
-    triggerThreshold9:  0x0000
+    triggerThreshold8:  8000
+    triggerThreshold9:  8000
     triggerThreshold10: 0x0000
     triggerThreshold11: 0x0000
     triggerThreshold12: 0x0000

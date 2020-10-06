@@ -73,8 +73,8 @@ EventBuilder label: EventBuilder20
 
 # DATA LOGGERS
 
-#DataLogger host: icarus-evb01-daq
-#DataLogger label: DataLogger1
+DataLogger host: icarus-evb01-daq
+DataLogger label: DataLogger1
 
 #DataLogger host: icarus-evb01-daq
 #DataLogger label: DataLogger2

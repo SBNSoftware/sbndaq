@@ -85,6 +85,10 @@ icarustpcwe20b \
 icarustpcwe20m \
 icarustpcwe20t 
 
+#icaruscrt01nno  \
+#icaruscrt01nni  \
+#icaruscrt03wci  \
+#icaruscrt03wco
 
 send_transition.sh boot boot.txt
 getStatus "booting"

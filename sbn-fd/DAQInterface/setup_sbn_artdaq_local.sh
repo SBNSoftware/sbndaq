@@ -9,6 +9,7 @@ unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
 
@@ -34,6 +35,7 @@ setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
 setup artdaq_runcontrol_gui v1_01_00 -q e19:prof
 setup artdaq_mfextensions  v1_05_01 -q $SBNDAQ_QUALS
+setup artdaq_daqinterface v3_09_01FB25055
 
 alias rc='artdaqRunControl'
 

@@ -24,5 +24,4 @@ if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; 
   $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 fi
 
-setup artdaq_daqinterface v3_09_01FB25055
 setup artdaq_runcontrol_gui v1_01_00 -q e19:prof

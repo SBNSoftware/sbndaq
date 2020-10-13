@@ -2,12 +2,12 @@ services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
   }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
 }
 
 daq: {
   aggregator: {
     expected_events_per_bunch: 1
-#->>max_fragment_size_bytes: 100000000
     print_event_store_stats: true
     buffer_count: 10
     event_queue_depth: 2
@@ -15,7 +15,8 @@ daq: {
     onmon_event_prescale: 1
     is_dispatcher: true
     overwrite_mode: true
-    broadcast_buffer_size: 0x10000000
+    #broadcast_buffer_size: 0x10000000
+    broadcast_buffer_size: 1e9
 	routing_token_config: {
 		use_routing_master: false
 	}
@@ -30,7 +31,7 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/disp00_%UID%_metrics.log"
+      fileName: "/scratch/log/disp_%p_metrics.log"
       uniquify: true
     }
     

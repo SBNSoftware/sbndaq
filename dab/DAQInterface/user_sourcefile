@@ -1,19 +1,20 @@
-
 #!/bin/sh
 
-ulimit -S -c unlimited
+#ulimit -S -c unlimited
+ulimit -S -c 0
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$THIS_SBN_DAQ_DAQINTERFACE_DIR")
+export DAQINTERFACE_LOGDIR="/daq/log"
 
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings
 export DAQINTERFACE_KNOWN_BOARDREADERS_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/known_boardreaders_list
 export DAQINTERFACE_FHICL_DIRECTORY=$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs
 export DAQINTERFACE_MESSAGEFACILITY_FHICL=$THIS_SBN_DAQ_DAQINTERFACE_DIR/MessageFacility.fcl
+#export DAQINTERFACE_TRACE_SCRIPT=$THIS_SBN_DAQ_DAQINTERFACE_DIR/trace_control.sh
 
 export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
 
-export DAQINTERFACE_PARTITION_NUMBER=0
+export DAQINTERFACE_PARTITION_NUMBER=1
 
 echo "DAQINTERFACE_PARTITION_NUMBER=$DAQINTERFACE_PARTITION_NUMBER"
 # export DAQINTERFACE_PORT=$(( $ARTDAQ_BASE_PORT + $DAQINTERFACE_PARTITION_NUMBER * $ARTDAQ_PORTS_PER_PARTITION ))
@@ -42,14 +43,11 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=3
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
- 
-   echo "Put code here which sets up the database environment"
-	 source /software/database/setup_database.sh
-
+   #echo "Put code here which sets up the database environment"
+   source /software/database/setup_database.sh
 fi
 
-export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0
-
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl
+export HOSTNAME=$(hostname -s )-priv.fnal.gov
 
-export HOSTNAME=$(hostname -s)
+export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

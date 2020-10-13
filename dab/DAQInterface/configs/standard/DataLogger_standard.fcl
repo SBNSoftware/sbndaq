@@ -1,28 +1,26 @@
 services: {
-  scheduler: {
-  }
-
-  ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
-  }
+  ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
   ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
 }
+
 
 daq: {
   aggregator: {
     expected_events_per_bunch: 1
     print_event_store_stats: true
-    event_queue_depth: 100
     event_queue_wait_time: 5
     buffer_count: 100
     onmon_event_prescal: 1
     is_data_logger: true
 
+    broadcast_buffer_size: 0x40000000
     auto_suppression_enabled: false
 
 	routing_token_config: {
 		use_routing_master: false
 	}
+
+  init_fragment_count: 1 # must match the number of running eventbuilders
 
 	sources: { }
   }
@@ -32,53 +30,58 @@ daq: {
       metricPluginType: "file"
       level: 3
 
-  	  fileName: "/scratch/dl01_metrics.log"
+      fileName: "/daq/scratch/metrics/dl00_%UID%_metrics.log"
       uniquify: true
-    } 
-    # graphite: {
-    #   level:5
-    #   metricPluginType: "graphite"
-    #   reporting_interval: 10.0
-    #   host:"sbn-daq02.fnal.gov"
-    #   port:2003
-    #   namespace:"artdaq.dl01."
-    # } 
+    }
+
+    send_system_metrics: true
+    send_process_metrics: true
+
+  #  graphite: {
+  #    level:10
+  #    metricPluginType: "graphite"
+  #    reporting_interval: 10.0
+  #    host:"192.168.191.18"
+  #    port:2003
+  #    namespace: "dab.dl00."
+  #  }
   }
 
 }
 
 source: {
   module_type: ArtdaqInput
+  register_fragment_types: false
 }
+
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
-    #module_type: RootOutput
-    fileName: "/scratch/dabdaq_r%06r_sr%02s_%to_%#.root"
+    fileName: "/scratch/data_dl00_run%R_%#_%to.root"
 
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
-      maxEvents: 100
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
-    fastCloning: false
+    fastCloning: true
     compressionLevel: 0
-    SelectEvents: []    
+    SelectEvents: []
   }
-
+  
   rootNetOutput: {
     module_type: RootNetOutput
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
     SelectEvents: []
-    host_map:
-    [{ 
+    host_map: [{
       rank: -1
-      host: "sbnd-daq01"
-    }]   
+      host: "sbnd-daq33-priv.fnal.gov"
+    }]
   }
+
 }
 
 physics: 
@@ -91,8 +94,8 @@ physics:
   p2: [ ]
   a1: [ ]
   #my_output_modules: [ ]
-  #my_output_modules: [ normalOutput ]
-  my_output_modules: [rootNetOutput, normalOutput ]
+  my_output_modules: [ normalOutput ]
+  #my_output_modules: [rootNetOutput, normalOutput ]
   end_paths: [ my_output_modules ]
 
 }

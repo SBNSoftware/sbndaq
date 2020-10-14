@@ -120,7 +120,8 @@ fragment_receiver: {
            "lead"         : "0x0",
            "repeater_val" : "0x7",
            "period"       : "0x3",
-           "duty"         : "0x3"
+           "duty"         : "0x3",
+	   "beam_acc_window" : "0x400"
          },
          "ch_status":false,
          "standalone_enable": true

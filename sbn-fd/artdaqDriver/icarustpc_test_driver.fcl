@@ -3,15 +3,14 @@
 #  cdcvs.fnal.gov/redmine/documents/327 , the "FHiCL Quick Start Guide"
 
 events_to_generate: 500
-run_number: 1
+run_number: 9999999
 debug_cout: true
 
 fragment_receiver: {
 
 
-   # Parameters defining and configuring the fragment generator to be used
-   		    
    generator: PhysCrateData 
+   max_fragment_size_bytes: 5000000
 
    # Parameters configuring the fragment generator's parent class
    # artdaq::CommandableFragmentGenerator
@@ -36,13 +35,20 @@ fragment_receiver: {
 
    pcieLinks: [ 0, 1 ]
 
-   TestPulseType: 0 #0 - disable, 1 - external, 2 - internal_even, 3 - internal_odd
-   # DACSetting: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
-
+   TestPulseType: 3 #0 - disable, 1 - external, 2 - internal_even, 3 - internal_odd
    # TestPulseAmpODD:  [ 0x4000, 0x2000, 0x1000, 0x4010, 0x2010, 0x1010, 0x4100, 0x2100, 0x1100 ]
    # TestPulseAmpEVEN: [ 0x8000, 0x6000, 0x5000, 0x8010, 0x6010, 0x5010, 0x8100, 0x6100, 0x5100 ]
+
+   # BH: About 1400 ADC or so
+   #TestPulseAmpODD:  [ 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000 ]
+   #TestPulseAmpEVEN: [ 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000 ]
+
+   TestPulseAmpODD:  [ 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000 ]
+   TestPulseAmpEVEN: [ 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000, 0x4000 ]
+
    DACOffset1: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
-   DACOffset2: [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+   #DACOffset2: [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+   DACOffset2: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
    
    separate_data_thread: true
 
@@ -100,7 +106,7 @@ physics:
   }
 
   p1: [ ]
-  e1: [ out1, rootout ]
+  e1: [  ]
   end_paths: [ ]
 }
 
@@ -138,9 +144,14 @@ resume_after_timeout: true
 
 process_name: Driver
 }
-#fragment_receiver.fragment_id: 0
-#fragment_receiver.CrateID: 0x59
-#fragment_receiver.pcieLinks: [ 0, 1 ]
-fragment_receiver.fragment_id: 6
-fragment_receiver.CrateID: 0x58
-fragment_receiver.pcieLinks: [ 4, 5 ]
+#fragment_receiver.fragment_id: 6
+#fragment_receiver.CrateID: 0x58
+#fragment_receiver.pcieLinks: [ 4, 5 ]
+
+#fragment_receiver.fragment_id: 0x1110
+#fragment_receiver.CrateID: 0x66
+#fragment_receiver.pcieLinks: [ 6, 7 ]
+
+fragment_receiver.fragment_id: 0x1406
+fragment_receiver.CrateID: 0x81
+fragment_receiver.pcieLinks: [ 0, 1 ]

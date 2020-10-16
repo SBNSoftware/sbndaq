@@ -9,5 +9,5 @@
 daq.fragment_receiver.fragment_id: 0x1514
 daq.fragment_receiver.CrateID: 0xd
 daq.fragment_receiver.pcieLinks: [ 2, 3 ]
-daq.metrics.graphite.namespace: "icarus.tpcwe20m"
+daq.metrics.graphite.namespace: "icarus.tpcwe20m."
 daq.fragment_receiver.issueStart: true

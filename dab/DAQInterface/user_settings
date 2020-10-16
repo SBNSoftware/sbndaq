@@ -25,6 +25,7 @@ dispatcher timeout: 10
 use_messageviewer: true
 
 
+#max_fragment_size_bytes: 10000000
 advanced_memory_usage: true
 
 all_events_to_all_dispatchers: true

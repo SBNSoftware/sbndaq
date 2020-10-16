@@ -3,7 +3,9 @@ daq: {
 fragment_receiver: {
 
    # Parameters defining and configuring the fragment generator to be used
-   		    
+   		
+   max_fragment_size_bytes: 1000000
+    
    generator: TriggerBoardReader
    #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
    fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
@@ -18,7 +20,7 @@ fragment_receiver: {
 
    control_port  : 8991                               ## Default 8991 
    
-   calibration_stream_output : "/data/ptb/DebugStream"     ## this is the string that points to a writable directory if 
+   calibration_stream_output : "/data1/DebugStream"     ## this is the string that points to a writable directory if 
                                                       ## if this option is not there, there won't be a calibration str
    # calibration_update : 5. ## minimum amont of minutes that before updating the calibration stream file. Default 5 minutes
 
@@ -43,16 +45,19 @@ fragment_receiver: {
    max_frags_per_call : 100 ## -- this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
    request_address: "227.128.9.129"         ## -- Multi-cast request address
-   request_port: 3001                       ## -- UDP request port
+   request_port: 3501                       ## -- UDP request port
    multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
                                             ##    this should match the private network address
-   #request_mode: "Buffer"                  ## -- the other interesting possibility which is discussed is the "Window" mode
-   request_mode: "Window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
+   stale_request_timeout : 5000000000 #5sec
+   receive_requests:true
+   #request_mode: "buffer"                  ## -- the other interesting possibility which is discussed is the "Window" mode
+   request_mode: "window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
    ## request_window_offset                 ## -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
    ## request_window_width                  ## -- These settings correspond to "two before, two after"
-   request_window_width:  50000000           ## -- 5ms of window width. In ns units.
+   request_window_width:  50000000          ## -- 5ms of window width. In ns units.
    request_window_offset: 2500000           ## -- 2.5ms offset. In ns units.
    request_window_are_unique: false
+
    circular_buffer_mode: true
    separate_data_thread: true
    data_buffer_depth_fragments: 200000
@@ -98,7 +103,7 @@ fragment_receiver: {
            "enable":true,
            "fixed_freq":true,
            "beam_mode":false,
-           "period":50000000,
+           "period":25000000,
            "seed":"0x0CDFACE1",
            "thresh_lo":"0x00000001",
            "thresh_hi":"0x000F00FF"
@@ -115,7 +120,8 @@ fragment_receiver: {
            "lead"         : "0x0",
            "repeater_val" : "0x7",
            "period"       : "0x3",
-           "duty"         : "0x3"
+           "duty"         : "0x3",
+	   "beam_acc_window" : "0x400"
          },
          "ch_status":false,
          "standalone_enable": true
@@ -350,5 +356,12 @@ fragment_receiver: {
 }  		  
 
 ## -- add metrics stuff here:
-
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/scratch/metrics/ptb01_%UID%_metrics.log"
+      uniquify: true
+    }
+  }
 }

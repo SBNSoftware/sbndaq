@@ -112,7 +112,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb3
+    bus : 0xb4
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size

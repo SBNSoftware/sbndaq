@@ -1,0 +1,346 @@
+daq: {
+
+fragment_receiver: {
+
+   # Parameters defining and configuring the fragment generator to be used
+   		    
+   generator: TriggerBoardReader
+   max_fragment_size_bytes: 1000000
+   fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
+
+   ##------------------------------------------------------------------------------
+   ## Variable of interest for the new PTB Fragment Generator
+   ##------------------------------------------------------------------------------
+
+   board_address: "sbnd-ptbmk2-02"
+   #board_address: "192.168.230.78"
+
+   control_port  : 8991                               ## Default 8991 
+   
+   calibration_stream_output : "/data/ptb/DebugStream"     ## this is the string that points to a writable directory if 
+                                                      ## if this option is not there, there won't be a calibration str
+   # calibration_update : 5. ## minimum amont of minutes that before updating the calibration stream file. Default 5 minutes
+
+   ## ------------------------------------------------------------------------
+   ## conditions to trigger a fragment generator. 
+   ## ------------------------------------------------------------------------
+   ## Ideally a fragment is created whenever a certain number of packages from the board is received. 
+   ## Packages in this context means everything between a TS word and the next, as they are regular in time. 
+   ## This minimum number of packages is called group_size and it's default value is 1 .
+   ## This option can be disabled simply requesting groupd_size = 0. In that case the fragment will contain all the 
+   ## words present in the buffer at the moment of getNext_() call without restrictions based on the number of TS words .
+   ## Anyway, to avoid the saturation of the buffers, a fragment is ALWAYS created whenever the number of words in the 
+   ## buffer is bigger than than max_words_per_frag. 
+   group_size : 1
+   #group_size : 30    ## this sets how many pakages from the board should be grouped to form a fragment. Default 1 
+   	      	      ## value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
+                      ## without restriction based on the number of TS words. 
+
+   max_words_per_frag : 3000 ## default 80 % of the capacity of the words buffer
+                          
+
+   max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
+
+   #request_mode: "Buffer"   # the other interist possibility which is discussed is the "Buffer" mode
+   request_mode: "Window"   # the other interist possibility which is discussed is the "Buffer" mode
+   # request_window_offset: 2 # Request message contains tzero. Window will be from tzero - offset to tz-o + width
+   # request_window_width: 5  # These settings correspond to "two before, two after"
+   request_window_offset: 149875000     
+   request_window_width: 150000000  # 3s of window width, pretty much infinite
+   request_window_are_unique: true
+   circular_buffer_mode: true
+   separate_data_thread: true
+   data_buffer_depth_fragments: 12000
+   word_buffer_size: 10000
+   throw_exception: true
+   run_trigger_output: "/data/ptb"
+   receiver_timeout_scaling: 4
+
+   board_config : '{
+     "ctb":{
+       "sockets":{
+           "receiver":{
+               "rollover":5000000,
+               "host":"sbnd-daq33",
+               "port":8992
+         },
+         "monitor":{
+           "enable" : false,
+           "host": "localhost",
+           "port": 8993
+           },
+         "statistics": {
+           "enable":false,
+           "port":8994,
+           "updt_period": 1
+         }
+       },
+       "misc":{
+         "randomtrigger_1":{
+           "description":"Random trigger that can optionally be set to fire only during beam spill",
+           "enable":false,
+           "fixed_freq":true,
+           "beam_mode":true,
+           "period":3333333,
+           "seed":"0xACE2ACE1",
+           "thresh_lo":"0x00000001",
+           "thresh_hi":"0x000F00FF"
+         },
+         "randomtrigger_2":{
+           "description":"Random trigger that can optionally be set to fire only outside of beam spill",
+           "enable":true,
+           "fixed_freq":true,
+           "beam_mode":false,
+           "period":50000000,
+           "seed":"0x0000ACE1",
+           "thresh_lo":"0x00000001",
+           "thresh_hi":"0x000F00FF"
+         },
+         "pulser":{
+           "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
+           "enable":true,
+           "period":66666667,
+           "width" :26666667
+         },
+         "timing":{
+           "description":"Unbiased Trigger Control.",
+           "tap"          : "0x2",
+           "lead"         : "0x0",
+           "repeater_val" : "0x7",
+           "period"       : "0x3",
+           "duty"         : "0x3"
+         },
+         "ch_status":false,
+         "standalone_enable": true
+       },
+       "HLT":{
+         "command_mask" : {
+           "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
+           "A" : "0x63",
+           "B" : "0x4",
+           "C" : "0x127",
+           "T" : "0x0"
+         },
+         "trigger": [
+           { "id":"HLT_1",
+             "description": "LLT1 and LLT11",
+             "enable":false,
+             "minc" : "0x1",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_2",
+             "description": "LLT3, LLT11, LLT14, and LLT17",
+             "enable":false,
+             "minc" : "0x2",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_3",
+             "description": "Beam input 2 and NIM coincidence. LLT4, LLT5, and LLT11",
+             "enable":false,
+             "minc" : "0x5",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_4",
+             "description": "LLT6, LLT12, LLT13, and LLT15",
+             "enable":false,
+             "minc" : "0x2",
+             "mexc" : "0xC",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_5",
+             "description": "Pure Cosmic Trigger. LLT6, LLT14, LLT15, and LLT16",
+             "enable":false,
+             "minc" : "0xC0",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_6",
+             "description": "Pure Cosmic trigger. LLT7 and LLT11",
+             "enable":false,
+             "minc" : "0x2",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           },
+           { "id":"HLT_7",
+             "description": "Pure Cosmic trigger. LLT3, LLT8, and LLT11",
+             "enable":false,
+             "minc" : "0x4",
+             "mexc" : "0x0",
+             "prescale" : "0x1"
+           }
+         ]
+       },
+       "subsystems":{
+         "pds":{
+           "channel_mask":"0x3FF",
+           "reshape_length" : 50,
+           "delays":[0,0,0,0,0,0,0,0,0,0],
+           "triggers": [
+             { "id":"LLT_14",
+               "description": "Any CAEN input",
+               "enable":false,
+               "mask" : "0x3FF",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_17",                   
+               "description": "Any MTC/A input",
+               "enable":false,
+               "mask" : "0xFC00",
+               "type" : "0x1",
+               "count" : "0x0"
+             }
+           ]
+         },
+         "crt":{
+           "channel_mask": "0x3FFF",
+           "pixelate": false,
+           "reshape_length" : 50,
+           "delays":[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+           "triggers": [
+             { "id":"LLT_11",
+               "description": "Any NIM input",
+               "enable":false,
+               "mask" : "0xFC000",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_12",
+               "description": "Any CRT LVDS input",
+               "enable":false,
+               "mask" : "0x3FFF",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_13",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0xFF",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_15",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x9",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_16",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x6",
+               "type" : "0x1",
+               "count" : "0x0"
+             },
+             { "id":"LLT_18",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x0",
+               "type" : "0x1",
+               "count" : "0x0"
+             }
+           ]
+         },
+         "beam":{
+           "channel_mask": "0x7",
+           "reshape_length" : 50,
+           "delays": [0,0,0],
+           "triggers": [
+             { "id":"LLT_1",
+               "description": "Beam input 1",
+               "enable":false,
+               "mask" : "0x1"
+             },
+             { "id":"LLT_2",
+               "description": "Beam input 2",
+               "enable":false,
+               "mask" : "0x2"
+             },
+             { "id":"LLT_3",
+               "description": "Beam input 1 & 2",
+               "enable":false,
+               "mask" : "0x3"
+             },
+             { "id":"LLT_4",
+               "description": "Beam input 3",
+               "enable":false,
+               "mask" : "0x4"
+             },
+             { "id":"LLT_5",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x5"
+             },
+             { "id":"LLT_6",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x6"
+             },
+             { "id":"LLT_7",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x7"
+             },
+             { "id":"LLT_8",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x0"
+             },
+             { "id":"LLT_9",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x0"
+             },
+             { "id":"LLT_10",
+               "description": "Spare",
+               "enable":false,
+               "mask" : "0x0"
+             }
+           ]
+         },
+         "mtcas":{
+           "channel_mask": "0x3F",
+           "reshape_length" : 50,
+           "delays": [0,0,0,0,0,0],
+           "triggers": [
+           ]
+         }, 
+         "nim":{
+           "channel_mask": "0x3F",
+           "reshape_length" : 50,
+           "delays": [0,0,0,0,0,0],
+           "triggers": [
+           ]
+         }
+       }
+     }
+   }'
+
+							
+   ##------------------------------------------------------------------------------
+				
+   nADCcounts: 100
+   throttle_usecs: 100  # Wait this many usecs before creating the next event
+   distribution_type: 1
+
+   # Parameters configuring the fragment generator's parent class
+   # artdaq::CommandableFragmentGenerator
+
+   fragment_ids: [0]  # In the case of just one fragment, "fragment_id: 0" would also work
+   board_id: 999 
+
+   destinations: { } 
+
+   routing_table_config: {
+     use_routing_master: false
+   }
+
+}  		  
+
+##add metrics stuff here:
+
+}

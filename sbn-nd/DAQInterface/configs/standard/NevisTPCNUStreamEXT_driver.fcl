@@ -6,6 +6,7 @@ nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 
 daq:{
 fragment_receiver: {
+  max_fragment_size_bytes: 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files

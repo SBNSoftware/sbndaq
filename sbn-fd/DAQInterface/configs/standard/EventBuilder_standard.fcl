@@ -10,7 +10,6 @@ daq: {
   event_builder: {
     stale_buffer_timeout_usec: 10000000
     expected_fragments_per_event: 0  # Will be set by DAQInterface
-    #->>max_fragment_size_bytes: 5120000 #5MB
     use_art: true
     print_event_store_stats: true
     buffer_count: 50
@@ -57,12 +56,12 @@ send_process_metrics: true
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
-    fileName: "/data/daq/data_dl00_run%R_%#_%to.root"
+    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 50 #close files out a little faster for the prescaled stream
+      maxEvents: 20 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
@@ -71,7 +70,7 @@ outputs: {
   }
   testOutput: {
     module_type: RootDAQOut
-    fileName: "/data/test_daq/data_dl00_run%R_%#_%to.root"
+    fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -91,7 +90,7 @@ outputs: {
     SelectEvents: [pd]
     host_map: [{ 
       rank: -1
-      host: "icarus-evb01"
+      host: "icarus-evb01-daq"
     }]   
   }
 }
@@ -135,7 +134,7 @@ physics: {
   #my_output_modules: []
   #my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
-  my_output_modules: [ testOutput, rootNetOutput ]
+  my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

@@ -1,0 +1,6 @@
+#include "EventBuilder_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.evb31."
+daq.metrics.evbFile.fileName : "/scratch/log/evb_%p_metrics.log"
+#outputs.normalOutput.fileName: "/data/galtests/data_evb31_run%R_%#_%to.root"
+#physics.my_output_modules: [ normalOutput ]
+process_name: DAQEVB31

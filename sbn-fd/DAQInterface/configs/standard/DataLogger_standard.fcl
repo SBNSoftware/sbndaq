@@ -15,9 +15,16 @@ daq: {
     broadcast_buffer_size: 0x10000000
     auto_suppression_enabled: false
 
-	routing_token_config: {
-		use_routing_master: false
-	}
+    routing_token_config: {
+        ## True if using the Routing Manager
+        use_routing_manager: true
+
+        ## Port to send tokens on
+        routing_token_port: 35555  # default
+
+        ## Hostname or IP of RoutingManager
+        routing_manager_hostname: "icarus-evb01-daq"  # default
+   }
 
   init_fragment_count: 10 # must match the number of running eventbuilders
 
@@ -86,10 +93,10 @@ outputs: {
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
-    SelectEvents: []
+    SelectEvents: [pd]
     host_map: [{ 
       rank: -1
-      host: "icarus-evb01"
+      host: "icarus-evb01-daq"
     }]   
   }
 
@@ -127,11 +134,12 @@ physics: {
 		}
   }
 
+  pd: [ prescale5 ]
   p2: [ prescale1 ]
   a1: [ ]
   #my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
-  #my_output_modules: [ testOutput, rootNetOutput ]
-  my_output_modules: [ rootNetOutput ]
+  my_output_modules: [ testOutput, rootNetOutput ]
+  #my_output_modules: [ rootNetOutput ]
 
   #my_output_modules: [  ]
   #my_output_modules: [  testOutput ]

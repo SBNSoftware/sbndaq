@@ -17,10 +17,11 @@ daq: {
     overwrite_mode: true
     #broadcast_buffer_size: 0x10000000
     broadcast_buffer_size: 1e9
+
 	routing_token_config: {
 		use_routing_master: false
 	}
-
+    tcp_receive_buffer_size: 64000
     init_fragment_count: 1 #0 #must match the number of running dataloggers
     auto_suppression_enabled: false
 

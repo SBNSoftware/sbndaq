@@ -1,0 +1,5 @@
+#include "RoutingManager_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.rm01."
+daq.metrics.rmFile.fileName : "/scratch/log/rm_%p_metrics.log"
+daq.routing_manager_hostname: "icarus-evb01-daq"
+process_name: DAQRM01

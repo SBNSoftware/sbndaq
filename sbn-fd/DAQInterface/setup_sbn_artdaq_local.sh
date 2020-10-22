@@ -39,7 +39,7 @@ setup artdaq_mfextensions  v1_05_01 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export TRACE_FILE=/tmp/trace_`whoami`
+export TRACE_FILE=/tmp/trace_$(whoami)_p2
 echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages

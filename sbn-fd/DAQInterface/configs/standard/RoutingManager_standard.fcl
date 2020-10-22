@@ -1,0 +1,61 @@
+  daq: {
+  policy: {
+  	  policy: "PreferSameHost"
+	  receiver_ranks: [] 
+	  routing_manager_mode: DataFlow
+	  host_map: []
+  }
+
+  	table_update_interval_ms: 1000
+	table_ack_retry_count: 5
+    
+    ## True if using the Routing Manager
+    use_routing_manager: true
+
+    ## Port to send tokens on
+    token_receiver: {
+        routing_token_port: 35555  # default
+    }
+
+    ## Hostname or IP of RoutingManager
+    routing_manager_hostname: "icarus-evb00-daq"
+
+    ## Port that table updates should arrive on
+    table_update_port: 35556  # default
+    
+    ## Address that table updates should arrive on
+    table_update_address: "227.128.12.35"
+   
+    ## Port that acknowledgements should be sent to
+    table_acknowledge_port: 35557  # default
+       
+    ## Time to wait (in ms) for a routing table update if the table is exhausted
+    routing_timeout_ms: 1000  # default
+       
+    ## Number of times to retry getting destination from routing table
+    routing_retry_count: 5  # default
+	
+
+  metrics: {
+    rmFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/rm_%p_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+    graphite: {
+      level:10
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.191.18"
+      port:2003
+      namespace:"icarus.evb00."
+    } 
+  }
+
+}

@@ -15,9 +15,10 @@ daq: {
     broadcast_buffer_size: 0x10000000
     auto_suppression_enabled: false
 
+    tcp_receive_buffer_size: 64000
     routing_token_config: {
         ## True if using the Routing Manager
-        use_routing_manager: true
+        use_routing_manager: false
 
         ## Port to send tokens on
         routing_token_port: 35555  # default

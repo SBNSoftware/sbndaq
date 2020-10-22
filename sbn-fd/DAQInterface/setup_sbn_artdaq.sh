@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source /daq/software/products/setup
-[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
 SBNDAQ_VERSION="v0_07_02"
 SBNDAQ_QUALS="e19:prof:s97:py2"

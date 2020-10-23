@@ -6,6 +6,7 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
+  max_fragment_size_bytes: 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
@@ -17,10 +18,12 @@ fragment_receiver: {
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
-  ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
+  ControllerTriggerFrequency: 5 # Frequency in Hz of the Controller trigger
+  DumpBinary: true # Write binary file before the artdaq back-end
+  DumpBinaryDir: "/data"
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
+  max_fragment_size_bytes: 10E6
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -96,6 +99,14 @@ fragment_receiver: {
     routing_table_config: 
     {
       use_routing_master: false 
+    }
+}
+metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/tpc00_metrics.log"
+      uniquify: true
     }
 }
 process_name: Driver

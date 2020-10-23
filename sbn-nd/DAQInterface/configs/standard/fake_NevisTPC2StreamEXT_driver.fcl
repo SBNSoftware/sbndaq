@@ -6,6 +6,7 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
+  max_fragment_size_bytes: 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
@@ -111,7 +112,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb3
+    bus : 0xb4
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size
@@ -125,5 +126,18 @@ fragment_receiver: {
       use_routing_master: false 
     }
 }
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/tpc00_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+  }
 process_name: Driver
 }

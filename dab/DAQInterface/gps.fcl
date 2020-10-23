@@ -46,7 +46,7 @@ art: {
   services: {
     ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
     TimeTracker: {}
-  ArtdaqFragmentNamingServiceInterface: {service_provider: SBNDFragmentNamingService }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
   }
 
 physics:
@@ -66,7 +66,7 @@ outputs:
   rootout:
   {
     module_type: RootOutput
-    fileName: "/data/gps.root"
+    fileName: "/data1/data/gps.root"
     fastCloning: false
     compressionLevel: 0
   }
@@ -91,7 +91,7 @@ metrics:
   {
     metricPluginType: "file"
     level: 3
-    fileName: "/data/gps_metrics.log"
+    fileName: "/daq/log/metrics/gps_metrics.log"
     uniquify: true
   }
 

@@ -15,6 +15,9 @@ daq:
     # calibration
     CalibrateOnConfig: true
 
+    # Turn on or off automatic mid-run temperature correction
+    LockTempCalibration: false
+
     # ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
     ModeLVDS: 1
 
@@ -225,7 +228,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/br_%UID%_metrics.log"
       uniquify: true
     }
     graphite:{

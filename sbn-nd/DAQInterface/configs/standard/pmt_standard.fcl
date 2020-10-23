@@ -27,6 +27,9 @@ daq:
     # begin run ADC calibration
     CalibrateOnConfig: true
 
+    # Turn on or off automatic mid-run temperature corrections
+    LockTempCalibration: false
+
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     ModeLVDS: 0
 
@@ -161,7 +164,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/daq/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/br_%p_metrics.log"
       uniquify: true
     }
     # redis_10s: {

@@ -6,6 +6,7 @@ nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 
 daq:{
 fragment_receiver: {
+  max_fragment_size_bytes: 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
@@ -125,6 +126,19 @@ fragment_receiver: {
       use_routing_master: false 
     }
 }
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/tpc00_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+  }
 process_name: Driver
 
 }

@@ -5,25 +5,30 @@ daq:
     generator: ICARUSTriggerUDP
     #fragment_type: ICARUSTRIG
     max_fragment_size_bytes: 100
+    max_fragment_size_bytes_pmt: 100
     fragment_id: 0x4001
+    fragment_id_pmt: 0x4002
 
     board_id: 1
 
-    ### configs for sending no fragment
-    request_mode: ignored
+    #request_mode: ignored
     separate_data_thread: false
-    generated_fragments_per_event: 0
+    #separate_data_thread: true
+    generated_fragments_per_event: 1
 
     ### trigger communication pieces
-    port: 6342
-    ip: "192.168.191.79" #for SPEXI
+    config_port: 6342
+    config_ip: "192.168.191.79" #for SPEXI
     #ip: "192.168.191.78" #for testing on WireShark
+    data_port: 6343
+    data_ip: "192.168.191.79" #for SPEXI
+    
 
     ### how many times to retry/wait for init
     n_init_retries: 30
     n_init_timeout: 10000 #ms
 
-  }
+  
   
   destinations: { }
 
@@ -31,14 +36,14 @@ daq:
     use_routing_master: false 
   }
 
-#}  
+  }  
 
 
 metrics: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/br_%p_metrics.log"
       uniquify: true
     }
     

@@ -1,4 +1,7 @@
 #include "DataLogger_standard.fcl"
-daq.metrics.aggFile.fileName : "/data1/dl01_metrics.log"
-#daq.metrics.graphite.namespace: "artdaq.dl01."
-outputs.normalOutput.fileName: "/data1/sbndaq_dl01_r%06r_sr%02s_%to_%#.root"
+#daq.metrics.graphite.namespace: "dab.dl01."
+daq.metrics.aggFile.fileName : "/daq/log/metrics/dl01_metrics.log"
+outputs.normalOutput.fileName: "/data1/data/data_dl01_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data1/test_data/data_dl01_run%R_%#_%to.root"
+physics.my_output_modules: [ normalOutput, rootNetOutput ]
+process_name: DAQDL01

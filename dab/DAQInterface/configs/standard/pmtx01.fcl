@@ -1,4 +1,5 @@
 #include "pmt_standard.fcl"
+daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
 
 daq.fragment_receiver.fragment_id: 0
 daq.fragment_receiver.link: 0

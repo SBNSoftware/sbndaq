@@ -1,0 +1,5 @@
+#include "EventBuilder_standard.fcl"
+process_name: DAQEVB01
+daq.metrics:{}
+daq.event_builder.send_requests:false
+physics.my_output_modules: [ ]

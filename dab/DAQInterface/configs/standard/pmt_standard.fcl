@@ -7,17 +7,17 @@ daq:
     fragment_type: CAENV1730
     max_fragment_size_bytes: 1000000
     GetNextFragmentBunchSize: 20
-   
-    ## Pull mode parameters
-    request_address:        "227.128.9.129" # -- multicast request address
-    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
-    request_port: 3001   # UDP request port
-    request_mode: window # pull mode
-    request_window_width:  50000000 #5ms window
-    request_window_offset: 2500000 #1ms offset 
-    request_windows_are_unique: true
     separate_data_thread: true
-    stale_request_timeout: 200000000
+
+    ## Pull mode parameters
+    #request_address:        "227.128.9.129" # -- multicast request address
+    #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+    #request_port: 3501   # UDP request port
+    #request_mode: window # pull mode
+    #request_window_width:  50000000 #5ms window
+    #request_window_offset: 2500000 #1ms offset 
+    #request_windows_are_unique: true
+    #stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
 
     fragment_id: 0
     board_id:    0
@@ -26,6 +26,9 @@ daq:
 
     # begin run ADC calibration
     CalibrateOnConfig: true
+
+    # Turn on or off automatic mid-run temperature correction
+    LockTempCalibration: false
 
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     ModeLVDS: 0
@@ -49,7 +52,7 @@ daq:
     enableReadout: 1
     
     boardId: 0
-    recordLength:         2000
+    recordLength:         15000
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
@@ -71,7 +74,7 @@ daq:
     
     triggerPolarity:      1   
     debugLevel:           7
-    postPercent:          70
+    postPercent:          15
     eventsPerInterrupt:   1
     irqWaitTime:          1
     eventCounterWarning:  1       
@@ -109,6 +112,7 @@ daq:
     channelEnable9:    true
     channelEnable10:   true
     channelEnable11:   true
+    #channelEnable12:   false
     channelEnable12:   true
     channelEnable13:   true
     channelEnable14:   true
@@ -129,17 +133,17 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  0x0000
+    triggerThreshold0:  8000
     triggerThreshold1:  0x0000
     triggerThreshold2:  0x0000
     triggerThreshold3:  0x0000
-    triggerThreshold4:  0x0000
+    triggerThreshold4:  8000
     triggerThreshold5:  0x0000
     triggerThreshold6:  0x0000
     triggerThreshold7:  0x0000
-    triggerThreshold8:  0x0000
-    triggerThreshold9:  0x0000
-    triggerThreshold10: 0x0000
+    triggerThreshold8:  8000
+    triggerThreshold9:  8000
+    triggerThreshold10: 8000
     triggerThreshold11: 0x0000
     triggerThreshold12: 0x0000
     triggerThreshold13: 0x0000
@@ -147,6 +151,7 @@ daq:
     triggerThreshold15: 0x0000
 
     CircularBufferSize: 500e6
+    UseTimeTagForTimeStamp: false
 
     destinations: { }
 
@@ -161,7 +166,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/daq/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/pmtx00_metrics.log"
       uniquify: true
     }
     # redis_10s: {

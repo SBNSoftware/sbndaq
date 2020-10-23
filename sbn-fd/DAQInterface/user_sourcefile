@@ -1,6 +1,7 @@
 #!/bin/sh
 
-ulimit -S -c unlimited
+#ulimit -S -c unlimited
+ulimit -S -c 0
 
 export DAQINTERFACE_LOGDIR="/daq/log"
 

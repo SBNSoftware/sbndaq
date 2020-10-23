@@ -33,6 +33,14 @@ physics: {
   end_paths: [ out1 ]
 }
 
+services:
+{
+
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
+  ArtdaqSharedMemoryServiceInterface: {
+    service_provider: "ArtdaqSharedMemoryService"
+  }
+}
 
 source:
 {

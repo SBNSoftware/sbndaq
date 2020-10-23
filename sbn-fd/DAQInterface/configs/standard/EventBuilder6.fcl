@@ -1,4 +1,7 @@
 #include "EventBuilder_standard.fcl"
 daq.metrics.graphite.namespace: "icarus.evb06."
-daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"
+daq.metrics.evbFile.fileName : "/daq/log/metrics/evb06_metrics.log"
+outputs.normalOutput.fileName: "/data/daq/data_evb6_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_evb6_run%R_%#_%to.root"
+#physics.my_output_modules: [ testOutput, rootNetOutput ]
 process_name: DAQEVB06

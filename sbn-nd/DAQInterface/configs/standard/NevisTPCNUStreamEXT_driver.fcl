@@ -126,6 +126,19 @@ fragment_receiver: {
       use_routing_master: false 
     }
 }
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/tpc00_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+  }
 process_name: Driver
 
 }

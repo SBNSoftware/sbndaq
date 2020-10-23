@@ -32,3 +32,9 @@ all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
 
+# -- D.R. set the priorities
+#boardreader_priorities: dummy pmtx02 ptb01 *
+
+board_reader_priorities_on_config : dummy ptb01  pmtx02 *
+board_reader_priorities_on_start  : dummy pmtx02 ptb01 *
+board_reader_priorities_on_stop   : dummy pmtx02 ptb01 *

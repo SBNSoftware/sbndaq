@@ -164,7 +164,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/daq/log/metrics/boardreader/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/br_%p_metrics.log"
       uniquify: true
     }
     # redis_10s: {

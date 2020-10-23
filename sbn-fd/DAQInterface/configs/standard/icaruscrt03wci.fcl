@@ -39,7 +39,7 @@ daq: {
     brFile: {
       metricPluginType: "file"
       level: 10
-      fileName: "/scratch/log/crt03wci_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/crt03wci_metrics.log"
       uniquify: true
     }
     send_system_metrics: true

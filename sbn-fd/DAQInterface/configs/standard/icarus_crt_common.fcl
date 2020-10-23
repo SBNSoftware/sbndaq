@@ -12,10 +12,8 @@ daq.fragment_receiver.ReaderID: 0x1
 #Capacity of internal fragment generator buffer for one FEB
 daq.fragment_receiver.FEBBufferCapacity: 100000
 
-
-#Delay of getNext function
-daq.fragment_receiver.throttle_usecs:       10
-daq.fragment_receiver.throttle_usecs_check:  1
+#Discard all fragments for this period at the beginning of run
+daq.fragment_receiver.initial_delay_s:       0
 
 #Omit events outside of the poll times
 daq.fragment_receiver.omit_out_of_sync_events: false
@@ -53,7 +51,7 @@ daq.fragment_receiver.request_window_width:  50000000
 daq.fragment_receiver.request_window_offset: 25000000
 daq.fragment_receiver.request_windows_are_unique: true
 daq.fragment_receiver.separate_data_thread: true
-daq.fragment_receiver.stale_request_timeout: 10000000000
+daq.fragment_receiver.stale_fragment_timeout: 10000000000
 daq.fragment_receiver.receive_requests: true
 
 #advanced memory usage, max size in bytes

@@ -2,8 +2,8 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_07_00
-defaultqual e19:s94:py2
+parent sbndaq v0_07_01
+defaultqual e19:s97:py2
 
 # These optional lines define the installed directories where headers,
 # libraries, and executables will be found.
@@ -32,7 +32,7 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version        optional
-sbndaq_artdaq        v0_07_00
+sbndaq_artdaq        v0_07_01
 cetbuildtools        v7_17_01       -       only_for_build
 end_product_list
 
@@ -69,6 +69,12 @@ e19:py2:debug:icarus:s96 e19:py2:debug:icarus:s96
 e19:py2:prof:icarus:s96  e19:py2:prof:icarus:s96
 e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96
 e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96
+e19:py2:debug:s97        e19:py2:debug:s97
+e19:py2:prof:s97         e19:py2:prof:s97
+e19:py2:debug:icarus:s97 e19:py2:debug:icarus:s97
+e19:py2:prof:icarus:s97  e19:py2:prof:icarus:s97
+e19:py2:debug:sbnd:s97   e19:py2:debug:sbnd:s97
+e19:py2:prof:sbnd:s97    e19:py2:prof:sbnd:s97
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:

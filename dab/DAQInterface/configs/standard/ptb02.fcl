@@ -346,7 +346,7 @@ fragment_receiver: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/daq/scratch/metrics/ptb02_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/ptb02_metrics.log"
       uniquify: true
     }
   }

@@ -62,7 +62,7 @@ fragment_receiver: {
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/br_%p_metrics.log"
+      fileName: "/daq/log/metrics/br_%p_metrics.log"
       uniquify: true
     }
 send_system_metrics: true

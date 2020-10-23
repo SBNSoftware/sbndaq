@@ -32,7 +32,7 @@ daq: {
     aggFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/disp_%p_metrics.log"
+      fileName: "/daq/log/metrics/disp00_metrics.log"
       uniquify: true
     }
     

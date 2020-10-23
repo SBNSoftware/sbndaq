@@ -40,7 +40,7 @@
     rmFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/rm_%p_metrics.log"
+      fileName: "/daq/log/metrics/rm00_metrics.log"
       uniquify: true
     }
 

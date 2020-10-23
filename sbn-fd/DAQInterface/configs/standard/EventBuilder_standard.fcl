@@ -32,7 +32,7 @@ daq: {
     evbFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/evb00_metrics.log"
+      fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
 
@@ -156,9 +156,9 @@ physics: {
   pd: [ prescale5 ]
   a1: [ ]
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
-  #my_output_modules: [ normalOutput , rootNetOutput ]
+  my_output_modules: [ testOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

@@ -37,7 +37,7 @@ daq: {
       metricPluginType: "file"
       level: 3
 
-      fileName : "/scratch/log/dl00_metrics.log"
+      fileName : "/daq/log/metrics/dl00_metrics.log"
       uniquify: true
     }
 

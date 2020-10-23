@@ -228,7 +228,7 @@ daq:
     brFile: {
       metricPluginType: "file"
       level: 3
-      fileName: "/scratch/log/br_%UID%_metrics.log"
+      fileName: "/daq/log/metrics/br_%UID%_metrics.log"
       uniquify: true
     }
     graphite:{

@@ -1,4 +1,4 @@
 #include "Dispatcher_standard.fcl"
-process_name: DAQDP01
-daq.metrics.aggFile.fileName : "/daq/scratch/metrics/disp01_metrics.log"
 #daq.metrics.graphite.namespace: "dab.disp01."
+daq.metrics.aggFile.fileName : "/daq/log/metrics/disp01_metrics.log"
+process_name: DAQDP01

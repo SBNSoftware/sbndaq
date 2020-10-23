@@ -106,7 +106,7 @@ fragment_receiver: {
 	brFile: {
 	  metricPluginType: "file"
 	  level: 3
-	  fileName: "/daq/scratch/metrics/br_%UID%_metrics.log"
+	  fileName: "/daq/log/metrics/pmt02_metrics.log"
 	  uniquify: true
 	}
         redis_10s: {

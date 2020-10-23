@@ -1,6 +1,7 @@
 #include "EventBuilder_standard.fcl"
 daq.metrics.graphite.namespace: "icarus.evb09."
-daq.metrics.evbFile.fileName : "/scratch/log/evb_%p_metrics.log"
-#outputs.normalOutput.fileName: "/data/galtests/data_evb9_run%R_%#_%to.root"
-#physics.my_output_modules: [ normalOutput ]
+daq.metrics.evbFile.fileName : "/daq/log/metrics/evb09_metrics.log"
+outputs.normalOutput.fileName: "/data/daq/data_evb9_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_evb9_run%R_%#_%to.root"
+#physics.my_output_modules: [ testOutput, rootNetOutput ]
 process_name: DAQEVB09

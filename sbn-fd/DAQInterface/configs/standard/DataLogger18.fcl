@@ -1,6 +1,7 @@
 #include "DataLogger_standard.fcl"
-process_name: DAQDL018
-daq.metrics.aggFile.fileName : "/scratch/log/dl018_metrics.log"
-daq.metrics.graphite.namespace: "icarus.dl018."
+daq.metrics.graphite.namespace: "icarus.dl18."
+daq.metrics.aggFile.fileName : "/daq/log/metrics/dl18_metrics.log"
 outputs.normalOutput.fileName: "/data/daq/data_dl18_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/data/test_daq/data_dl18_run%R_%#_%to.root"
+#physics.my_output_modules: [ testOutput, rootNetOutput ]
+process_name: DAQDL18

@@ -221,6 +221,16 @@ daq:
       use_routing_master: false 
     }
 
+    #pull mode configuration	
+    receive_requests: true
+    request_address:        "227.128.12.35" # -- multicast request address
+    multicast_interface_ip: "192.168.191.0" # -- should match the private net 
+    request_port: 3502   # UDP request port
+    request_mode: sequence #match sequenceID of request
+    data_buffer_depth_fragments: 10000
+    data_buffer_depth_mb: 2000
+    #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
   }  
 
 

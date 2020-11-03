@@ -8,14 +8,14 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder1
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder2
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder2
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder3
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder3
 
 #EventBuilder host: icarus-evb01-daq
 #EventBuilder label: EventBuilder4
@@ -24,14 +24,14 @@ EventBuilder label: EventBuilder3
 #EventBuilder label: EventBuilder5
 
 # Add 5 more event builders on  icarus-evb02-daq
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder6
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder6
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder7
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder7
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder8
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder8
 
 #EventBuilder host: icarus-evb02-daq
 #EventBuilder label: EventBuilder9

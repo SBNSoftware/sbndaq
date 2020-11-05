@@ -7,8 +7,8 @@ debug level: 4
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder1
 
 #EventBuilder host: icarus-evb01-daq
 #EventBuilder label: EventBuilder2
@@ -23,8 +23,8 @@ EventBuilder label: EventBuilder1
 #EventBuilder label: EventBuilder5
 
 # Add 5 more event builders on  icarus-evb02-daq
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder6
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder6
 
 #EventBuilder host: icarus-evb02-daq
 #EventBuilder label: EventBuilder7

@@ -1,0 +1,12 @@
+daq:
+{
+  fragment_receiver: 
+  {
+    generator:   ˚WhiteRabbitReadout
+    fragment_type: WhiteRabbitEvent
+    max_fragment_size_bytes: 1000000
+
+    fragment_id: 13
+    device: wr0
+  }
+}

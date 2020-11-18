@@ -9,7 +9,7 @@ daq: {
   aggregator: {
     expected_events_per_bunch: 1
     print_event_store_stats: true
-    buffer_count: 20
+    buffer_count: 5
     event_queue_depth: 2
     event_queue_wait_time: 1
     onmon_event_prescale: 1
@@ -22,12 +22,15 @@ daq: {
 		use_routing_master: false
 	}
     tcp_receive_buffer_size: 64000
-    init_fragment_count: 1 #0 #must match the number of running dataloggers
+    init_fragment_count: 1 #0 #must match the number of running dataloggers, should be set by DAQInterface
     auto_suppression_enabled: false
 
+    #Make sure Dispatcher doesn't crash on 'oversized' fragment
+    maximum_oversize_fragment_count: 0
+
     #tells shmem event manager it can drop data on receive if buffers are full
-    #non_reliable_mode: true
-    #non_reliable_mode_retry_count: 1
+    non_reliable_mode: true
+    non_reliable_mode_retry_count: 1
 
 	sources: { }
   }

@@ -51,6 +51,13 @@ toffM 23 -n SharedMemoryManager
 tmodeS 1
 tmodeM 1
 
+#pkill -u icarus trace_cntl
+#{
+#    echo "Kill existing trace_cntl"
+#    killall -9 trace_cntl &&
+#} || {
+#    echo "Hopefully killed existing trace_cntl."
+#}
 
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator

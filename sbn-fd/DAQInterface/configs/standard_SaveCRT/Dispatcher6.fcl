@@ -1,0 +1,4 @@
+#include "Dispatcher_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.disp06."
+daq.metrics.aggFile.fileName : "/daq/log/metrics/disp06_metrics.log"
+process_name: DAQDP06

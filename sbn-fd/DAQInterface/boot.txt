@@ -8,14 +8,14 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder1
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder1
 
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder2
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder2
 
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder3
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder3
 
 #EventBuilder host: icarus-evb01-daq
 #EventBuilder label: EventBuilder4
@@ -33,11 +33,11 @@ EventBuilder label: EventBuilder7
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder8
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder9
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder9
 
-#EventBuilder host: icarus-evb02-daq
-#EventBuilder label: EventBuilder10
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder10
 
 # Add 5 more event builders on  icarus-evb03-daq
 EventBuilder host: icarus-evb03-daq
@@ -49,11 +49,11 @@ EventBuilder label: EventBuilder12
 EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder13
 
-#EventBuilder host: icarus-evb03-daq
-#EventBuilder label: EventBuilder14
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder14
 
-#EventBuilder host: icarus-evb03-daq
-#EventBuilder label: EventBuilder15
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder15
 
 # Add 5 more event builders on  icarus-evb04-daq
 EventBuilder host: icarus-evb04-daq
@@ -65,11 +65,11 @@ EventBuilder label: EventBuilder17
 EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder18
 
-#EventBuilder host: icarus-evb04-daq
-#EventBuilder label: EventBuilder19
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder19
 
-#EventBuilder host: icarus-evb04-daq
-#EventBuilder label: EventBuilder20
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder20
 
 # DATA LOGGERS
 

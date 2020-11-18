@@ -1,0 +1,16 @@
+DAQ setup script: $SETUP_FILE
+PMT host: localhost
+
+# debug level can range from 0 to 4 (increasing order of verbosity)
+debug level: 4
+
+EventBuilder host: localhost
+EventBuilder label: EventBuilder1
+
+#DataLogger host: localhost
+#DataLogger label: DataLogger1
+
+#Dispatcher host: localhost
+#Dispatcher label: Dispatcher1
+
+

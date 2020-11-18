@@ -44,10 +44,27 @@ export TRACE_FILE=/tmp/trace_$(whoami)_p1
 echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
-toffSg 3-63 
+toffSg 3-63
+toffMg 2-63
 tonSg 0-2
-tonMg 0-3
+tonMg 0-7
+tonM 33 -n NevisTPCGenerator
+tonM 33 -n NevisTPCGenerator2StreamNUandSNXMIT
+tonM 33 -n WhiteRabbitReadout_generator
+#tonM 0-8 -n XMITReader
 toffM 23 -n SharedMemoryManager
+toffM 7-63 -n EventBuilder1_SharedMemoryEventManager
+toffM 0-63 -n NevisControllerPCIeCard
+toffM 0-63 -n ControllerModule
+toffM 0-63 -n MetricManager
+toffM 0-63 -n GenFileOutput
+toffM 7-63 -n SharedMemoryManager
+toffM 0-63 -n UDP_mfPlugin
+toffM 0-63 -n NevisTPCFEM
+toffM 0-63 -n TriggerModule
+toffM 0-63 -n ArtdaqInputHelper
+#toffM 7-63 -n NevisPCIeCard
+
 tmodeS 1
 tmodeM 1
 

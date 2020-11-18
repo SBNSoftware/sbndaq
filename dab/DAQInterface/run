@@ -11,10 +11,11 @@ function getStatus()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-setdaqcomps.sh pmtx02 ptb01
-#setdaqcomps.sh tpc01
+#setdaqcomps.sh pmtx02 ptb01
+setdaqcomps.sh wr
 
-send_transition.sh boot boot.txt
+send_transition.sh boot boot_wr.txt
+
 getStatus "booting"
 while [ "$status" != 'booted' ]
 do

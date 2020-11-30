@@ -38,8 +38,10 @@ setup artdaq_mfextensions  v1_05_02 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
+
+echo "DAQINTERFACE_PARTITION_NUMBER="$DAQINTERFACE_PARTITION_NUMBER
 #Trace setup for debugging:
-export TRACE_FILE=/tmp/trace_$(whoami)_p1
+export TRACE_FILE=/tmp/trace_$(whoami)_p2
 
 echo "TRACE_FILE=$TRACE_FILE"
 

@@ -22,14 +22,14 @@ daq:
     ModeLVDS: 1
 
     # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
-    LVDSLogicValueG1: 1
-    LVDSLogicValueG2: 1
-    LVDSLogicValueG3: 1
-    LVDSLogicValueG4: 1
-    LVDSLogicValueG5: 1
-    LVDSLogicValueG6: 1
-    LVDSLogicValueG7: 1
-    LVDSLogicValueG8: 1
+    LVDSLogicValueG1: 2
+    LVDSLogicValueG2: 2
+    LVDSLogicValueG3: 2
+    LVDSLogicValueG4: 2
+    LVDSLogicValueG5: 2
+    LVDSLogicValueG6: 2
+    LVDSLogicValueG7: 2
+    LVDSLogicValueG8: 2
     # Aiwu added here to set LVDS output width: N*8ns will be the width!
     LVDSOutWidthC1: 20
     LVDSOutWidthC2: 20
@@ -176,22 +176,22 @@ daq:
     # register 0x8028
     dynamicRange: 0 
     # previous was 14800 for ch 1 and 0
-    triggerThreshold0:  14660     
-    triggerThreshold1:  14695
-    triggerThreshold2:  14614
-    triggerThreshold3:  14678
-    triggerThreshold4:  14837
-    triggerThreshold5:  14690
-    triggerThreshold6:  14739
-    triggerThreshold7:  14777
-    triggerThreshold8:  14798
-    triggerThreshold9:  14784
-    triggerThreshold10: 14722
-    triggerThreshold11: 14862
-    triggerThreshold12: 14858
-    triggerThreshold13: 14846
-    triggerThreshold14: 14895
-    triggerThreshold15: 14700
+    triggerThreshold0:  12760     
+    triggerThreshold1:  12795
+    triggerThreshold2:  12714
+    triggerThreshold3:  12778
+    triggerThreshold4:  12937
+    triggerThreshold5:  12790
+    triggerThreshold6:  12939
+    triggerThreshold7:  12877
+    triggerThreshold8:  12898
+    triggerThreshold9:  12884
+    triggerThreshold10: 12822
+    triggerThreshold11: 12962
+    triggerThreshold12: 12958
+    triggerThreshold13: 12946
+    triggerThreshold14: 12995
+    triggerThreshold15: 12800
 
 #    triggerThreshold0:  0
 #    triggerThreshold1:  0

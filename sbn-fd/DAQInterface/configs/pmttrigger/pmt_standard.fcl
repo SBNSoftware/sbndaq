@@ -22,14 +22,14 @@ daq:
     ModeLVDS: 1
 
     # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
-    LVDSLogicValueG1: 1
-    LVDSLogicValueG2: 1
-    LVDSLogicValueG3: 1
-    LVDSLogicValueG4: 1
-    LVDSLogicValueG5: 1
-    LVDSLogicValueG6: 1
-    LVDSLogicValueG7: 1
-    LVDSLogicValueG8: 1
+    TriggerLogicP0: 1
+    TriggerLogicP1: 1
+    TriggerLogicP2: 1
+    TriggerLogicP3: 1
+    TriggerLogicP4: 1
+    TriggerLogicP5: 1
+    TriggerLogicP6: 1
+    TriggerLogicP7: 1
     # Aiwu added here to set LVDS output width: N*8ns will be the width!
     LVDSOutWidthC1: 20
     LVDSOutWidthC2: 20

@@ -8,7 +8,7 @@ daq: {
    fragment_ids: [ 0x3103, 0x3101, 0x3106, 0x3107 ]   
    generated_fragments_per_event: 4
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ true, true, true, true ]
+   TurnOnHV : [ false, false, false, false ]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    PPS_offset_ns : [ 131, 151, 208, 228 ] #values for JacksonLab GPS (Dec 4, 2019)
 
@@ -22,16 +22,16 @@ daq: {
 
 #FEB configuration
     FEBConfigurationMAC3 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC1 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC6 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC7 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
 
   }

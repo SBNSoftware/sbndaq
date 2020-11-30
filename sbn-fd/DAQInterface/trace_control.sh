@@ -26,7 +26,7 @@
 # it's execution to remote nodes
 #echo "$(hostname -s).hello.$(date) " >> ~/trace.log
 
-trace_control_tshow_outfile='/scratch_local/traces/r$run.\`hostname -s\`.trc'
+trace_control_tshow_outfile='/scratch_local/traces/r$run.$hostname.trc'
 trace_control_logfile='/scratch_local/traces/r$run.$transition'
 trace_control_nodelist='localhost'
 trace_control_upsdb=/daq/software/products
@@ -109,13 +109,26 @@ do_nodelist=`echo $do_nodelist | sed 's/ /,/g'`
 num_files=`$RGANG --list $do_nodelist 2>/dev/null | wc -l`
 test $num_files -eq 0 && { echo "Invalid nodelist ($do_nodelist)"; exit; }
 
-# these can have "$run" in them
+mv_backup() { # $1 is file to mv
+  if [ -f "$1.~1~" ];then
+     # NOTE: this does not strictly require ~N~, just ~N
+     last=`/bin/ls "$1.~"[1-9]* | tail -1`
+     nextn=`expr "$last" : '.*\.~\([0-9]*\)' + 1`
+  else
+     nextn=1
+  fi
+  mv "$1" "$1".~$nextn~
+}
+
+
+# these can have "$run" "$hostname" and "$transition" in them
+hostname=`hostname -s`
 if [ -n "${logdir-}" ];then
     base=`echo "$trace_control_logfile" | sed -e 's|.*/||'` # basename no worky with to-be-eval'd
     trace_control_logfile="$logdir/$base"
 fi
 eval "logfile=\"$trace_control_logfile\""
-test -n "$logfile" && exec >$logfile 2>&1
+test -n "$logfile" && { test -f $logfile && mv_backup $logfile; exec >$logfile 2>&1; }
 if [ -n "${tshow_outdir-}" ];then
     base=`echo "$trace_control_tshow_outfile" | sed -e 's|.*/||'` # basename no worky with to-be-eval'd
     trace_control_tshow_outfile="$tshow_outdir/$base"

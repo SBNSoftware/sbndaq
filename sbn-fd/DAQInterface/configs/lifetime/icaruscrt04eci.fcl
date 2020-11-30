@@ -8,7 +8,7 @@ daq: {
    fragment_ids: [ 0x311f, 0x3120, 0x3121, 0x3122, 0x3123, 0x3124 ]
 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
-   TurnOnHV : [ true, true, true, true, true, true ]
+   TurnOnHV : [ false, false, false, false, false, false ]
 
 #PPS signal delay w.r.t. GPS due to signal propagation time (primarily cable length)
    PPS_offset_ns : [ 0, 0, 0, 0, 0, 0 ] #values need to be updated!!!
@@ -22,22 +22,22 @@ daq: {
    }
 #FEB configuration
     FEBConfigurationMAC31 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC32 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC33 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC34 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC35 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
     FEBConfigurationMAC36 : {
-#include "icaruscrt_feb_standard.fcl"
+#include "icaruscrt_feb_noise.fcl"
     }
   }
   metrics: {

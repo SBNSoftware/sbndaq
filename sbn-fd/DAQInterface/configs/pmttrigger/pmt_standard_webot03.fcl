@@ -22,14 +22,14 @@ daq:
     ModeLVDS: 1
 
     # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
-    LVDSLogicValueG1: 1
-    LVDSLogicValueG2: 1
-    LVDSLogicValueG3: 1
-    LVDSLogicValueG4: 1
-    LVDSLogicValueG5: 1
-    LVDSLogicValueG6: 1
-    LVDSLogicValueG7: 1
-    LVDSLogicValueG8: 1
+    LVDSLogicValueG1: 2
+    LVDSLogicValueG2: 2
+    LVDSLogicValueG3: 2
+    LVDSLogicValueG4: 2
+    LVDSLogicValueG5: 2
+    LVDSLogicValueG6: 2
+    LVDSLogicValueG7: 2
+    LVDSLogicValueG8: 2
     # Aiwu added here to set LVDS output width: N*8ns will be the width!
     LVDSOutWidthC1: 20
     LVDSOutWidthC2: 20
@@ -128,20 +128,20 @@ daq:
     # baseline (dc offset). It is a 32 bit value, but bit[31:16] are reserved, 
     # we should only change the lower 16 bits bit[15:0]
     # not to use yet, the pedestal settings above seem to work for this dc offset.
-    BaselineCh1: 14760
-    BaselineCh2: 14795
-    BaselineCh3: 14814
-    BaselineCh4: 14778
-    BaselineCh5: 14937
-    BaselineCh6: 14790
+    BaselineCh1: 14838
+    BaselineCh2: 14848
+    BaselineCh3: 14907
+    BaselineCh4: 14804
+    BaselineCh5: 14949
+    BaselineCh6: 14899
     BaselineCh7: 14839
-    BaselineCh8: 14877
-    BaselineCh9: 14898
-    BaselineCh10: 14984
-    BaselineCh11: 15022
-    BaselineCh12: 14962
-    BaselineCh13: 14958
-    BaselineCh14: 14946
+    BaselineCh8: 14790
+    BaselineCh9: 14944
+    BaselineCh10: 14868
+    BaselineCh11: 15033
+    BaselineCh12: 14931
+    BaselineCh13: 15052
+    BaselineCh14: 14973
     BaselineCh15: 14995
     BaselineCh16: 14800
 
@@ -176,20 +176,20 @@ daq:
     # register 0x8028
     dynamicRange: 0 
     # previous was 14800 for ch 1 and 0
-    triggerThreshold0:  14660     
-    triggerThreshold1:  14695
-    triggerThreshold2:  14614
-    triggerThreshold3:  14678
-    triggerThreshold4:  14837
-    triggerThreshold5:  14690
-    triggerThreshold6:  14739
-    triggerThreshold7:  14777
-    triggerThreshold8:  14798
-    triggerThreshold9:  14784
-    triggerThreshold10: 14722
-    triggerThreshold11: 14862
-    triggerThreshold12: 14858
-    triggerThreshold13: 14846
+    triggerThreshold0: 14738
+    triggerThreshold1: 14748
+    triggerThreshold2: 14807
+    triggerThreshold3: 14704
+    triggerThreshold4: 14849
+    triggerThreshold5: 14699
+    triggerThreshold6: 14639
+    triggerThreshold7: 14690
+    triggerThreshold8: 14844
+    triggerThreshold9: 14768
+    triggerThreshold10: 14933
+    triggerThreshold11: 14831
+    triggerThreshold12: 14952
+    triggerThreshold13: 14873
     triggerThreshold14: 14895
     triggerThreshold15: 14700
 

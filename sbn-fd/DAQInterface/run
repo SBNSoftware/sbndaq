@@ -13,83 +13,87 @@ getStatus "nil"
 
 
 setdaqcomps.sh \
-icarustpcww01b \
-icarustpcww01m \
-icarustpcww01t \
-icarustpcww02 \
-icarustpcww03 \
-icarustpcww04 \
-icarustpcww05 \
-icarustpcww06 \
-icarustpcww07 \
-icarustpcww08 \
-icarustpcww09 \
-icarustpcww10 \
-icarustpcww11 \
-icarustpcww12 \
-icarustpcww13 \
-icarustpcww14 \
-icarustpcww15 \
-icarustpcww16 \
-icarustpcww17 \
-icarustpcww18 \
-icarustpcww19 \
-icarustpcww20b \
-icarustpcww20m \
-icarustpcww20t \
-icarustpcwe01b \
-icarustpcwe01m \
-icarustpcwe01t \
-icarustpcwe02 \
-icarustpcwe03 \
-icarustpcwe04 \
-icarustpcwe05 \
-icarustpcwe06 \
-icarustpcwe07 \
-icarustpcwe08 \
-icarustpcwe09 \
-icarustpcwe10 \
-icarustpcwe11 \
-icarustpcwe12 \
-icarustpcwe13 \
-icarustpcwe14 \
-icarustpcwe15 \
-icarustpcwe16 \
-icarustpcwe17 \
-icarustpcwe18 \
-icarustpcwe19 \
-icarustpcwe20b \
-icarustpcwe20m \
-icarustpcwe20t \
-icaruscrt01nno  \
-icaruscrt01nni  \
-icaruscrt03wci  \
-icaruscrt03wco  \
-icaruspmteebot01 \
-icaruspmteebot02 \
-icaruspmteebot03 \
-icaruspmteetop01 \
-icaruspmteetop02 \
-icaruspmteetop03 \
-icaruspmtewbot01 \
-icaruspmtewbot02 \
-icaruspmtewbot03 \
-icaruspmtewtop01 \
-icaruspmtewtop02 \
-icaruspmtewtop03 \
-icaruspmtwebot01 \
-icaruspmtwebot02 \
-icaruspmtwebot03 \
-icaruspmtwetop01 \
-icaruspmtwetop02 \
-icaruspmtwetop03 \
-icaruspmtwwbot01 \
-icaruspmtwwbot02 \
-icaruspmtwwbot03 \
-icaruspmtwwtop01 \
-icaruspmtwwtop02 \
-icaruspmtwwtop03
+icaruspmteebot01 \ 
+icaruspmteebot02  \
+icaruspmteebot03   
 
+#icarustpcww01b \
+#icarustpcww01m \
+#icarustpcww01t \
+#icarustpcww02 \
+#icarustpcww03 \
+#icarustpcww04 \
+#icarustpcww05 \
+#icarustpcww06 \
+#icarustpcww07 \
+#icarustpcww08 \
+#icarustpcww09 \
+#icarustpcww10 \
+#icarustpcww11 \
+#icarustpcww12 \
+#icarustpcww13 \
+#icarustpcww14 \
+#icarustpcww15 \
+#icarustpcww16 \
+#icarustpcww17 \
+#icarustpcww18 \
+#icarustpcww19 \
+#icarustpcww20b \
+#icarustpcww20m \
+#icarustpcww20t \
+#icarustpcwe01b \
+#icarustpcwe01m \
+#icarustpcwe01t \
+#icarustpcwe02 \
+#icarustpcwe03 \
+#icarustpcwe04 \
+#icarustpcwe05 \
+#icarustpcwe06 \
+#icarustpcwe07 \
+#icarustpcwe08 \
+#icarustpcwe09 \
+#icarustpcwe10 \
+#icarustpcwe11 \
+#icarustpcwe12 \
+#icarustpcwe13 \
+#icarustpcwe14 \
+#icarustpcwe15 \
+#icarustpcwe16 \
+#icarustpcwe17 \
+#icarustpcwe18 \
+#icarustpcwe19 \
+#icarustpcwe20b \
+#icarustpcwe20m \
+#icarustpcwe20t \
+#icaruscrt01nno  \
+#icaruscrt01nni  \
+#icaruscrt03wci  \
+#icaruscrt03wco  \
+#icaruspmteebot01 \
+#icaruspmteebot02 \
+#icaruspmteebot03 \
+#icaruspmteetop01 \
+#icaruspmteetop02 \
+#icaruspmteetop03 \
+#icaruspmtewbot01 \
+#icaruspmtewbot02 \
+#icaruspmtewbot03 \
+#icaruspmtewtop01 \
+#icaruspmtewtop02 \
+#icaruspmtewtop03 \
+#icaruspmtwebot01 \
+#icaruspmtwebot02 \
+#icaruspmtwebot03 \
+#icaruspmtwetop01 \
+#icaruspmtwetop02 \
+#icaruspmtwetop03 \
+#icaruspmtwwbot01 \
+#icaruspmtwwbot02 \
+#icaruspmtwwbot03 \
+#icaruspmtwwtop01 \
+#icaruspmtwwtop02 \
+#icaruspmtwwtop03
+#
 
 
 send_transition.sh boot boot.txt
@@ -101,7 +105,7 @@ do
   [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
-send_transition.sh config standard
+send_transition.sh config pmttrigger
 #send_transition.sh config testGALQ
 
 getStatus "configuring"

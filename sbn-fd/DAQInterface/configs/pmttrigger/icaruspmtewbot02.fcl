@@ -1,4 +1,4 @@
-#include "pmt_standard.fcl"
+#include "pmt_standard_ewbot02.fcl"
 
 daq.fragment_receiver.fragment_id: 16
 daq.fragment_receiver.link: 0

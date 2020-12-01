@@ -12,8 +12,7 @@ daq: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 50
-    max_incomplete_events: 50 # Same as boardreader sync interval
+    buffer_count: 30
     verbose: true
     send_requests: true
     request_address: "227.128.12.35"
@@ -31,7 +30,7 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level: 3
+      level: 0
       fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
@@ -43,7 +42,7 @@ send_process_metrics: true
     graphite: {
       level:10
       metricPluginType: "graphite"
-      reporting_interval: 10.0
+      reporting_interval: 5.0
       host:"192.168.191.18"
       port:2003
       namespace:"icarus.evb00."
@@ -59,12 +58,12 @@ outputs: {
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 20 #close files out a little faster for the prescaled stream
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
-    compressionLevel: 0
-    SelectEvents: [p2]    
+    compressionLevel: 1
+    SelectEvents: [pwrite]    
   }
   testOutput: {
     module_type: RootDAQOut
@@ -77,7 +76,7 @@ outputs: {
     }
 
     fastCloning: true
-    compressionLevel: 0
+    compressionLevel: 1
     SelectEvents: []    
   }
   rootNetOutput: {
@@ -85,7 +84,7 @@ outputs: {
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
-    #SelectEvents: [p1]
+    SelectEvents: [pdisp]
     host_map: [{ 
       rank: -1
       host: "icarus-evb01-daq"
@@ -152,12 +151,15 @@ physics: {
   }
 
   p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
+  pwrite: [ prescale1 ]
+  pdisp: [ prescale5 ]
+  trigger_paths: [ pwrite, pdisp ]
+
   a1: [ ]
   #my_output_modules: []
   #my_output_modules: [ rootNetOutput ]
-  my_output_modules: [ normalOutput ]
+  #my_output_modules: [ normalOutput ]
+  my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

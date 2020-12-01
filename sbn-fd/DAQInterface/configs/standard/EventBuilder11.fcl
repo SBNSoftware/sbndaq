@@ -3,5 +3,5 @@ daq.metrics.graphite.namespace: "icarus.evb11."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb11_metrics.log"
 outputs.normalOutput.fileName: "/data/daq/data_dl11_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/data/test_daq/data_dl11_run%R_%#_%to.root"
-#physics.my_output_modules: [ testOutput, rootNetOutput ]
+physics.my_output_modules: [ normalOutput, rootNetOutput ]
 process_name: DAQEVB11

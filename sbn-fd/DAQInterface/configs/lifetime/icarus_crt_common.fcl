@@ -55,6 +55,6 @@ daq.fragment_receiver.stale_request_timeout: 10000000000
 daq.fragment_receiver.receive_requests: true
 
 #advanced memory usage, max size in bytes
-daq.fragment_receiver.max_fragment_size_bytes: 0x800000
+daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
 
 daq.fragment_receiver.window_close_timeout_us: 4000000

@@ -10,11 +10,9 @@ daq: {
   event_builder: {
     stale_buffer_timeout_usec: 10000000
     expected_fragments_per_event: 0  # Will be set by DAQInterface
-    #->>max_fragment_size_bytes: 5120000 #5MB
     use_art: true
     print_event_store_stats: true
-    buffer_count: 50
-    max_incomplete_events: 50 # Same as boardreader sync interval
+    buffer_count: 30
     verbose: true
     send_requests: true
     request_address: "227.128.12.35"
@@ -22,10 +20,8 @@ daq: {
     multicast_interface_ip: "192.168.191.0" # -- should match the private net 
     num_requests: 500
 
+    tcp_receive_buffer_size: 64000
     routing_token_config: {
-      use_routing_master: false
-    }
-    routing_table_config: {
       use_routing_master: false
     }
 
@@ -34,8 +30,8 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level: 3
-      fileName: "/scratch/log/evb00_metrics.log"
+      level: 0
+      fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
 
@@ -46,7 +42,7 @@ send_process_metrics: true
     graphite: {
       level:10
       metricPluginType: "graphite"
-      reporting_interval: 10.0
+      reporting_interval: 5.0
       host:"192.168.191.18"
       port:2003
       namespace:"icarus.evb00."
@@ -57,21 +53,21 @@ send_process_metrics: true
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
-    fileName: "/data/daq/data_dl00_run%R_%#_%to.root"
+    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 25 #close files out a little faster for the prescaled stream
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
-    compressionLevel: 0
-    #SelectEvents: [p2]    
+    compressionLevel: 1
+    SelectEvents: [pwrite]    
   }
   testOutput: {
     module_type: RootDAQOut
-    fileName: "/data/test_daq/data_dl00_run%R_%#_%to.root"
+    fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -80,7 +76,7 @@ outputs: {
     }
 
     fastCloning: true
-    compressionLevel: 0
+    compressionLevel: 1
     SelectEvents: []    
   }
   rootNetOutput: {
@@ -88,11 +84,37 @@ outputs: {
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
-    SelectEvents: [pd]
+    SelectEvents: [pdisp]
     host_map: [{ 
       rank: -1
-      host: "icarus-evb01"
+      host: "icarus-evb01-daq"
     }]   
+  	routing_table_config: {
+           ## True if using the Routing Manager
+           use_routing_manager: true
+       
+	   route_on_request_mode: true
+
+           ## Port that table updates should arrive on
+           table_update_port: 35556  # default
+       
+           ## Address that table updates should arrive on
+           table_update_address: "227.128.12.35"
+       
+           ## Port that acknowledgements should be sent to
+          table_acknowledge_port: 35557  # default
+       
+           ## Host that acknowledgements should be sent to
+           routing_manager_hostname: "icarus-evb01-daq"  # default
+            table_update_multicast_interface: "0.0.0.0"
+       
+           ## Time to wait (in ms) for a routing table update if the table is exhausted
+           routing_timeout_ms: 1000  # default
+       
+           ## Number of times to retry getting destination from routing table
+           routing_retry_count: 5  # default
+       	}
+
   }
 }
 
@@ -129,14 +151,15 @@ physics: {
   }
 
   p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
+  pwrite: [ prescale1 ]
+  pdisp: [ prescale5 ]
+  trigger_paths: [ pwrite, pdisp ]
+
   a1: [ ]
   #my_output_modules: []
   #my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
-  #my_output_modules: [ testOutput, rootNetOutput ]
-  my_output_modules: [ normalOutput, rootNetOutput ]
+  my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

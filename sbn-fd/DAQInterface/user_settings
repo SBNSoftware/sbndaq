@@ -18,7 +18,7 @@ record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 30
+boardreader timeout: 90
 eventbuilder timeout: 15
 aggregator timeout: 15
 dispatcher timeout: 10
@@ -31,3 +31,5 @@ all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
 
+#Force use of TCP sockets ... avoid shmem...
+transfer_plugin_to_use: TCPSocket 

@@ -51,6 +51,8 @@ daq: {
 source: {
   module_type: ArtdaqInput
   register_fragment_types: false
+  waiting_time: 250000000
+  resume_after_timeout: true
 }
 
 outputs: {

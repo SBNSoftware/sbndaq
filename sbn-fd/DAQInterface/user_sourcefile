@@ -22,8 +22,8 @@ echo "DAQINTERFACE_PARTITION_NUMBER=$DAQINTERFACE_PARTITION_NUMBER"
 export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/critical_process_list
 
 ######################################################
-##Uncomment  the line below to enable artdaq_database.
-#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+##Uncomment  the line below to enable artdaq_database.#
+# export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 ######################################################
 
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then

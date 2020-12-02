@@ -1,0 +1,4 @@
+#include "icarustpc_standard.fcl"
+
+daq.fragment_receiver.DACOffset1: [0x9010, 0xC100, 0xA100, 0xA100]
+daq.fragment_receiver.DACOffset2: [0xC010, 0xF100, 0xD100, 0xC100]

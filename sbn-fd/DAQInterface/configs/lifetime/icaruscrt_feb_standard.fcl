@@ -43,6 +43,10 @@ LG_shaper_time_constant :           6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0
 #time_threshold :                    280 # DAC2
 charge_threshold :                  320 # DAC1
 time_threshold :                    320 # DAC2
+#charge_threshold :                  215 # DAC1
+#time_threshold :                    215 # DAC2
+#charge_threshold :                  999 # DAC1
+#time_threshold :                    999 # DAC2
 HG_peak_detector_PP :               false # True: power pin, False: forced
 LG_peak_detector_PP :               false # True: power pin, False: forced
 LG_preamp_bias :                    true # True: normal, False: weak

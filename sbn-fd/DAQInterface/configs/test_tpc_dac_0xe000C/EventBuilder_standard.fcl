@@ -70,7 +70,7 @@ outputs: {
 
   normalOutput: {
     module_type: RootOutput
-    fileName: "/data/data_evb00_run%R_%#_%to.root"
+    fileName: "/data/data_dl00_run%R_%#_%to.root"
     fileProperties: { maxSubRuns: 1 maxRuns: 1  }
     compressionLevel: 3
     fastCloning: false

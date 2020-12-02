@@ -22,14 +22,14 @@ daq:
     ModeLVDS: 1
 
     # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
-    LVDSLogicValueG1: 3
-    LVDSLogicValueG2: 3
-    LVDSLogicValueG3: 3
-    LVDSLogicValueG4: 3
-    LVDSLogicValueG5: 3
-    LVDSLogicValueG6: 3
-    LVDSLogicValueG7: 3
-    LVDSLogicValueG8: 3
+    TriggerLogicP0: 1
+    TriggerLogicP1: 1
+    TriggerLogicP2: 1
+    TriggerLogicP3: 1
+    TriggerLogicP4: 1
+    TriggerLogicP5: 1
+    TriggerLogicP6: 1
+    TriggerLogicP7: 1
     # Aiwu added here to set LVDS output width: N*8ns will be the width!
     LVDSOutWidthC1: 20
     LVDSOutWidthC2: 20
@@ -128,22 +128,22 @@ daq:
     # baseline (dc offset). It is a 32 bit value, but bit[31:16] are reserved, 
     # we should only change the lower 16 bits bit[15:0]
     # not to use yet, the pedestal settings above seem to work for this dc offset.
-    BaselineCh1: 14000
-    BaselineCh2: 14000
-    BaselineCh3: 14000
-    BaselineCh4: 14000
-    BaselineCh5: 14000
-    BaselineCh6: 14000
-    BaselineCh7: 14000
-    BaselineCh8: 14000
-    BaselineCh9: 14000
-    BaselineCh10: 14000
-    BaselineCh11: 14000
-    BaselineCh12: 14000
-    BaselineCh13: 14000
-    BaselineCh14: 14000
-    BaselineCh15: 14000
-    BaselineCh16: 14000
+    BaselineCh1: 14800
+    BaselineCh2: 14800
+    BaselineCh3: 14800
+    BaselineCh4: 14800
+    BaselineCh5: 14800
+    BaselineCh6: 14800
+    BaselineCh7: 14800
+    BaselineCh8: 14800
+    BaselineCh9: 14800
+    BaselineCh10: 14800
+    BaselineCh11: 14800
+    BaselineCh12: 14800
+    BaselineCh13: 14800
+    BaselineCh14: 14800
+    BaselineCh15: 14800
+    BaselineCh16: 14800
 
     channelEnable0:    true
     channelEnable1:    true
@@ -175,23 +175,23 @@ daq:
     # 0 = 2 V dynamic range, 1 = 0.5 V 
     # register 0x8028
     dynamicRange: 0 
-
-    triggerThreshold0:  14800
-    triggerThreshold1:  14800
-    triggerThreshold2:  14800
-    triggerThreshold3:  14800
-    triggerThreshold4:  14979
-    triggerThreshold5:  14840
-    triggerThreshold6:  14908
-    triggerThreshold7:  14866
-    triggerThreshold8:  14763
-    triggerThreshold9:  14930
-    triggerThreshold10: 14889
-    triggerThreshold11: 14926
-    triggerThreshold12: 14873
-    triggerThreshold13: 14972
-    triggerThreshold14: 14834
-    triggerThreshold15: 14800
+    # previous was 14800 for ch 1 and 0
+    triggerThreshold0:  14950     
+    triggerThreshold1:  14650
+    triggerThreshold2:  14650
+    triggerThreshold3:  14650
+    triggerThreshold4:  14650
+    triggerThreshold5:  14650
+    triggerThreshold6:  14650
+    triggerThreshold7:  14650
+    triggerThreshold8:  14650
+    triggerThreshold9:  14650
+    triggerThreshold10: 14650
+    triggerThreshold11: 14650
+    triggerThreshold12: 14650
+    triggerThreshold13: 14650
+    triggerThreshold14: 14650
+    triggerThreshold15: 14650
 
 #    triggerThreshold0:  0
 #    triggerThreshold1:  0

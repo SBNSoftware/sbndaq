@@ -50,9 +50,9 @@ endif()
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_ups_product( artdaq v3_06_02 )
-find_ups_product( sbndaq_artdaq_core v0_03_00 )
-find_ups_product( cetbuildtools v7_13_02 )
+find_ups_product( artdaq v3_09_03 )
+find_ups_product( sbndaq_artdaq_core v0_07_02 )
+find_ups_product( cetbuildtools v7_17_01 )
 
 # macros for dictionary and simple_plugin
 #include(ArtDictionary)

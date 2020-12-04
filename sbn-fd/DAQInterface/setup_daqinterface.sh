@@ -6,7 +6,6 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 export SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
 LOCAL_SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq_local.sh
 
-
 #if a local setup file exists, use that instead
 [[ -f $LOCAL_SETUP_FILE ]]  && export SETUP_FILE=$LOCAL_SETUP_FILE
 
@@ -25,5 +24,4 @@ if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; 
   $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 fi
 
-[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-setup artdaq_runcontrol_gui v1_01_02 -q e19:prof
+setup artdaq_runcontrol_gui v1_01_03 -q e19:prof

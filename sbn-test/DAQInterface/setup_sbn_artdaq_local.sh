@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_07_01"
+SBNDAQ_VERSION="v0_07_02"
 SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_02"
+DAQINTERFACE_VERSION="v3_09_03"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -23,30 +23,29 @@ else
    echo "Warning: localProducts/products not found."
 fi
 
-setup artdaq_demo v3_09_00 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_09_03 -q ${SBNDAQ_QUALS}
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_runcontrol_gui v1_00_01 -q e19:prof
-
-alias rc='artdaqRunControl'
+#setup artdaq_runcontrol_gui v1_01_03 -q e19:prof
+#alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`
 echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
-toffSg 3-63 
-tonSg 0-2
-tonMg 0-3
-toffM 23 -n SharedMemoryManager
+toffSg 8-63
+tonSg 0-7
+tonMg 0-7
 tmodeS 1
 tmodeM 1
 
 
+#toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 

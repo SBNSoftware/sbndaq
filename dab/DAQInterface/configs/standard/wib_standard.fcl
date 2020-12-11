@@ -114,6 +114,7 @@ daq:
 {
   fragment_receiver:
   {
+    max_fragment_size_bytes: 1024
     generator: WIBReader 
     partition_number: 999 
     fragment_type: TPC 

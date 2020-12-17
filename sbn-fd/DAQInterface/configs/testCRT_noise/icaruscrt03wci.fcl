@@ -8,7 +8,7 @@ daq: {
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    PPS_offset_ns : [ 134, 154, 174, 220, 240, 260 ] #values for JacksonLab GPS (Feb 17, 2020)
 
-   ethernet_port: crt0
+   ethernet_port: crt1
 
    destinations: { }
    routing_table_config:

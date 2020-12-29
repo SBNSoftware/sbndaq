@@ -1,4 +1,4 @@
-daq.fragment_receiver.data_buffer_depth_fragments: 1000000
+daq.fragment_receiver.data_buffer_depth_fragments: 500000
 
 daq.fragment_receiver.fragment_type: BERNCRT
 daq.fragment_receiver.generator: BernCRTData

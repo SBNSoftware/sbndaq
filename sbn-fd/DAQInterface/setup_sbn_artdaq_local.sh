@@ -49,6 +49,9 @@ tonSg 0-2
 tonMg 0-7
 tmodeS 1
 tmodeM 1
+case `hostname` in
+icarus-crt*) export TRACE_LIMIT_MS=2,500,60000; tcntl limit_ms 2 500 60000;;
+esac
 
 
 toffS 1-63 -n PhysCrateData

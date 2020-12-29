@@ -25,7 +25,7 @@ daq:
     data_port: 6343
 
     ### how many times to retry/wait for init
-    n_init_retries: 30
+    n_init_retries: 100
     n_init_timeout: 10000 #ms
 
   #}

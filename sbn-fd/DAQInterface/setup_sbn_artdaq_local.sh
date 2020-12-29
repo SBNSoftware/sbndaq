@@ -50,6 +50,9 @@ tonMg 0-3
 toffM 23 -n SharedMemoryManager
 tmodeS 1
 tmodeM 1
+case `hostname` in
+icarus-crt*) export TRACE_LIMIT_MS=2,500,60000; tcntl limit_ms 2 500 60000;;
+esac
 
 #pkill -u icarus trace_cntl
 #{

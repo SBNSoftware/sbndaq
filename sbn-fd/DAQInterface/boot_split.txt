@@ -40,19 +40,19 @@ EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder10
 
 # Add 5 more event builders on  icarus-evb03-daq
-EventBuilder host: icarus-evb03-daq
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder11
 
-EventBuilder host: icarus-evb03-daq
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder12
 
-EventBuilder host: icarus-evb03-daq
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder13
 
-EventBuilder host: icarus-evb03-daq
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder14
 
-EventBuilder host: icarus-evb03-daq
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder15
 
 # Add 5 more event builders on  icarus-evb04-daq

@@ -151,7 +151,7 @@ physics: {
   }
 
   p1: [ ]
-  pwrite: [ prescale1 ]
+  pwrite: [ prescale5 ]
   pdisp: [ prescale5 ]
   trigger_paths: [ pwrite, pdisp ]
 

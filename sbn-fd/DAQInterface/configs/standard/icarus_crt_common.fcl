@@ -1,6 +1,6 @@
 daq.fragment_receiver.data_buffer_depth_fragments: 5000000
 
-daq.fragment_receiver.fragment_type: BERNCRT
+daq.fragment_receiver.fragment_type: BERNCRTV2
 daq.fragment_receiver.generator: BernCRTData
 
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
@@ -10,19 +10,16 @@ daq.fragment_receiver.board_id: 1
 daq.fragment_receiver.ReaderID: 0x1
 
 #Capacity of internal fragment generator buffer for one FEB
-daq.fragment_receiver.FEBBufferCapacity: 100000
+daq.fragment_receiver.FEBBufferCapacity: 10000
+
+#Time window covered by a single CRT fragment (n.b. event contains several fragments)
+fragment_period_ms: 10
+
+
 
 #Discard all fragments for this period at the beginning of run
 daq.fragment_receiver.initial_delay_s:       0
 
-#Omit events outside of the poll times
-daq.fragment_receiver.omit_out_of_sync_events: false
-#Maximum tolerance margin for events coming outside of the poll
-daq.fragment_receiver.out_of_sync_tolerance_ms: 10
-
-#Omit timestamps not increasing monotonically 
-daq.fragment_receiver.omit_out_of_order_events: false
-    
 #Restart febdrv periodically (febdrv issue workaround), set to 0 to disable
 daq.fragment_receiver.feb_restart_period_s:  0
 

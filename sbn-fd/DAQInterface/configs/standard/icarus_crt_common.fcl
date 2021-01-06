@@ -13,7 +13,7 @@ daq.fragment_receiver.ReaderID: 0x1
 daq.fragment_receiver.FEBBufferCapacity: 10000
 
 #Time window covered by a single CRT fragment (n.b. event contains several fragments)
-fragment_period_ms: 10
+daq.fragment_receiver.fragment_period_ms: 10
 
 
 

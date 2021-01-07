@@ -8,7 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
@@ -45,10 +45,17 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
 toffSg 8-63
-tonSg 0-7
+tonSg 0-2
 tonMg 0-7
 tmodeS 1
 tmodeM 1
+case `hostname` in
+icarus-crt*) export TRACE_LIMIT_MS=2,500,60000; tcntl limit_ms 2 500 60000;;
+esac
+
+
+toffS 1-63 -n PhysCrateData
+toffM 1-63 -n PhysCrateData
 
 
 #toffM 23 -n SharedMemoryManager

@@ -171,3 +171,7 @@ status)
 *)      echo "Invalid transition ($transition) specified."; 
 esac
 
+status=$?
+echo; echo "exiting with status $status"
+exit $status
+

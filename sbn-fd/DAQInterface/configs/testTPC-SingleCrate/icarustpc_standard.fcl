@@ -1,0 +1,122 @@
+  daq: {
+fragment_receiver: {
+
+   # Parameters defining and configuring the fragment generator to be used
+   		    
+   generator: PhysCrateData 
+   max_fragment_size_bytes: 5000000
+   generated_fragments_per_event: 1
+   
+   # Parameters configuring the fragment generator's parent class
+   # artdaq::CommandableFragmentGenerator
+
+   fragment_id: 0
+   board_id: 0
+
+   nADCBits: 12   
+   SamplesPerChannel: 4096
+   ChannelsPerBoard: 64
+
+   # AssignBoardID: true
+   # BoardIDs: [ 0x100, 0x101, 0x102, 0x103, 0x104, 0x105, 0x106, 0x107, 0x108 ]
+   CrateID: 0x1
+   
+   CompressionScheme: 0
+
+   VetoPort: 7654
+   VetoHost: "137.138.194.204"
+   DoVetoTest: false
+   VetoTestPeriod: 1e6
+
+   pcieLinks: [ 0, 1 ]
+
+   TestPulseType: 0 #0 - disable, 1 - external, 2 - internal_even, 3 - internal_odd
+   # TestPulseAmpODD:  [ 0x4000, 0x2000, 0x1000, 0x4010, 0x2010, 0x1010, 0x4100, 0x2100, 0x1100 ]
+   # TestPulseAmpEVEN: [ 0x8000, 0x6000, 0x5000, 0x8010, 0x6010, 0x5010, 0x8100, 0x6100, 0x5100 ]
+
+   # BH: About 1400 ADC or so
+   #TestPulseAmpODD:  [ 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000 ]
+   #TestPulseAmpEVEN: [ 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000, 0xA000 ]
+
+   TestPulseAmpODD:  [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+   TestPulseAmpEVEN: [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+
+   DACOffset1: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
+   #DACOffset2: [ 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000 ]
+   DACOffset2: [ 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000, 0x8000 ]
+   
+   separate_data_thread: true
+
+   #whether or not to issue SOR and COMMA at begin of run
+   #true if pulser trigger input...false if trigger board provides TTLINK
+   issueStart: true
+
+   destinations:{ }
+
+   routing_table_config: {
+     use_routing_master: false 
+  }
+
+
+  #pull mode configuration	
+  receive_requests: true
+  request_address:        "227.128.12.35" # -- multicast request address
+  multicast_interface_ip: "192.168.191.0" # -- should match the private net 
+  request_port: 3502   # UDP request port
+  request_mode: ignore #ignore requests
+  data_buffer_depth_fragments: 10000
+  data_buffer_depth_mb: 2000
+  #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
+}  		 
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/br_%p_metrics.log"
+      uniquify: true
+    }
+send_system_metrics: true
+send_process_metrics: true
+
+    graphite: {
+     level:10
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.18"
+     port:2003
+     namespace:"icarus.tpc00."
+    }
+
+#    redis_10s: {
+#          metricPluginType: "redis"
+#      level: 3
+#      reporting_interval: 10.0
+#      redis_key_postfix: ":10s" 
+#      maxlen: 10000
+#      redis_key_prefix: "DABBoardReader:tpc01:"
+#      redis_passfile: "/var/adm/krb5/redis_password"
+#    }
+#    redis_testing: {
+#      metricPluginType: "redis"
+#      level: 3
+#      reporting_interval: 30.0
+#      redis_key_postfix: ":testing"
+#      maxlen: 10000
+#      redis_key_prefix: "DABBoardReader:tpc01:"
+#      redis_passfile: "/var/adm/krb5/redis_password"
+#    }
+#    redis_5m: {
+#      metricPluginType: "redis"
+#      level: 3
+#      reporting_interval: 300.0
+#      redis_key_postfix: ":5m" 
+#      maxlen: 10000
+#      redis_key_prefix: "DABBoardReader:tpc01:"
+#      redis_passfile: "/var/adm/krb5/redis_password"
+#    }
+  }
+
+
+}

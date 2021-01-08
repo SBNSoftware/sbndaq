@@ -43,10 +43,11 @@ daq.fragment_receiver.ProbeBitStream : '
 daq.fragment_receiver.request_address:        "227.128.12.35" # -- multicast request address
 daq.fragment_receiver.multicast_interface_ip: "192.168.191.0" # -- should match the private net 
 daq.fragment_receiver.request_port: 3502   # UDP request port
-daq.fragment_receiver.request_mode: buffer # pull mode, will be 'window' in future
+#daq.fragment_receiver.request_mode: buffer # pull mode, will be 'window' in future
+daq.fragment_receiver.request_mode: window
 daq.fragment_receiver.request_window_width:  50000000
 daq.fragment_receiver.request_window_offset: 25000000
-daq.fragment_receiver.request_windows_are_unique: true
+daq.fragment_receiver.request_windows_are_unique: false
 daq.fragment_receiver.separate_data_thread: true
 daq.fragment_receiver.stale_fragment_timeout: 10000000000
 daq.fragment_receiver.receive_requests: true

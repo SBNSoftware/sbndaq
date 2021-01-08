@@ -1,12 +1,12 @@
-#include "pmt_standard.fcl"
+ 
+#include "pmt_standard.fcl" 
 
 daq.fragment_receiver.fragment_id: 14 
+
 daq.fragment_receiver.link: 6 
-daq.fragment_receiver.board_id: 14
 
-daq.fragment_receiver.CalibrateOnConfig: false
+daq.fragment_receiver.board_id: 14 
 
-daq.metrics.graphite.namespace: "icarus.icaruspmtewtop03."
-#daq.redis_10s.redis_key_prefix: "DABBoardReader:icaruspmtewtop03:"
-#daq.redis_testing.redis_key_prefix: "DABBoardReader:icaruspmtewtop03:"
-#daq.redis_5m.redis_key_prefix: "DABBoardReader:icaruspmtewtop03:"
+daq.fragment_receiver.CalibrateOnConfig: false 
+
+daq.metrics.graphite.namespace: "icarus.icaruspmtewtop03." 

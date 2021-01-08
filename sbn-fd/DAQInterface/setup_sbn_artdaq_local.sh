@@ -48,6 +48,7 @@ tonSg 0-7
 tonMg 0-7
 toffM 1-63 -n PhysCrateData
 toffS 1-63 -n PhysCrateData
+tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1
 

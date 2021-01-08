@@ -6,12 +6,9 @@ collection: GPSs
 pattern: "(.*/)(gps(\d*|_standard))(\.fcl$)" 
 
 }, {
-
-collection: Other 
-
-pattern: "(.*/)(dummygenerator|pmt_oldstandard|crt_north_test_inner|v0pmt_standard)(\.fcl$)" 
-
-}, {
+ collection: Other
+ pattern : "(.*/)(dummygenerator|pmt_oldstandard|crt_north_test_inner|v0pmt_standard)(\.fcl$)"
+},  {
 
 collection: Triggers 
 
@@ -30,7 +27,6 @@ collection: CRTs
 pattern: "(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)" 
 
 }, {
-
 collection: PMTs 
 
 pattern: "(.*/)((|icarus)pmt_standard_(even|odd|(|we|ww|ew|ee)(|top|bot)\d+))(\.fcl$)" 
@@ -73,25 +69,25 @@ pattern: "(.*/)(RoutingManager(\d+|_standard))(\.fcl$)"
 
 }, {
 
-collection: UserSettings 
+collection: UserSettings
 
 pattern: "(.*/)(user_setings)(\.fcl$)" 
 
 }, {
 
-collection: Boot 
+collection: Boot
 
 pattern: "(.*/)(boot)(\.fcl$)" 
 
 }, {
 
-collection: KnownBoardreasers 
+collection: KnownBoardreasers
 
 pattern: "(.*/)(known_boardreaders_list)(\.fcl$)" 
 
 }, {
 
-collection: CriticalProcesses 
+collection: CriticalProcesses
 
 pattern: "(.*/)(critical_process_list)(\.fcl$)" 
 
@@ -113,19 +109,19 @@ artdaq_includes: []
 
 run_history: [{
 
-collection: RunHistory 
+collection: RunHistory
 
 pattern: "(.*/)(icarustrigger|icarustriggertest|dummygenerator|sbnToySimulator)(\.fcl$)" 
 
 }, {
 
-collection: RunHistory 
+collection: RunHistory
 
 pattern: "(.*/)(component(\d*|_standard))(\.fcl$)" 
 
 }, {
 
-collection: RunHistory 
+collection: RunHistory
 
 pattern: "(.*/)(gps(\d*|_standard))(\.fcl$)" 
 
@@ -142,17 +138,15 @@ collection: RunHistory
 pattern: "(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)" 
 
 }, {
-
 collection: RunHistory 
 
 pattern: "(.*/)((|icarus)pmt_standard_(even|odd|(|we|ww|ew|ee)(|top|bot)\d+))(\.fcl$)" 
-
 }, {
+
 
 collection: RunHistory 
 
 pattern: "(.*/)((|icarus)pmt((|we|ww|ew|ee)(|top|bot)\d+|x\d+|_standard))(\.fcl$)" 
-
 }, {
 
 collection: RunHistory 
@@ -178,5 +172,11 @@ system_layout: [{
 collection: SystemLayout 
 
 pattern: "(.*)(schema)(\.fcl$)" 
+
+}, {
+
+collection: Flags 
+
+pattern: "(.*)(flags)(\.fcl$)" 
 
 }] 

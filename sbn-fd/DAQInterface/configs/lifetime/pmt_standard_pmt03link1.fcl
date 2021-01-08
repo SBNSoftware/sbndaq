@@ -1,256 +1,307 @@
-daq: 
-{
-  fragment_receiver: 
-  {
-    generator:   CAENV1730Readout
-    fragment_type: CAENV1730
-    max_fragment_size_bytes: 1000000
-    GetNextFragmentBunchSize: 20
 
-    fragment_id: 5 
-    board_id:   5
-    Verbosity: 1
-    SWTrigger: false
+daq: {
 
-    # calibration
-    CalibrateOnConfig: true
+fragment_receiver: {
 
-    # ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
-    ModeLVDS: 1
+generator: CAENV1730Readout 
 
-    # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
-    LVDSLogicValueG1: 3
-    LVDSLogicValueG2: 3
-    LVDSLogicValueG3: 3
-    LVDSLogicValueG4: 3
-    LVDSLogicValueG5: 3
-    LVDSLogicValueG6: 3
-    LVDSLogicValueG7: 3
-    LVDSLogicValueG8: 3
-    # Aiwu added here to set LVDS output width: N*8ns will be the width!
-    LVDSOutWidthC1: 20
-    LVDSOutWidthC2: 20
-    LVDSOutWidthC3: 20
-    LVDSOutWidthC4: 20
-    LVDSOutWidthC5: 20
-    LVDSOutWidthC6: 20
-    LVDSOutWidthC7: 20
-    LVDSOutWidthC8: 20
-    LVDSOutWidthC9: 20
-    LVDSOutWidthC10: 20
-    LVDSOutWidthC11: 20
-    LVDSOutWidthC12: 20
-    LVDSOutWidthC13: 20
-    LVDSOutWidthC14: 20
-    LVDSOutWidthC15: 20
-    LVDSOutWidthC16: 20
-    # Aiwu added here: self trigger plority, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
-    SelfTrigBit: 16
+fragment_type: CAENV1730 
 
-    # Aiwu add here: DPP algorithm feature, 0x1n80, bit[4]: 0 -> pedestal not used; 1-> pedestal used (add 1024 to ADC count), test
-    # as I read defaul is 0x3840 = 14400; changing only bit[4] get 14416 or 0x3850
-    ChargePedstalBitCh1: 14400
+max_fragment_size_bytes: 1000000 
 
-    # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
-    SelfTriggerMode: 0
+GetNextFragmentBunchSize: 20 
 
-    # SelfTriggerMask One enable bit for each pair of channels
-    SelfTriggerMask: 255
+fragment_id: 5 
 
-    # Majority mode logic
-    # For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
-    MajorityLevel: 0
+board_id: 5 
 
-    # Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
-    MajorityCoincidenceWindow: 1
-    MajorityTimeWindow: 4 
+Verbosity: 1 
 
-    allowTriggerOverlap: false
+SWTrigger: false 
+# calibration
+CalibrateOnConfig: true 
+# ModeLVDS 0:REGISTER, 1:TRIGGER, 2:nBUSY/nVETO, 3:LEGACY
+ModeLVDS: 1 
+# Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
+LVDSLogicValueG1: 3 
 
-    link: 1
-    enableReadout: 1
-    
-    boardId: 5
-    recordLength:         500
-    maxEventsPerTransfer: 1
-    runSyncMode:          0
-    outputSignalMode:     0    
-    usePedestals:         false 
-    dacValue:             32768
-    #32768
-    
-    # ioLevel: 0=NIM, 1=TTL
-    ioLevel:              1
-    nChannels:            16
-    
-    # extTrgMode: 0=no external triggers;   3=Front panel TRG input
-    extTrgMode:           3
-    
-    # swTrgMode:  0=no software generation; 3=allow software generated trigs
-    swTrgMode:            0
-    # Write whatever value to generate a software trigger (address 0x8108)
-    # SWTriggerValue: 1
-    
-    # acqMode: 0=Software Controlled, 1=Front Panel S_IN
-    acqMode:              0
-    
-    triggerPolarity:      0   
-    debugLevel:           7
-    postPercent:          50
-    eventsPerInterrupt:   1
-    irqWaitTime:          1
-    eventCounterWarning:  1       
-    memoryAlmostFull:     2    
-    
-    readoutMode:          0
-    analogMode:           1
-    testPattern:          0
-    channelPedestal0:  6554
-    channelPedestal1:  6554
-    channelPedestal2:  6554
-    channelPedestal3:  6554
-    channelPedestal4:  6554
-    channelPedestal5:  6554
-    channelPedestal6:  6554
-    channelPedestal7:  6554
-    channelPedestal8:  6554
-    channelPedestal9:  6554
-    channelPedestal10: 6554
-    channelPedestal11: 6554
-    channelPedestal12: 6554
-    channelPedestal13: 6554
-    channelPedestal14: 6554
-    channelPedestal15: 6554
+LVDSLogicValueG2: 3 
 
-    # baseline (dc offset). It is a 32 bit value, but bit[31:16] are reserved, 
-    # we should only change the lower 16 bits bit[15:0]
-    # not to use yet, the pedestal settings above seem to work for this dc offset.
-    BaselineCh1: 14000
-    BaselineCh2: 14000
-    BaselineCh3: 14000
-    BaselineCh4: 14000
-    BaselineCh5: 14000
-    BaselineCh6: 14000
-    BaselineCh7: 14000
-    BaselineCh8: 14000
-    BaselineCh9: 14000
-    BaselineCh10: 14000
-    BaselineCh11: 14000
-    BaselineCh12: 14000
-    BaselineCh13: 14000
-    BaselineCh14: 14000
-    BaselineCh15: 14000
-    BaselineCh16: 14000
+LVDSLogicValueG3: 3 
 
-    channelEnable0:    true
-    channelEnable1:    true
-    channelEnable2:    true
-    channelEnable3:    true
-    channelEnable4:    true
-    channelEnable5:    true
-    channelEnable6:    true
-    channelEnable7:    true
-    channelEnable8:    true
-    channelEnable9:    true
-    channelEnable10:   true
-    channelEnable11:   true
-    channelEnable12:   true
-    channelEnable13:   true
-    channelEnable14:   true
-    channelEnable15:   true
+LVDSLogicValueG4: 3 
 
-    triggerPulseWidth: 20
-    
-    BoardChainNumber: 0
-    InterruptLevel: 0
-    InterruptStatusID: 0
-    InterruptEventNumber: 1
-    GetNextSleep: 100
-    
-    CombineReadoutWindows: false
+LVDSLogicValueG5: 3 
 
-    # 0 = 2 V dynamic range, 1 = 0.5 V 
-    # register 0x8028
-    dynamicRange: 0 
+LVDSLogicValueG6: 3 
 
-    triggerThreshold0:  14800
-    triggerThreshold1:  14800
-    triggerThreshold2:  14800
-    triggerThreshold3:  14800
-    triggerThreshold4:  14979
-    triggerThreshold5:  14840
-    triggerThreshold6:  14908
-    triggerThreshold7:  14866
-    triggerThreshold8:  14763
-    triggerThreshold9:  14930
-    triggerThreshold10: 14889
-    triggerThreshold11: 14926
-    triggerThreshold12: 14873
-    triggerThreshold13: 14972
-    triggerThreshold14: 14834
-    triggerThreshold15: 14800
+LVDSLogicValueG7: 3 
 
-#    triggerThreshold0:  0
-#    triggerThreshold1:  0
-#    triggerThreshold2:  0
-#    triggerThreshold3:  0
-#    triggerThreshold4:  0
-#    triggerThreshold5:  0
-#    triggerThreshold6:  0
-#    triggerThreshold7:  0
-#    triggerThreshold8:  0
-#    triggerThreshold9:  0
-#    triggerThreshold10: 0
-#    triggerThreshold11: 0
-#    triggerThreshold12: 0
-#    triggerThreshold13: 0
-#    triggerThreshold14: 0
-#    triggerThreshold15: 0
+LVDSLogicValueG8: 3 
+# Aiwu added here to set LVDS output width: N*8ns will be the width!
+LVDSOutWidthC1: 20 
 
-    CircularBufferSize: 500e6
+LVDSOutWidthC2: 20 
 
-    destinations: { }
+LVDSOutWidthC3: 20 
 
-    routing_table_config: {
-      use_routing_master: false 
-    }
+LVDSOutWidthC4: 20 
 
-  }  
+LVDSOutWidthC5: 20 
 
+LVDSOutWidthC6: 20 
 
-  metrics: {
-    brFile: {
-      metricPluginType: "file"
-      level: 3
-      fileName: "/scratch/log/br_%UID%_metrics.log"
-      uniquify: true
-    }
-    # redis_10s: {
-    #       metricPluginType: "redis"
-    #   level: 3
-    #   reporting_interval: 10.0
-    #   redis_key_postfix: ":10s" 
-    #   maxlen: 10000
-    #   redis_key_prefix: "DABBoardReader:pmtx01:"
-    #   redis_passfile: "/var/adm/krb5/redis_password"
-    # }
-    # redis_testing: {
-    #   metricPluginType: "redis"
-    #   level: 3
-    #   reporting_interval: 30.0
-    #   redis_key_postfix: ":testing"
-    #   maxlen: 10000
-    #   redis_key_prefix: "DABBoardReader:pmtx01:"
-    #   redis_passfile: "/var/adm/krb5/redis_password"
-    # }
-    # redis_5m: {
-    #   metricPluginType: "redis"
-    #   level: 3
-    #   reporting_interval: 300.0
-    #   redis_key_postfix: ":5m" 
-    #   maxlen: 10000
-    #   redis_key_prefix: "DABBoardReader:pmtx01:"
-    #   redis_passfile: "/var/adm/krb5/redis_password"
-    # }
-  }
+LVDSOutWidthC7: 20 
+
+LVDSOutWidthC8: 20 
+
+LVDSOutWidthC9: 20 
+
+LVDSOutWidthC10: 20 
+
+LVDSOutWidthC11: 20 
+
+LVDSOutWidthC12: 20 
+
+LVDSOutWidthC13: 20 
+
+LVDSOutWidthC14: 20 
+
+LVDSOutWidthC15: 20 
+
+LVDSOutWidthC16: 20 
+# Aiwu added here: self trigger plority, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
+SelfTrigBit: 16 
+# as I read defaul is 0x3840 = 14400; changing only bit[4] get 14416 or 0x3850
+ChargePedstalBitCh1: 14400 
+# SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
+SelfTriggerMode: 0 
+# SelfTriggerMask One enable bit for each pair of channels
+SelfTriggerMask: 255 
+# For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
+MajorityLevel: 0 
+# Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
+MajorityCoincidenceWindow: 1 
+
+MajorityTimeWindow: 4 
+
+allowTriggerOverlap: false 
+
+link: 1 
+
+enableReadout: 1 
+
+boardId: 5 
+
+recordLength: 500 
+
+maxEventsPerTransfer: 1 
+
+runSyncMode: 0 
+
+outputSignalMode: 0 
+
+usePedestals: false 
+
+dacValue: 32768 
+# ioLevel: 0=NIM, 1=TTL
+ioLevel: 1 
+
+nChannels: 16 
+# extTrgMode: 0=no external triggers;   3=Front panel TRG input
+extTrgMode: 3 
+# swTrgMode:  0=no software generation; 3=allow software generated trigs
+swTrgMode: 0 
+# acqMode: 0=Software Controlled, 1=Front Panel S_IN
+acqMode: 0 
+
+triggerPolarity: 0 
+
+debugLevel: 7 
+
+postPercent: 50 
+
+eventsPerInterrupt: 1 
+
+irqWaitTime: 1 
+
+eventCounterWarning: 1 
+
+memoryAlmostFull: 2 
+
+readoutMode: 0 
+
+analogMode: 1 
+
+testPattern: 0 
+
+channelPedestal0: 6554 
+
+channelPedestal1: 6554 
+
+channelPedestal2: 6554 
+
+channelPedestal3: 6554 
+
+channelPedestal4: 6554 
+
+channelPedestal5: 6554 
+
+channelPedestal6: 6554 
+
+channelPedestal7: 6554 
+
+channelPedestal8: 6554 
+
+channelPedestal9: 6554 
+
+channelPedestal10: 6554 
+
+channelPedestal11: 6554 
+
+channelPedestal12: 6554 
+
+channelPedestal13: 6554 
+
+channelPedestal14: 6554 
+
+channelPedestal15: 6554 
+# not to use yet, the pedestal settings above seem to work for this dc offset.
+BaselineCh1: 14000 
+
+BaselineCh2: 14000 
+
+BaselineCh3: 14000 
+
+BaselineCh4: 14000 
+
+BaselineCh5: 14000 
+
+BaselineCh6: 14000 
+
+BaselineCh7: 14000 
+
+BaselineCh8: 14000 
+
+BaselineCh9: 14000 
+
+BaselineCh10: 14000 
+
+BaselineCh11: 14000 
+
+BaselineCh12: 14000 
+
+BaselineCh13: 14000 
+
+BaselineCh14: 14000 
+
+BaselineCh15: 14000 
+
+BaselineCh16: 14000 
+
+channelEnable0: true 
+
+channelEnable1: true 
+
+channelEnable2: true 
+
+channelEnable3: true 
+
+channelEnable4: true 
+
+channelEnable5: true 
+
+channelEnable6: true 
+
+channelEnable7: true 
+
+channelEnable8: true 
+
+channelEnable9: true 
+
+channelEnable10: true 
+
+channelEnable11: true 
+
+channelEnable12: true 
+
+channelEnable13: true 
+
+channelEnable14: true 
+
+channelEnable15: true 
+
+triggerPulseWidth: 20 
+
+BoardChainNumber: 0 
+
+InterruptLevel: 0 
+
+InterruptStatusID: 0 
+
+InterruptEventNumber: 1 
+
+GetNextSleep: 100 
+
+CombineReadoutWindows: false 
+# register 0x8028
+dynamicRange: 0 
+
+triggerThreshold0: 14800 
+
+triggerThreshold1: 14800 
+
+triggerThreshold2: 14800 
+
+triggerThreshold3: 14800 
+
+triggerThreshold4: 14979 
+
+triggerThreshold5: 14840 
+
+triggerThreshold6: 14908 
+
+triggerThreshold7: 14866 
+
+triggerThreshold8: 14763 
+
+triggerThreshold9: 14930 
+
+triggerThreshold10: 14889 
+
+triggerThreshold11: 14926 
+
+triggerThreshold12: 14873 
+
+triggerThreshold13: 14972 
+
+triggerThreshold14: 14834 
+
+triggerThreshold15: 14800 
+
+CircularBufferSize: 500e6 
+
+destinations: {
+
+}
+routing_table_config: {
+
+use_routing_master: false 
+
+}
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 3 
+
+fileName: "/scratch/log/br_%UID%_metrics.log" 
+
+uniquify: true 
+
+}
+}
 }

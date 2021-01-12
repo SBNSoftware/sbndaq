@@ -1,66 +1,55 @@
+
 daq: {
 
 fragment_receiver: {
 
-   # Parameters defining and configuring the fragment generator to be used
-   		    
-   generator: TriggerBoardReader
-   max_fragment_size_bytes: 1000000
-   #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
-   fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
-   fragment_id: 8        # Make sure downstream modules know about this fragment_type!
+generator: TriggerBoardReader 
 
-   ##------------------------------------------------------------------------------
-   ## Variable of interest for the new PTB Fragment Generator
-   ##------------------------------------------------------------------------------
+max_fragment_size_bytes: 1000000 
+#fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
+fragment_type: PTB # Make sure downstream modules know about this fragment_type!
+# Make sure downstream modules know about this fragment_type!
+fragment_id: 8 # Make sure downstream modules know about this fragment_type!
 
-   board_address: "sbnd-ptbmk2-01"
-   #board_address: "192.168.230.77"
+board_address: "sbnd-ptbmk2-01" 
 
-   control_port  : 8991                               ## Default 8991 
-   
-   calibration_stream_output : "/data/ptb/DebugStream"     ## this is the string that points to a writable directory if 
-                                                      ## if this option is not there, there won't be a calibration str
-   # calibration_update : 5. ## minimum amont of minutes that before updating the calibration stream file. Default 5 minutes
+control_port: 8991 ## Default 8991 
 
-   ## ------------------------------------------------------------------------
-   ## conditions to trigger a fragment generator. 
-   ## ------------------------------------------------------------------------
-   ## Ideally a fragment is created whenever a certain number of packages from the board is received. 
-   ## Packages in this context means everything between a TS word and the next, as they are regular in time. 
-   ## This minimum number of packages is called group_size and it's default value is 1 .
-   ## This option can be disabled simply requesting groupd_size = 0. In that case the fragment will contain all the 
-   ## words present in the buffer at the moment of getNext_() call without restrictions based on the number of TS words .
-   ## Anyway, to avoid the saturation of the buffers, a fragment is ALWAYS created whenever the number of words in the 
-   ## buffer is bigger than than max_words_per_frag. 
-   group_size : 0
-   #group_size : 30    ## this sets how many pakages from the board should be grouped to form a fragment. Default 1 
-   	      	      ## value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
-                      ## without restriction based on the number of TS words. 
+calibration_stream_output: "/data/ptb/DebugStream" ## this is the string that points to a writable directory if 
+## buffer is bigger than than max_words_per_frag. 
+group_size: 0 
 
-   max_words_per_frag : 3000 ## default 80 % of the capacity of the words buffer
-                          
+max_words_per_frag: 3000 ## default 80 % of the capacity of the words buffer
 
-   max_frags_per_call : 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
+max_frags_per_call: 100 ## this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   request_address: "227.128.7.129"
-   request_port: 3001         #UDP request port
-   #request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
-   request_mode: "Window"     # the other interesting possibility which is discussed is the "Buffer" mode
-   ## request_window_offset -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
-   ## request_window_width: -- These settings correspond to "two before, two after"
-   request_window_width:  5000000  # 100ms of window width
-   request_window_offset: 1000000  # 200ms offset    
-   request_window_are_unique: true
-   circular_buffer_mode: true
-   separate_data_thread: true
-   data_buffer_depth_fragments: 200000
-   word_buffer_size: 10000
-   throw_exception: true
-   run_trigger_output: "/data/ptb"
-   receiver_timeout_scaling: 4
+request_address: "227.128.7.129" 
 
-   board_config : '{
+request_port: 3001 #UDP request port
+#request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
+request_mode: "Window" # the other interesting possibility which is discussed is the "Buffer" mode
+## request_window_width: -- These settings correspond to "two before, two after"
+request_window_width: 5000000 # 100ms of window width
+# 100ms of window width
+request_window_offset: 1000000 # 200ms offset    
+# 200ms offset    
+request_window_are_unique: true 
+
+circular_buffer_mode: true 
+
+separate_data_thread: true 
+
+data_buffer_depth_fragments: 200000 
+
+word_buffer_size: 10000 
+
+throw_exception: true 
+
+run_trigger_output: "/data/ptb" 
+
+receiver_timeout_scaling: 4 
+
+board_config: '{
      "ctb":{
        "sockets":{
            "receiver":{
@@ -322,29 +311,23 @@ fragment_receiver: {
          }
        }
      }
-   }'
+   }' 
 
-							
-   ##------------------------------------------------------------------------------
-				
-   nADCcounts: 100
-   throttle_usecs: 100  # Wait this many usecs before creating the next event
-   distribution_type: 1
+nADCcounts: 100 
 
-   # Parameters configuring the fragment generator's parent class
-   # artdaq::CommandableFragmentGenerator
+throttle_usecs: 100 # Wait this many usecs before creating the next event
+# Wait this many usecs before creating the next event
+distribution_type: 1 
+#fragment_ids: [8]  # In the case of just one fragment, "fragment_id: 0" would also work
+board_id: 999 
 
-   #fragment_ids: [8]  # In the case of just one fragment, "fragment_id: 0" would also work
-   board_id: 999 
+destinations: {
 
-   destinations: { } 
+}
+routing_table_config: {
 
-   routing_table_config: {
-     use_routing_master: false
-   }
+use_routing_master: false 
 
-}  		  
-
-##add metrics stuff here:
-
+}
+}
 }

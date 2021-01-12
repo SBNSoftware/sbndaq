@@ -1,112 +1,166 @@
-#     time    charge activ.        HV  hi-hi        HG        LG   test   test enable
-#threshold threshold discr.   adjust.   bias      gain      gain     HG     LG preamp
-#  adjust.   adjust.
 #max:   15        15      1       255      1        31        31      1      1      1
-channel_configuration : [
-[        0,        0,     0,      114,     0,       41,       47,     0,     0,     0], # channel 0
-[        0,        0,     0,      114,     0,       41,       47,     0,     0,     0], # channel 1
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 2
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 3
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 4
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 5
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 6
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 7
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 8
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 9
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 10
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 11
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 12
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 13
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 14
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 15
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 16
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 17
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 18
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 19
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 20
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 21
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 22
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 23
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 24
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 25
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 26
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 27
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 28
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 29
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0], # channel 30
-[        0,        0,     1,      114,     1,       41,       47,     0,     0,     0]  # channel 31
-]
+channel_configuration: [[0, 0, 0, 114, 0, 41, 47, 0, 0, 0] # channel 0
+, [0, 0, 0, 114, 0, 41, 47, 0, 0, 0] # channel 1
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 2
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 3
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 4
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 5
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 6
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 7
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 8
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 9
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 10
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 11
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 12
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 13
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 14
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 15
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 16
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 17
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 18
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 19
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 20
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 21
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 22
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 23
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 24
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 25
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 26
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 27
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 28
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 29
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 30
+, [0, 0, 1, 114, 1, 41, 47, 0, 0, 1] # channel 31
+] 
 
-HG_shaper_time_constant :           6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
-LG_shaper_time_constant :           6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
-#charge_threshold :                  280 # DAC1
+HG_shaper_time_constant: 6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
+# 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
+LG_shaper_time_constant: 6 # 0: 87.5ns, 1: 75.0ns, 2: 62.5ns, 3: 50.0ns, 4: 37.5ns, 5: 25.0ns, 6: 12.5ns, 7: undefined?
 #time_threshold :                    280 # DAC2
-charge_threshold :                  230 # DAC1
-time_threshold :                    230 # DAC2
-#charge_threshold :                  215 # DAC1
-#time_threshold :                    215 # DAC2
-#charge_threshold :                  999 # DAC1
+charge_threshold: 230 # DAC1
+# DAC1
+time_threshold: 230 # DAC2
 #time_threshold :                    999 # DAC2
-HG_peak_detector_PP :               false # True: power pin, False: forced
-LG_peak_detector_PP :               false # True: power pin, False: forced
-LG_preamp_bias :                    true # True: normal, False: weak
-SCA_high_bias :                     false # True: high bias 5MHz readout speed, False: weak bias
-bypass_peak_sensing_cell :          true
-enable_32_channels_triggers_output : true
-enable_32_input_8bit_DAC :          true
-enable_4bit_charge_DAC :            true
-enable_4bit_charge_DAC_PP :         true
-enable_4bit_time_DAC :              true
-enable_4bit_time_DAC_PP :           true
-enable_BandGap_sensor :             true
-enable_BandGap_sensor_PP :          false
-enable_HG_OTA :                     true
-enable_HG_OTA_PP :                  false
-enable_HG_SCA :                     false
-enable_HG_SCA_PP :                  true
-enable_HG_peak_detector :           true
-enable_HG_preamp :                  true
-enable_HG_preamp_PP :               false
-enable_HG_slow_shaper :             true
-enable_HG_slow_shaper_PP :          false
-enable_LG_OTA :                     true
-enable_LG_OTA_PP :                  false
-enable_LG_SCA :                     false
-enable_LG_SCA_PP :                  true
-enable_LG_peak_detector :           true
-enable_LG_preamp :                  true
-enable_LG_preamp_PP :               false
-enable_LG_slow_shaper :             true
-enable_LG_slow_shaper_PP :          false
-enable_OR32_open_collector_output : false
-enable_OR32_output :                true
-enable_OTAQ_test_bit :              false
-enable_RAZ_CHN_OTA :                false
-enable_RAZ_CHN_OTA_PP :             true
-enable_VAL_EVT_OTA :                false
-enable_VAL_EVT_OTA_PP :             true
-enable_charge_DAC :                 true
-enable_charge_DAC_PP :              false
-enable_charge_discriminator :       true
-enable_charge_discriminator_PP :    false
-enable_digital_OR32_T_open_collector_output : false
-enable_digital_multiplexed_output : false
-enable_fast_shaper :                true
-enable_fast_shaper_PP :             false
-enable_fast_shaper_follower_PP :    false
-enable_probe_OTA :                  true
-enable_probe_OTA_PP :               false
-enable_temperature_sensor :         true
-enable_temperature_sensor_PP :      false
-enable_time_DAC :                   true
-enable_time_DAC_PP :                false
-enable_time_discriminator :         true
-enable_time_discriminator_PP :      false
-input_DAC_voltage_reference :       true # True: external (?) 4.5V, False: internal 2.5V
-latched_output :                    false # True: latched output, False: direct output
-peak_sensing_cell :                 false # True: external trigger, False: internal trigger
-preamp_connected_to_fast_shaper :   false # True: HG, False: LG
-select_HG_mode :                    true # True: track & hold (SCA), False: peak detector
-select_LG_mode :                    true
-trigger_polarity :                  false # True: positive (rising edge), False: negative (falling edge)
+HG_peak_detector_PP: false # True: power pin, False: forced
+# True: power pin, False: forced
+LG_peak_detector_PP: false # True: power pin, False: forced
+# True: power pin, False: forced
+LG_preamp_bias: true # True: normal, False: weak
+# True: normal, False: weak
+SCA_high_bias: false # True: high bias 5MHz readout speed, False: weak bias
+# True: high bias 5MHz readout speed, False: weak bias
+bypass_peak_sensing_cell: true 
 
+enable_32_channels_triggers_output: true 
+
+enable_32_input_8bit_DAC: true 
+
+enable_4bit_charge_DAC: true 
+
+enable_4bit_charge_DAC_PP: true 
+
+enable_4bit_time_DAC: true 
+
+enable_4bit_time_DAC_PP: true 
+
+enable_BandGap_sensor: true 
+
+enable_BandGap_sensor_PP: false 
+
+enable_HG_OTA: true 
+
+enable_HG_OTA_PP: false 
+
+enable_HG_SCA: false 
+
+enable_HG_SCA_PP: true 
+
+enable_HG_peak_detector: true 
+
+enable_HG_preamp: true 
+
+enable_HG_preamp_PP: false 
+
+enable_HG_slow_shaper: true 
+
+enable_HG_slow_shaper_PP: false 
+
+enable_LG_OTA: true 
+
+enable_LG_OTA_PP: false 
+
+enable_LG_SCA: false 
+
+enable_LG_SCA_PP: true 
+
+enable_LG_peak_detector: true 
+
+enable_LG_preamp: true 
+
+enable_LG_preamp_PP: false 
+
+enable_LG_slow_shaper: true 
+
+enable_LG_slow_shaper_PP: false 
+
+enable_OR32_open_collector_output: false 
+
+enable_OR32_output: true 
+
+enable_OTAQ_test_bit: false 
+
+enable_RAZ_CHN_OTA: false 
+
+enable_RAZ_CHN_OTA_PP: true 
+
+enable_VAL_EVT_OTA: false 
+
+enable_VAL_EVT_OTA_PP: true 
+
+enable_charge_DAC: true 
+
+enable_charge_DAC_PP: false 
+
+enable_charge_discriminator: true 
+
+enable_charge_discriminator_PP: false 
+
+enable_digital_OR32_T_open_collector_output: false 
+
+enable_digital_multiplexed_output: false 
+
+enable_fast_shaper: true 
+
+enable_fast_shaper_PP: false 
+
+enable_fast_shaper_follower_PP: false 
+
+enable_probe_OTA: true 
+
+enable_probe_OTA_PP: false 
+
+enable_temperature_sensor: true 
+
+enable_temperature_sensor_PP: false 
+
+enable_time_DAC: true 
+
+enable_time_DAC_PP: false 
+
+enable_time_discriminator: true 
+
+enable_time_discriminator_PP: false 
+
+input_DAC_voltage_reference: true # True: external (?) 4.5V, False: internal 2.5V
+# True: external (?) 4.5V, False: internal 2.5V
+latched_output: false # True: latched output, False: direct output
+# True: latched output, False: direct output
+peak_sensing_cell: false # True: external trigger, False: internal trigger
+# True: external trigger, False: internal trigger
+preamp_connected_to_fast_shaper: false # True: HG, False: LG
+# True: HG, False: LG
+select_HG_mode: true # True: track & hold (SCA), False: peak detector
+# True: track & hold (SCA), False: peak detector
+select_LG_mode: true 
+
+trigger_polarity: false # True: positive (rising edge), False: negative (falling edge)

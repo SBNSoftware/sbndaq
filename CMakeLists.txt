@@ -58,10 +58,12 @@ find_ups_product( cetbuildtools v7_17_01 )
 #include(ArtDictionary)
 include(ArtMake)
 include(BuildPlugins)
+include(InstallPython)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(sbndaq)
 add_subdirectory(sbn-fd)
+add_subdirectory(configDB_tools)
 
 # tests
 # add_subdirectory(test)

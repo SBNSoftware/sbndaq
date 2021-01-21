@@ -1,0 +1,60 @@
+daq.fragment_receiver.data_buffer_depth_fragments: 5000000
+
+daq.fragment_receiver.fragment_type: BERNCRT
+daq.fragment_receiver.generator: BernCRTData
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+daq.fragment_receiver.board_id: 1
+
+#What is ReaderID? Another ID?
+daq.fragment_receiver.ReaderID: 0x1
+
+#Capacity of internal fragment generator buffer for one FEB
+daq.fragment_receiver.FEBBufferCapacity: 100000
+
+#Discard all fragments for this period at the beginning of run
+daq.fragment_receiver.initial_delay_s:       0
+
+#Omit events outside of the poll times
+daq.fragment_receiver.omit_out_of_sync_events: false
+#Maximum tolerance margin for events coming outside of the poll
+daq.fragment_receiver.out_of_sync_tolerance_ms: 10
+
+#Omit timestamps not increasing monotonically 
+daq.fragment_receiver.omit_out_of_order_events: false
+    
+#Restart febdrv periodically (febdrv issue workaround), set to 0 to disable
+daq.fragment_receiver.feb_restart_period_s:  0
+
+#Time between FEB polls
+daq.fragment_receiver.feb_poll_ms : 40
+
+
+
+#PROBE bitsream (FEB monitoring, not useful during normal CRT operation or tests). Bitstream format: 0s and 1s are accepted and whitespaces are ignored, until any other character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
+daq.fragment_receiver.ProbeBitStream : '
+00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
+00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
+00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
+'
+
+#pull mode configuration
+daq.fragment_receiver.request_address:        "227.128.12.35" # -- multicast request address
+daq.fragment_receiver.multicast_interface_ip: "192.168.191.0" # -- should match the private net 
+daq.fragment_receiver.request_port: 3502   # UDP request port
+daq.fragment_receiver.request_mode: buffer # pull mode, will be 'window' in future
+daq.fragment_receiver.request_window_width:  50000000
+daq.fragment_receiver.request_window_offset: 25000000
+daq.fragment_receiver.request_windows_are_unique: true
+daq.fragment_receiver.separate_data_thread: true
+daq.fragment_receiver.stale_request_timeout: 10000000000
+daq.fragment_receiver.receive_requests: true
+
+#advanced memory usage, max size in bytes
+daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
+
+daq.fragment_receiver.window_close_timeout_us: 4000000

@@ -19,7 +19,7 @@ package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utili
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
 boardreader timeout: 90
-eventbuilder timeout: 15
+eventbuilder timeout: 45
 aggregator timeout: 15
 dispatcher timeout: 10
 use_messageviewer: true

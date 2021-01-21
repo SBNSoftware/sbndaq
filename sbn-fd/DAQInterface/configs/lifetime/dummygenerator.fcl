@@ -1,34 +1,45 @@
+
 daq: {
-  fragment_receiver: {
-    time_step_ms: 199
-    fragment_id: 0x3300
-    generated_fragments_per_event: 1
 
+fragment_receiver: {
+
+time_step_ms: 199 
+
+fragment_id: 0x3300 
+
+generated_fragments_per_event: 1 
 #advanced memory managment
-    max_fragment_size_bytes: 128
+max_fragment_size_bytes: 128 
 
-    fragment_type: DUMMYGENERATOR
-    generator: DummyGenerator
+fragment_type: DUMMYGENERATOR 
 
-    board_id: 1
+generator: DummyGenerator 
 
-    ReaderID: 0x1
+board_id: 1 
 
-    destinations: { }
-    routing_table_config:
-    {
-      use_routing_master: false
-    }
-  }
+ReaderID: 0x1 
 
-  metrics: {
-    brFile: {
-      metricPluginType: "file"
-      level: 3
-      fileName: "/scratch/log/DummyGenerator_%UID%_metrics.log"
-      uniquify: true
-    }
-  }
+destinations: {
+
 }
+routing_table_config: {
 
+use_routing_master: false 
 
+}
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 3 
+
+fileName: "/scratch/log/DummyGenerator_%UID%_metrics.log" 
+
+uniquify: true 
+
+}
+}
+}

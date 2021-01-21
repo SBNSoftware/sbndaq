@@ -1,10 +1,14 @@
-#include "EventBuilder_standard.fcl"
-daq.metrics.graphite.namespace: "icarus.evb02."
-daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"
+ 
+#include "EventBuilder_standard.fcl" 
 
-process_name: DAQEVB02
+daq.metrics.graphite.namespace: "icarus.evb02." 
 
-outputs.normalOutput.fileName: "/data/daq/data_dl2_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/data/test_daq/data_dl2_run%R_%#_%to.root"
+daq.metrics.evbFile.fileName: "/scratch/log/evb_%UID%_metrics.log" 
 
-physics.my_output_modules: [rootNetOutput, normalOutput ]
+process_name: DAQEVB02 
+
+outputs.normalOutput.fileName: "/data/daq/data_dl2_run%R_%#_%to.root" 
+
+outputs.testOutput.fileName: "/data/test_daq/data_dl2_run%R_%#_%to.root" 
+
+physics.my_output_modules: [rootNetOutput, normalOutput] 

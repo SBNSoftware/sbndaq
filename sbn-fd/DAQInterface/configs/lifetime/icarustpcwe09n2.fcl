@@ -1,11 +1,10 @@
-#include "icarustpc_standard_n2.fcl"
+ 
+#include "icarustpc_standard_n2.fcl" 
 
-daq.fragment_receiver.fragment_id: 102
+daq.fragment_receiver.fragment_id: 102 
 #52
-daq.fragment_receiver.CrateID: 0x51
-daq.fragment_receiver.pcieLinks: [ 3 ]
-daq.metrics.graphite.namespace: "icarus.tpcwe09n2."
-#daq.redis_10s.redis_key_prefix: "DABBoardReader:icarustpc01:"
-#daq.redis_testing.redis_key_prefix: "DABBoardReader:icarustpc01:"
-#daq.redis_5m.redis_key_prefix: "DABBoardReader:icarustpc01:"
+daq.fragment_receiver.CrateID: 0x51 
 
+daq.fragment_receiver.pcieLinks: [3] 
+
+daq.metrics.graphite.namespace: "icarus.tpcwe09n2." 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_07_02"
+SBNDAQ_VERSION="v0_07_03"
 SBNDAQ_QUALS="e19:prof:s97:py2"
 DAQINTERFACE_VERSION="v3_09_03"
 
@@ -8,15 +8,15 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-#[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 # your own local products directory:
-LOCAL_MRB_PRODUCTS=$(/bin/ls -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}localProducts*${SBNDAQ_VERSION}* |head -1)
+LOCAL_MRB_PRODUCTS=$(/bin/ls -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}localProducts* |head -1)
 LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
 if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
@@ -33,8 +33,7 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-#setup artdaq_runcontrol_gui v1_01_03 -q e19:prof
-setup artdaq_mfextensions  v1_05_03 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_05_04 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
@@ -47,6 +46,9 @@ echo "TRACE_FILE=$TRACE_FILE"
 toffSg 8-63
 tonSg 0-7
 tonMg 0-7
+toffM 1-63 -n PhysCrateData
+toffS 1-63 -n PhysCrateData
+tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1
 

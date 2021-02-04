@@ -1,4 +1,5 @@
 gps sbn-daq01-priv.fnal.gov -1
+wr localhost -1  1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 ptb01 sbnd-daq33-priv.fnal.gov -1
 ptb02 sbnd-daq01-priv.fnal.gov -1
 tpc01 sbn-daq01-priv.fnal.gov -1

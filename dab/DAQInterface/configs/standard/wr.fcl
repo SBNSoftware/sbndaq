@@ -13,6 +13,19 @@ daq:
     device: wr0
     channel: 1
 
+    ## Comment pull mode parameters for push mode
+    ## Uncomment for pull mode
+    ##
+    ## Pull mode parameters
+    #request_address:        "227.128.9.129" # -- multicast request address
+    #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+    #request_port: 3501   # UDP request port
+    #request_mode: window # pull mode
+    #request_window_width:  50000000 #5ms window
+    #request_window_offset: 2500000 #1ms offset 
+    #request_windows_are_unique: true
+    #stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
+
     destinations: { }
 
     routing_table_config: 

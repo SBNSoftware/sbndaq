@@ -11,26 +11,26 @@ daq:
     # Icarus 0x5200, SBND 0xD200
     fragmentId: 0x5200
     device: wr0
-    channel: 1
+
+    # ChannelMask is a five-bit enable mask telling the BR and DIO which 
+    # channels to listen to.  "1" bit means listen to that channel.
+    # The value 0x1F means listen to all five I/O channels
+    channelMask: 0x1F
 
     ## Comment pull mode parameters for push mode
     ## Uncomment for pull mode
     ##
     ## Pull mode parameters
-    #request_address:        "227.128.9.129" # -- multicast request address
-    #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
-    #request_port: 3501   # UDP request port
-    #request_mode: window # pull mode, window or buffer
-    #request_window_width:  50000000 #5ms window
-    #request_window_offset: 2500000 #1ms offset 
-    #request_windows_are_unique: true
-    #stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
+    request_address:        "227.128.9.129" # -- multicast request address
+    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+    request_port: 3501   # UDP request port
+    request_mode: window # pull mode, window or buffer
+    request_window_width:  50000000 #5ms window
+    request_window_offset: 2500000 #1ms offset 
+    request_windows_are_unique: true
+    stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
 
     destinations: { }
-
-    routing_table_config: 
-    {
-      use_routing_master: false 
-    }
+    routing_table_config: { use_routing_master: false  }
   }
 }

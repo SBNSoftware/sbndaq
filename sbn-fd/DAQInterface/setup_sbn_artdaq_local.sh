@@ -8,8 +8,8 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
+#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+#[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_07_03"
+SBNDAQ_VERSION="v0_07_04"
 SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_04"
+DAQINTERFACE_VERSION="v3_09_05"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -33,7 +33,7 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-#setup artdaq_runcontrol_gui v1_01_03 -q e19:prof
+#setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
 setup artdaq_mfextensions  v1_05_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'

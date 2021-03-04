@@ -11,7 +11,11 @@ daq:
     # Icarus 0x5200, SBND 0xD200
     fragmentId: 0x5200
     device: wr0
-    channel: 1
+
+    # ChannelMask is a five-bit enable mask telling the BR and DIO which 
+    # channels to listen to.  "1" bit means listen to that channel.
+    # The value 0x1F means listen to all five I/O channels
+    channelMask: 0x1F
 
     destinations: { }
 

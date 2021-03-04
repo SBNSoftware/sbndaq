@@ -2,14 +2,14 @@
 
 SBNDAQ_VERSION="v0_07_03"
 SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_03"
+DAQINTERFACE_VERSION="v3_09_04P1"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
+#[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
 
@@ -48,6 +48,11 @@ tonSg 0-7
 tonMg 0-7
 toffM 1-63 -n PhysCrateData
 toffS 1-63 -n PhysCrateData
+
+#for event numbering checks
+#tonM 1-63 -n PhysCrate_GeneratorBase
+#tonM 15 -n CAENV1730Readout
+
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1

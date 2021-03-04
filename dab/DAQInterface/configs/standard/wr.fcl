@@ -14,21 +14,34 @@ daq:
 
     # ChannelMask is a five-bit enable mask telling the BR and DIO which 
     # channels to listen to.  "1" bit means listen to that channel.
-    # The value 0x1F means listen to all five I/O channels
+    # The value 0x1F means listen to all five I/O channels and is the
+    # default
     channelMask: 0x1F
+
+    # Following are optional parameters, default are "i" and "false"
+    # mode options: D, d, I, i C, c, P, p, 1, 0
+    channelMode1 i
+    channelMode2 i
+    channelMode3 i
+    channelMode4 i
+    channelPPS1 false
+    channelPPS2 false
+    channelPPS3 false
+    channelPPS4 false
+
 
     ## Comment pull mode parameters for push mode
     ## Uncomment for pull mode
     ##
     ## Pull mode parameters
-    request_address:        "227.128.9.129" # -- multicast request address
-    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
-    request_port: 3501   # UDP request port
-    request_mode: window # pull mode, window or buffer
-    request_window_width:  50000000 #5ms window
-    request_window_offset: 2500000 #1ms offset 
-    request_windows_are_unique: true
-    stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
+   # request_address:        "227.128.9.129" # -- multicast request address
+   # multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+   # request_port: 3501   # UDP request port
+   # request_mode: window # pull mode, window or buffer
+   # request_window_width:  50000000 #5ms window
+   # request_window_offset: 2500000 #1ms offset 
+   # request_windows_are_unique: true
+   # stale_redata_dl01_run2297_1_20201008T154611quest_timeout: 200000000
 
     destinations: { }
     routing_table_config: { use_routing_master: false  }

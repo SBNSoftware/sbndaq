@@ -4,6 +4,7 @@
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
 parent sbndaq v0_07_04
 defaultqual e19:s97:py2
+define_pythonpath
 
 # These optional lines define the installed directories where headers,
 # libraries, and executables will be found.
@@ -38,14 +39,14 @@ end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
-qualifier                sbndaq_artdaq          notes
-e19:py2:debug:s96        e19:py2:debug:s96
-e19:py2:prof:s96         e19:py2:prof:s96
-e19:py2:debug:icarus:s96 e19:py2:debug:icarus:s96
-e19:py2:prof:icarus:s96  e19:py2:prof:icarus:s96
-e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96
-e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96
-e19:py2:debug:s97        e19:py2:debug:s97
+qualifier                sbndaq_artdaq              notes
+e19:py2:debug:s96        e19:py2:debug:s96		    
+e19:py2:prof:s96         e19:py2:prof:s96			
+e19:py2:debug:icarus:s96 e19:py2:debug:icarus:s96	
+e19:py2:prof:icarus:s96  e19:py2:prof:icarus:s96    
+e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96	    
+e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96      
+e19:py2:debug:s97        e19:py2:debug:s97          
 e19:py2:prof:s97         e19:py2:prof:s97
 e19:py2:debug:icarus:s97 e19:py2:debug:icarus:s97
 e19:py2:prof:icarus:s97  e19:py2:prof:icarus:s97

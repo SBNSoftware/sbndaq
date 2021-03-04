@@ -20,14 +20,15 @@ daq:
 
     # Following are optional parameters, default are "i" and "false"
     # mode options: D, d, I, i C, c, P, p, 1, 0
-    channelMode1 i
-    channelMode2 i
-    channelMode3 i
-    channelMode4 i
-    channelPPS1 false
-    channelPPS2 false
-    channelPPS3 false
-    channelPPS4 false
+    # If these options are absent, no changes to the configuration will be made
+    channelMode1: i
+    channelMode2: i
+    channelMode3: i
+    channelMode4: i
+    channelPPS1: false
+    channelPPS2: false
+    channelPPS3: false
+    channelPPS4: false
 
 
     ## Comment pull mode parameters for push mode

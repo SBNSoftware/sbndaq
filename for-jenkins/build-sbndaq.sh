@@ -183,12 +183,12 @@ cd ${products_dir} || exit 1
 
 ./pullProducts -l  ${products_dir} ${flvr} ${product_name}-current ${manifest_qual_set//:/-} ${build_type} 2>&1 |tee -a ${products_dir}/pullproducts.log
 
+table_qual_set="+${qual_set//:/:+}:+${build_type}"
 
-table_qual_set="+${qual_set//:/+:}+:${build_type}"
 export products_dir
 
 cat ${products_dir}/sbndaq_artdaq/*/ups/sbndaq_artdaq.table | \
-        sed -n "/+e19:+py2:+s97:+${build_type}/,/^$/p" | \
+        sed -n "/${table_qual_set}/,/^$/p" | \
         sed  's/setupRequired(/.\/pullPackage ${products_dir} sl7 /g' | \
         sed  's/)//g;s/+//g;s/^[ \t]*//;s/[ \t]*$//;/^\s*$/d;s/:/-/g;s/-q//g;s/\(.*\)-/\1 /'| \
         sort -u | \

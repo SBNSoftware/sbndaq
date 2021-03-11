@@ -24,8 +24,8 @@ aggregator timeout: 20
 dispatcher timeout: 20
 use_messageviewer: true
 
-max_launch_checks: 10
-launch_procs_wait_time: 40
+max_launch_checks: 50
+launch_procs_wait_time: 200
 
 #max_fragment_size_bytes: 10000000
 advanced_memory_usage: true

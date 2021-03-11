@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 SBNDAQ_VERSION="v0_07_04"
-SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_05"
+SBNDAQ_QUALS="e19:prof:s106"
+DAQINTERFACE_VERSION="v3_09_06"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup

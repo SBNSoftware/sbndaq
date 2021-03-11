@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v0_07_04"
 SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_05"
+DAQINTERFACE_VERSION="v3_09_06"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -28,6 +28,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
+#setup artdaq_demo v3_09_05 -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
@@ -45,11 +46,16 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
 toffSg 8-63
+toffMg 8-63
 tonSg 0-7
 tonMg 0-7
 tmodeS 1
 tmodeM 1
-
+tonM 20 -N *RequestReceiver
+tonM 10 -N *DataSenderManager
+tonS 20 -N *RequestReceiver
+tonS 10 -N *DataSenderManager
+toffS 0-63 -n WhiteRabbitReadout_generator
 
 #toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"

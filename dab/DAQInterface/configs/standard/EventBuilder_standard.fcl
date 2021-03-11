@@ -16,9 +16,10 @@ daq: {
     #max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: true
-    request_address: "227.128.9.129"
+    request_address: "227.128.1.129"
     request_port: 3501
-    multicast_interface_ip: "192.168.230.0" # -- should match the private net
+#    multicast_interface_ip: "131.225.224.0" # -- should match the private net
+     multicast_interface_ip: "192.168.230.0"  
     num_requests: 500
     incomplete_event_report_interval_ms: 1000
     tcp_receive_buffer_size: 64000
@@ -54,7 +55,7 @@ send_process_metrics: true
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
-    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
+    fileName: "/daq/scratch/trigger_tests/data_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
@@ -135,8 +136,8 @@ physics: {
   pd: [ prescale5 ]
   a1: [ ]
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
-  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ rootNetOutput ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]

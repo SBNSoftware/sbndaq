@@ -4,7 +4,7 @@ daq.fragment_receiver.board_config : '{
   "ctb":{
     "sockets":{
         "receiver":{
-            "rollover":50000,
+            "rollover":500000,
             "host":"sbnd-daq33-priv",
             "port":8992
       },
@@ -32,19 +32,19 @@ daq.fragment_receiver.board_config : '{
       },
       "randomtrigger_2":{
         "description":"Random trigger that can optionally be set to fire only outside of beam spill",
-        "enable":true,
-        "fixed_freq":true,
+        "enable":false,
+        "fixed_freq":false,
         "beam_mode":true,
-        "period":10000000,
+        "period":5000000,
         "seed":"0x0000ACE1",
         "thresh_lo":"0x00000001",
         "thresh_hi":"0x000F00FF"
       },
       "pulser":{
         "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
-        "enable":true,
+        "enable":false,
         "period":66666667,
-        "width" :0
+        "width" :26666667
       },
       "timing":{
         "description":"Unbiased Trigger Control. 2ms lead time (0x1860A = 100k, 20ns ticks). 20.48 us beam acceptance window.",
@@ -83,7 +83,7 @@ daq.fragment_receiver.board_config : '{
         },
         { "id":"HLT_3",
           "description": "Beam input 2 and NIM coincidence. LLT4, LLT5, and LLT11",
-          "enable":false,
+          "enable":true,
           "minc" : "0x4",
           "mexc" : "0x0",
           "prescale" : "0x1"
@@ -148,7 +148,7 @@ daq.fragment_receiver.board_config : '{
         "triggers": [
           { "id":"LLT_11",
             "description": "NIM : NIM SPARE input 4",
-            "enable":false,
+            "enable":true,
             "mask" : "0x10000",
             "type" : "0x1",
             "count" : "0x0"
@@ -212,7 +212,7 @@ daq.fragment_receiver.board_config : '{
           },
           { "id":"LLT_4",
             "description": "Beam input 3",
-            "enable":false,
+            "enable":true,
             "mask" : "0x4"
           },
           { "id":"LLT_5",

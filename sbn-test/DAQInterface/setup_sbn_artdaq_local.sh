@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_07_03"
-SBNDAQ_QUALS="e19:prof:s97:py2"
-DAQINTERFACE_VERSION="v3_09_04"
+SBNDAQ_VERSION="v0_07_04"
+SBNDAQ_QUALS="e19:prof:s106"
+DAQINTERFACE_VERSION="v3_09_06"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -23,14 +23,14 @@ else
    echo "Warning: localProducts/products not found."
 fi
 
-setup artdaq_demo v3_09_04 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_09_05 -q ${SBNDAQ_QUALS}
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-#setup artdaq_runcontrol_gui v1_01_03 -q e19:prof
+#setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
 #alias rc='artdaqRunControl'
 
 #Trace setup for debugging:

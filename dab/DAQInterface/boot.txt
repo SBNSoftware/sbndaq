@@ -12,5 +12,5 @@ EventBuilder label: EventBuilder1
 
 Dispatcher host: sbnd-daq33-priv.fnal.gov
 Dispatcher label: Dispatcher1
-
+#Dispatcher port: 6020
 

@@ -2,7 +2,7 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_07_03
+parent sbndaq v0_07_04
 defaultqual e19:s97:py2
 define_pythonpath
 
@@ -32,8 +32,8 @@ flcdir  product_dir fcl
 # With "product  version" table below, we now define depdendencies
 # Add the dependent product and version
 
-product              version                optional
-sbndaq_artdaq        v0_07_03		
+product              version        optional
+sbndaq_artdaq        v0_07_04
 cetbuildtools        v7_17_01       -       only_for_build
 end_product_list
 
@@ -48,10 +48,16 @@ e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96
 e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96      
 e19:py2:debug:s97        e19:py2:debug:s97          
 e19:py2:prof:s97         e19:py2:prof:s97
-e19:py2:debug:icarus:s97 e19:py2:debug:icarus:s97   
-e19:py2:prof:icarus:s97  e19:py2:prof:icarus:s97    
-e19:py2:debug:sbnd:s97   e19:py2:debug:sbnd:s97     
-e19:py2:prof:sbnd:s97    e19:py2:prof:sbnd:s97      
+e19:py2:debug:icarus:s97 e19:py2:debug:icarus:s97
+e19:py2:prof:icarus:s97  e19:py2:prof:icarus:s97
+e19:py2:debug:sbnd:s97   e19:py2:debug:sbnd:s97
+e19:py2:prof:sbnd:s97    e19:py2:prof:sbnd:s97
+e19:debug:s106           e19:debug:s106
+e19:prof:s106            e19:prof:s106
+e19:debug:icarus:s106    e19:debug:icarus:s106
+e19:prof:icarus:s106     e19:prof:icarus:s106
+e19:debug:sbnd:s106      e19:debug:sbnd:s106
+e19:prof:sbnd:s106       e19:prof:sbnd:s106
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:

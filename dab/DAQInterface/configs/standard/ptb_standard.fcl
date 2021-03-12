@@ -45,8 +45,10 @@ fragment_receiver: {
    ##max_frags_per_call : 100 ## -- this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
    max_frags_per_call : 10 ## -- this sets the maximum number of fragments to be returned for each getNext_() call. Default 10 
 
-   request_address: "227.128.9.129"         ## -- Multi-cast request address
+   request_address: "227.128.1.129"         ## -- Multi-cast request address
    request_port: 3501                       ## -- UDP request port
+
+    
    multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
                                             ##    this should match the private network address
    stale_request_timeout : 150000000000 #100sec

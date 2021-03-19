@@ -18,12 +18,15 @@ record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 3000
+boardreader timeout: 600
 eventbuilder timeout: 20
 aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
+
+max_launch_checks: 100
+launch_procs_wait_time: 600
 
 #max_fragment_size_bytes: 10000000
 advanced_memory_usage: true

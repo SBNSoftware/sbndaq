@@ -1,4 +1,4 @@
-ptb01 sbn-tpc12 -1
+ptb01 sbnd-ptb01 -1
 gps   sbn-daq01-priv -1
 tpc01 localhost -1
 tpc02 sbnd-tpc02 -1

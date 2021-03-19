@@ -28,3 +28,7 @@ use_messageviewer: true
 max_fragment_size_bytes: 10000000
 
 all_events_to_all_dispatchers: true
+
+
+max_launch_checks: 10
+launch_procs_wait_time: 60

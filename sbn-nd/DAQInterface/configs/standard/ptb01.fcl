@@ -13,8 +13,9 @@ fragment_receiver: {
    ## Variable of interest for the new PTB Fragment Generator
    ##------------------------------------------------------------------------------
 
-   board_address: "sbnd-ptbmk2-01"
+   #board_address: "sbnd-ptbmk2-01"
    #board_address: "192.168.230.77"
+   board_address: "192.168.230.78"   # -- ND PTB
 
    control_port  : 8991                               ## Default 8991 
    
@@ -46,6 +47,10 @@ fragment_receiver: {
    request_port: 3001                       ## -- UDP request port
    multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
                                             ##    this should match the private network address
+					    
+   stale_request_timeout : 150000000000     ## -- 150sec
+   window_close_timeout_us: 40000000
+   
    #request_mode: "Buffer"                  ## -- the other interesting possibility which is discussed is the "Window" mode
    request_mode: "Window"                   ## -- the other interesting possibility which is discussed is the "Buffer" mode
    ## request_window_offset                 ## -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
@@ -68,7 +73,7 @@ fragment_receiver: {
        "sockets":{
            "receiver":{
                "rollover":500000,
-               "host":"sbnd-daq33-priv",
+               "host":"sbnd-ptb01",
                "port":8992
          },
          "monitor":{
@@ -115,7 +120,8 @@ fragment_receiver: {
            "lead"         : "0x0",
            "repeater_val" : "0x7",
            "period"       : "0x3",
-           "duty"         : "0x3"
+           "duty"         : "0x3",
+	   "beam_acc_window : "0xFF"
          },
          "ch_status":false,
          "standalone_enable": true
@@ -123,9 +129,9 @@ fragment_receiver: {
        "HLT":{
          "command_mask" : {
            "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
-           "A" : "0x63",
-           "B" : "0x4",
-           "C" : "0x127",
+           "A" : "0x3F",
+           "B" : "0x2",
+           "C" : "0x7F",
            "T" : "0x0"
          },
          "trigger": [

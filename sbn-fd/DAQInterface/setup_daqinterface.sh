@@ -25,3 +25,5 @@ if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; 
 fi
 
 setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
+
+export PYTHONUNBUFFERED=TRUE

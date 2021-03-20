@@ -47,7 +47,7 @@ daq.fragment_receiver.board_config : '{
         "width" :26666667
       },
       "timing":{
-        "description":"Unbiased Trigger Control. 2ms lead time (0x1860A = 100k, 20ns ticks). 20.48 us beam acceptance window.",
+        "description":"Unbiased Trigger Control. 2ms lead time (0x186A0 = 100k, 20ns ticks). 20.48 us beam acceptance window.",
         "tap"          : "0x2",
         "lead"         : "0x186A0",
         "repeater_val" : "0x0",

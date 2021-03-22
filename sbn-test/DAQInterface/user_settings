@@ -17,3 +17,6 @@ all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
 
+max_launch_checks: 100
+launch_procs_wait_time: 600
+

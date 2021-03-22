@@ -19,6 +19,7 @@ daq:
     # default
     channelMask: 0x1F
 #    channelMask: 6
+# do not change above channel mask, seems to annoy board reader
 
     # Following are optional parameters, default are "i" and "false"
     # mode options: D, d, I, i C, c, P, p, 1, 0
@@ -40,15 +41,18 @@ daq:
     receive_requests: true
     circular_buffer_mode: true
     separate_data_thread: true
+    data_buffer_depth_fragments: 500000
     request_address:        "227.128.1.129" # -- multicast request address
     multicast_interface_ip: "192.168.230.0" # -- should match the private net  public is 131.225.224.0
     request_port: 3501   # UDP request port
     request_mode: window # pull mode, window or buffer
 #    request_mode: buffer # pull mode, window or buffer
-    request_window_width:  1000000000 # window length, units are ns?
-    request_window_offset: 000000000 # offset, units are ns?
+    request_window_width:  2400000000 # window length, units are ns?
+    request_window_offset: 1200000000 # offset, units are ns?
     request_windows_are_unique: false
-    stale_request_timeout: 200000000
+#  changing the below doesn't change the timeout at 2 sec warning message from the DAQ
+#      not clear if units are ns or us
+    stale_request_timeout: 2000000000
 
     destinations: { }
 

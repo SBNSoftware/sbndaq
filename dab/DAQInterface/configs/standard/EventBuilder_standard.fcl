@@ -8,7 +8,7 @@ services: {
 
 daq: {
   event_builder: {
-    stale_buffer_timeout_usec: 10000000
+    stale_buffer_timeout_usec: 10000000  # 10 sec
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
@@ -21,7 +21,8 @@ daq: {
 #    multicast_interface_ip: "131.225.224.0" # -- should match the private net
      multicast_interface_ip: "192.168.230.0"  
     num_requests: 500
-    incomplete_event_report_interval_ms: 1000
+#    incomplete_event_report_interval_ms: 1000
+    incomplete_event_report_interval_ms: 3000  # 3 sec
     tcp_receive_buffer_size: 64000
     routing_token_config: {
       use_routing_master: false

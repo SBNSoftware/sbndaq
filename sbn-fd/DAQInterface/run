@@ -13,6 +13,54 @@ getStatus "nil"
 
 
 setdaqcomps.sh \
+icarustpcee01b \
+icarustpcee01m \
+icarustpcee01t \
+icarustpcee02 \
+icarustpcee03 \
+icarustpcee04 \
+icarustpcee05 \
+icarustpcee06 \
+icarustpcee07 \
+icarustpcee08 \
+icarustpcee09 \
+icarustpcee10 \
+icarustpcee11 \
+icarustpcee12 \
+icarustpcee13 \
+icarustpcee14 \
+icarustpcee15 \
+icarustpcee16 \
+icarustpcee17 \
+icarustpcee18 \
+icarustpcee19 \
+icarustpcee20b \
+icarustpcee20m \
+icarustpcee20t \
+icarustpcew01b \
+icarustpcew01m \
+icarustpcew01t \
+icarustpcew02 \
+icarustpcew03 \
+icarustpcew04 \
+icarustpcew05 \
+icarustpcew06 \
+icarustpcew07 \
+icarustpcew08 \
+icarustpcew09 \
+icarustpcew10 \
+icarustpcew11 \
+icarustpcew12 \
+icarustpcew13 \
+icarustpcew14 \
+icarustpcew15 \
+icarustpcew16 \
+icarustpcew17 \
+icarustpcew18 \
+icarustpcew19 \
+icarustpcew20b \
+icarustpcew20m \
+icarustpcew20t \
 icarustpcww01b \
 icarustpcww01m \
 icarustpcww01t \
@@ -61,6 +109,7 @@ icarustpcwe19 \
 icarustpcwe20b \
 icarustpcwe20m \
 icarustpcwe20t \
+icarustrigger \
 #icaruscrt01nno  \
 #icaruscrt01nni  \
 #icaruscrt03wci  \
@@ -89,7 +138,6 @@ icarustpcwe20t \
 #icaruspmtwwtop01 \
 #icaruspmtwwtop02 \
 #icaruspmtwwtop03
-#
 
 
 send_transition.sh boot $1

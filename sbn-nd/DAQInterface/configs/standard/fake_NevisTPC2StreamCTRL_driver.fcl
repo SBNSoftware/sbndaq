@@ -19,7 +19,7 @@ fragment_receiver: {
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
+  DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
 

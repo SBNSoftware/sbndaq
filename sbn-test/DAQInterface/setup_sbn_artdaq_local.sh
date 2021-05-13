@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_07_04"
+SBNDAQ_VERSION="v0_07_05"
 SBNDAQ_QUALS="e19:prof:s106"
-DAQINTERFACE_VERSION="v3_09_06"
+DAQINTERFACE_VERSION="v3_09_08"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -23,7 +23,7 @@ else
    echo "Warning: localProducts/products not found."
 fi
 
-setup artdaq_demo v3_09_05 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_09_06 -q ${SBNDAQ_QUALS}
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config

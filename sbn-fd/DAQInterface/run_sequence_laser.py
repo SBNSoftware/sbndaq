@@ -6,17 +6,56 @@ import subprocess
 import select
 
 
-config_list = [ "testFullTPC-DAC-0x83E0-00001", "testFullTPC-DAC-0x8200-00001",
-                "testFullTPC-DAC-0x7E40-00001", "testFullTPC-DAC-0x7C60-00001",
-                "testFullTPC-DAC-0x7A80-00001", "testFullTPC-DAC-0x78A0-00001",
-                "testFullTPC-DAC-0x76C0-00001", "testFullTPC-DAC-0x74E0-00001",
-                "testFullTPC-DAC-0x7300-00001", "testFullTPC-DAC-0x7120-00001",
-                "testFullTPC-DAC-0x6F40-00001", "testFullTPC-DAC-0x6D60-00001",
-                "testFullTPC-DAC-0x6B80-00001", "testFullTPC-DAC-0x69A0-00001",
-                "testFullTPC-DAC-0x67C0-00001", "testFullTPC-DAC-0x6400-00001",
-                "testFullTPC-DAC-0x65E0-00001", "testFullTPC-DAC-0x8020-00001" ]
-runtime_minutes = 5
-boot_config = "boot_full.txt"
+components=[ 
+ ["pmtwwtop01", "pmtwwtop02"],
+ ["pmtwwtop01", "pmtwwtop02"],
+ ["pmtwwtop01", "pmtwwtop02"],
+ ["pmtwwtop03", "pmtwwbot01"],
+ ["pmtwwtop03", "pmtwwbot01"],
+ ["pmtwwtop03", "pmtwwbot01"],
+ ["pmtwwbot02", "pmtwwbot03"],
+ ["pmtwwbot02", "pmtwwbot03"],
+ ["pmtwwbot02", "pmtwwbot03"],
+ ["pmtwetop01", "pmtwetop02"],
+ ["pmtwetop01", "pmtwetop02"],
+ ["pmtwetop01", "pmtwetop02"],
+ ["pmtwetop03", "pmtwebot01"],
+ ["pmtwetop03", "pmtwebot01"],
+ ["pmtwetop03", "pmtwebot01"],
+ ["pmtwebot02", "pmtwebot03"],
+ ["pmtwebot02", "pmtwebot03"],
+ ["pmtwebot02", "pmtwebot03"],
+ ["pmtewtop01", "pmtewtop02"],
+ ["pmtewtop01", "pmtewtop02"],
+ ["pmtewtop01", "pmtewtop02"],
+ ["pmtewtop03", "pmtewbot01"],
+ ["pmtewtop03", "pmtewbot01"],
+ ["pmtewtop03", "pmtewbot01"],
+ ["pmtewbot02", "pmtewbot03"],
+ ["pmtewbot02", "pmtewbot03"],
+ ["pmtewbot02", "pmtewbot03"],
+ ["pmteetop01", "pmteetop02"],
+ ["pmteetop01", "pmteetop02"],
+ ["pmteetop01", "pmteetop02"],
+ ["pmteetop03", "pmteebot01"],
+ ["pmteetop03", "pmteebot01"],
+ ["pmteetop03", "pmteebot01"],
+ ["pmteebot02", "pmteebot03"],
+ ["pmteebot02", "pmteebot03"],
+ ["pmteebot02", "pmteebot03"],
+]
+
+
+version="00002"
+opchannels=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 41, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+
+config_list = [ ("PMTlaser_%d_opch"%opch)+version for opch in opchannels ]
+
+# zip configlist and components 
+# zipiterator = zip(config_list, components)
+
+runtime_minutes = 6
+boot_config = "boot_split.txt"
 
 runtime_s = 60*runtime_minutes
 input_timeout_s = 10
@@ -37,8 +76,16 @@ def process_wait(process):
     #        print(str(output.strip(), 'utf-8'))
     #        prev_output = output
 
-for config in config_list:
+for iterator in zip(config_list[26:], components[26:]):
+	
+    config = iterator[0]
+    components = iterator[1]
+    
+    run_components = [ "icarus"+name for name in components ]
+    print(config, run_components[0], run_components[1])
+    
     next_config_time_start = time.time()
+
     while (time.time()-next_config_time_start)<next_config_timeout_s:
         print("Input 'next' to begin config %s. Input 'end' to end the entire run sequence."%config)
         i, o, e = select.select( [sys.stdin], [], [], input_timeout_s )
@@ -59,8 +106,8 @@ for config in config_list:
         break
 
     print("Starting run with config %s"%config)
-
-    process = subprocess.Popen(['./run',boot_config,config],
+	
+    process = subprocess.Popen(['./run_setcomponents.sh',boot_config,config, run_components[0], run_components[1] ],
                                stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE)
     process_wait(process)

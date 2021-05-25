@@ -51,7 +51,7 @@ toffS 1-63 -n PhysCrateData
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
-#tonM 15 -n CAENV1730Readout
+#tonM 9-15 -n CAENV1730Readout
 
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1

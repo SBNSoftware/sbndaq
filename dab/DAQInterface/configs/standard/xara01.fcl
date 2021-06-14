@@ -1,0 +1,4 @@
+#include "xara_standard.fcl"
+
+daq.fragment_receiver.fragment_id: 0
+daq.fragment_receiver.ipAddress: 192.168.230.40

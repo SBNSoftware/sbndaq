@@ -12,6 +12,8 @@ femb_config_default:
   port: 5001
   pedestal: 0x100
   timeOut: 100
+  nFEBs: 1  # D0
+  # nFEBs: 8 # SBN-ND
 
   ## Pull mode parameters
   #request_address:        "227.128.9.129" # -- multicast request address

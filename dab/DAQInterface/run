@@ -12,7 +12,7 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 #setdaqcomps.sh wr
-setdaqcomps.sh pmtx02 ptb01 wr
+setdaqcomps.sh pmtx02
 #setdaqcomps.sh pmtx02 ptb01 
 #setdaqcomps.sh tpc01
 
@@ -27,7 +27,7 @@ done
 
 #send_transition.sh config standard
 
-send_transition.sh config testDABDaq00007
+send_transition.sh config standard
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

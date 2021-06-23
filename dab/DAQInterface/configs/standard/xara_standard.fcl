@@ -10,7 +10,7 @@ femb_config_default:
   fragment_id: 0
   ipAddress: 192.168.230.40
   port: 5001
-  pedestal: 0x100
+  pedestals: [ 0x100 ]
   timeOut: 100
   nFEBs: 1  # D0
   # nFEBs: 8 # SBN-ND

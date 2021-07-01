@@ -15,6 +15,9 @@ femb_config_default:
   nFEBs: 1  # D0
   # nFEBs: 8 # SBN-ND
 
+  softwareTrigger: true
+  repeatRate: 1000 #1 second
+
   ## Pull mode parameters
   #request_address:        "227.128.9.129" # -- multicast request address
   #multicast_interface_ip: "192.168.230.0" # -- should match the private net 

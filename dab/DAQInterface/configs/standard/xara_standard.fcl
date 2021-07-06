@@ -3,29 +3,34 @@
 #
 # X-Arapuca DAPHNE readout
 #
-femb_config_default: 
+
+daq: 
 {
-  generator: DAPHNEReader
-  max_fragment_size_bytes: 1000000
-  fragment_id: 0
-  ipAddress: "192.168.230.40"
-  port: 5001
-  pedestals: [ 0x100, 0x101, 0x102, 0x103 ] 
-  timeOut: 100
-  nFEBs: 1  # D0
-  # nFEBs: 8 # SBN-ND
+     fragment_receiver: 
+     {
+     generator: DAPHNEReader
+     max_fragment_size_bytes: 1000000
+     fragment_id: 0
+     ipAddress: "192.168.230.40"
+     port: 5001
+     pedestals: [ 0x100, 0x101, 0x102, 0x103 ] 
+     timeOut: 100
+     nFEBs: 1  # D0
+     # nFEBs: 8 # SBN-ND
+     board_id: 0
 
-  softwareTrigger: true
-  repeatRate: 1000 #1 second
-
-  ## Pull mode parameters
-  #request_address:        "227.128.9.129" # -- multicast request address
-  #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
-  #request_port: 3501   # UDP request port
-  #request_mode: window # pull mode
-  #request_window_width:  50000000 #5ms window
-  #request_window_offset: 2500000 #1ms offset 
-  #request_windows_are_unique: true
-  #stale_request_timeout: 200000000
-
+     softwareTrigger: true
+     repeatRate: 1000 # 1 second
+     
+     ## Pull mode parameters
+     #request_address:        "227.128.9.129" # -- multicast request address
+     #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+     #request_port: 3501   # UDP request port
+     #request_mode: window # pull mode
+     #request_window_width:  50000000 #5ms window
+     #request_window_offset: 2500000 #1ms offset 
+     #request_windows_are_unique: true
+     #stale_request_timeout: 200000000
+     
+     } 
 }

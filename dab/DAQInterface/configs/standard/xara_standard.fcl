@@ -8,7 +8,7 @@ femb_config_default:
   generator: DAPHNEReader
   max_fragment_size_bytes: 1000000
   fragment_id: 0
-  ipAddress: 192.168.230.40
+  ipAddress: "192.168.230.40"
   port: 5001
   pedestals: [ 0x100, 0x101, 0x102, 0x103 ] 
   timeOut: 100

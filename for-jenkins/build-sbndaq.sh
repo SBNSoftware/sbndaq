@@ -48,10 +48,10 @@ IFS=':' read -r -a quals <<< "$qual_set"
 
 for onequal in "${quals[@]}"; do
   case ${onequal} in
-    e[679]|e1[0-9]|c[0-9])
+    e19:e20|c[0-9])
       basequal=${onequal}
       ;;
-    s7[0-9]|s8[0-9]|s9[0-9]|s10[0-9])
+    s10[0-9])
       squal=${onequal}
       ;;
     py2|py3)

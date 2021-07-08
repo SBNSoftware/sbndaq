@@ -13,10 +13,11 @@
 # ======================================================================
 
 
-# use cmake 2.8 or later
-cmake_minimum_required (VERSION 3.7)
+cmake_minimum_required (VERSION 3.16)
 
-project(sbndaq)
+find_package(cetbuildtools)
+
+project(sbndaq VERSION 0.08.00)
 
 # cetbuildtools contains our cmake modules
 SET ( CETBUILDTOOLS_VERSION $ENV{CETBUILDTOOLS_VERSION} )
@@ -50,9 +51,9 @@ endif()
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_ups_product( artdaq v3_09_06 )
-find_ups_product( sbndaq_artdaq_core v0_07_05 )
-find_ups_product( cetbuildtools v7_17_01 )
+find_ups_product( artdaq v3_10_01 )
+find_ups_product( sbndaq_artdaq_core v0_08_00	)
+find_ups_product( cetbuildtools  v2_18_03)
 
 # macros for dictionary and simple_plugin
 #include(ArtDictionary)

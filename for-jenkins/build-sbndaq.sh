@@ -187,8 +187,8 @@ table_qual_set="+${qual_set//:/:+}:+${build_type}"
 
 export products_dir
 
-cat ${products_dir}/sbndaq_artdaq/*/ups/sbndaq_artdaq.table | \
-        sed -n "/${table_qual_set}/,/^$/p" | \
+cat ${products_dir}/sbndaq_artdaq/*/*/ups/sbndaq_artdaq.table | \
+        grep 'setupRequired(' | \
         sed  's/setupRequired(/.\/pullPackage ${products_dir} sl7 /g' | \
         sed  's/)//g;s/+//g;s/^[ \t]*//;s/[ \t]*$//;/^\s*$/d;s/:/-/g;s/-q//g;s/\(.*\)-/\1 /'| \
         sort -u | \

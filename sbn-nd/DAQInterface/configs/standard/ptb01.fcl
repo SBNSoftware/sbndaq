@@ -3,7 +3,7 @@ daq: {
 fragment_receiver: {
 
    # Parameters defining and configuring the fragment generator to be used
-   		    
+   max_fragment_size_bytes: 100000   		    
    generator: TriggerBoardReader
    #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
    fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
@@ -14,8 +14,8 @@ fragment_receiver: {
    ##------------------------------------------------------------------------------
 
    #board_address: "sbnd-ptbmk2-01"
-   #board_address: "192.168.230.77"
-   board_address: "192.168.230.78"   # -- ND PTB
+   #board_address: "192.168.230.77" # -- D0 PTB
+   board_address: "192.168.230.78"     # -- ND PTB
 
    control_port  : 8991                               ## Default 8991 
    
@@ -45,7 +45,7 @@ fragment_receiver: {
 
    request_address: "227.128.9.129"         ## -- Multi-cast request address
    request_port: 3001                       ## -- UDP request port
-   multicast_interface_ip: "192.168.230.0"  ## -- needed to send requests successfully through the private network
+   multicast_interface_ip: "10.226.36.0"  ## -- needed to send requests successfully through the private network
                                             ##    this should match the private network address
 					    
    stale_request_timeout : 150000000000     ## -- 150sec
@@ -73,7 +73,7 @@ fragment_receiver: {
        "sockets":{
            "receiver":{
                "rollover":500000,
-               "host":"sbnd-ptb01",
+               "host":"10.226.36.23",
                "port":8992
          },
          "monitor":{
@@ -89,18 +89,18 @@ fragment_receiver: {
        },
        "misc":{
          "randomtrigger_1":{
-           "description":"Random trigger that can optionally be set to fire only during beam spill. Period in 20ns ticks.",
-           "enable":false,
+           "description":"Random trigger that can optionally be set to fire only during beam spill. Period in 20ns ticks. Used as a fake source of beam triggers. 2Hz",
+           "enable":true,
            "fixed_freq":true,
-           "beam_mode":true,
-           "period":3333333,
+           "beam_mode":false,
+           "period":25000000,
            "seed":"0xACE2ACE1",
            "thresh_lo":"0x00000001",
            "thresh_hi":"0x000F00FF"
          },
          "randomtrigger_2":{
            "description":"1Hz Random trigger that can optionally be set to fire only outside of beam spill. Period in 20ns ticks.",
-           "enable":true,
+           "enable":false,
            "fixed_freq":true,
            "beam_mode":false,
            "period":50000000,
@@ -112,16 +112,21 @@ fragment_receiver: {
            "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
            "enable":true,
            "period":66666667,
-           "width" :0
+           "width" :66666666
          },
          "timing":{
            "description":"Unbiased Trigger Control.",
            "tap"          : "0x2",
-           "lead"         : "0x0",
-           "repeater_val" : "0x7",
+           "lead"         : "0x7D0",
+           "repeater_val" : "0x0",
            "period"       : "0x3",
            "duty"         : "0x3",
-	   "beam_acc_window : "0xFF"
+	   "beam_acc_window" : "0xFF"
+         },
+         "debug_outs":{
+           "description":"Masks for NIM debug outputs",
+           "debug_mask_1":"0x8",
+           "debug_mask_2":"0x8"
          },
          "ch_status":false,
          "standalone_enable": true
@@ -130,7 +135,7 @@ fragment_receiver: {
          "command_mask" : {
            "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
            "A" : "0x3F",
-           "B" : "0x2",
+           "B" : "0x3",
            "C" : "0x7F",
            "T" : "0x0"
          },

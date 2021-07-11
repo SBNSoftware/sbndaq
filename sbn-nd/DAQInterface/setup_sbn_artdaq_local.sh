@@ -55,3 +55,8 @@ tmodeM 1
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator 
+
+tonM 0-63 -n CommandableFragmentGenerator
+tonM 0-63 -N NevisTPC* 
+tonS 24 -N NevisTPCGenerator*
+toffM debug+6 -N NevisTPC*     #debug is level8, turning off level 8+6 here.

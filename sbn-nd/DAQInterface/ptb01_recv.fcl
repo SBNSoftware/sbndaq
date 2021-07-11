@@ -1,0 +1,4 @@
+#include "ptb01.fcl"
+
+receiver: { @table::daq.fragment_receiver }
+

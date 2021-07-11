@@ -1,7 +1,7 @@
 services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService  
- }
+request_address: "227.128.9.129" }
 
   ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
 }
@@ -12,13 +12,14 @@ daq: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 100
+    buffer_count: 10
     #max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: true
     request_address: "227.128.9.129"          # Multi-cast request address
     #multicast_interface_ip: "sbnd-daq33-priv" # needed to send requests successfully through the private network
-    multicast_interface_ip: "131.225.250.128" # needed to send requests successfully through the private network
+ ### multicast_interface_ip: "131.225.250.128"
+    multicast_interface_ip: "10.226.36.0" # (use with ptb)needed to send requests successfully through the private network
     request_port: 3001
 
     num_requests: 500
@@ -96,12 +97,19 @@ outputs: {
   	routing_table_config: {
            use_routing_manager: false
        	}
-
   }
+
 }
 
 physics: {
-  analyzers: {}
+  analyzers: {
+ fragmentWatcher: {
+  module_type: FragmentWatcher
+  mode_bitmask: 7
+  metrics_reporting_level:	1
+}
+
+}
 
   producers: {}
 
@@ -135,13 +143,13 @@ physics: {
   p1: [ ]
   p2: [ prescale1 ]
   pd: [ prescale5 ]
-  a1: [ ]
+  a1: [ fragmentWatcher ]
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
-  #my_output_modules: [ normalOutput , rootNetOutput ]
+  my_output_modules: [ normalOutput , rootNetOutput ]
 
-  end_paths: [ my_output_modules ]
+  ##end_paths: [ my_output_modules ]
 }
 source: {
   module_type: ArtdaqInput

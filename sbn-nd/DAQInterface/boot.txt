@@ -24,9 +24,9 @@ EventBuilder label: EventBuilder1
 #DataLogger allowed_processors: 3-15
 #DataLogger label: DataLogger1
 
-DataLogger host: localhost
-DataLogger allowed_processors: 3-15
-DataLogger label: DataLogger2
+###DataLogger host: localhost
+###DataLogger allowed_processors: 3-15
+###DataLogger label: DataLogger2
 
 #DataLogger host: localhost
 #DataLogger allowed_processors: 3-15

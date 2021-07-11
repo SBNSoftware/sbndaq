@@ -35,3 +35,10 @@ all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
 
+
+##board_reader_priorities_on_config :  ptb01  pmtx02 *
+board_reader_priorities_on_start  : tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ptb01
+board_reader_priorities_on_stop   : tpc01 ptb01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11 
+
+##first start tpc11 and in last start ptb01
+##first stop tpc01

@@ -87,7 +87,7 @@ e20:debug:icarus:s110    e20:debug:icarus:s110
 e20:prof:icarus:s110     e20:prof:icarus:s110
 e20:debug:sbnd:s110      e20:debug:sbnd:s110
 e20:prof:sbnd:s110       e20:prof:sbnd:s110
-e19:debug:s110           e19:debug:s110
+e19:debug:s111           e19:debug:s111
 e19:prof:s111            e19:prof:s111
 e19:debug:icarus:s111    e19:debug:icarus:s111
 e19:prof:icarus:s111     e19:prof:icarus:s111

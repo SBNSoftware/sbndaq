@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from io import StringIO
 import re,sys,getopt
 
@@ -110,6 +111,10 @@ class ManifestBuilder:
 
         for index,product in self.df_products.iterrows():
             qualifiers='noarch' if product[0] not in product_qualifiers else product_qualifiers[product[0]]
+
+            if product[2] not in [np.nan,'-'] and not all(q in product_qualifiers['qualifier'].split(':') for q in product[2].split(':')):
+                    continue
+
             product=Product(product,qualifiers)
             manifest.write(product.manifest_entry())
 

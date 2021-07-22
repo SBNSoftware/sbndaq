@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_08_00"
-SBNDAQ_QUALS="e19:prof:s108"
-DAQINTERFACE_VERSION="v3_10_01"
+SBNDAQ_VERSION="v0_08_01"
+SBNDAQ_QUALS="e19:prof:s110"
+DAQINTERFACE_VERSION="v3_10_02"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
-setup mrb
+setup mrb v5_12_00
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 

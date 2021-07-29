@@ -8,7 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb
@@ -33,7 +33,7 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_05_05 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_05_06 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
@@ -51,7 +51,7 @@ toffS 1-63 -n PhysCrateData
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
-#tonM 15 -n CAENV1730Readout
+#tonM 9-15 -n CAENV1730Readout
 
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1

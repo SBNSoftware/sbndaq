@@ -96,6 +96,32 @@ EventBuilder label: EventBuilder26
 EventBuilder host: icarus-evb05-daq
 EventBuilder label: EventBuilder27
 
+#EVB06
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder28
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder29
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder30
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder31
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder32
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder33
+
+#back on EVB01
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder34
+
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder35
+
 
 # DATA LOGGERS
 #DataLogger host: icarus-evb01-daq

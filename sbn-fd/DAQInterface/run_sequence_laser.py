@@ -76,7 +76,7 @@ def process_wait(process):
     #        print(str(output.strip(), 'utf-8'))
     #        prev_output = output
 
-for iterator in zip(config_list[26:], components[26:]):
+for iterator in zip(config_list, components):
 	
     config = iterator[0]
     components = iterator[1]

@@ -8,7 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb v5_12_00
@@ -51,7 +51,7 @@ toffS 1-63 -n PhysCrateData
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
-#tonM 15 -n CAENV1730Readout
+#tonM 9-15 -n CAENV1730Readout
 
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1

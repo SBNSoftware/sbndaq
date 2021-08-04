@@ -44,7 +44,8 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    #echo "Put code here which sets up the database environment"
-	 source /daq/software/database/setup_database_s108.sh
+	 source /daq/software/database/setup_database_s110.sh
+	 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config-new
    #source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_database.sh
 fi
 

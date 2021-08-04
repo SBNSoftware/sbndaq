@@ -52,7 +52,7 @@ cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
 find_ups_product( artdaq v3_10_02 )
-find_ups_product( sbndaq_artdaq_core v0_08_02 )
+find_ups_product( sbndaq_artdaq_core v0_08_01 )
 find_ups_product( cetbuildtools v8_11_00 )
 
 # macros for dictionary and simple_plugin

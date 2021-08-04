@@ -18,7 +18,7 @@ daq:
      nFEBs: 1  # D0
      # nFEBs: 8 # SBN-ND
      board_id: 0
-     voltage : 0.01 # small dummy voltage for now
+     voltage: 0x01 # small dummy voltage for now
 
      softwareTrigger: true
      repeatRate: 1000 # 1 second

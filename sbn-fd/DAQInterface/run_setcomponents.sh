@@ -12,11 +12,12 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 
-setdaqcomps.sh $3 $4 icarustrigger
+setdaqcomps.sh $3 $4 $5 $6 $7 $8 $9 icarustrigger
 
 
 send_transition.sh boot $1
 getStatus "booting"
+
 while [ "$status" != 'booted' ]
 do
   sleep 2

@@ -44,6 +44,7 @@ echo "TRACE_FILE=$TRACE_FILE"
 
 #suppress debug messages
 toffSg 8-63
+toffMg 8-63
 tonSg 0-7
 tonMg 0-7
 toffM 1-63 -n PhysCrateData
@@ -51,7 +52,7 @@ toffS 1-63 -n PhysCrateData
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
-#tonM 9-15 -n CAENV1730Readout
+#tonM 14 -n CAENV1730Readout
 
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1

@@ -10,10 +10,10 @@ build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX
 
-ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_09_06"}
+ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_09_06a"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v0_07_05'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v0_07_08'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
@@ -61,7 +61,7 @@ Usage: $(basename ${0}) [-h]
 EOF
 }
 
-function main() 
+function main()
 {
 
   local source_branchtages_var=source_branchtages_$selected_build_config[@]

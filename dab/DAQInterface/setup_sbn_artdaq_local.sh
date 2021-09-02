@@ -35,7 +35,7 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
 #setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
-setup artdaq_mfextensions  v1_06_02 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_06_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

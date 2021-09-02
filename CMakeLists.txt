@@ -17,7 +17,7 @@ cmake_minimum_required (VERSION 3.17)
 
 find_package(cetbuildtools)
 
-project(sbndaq VERSION 0.08.03)
+project(sbndaq VERSION 0.08.04)
 
 # cetbuildtools contains our cmake modules
 SET ( CETBUILDTOOLS_VERSION $ENV{CETBUILDTOOLS_VERSION} )

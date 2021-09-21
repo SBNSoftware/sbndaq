@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v0_08_04"
-SBNDAQ_QUALS="e19:prof:s110"
-DAQINTERFACE_VERSION="v3_10_03_01"
+SBNDAQ_VERSION="v0_09_00"
+SBNDAQ_QUALS="e20:prof:s110"
+DAQINTERFACE_VERSION="v3_11_00"
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -30,7 +30,7 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-#setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
+#setup artdaq_runcontrol_gui v1_02_00_01 -q e20:prof
 #alias rc='artdaqRunControl'
 
 #Trace setup for debugging:

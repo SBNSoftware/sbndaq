@@ -2,7 +2,7 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-defaultqual e19:s112
+defaultqual e20:s110
 define_pythonpath
 
 # These optional lines define the installed directories where headers,
@@ -32,49 +32,13 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version      optional
-sbndaq_artdaq        v0_08_04
-cetbuildtools        v8_13_04     -         only_for_build
+sbndaq_artdaq        v0_09_00
+cetmodules           v2_26_00     -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
 qualifier                sbndaq_artdaq              notes
-e19:debug:s106           e19:debug:s106
-e19:prof:s106            e19:prof:s106
-e19:debug:icarus:s106    e19:debug:icarus:s106
-e19:prof:icarus:s106     e19:prof:icarus:s106
-e19:debug:sbnd:s106      e19:debug:sbnd:s106
-e19:prof:sbnd:s106       e19:prof:sbnd:s106
-e20:debug:s106           e20:debug:s106
-e20:prof:s106            e20:prof:s106
-e20:debug:icarus:s106    e20:debug:icarus:s106
-e20:prof:icarus:s106     e20:prof:icarus:s106
-e20:debug:sbnd:s106      e20:debug:sbnd:s106
-e20:prof:sbnd:s106       e20:prof:sbnd:s106
-e19:debug:s108           e19:debug:s108
-e19:prof:s108            e19:prof:s108
-e19:debug:icarus:s108    e19:debug:icarus:s108
-e19:prof:icarus:s108     e19:prof:icarus:s108
-e19:debug:sbnd:s108      e19:debug:sbnd:s108
-e19:prof:sbnd:s108       e19:prof:sbnd:s108
-e20:debug:s108           e20:debug:s108
-e20:prof:s108            e20:prof:s108
-e20:debug:icarus:s108    e20:debug:icarus:s108
-e20:prof:icarus:s108     e20:prof:icarus:s108
-e20:debug:sbnd:s108      e20:debug:sbnd:s108
-e20:prof:sbnd:s108       e20:prof:sbnd:s108
-e19:debug:s109           e19:debug:s109
-e19:prof:s109            e19:prof:s109
-e19:debug:icarus:s109    e19:debug:icarus:s109
-e19:prof:icarus:s109     e19:prof:icarus:s109
-e19:debug:sbnd:s109      e19:debug:sbnd:s109
-e19:prof:sbnd:s109       e19:prof:sbnd:s109
-e20:debug:s109           e20:debug:s109
-e20:prof:s109            e20:prof:s109
-e20:debug:icarus:s109    e20:debug:icarus:s109
-e20:prof:icarus:s109     e20:prof:icarus:s109
-e20:debug:sbnd:s109      e20:debug:sbnd:s109
-e20:prof:sbnd:s109       e20:prof:sbnd:s109
 e19:debug:s110           e19:debug:s110
 e19:prof:s110            e19:prof:s110
 e19:debug:icarus:s110    e19:debug:icarus:s110
@@ -89,16 +53,6 @@ e20:debug:sbnd:s110      e20:debug:sbnd:s110
 e20:prof:sbnd:s110       e20:prof:sbnd:s110
 e19:debug:s111           e19:debug:s111
 e19:prof:s111            e19:prof:s111
-e19:debug:icarus:s111    e19:debug:icarus:s111
-e19:prof:icarus:s111     e19:prof:icarus:s111
-e19:debug:sbnd:s111      e19:debug:sbnd:s111
-e19:prof:sbnd:s111       e19:prof:sbnd:s111
-e20:debug:s111           e20:debug:s111
-e20:prof:s111            e20:prof:s111
-e20:debug:icarus:s111    e20:debug:icarus:s111
-e20:prof:icarus:s111     e20:prof:icarus:s111
-e20:debug:sbnd:s111      e20:debug:sbnd:s111
-e20:prof:sbnd:s111       e20:prof:sbnd:s111
 e19:debug:s112           e19:debug:s112
 e19:prof:s112            e19:prof:s112
 e19:debug:icarus:s112    e19:debug:icarus:s112

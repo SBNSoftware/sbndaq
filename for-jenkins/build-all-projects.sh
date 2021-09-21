@@ -10,10 +10,10 @@ build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX
 
-ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_10_03"}
+ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_11_00"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v0_08_04'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v0_09_00'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
@@ -26,7 +26,7 @@ export WORKSPACE
 
 #available configurations
 source_branchtages_testing=(
-   "wibtools:v0_04_00"
+   "wibtools:v0_05_00"
    "sbndaq_artdaq_core:${SBNDAQ_ARTDAQ_CORE_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq_artdaq:${SBNDAQ_ARTDAQ_BUILDTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq:${SBNDAQ_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"
@@ -61,7 +61,7 @@ Usage: $(basename ${0}) [-h]
 EOF
 }
 
-function main() 
+function main()
 {
 
   local source_branchtages_var=source_branchtages_$selected_build_config[@]

@@ -181,6 +181,8 @@ python3 ${src_dir}/${product_name}/for-jenkins/generate-manifest.py \
 
 cd ${products_dir} || exit 1
 
+[[ "${basequal}" == e20 ]] && wget https://github.com/SBNSoftware/sbndaq-build-dependencies/raw/main/zmq-4.3.1-sl7-x86_64-e20.tar.bz2 && tar xf zmq-4.3.1-sl7-x86_64-e20.tar.bz2
+
 ./pullProducts -l  ${products_dir} ${flvr} ${product_name}-current ${manifest_qual_set//:/-} ${build_type} 2>&1 |tee -a ${products_dir}/pullproducts.log
 
 table_qual_set="+${qual_set//:/:+}:+${build_type}"

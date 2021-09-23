@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SBNDAQ_VERSION="v0_09_00"
-SBNDAQ_QUALS="e20:prof:s110"
+SBNDAQ_QUALS="e19:prof:s110"
 DAQINTERFACE_VERSION="v3_11_00"
 
 unset PRODUCTS
@@ -11,7 +11,7 @@ source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
-setup mrb v5_12_00
+setup mrb v5_18_01
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 

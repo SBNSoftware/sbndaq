@@ -8,7 +8,7 @@
 
 #cat <<EOF >&2
 
-#Before using this script in DAQInterface, you'll want to: 
+#Before using this script in DAQInterface, you'll want to:
 
 #1) Make sure you're using a copy of the original located in
 #$ARTDAQ_DAQINTERFACE_DIR, and not the original itself. The copy should
@@ -168,7 +168,7 @@ status)
             && echo $RGANG $do_nodelist "$rgcmd" \
             || $RGANG $do_nodelist "$rgcmd"
         ;;
-*)      echo "Invalid transition ($transition) specified."; 
+*)      echo "Invalid transition ($transition) specified.";
 esac
 
 status=$?

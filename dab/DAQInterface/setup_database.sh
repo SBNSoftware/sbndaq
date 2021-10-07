@@ -4,7 +4,7 @@ database_work_dir=${HOME}/work-db-v4-dir
 
 source /daq/software/products/setup
 
-setup artdaq_database v1_05_04 -q e19:prof:s110
+setup artdaq_database v1_05_08 -q e20:prof:s112
 #export LD_LIBRARY_PATH=$(echo $LD_LIBRARY_PATH |sed 's/:/\n/g'|grep -v "/lib64"|tr '\n' ':'|| sed 's/:$//')
 
 #export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:28047/sbndaq_db"

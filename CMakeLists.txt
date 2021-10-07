@@ -15,7 +15,7 @@ set(CET_CETBUILDTOOLS_COMPAT TRUE)
 include(Compatibility)
 set(CET_WARN_DEPRECATED)
 
-project(sbndaq VERSION 0.09.00)
+project(sbndaq VERSION 1.00.00)
 
 set(CMAKE_MODULE_PATH
   ${CMAKE_MODULE_PATH})
@@ -101,7 +101,7 @@ include(BuildPlugins)
 include(InstallPython)
 
 
-find_ups_product( sbndaq_artdaq v0_09_00 )
+find_ups_product( sbndaq_artdaq vi_00_00 )
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(sbndaq)

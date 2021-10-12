@@ -1,1 +1,0 @@
-udp : { type : "UDP" threshold : "INFO"  port : DAQINTERFACE_WILL_OVERWRITE_THIS_WITH_AN_INTEGER_VALUE host : "LOCALHOST-priv" } 

@@ -95,7 +95,7 @@ printf "\nSelected sources: ($source_branches)\n"
 [[ ! -d "${source_dir}" ]] && mkdir -p ${source_dir}
 [[ ! -d "${scratch_dir}" ]] && mkdir -p ${scratch_dir}
 
-setup mrb 
+setup mrb v5_12_00 
 setup git 
 setup gitflow 
 

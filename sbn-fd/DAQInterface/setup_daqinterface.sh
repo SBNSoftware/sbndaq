@@ -20,10 +20,10 @@ if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
   source $ARTDAQ_DAQINTERFACE_DIR/source_me
 fi
 
-if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; then 
+if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; then
   $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 fi
 
-setup artdaq_runcontrol_gui v1_02_00_01 -q e19:prof
+setup artdaq_runcontrol_gui v1_03_00 -q e20:prof
 
 export PYTHONUNBUFFERED=TRUE

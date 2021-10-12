@@ -3,7 +3,7 @@
 
 source /software/products/setup
 setup sbndaq v0_04_03 -qe17:prof:s83
-setup mrb
+setup mrb v5_12_00
 cd  /home/nfs/icarus/crt/sidetop/present
 source localProducts_*/setup
 mrbslp

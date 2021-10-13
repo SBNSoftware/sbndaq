@@ -1,0 +1,247 @@
+
+artdaq_processes: [{
+
+collection: GPSs 
+
+pattern: '(.*/)(gps(\d*|_standard))(\.fcl$)'
+
+}, {
+ collection: Other
+ pattern : '(.*/)(dummygenerator|pmt_oldstandard|crt_north_test_inner|v0pmt_standard)(\.fcl$)'
+},  {
+
+collection: Triggers 
+
+pattern: '(.*/)(icarustrigger(|test))(\.fcl$)' 
+
+}, {
+
+collection: WRs 
+
+pattern: '(.*/)(wr(\d*|_pull|_standard))(\.fcl$)' 
+
+}, {
+
+collection: XARAs 
+
+pattern: '(.*/)(xara(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+
+collection: MBBs 
+
+pattern: '(.*/)(mbb(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+
+collection: WIBs 
+
+pattern: '(.*/)(wib(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+
+collection: PTBs 
+
+pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: CRTs 
+
+pattern: '(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)' 
+
+}, {
+collection: PMTs 
+
+pattern: '(.*/)((|icarus)pmt_standard_(even|odd|(|we|ww|ew|ee)(|top|bot)\d+))(\.fcl$)' 
+
+}, {
+
+collection: PMTs 
+
+pattern: '(.*/)((|icarus)pmt((|we|ww|ew|ee)(|top|bot)\d+|x\d+|_standard(|_pmt\d+link\d+)))(\.fcl$)' 
+
+}, {
+
+collection: NevisTPCs 
+
+pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)' 
+
+}, {
+
+collection: TPCs 
+
+pattern: '(.*/)(((|icarus)tpc)((|we|ww|ew|ee)\d+(|b|t|m|n\d+)|_standard(|_n\d+)))(\.fcl$)' 
+
+}, {
+
+collection: EventBuilders 
+
+pattern: '(.*/)(EventBuilder(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: DataLoggers 
+
+pattern: '(.*/)(DataLogger(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: Dispatchers 
+
+pattern: '(.*/)(Dispatcher(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RoutingManager 
+
+pattern: '(.*/)(RoutingManager(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: UserSettings
+
+pattern: '(.*/)(user_setings)(\.fcl$)' 
+
+}, {
+
+collection: Boot
+
+pattern: '(.*/)(boot)(\.fcl$)' 
+
+}, {
+
+collection: KnownBoardreasers
+
+pattern: '(.*/)(known_boardreaders_list)(\.fcl$)' 
+
+}, {
+
+collection: CriticalProcesses
+
+pattern: '(.*/)(critical_process_list)(\.fcl$)' 
+
+}, {
+
+collection: DataflowConfiguration 
+
+pattern: '(.*/)(DataflowConfiguration)(\.fcl$)' 
+
+}, {
+
+collection: Hashes 
+
+pattern: '(.*/)(hashes)(\.fcl$)' 
+
+}] 
+
+artdaq_includes: [] 
+
+run_history: [{
+
+collection: RunHistory
+
+pattern: '(.*/)(icarustrigger|icarustriggertest|dummygenerator|sbnToySimulator)(\.fcl$)' 
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(component(\d*|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(gps(\d*|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)(wr(\d*|_pull|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)(xara(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+
+collection: RunHistory 
+
+pattern: '(.*/)(mbb(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+
+collection: RunHistory 
+
+pattern: '(.*/)(wib(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)' 
+
+}, {
+collection: RunHistory 
+
+pattern: '(.*/)((|icarus)pmt_standard_(even|odd|(|we|ww|ew|ee)(|top|bot)\d+))(\.fcl$)' 
+}, {
+
+
+collection: RunHistory 
+
+pattern: '(.*/)((|icarus)pmt((|we|ww|ew|ee)(|top|bot)\d+|x\d+|_standard))(\.fcl$)' 
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)(((|icarus)tpc)((|we|ww|ew|ee)\d+(|b|t|m|n\d+)|_standard(|_n\d+)))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager)(\d+|_standard))(\.fcl$)' 
+
+}, {
+
+collection: RunHistory 
+
+pattern: '(.*/)(user_setings|metadata|boot|(known_boardreaders|critical_process)_list|DataflowConfiguration|RunHistory(|2))(\.fcl$)' 
+
+}] 
+
+system_layout: [{
+
+collection: SystemLayout 
+
+pattern: '(.*)(schema)(\.fcl$)' 
+
+}, {
+
+collection: Flags 
+
+pattern: '(.*)(flags)(\.fcl$)' 
+
+}] 

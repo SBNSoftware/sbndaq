@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Info: Running $(basename $0)"
-printf "Info: \033[1;31mInstructions https://sbnsoftware.github.io/sbn_online_wiki/sbndaq_Wiki/MigrateConfigs\033[0m";echo
+printf "Info: Instructions \033[1;31mhttps://sbnsoftware.github.io/sbn_online_wiki/MigrateConfigs\033[0m";echo
 
 #load environemnt variables from  artdaq_database.env
 my_artdaq_database_env=${ARTDAQ_DATABASE_ENV:-${HOME}/.artdaq_database.env}

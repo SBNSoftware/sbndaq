@@ -44,9 +44,7 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    #echo "Put code here which sets up the database environment"
-	 source /daq/software/database/setup_database_e20s112.sh
-	 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config-new
-   #source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_database.sh
+	 source ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_database.sh
 fi
 
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl

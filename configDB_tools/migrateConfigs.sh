@@ -70,7 +70,7 @@ source ${my_swdir}/products/setup
 cd ${my_workdir}
 
 eval "$my_artdaq_database_setup_command"
-(( $? == 0 )) || { echo "Error: Failed running \"setup artdaq_database ${my_version} -q ${my_quals} \""; exit 2; }
+(( $? == 0 )) || { echo "Error: Failed running \"${my_artdaq_database_setup_command}\""; exit 2; }
 
 my_pythonbin=$(dirname $(which python))
 my_pythonpath=$PYTHONPATH

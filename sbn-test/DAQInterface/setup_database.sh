@@ -9,7 +9,7 @@ setup artdaq_database v1_05_08 -q e20:prof:s112
 
 export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:28047/sbndaq_db"
 
-if [ ! -d ${database_work_dir} ]; then 
+if [ ! -d ${database_work_dir} ]; then
   mkdir -p ${database_work_dir}
 fi
 
@@ -28,7 +28,7 @@ _complete_conftool(){
     elif [  ${COMP_WORDS[COMP_CWORD-1]} = "importConfiguration" ];then
        complete_list=$(conftool.py getListOfAvailableRunConfigurationPrefixes)
     fi
-                            
+
     COMPREPLY=($(compgen -W '${complete_list[@]}' -- "$current_string"))
     return 0
 }
@@ -40,8 +40,8 @@ echo
 echo
 echo "Listing RunConfigurations available in artdaq_database:"
 conftool.py getListOfAvailableRunConfigurations
-echo 
-echo 
+echo
+echo
 echo "Instructions: https://cdcvs.fnal.gov/redmine/projects/artdaq-utilities/wiki/Artdaq-config-conftool"
-echo 
-echo 
+echo
+echo

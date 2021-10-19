@@ -1,24 +1,24 @@
 #!/bin/bash
 
-rgang 'icarus-{tpc{01-28},pmt{01-10},crt{01-10}}-daq' 'killall boardreader'
+rgang 'sbnd-{tpc{01-28},pmt{01-10},crt{01-10}}-daq' 'killall boardreader'
 
-rgang 'icarus-evb{01-06}-daq' 'killall eventbuilder'
-rgang 'icarus-evb{01-06}-daq' 'killall datalogger'
-rgang 'icarus-evb{01-06}-daq' 'killall dispatcher'
-rgang 'icarus-evb{01-06}-daq' 'killall art'
+rgang 'sbnd-evb{01-06}-daq' 'killall eventbuilder'
+rgang 'sbnd-evb{01-06}-daq' 'killall datalogger'
+rgang 'sbnd-evb{01-06}-daq' 'killall dispatcher'
+rgang 'sbnd-evb{01-06}-daq' 'killall art'
 
 kill -INT $(ps -ef |grep -i "daqinterface.py" |grep -v grep |tr -s " "|cut -d" " -f2)
 
-rgang 'icarus-{tpc{01-28},pmt{01-10},crt{01-10}}-daq' 'killall -9 boardreader'
+rgang 'sbnd-{tpc{01-28},pmt{01-10},crt{01-10}}-daq' 'killall -9 boardreader'
 
-rgang 'icarus-evb{01-06}-daq' 'killall -9 eventbuilder'
-rgang 'icarus-evb{01-06}-daq' 'killall -9 datalogger'
-rgang 'icarus-evb{01-06}-daq' 'killall -9 dispatcher'
-rgang 'icarus-evb{01-06}-daq' 'killall -9 art'
+rgang 'sbnd-evb{01-06}-daq' 'killall -9 eventbuilder'
+rgang 'sbnd-evb{01-06}-daq' 'killall -9 datalogger'
+rgang 'sbnd-evb{01-06}-daq' 'killall -9 dispatcher'
+rgang 'sbnd-evb{01-06}-daq' 'killall -9 art'
 
 kill -9 $(ps -ef |grep -i "daqinterface.py" |grep -v grep |tr -s " "|cut -d" " -f2)
 
-rgang 'icarus-{tpc{01-28},pmt{01-10},crt{01-10},evb{01-06}}-daq' 'killall -9 trace_cntl'
-rgang 'icarus-{tpc{01-28},pmt{01-10},crt{01-10},evb{01-06}}-daq' 'ipcrm -a'
+rgang 'sbnd-{tpc{01-28},pmt{01-10},crt{01-10},evb{01-06}}-daq' 'killall -9 trace_cntl'
+rgang 'sbnd-{tpc{01-28},pmt{01-10},crt{01-10},evb{01-06}}-daq' 'ipcrm -a'
 
 

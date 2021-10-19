@@ -4,7 +4,7 @@ source /daq/software/products/setup
 
 SBNDAQ_VERSION="v1_00_01"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_11_00" 
+DAQINTERFACE_VERSION="v3_11_00"
 
 setup sbndaq $SBNDAQ_VERSION -q $SBNDAQ_QUALS
 setup artdaq_daqinterface $DAQINTERFACE_VERSION

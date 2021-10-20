@@ -14,7 +14,7 @@ getStatus "nil"
 
 setdaqcomps.sh component01 component02
 
-send_transition.sh boot $1
+send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]
 do

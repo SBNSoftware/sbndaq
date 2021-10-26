@@ -42,8 +42,7 @@ export TRACE_FILE=/tmp/trace_$(whoami)_p1
 
 echo "TRACE_FILE=$TRACE_FILE"
 
-#suppress debug messages
-toffSg 8-63
+toffSg 8-63   # suppress debug messages to Slow path
 tonSg 0-7
 tonMg 0-7
 toffM 1-63 -n PhysCrateData
@@ -52,6 +51,10 @@ toffS 1-63 -n PhysCrateData
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
 #tonM 9-15 -n CAENV1730Readout
+
+#turning everything in PMT on
+tonM 0-63 -n CAENV1730Readout
+
 
 tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1

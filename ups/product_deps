@@ -2,6 +2,7 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
+parent sbndaq
 defaultqual e20:s110
 define_pythonpath
 

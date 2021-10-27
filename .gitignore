@@ -6,3 +6,5 @@
 **/trace.*
 **/MessageFacility.*
 
+configDB_tools/__pycache__/
+

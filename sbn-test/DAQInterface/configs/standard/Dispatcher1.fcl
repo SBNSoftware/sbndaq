@@ -1,3 +1,6 @@
+
 #include "Dispatcher_standard.fcl"
-daq.metrics.aggFile.fileName : "/scratch/log/disp01_metrics.log"
-daq.metrics.graphite.namespace: "icarus.disp01."
+
+daq.metrics.aggFile.fileName: "/daq/log/metrics/disp01_metrics.log"
+
+daq.metrics.graphite.namespace: "sbnd.disp01."

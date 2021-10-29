@@ -1,22 +1,24 @@
-log_directory: /home/nfs/icarus/.testing/log
-record_directory: /home/nfs/icarus/.testing/daq/run_records
+log_directory: /daq/log
+record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 45
-eventbuilder timeout: 20
+boardreader timeout: 90
+eventbuilder timeout: 45
 aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
 
+max_launch_checks: 10
+launch_procs_wait_time: 30
+
 #max_fragment_size_bytes: 10000000
 advanced_memory_usage: true
-
 all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
 
-max_launch_checks: 100
-launch_procs_wait_time: 600
+#Force use of TCP sockets ... avoid shmem...
+transfer_plugin_to_use: TCPSocket
 

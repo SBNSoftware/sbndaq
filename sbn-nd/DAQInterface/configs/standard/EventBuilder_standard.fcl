@@ -1,6 +1,6 @@
 services: {
   ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService  
+   service_provider: ArtdaqSharedMemoryService
  }
 
   ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
@@ -16,9 +16,8 @@ daq: {
     #max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: true
-    request_address: "227.128.9.129"          # Multi-cast request address
-    #multicast_interface_ip: "sbnd-daq33-priv" # needed to send requests successfully through the private network
-    multicast_interface_ip: "131.225.250.128" # needed to send requests successfully through the private network
+    request_address: "227.128.11.129"          # Multi-cast request address
+    multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
     request_port: 3001
 
     num_requests: 500
@@ -49,38 +48,38 @@ send_process_metrics: true
 #      host:"192.168.191.18"
 #      port:2003
 #      namespace:"sbnd.evb00."
-#    } 
+#    }
   }
-} 
+}
 
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
     fileName: "/data/daq/data_%p_run%R_%#_%to.root"
 
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
       maxEvents: 20 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: [p2]    
+    SelectEvents: [p2]
   }
   testOutput: {
     module_type: RootDAQOut
     fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
 
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
       maxEvents: 100
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: []    
+    SelectEvents: []
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -88,11 +87,11 @@ outputs: {
     nonblocking_sends: true
   	destinations: { }
     #SelectEvents: [p1]
-    host_map: [{ 
+    host_map: [{
       rank: -1
       host: "localhost"
     }]
-   
+
   	routing_table_config: {
            use_routing_manager: false
        	}

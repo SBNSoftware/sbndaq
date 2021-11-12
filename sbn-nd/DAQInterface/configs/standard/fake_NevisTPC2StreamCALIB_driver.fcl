@@ -34,6 +34,8 @@ fragment_receiver: {
     xmit_slot: 2 # Location of XMIT module
     max_fem_slot: 5 # Location of leftmost FEM module
     trigger_slot: 20 # Location of Trigger Board
+    #check_trigger_slot: false	  
+
     # FPGA firmware
     # With level-1 trigger blocking
     xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"

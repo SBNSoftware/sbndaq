@@ -11,7 +11,7 @@ fragment_receiver: {
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
  ## max_fragment_size_bytes: 10000000
-  generated_fragments_per_event: 3
+  generated_fragments_per_event: 16
   board_id: 0
 
   SamplesPerChannel: 7675 # SBND drift time x 3
@@ -32,7 +32,7 @@ fragment_receiver: {
   nevis_crate : { 
     # Location of modules within crate
     xmit_slot: 2 # Location of XMIT module
-    max_fem_slot: 5 # Location of leftmost FEM module
+    max_fem_slot: 18 # Location of leftmost FEM module
     trigger_slot: 20 # Location of Trigger Board
     #check_trigger_slot: false	  
 

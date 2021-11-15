@@ -6,6 +6,8 @@ daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105]
 daq.fragment_receiver.receive_requests: false
 daq.fragment_receiver.request_mode: ignored 
 
+daq.fragment_receiver.generated_fragments_per_event: 3
+daq.fragment_receiver.nevis_crate.max_fem_slot: 5
 
-#daq.nevis_crate.trigger_slot: 20
-#daq.nevis_crate.check_trigger_slot: true
+daq.nevis_crate.trigger_slot: 20
+daq.nevis_crate.check_trigger_slot: true

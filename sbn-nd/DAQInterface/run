@@ -22,11 +22,11 @@ getStatus "nil"
 
 #setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01 tpc01
 #setdaqcomps.sh pmtx02 pmtx01 ptb01
-#setdaqcomps.sh tpc01 ptb01
+setdaqcomps.sh tpc01 ptb01
 #setdaqcomps.sh pmtx01 ptb01
 #setdaqcomps.sh crt05
 #setdaqcomps.sh pmtx01 tpc01 ptb01 crt05
-setdaqcomps.sh  tpc11 tpc10 tpc09 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ptb01
+#setdaqcomps.sh  tpc11 tpc10 tpc09 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ptb01
 #setdaqcomps.sh tpc02 tpc01 ptb01 
 
 send_transition.sh boot boot.txt
@@ -56,11 +56,11 @@ done
 # change back localhost
 sed -i 's/'${HOSTNAME%%.*}/LOCALHOST'/g' MessageFacility_Local.fcl
 
-#send_transition.sh configure
-#getStatus "configuring more!!"
+
+send_transition.sh configure
+getStatus "configuring more!!"
 
 send_transition.sh start
-# getStatus "starting"
 sleep 2
 getStatus "starting"
 while [ "$status" != 'running' ]

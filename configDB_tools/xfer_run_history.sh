@@ -1,5 +1,5 @@
 #!/bin/bash
-#Instructions https://sbnsoftware.github.io/sbn_online_wiki/TransferRunHistoryCronjob
+#Instructions https://sbnsoftware.github.io/sbn_online_wiki/TransferRunHistory
 printf '\033]2;xfer run records from artdaq_database to UconDB\a'
 
 unset PRODUCTS
@@ -161,67 +161,49 @@ BLOB_EOF
 
 export PYTHONPATH=$(dirname $(which conftool.py)):$(echo ${my_pythonpath} | awk -v RS=: -v ORS=: '/site-packages/ {next} {print}'| sed 's/:*$//' )
 
-first_run=0
-last_run=0
-
 # "${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)&object=configuration"
 
-while read -r line ; do
-  [[ $line =~ ^first_run=.* ]] && first_run=${line#*=}
-  [[ $line =~ ^last_run=.* ]] && last_run=${line#*=}
-  #echo $line
-done < <(
-python3 <<PYQEOF
-import requests
-import json
-import conftool
-url = '${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo ${ONLINE_UCONDB_URI#*data/} |cut -d"/" -f1)&object=configuration'
-ucondb_results = requests.get(url)
-first_run=1
-try:
-  first_run=max(int(o['key']) for o in ucondb_results.json())+1
-except:
-  pass
-print('first_run=%d' % first_run)
-artdaqdb_results=conftool.getListOfArchivedRunConfigurations()
-last_run=max(int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit())-1
-print('last_run=%d' % last_run)
-PYQEOF
-)
-
-echo "first_run=$first_run"
-echo "last_run=$last_run"
-
-(( last_run == 0 )) && ( echo "Error: Failed querying artdaq_database."; exit 1;)
-(( first_run == 0 )) && { echo "Error: Failed querying UconDB." ; exit 1;}
-(( last_run <= first_run )) && { echo "Info: UconDB is up to date.";  exit 0;}
-(( $((last_run - first_run)) > batch_size )) && last_run=$((first_run + batch_size))
-
-xfer_log=${my_xferarea}/failed_runs.txt
-
-
+xfer_log=${my_xferarea}/failed_runs_retry.txt
 touch ${xfer_log}
 
-for r in $(seq $first_run $last_run); do
+while read -r r ; do
+if [[ $r =~ ^[0-9]+$ ]]; then
+  echo "Transferring run $r"
+
+  rm -rf {exported_,}blob_${r}.txt ${r} >/dev/null 2>&1
   python ${my_xferarea}/myblobify.py $r
   curl -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
   diff -q {exported_,}blob_${r}.txt
   (( $? != 0 )) && { echo "Error: Failed transferring $r."; echo $r >> ${xfer_log};continue;}
   rm -rf {exported_,}blob_${r}.txt ${r}
-done
+fi
+done < <(
+python <<PYQEOF
+import requests
+import json
+import conftool
+url = '${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo ${ONLINE_UCONDB_URI#*data/} |cut -d"/" -f1)&object=configuration'
+ucondb_results = requests.get(url)
+ucondb_runs = set([int(o['key']) for o in ucondb_results.json()])
+
+artdaqdb_results = conftool.getListOfArchivedRunConfigurations()
+artdaqdb_runs = set([int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit()])
+print("\n".join(str(s) for s in sorted(artdaqdb_runs - ucondb_runs)))
+
+PYQEOF
+)
 
 
 if (( $( stat -c %s ${xfer_log} ) > 0 )); then
 echo "Info: Sending email notification to ${EMAIL_LOADING_ERRORS_TO}."
 /bin/cat - ${xfer_log}  << EMEOF | /usr/sbin/sendmail -t
-To: ${EMAIL_LOADING_ERRORS_TO}
-Subject: xfer errors on $(hostname -s) $(date)
+To: ${my_email}
+Subject: Retry xfer errors on $(hostname -s) $(date)
 From: artdaq@$(hostname -s).fnal.gov
 
 EMEOF
 fi
 
-cat ${xfer_log} >> ${my_xferarea}/failed_xfers.log
+cat ${xfer_log} >> ${my_xferarea}/failed_xfers_retry.log
 rm ${xfer_log}
-
 

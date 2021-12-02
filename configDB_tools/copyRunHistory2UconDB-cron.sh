@@ -190,12 +190,12 @@ print('last_run=%d' % last_run)
 PYQEOF
 )
 
-echo "first_run=$first_run"
+echo "first_run=$(($first_run - 1))"
 echo "last_run=$last_run"
 
 (( last_run == 0 )) && ( echo "Error: Failed querying artdaq_database."; exit 1;)
 (( first_run == 0 )) && { echo "Error: Failed querying UconDB." ; exit 1;}
-(( last_run <= first_run )) && { echo "Info: UconDB is up to date.";  exit 0;}
+(( last_run < first_run )) && { echo "Info: UconDB is up to date.";  exit 0;}
 (( $((last_run - first_run)) > batch_size )) && last_run=$((first_run + batch_size))
 
 xfer_log=${my_xferarea}/failed_runs.txt

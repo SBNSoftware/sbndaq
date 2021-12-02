@@ -89,7 +89,11 @@ import conftool
 artdaqdb_results = conftool.getListOfArchivedRunConfigurations()
 artdaqdb_runs = set([int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit()])
 history_runs = set([int(d[0].split('/')[-1]) for d in os.walk("${DAQ_RUN_RECORDS_DIR}") if d[0][-1].isdigit()])
-print("\n".join(str(s) for s in  sorted(history_runs - artdaqdb_runs)[:-1]))
+candidate_runs=sorted(history_runs - artdaqdb_runs)
+if len(candidate_runs)==1 and candidate_runs[0] < max(artdaqdb_runs):
+  print("\n".join(str(s) for s in  candidate_runs))
+else:
+  print("\n".join(str(s) for s in  candidate_runs[:-1]))
 PYQEOF
 )
 

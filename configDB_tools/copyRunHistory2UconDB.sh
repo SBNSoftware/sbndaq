@@ -1,6 +1,7 @@
 #!/bin/bash
-#Instructions https://sbnsoftware.github.io/sbn_online_wiki/TransferRunHistory
-printf '\033]2;xfer run records from artdaq_database to UconDB\a'
+#Instructionshttps://sbnsoftware.github.io/sbn_online_wiki/CopyRunHistory2UconDB
+
+printf '\033]2;Copying run records from ArtdaqDB to UconDB\a'
 
 unset PRODUCTS
 export PRODUCTS_DIR=/daq/software/products
@@ -138,19 +139,19 @@ def blobify(run_number):
             blob.write('\nEnd of Record\nRun Number: ' + run_number + '\nPacked on ' + time.strftime('%b %d %H:%M',time.gmtime()) + ' UTC\n')
 
     else:
-        print ('Run ' + run_number + ' files were not transferred from database.')
+        print ('Run ' + run_number + ' files were not exported from ArtdaqDB.')
         exit(1)
 
-    # Transfer the blob file to ucondb
+    # Copy the blob file to UconDB
     # TODO: Change 'test' (and maybe 'configuration') to proper name for production
-    print ('Transferring blob file to ucondb...')
+    print ('Copying blob file to UconDB...')
     url = '${ONLINE_UCONDB_URI}' + run_number
     ret_code = subprocess.call(['curl','-T',blob_str,'--digest','-u','${ONLINE_UCONDB_WRITER_AUTH}','-X','PUT',url])
     if ret_code != 0 and ret_code != 60:
         print ('curl command returned with error code ' + str(ret_code) + '.')
         exit(1)
     else:
-        print ('Success loading ' + str(run_number) + ' to ucondb.')
+        print ('Success loading ' + str(run_number) + ' to UconDB.')
         exit(0)
 
 if __name__ == '__main__':
@@ -168,13 +169,13 @@ touch ${xfer_log}
 
 while read -r r ; do
 if [[ $r =~ ^[0-9]+$ ]]; then
-  echo "Transferring run $r"
+  echo "Copying run $r"
 
   rm -rf {exported_,}blob_${r}.txt ${r} >/dev/null 2>&1
   python ${my_xferarea}/myblobify.py $r
   curl -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
   diff -q {exported_,}blob_${r}.txt
-  (( $? != 0 )) && { echo "Error: Failed transferring $r."; echo $r >> ${xfer_log};continue;}
+  (( $? != 0 )) && { echo "Error: Failed copying $r."; echo $r >> ${xfer_log};continue;}
   rm -rf {exported_,}blob_${r}.txt ${r}
 fi
 done < <(
@@ -198,7 +199,7 @@ if (( $( stat -c %s ${xfer_log} ) > 0 )); then
 echo "Info: Sending email notification to ${EMAIL_LOADING_ERRORS_TO}."
 /bin/cat - ${xfer_log}  << EMEOF | /usr/sbin/sendmail -t
 To: ${my_email}
-Subject: Retry xfer errors on $(hostname -s) $(date)
+Subject: UconDB copying errors on $(hostname -s) $(date)
 From: artdaq@$(hostname -s).fnal.gov
 
 EMEOF

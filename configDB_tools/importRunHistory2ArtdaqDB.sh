@@ -1,5 +1,6 @@
 #!/bin/bash
-#Instructions https://sbnsoftware.github.io/sbn_online_wiki/ImportRunHistoryCronjob
+#Instructions https://sbnsoftware.github.io/sbn_online_wiki/ImportRunHistory2ArtdaqDB
+
 unset PRODUCTS
 export PRODUCTS_DIR=/daq/software/products
 
@@ -43,6 +44,7 @@ export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 export DAQINTERFACE_TTY=$( tty | sed -r 's!/dev/!!' )
 export DAQINTERFACE_LOGFILE=${DBTOOLS_LOG_DIR}/MockDAQInterface.log
 
+
 export DAQINTERFACE_SETTINGS=/tmp/user_settings.dummy
 cat > ${DAQINTERFACE_SETTINGS} << EOF
 log_directory: ${DBTOOLS_LOG_DIR}
@@ -62,15 +64,41 @@ disable_unique_rootfile_labels: true
 EOF
 
 
-failed_runs_file=$(mktemp ${DBTOOLS_LOG_DIR}/failed_runs-${run_number_first}-${run_number_last}.XXXXXXXX)
-runs_file=${DBTOOLS_LOG_DIR}/runs-${run_number_first}-${run_number_last}.txt
+my_timestamp=$(date +"%m%d%y%H%M%S")
+
+failed_runs_file=$(mktemp ${DBTOOLS_LOG_DIR}/failed_runs-${my_timestamp}.XXXXXXXX)
+runs_file=${DBTOOLS_LOG_DIR}/retry-runs-${my_timestamp}.txt
+touch ${runs_file}
 
 echo runs_file:"${runs_file}"
 echo failed_runs_file:"${failed_runs_file}"
 
-seq ${run_number_first} ${run_number_last} > ${runs_file}
+my_pythonbin=$(dirname $(which python))
+my_pythonpath=$PYTHONPATH
+
+export PYTHONPATH=$(dirname $(which conftool.py)):$(echo ${my_pythonpath} | awk -v RS=: -v ORS=: '/site-packages/ {next} {print}'| sed 's/:*$//' )
+
+while read -r r ; do
+ if [[ $r =~ ^[0-9]+$ ]]; then
+  echo $r >> ${runs_file}
+ fi
+done < <(
+python3 <<PYQEOF
+import os
+import conftool
+artdaqdb_results = conftool.getListOfArchivedRunConfigurations()
+artdaqdb_runs = set([int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit()])
+history_runs = set([int(d[0].split('/')[-1]) for d in os.walk("${DAQ_RUN_RECORDS_DIR}") if d[0][-1].isdigit()])
+print("\n".join(str(s) for s in  sorted(history_runs - artdaqdb_runs)[:-1]))
+PYQEOF
+)
 
 #export ARTDAQ_DATABASE_URI="filesystemdb:///scratch_local/databases011/filesystemdb/test_db"
+
+export PYTHONPATH=${my_pythonpath}
+
+echo ${runs}
+
 
 python3 << PYEOF
 import os

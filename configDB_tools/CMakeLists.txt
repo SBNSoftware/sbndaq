@@ -21,6 +21,7 @@ install(
    ./disk_monitor.py
    ./runrecords_monitor_with_partition.py
    ./runrecords_monitor.py
+   ./runrecords_monitor.sh
   DESTINATION
    configDB_tools
     PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_READ WORLD_EXECUTE

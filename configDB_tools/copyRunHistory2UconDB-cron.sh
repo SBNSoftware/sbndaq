@@ -9,6 +9,7 @@ export PRODUCTS_DIR=/daq/software/products
 source ${PRODUCTS_DIR}/setup
 
 export ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV:-"${HOME}/.artdaq_database_tools.env"}
+echo "Info: ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV}"
 [[ -f ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_TOOLS_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
 export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_05_08 -q ${SBNDAQ_QUALS}"}
@@ -29,6 +30,7 @@ export ONLINE_UCONDB_CLIENT_SOFTWARE=${ONLINE_UCONDB_CLIENT_SOFTWARE:-"https://h
 export ONLINE_UCONDB_URI=${ONLINE_UCONDB_URI:-"https://host1:port1/test_on_ucon_prod/app/data/run_records/configuration/key="}
 
 my_xferarea="${ARTDAQ_DATABASE_WORKDIR}/xfers"
+[[ "$ONLINE_UCONDB_URI" =~ "run_records_pending" ]] &&  my_xferarea="${my_xferarea}_pending"
 my_xferdir=$(date +"xfer_%b%Y")
 
 #rm -rf $my_xferarea/$my_xferdir
@@ -175,6 +177,7 @@ done < <(
 python3 <<PYQEOF
 import requests
 import json
+import re
 import conftool
 url = '${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo ${ONLINE_UCONDB_URI#*data/} |cut -d"/" -f1)&object=configuration'
 ucondb_results = requests.get(url)
@@ -186,6 +189,8 @@ except:
 print('first_run=%d' % first_run)
 artdaqdb_results=conftool.getListOfArchivedRunConfigurations()
 last_run=max(int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit())-1
+if re.search(r'run_records_pending', url) is not None:
+  last_run+=1
 print('last_run=%d' % last_run)
 PYQEOF
 )
@@ -204,6 +209,7 @@ xfer_log=${my_xferarea}/failed_runs.txt
 touch ${xfer_log}
 
 for r in $(seq $first_run $last_run); do
+  rm -rf $r  blob_$r.txt exported_blob_$r.txt > /dev/null 2>&1
   python ${my_xferarea}/myblobify.py $r
   curl -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
   diff -q {exported_,}blob_${r}.txt

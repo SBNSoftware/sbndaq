@@ -1,0 +1,4 @@
+#include "EventBuilder1.fcl"
+
+sender: { @table::daq.event_builder }
+

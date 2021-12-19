@@ -22,7 +22,7 @@ getStatus "nil"
 
 #setdaqcomps.sh pmtx04 pmtx03 pmtx02 pmtx01 ptb01 tpc01
 #setdaqcomps.sh pmtx02 pmtx01 ptb01
-setdaqcomps.sh ttpc02 pc01 ptb01
+setdaqcomps.sh tpc02 tpc01 ptb01
 #setdaqcomps.sh pmtx01 ptb01
 #setdaqcomps.sh crt05
 #setdaqcomps.sh pmtx01 tpc01 ptb01 crt05

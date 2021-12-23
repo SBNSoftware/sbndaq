@@ -1,31 +1,17 @@
-ptb01 sbnd-ptb01 -1
-gps   sbn-daq01-priv -1
-tpc01 localhost -1
-tpc02 sbnd-tpc02 -1
-tpc03 sbnd-tpc03 -1
-tpc04 sbnd-tpc04 -1
-tpc05 sbnd-tpc05 -1
-tpc06 sbnd-tpc06 -1
-tpc07 sbnd-tpc07 -1
-tpc08 sbnd-tpc08 -1
-tpc09 sbnd-tpc09 -1
-tpc10 sbnd-tpc10 -1
-tpc11 sbnd-tpc11 -1
-pmt01 sbnd-daq33-priv -1
-pmt02 sbnd-daq33-priv -1
-pmt03 sbnd-daq33-priv -1
-pmt04 sbnd-daq33-priv -1
-pmt05 sbnd-daq33-priv -1
-pmt06 sbnd-daq33-priv -1
-pmt07 sbnd-daq33-priv -1
-pmt08 sbnd-daq33-priv -1
-pmt09 sbnd-daq33-priv -1
-pmt10 sbnd-daq33-priv -1
-wib101 localhost -1
-mbb01 localhost -1
-crt00 icarus-crt02.fnal.gov -1
-crt01 icarus-crt02.fnal.gov -1
-crt02 icarus-crt02.fnal.gov -1
-crt03 icarus-crt02.fnal.gov -1
-crt04 sbnd-daq32-priv.fnal.gov -1
-crt05 sbnd-daq32-priv.fnal.gov -1
+component01 sbnd-tpc01-daq -1 1
+component02 sbnd-tpc02-daq -1 1
+tpc01 sbnd-tpc01-daq -1 1
+tpc02 sbnd-tpc02-daq -1 1
+tpc03 sbnd-tpc03-daq -1 1
+tpc04 sbnd-tpc04-daq -1 1
+tpc05 sbnd-tpc05-daq -1 1
+tpc06 sbnd-tpc06-daq -1 1
+tpc07 sbnd-tpc07-daq -1 1
+tpc08 sbnd-tpc08-daq -1 1
+tpc09 sbnd-tpc09-daq -1 1
+tpc10 sbnd-tpc10-daq -1 1
+tpc11 sbnd-tpc11-daq -1 1
+wib101 sbnd-wib01-daq -1 1
+mbb01 sbnd-mbb01-daq -1 1
+ptb01 sbnd-ptb01-daq -1 1
+gps sbnd-gps01-daq -1 1

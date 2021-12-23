@@ -70,7 +70,7 @@ send_process_metrics: true
 #
 #reporting_interval: 10.0
 #
-#host: "192.168.191.18"
+#host: "10.226.36.26"
 #
 #port: 2003
 #

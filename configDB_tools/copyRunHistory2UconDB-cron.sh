@@ -35,6 +35,8 @@ export ONLINE_UCONDB_CLIENT_SOFTWARE=${ONLINE_UCONDB_CLIENT_SOFTWARE:-"https://h
 export ONLINE_UCONDB_URI=${ONLINE_UCONDB_URI:-"https://host1:port1/test_on_ucon_prod/app/data/run_records/configuration/key="}
 
 my_xferarea="${ARTDAQ_DATABASE_WORKDIR}/xfers"
+[[ "$ONLINE_UCONDB_URI" =~ "run_records_pending" ]] &&  my_xferarea="${my_xferarea}_pending"
+
 my_xferdir=$(date +"xfer_%b%Y")
 
 #rm -rf $my_xferarea/$my_xferdir

@@ -33,7 +33,6 @@ export DBTOOLS_LOG_DIR=${DBTOOLS_LOG_DIR:-"/daq/log/dbtools"}
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
 export ONLINE_UCONDB_CLIENT_SOFTWARE=${ONLINE_UCONDB_CLIENT_SOFTWARE:-"https://host/path-to-ucondb-client.tar"}
 export ONLINE_UCONDB_URI=${ONLINE_UCONDB_URI:-"https://host1:port1/test_on_ucon_prod/app/data/run_records/configuration/key="}
-export UCONDB_SERVER_URL=${ONLINE_UCONDB_URI%data*}
 
 my_xferarea="${ARTDAQ_DATABASE_WORKDIR}/xfers"
 my_xferdir=$(date +"xfer_%b%Y")
@@ -158,7 +157,7 @@ def blobify(run_number):
     # Copy the blob file to UconDB
     # TODO: Change 'test' (and maybe 'configuration') to proper name for production
     print ('Copying blob file to UconDB...')
-    client = UConDBClient(server_url="${UCONDB_SERVER_URL}",timeout=3,
+    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3,
        username="${ONLINE_UCONDB_WRITER_AUTH%:*}",password="${ONLINE_UCONDB_WRITER_AUTH#*:}")
     print("Server version:", client.version())
 
@@ -233,7 +232,7 @@ PYQEOF
 if (( $( stat -c %s ${xfer_log} ) > 0 )); then
 echo "Info: Sending email notification to ${EMAIL_LOADING_ERRORS_TO}."
 /bin/cat - ${xfer_log}  << EMEOF | /usr/sbin/sendmail -t
-To: ${my_email}
+To: ${EMAIL_LOADING_ERRORS_TO}
 Subject: UconDB copying errors on $(hostname -s) $(date)
 From: artdaq@$(hostname -s).fnal.gov
 

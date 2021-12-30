@@ -5,6 +5,7 @@
 **/core.*
 **/trace.*
 **/MessageFacility.*
+**/*.bak
 
 configDB_tools/__pycache__/
 

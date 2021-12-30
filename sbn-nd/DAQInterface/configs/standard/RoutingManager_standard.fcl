@@ -1,14 +1,14 @@
   daq: {
   policy: {
   	  policy: "PreferSameHost"
-	  receiver_ranks: [] 
+	  receiver_ranks: []
 	  routing_manager_mode: DataFlow
 	  host_map: []
   }
 
   	table_update_interval_ms: 1000
 	table_ack_retry_count: 5
-    
+
     ## True if using the Routing Manager
     use_routing_manager: true
 
@@ -22,19 +22,19 @@
 
     ## Port that table updates should arrive on
     table_update_port: 35556  # default
-    
+
     ## Address that table updates should arrive on
     table_update_address: "227.128.12.35"
-   
+
     ## Port that acknowledgements should be sent to
     table_acknowledge_port: 35557  # default
-       
+
     ## Time to wait (in ms) for a routing table update if the table is exhausted
     routing_timeout_ms: 1000  # default
-       
+
     ## Number of times to retry getting destination from routing table
     routing_retry_count: 5  # default
-	
+
 
   metrics: {
     rmFile: {
@@ -55,7 +55,7 @@ send_process_metrics: true
 #      host:"192.168.191.18"
 #      port:2003
 #      namespace:"sbnd.rm00."
-#    } 
+#    }
   }
 
 }

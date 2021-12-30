@@ -9,12 +9,17 @@ export PRODUCTS_DIR=/daq/software/products
 source ${PRODUCTS_DIR}/setup
 
 export ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV:-"${HOME}/.artdaq_database_tools.env"}
-echo "Info: ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV}"
 [[ -f ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_TOOLS_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
 export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_05_08 -q ${SBNDAQ_QUALS}"}
 eval "$ARTDAQ_DATABASE_SETUP_COMMAND"
 (( $? == 0 )) || { echo "Error: Failed running \"${ARTDAQ_DATABASE_SETUP_COMMAND}\""; exit 2; }
+pqxx_quals="$(ups active |grep artdaq_database |grep -Eo '\-q [[:alnum:]|:]*' |cut -d ' ' -f2 |tr -s ':' '\n'|grep -vE '^s[[:digit:]]+'|tr '\n' ':')$(ups active |grep python |grep -Eo 'v[[:alnum:]|_]*' |sed 's/v/p/g;s/_//g')"
+pqxx_version=$(ups list -aK+ pqxx  -q ${pqxx_quals} |grep -Eo 'v[[:alnum:]|_]*' |sort -u |tail -1)
+#echo "pqxx_version=${pqxx_version}, pqxx_quals=${pqxx_quals}"
+export PQXX_SETUP_COMMAND="setup pqxx ${pqxx_version} -q ${pqxx_quals}"
+eval "$PQXX_SETUP_COMMAND"
+(( $? == 0 )) || { echo "Error: Failed running \"${PQXX_SETUP_COMMAND}\""; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
 export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-dir"}
 [[ -d ${ARTDAQ_DATABASE_WORKDIR} ]] ||  mkdir -p ${ARTDAQ_DATABASE_WORKDIR}
@@ -31,6 +36,7 @@ export ONLINE_UCONDB_URI=${ONLINE_UCONDB_URI:-"https://host1:port1/test_on_ucon_
 
 my_xferarea="${ARTDAQ_DATABASE_WORKDIR}/xfers"
 [[ "$ONLINE_UCONDB_URI" =~ "run_records_pending" ]] &&  my_xferarea="${my_xferarea}_pending"
+
 my_xferdir=$(date +"xfer_%b%Y")
 
 #rm -rf $my_xferarea/$my_xferdir
@@ -39,32 +45,38 @@ my_xferdir=$(date +"xfer_%b%Y")
 cd $my_xferarea/$my_xferdir
 
 
-my_pythonbin=$(dirname $(which python))
+my_pythonvenv=python_virtualenv
+my_pythonvenvdir=$my_xferarea/$my_xferdir/$my_pythonvenv
+my_pythonbin=$(dirname $(which python3))
 my_pythonpath=$PYTHONPATH
 unset PYTHONPATH
 
 
-if [[ ! -d $my_xferarea/$my_xferdir/python_virtualenv ]]; then
-  $my_pythonbin/python3 -m venv python_virtualenv
-  $my_pythonbin/python3 -m pip install --upgrade pip
-  source $my_xferarea/$my_xferdir/python_virtualenv/bin/activate
+if [[ ! -d $my_pythonvenvdir ]]; then
+  $my_pythonbin/python3 -m venv $my_pythonvenv
+  source $my_pythonvenvdir/bin/activate
+  my_pythonbin=$(dirname $(which python3))
+  $my_pythonbin/python3 -m pip install --upgrade pip --prefix=$my_pythonvenvdir
 
   cat > ${my_xferarea}/requirements.txt <<REQ_EOF
-requests>=2.25.0
+requests>=2.26.0
+psycopg2
 REQ_EOF
 
-  pip install -r ${my_xferarea}/requirements.txt
-  pip list -v
-  curl -o client.tar $ONLINE_UCONDB_CLIENT_SOFTWARE
-  tar -C $my_xferarea/$my_xferdir/python_virtualenv -xf  client.tar
+  $my_pythonbin/python3 -m pip install -r ${my_xferarea}/requirements.txt --prefix=$my_pythonvenvdir
+  git clone https://github.com/ivmfnal/ucondb && cd ucondb && echo "PWD=$(pwd)"
+  $my_pythonbin/python3  setup.py install --prefix=$my_pythonvenvdir
+  $my_pythonbin/python3 -m pip freeze
 else
-  source $my_xferarea/$my_xferdir/python_virtualenv/bin/activate
+  source $my_pythonvenvdir/bin/activate
 fi
 
 cat > ${my_xferarea}/myblobify.py <<BLOB_EOF
 #!/bin/env python3
 
 import os, sys, time, subprocess
+import urllib3
+from ucondb.webapi import UConDBClient
 
 def blobify(run_number):
 
@@ -146,23 +158,35 @@ def blobify(run_number):
 
     # Copy the blob file to UconDB
     # TODO: Change 'test' (and maybe 'configuration') to proper name for production
-    print ('Copying blob file to ucondb...')
-    url = '${ONLINE_UCONDB_URI}' + run_number
-    ret_code = subprocess.call(['curl','-T',blob_str,'--digest','-u','${ONLINE_UCONDB_WRITER_AUTH}','-X','PUT',url])
-    if ret_code != 0 and ret_code != 60:
-        print ('curl command returned with error code ' + str(ret_code) + '.')
+    print ('Copying blob file to UconDB...')
+    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3,
+       username="${ONLINE_UCONDB_WRITER_AUTH%:*}",password="${ONLINE_UCONDB_WRITER_AUTH#*:}")
+    print("Server version:", client.version())
+
+    with open(blob_str,'r') as blob:
+      try:
+        ret_version=client.put(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",
+                               object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)",
+                               data=blob.read(), key=run_number,tags=run_number)
+        if ret_version is None:
+          print ('UConDBClient returned with error code ' + str(ret_version) + '.')
+          exit(1)
+        else:
+          print ('Success loading ' + str(run_number) + ' to UconDB; version='+ str(ret_version))
+          exit(0)
+      except Exception as e:
+        print(e)
         exit(1)
-    else:
-        print ('Success loading ' + str(run_number) + ' to ucondb.')
-        exit(0)
 
 if __name__ == '__main__':
+    urllib3.disable_warnings()
     blobify(sys.argv[1])
 
 
 BLOB_EOF
 
 export PYTHONPATH=$(dirname $(which conftool.py)):$(echo ${my_pythonpath} | awk -v RS=: -v ORS=: '/site-packages/ {next} {print}'| sed 's/:*$//' )
+# "${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)&object=configuration"
 
 first_run=0
 last_run=0
@@ -175,21 +199,25 @@ while read -r line ; do
   #echo $line
 done < <(
 python3 <<PYQEOF
-import requests
-import json
 import re
 import conftool
-url = '${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo ${ONLINE_UCONDB_URI#*data/} |cut -d"/" -f1)&object=configuration'
-ucondb_results = requests.get(url)
+import urllib3
+from ucondb.webapi import UConDBClient
+
+urllib3.disable_warnings()
+ucondb_runs = set()
+client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3)
+print("Server version:", client.version())
 first_run=1
 try:
-  first_run=max(int(o['key']) for o in ucondb_results.json())+1
-except:
-  pass
+  ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)")
+  first_run=max(int(o['key']) for o in ucondb_results)+1
+except Exception as e:
+   print(e)
 print('first_run=%d' % first_run)
 artdaqdb_results=conftool.getListOfArchivedRunConfigurations()
 last_run=max(int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit())-1
-if re.search(r'run_records_pending', url) is not None:
+if re.search(r'run_records_pending', "${ONLINE_UCONDB_URI}") is not None:
   last_run+=1
 print('last_run=%d' % last_run)
 PYQEOF
@@ -210,7 +238,7 @@ touch ${xfer_log}
 
 for r in $(seq $first_run $last_run); do
   rm -rf $r  blob_$r.txt exported_blob_$r.txt > /dev/null 2>&1
-  python ${my_xferarea}/myblobify.py $r
+  python3 ${my_xferarea}/myblobify.py $r
   curl -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
   diff -q {exported_,}blob_${r}.txt
   (( $? != 0 )) && { echo "Error: Failed copying $r."; echo $r >> ${xfer_log};continue;}

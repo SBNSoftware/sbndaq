@@ -8,7 +8,7 @@ export PRODUCTS_DIR=/daq/software/products
 
 source ${PRODUCTS_DIR}/setup
 
-export ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV:-"${HOME}/.artdaq_database_tools_test.env"}
+export ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV:-"${HOME}/.artdaq_database_tools.env"}
 [[ -f ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_TOOLS_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
 export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_05_08 -q ${SBNDAQ_QUALS}"}
@@ -74,6 +74,7 @@ cat > ${my_xferarea}/myblobify.py <<BLOB_EOF
 #!/bin/env python3
 
 import os, sys, time, subprocess
+import urllib3
 from ucondb.webapi import UConDBClient
 
 def blobify(run_number):
@@ -177,6 +178,7 @@ def blobify(run_number):
         exit(1)
 
 if __name__ == '__main__':
+    urllib3.disable_warnings()
     blobify(sys.argv[1])
 
 
@@ -208,7 +210,10 @@ done < <(
 python3 <<PYQEOF
 import json
 import conftool
+import urllib3
 from ucondb.webapi import UConDBClient
+
+urllib3.disable_warnings()
 ucondb_runs = set()
 client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3)
 print("Server version:", client.version())

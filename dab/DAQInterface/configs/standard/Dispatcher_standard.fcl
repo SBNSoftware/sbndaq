@@ -25,6 +25,8 @@ daq: {
     init_fragment_count: 1 #0 #must match the number of running dataloggers
     auto_suppression_enabled: false
 
+    max_fragment_size_bytes: 1000000
+
 	sources: { }
   }
 

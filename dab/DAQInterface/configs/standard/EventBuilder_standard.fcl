@@ -27,6 +27,8 @@ daq: {
       use_routing_master: false
     }
 
+    max_fragment_size_bytes: 1000000
+
     sources: { }
   }
   metrics: {

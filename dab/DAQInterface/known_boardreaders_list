@@ -1,6 +1,6 @@
 gps sbn-daq01-priv.fnal.gov -1
 wr sbnd-daq22-priv.fnal.gov -1  1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-ptb01 sbnd-daq33-priv.fnal.gov -1
+ptb01 sbnd-daq34-priv.fnal.gov -1
 ptb02 sbn-daq01-priv.fnal.gov -1
 tpc01 sbn-daq01-priv.fnal.gov -1
 tpc02 sbn-daq01-priv.fnal.gov -1
@@ -42,8 +42,10 @@ pmt17 sbnd-daq33-priv.fnal.gov -1
 pmt18 sbnd-daq33-priv.fnal.gov -1
 pmt19 sbnd-daq33-priv.fnal.gov -1
 pmt20 sbnd-daq33-priv.fnal.gov -1
-pmtx01 sbnd-daq33-priv.fnal.gov -1
-pmtx02 sbnd-daq33-priv.fnal.gov -1
-pmtx03 sbnd-daq33-priv.fnal.gov -1
-pmtx04 sbnd-daq33-priv.fnal.gov -1
-xara01 sbnd-daq33-priv.fnal.gov -1
+pmtx01 sbnd-daq34-priv.fnal.gov -1
+pmtx02 sbnd-daq34-priv.fnal.gov -1
+pmtx03 sbnd-daq34-priv.fnal.gov -1
+pmtx04 sbnd-daq34-priv.fnal.gov -1
+xara01 sbnd-daq34-priv.fnal.gov -1
+crt01 localhost -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+

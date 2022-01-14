@@ -1,0 +1,526 @@
+
+daq: {
+
+  fragment_receiver: {
+
+    ## Pull mode parameters
+    #request_address:        "227.128.1.129" # -- multicast request address
+    #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
+    #request_port: 3501   # UDP request port
+    #request_mode: window # pull mode
+    #request_window_width:  50000000 #5ms window
+    #request_window_offset: 2500000 #1ms offset (??)
+    #request_windows_are_unique: true
+    #separate_data_thread: true
+    #stale_request_timeout: 200000000
+
+    generated_fragments_per_event: 1
+    initial_delay_s: 0
+    fragment_period_ms: 10
+    fragment_type: "BERNCRTV2"
+    fragment_ids: [ 1 ] #last 8 bits of fragment ID are last 8 bits of FEB MAC5
+    generator: "BernCRTData"
+
+    max_fragment_size_bytes: 1000000
+
+    ethernet_port: "crt1"
+    
+    board_id: 1
+
+#What is ReaderID? Another ID?
+    ReaderID: 1
+   
+# Whether or not turn on SiPM HV on each FEB
+   TurnOnHV : [ false ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 0 ] # = dummy value
+
+  
+   FEBBufferCapacity: 10000
+          
+
+   #Restart febdrv periodically (febdrv issue workaround)
+   feb_restart_period_s: 0
+   feb_poll_ms: 40
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   } 
+
+#need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
+FEBConfigurationMAC92: {
+         HG_peak_detector_PP: false
+         HG_shaper_time_constant: 6
+         LG_peak_detector_PP: false
+         LG_preamp_bias: true
+         LG_shaper_time_constant: 6
+         SCA_high_bias: false
+         bypass_peak_sensing_cell: true
+         channel_configuration: [
+            [
+               0,
+               0,
+               0,
+               114,
+               0,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               0,
+               114,
+               0,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ]
+         ]
+         charge_threshold: 280
+         enable_32_channels_triggers_output: true
+         enable_32_input_8bit_DAC: true
+         enable_4bit_charge_DAC: true
+         enable_4bit_charge_DAC_PP: true
+         enable_4bit_time_DAC: true
+         enable_4bit_time_DAC_PP: true
+         enable_BandGap_sensor: true
+         enable_BandGap_sensor_PP: false
+         enable_HG_OTA: true
+         enable_HG_OTA_PP: false
+         enable_HG_SCA: false
+         enable_HG_SCA_PP: true
+         enable_HG_peak_detector: true
+         enable_HG_preamp: true
+         enable_HG_preamp_PP: false
+         enable_HG_slow_shaper: true
+         enable_HG_slow_shaper_PP: false
+         enable_LG_OTA: true
+         enable_LG_OTA_PP: false
+         enable_LG_SCA: false
+         enable_LG_SCA_PP: true
+         enable_LG_peak_detector: true
+         enable_LG_preamp: true
+         enable_LG_preamp_PP: false
+         enable_LG_slow_shaper: true
+         enable_LG_slow_shaper_PP: false
+         enable_OR32_open_collector_output: false
+         enable_OR32_output: true
+         enable_OTAQ_test_bit: false
+         enable_RAZ_CHN_OTA: false
+         enable_RAZ_CHN_OTA_PP: true
+         enable_VAL_EVT_OTA: false
+         enable_VAL_EVT_OTA_PP: true
+         enable_charge_DAC: true
+         enable_charge_DAC_PP: false
+         enable_charge_discriminator: true
+         enable_charge_discriminator_PP: false
+         enable_digital_OR32_T_open_collector_output: false
+         enable_digital_multiplexed_output: false
+         enable_fast_shaper: true
+         enable_fast_shaper_PP: false
+         enable_fast_shaper_follower_PP: false
+         enable_probe_OTA: true
+         enable_probe_OTA_PP: false
+         enable_temperature_sensor: true
+         enable_temperature_sensor_PP: false
+         enable_time_DAC: true
+         enable_time_DAC_PP: false
+         enable_time_discriminator: true
+         enable_time_discriminator_PP: false
+         input_DAC_voltage_reference: true
+         latched_output: false
+         peak_sensing_cell: false
+         preamp_connected_to_fast_shaper: false
+         select_HG_mode: true
+         select_LG_mode: true
+         time_threshold: 280
+         trigger_polarity: false
+      }  
+
+
+
+#PROBE register bitstream, monitoring configuration, not used for normal data taking but required to be loaded
+    ProbeBitStream : '
+00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
+00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
+00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
+'
+
+
+	}
+
+
+
+}

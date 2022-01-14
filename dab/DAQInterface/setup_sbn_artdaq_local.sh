@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v1_00_01"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_11_00"
+DAQINTERFACE_VERSION="v3_11_01"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -60,4 +60,4 @@ toffS 0-63 -n WhiteRabbitReadout_generator
 #toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
-# tonM 15 -n CommandableFragmentGenerator 
+# tonM 15 -n CommandableFragmentGenerator

@@ -5,6 +5,6 @@
 **/core.*
 **/trace.*
 **/MessageFacility.*
-
+sbn-fd/DAQInterface/trace_control.20211130.sh
 configDB_tools/__pycache__/
 

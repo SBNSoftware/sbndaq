@@ -148,5 +148,5 @@ icaruscrt09ssi icarus-crt09-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin
 icaruscrt09sso icarus-crt09-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 dummygenerator icarus-evb01-daq -1 1
 icarustrigger icarus-clk01-daq -1 1
-wr icarus-clk02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+wr icarus-daq02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icarustriggertest icarus-clk01-daq -1 1

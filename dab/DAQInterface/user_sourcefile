@@ -23,19 +23,19 @@ export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/criti
 
 ######################################################
 ##Uncomment  the line below to enable artdaq_database.
-#export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
+export DAQINTERFACE_FHICL_DIRECTORY=IGNORED
 ######################################################
 
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
    echo "Unable to find settings file \"$DAQINTERFACE_SETTINGS\"" >&2
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=1
-   return 
+   return
 fi
 
 if [[ ! -e $DAQINTERFACE_KNOWN_BOARDREADERS_LIST ]]; then
    echo "Unable to find boardreaders list file \"$DAQINTERFACE_KNOWN_BOARDREADERS_LIST\"" >&2
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=2
-   return 
+   return
 fi
 
 if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_DIRECTORY ]]; then

@@ -1,6 +1,6 @@
 services: {
   ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService  
+   service_provider: ArtdaqSharedMemoryService
  }
 
   ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
@@ -19,7 +19,7 @@ daq: {
     request_address: "227.128.1.129"
     request_port: 3501
 #    multicast_interface_ip: "131.225.224.0" # -- should match the private net
-     multicast_interface_ip: "192.168.230.0"  
+     multicast_interface_ip: "192.168.230.0"
     num_requests: 500
     incomplete_event_report_interval_ms: 1000
     tcp_receive_buffer_size: 64000
@@ -41,45 +41,45 @@ daq: {
 send_system_metrics: true
 send_process_metrics: true
 
-#    graphite: {
-#      level:10
-#      metricPluginType: "graphite"
-#      reporting_interval: 10.0
-#      host:"192.168.191.18"
-#      port:2003
-#      namespace:"sbnd.evb00."
-#    } 
+    graphite: {
+      level:10
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.230.20"
+      port:2003
+      namespace:"dab.evb00."
+    }
   }
-} 
+}
 
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
     fileName: "/daq/scratch/trigger_tests/data_%p_run%R_%#_%to.root"
 
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
       maxEvents: 20 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: [p2]    
+    SelectEvents: [p2]
   }
   testOutput: {
     module_type: RootDAQOut
     fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
 
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
       maxEvents: 100
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: []    
+    SelectEvents: []
   }
   rootNetOutput: {
     module_type: RootNetOutput
@@ -87,11 +87,11 @@ outputs: {
     nonblocking_sends: true
   	destinations: { }
     #SelectEvents: [p1]
-    host_map: [{ 
+    host_map: [{
       rank: -1
       host: "sbnd-daq33-priv.fnal.gov"
     }]
-   
+
   	routing_table_config: {
            use_routing_manager: false
        	}
@@ -137,8 +137,8 @@ physics: {
   a1: [ ]
   #my_output_modules: []
   #my_output_modules: [ rootNetOutput ]
-  my_output_modules: [ normalOutput ]
-  #my_output_modules: [ normalOutput , rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+  my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

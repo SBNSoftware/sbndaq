@@ -35,15 +35,15 @@ daq: {
       fileName: "/daq/log/metrics/disp00_metrics.log"
       uniquify: true
     }
-    
-#    graphite: {
-#      level:5
-#      metricPluginType: "graphite"
-#      reporting_interval: 10.0
-#      host:"192.168.191.18"
-#      port:2003
-#      namespace:"sbnd.disp00."
-#    } 
+
+    graphite: {
+      level:5
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.230.20"
+      port:2003
+      namespace:"dab.disp00."
+    }
   }
 
 }

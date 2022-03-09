@@ -5,7 +5,7 @@ PRODUCTS=${PRODUCTS:-'/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs
 #configure variables
 working_dir="${WORKSPACE:-$(pwd)}"
 selected_build_config=${1:-${BUILDCONFIG:-"testing"}}
-qual_set="${2:-${QUAL:-'s108:e19'}}"
+qual_set="${2:-${QUAL:-'s112:e20'}}"
 build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX
@@ -13,7 +13,7 @@ export PROJECT_SOURCE_GIT_PREFIX
 ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_11_01"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_00_00'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_00_02'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS

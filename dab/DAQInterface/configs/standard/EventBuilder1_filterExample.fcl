@@ -1,0 +1,12 @@
+#include "EventBuilder_filterExample.fcl"
+#daq.metrics.graphite.namespace: "dab.evb01."
+daq.metrics.evbFile.fileName : "/daq/log/metrics/evb01_metrics.log"
+outputs.mode0Output.fileName: "/daq/scratch/trigger_tests/data_mode0_evb01_run%R_%#_%to.root"
+outputs.mode1Output.fileName: "/daq/scratch/trigger_tests/data_mode1_evb01_run%R_%#_%to.root"
+outputs.mode2Output.fileName: "/daq/scratch/trigger_tests/data_mode2_evb01_run%R_%#_%to.root"
+#outputs.negationOutput.fileName: "/daq/scratch/trigger_tests/data_negation_evb01_run%R_%#_%to.root"
+
+#outputs.testOutput.fileName: "/daq/scratch/data_evb01_run%R_%#_%to.root"
+physics.my_output_modules: [ mode0Output, mode1Output, mode2Output ]
+#physics.my_output_modules: [ mode0Output, mode1Output, negationOutput ]
+process_name: DAQEVB01

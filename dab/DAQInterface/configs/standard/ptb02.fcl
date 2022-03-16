@@ -60,7 +60,7 @@ fragment_receiver: {
        "sockets":{
            "receiver":{
                "rollover":5000000,
-               "host":"sbnd-daq33",
+               "host":"sbnd-daq34",
                "port":8992
          },
          "monitor":{

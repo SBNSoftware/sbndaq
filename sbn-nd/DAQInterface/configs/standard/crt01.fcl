@@ -1,61 +1,34 @@
 #include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
 
+#
+#  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
+#
 
-    ## Pull mode parameters
-    #request_address:        "227.128.1.129" # -- multicast request address
-    #multicast_interface_ip: "192.168.230.0" # -- should match the private net 
-    #request_port: 3501   # UDP request port
-    #request_mode: window # pull mode
-    #request_window_width:  50000000 #5ms window
-    #request_window_offset: 2500000 #1ms offset (??)
-    #request_windows_are_unique: true
-    #separate_data_thread: true
-    #stale_request_timeout: 200000000
-
-
-    daq.fragment_receiver.fragment_ids: [ 87 ]
+    daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
+    daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
     
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
     daq.fragment_receiver.board_id: 1
 
 #What is ReaderID? Another ID?
-    daq.fragment_receiver.ReaderID: 87
+    daq.fragment_receiver.ReaderID: 71
 
-daq.fragment_receiver.ethernet_port: "enp23s0f0"
+# the two ports on sbnd-pds05
+#daq.fragment_receiver.ethernet_port: "enp23s0f0"
+daq.fragment_receiver.ethernet_port: "enp23s0f1"
    
-#these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-    #daq.fragment_receiver.FEBIDs : [ 0x00603712345c ]
 # Whether or not turn on SiPM HV on each FEB
-   daq.fragment_receiver.TurnOnHV : [ false ]
+   daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   daq.fragment_receiver.PPS_offset_ns : [ 0 ] # = dummy value
+   daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
   
-   #daq.fragment_receiver.FEBBufferCapacity: 98789
-   
-   #daq.fragment_receiver.destinations: { }
-   #daq.fragment_receiver.routing_table_config:
-   #{
-   #  use_routing_master: false
-   #}
 
-#PROBE register bitstream, monitoring configuration, not used for normal data taking but required to be loaded
-#    ProbeBitStream : @local::ProbeBitStream_global
-    daq.fragment_receiver.ProbeBitStream : '
-00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
-00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
-00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
-00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
-00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
-'
+#need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
 
-#SC bitstream, main FEB configuration
-    #SlowControlBitStream0: @local::SlowControlBitStream_id_000 #let's use the same config for all FEBs for now
-    #SlowControlBitStream1: @local::SlowControlBitStream_id_000
-    #SlowControlBitStream2: @local::SlowControlBitStream_id_000
-    #SlowControlBitStream3: @local::SlowControlBitStream_id_000
-    #SlowControlBitStream4: @local::SlowControlBitStream_id_000
-    #SlowControlBitStream5: @local::SlowControlBitStream_id_000
-#  }
-#}
+daq.fragment_receiver.FEBConfigurationMAC71: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC72: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC73: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC76: @local::FEBConfigurationStandard
+

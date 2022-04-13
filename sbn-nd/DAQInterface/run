@@ -13,7 +13,11 @@ getStatus "nil"
 
 
 #setdaqcomps.sh component01 component02
-setdaqcomps.sh crt01
+#below for testing crt modules
+#setdaqcomps.sh crt01
+#setdaqcomps.sh crt2x2upstr ptb01 pmtx02
+setdaqcomps.sh crt2x2upstr
+#setdaqcomps.sh crttest 
 
 send_transition.sh boot boot.txt
 getStatus "booting"

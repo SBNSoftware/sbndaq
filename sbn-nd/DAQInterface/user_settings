@@ -9,6 +9,8 @@ aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
+board_reader_priorities_on_start  : tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ptb01
+board_reader_priorities_on_stop   : tpc01 ptb01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11
 
 max_launch_checks: 30
 launch_procs_wait_time: 600

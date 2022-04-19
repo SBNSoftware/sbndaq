@@ -13,12 +13,15 @@ fragment_receiver: {
    ## Variable of interest for the new PTB Fragment Generator
    ##------------------------------------------------------------------------------
 
-   #board_address: "sbnd-ptbmk2-01"
-   #board_address: "192.168.230.77" # -- D0 PTB
-   #board_address: "192.168.230.78"     # -- ND PTB
-   #board_address:  "131.225.250.158"
-   board_address: "10.226.35.151"
-   control_port  : 8991                               ## Default 8991 
+   #board_address: "sbnd-ptbmk2-01"  # -- D0 PTB
+   #board_address: "192.168.230.77"  # -- D0 PTB
+
+   #board_address: "10.226.35.151"   # -- ND PTB
+   board_address: "sbnd-ptbmk2-02"   # -- ND PTB
+   control_port  : 8991              # Default 8991 
+
+   # Boardreader full host name or IP address
+   boardreader_address: "sbnd-ptb01-daq.fnal.gov"
    
    calibration_stream_output : "/data/ptb/DebugStream"     ## this is the string that points to a writable directory if 
                                                       ## if this option is not there, there won't be a calibration str

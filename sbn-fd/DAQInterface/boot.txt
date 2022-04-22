@@ -1,0 +1,25 @@
+DAQ setup script: $SETUP_FILE
+PMT host: localhost
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+debug level: 4
+#manage processes: false
+Subsystem id: 1
+
+# EVENT BUILDERS
+
+EventBuilder host: localhost
+EventBuilder label: EventBuilder1
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder2
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder3
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder4
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder5
+

@@ -68,6 +68,10 @@ e20:debug:sbnd:s112      e20:debug:sbnd:s112
 e20:prof:sbnd:s112       e20:prof:sbnd:s112
 end_qualifier_list
 
+table_fragment_begin
+envSet(CONFIGDB_TOOLS_PATH, ${UPS_PROD_DIR}/configDB_tools)
+pathPrepend(PATH, ${UPS_PROD_DIR}/configDB_tools)
+table_fragment_end
 # Preserve tabs and formatting in emacs and vi / vim:
 
 ### Local Variables:

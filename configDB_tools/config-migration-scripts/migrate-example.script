@@ -1,0 +1,16 @@
+#!/bin/bash
+echo -n -e "Info: This script ($(basename $0)) runs in the ./$(basename $(dirname $(pwd)))/$(basename $(pwd)) directory where connftool.py exported fhicl files.\
+\n      The counter variable should be incremented for each error and returned to the caller of this script.\
+\n      If this script exits with a zero return code, then the caller will import fhicl files in ./$(basename $(dirname $(pwd)))/$(basename $(pwd)) as a new configuration.\n\n"
+
+error_counter=0
+
+#Find ficl files to migrate and loop over them.
+for f in *_standard.fcl; do
+  echo "Info: Migrating $f."
+  #Run sed over each file and increment the error_counter if the exit code is not 0.
+  sed -i 's/old-string/new-string/g' $f
+  (( $? == 0 )) || { ((error_counter++)); echo "Error: Failed migrating $f"; continue; }
+done
+#Always return error_counter to the caller
+exit ${error_counter}

@@ -1,0 +1,10 @@
+#!/bin/bash
+error_counter=0
+
+for f in $(grep -R -A15  "graphite: {" |grep 'host: "192.168.191.18"' |grep -Eo ".*\.fcl" |sort -u); do
+  echo "Info: Migrating $f."
+  sed -i 's/192.168.191.18/192.168.191.31/g' $f
+  (( $? == 0 )) || { ((error_counter++)); echo "Error: Failed migrating $f"; continue; }
+done
+
+exit ${error_counter}

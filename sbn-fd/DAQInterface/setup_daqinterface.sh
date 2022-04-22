@@ -20,6 +20,8 @@ if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
   source $ARTDAQ_DAQINTERFACE_DIR/source_me
 fi
 
+echo "Calling fix_host_in_messagefacility_fcl.sh"
+
 if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; then
   $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 fi

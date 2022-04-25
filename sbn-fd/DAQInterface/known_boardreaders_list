@@ -1,5 +1,6 @@
 gps   icarus-evb06 -1 1
 gps   icarus-pmt07-daq -1 1
+wr    localhost -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icarustpc01 icarus-vst01-daq -1 1
 icarustpc02 icarus-vst01-daq -1 1
 icarustpc03 icarus-vst01-daq -1 1

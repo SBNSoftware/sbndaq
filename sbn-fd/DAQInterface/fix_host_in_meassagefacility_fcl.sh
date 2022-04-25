@@ -11,6 +11,7 @@ local PATH=$PATH:/usr/bin/:/usr/sbin
 
 if [[ -f "$this_mfconfig" ]]; then
   local this_mfhostname=$(cat /etc/hosts |grep $(ifconfig |grep "$nic_alias:" -A 1|awk '$1 == "inet" {print $2}')| awk '{print $2}')
+  echo " this_mfhostname =======>  $this_mfhostname "
   if [[ =$(ping -c 1 -W 1 $this_mfhostname 2>&1 > /dev/null) &&  $? == 0 ]]; then
     local file_mfhostname=$(cat $this_mfconfig| grep -v -e '^#' -e '^[[:space:]]*$'|grep host | sed 's/.*host\s:\s"\(.*\)"\s}.*/\1/')
     if [[ "$this_mfhostname" != "$file_mfhostname" ]]; then

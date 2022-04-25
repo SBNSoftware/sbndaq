@@ -141,9 +141,6 @@ if [ -f "$boot_txt" ];then
 fi
 set -x
 type python
-printenv| egrep 'RGANG|LD_LIBRARY_PATH=|PY'
-pwd
-date
 
 #echo "$(hostname -s).$run.$transition.$(date) " >> ~/trace.log
 case $transition in
@@ -159,7 +156,7 @@ stop)
         rgcmd=". $trace_control_upsdb/setup"
         rgcmd="$rgcmd; setup TRACE $trace_control_trace_version"
         rgcmd="$rgcmd; export TRACE_FILE=$trace_file"
-        rgcmd="$rgcmd; tshow >$tshow_out 2>&1 <&- &"
+        rgcmd="$rgcmd; sleep 56 >/dev/null 2>&1 <&- &"
         test -n "${do_nothing-}" \
             && echo $RGANG $do_nodelist "$rgcmd" \
             || $RGANG $do_nodelist "$rgcmd"
@@ -177,6 +174,6 @@ status)
 esac
 
 status=$?
-echo; echo "`date`: exiting with status $status"
+echo; echo "exiting with status $status"
 exit $status
 

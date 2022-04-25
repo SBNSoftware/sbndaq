@@ -8,7 +8,7 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: localhost
+EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder1
 
 #EventBuilder host: icarus-evb01-daq

@@ -34,7 +34,7 @@ daq:
       uniquify: true
     }
     graphite:{
-      namespace: "icarus.clk02."
+      namespace: "icarus.daq02."
       host: "192.168.191.31"
       level: 10
       metricPluginType: "graphite"

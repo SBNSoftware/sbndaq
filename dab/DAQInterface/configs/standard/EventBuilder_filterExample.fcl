@@ -53,35 +53,68 @@ send_process_metrics: true
 } 
 
 outputs: {
-  normalOutput: {
+  mode0Output: {
     module_type: RootDAQOut
-    fileName: "/daq/scratch/trigger_tests/data_%p_run%R_%#_%to.root"
+    fileName: "/daq/scratch/trigger_tests/data_mode0_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 20 #close files out a little faster for the prescaled stream
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: [p2]
+    SelectEvents: [ mode0 ]    
   }
 
-  testOutput: {
+  mode1Output: {
     module_type: RootDAQOut
-    fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
+    fileName: "/daq/scratch/trigger_tests/data_mode1_%p_run%R_%#_%to.root"
 
     fileProperties: { 
       maxSubRuns: 1 
       maxRuns: 1 
-      maxEvents: 100
+      maxEvents: 25 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
     compressionLevel: 0
-    SelectEvents: []    
+    SelectEvents: [ mode1 ]
   }
+  
+  mode2Output: {
+    module_type: RootDAQOut
+    fileName: "/daq/scratch/trigger_tests/data_mode2_%p_run%R_%#_%to.root"
+
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
+      maxEvents: 10 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: [ mode2 ]
+  }
+
+
+
+  #negationOutput: {
+  #  module_type: RootDAQOut
+  #  fileName: "/daq/scratch/trigger_tests/data_mode1_%p_run%R_%#_%to.root"
+
+  #  fileProperties: { 
+  #    maxSubRuns: 1 
+  #    maxRuns: 1 
+  #    maxEvents: 100
+  #  }
+
+  #  fastCloning: true
+  #  compressionLevel: 0
+  #  SelectEvents: [ negation ]
+  #}
+
   rootNetOutput: {
     module_type: RootNetOutput
     broadcast_sends: true
@@ -103,7 +136,17 @@ outputs: {
 physics: {
   analyzers: {}
 
-  producers: {}
+  producers: {
+
+  triggerProducer: {
+    module_type: "testStandTriggerProducer"
+    is_persistable: false
+    threshold: 7800
+    shift_fragment_id: 1  # caen fragments
+    verbose: true
+  }
+
+  }
 
   filters: {
     prescale50: { module_type: "Prescaler"
@@ -131,15 +174,50 @@ physics: {
  		  prescaleOffset: 0
 		}
     
-   }
+    coincidencefiltermode0:
+    {
+    module_type: "CoincidenceFilter"
+    InputModule: "triggerProducer"
+    nCoincidence: 2
+    exclusive: true
+    shift_fragment_id: 1  # caen fragments
+    verbose: true
+    }
 
-  p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
-  a1: [ ]
-  #my_output_modules: []
-  #my_output_modules: [ rootNetOutput ]
-  my_output_modules: [ normalOutput ]
+    coincidencefiltermode1:
+    {
+    module_type: "CoincidenceFilter"
+    InputModule: "triggerProducer"
+    nCoincidence: 3
+    exclusive: true
+    shift_fragment_id: 1  # caen fragments
+    verbose: true
+    }
+    
+    coincidencefiltermode2:
+    {
+    module_type: "CoincidenceFilter"
+    InputModule: "triggerProducer"
+    nCoincidence: 4
+    exclusive: true
+    shift_fragment_id: 1  # caen fragments
+    verbose: true
+    }
+
+    }
+
+  mode0: [ prescale1, triggerProducer, coincidencefiltermode0 ]
+  mode1: [ prescale1, triggerProducer, coincidencefiltermode1 ]
+  mode2: [ prescale1, triggerProducer, coincidencefiltermode2 ]
+
+  #negation: [ prescale1, triggerProducer, 
+  #	      "!coincidencefiltermode0", "!coincidencefiltermode1" ]
+
+  #p1: [ ]
+  #p2: [ prescale1]
+  #pd: [ prescale5 ]
+  my_output_modules: [ mode0Output, mode1Output, mode2Output]
+  #my_output_modules: [ mode0Output, mode1Output, negationOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]

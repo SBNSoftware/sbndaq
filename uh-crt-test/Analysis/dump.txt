@@ -1,558 +1,272 @@
-%MSG-i MF_INIT_OK:  Early 12-Apr-2022 17:15:41 CDT JobSetup
+%MSG-i MF_INIT_OK:  Early 14-Apr-2022 13:45:16 CDT JobSetup
 Messagelogger initialization complete.
 %MSG
-%MSG-i PathConfiguration:  Early 12-Apr-2022 17:15:41 CDT JobSetup
+%MSG-i PathConfiguration:  Early 14-Apr-2022 13:45:16 CDT JobSetup
 Multiple end paths have been combined into one end path,
 "end_path" since order is irrelevant.
 %MSG
-12-Apr-2022 17:15:42 CDT  Initiating request to open input file "/daq/scratch/data/data_evb01_run1246_25_20220412T221506.root"
-12-Apr-2022 17:15:42 CDT  Opened input file "/daq/scratch/data/data_evb01_run1246_25_20220412T221506.root"
-%MSG-i PrintBuildInfo:  PrintBuildInfo:printBuildInfo@BeginRun  12-Apr-2022 17:15:43 CDT run: 1246 PrintBuildInfo_module.cc:88
+14-Apr-2022 13:45:18 CDT  Initiating request to open input file "/daq/scratch/data/data_evb01_run1288_2_20220414T184129.root"
+14-Apr-2022 13:45:18 CDT  Opened input file "/daq/scratch/data/data_evb01_run1288_2_20220414T184129.root"
+%MSG-i PrintBuildInfo:  PrintBuildInfo:printBuildInfo@BeginRun  14-Apr-2022 13:45:18 CDT run: 1288 PrintBuildInfo_module.cc:88
 Calling getByLabel: module label: BuildInfo, instance label: ArtdaqDemo
 %MSG
-Begin processing the 1st record. run: 1246 subRun: 1 event: 481 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 1st record. run: 1288 subRun: 1 event: 21 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 21 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 21, SeqID 21, TS 1649961688481590672, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961688481590672, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961688481590672, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 88 has type 232, timestamp 1649961688481590672, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  3) fragment ID 74 has type 232, timestamp 1649961688481590672, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  4) fragment ID 85 has type 232, timestamp 1649961688481590672, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+***** End of EventDump for event 21 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...4
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (4, 43).
 
-Begin processing the 2nd record. run: 1246 subRun: 1 event: 482 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 2nd record. run: 1288 subRun: 1 event: 22 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 22 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 22, SeqID 22, TS 1649961688548237744, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961688548237744, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 88 has type 232, timestamp 1649961688548237744, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 74 has type 232, timestamp 1649961688548237744, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961688548237744, has metadata true, and sizeBytes 384 (hdr=32, data=336, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688575000064, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+  2) fragment ID 85 has type 232, timestamp 1649961688548237744, has metadata true, and sizeBytes 384 (hdr=32, data=336, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688575000064, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+***** End of EventDump for event 22 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (5, 42).
 
-Begin processing the 3rd record. run: 1246 subRun: 1 event: 483 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 3rd record. run: 1288 subRun: 1 event: 23 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 23 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 23, SeqID 23, TS 1649961688614885520, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961688614885520, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 88 has type 232, timestamp 1649961688614885520, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 74 has type 232, timestamp 1649961688614885520, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961688614885520, has metadata true, and sizeBytes 384 (hdr=32, data=336, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688575000064, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+  2) fragment ID 85 has type 232, timestamp 1649961688614885520, has metadata true, and sizeBytes 384 (hdr=32, data=336, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688575000064, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+***** End of EventDump for event 23 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (5, 42).
 
-Begin processing the 4th record. run: 1246 subRun: 1 event: 484 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 4th record. run: 1288 subRun: 1 event: 24 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 24 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 24, SeqID 24, TS 1649961688681532576, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961688681532576, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 88 has type 232, timestamp 1649961688681532576, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 74 has type 232, timestamp 1649961688681532576, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961688681532576, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  2) fragment ID 85 has type 232, timestamp 1649961688681532576, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+***** End of EventDump for event 24 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (5, 42).
 
-Begin processing the 5th record. run: 1246 subRun: 1 event: 485 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 5th record. run: 1288 subRun: 1 event: 25 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 25 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 25, SeqID 25, TS 1649961688748180368, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961688748180368, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961688748180368, has metadata true, and sizeBytes 704 (hdr=32, data=656, meta (calculated)=16) (contents: type = 14, count = 3, missing data = false)
+    1) fragment type 14, timestamp 1649961688715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961688735000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    3) fragment type 14, timestamp 1649961688744999936, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  2) fragment ID 88 has type 232, timestamp 1649961688748180368, has metadata true, and sizeBytes 488 (hdr=32, data=440, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961688735000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961688744999936, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  3) fragment ID 74 has type 232, timestamp 1649961688748180368, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961688735000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  4) fragment ID 85 has type 232, timestamp 1649961688748180368, has metadata true, and sizeBytes 488 (hdr=32, data=440, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961688715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961688735000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+***** End of EventDump for event 25 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...4
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (4, 43).
 
-Begin processing the 6th record. run: 1246 subRun: 1 event: 486 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 6th record. run: 1288 subRun: 1 event: 26 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 26 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 26, SeqID 26, TS 1649961689614613240, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961689614613240, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 74 has type 232, timestamp 1649961689614613240, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 85 has type 232, timestamp 1649961689614613240, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961689614613240, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961689655000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  2) fragment ID 88 has type 232, timestamp 1649961689614613240, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961689655000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+***** End of EventDump for event 26 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (5, 42).
 
-Begin processing the 7th record. run: 1246 subRun: 1 event: 487 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 7th record. run: 1288 subRun: 1 event: 27 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 27 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 27, SeqID 27, TS 1649961689681260392, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961689681260392, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961689681260392, has metadata true, and sizeBytes 600 (hdr=32, data=552, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961689655000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961689664999936, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+  2) fragment ID 88 has type 232, timestamp 1649961689681260392, has metadata true, and sizeBytes 600 (hdr=32, data=552, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961689655000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961689664999936, has metadata true, and sizeBytes 320 (hdr=32, data=224, meta (calculated)=64)
+  3) fragment ID 74 has type 232, timestamp 1649961689681260392, has metadata true, and sizeBytes 488 (hdr=32, data=440, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961689664999936, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961689715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  4) fragment ID 85 has type 232, timestamp 1649961689681260392, has metadata true, and sizeBytes 488 (hdr=32, data=440, meta (calculated)=16) (contents: type = 14, count = 2, missing data = false)
+    1) fragment type 14, timestamp 1649961689664999936, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+    2) fragment type 14, timestamp 1649961689715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+***** End of EventDump for event 27 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...4
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (4, 43).
 
-Begin processing the 8th record. run: 1246 subRun: 1 event: 488 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 8th record. run: 1288 subRun: 1 event: 28 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 28 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 28, SeqID 28, TS 1649961689747908056, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961689747908056, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961689747908056, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 88 has type 232, timestamp 1649961689747908056, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+ContainerBERNCRTV2 fragments: 
+  1) fragment ID 74 has type 232, timestamp 1649961689747908056, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961689715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+  2) fragment ID 85 has type 232, timestamp 1649961689747908056, has metadata true, and sizeBytes 272 (hdr=32, data=224, meta (calculated)=16) (contents: type = 14, count = 1, missing data = false)
+    1) fragment type 14, timestamp 1649961689715000064, has metadata true, and sizeBytes 208 (hdr=32, data=112, meta (calculated)=64)
+***** End of EventDump for event 28 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | daq........... | ContainerBERNCRTV2... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...2
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (5, 42).
 
-Begin processing the 9th record. run: 1246 subRun: 1 event: 489 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 9th record. run: 1288 subRun: 1 event: 29 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 29 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 29, SeqID 29, TS 1649961689814556024, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961689814556024, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961689814556024, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 88 has type 232, timestamp 1649961689814556024, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  3) fragment ID 74 has type 232, timestamp 1649961689814556024, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  4) fragment ID 85 has type 232, timestamp 1649961689814556024, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+***** End of EventDump for event 29 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...4
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (4, 43).
 
-Begin processing the 10th record. run: 1246 subRun: 1 event: 490 at 12-Apr-2022 17:15:43 CDT
+Begin processing the 10th record. run: 1288 subRun: 1 event: 30 at 14-Apr-2022 13:45:18 CDT
+***** Start of EventDump for event 30 *****
+Event Header from DAQEVB01: Run 1288, Subrun 1, Event 30, SeqID 30, TS 1649961689881203768, Complete? 1, Version 0
+
+CAENV1730 fragments: 
+  1) fragment ID 0 has type 2, timestamp 1649961689881203768, has metadata true, and sizeBytes 163968 (hdr=32, data=163856, meta (calculated)=80)
+ContainerEmpty fragments: 
+  1) fragment ID 87 has type 232, timestamp 1649961689881203768, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  2) fragment ID 88 has type 232, timestamp 1649961689881203768, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  3) fragment ID 74 has type 232, timestamp 1649961689881203768, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+  4) fragment ID 85 has type 232, timestamp 1649961689881203768, has metadata true, and sizeBytes 56 (hdr=32, data=8, meta (calculated)=16) (contents: type = 231, count = 0, missing data = false)
+***** End of EventDump for event 30 *****
 PRINCIPAL TYPE: Event
-PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME.... | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
-DAQEVB01.... | daq........... | ContainerDAPHNE.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV1................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATESTAT... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DAPHNE................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV1....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSPMTGate... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | UNKNOWN.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerNEVISTPC........ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | RawEventHeader........... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
-DAQEVB01.... | daq........... | BERNCRT.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PTB...................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerWhiteRabbit..... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATESTAT............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerSPECTRATIMEVENT. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | SPECTRATIMEVENT.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerData............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSPMTGate............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerInvalid......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerMISSED.......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Invalid.................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ICARUSTriggerUDP......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | unidentified............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerCAENV1730....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTZMQ...... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Empty.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTV2................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Error.................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | MISSED................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | WhiteRabbit.............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | CAENV1730................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
-DAQEVB01.... | daq........... | ContainerEmpty........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | PHYSCRATEDATA............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerICARUSTriggerUDP | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerError........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerDUMMYGENERATOR.. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRTV2....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerContainer....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | DUMMYGENERATOR........... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerBERNCRT......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPTB............. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerUNKNOWN......... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | BERNCRTZMQ............... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | NEVISTPC................. | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | Container................ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | daq........... | ContainerPHYSCRATEDATA... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
-DAQEVB01.... | TriggerResults | ......................... | art::TriggerResults........... | art::TriggerResults........... | ...2
-DAQEVB01.... | daq........... | Data..................... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...?
+PROCESS NAME | MODULE LABEL.. | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............. | PRODUCT FRIENDLY TYPE......... | SIZE
+DAQEVB01.... | daq........... | RawEventHeader....... | artdaq::detail::RawEventHeader | artdaq::detail::RawEventHeader | ...-
+DAQEVB01.... | daq........... | CAENV1730............ | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...1
+DAQEVB01.... | daq........... | ContainerEmpty....... | std::vector<artdaq::Fragment>. | artdaq::Fragments............. | ...4
+DAQEVB01.... | TriggerResults | ..................... | art::TriggerResults........... | art::TriggerResults........... | ...2
 
-Total products (present, not present): 47 (3, 44).
+Total products (present, not present): 47 (4, 43).
 
 PRINCIPAL TYPE: SubRun
-PROCESS NAME | MODULE LABEL | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............ | PRODUCT FRIENDLY TYPE | SIZE
-DAQEVB01.... | daq......... | unidentified......... | std::vector<artdaq::Fragment> | artdaq::Fragments.... | ...?
+PROCESS NAME | MODULE LABEL | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE | PRODUCT FRIENDLY TYPE | SIZE
 
 Total products (present, not present): 1 (0, 1).
 
 PRINCIPAL TYPE: Run
-PROCESS NAME | MODULE LABEL | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE............ | PRODUCT FRIENDLY TYPE | SIZE
-DAQEVB01.... | daq......... | unidentified......... | std::vector<artdaq::Fragment> | artdaq::Fragments.... | ...?
+PROCESS NAME | MODULE LABEL | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE | PRODUCT FRIENDLY TYPE | SIZE
 
 Total products (present, not present): 1 (0, 1).
 
-12-Apr-2022 17:15:43 CDT  Closed input file "/daq/scratch/data/data_evb01_run1246_25_20220412T221506.root"
+14-Apr-2022 13:45:18 CDT  Closed input file "/daq/scratch/data/data_evb01_run1288_2_20220414T184129.root"
 
 TrigReport ---------- Event summary -------------
 TrigReport Events total = 10 passed = 10 failed = 0
@@ -564,9 +278,9 @@ TrigReport         10         10          0 printBuildInfo
 TrigReport         10         10          0 out1
 
 TimeReport ---------- Time summary [sec] -------
-TimeReport CPU = 0.014925 Real = 0.027405
+TimeReport CPU = 0.014792 Real = 0.029966
 
 MemReport  ---------- Memory summary [base-10 MB] ------
-MemReport  VmPeak = 1003.77 VmHWM = 279.155
+MemReport  VmPeak = 1164.16 VmHWM = 279.306
 
 Art has completed and will exit with status 0.

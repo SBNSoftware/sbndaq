@@ -6,6 +6,9 @@ daq.fragment_receiver.link: 1
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 11
 daq.fragment_receiver.board_id: 11
+# record 1200 ticks = 2.4 us with 15% before the trigger
+daq.fragment_receiver.recordLength:         1200
+daq.fragment_receiver.postPercent: 85
 
 #daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx02_metrics.log"
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx02:"

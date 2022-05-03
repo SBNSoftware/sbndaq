@@ -54,7 +54,7 @@ FEBConfigurationStandard: {
          enable_HG_OTA_PP: false
          enable_HG_SCA: false
          enable_HG_SCA_PP: true
-         enable_HG_peak_detector: false          # CHECK ME - ICARUS uses true
+         enable_HG_peak_detector: false          
          enable_HG_preamp: true
          enable_HG_preamp_PP: false
          enable_HG_slow_shaper: true
@@ -63,7 +63,7 @@ FEBConfigurationStandard: {
          enable_LG_OTA_PP: false
          enable_LG_SCA: false
          enable_LG_SCA_PP: true
-         enable_LG_peak_detector: false          # CHECK ME - ICARUS uses true
+         enable_LG_peak_detector: false          
          enable_LG_preamp: true
          enable_LG_preamp_PP: false
          enable_LG_slow_shaper: true
@@ -95,7 +95,7 @@ FEBConfigurationStandard: {
          input_DAC_voltage_reference: true         # True: external (?) 4.5V, False: internal 2.5V
          latched_output: false                     # True: latched output, False: direct output
          peak_sensing_cell: false                  # True: external trigger, False: internal trigger
-         preamp_connected_to_fast_shaper: true     # True: HG, False: LG   CHECKME, ICARUS uses false, comment info may be incorrect
+         preamp_connected_to_fast_shaper: false    # True: LG, False: HG 
          select_HG_mode: true                      # True: track & hold (SCA), False: peak detector
          select_LG_mode: true                      # True: track & hold (SCA), False: peak detector
          charge_threshold: 250

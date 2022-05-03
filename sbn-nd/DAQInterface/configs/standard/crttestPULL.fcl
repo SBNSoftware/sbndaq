@@ -1,12 +1,12 @@
-#include "crt2x2dwnstr.fcl"
+#include "crttest.fcl"
 
 ## Pull mode parameters
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
     daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode
-    daq.fragment_receiver.request_window_width:  6000000 #3ms window
-    daq.fragment_receiver.request_window_offset: 3000000 #2ms offset
+    daq.fragment_receiver.request_window_width:  50000000 #50ms window
+    daq.fragment_receiver.request_window_offset:  5000000 #5ms offset (??)
     #daq.fragment_receiver.request_windows_are_unique: false
     daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true

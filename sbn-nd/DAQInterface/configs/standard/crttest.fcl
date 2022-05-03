@@ -6,7 +6,14 @@
 #
 
     daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
-    daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
+#    daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
+    daq.fragment_receiver.fragment_ids: [ 79, 80, 81, 89 ]
+#    daq.fragment_receiver.generated_fragments_per_event: 3 #number if FEBs
+#    daq.fragment_receiver.fragment_ids: [ 71, 76, 193 ]
+#    daq.fragment_receiver.fragment_ids: [ 71, 73, 76 ]
+#    daq.fragment_receiver.fragment_ids: [ 72, 73, 76 ]
+#     daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
+#     daq.fragment_receiver.fragment_ids: [ 73, 76 ]
     
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
     daq.fragment_receiver.board_id: 1
@@ -19,30 +26,36 @@
 daq.fragment_receiver.ethernet_port: "enp23s0f1"
    
 # Whether or not turn on SiPM HV on each FEB
-   daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+   #daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+   daq.fragment_receiver.TurnOnHV : [ false, false, false, false ]
+#   daq.fragment_receiver.TurnOnHV : [ true, true, true ]
+#   daq.fragment_receiver.TurnOnHV : [ true, true ]
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
+#   daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0 ] # = dummy value
+#   daq.fragment_receiver.PPS_offset_ns : [ 0, 0 ] # = dummy value
   
 
 #need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
 
 daq.fragment_receiver.FEBConfigurationMAC71: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC71.charge_threshold: 250
-#daq.fragment_receiver.FEBConfigurationMAC71.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC71.charge_threshold: 320
+daq.fragment_receiver.FEBConfigurationMAC71.time_threshold: 320
 daq.fragment_receiver.FEBConfigurationMAC72: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC72.charge_threshold: 250
-#daq.fragment_receiver.FEBConfigurationMAC72.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC72.charge_threshold: 320
+daq.fragment_receiver.FEBConfigurationMAC72.time_threshold: 320
 daq.fragment_receiver.FEBConfigurationMAC73: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC73.charge_threshold: 250
-#daq.fragment_receiver.FEBConfigurationMAC73.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC73.charge_threshold: 320
+daq.fragment_receiver.FEBConfigurationMAC73.time_threshold: 320
 daq.fragment_receiver.FEBConfigurationMAC76: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC76.charge_threshold: 250
-#daq.fragment_receiver.FEBConfigurationMAC76.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC76.charge_threshold: 320
+daq.fragment_receiver.FEBConfigurationMAC76.time_threshold: 320
+daq.fragment_receiver.FEBConfigurationMAC193: @local::FEBConfigurationStandard
 
 
 daq.fragment_reciever.FEBConfigurationMAC76.channel_configuration: [
-                 [ 0, 0, 1, 114, 1, 41, 47, 0, 0, 1], # Channel 0
+                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 0
                  [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 1
                  [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 2
                  [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 3
@@ -75,3 +88,8 @@ daq.fragment_reciever.FEBConfigurationMAC76.channel_configuration: [
                  [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 30
                  [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1]  # Channel 31
          ]
+
+daq.fragment_receiver.FEBConfigurationMAC71.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC72.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC73.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC76.SCA_high_bias: false

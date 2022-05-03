@@ -93,7 +93,7 @@ daq:
     enableReadout: 1
     
     boardId: 0
-    recordLength:         5000
+    recordLength:         5120
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
@@ -115,7 +115,7 @@ daq:
     
     triggerPolarity:      1   
     debugLevel:           7
-    postPercent:          50
+    postPercent:          80
     eventsPerInterrupt:   1
     irqWaitTime:          1
     eventCounterWarning:  1       

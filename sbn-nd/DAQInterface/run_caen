@@ -13,9 +13,11 @@ getStatus "nil"
 
 
 #setdaqcomps.sh component01 component02
-#setdaqcomps.sh crt01
-setdaqcomps.sh pmtx02 crt2x2upstrPULL
 #setdaqcomps.sh pmtx02 
+#setdaqcomps.sh pmtx02 crt2x2upstrPULL ptb01PULL
+#setdaqcomps.sh pmtx02 crt2x2upstrPULL
+#setdaqcomps.sh pmtx02 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
+setdaqcomps.sh pmtx02 crt2x2upstrPULL crt2x2dwnstrPULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

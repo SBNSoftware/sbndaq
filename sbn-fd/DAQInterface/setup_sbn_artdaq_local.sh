@@ -8,7 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
-#[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
 setup mrb v5_18_01
@@ -45,18 +45,18 @@ echo "TRACE_FILE=$TRACE_FILE"
 toffSg 8-63   # suppress debug messages to Slow path
 tonSg 0-7
 tonMg 0-7
-toffM 1-63 -n PhysCrateData
-toffS 1-63 -n PhysCrateData
+#toffM 1-63 -n PhysCrateData
+#toffS 1-63 -n PhysCrateData
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase
 #tonM 9-15 -n CAENV1730Readout
 
 #turning everything in PMT on
-tonM 0-63 -n CAENV1730Readout
+#tonM 0-63 -n CAENV1730Readout
 
 
-tonS 0-debug -n ICARUSTriggerUDP
+#tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1
 

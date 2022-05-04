@@ -42,9 +42,9 @@ export TRACE_FILE=/tmp/trace_$(whoami)_p1
 
 echo "TRACE_FILE=$TRACE_FILE"
 
-toffSg 8-63   # suppress debug messages to Slow path
-tonSg 0-7
-tonMg 0-7
+toffSg 9-63   # suppress debug++ messages to Slow path
+tonSg 0-8     # ton* does not suppress other levels
+tonMg 0-8
 #toffM 1-63 -n PhysCrateData
 #toffS 1-63 -n PhysCrateData
 

@@ -62,6 +62,9 @@ Options:          Note: \"run\" option is required.
 "
 VUSAGE=""
 
+echo "`date`: $0 $@" >> ~/trace.log
+echo "`date`: RGANG=$RGANG TRACE_VERSION=$TRACE_VERSION" >> ~/trace.log
+
 # Process script arguments and options
 op1chr='rest=`expr "$op" : "[^-]\(.*\)"`; test -n "$rest" && set -- "-$rest" "$@"'
 op1arg='rest=`expr "$op" : "[^-]\(.*\)"`; test -n "$rest" && set -- "$rest"  "$@"'
@@ -145,7 +148,7 @@ case $transition in
 start)  rgcmd=". $trace_control_upsdb/setup"
         rgcmd="$rgcmd; setup TRACE $trace_control_trace_version"
         rgcmd="$rgcmd; export TRACE_FILE=$trace_file"
-        rgcmd="$rgcmd; treset; tmodeM 1;true"
+        rgcmd="$rgcmd; tinfo|awk '/^trace.h rev/{rev1=\$5}/^revision/{rev2=\$4;exit rev1==rev2}'&&rm -f $trace_file||{ treset; tmodeM 1;true;}"
         test -n "${do_nothing-}" \
             && echo $RGANG $do_nodelist "$rgcmd" \
             || $RGANG $do_nodelist "$rgcmd"

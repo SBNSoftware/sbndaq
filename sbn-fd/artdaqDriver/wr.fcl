@@ -35,7 +35,7 @@ daq:
     }
     graphite:{
       namespace: "icarus.daq02."
-      host: "192.168.191.31"
+      host: "192.168.191.18"
       level: 10
       metricPluginType: "graphite"
       port: 2003

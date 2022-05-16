@@ -39,7 +39,7 @@ EventBuilder label: EventBuilder9
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder10
 
-# Add 5 more event builders on  icarus-evb03-daq
+# Add 5 more event builders on  icarus-evb04-daq
 EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder11
 
@@ -55,20 +55,20 @@ EventBuilder label: EventBuilder14
 EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder15
 
-# Add 5 more event builders on  icarus-evb04-daq
-EventBuilder host: icarus-evb05-daq
+# Add 5 more event builders on  icarus-evb03-daq
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder16
 
-EventBuilder host: icarus-evb05-daq
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder17
 
-EventBuilder host: icarus-evb05-daq
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder18
 
-EventBuilder host: icarus-evb05-daq
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder19
 
-EventBuilder host: icarus-evb05-daq
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder20
 
 # DATA LOGGERS

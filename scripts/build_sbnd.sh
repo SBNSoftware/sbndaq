@@ -16,12 +16,12 @@
  PATH=/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin \
  /usr/bin/bash --noprofile --norc "$0" "$@"
 
-export daq_rel_tag=v0_03_00-release
+export daq_rel_tag=v1_01_00-release
 my_selected_build_config=develop
-my_build_variants=( "e17:prof:s82" )
+my_build_variants=( "e20:prof:s112" )
 
 ##build settings
-my_release_version=${my_release_version:-"v0_03_00"}
+my_release_version=${my_release_version:-"v1_01_00"}
 my_project_name=${my_mrb_project_name:-"sbnd"}
 my_products_repo_dir=${my_products_repo_dir:-"/software/products"}
 my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER)}
@@ -95,7 +95,7 @@ printf "\nSelected sources: ($source_branches)\n"
 [[ ! -d "${source_dir}" ]] && mkdir -p ${source_dir}
 [[ ! -d "${scratch_dir}" ]] && mkdir -p ${scratch_dir}
 
-setup mrb v5_12_00 
+setup mrb v5_19_05
 setup git 
 setup gitflow 
 

@@ -25,18 +25,19 @@ physics: {
     # In the range 0.0 to 1.0. This ratio is the time the filter will delay by CPU load versus delay time by usleep calls
     cpu_load_ratio: 0.2
     # The seed used for the random number generator used by both the time distributions and the pass/fail distribution
-    random_seed: 271828 
+    random_seed: 271828
     }
     }
-  fpath: [randomDelay]
-  out1 : [dumper] 
+  #fpath: [randomDelay]
+  fpath: []
+  out1 : [dumper]
   end_paths: [ out1 ]
 }
 
 services:
 {
 
-  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Artdaq" }
   ArtdaqSharedMemoryServiceInterface: {
     service_provider: "ArtdaqSharedMemoryService"
   }
@@ -57,12 +58,13 @@ source:
   transfer_plugin: {
 
      unique_label: "ExampleOnlineMonitor1"
-      transferPluginType: Shmem
-      shm_key: 0x40471453
-      max_fragment_size_words: 33554432
+      transferPluginType: TCPSocket
+      host_map: [ {rank: 500 host: "localhost"},{rank: 600 host: "localhost"}]
+      destination_rank: 600
+      source_rank:500
+
+      max_fragment_size_words: 2147483646
       first_event_builder_rank: 0
-          source_rank: 5
-          destination_rank: 6
   }
 
   dispatcher_config: {
@@ -75,13 +77,13 @@ source:
         transfer_plugin: {
 
            unique_label: "ExampleOnlineMonitor1"
-            transferPluginType: Shmem
+            transferPluginType: TCPSocket
+            host_map: [ {rank: 500 host: "localhost"},{rank: 600 host: "localhost"}]
+            destination_rank: 600
+            source_rank:500
 
-            shm_key: 0x40471453
-
-            max_fragment_size_words: 33554432
-              first_event_builder_rank: 0
-              destination_rank: 6
+            max_fragment_size_words: 2147483646
+            first_event_builder_rank: 0
         }
       }
     }

@@ -19,7 +19,6 @@ daq: {
     generated_fragments_per_event: 1 #number of FEBs
     initial_delay_s: 0
     fragment_period_ms: 10
-#    fragment_period_ms: 1
     fragment_type: "BERNCRTV2"
     fragment_ids: [ 1 ] #last 8 bits of fragment ID are last 8 bits of FEB MAC5
     generator: "BernCRTData"
@@ -41,8 +40,9 @@ daq: {
   
    FEBBufferCapacity: 10000
 
- data_buffer_depth_fragments: 200000
-          
+   data_buffer_depth_fragments: 200000
+  
+#   firmware_flag: 1 # for future code        
 
    #Restart febdrv periodically (febdrv issue workaround)
    feb_restart_period_s: 0

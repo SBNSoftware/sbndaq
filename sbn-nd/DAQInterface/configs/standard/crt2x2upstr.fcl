@@ -23,7 +23,6 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
-
    
 
 daq.fragment_receiver.FEBConfigurationMAC74: @local::FEBConfigurationStandard
@@ -39,14 +38,7 @@ daq.fragment_receiver.FEBConfigurationMAC88: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC88.charge_threshold: 300
 daq.fragment_receiver.FEBConfigurationMAC88.time_threshold: 300
 
-
 #         preamp_connected_to_fast_shaper: true     # True: HG, False: LG   CHECKME, ICARUS uses false, comment info may be incorrect
-
-# Igor had this set to true, but we were fiddling with it c. 2022-04-13
-#daq.fragment_receiver.FEBConfigurationMAC74.SCA_high_bias: false
-#daq.fragment_receiver.FEBConfigurationMAC85.SCA_high_bias: false
-#daq.fragment_receiver.FEBConfigurationMAC87.SCA_high_bias: false
-#daq.fragment_receiver.FEBConfigurationMAC88.SCA_high_bias: false
 
 ##################
 #
@@ -65,40 +57,40 @@ daq.fragment_receiver.FEBConfigurationMAC88.time_threshold: 300
 #  
 ###############################
 
-# module 74 has no previous config. default is 114, upped to 140
+# module 74 has no previous config. default is 114, upped to 150
 daq.fragment_receiver.FEBConfigurationMAC74.channel_configuration: [
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 0
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 1
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 2
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 3
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 4
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 5
+                 [ 0, 0, 1, 159, 1, 35, 47, 0, 0, 1], # Channel 0
+                 [ 0, 0, 1, 141, 1, 35, 47, 0, 0, 1], # Channel 1
+                 [ 0, 0, 1, 119, 1, 35, 47, 0, 0, 1], # Channel 2
+                 [ 0, 0, 1, 121, 1, 35, 47, 0, 0, 1], # Channel 3
+                 [ 0, 0, 1, 147, 1, 35, 47, 0, 0, 1], # Channel 4
+                 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 5
                  [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 6
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 7
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 8
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 9
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 10
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 11
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 12
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 13
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 14
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 15
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 16
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 17
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 18
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 19
+                 [ 0, 0, 1, 152, 1, 35, 47, 0, 0, 1], # Channel 7
+                 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 8
+                 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 9
+                 [ 0, 0, 1, 160, 1, 35, 47, 0, 0, 1], # Channel 10
+                 [ 0, 0, 1, 156, 1, 35, 47, 0, 0, 1], # Channel 11
+                 [ 0, 0, 1, 152, 1, 35, 47, 0, 0, 1], # Channel 12
+                 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 13
+                 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 14
+                 [ 0, 0, 1, 155, 1, 35, 47, 0, 0, 1], # Channel 15
+                 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 16
+                 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 17
+                 [ 0, 0, 1, 154, 1, 35, 47, 0, 0, 1], # Channel 18
+                 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 19
                  [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 20
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 21
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 22
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 23
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 24
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 25
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 26
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 27
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 28
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 29
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 30
-                 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1]  # Channel 31
+                 [ 0, 0, 1, 157, 1, 35, 47, 0, 0, 1], # Channel 21
+                 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 22
+                 [ 0, 0, 1, 143, 1, 35, 47, 0, 0, 1], # Channel 23
+                 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 24
+                 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 25
+                 [ 0, 0, 1, 147, 1, 35, 47, 0, 0, 1], # Channel 26
+                 [ 0, 0, 1, 146, 1, 35, 47, 0, 0, 1], # Channel 27
+                 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 28
+                 [ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 29
+                 [ 0, 0, 1, 166, 1, 35, 47, 0, 0, 1], # Channel 30
+                 [ 0, 0, 1, 165, 1, 35, 47, 0, 0, 1]  # Channel 31
          ]
 
 daq.fragment_receiver.FEBConfigurationMAC85.channel_configuration: [

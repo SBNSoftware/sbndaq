@@ -5,8 +5,12 @@
     daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
-    daq.fragment_receiver.request_window_width:  35000000 #30ms window
-    daq.fragment_receiver.request_window_offset: 1000000 #15 ms early offset
+#    daq.fragment_receiver.request_window_width:  40000000 #30ms window
+#    daq.fragment_receiver.request_window_offset: 20000000 #15 ms early offset
+
+    daq.fragment_receiver.request_window_width:  400000000 #400ms window
+    daq.fragment_receiver.request_window_offset: 200000000 #200 ms early offset
+
     daq.fragment_receiver.request_windows_are_unique: false
     #daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true
@@ -14,12 +18,5 @@
     daq.fragment_receiver.receive_requests: true
     daq.fragment_receiver.window_close_timeout_us: 400000000
 ##  end pull mode parameters
-
-# other settings we might want to play with in pull mode
-
-    #daq.fragment_receiver.feb_poll_ms: 10    # default is 40 ms (ICARUS)
-#
-#
-#daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
 
 

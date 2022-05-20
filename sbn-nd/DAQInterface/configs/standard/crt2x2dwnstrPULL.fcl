@@ -1,25 +1,3 @@
 #include "crt2x2dwnstr.fcl"
-
-## Pull mode parameters
-    daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
-    daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
-    daq.fragment_receiver.request_port: 3001   # UDP request port
-    daq.fragment_receiver.request_mode: window # pull mode
-    daq.fragment_receiver.request_window_width:  6000000 #3ms window
-    daq.fragment_receiver.request_window_offset: 3000000 #2ms offset
-    #daq.fragment_receiver.request_windows_are_unique: false
-    daq.fragment_receiver.request_windows_are_unique: true
-    daq.fragment_receiver.separate_data_thread: true
-    daq.fragment_receiver.stale_request_timeout: 200000000
-    daq.fragment_receiver.receive_requests: true
-##  end pull mode parameters
-
-# other settings we might want to play with in pull mode
-
-#    daq.fragment_receiver.feb_poll_ms: 4    # default is 40 ms (ICARUS)
-#
-#
-#daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
-
-daq.fragment_receiver.window_close_timeout_us: 4000000
+#include "crt_pull.fcl"
 

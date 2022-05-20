@@ -221,10 +221,11 @@ daq:
     triggerThreshold15: 0
 
     CircularBufferSize: 500e6
-    UseTimeTagForTimeStamp: true
+    UseTimeTagForTimeStamp: false
 
 # added just because it's in the ICARUS config file
 #    TimeOffsetNanoSec: 0
+    fUseTimeTagForTimeStamp: false
 
     destinations: { }
 

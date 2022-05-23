@@ -76,7 +76,7 @@ fragment_receiver: {
    "ctb":{                                                                                               
      "sockets":{
          "receiver":{
-             "rollover":50000,
+             "rollover":500000,
              "host":"10.226.35.150",
              "port":8992
        },
@@ -126,19 +126,19 @@ fragment_receiver: {
          "period"       : "0x3",
          "duty"         : "0x3",
          "early_warning_window":{
-           "use_count": false,
-           "beam_signal_mask": "0x4",
-           "window_length": "0x0"
-         },
-         "pre_arrival_window":{
            "use_count": true,
            "beam_signal_mask": "0x1",
            "window_length": "0x410A"
          },
+         "pre_arrival_window":{
+           "use_count": true,
+           "beam_signal_mask": "0x0",
+           "window_length": "0x1F4"
+         },
          "beam_acceptance_window":{
            "use_count": true,
            "beam_signal_mask": "0x0",
-           "window_length": "0x64"
+           "window_length": "0x1"
          },
          "post_arrival_window":{
            "beam_signal_mask": "0x0",
@@ -171,22 +171,22 @@ fragment_receiver: {
          },
          { "id":"HLT_2",
            "description": "AND of CRT upstream panel layers and pre-arrival gate",
-           "enable":false,
-           "minc" : "0x8000000",
+           "enable":true,
+           "minc" : "0x10000000",
            "mexc" : "0x0",
            "prescale" : "0x1"
          },
          { "id":"HLT_3",
-           "description": "AND of CRT upstream panel layers and beam acceptance gate",
-           "enable":true,
-           "minc" : "0x20000000",
+           "description": "AND of CRT downstream panel layers and beam acceptance gate",
+           "enable":false,
+           "minc" : "0x20002000",
            "mexc" : "0x0",
            "prescale" : "0x1"
          },
          { "id":"HLT_4",
            "description": "AND of CRT upstream+downstream panel (panel layers AND-d) and pre-arrival gate",
            "enable":false,
-           "minc" : "0x10002800",
+           "minc" : "0x20000000",
            "mexc" : "0x0",
            "prescale" : "0x1"
          },

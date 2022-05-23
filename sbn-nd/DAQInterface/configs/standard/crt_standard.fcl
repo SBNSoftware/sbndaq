@@ -41,13 +41,12 @@ daq: {
    FEBBufferCapacity: 10000
 
    data_buffer_depth_fragments: 200000
-          
+  
+#   firmware_flag: 1 # for future code        
 
    #Restart febdrv periodically (febdrv issue workaround)
    feb_restart_period_s: 0
    feb_poll_ms: 40
-
-   firmware_flag: 1
 
    destinations: { }
    routing_table_config:

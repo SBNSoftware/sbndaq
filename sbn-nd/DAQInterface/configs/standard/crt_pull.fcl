@@ -2,27 +2,50 @@
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
     daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
     daq.fragment_receiver.request_port: 3001   # UDP request port
-    daq.fragment_receiver.request_mode: window # pull mode
-    daq.fragment_receiver.request_window_width:  50000000 # window in ns
-    daq.fragment_receiver.request_window_offset: 15000000 # offset in ns - shifts start of window from time of pushed fragment to earlier times
-    #daq.fragment_receiver.request_windows_are_unique: false
-    daq.fragment_receiver.request_windows_are_unique: true
+    daq.fragment_receiver.request_mode: window # window or buffer
+    daq.fragment_receiver.request_window_width:  10000000 # window in ns
+    daq.fragment_receiver.request_window_offset:  5000000 # offset in ns 
+    daq.fragment_receiver.window_close_timeout_us: 10000000
+    daq.fragment_receiver.request_windows_are_unique: false
     daq.fragment_receiver.separate_data_thread: true
-    daq.fragment_receiver.stale_request_timeout: 200000000
+    daq.fragment_receiver.stale_request_timeout: 200000000 #2000000000
     daq.fragment_receiver.receive_requests: true
 ##  end pull mode parameters
 
-# other settings we might want to play with in pull mode
+# crt poll specific settings that are defined in crt_feb_standard
+#   eventually we should change them there
 
-#    daq.fragment_receiver.feb_poll_ms: 4    # default is 40 ms (ICARUS)
-#    daq.fragment_receiver.fragment_period_ms: 10     # default is 10 ms (ICARUS)
-#    daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
-#
-#   daq.fragment_receiver.FEBBufferCapacity: 10000
-#
-#   daq.fragment_receiver.data_buffer_depth_fragments: 200000
-#          
-#
+    daq.fragment_receiver.feb_poll_ms: 12    # default is 40 ms (ICARUS)
+    daq.fragment_receiver.fragment_period_ms: 3     # default is 10 ms (ICARUS)
 
-daq.fragment_receiver.window_close_timeout_us: 4000000
+## end poll specific settings
 
+
+#-------------------------------
+#   explanation of pull parameters
+#--------------------------
+
+# " circular_buffer_mode" - false by default
+#       Whether the data buffer should be treated as a circular buffer on the input side 
+#       (i.e. old fragments are automatically discarded when the buffer is full to always 
+#       call getNext_
+#
+#  " missing_request_window_timeout_us " - 5000000 by default
+#       "How long to track missing requests in the \"out - of - order Windows\" list"
+#
+# " stale_fragment_timeout" - 0 by default, 0 is "disabled"
+#      Fragments stored in the fragment generator which are older than the newest stored fragment 
+#      by at least stale_fragment_timeout units of request timestamp ticks will get discarded
+#
+# " request_window_width" and "request_window_offset"
+#     pull window will be "timestamp - offset" to "timestamp - offset + width"
+#
+# " window_close_timeout_us"
+#     How long to wait for the end of the data buffer to pass the end of a request window 
+#     (measured from the time the request was received)
+#
+# " stale_request_timeout "
+#      From Gennadiy . ...Basically this parameter controls the timeout after which an empty 
+#     container fragment is sent to an event builder.    
+#
+#------------------------------

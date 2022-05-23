@@ -1,5 +1,6 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
+##include "icaruscrt_feb_standard.fcl"
 
 
     daq.fragment_receiver.fragment_ids: [ 79, 80 , 81, 89 ]
@@ -18,8 +19,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f1"
    daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
 
 #ment_receiver.FEBConfigurationMAC7How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
-  
+   daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value  
 
 daq.fragment_receiver.FEBConfigurationMAC79: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC80: @local::FEBConfigurationStandard
@@ -35,6 +35,20 @@ daq.fragment_receiver.FEBConfigurationMAC81.time_threshold: 300
 daq.fragment_receiver.FEBConfigurationMAC89.charge_threshold: 300
 daq.fragment_receiver.FEBConfigurationMAC89.time_threshold: 300
 
+daq.fragment_receiver.FEBConfigurationMAC79.enable_HG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC80.enable_HG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC81.enable_HG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC89.enable_HG_peak_detector: true
+
+daq.fragment_receiver.FEBConfigurationMAC79.enable_LG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC80.enable_LG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC81.enable_LG_peak_detector: true
+daq.fragment_receiver.FEBConfigurationMAC89.enable_LG_peak_detector: true
+
+daq.fragment_receiver.FEBConfigurationMAC79.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC80.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC81.SCA_high_bias: false
+daq.fragment_receiver.FEBConfigurationMAC89.SCA_high_bias: false
 
 daq.fragment_receiver.FEBConfigurationMAC79.channel_configuration: [
                  [ 0, 0, 1, 134, 1, 35, 47, 0, 0, 1], # Channel 0

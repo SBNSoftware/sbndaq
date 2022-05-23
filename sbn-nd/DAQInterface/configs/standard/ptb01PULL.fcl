@@ -5,9 +5,17 @@
     daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
+<<<<<<< HEAD
 
     daq.fragment_receiver.request_window_width:  500000000 #400ms window
     daq.fragment_receiver.request_window_offset: 100000000 #200 ms early offset
+=======
+#    daq.fragment_receiver.request_window_width:  40000000 #30ms window
+#    daq.fragment_receiver.request_window_offset: 20000000 #15 ms early offset
+
+    daq.fragment_receiver.request_window_width:  400000000 #400ms window
+    daq.fragment_receiver.request_window_offset: 200000000 #200 ms early offset
+>>>>>>> 216e75ae51b50bf73fa8642398a220fe65975bb9
 
     daq.fragment_receiver.request_windows_are_unique: false
     #daq.fragment_receiver.request_windows_are_unique: true

@@ -1,6 +1,5 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
-##include "icaruscrt_feb_standard.fcl"
 
 
     daq.fragment_receiver.fragment_ids: [ 79, 80 , 81, 89 ]
@@ -18,7 +17,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f1"
 # Whether or not turn on SiPM HV on each FEB
    daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
 
-#ment_receiver.FEBConfigurationMAC7How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value  
 
 daq.fragment_receiver.FEBConfigurationMAC79: @local::FEBConfigurationStandard

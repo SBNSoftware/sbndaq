@@ -4,7 +4,7 @@ FEBConfigurationStandard: {
          LG_peak_detector_PP: false     # True: power pin, False: forced
          LG_preamp_bias: true           # True: normal, False: weak
          LG_shaper_time_constant: 6     # 7: 87.5ns, 6: 75.0ns, 5: 62.5ns, 4: 50.0ns, 3: 37.5ns, 2: 25.0ns, 1: 12.5ns, 0: undefined?
-         SCA_high_bias: true            # True: high bias 5MHz readout speed, False: weak bias
+         SCA_high_bias: false           # True: high bias 5MHz readout speed, False: weak bias
          bypass_peak_sensing_cell: true
 # channel specific parameters:  threshold, threshold, discr.,   adjust.   bias,      gain,      gain,     HG,     LG, preamp
 #max values:      15,15, 1, 255, 1, ?, ?      1      1      1
@@ -54,7 +54,7 @@ FEBConfigurationStandard: {
          enable_HG_OTA_PP: false
          enable_HG_SCA: false
          enable_HG_SCA_PP: true
-         enable_HG_peak_detector: false          
+         enable_HG_peak_detector: true
          enable_HG_preamp: true
          enable_HG_preamp_PP: false
          enable_HG_slow_shaper: true
@@ -63,7 +63,7 @@ FEBConfigurationStandard: {
          enable_LG_OTA_PP: false
          enable_LG_SCA: false
          enable_LG_SCA_PP: true
-         enable_LG_peak_detector: false          
+         enable_LG_peak_detector: true
          enable_LG_preamp: true
          enable_LG_preamp_PP: false
          enable_LG_slow_shaper: true
@@ -101,7 +101,4 @@ FEBConfigurationStandard: {
          charge_threshold: 250
          time_threshold: 250
          trigger_polarity: false                    # True: positive (rising edge), False: negative (falling edge)
-      }  
-
-
-
+      }

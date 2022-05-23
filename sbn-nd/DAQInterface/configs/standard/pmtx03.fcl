@@ -6,6 +6,7 @@ daq.fragment_receiver.link: 1
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 11
 daq.fragment_receiver.board_id: 11
+
 # record 1200 ticks = 2.4 us with 50% after the trigger
 # default is 5000 ticks/80%
 daq.fragment_receiver.recordLength: 1200

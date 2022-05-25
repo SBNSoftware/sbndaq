@@ -1,26 +1,22 @@
 #!/bin/bash
-
-database_work_dir=${HOME}/work-db-v4-dir
-
 source /daq/software/products/setup
 
-setup artdaq_database v1_05_08 -q e20:prof:s112
-#export LD_LIBRARY_PATH=$(echo $LD_LIBRARY_PATH |sed 's/:/\n/g'|grep -v "/lib64"|tr '\n' ':'|| sed 's/:$//')
-
-#export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:28047/sbndaq_db"
-
-if [ ! -d ${database_work_dir} ]; then 
-  mkdir -p ${database_work_dir}
-fi
-
-#cd ${database_work_dir}
-
+export ARTDAQ_DATABASE_ENV=${ARTDAQ_DATABASE_ENV:-"${HOME}/.artdaq_database.env"}
+[[ -f ${ARTDAQ_DATABASE_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_ENV} is missing."; exit 2; }
+set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; set +o allexport
+export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_06_01 -q ${SBNDAQ_QUALS}"}
+eval "$ARTDAQ_DATABASE_SETUP_COMMAND"
+(( $? == 0 )) || { echo "Error: Failed running \"${ARTDAQ_DATABASE_SETUP_COMMAND}\""; exit 2; }
+set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; set +o allexport
+export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-dir"}
+[[ -d ${ARTDAQ_DATABASE_WORKDIR} ]] ||  mkdir -p ${ARTDAQ_DATABASE_WORKDIR}
+export ARTDAQ_DATABASE_URI=${ARTDAQ_DATABASE_URI:-"filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"}
+export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
 conftool.py
 
 _complete_conftool(){
     local current_string=${COMP_WORDS[COMP_CWORD]}
     local complete_list=$(conftool.py |grep -v Usage |grep conftool |cut -d ' ' -f 3)
-
     if [  ${COMP_WORDS[COMP_CWORD-1]} = "exportConfiguration" ];then
        complete_list=$(conftool.py getListOfAvailableRunConfigurations)
     elif [  ${COMP_WORDS[COMP_CWORD-1]} = "getListOfAvailableRunConfigurations" ];then
@@ -28,20 +24,16 @@ _complete_conftool(){
     elif [  ${COMP_WORDS[COMP_CWORD-1]} = "importConfiguration" ];then
        complete_list=$(conftool.py getListOfAvailableRunConfigurationPrefixes)
     fi
-                            
+
     COMPREPLY=($(compgen -W '${complete_list[@]}' -- "$current_string"))
     return 0
 }
 
 complete -F _complete_conftool conftool.py
-export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
-#cd $database_work_dir
 echo
 echo
-echo "Listing RunConfigurations available in artdaq_database:"
-conftool.py getListOfAvailableRunConfigurations
-echo 
-echo 
+echo
+echo
 echo "Instructions: https://cdcvs.fnal.gov/redmine/projects/artdaq-utilities/wiki/Artdaq-config-conftool"
-echo 
-echo 
+echo
+echo

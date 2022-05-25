@@ -30,7 +30,7 @@ trace_control_tshow_outfile='/scratch_local/traces/r$run.$hostname.trc'
 trace_control_logfile='/scratch_local/traces/r$run.$transition'
 trace_control_nodelist='localhost'
 trace_control_upsdb=/daq/software/products
-trace_control_trace_version=v3_17_01
+trace_control_trace_version=v3_17_04
 trace_control_run_records_dir=/daq/run_records
 RGANG=`which rgang`
 test -z "$RGANG" && RGANG=`which rgang.py`
@@ -61,6 +61,9 @@ Options:          Note: \"run\" option is required.
 -n,--dry-run      do nothing, except create log file.
 "
 VUSAGE=""
+
+echo "`date`: $0 $@" >> ~/trace.log
+echo "`date`: RGANG=$RGANG TRACE_VERSION=$TRACE_VERSION" >> ~/trace.log
 
 # Process script arguments and options
 op1chr='rest=`expr "$op" : "[^-]\(.*\)"`; test -n "$rest" && set -- "-$rest" "$@"'
@@ -150,7 +153,7 @@ case $transition in
 start)  rgcmd=". $trace_control_upsdb/setup"
         rgcmd="$rgcmd; setup TRACE $trace_control_trace_version"
         rgcmd="$rgcmd; export TRACE_FILE=$trace_file"
-        rgcmd="$rgcmd; treset; tmodeM 1;true"
+        rgcmd="$rgcmd; tinfo|awk '/^trace.h rev/{rev1=\$5}/^revision/{rev2=\$4;exit rev1==rev2}'&&rm -f $trace_file||{ treset; tmodeM 1;true;}"
         test -n "${do_nothing-}" \
             && echo $RGANG $do_nodelist "$rgcmd" \
             || $RGANG $do_nodelist "$rgcmd"

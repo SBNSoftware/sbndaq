@@ -1,5 +1,3 @@
-gps   icarus-evb06 -1 1
-gps   icarus-pmt07-daq -1 1
 icarustpc01 icarus-vst01-daq -1 1
 icarustpc02 icarus-vst01-daq -1 1
 icarustpc03 icarus-vst01-daq -1 1

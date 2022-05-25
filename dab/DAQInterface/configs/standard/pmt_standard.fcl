@@ -194,26 +194,26 @@ daq:
     # register 0x8028
     dynamicRange: 0 
 
-    triggerThreshold0:  7800
+    triggerThreshold0:  0x0000
     triggerThreshold1:  0x0000
-    triggerThreshold2:  7800
+    triggerThreshold2:  0x0000
     triggerThreshold3:  0x0000
-    triggerThreshold4:  7800
+    triggerThreshold4:  0x0000
     triggerThreshold5:  0x0000
     triggerThreshold6:  0x0000
     triggerThreshold7:  0x0000
-    triggerThreshold8:  7800
+    triggerThreshold8:  0x0000
     triggerThreshold9:  0x0000
-    triggerThreshold10: 7800
+    triggerThreshold10: 0x0000
     triggerThreshold11: 0x0000
-    triggerThreshold12: 7800
+    triggerThreshold12: 0x0000
     triggerThreshold13: 0x0000
     triggerThreshold14: 0x0000
     triggerThreshold15: 0x0000
 
     CircularBufferSize: 500e6
-    UseTimeTagForTimeStamp: false
-#    UseTimeTagForTimeStamp: true
+#    UseTimeTagForTimeStamp: false
+    UseTimeTagForTimeStamp: true
 # added just because it's in the ICARUS config file
     TimeOffsetNanoSec: 0
 

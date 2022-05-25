@@ -5,7 +5,7 @@ daq.fragment_receiver.board_config : '{
     "sockets":{
         "receiver":{
             "rollover":500000,
-            "host":"sbnd-daq33-priv",
+            "host":"sbnd-daq34-priv",
             "port":8992
       },
       "monitor":{

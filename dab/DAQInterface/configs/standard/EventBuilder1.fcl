@@ -2,6 +2,6 @@
 #daq.metrics.graphite.namespace: "dab.evb01."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb01_metrics.log"
 outputs.normalOutput.fileName: "/daq/scratch/trigger_tests/data_evb01_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/daq/scratch/data_evb01_run%R_%#_%to.root"
-physics.my_output_modules: [ normalOutput, rootNetOutput ]
+#outputs.testOutput.fileName: "/daq/scratch/data_evb01_run%R_%#_%to.root"
+physics.my_output_modules: [ normalOutput ]
 process_name: DAQEVB01

@@ -1,6 +1,6 @@
 daq: {
   fragment_receiver: {
-     events_to_generate: 6000
+#     events_to_generate: 6000
      max_fragment_size_bytes: 100000
      data_buffer_depth_fragments:2048
      sleep_on_no_data_us: 10000

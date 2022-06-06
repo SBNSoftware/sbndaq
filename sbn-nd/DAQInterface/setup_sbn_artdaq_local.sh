@@ -75,10 +75,10 @@ tonM -N spectdc_FragmentBuffer DEBUG+30
 #enable Request Packet: hdr=1414678855, seq=3036, ts=
 tonM -N spectdc_RequestReceiver DEBUG+36
 #enable Stop / Start commands
-tonM -M spectdc_CommandableFragmentGenerator DEBUG+43
-tonM -M spectdc_CommandableFragmentGenerator DEBUG+43
-tonS -M spectdc_CommandableFragmentGenerator DEBUG+44
-tonS -M spectdc_CommandableFragmentGenerator DEBUG+44
+tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
+tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
+tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
+tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
 
 #remove noise
 toffM -N SPECTDCTimestampReader DEBUG+2

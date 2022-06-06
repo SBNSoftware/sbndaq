@@ -1,0 +1,52 @@
+#include "pmt_standard.fcl"
+
+# link is which port on the PCIe card it is connected, numbering starts at 0
+daq.fragment_receiver.link:2
+
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 11
+daq.fragment_receiver.board_id: 11
+# record 1200 ticks = 2.4 us with 15% before the trigger
+daq.fragment_receiver.recordLength:         1200
+daq.fragment_receiver.postPercent: 85
+
+#daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx02_metrics.log"
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx02:"
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx02:"
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx02:"
+
+# settings below are for CRT## running 
+#
+# set thresholds 
+#     default is 0, set in pmt_standard.fcl
+#
+daq.fragment_receiver.triggerThreshold0:  7800
+daq.fragment_receiver.triggerThreshold1:  7800
+daq.fragment_receiver.triggerThreshold2:  7800
+daq.fragment_receiver.triggerThreshold3:  7800
+daq.fragment_receiver.triggerThreshold4:  7800
+daq.fragment_receiver.triggerThreshold5:  7800
+daq.fragment_receiver.triggerThreshold6:  7800
+daq.fragment_receiver.triggerThreshold7:  7800
+daq.fragment_receiver.triggerThreshold8:  7800
+daq.fragment_receiver.triggerThreshold9:  7800
+daq.fragment_receiver.triggerThreshold10: 7800
+daq.fragment_receiver.triggerThreshold11: 7800
+daq.fragment_receiver.triggerThreshold12: 7800
+daq.fragment_receiver.triggerThreshold13: 7800
+daq.fragment_receiver.triggerThreshold14: 7800
+daq.fragment_receiver.triggerThreshold15: 7800
+#
+# set baselines for positive signals (attenuated TTL)
+#  default is 37628 set in pmt_standard.fcl
+#
+daq.fragment_receiver.channelPedestal1: 55000
+daq.fragment_receiver.channelPedestal3: 55000
+daq.fragment_receiver.channelPedestal5: 55000
+daq.fragment_receiver.channelPedestal7: 55000
+daq.fragment_receiver.channelPedestal9: 55000
+daq.fragment_receiver.channelPedestal11: 55000
+daq.fragment_receiver.channelPedestal13: 55000
+daq.fragment_receiver.channelPedestal15: 55000
+
+daq.fragment_receiver.UseTimeTagForTimeStamp: true

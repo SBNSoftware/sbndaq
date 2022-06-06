@@ -1,0 +1,737 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "This dashboard is the one intended for use by the shifter. The others are generally expert level :)",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 27,
+      "title": "Row title",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 44,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sbnd\\.partition1.run_number$/",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "sbnd.partition1.run_number"
+        }
+      ],
+      "title": "Last Run Number (partition 1)",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "${__series.name}",
+          "links": [],
+          "mappings": [],
+          "max": 15,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 0.5
+              },
+              {
+                "color": "yellow",
+                "value": 6
+              },
+              {
+                "color": "orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Dispatcher Event Rate"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "green",
+                      "value": 0.05
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 20,
+        "x": 4,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "refCount": 0,
+          "refId": "F",
+          "target": "alias(averageSeries(keepLastValue(sbnd.*tdc*, 10)), 'TDC Avg Rate')",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(averageSeries(keepLastValue(sbnd.*pmt*.BoardReader.*.Fragment_Rate, 10)), 'PMT Avg Fragment Rate')",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(keepLastValue(sbnd.evb*.*.Event_Rate, 10)), 'EventBuilder Event Rate')",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(sbnd.dl*.*.Event_Rate), 'DataLogger Event Rate')",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "refCount": 0,
+          "refId": "E",
+          "target": "alias(sumSeries(keepLastValue(sbnd.disp01.*.Event_Rate)), 'Dispatcher Event Rate')",
+          "textEditor": false
+        }
+      ],
+      "title": "Total Event Rates",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "description": "Rate of the beam signals transmitted through the White Rabbit network",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "light-green",
+                "value": 0.1
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 3
+              },
+              {
+                "color": "#EAB839",
+                "value": 5.5
+              },
+              {
+                "color": "#EF843C",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "hertz"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 20,
+        "x": 4,
+        "y": 8
+      },
+      "id": 43,
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.5.2",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sbnd.daq02.*.*.WR_CLK02_SPEC_DIO_gatedBES.DIO_Channel_4_Rates, 'BNB Gated BES')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sbnd.daq02.*.*.WR_CLK02_SPEC_DIO_$1D.DIO_Channel_1_Rates, 'BNB $1D')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(sbnd.daq02.BoardReader.*.WR_CLK02_SPEC_DIO_$74.DIO_Channel_3_Rates, 'NuMI MIBS $74')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "E",
+          "target": "alias(averageSeries(sbnd.daq02.BoardReader.*.WR_CLK02_SPEC_DIO_$AE.DIO_Channel_2_Rates), 'NuMI $AD')"
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(averageSeries(sbnd.daq02.BoardReader.*.WR_CLK02_SPEC_DIO_PPS.DIO_Channel_0_Rates), 'PPS')"
+        }
+      ],
+      "title": "Beam Early Warning Signals ",
+      "type": "gauge"
+    },
+    {
+      "columns": [
+        {
+          "$$hashKey": "object:1282",
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "description": "This shows the number of events collected for this run.",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 14
+      },
+      "id": 10,
+      "links": [],
+      "pluginVersion": "6.4.4",
+      "showHeader": true,
+      "sort": {
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(keepLastValue(sbnd.evb*.*.Events_Released_to_art_this_run, 10)), 'Events Released to art in EventBuilders')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(keepLastValue(sbnd.dl*.*.Events_Released_to_art_this_run, 10)), 'Events Released to art in DataLoggers')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sumSeries(keepLastValue(sbnd.disp*.*.Events_Released_to_art_this_run, 10)), 'Events Released to art in Dispatchers')",
+          "textEditor": false
+        }
+      ],
+      "title": "Events Released To Art From This Run",
+      "transform": "timeseries_aggregations",
+      "type": "table-old"
+    },
+    {
+      "columns": [
+        {
+          "$$hashKey": "object:754",
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "description": "In the ideal case, there are no incomplete events. If you start seeing incomplete events, make note of this in the ECL!",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 14
+      },
+      "id": 12,
+      "links": [],
+      "pluginVersion": "6.4.4",
+      "showHeader": true,
+      "sort": {
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": "row",
+          "colors": [
+            "rgb(0, 0, 0)",
+            "#F2495C",
+            "#F2495C"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [
+            "1"
+          ],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(keepLastValue(sbnd.evb*.*.Incomplete_Events_Released_to_art_this_run, 10)), 'Incomplete Events in EventBuilders')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(keepLastValue(sbnd.dl*.*.Incomplete_Events_Released_to_art_this_run, 10)), 'Inomplete Events in DataLoggers')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sumSeries(keepLastValue(sbnd.disp01.*.Incomplete_Events_Released_to_art_this_run, 10)), 'Inomplete Events in Dispatchers')",
+          "textEditor": false
+        }
+      ],
+      "title": "Incomplete Events Released To Art From This Run",
+      "transform": "timeseries_aggregations",
+      "type": "table-old"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "description": "the rate of the total empty fragments collected normalized to the total number of events collected",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "max": 2,
+          "noValue": "n/a",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 0.5
+              },
+              {
+                "color": "dark-red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 19
+      },
+      "id": 39,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "PED8062B0600A9C35"
+          },
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(keepLastValue(sbnd.evb*.EventBuilder*_art*.EventsWithEmptyFragments, 10)), 'Total')"
+        }
+      ],
+      "title": "Events with empty fragments  [%]",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "PED8062B0600A9C35"
+      },
+      "description": "Shows how much of the /data area on evb01 is being used.\n\nIt's set to go orange above 60%, meaning take note, and it's set to go red above 95%, meaning alarm.",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 0.6
+              },
+              {
+                "color": "red",
+                "value": 0.95
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 19
+      },
+      "id": 18,
+      "links": [],
+      "options": {
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.5.2",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sbnd.sbnd-evb01.data.Percent_Used, 'sbnd-evb01')"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sbnd.sbnd-evb02.data.Percent_Used, 'icaurs-evb02')"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sbnd.sbnd-evb03.data.Percent_Used, 'sbnd-evb03')"
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(sbnd.sbnd-evb04.data.Percent_Used, 'sbnd-evb04')"
+        },
+        {
+          "refCount": 0,
+          "refId": "E",
+          "target": "alias(sbnd.sbnd-evb05.data.Percent_Used, 'sbnd-evb05')"
+        },
+        {
+          "refCount": 0,
+          "refId": "F",
+          "target": "sbnd.sbnd-evb06.data.Percent_Used"
+        }
+      ],
+      "title": "/data Usage Monitor",
+      "type": "gauge"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Shifter DAQ Status",
+  "uid": "hNjxNryWk",
+  "version": 11,
+  "weekStart": ""
+}

@@ -24,6 +24,8 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
    
+daq.metrics.graphite.namespace: "sbnd.crtup01."
+
 
 daq.fragment_receiver.FEBConfigurationMAC74: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC74.charge_threshold: 300

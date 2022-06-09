@@ -40,7 +40,8 @@ daq: {
   
    FEBBufferCapacity: 10000
 
-   data_buffer_depth_fragments: 200000
+   data_buffer_depth_fragments: 5000000 #ICARUS
+   #data_buffer_depth_fragments: 200000 #previous number being used
   
 #   firmware_flag: 1 # for future code        
 
@@ -71,4 +72,25 @@ daq: {
 '
 
 }
+
+metrics: {
+brFile: {
+metricPluginType: "file"
+level: 3
+fileName: "/daq/log/metrics/crt_%UID%_metrics.log"
+uniquify: true
 }
+send_system_metrics: true
+send_process_metrics: true
+graphite:{
+namespace: "sbnd.crt00."
+host: "10.226.36.34"
+level: 10
+metricPluginType: "graphite"
+port: 2003
+reporting_interval: 10
+}
+} 
+
+}
+

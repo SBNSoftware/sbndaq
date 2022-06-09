@@ -212,10 +212,10 @@ daq:
 
     CircularBufferSize: 500e6
     UseTimeTagForTimeStamp: false
+    fUseTimeTagForTimeStamp: false
 
 # added just because it's in the ICARUS config file
 #    TimeOffsetNanoSec: 0
-    UseTimeTagForTimeStamp: false
 
     destinations: { }
 
@@ -233,6 +233,16 @@ daq:
       fileName: "/daq/log/metrics/pmtx00_metrics.log"
       uniquify: true
     }
+    send_system_metrics: true
+    send_process_metrics: true
+		      graphite:{
+	namespace: "sbnd.pmt00."
+	   host: "10.226.36.34"
+      level: 10
+       metricPluginType: "graphite"
+		  port: 2003
+      reporting_interval: 10
+		    }
     # redis_10s: {
     #       metricPluginType: "redis"
     #   level: 3

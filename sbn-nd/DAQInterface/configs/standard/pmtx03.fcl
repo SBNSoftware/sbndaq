@@ -56,3 +56,5 @@ daq.fragment_receiver.channelPedestal15: 55000
 daq.fragment_receiver.UseTimeTagForTimeStamp: true
 daq.fragment_receiver.fUseTimeTagForTimeStamp: true
 
+#Erin is testing things June 9th, 2022
+daq.fragment_receiver.InterruptEnable: 0

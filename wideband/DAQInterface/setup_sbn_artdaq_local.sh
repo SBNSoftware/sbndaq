@@ -2,14 +2,14 @@
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
 
-setup mrb v5_12_00
+setup mrb v5_19_05
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_04_00"
-SBNDAQ_QUAL1="e17"
+SBNDAQ_VERSION="v1_01_00"
+SBNDAQ_QUAL1="e20"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s83"
+SBNDAQ_QUAL3="s112"
 
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"

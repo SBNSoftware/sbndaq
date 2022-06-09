@@ -91,7 +91,7 @@ outputs: {
     SelectEvents: [pd]
     host_map: [{ 
       rank: -1
-      host: "sbnd-daq33-priv.fnal.gov"
+      host: "sbnd-daq34-priv.fnal.gov"
     }]   
   }
 

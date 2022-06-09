@@ -12,135 +12,9 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 
-setdaqcomps.sh \
-icarustpcee01b \
-icarustpcee01m \
-icarustpcee01t \
-icarustpcee02 \
-icarustpcee03 \
-icarustpcee04 \
-icarustpcee05 \
-icarustpcee06 \
-icarustpcee07 \
-icarustpcee08 \
-icarustpcee09 \
-icarustpcee10 \
-icarustpcee11 \
-icarustpcee12 \
-icarustpcee13 \
-icarustpcee14 \
-icarustpcee15 \
-icarustpcee16 \
-icarustpcee17 \
-icarustpcee18 \
-icarustpcee19 \
-icarustpcee20b \
-icarustpcee20m \
-icarustpcee20t \
-icarustpcew01b \
-icarustpcew01m \
-icarustpcew01t \
-icarustpcew02 \
-icarustpcew03 \
-icarustpcew04 \
-icarustpcew05 \
-icarustpcew06 \
-icarustpcew07 \
-icarustpcew08 \
-icarustpcew09 \
-icarustpcew10 \
-icarustpcew11 \
-icarustpcew12 \
-icarustpcew13 \
-icarustpcew14 \
-icarustpcew15 \
-icarustpcew16 \
-icarustpcew17 \
-icarustpcew18 \
-icarustpcew19 \
-icarustpcew20b \
-icarustpcew20m \
-icarustpcew20t \
-icarustpcww01b \
-icarustpcww01m \
-icarustpcww01t \
-icarustpcww02 \
-icarustpcww03 \
-icarustpcww04 \
-icarustpcww05 \
-icarustpcww06 \
-icarustpcww07 \
-icarustpcww08 \
-icarustpcww09 \
-icarustpcww10 \
-icarustpcww11 \
-icarustpcww12 \
-icarustpcww13 \
-icarustpcww14 \
-icarustpcww15 \
-icarustpcww16 \
-icarustpcww17 \
-icarustpcww18 \
-icarustpcww19 \
-icarustpcww20b \
-icarustpcww20m \
-icarustpcww20t \
-icarustpcwe01b \
-icarustpcwe01m \
-icarustpcwe01t \
-icarustpcwe02 \
-icarustpcwe03 \
-icarustpcwe04 \
-icarustpcwe05 \
-icarustpcwe06 \
-icarustpcwe07 \
-icarustpcwe08 \
-icarustpcwe09 \
-icarustpcwe10 \
-icarustpcwe11 \
-icarustpcwe12 \
-icarustpcwe13 \
-icarustpcwe14 \
-icarustpcwe15 \
-icarustpcwe16 \
-icarustpcwe17 \
-icarustpcwe18 \
-icarustpcwe19 \
-icarustpcwe20b \
-icarustpcwe20m \
-icarustpcwe20t \
-icarustrigger \
-#icaruscrt01nno  \
-#icaruscrt01nni  \
-#icaruscrt03wci  \
-#icaruscrt03wco  \
-#icaruspmteebot01 \
-#icaruspmteebot02 \
-#icaruspmteebot03 \
-#icaruspmteetop01 \
-#icaruspmteetop02 \
-#icaruspmteetop03 \
-#icaruspmtewbot01 \
-#icaruspmtewbot02 \
-#icaruspmtewbot03 \
-#icaruspmtewtop01 \
-#icaruspmtewtop02 \
-#icaruspmtewtop03 \
-#icaruspmtwebot01 \
-#icaruspmtwebot02 \
-#icaruspmtwebot03 \
-#icaruspmtwetop01 \
-#icaruspmtwetop02 \
-#icaruspmtwetop03 \
-#icaruspmtwwbot01 \
-#icaruspmtwwbot02 \
-#icaruspmtwwbot03 \
-#icaruspmtwwtop01 \
-#icaruspmtwwtop02 \
-#icaruspmtwwtop03
+setdaqcomps.sh wr
 
-
-send_transition.sh boot $1
+send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]
 do
@@ -149,7 +23,7 @@ do
   [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
 done
 
-send_transition.sh config $2
+send_transition.sh config standard
 #send_transition.sh config testGALQ
 
 getStatus "configuring"

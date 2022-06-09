@@ -67,6 +67,7 @@ outputs: {
     compressionLevel: 0
     SelectEvents: [p2]
   }
+
   testOutput: {
     module_type: RootDAQOut
     fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
@@ -89,7 +90,7 @@ outputs: {
     #SelectEvents: [p1]
     host_map: [{
       rank: -1
-      host: "sbnd-daq33-priv.fnal.gov"
+      host: "sbnd-daq34-priv.fnal.gov"
     }]
 
   	routing_table_config: {
@@ -129,7 +130,8 @@ physics: {
     		  prescaleFactor: 1
  		  prescaleOffset: 0
 		}
-  }
+    
+   }
 
   p1: [ ]
   p2: [ prescale1 ]

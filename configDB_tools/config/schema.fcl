@@ -51,7 +51,8 @@ pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)'
 
 collection: CRTs 
 
-pattern: '(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)' 
+pattern: '(.*/)((|icarus|icarus_)crt(|top)(|_feb)(\d+(|[a-zA-Z0-9]{3})|_bitstream_\d+|_standard(|_\d+)|_common|_noise))(\.fcl$)'
+ 
 
 }, {
 collection: PMTs 
@@ -194,7 +195,7 @@ pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)'
 
 collection: RunHistory 
 
-pattern: '(.*/)((|icarus|icarus_)crt(|_feb)(\d+(|[a-zA-Z]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)' 
+pattern: '(.*/)((|icarus|icarus_)crt(|top)(|_feb)(\d+(|[a-zA-Z0-9]{3})|_bitstream_\d+|_standard|_common|_noise))(\.fcl$)' 
 
 }, {
 collection: RunHistory 

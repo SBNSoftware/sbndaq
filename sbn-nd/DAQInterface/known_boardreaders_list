@@ -16,7 +16,4 @@ mbb01 sbnd-mbb01-daq -1 1
 ptb01 sbnd-ptb01-daq -1 1
 pmtx02 sbnd-pds02-daq -1 1
 gps sbnd-gps01-daq -1 1
-spectdci sbnd-clk01-daq -1 1 0-15 "/bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH valgrind --tool=memcheck --leak-check=full --undef-value-errors=no "
-spectdc1 sbnd-clk01-daq -1 1 0-15 "/bin/env LD_PRELOAD=libasan.so LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-spectdc2 sbnd-clk01-daq -1 1 0-15 "/bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH valgrind --tool=memcheck --leak-check=full --undef-value-errors=yes --log-file=/home/nfs/sbnd/DAQ_DevAreas/DAQ_19May2022GAL/DAQInterface/valgrind.txt "
-spectdc sbnd-clk01-daq -1 1 0-15
+spectdc sbnd-clk01-daq -1 1

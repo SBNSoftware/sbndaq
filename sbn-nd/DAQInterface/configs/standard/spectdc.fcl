@@ -24,10 +24,10 @@ daq: {
      buffer_mode_keep_latest: true
      circular_buffer_mode: false
      missing_request_window_timeout_us: 2000000 #2s
-     hardware_poll_interval_us: 10000000
+     hardware_poll_interval_us: 30000000 #30s
      stale_fragment_timeout: 20000000000 #20s
-     separate_monitoring_thread: true
-     separate_data_thread: true
+     separate_monitoring_thread: false
+     separate_data_thread: false
      destinations: { }
 
      routing_table_config: {

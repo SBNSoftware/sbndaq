@@ -1,18 +1,21 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
+#include "crt_pull.fcl"
 
 
 # 2x2 south
     #daq.fragment_receiver.fragment_ids: [ 74, 85 , 87, 88 ]
-    daq.fragment_receiver.fragment_ids: [ 71, 81 ]
+    #daq.fragment_receiver.fragment_ids: [ 71, 81 ]
     #daq.fragment_receiver.fragment_ids: [ 81 ]
+    daq.fragment_receiver.fragment_ids: [ 193 ]
 # 2x2 north 
 #    daq.fragment_receiver.fragment_ids: [ 79, 80 , 81, 76 ]
 #
 #    daq.fragment_receiver.fragment_ids: [ 87, 88 ]
 #    daq.fragment_receiver.fragment_ids: [ 87 ]
-    #daq.fragment_receiver.generated_fragments_per_event: 1 #number if FEBs
-    daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
+
+    daq.fragment_receiver.generated_fragments_per_event: 1 #number if FEBs
+    #daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
     #daq.fragment_receiver.generated_fragments_per_event: 3 #number if FEBs
     #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
     
@@ -20,7 +23,7 @@
     daq.fragment_receiver.board_id: 1
 
 #What is ReaderID? Another ID?
-    daq.fragment_receiver.ReaderID: 74
+    daq.fragment_receiver.ReaderID: 193
 
 daq.fragment_receiver.ethernet_port: "enp23s0f0"
    
@@ -29,14 +32,14 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 # Whether or not turn on SiPM HV on each FEB
    #daq.fragment_receiver.TurnOnHV : [ false ]
    #daq.fragment_receiver.TurnOnHV : [ false, false, false, false ]
-   daq.fragment_receiver.TurnOnHV : [ false, false ]
-   #daq.fragment_receiver.TurnOnHV : [ true ]
+   #daq.fragment_receiver.TurnOnHV : [ false, false ]
+   daq.fragment_receiver.TurnOnHV : [ true ]
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    #daq.fragment_receiver.PPS_offset_ns : [ 0 ] # = dummy value
    #daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
-   daq.fragment_receiver.PPS_offset_ns : [ 0, 0 ] # = dummy value
-   #daq.fragment_receiver.PPS_offset_ns : [ 0 ] # = dummy value
+   #daq.fragment_receiver.PPS_offset_ns : [ 0, 0 ] # = dummy value
+   daq.fragment_receiver.PPS_offset_ns : [ 0 ] # = dummy value
   
    #daq.fragment_receiver.FEBBufferCapacity: 98789
    
@@ -63,6 +66,8 @@ daq.fragment_receiver.FEBConfigurationMAC88: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC89: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC122: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC193: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC193.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC193.time_threshold: 250
 
 
 

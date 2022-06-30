@@ -100,7 +100,12 @@ outputs: {
 }
 
 physics: {
-  analyzers: {}
+  
+  analyzers: {
+      fragWatcher: {
+         module_type: "FragmentWatcher"
+      } 
+  }
 
   producers: {}
 
@@ -134,13 +139,13 @@ physics: {
   p1: [ ]
   p2: [ prescale1 ]
   pd: [ prescale5 ]
-  a1: [ ]
+  a1: [ fragWatcher ]
   #my_output_modules: []
   my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
-  end_paths: [ my_output_modules ]
+  end_paths: [ a1, my_output_modules ]
 }
 source: {
   module_type: ArtdaqInput

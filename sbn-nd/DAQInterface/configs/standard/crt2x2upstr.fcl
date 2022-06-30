@@ -12,24 +12,30 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 #daq.fragment_receiver.ethernet_port: "enp23s0f1"
    
 #List of FEBs in the daisy chain
-    daq.fragment_receiver.fragment_ids: [ 74, 85, 88, 87 ]
+    #daq.fragment_receiver.fragment_ids: [ 74, 85, 88, 87 ]
+    daq.fragment_receiver.fragment_ids: [ 193, 85, 88, 87 ]
     daq.fragment_receiver.generated_fragments_per_event: 4 #number of FEBs
 # first board in the chain
-    daq.fragment_receiver.ReaderID: 74
+    daq.fragment_receiver.ReaderID: 193
 
 # Whether or not turn on SiPM HV on each FEB
    daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
 #   daq.fragment_receiver.TurnOnHV : [ false, false, false, false ]
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
+   daq.fragment_receiver.PPS_offset_ns : [ 232, 240, 253, 266 ] # = dummy value
+   #daq.fragment_receiver.PPS_offset_ns : [ 0, 240, 253, 266 ]
    
 daq.metrics.graphite.namespace: "sbnd.crtup01."
 
 
-daq.fragment_receiver.FEBConfigurationMAC74: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC74.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC74.time_threshold: 300
+#daq.fragment_receiver.FEBConfigurationMAC74: @local::FEBConfigurationStandard
+#daq.fragment_receiver.FEBConfigurationMAC74.charge_threshold: 300
+#daq.fragment_receiver.FEBConfigurationMAC74.time_threshold: 300
+
+daq.fragment_receiver.FEBConfigurationMAC193: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC193.charge_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC193.time_threshold: 300
 daq.fragment_receiver.FEBConfigurationMAC85: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC85.charge_threshold: 300
 daq.fragment_receiver.FEBConfigurationMAC85.time_threshold: 300
@@ -59,7 +65,8 @@ daq.fragment_receiver.FEBConfigurationMAC88.time_threshold: 300
 ###############################
 
 # module 74 has no previous config. default is 114, upped to 150
-daq.fragment_receiver.FEBConfigurationMAC74.channel_configuration: [
+#below are settings for module 74, which now has board 193 attached
+daq.fragment_receiver.FEBConfigurationMAC193.channel_configuration: [
 #                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 0
 #                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 1
 #                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 2

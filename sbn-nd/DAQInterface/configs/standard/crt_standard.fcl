@@ -43,7 +43,7 @@ daq: {
    data_buffer_depth_fragments: 5000000 #ICARUS
    #data_buffer_depth_fragments: 200000 #previous number being used
   
-#   firmware_flag: 1 # for future code        
+   firmware_flag: SBND #needs to be SBND or lots of missing events/crashes!        
 
    #Restart febdrv periodically (febdrv issue workaround)
    feb_restart_period_s: 0

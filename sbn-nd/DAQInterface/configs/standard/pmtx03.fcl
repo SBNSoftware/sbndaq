@@ -54,7 +54,12 @@ daq.fragment_receiver.channelPedestal15: 55000
 
 #testing whether this fixes problems - Michelle - 2022May20
 daq.fragment_receiver.UseTimeTagForTimeStamp: true
-daq.fragment_receiver.fUseTimeTagForTimeStamp: true
+#daq.fragment_receiver.fUseTimeTagForTimeStamp: true
 
 #Erin is testing things June 9th, 2022
-daq.fragment_receiver.InterruptEnable: 0
+#daq.fragment_receiver.InterruptEnable: 0
+#daq.fragment_receiver.GetNextFragmentBunchSize: 1
+#daq.fragment_receiver.ModeLVDS: 1
+#daq.fragment_receiver.SelfTriggerMode: 0
+#daq.fragment_receiver.triggerPolarity: 1
+#daq.fragment_receiver.TimeOffsetNanoSec: 1000000000

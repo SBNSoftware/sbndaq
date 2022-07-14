@@ -18,10 +18,10 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 LOCAL_MRB_PRODUCTS=$(/bin/ls -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}localProducts* |head -1)
 LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
-if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
-  unset LOCAL_INSTALLED_PRODUCTS
-  SBNDAQ_QUALS="e20:debug:s112"
-fi
+#if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
+#  unset LOCAL_INSTALLED_PRODUCTS
+#  SBNDAQ_QUALS="e20:debug:s112"
+#fi
 
 if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
    source $LOCAL_INSTALLED_PRODUCTS/setup
@@ -45,7 +45,7 @@ setup artdaq_mfextensions  v1_07_02 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=7
+export DAQINTERFACE_PARTITION_NUMBER=3
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"

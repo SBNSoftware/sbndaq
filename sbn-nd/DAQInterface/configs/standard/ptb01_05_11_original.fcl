@@ -37,7 +37,7 @@ fragment_receiver: {
    ## words present in the buffer at the moment of getNext_() call without restrictions based on the number of TS words .
    ## Anyway, to avoid the saturation of the buffers, a fragment is ALWAYS created whenever the number of words in the 
    ## buffer is bigger than than max_words_per_frag. 
-   group_size : 1
+   group_size : 0
    #group_size : 30    ## -- this sets how many pakages from the board should be grouped to form a fragment. Default 1 
                            ##    value 0 means that the fragments contains all the word contained in the buffer at the moment of getNext_() call
                        ##    without restriction based on the number of TS words. 
@@ -126,19 +126,19 @@ fragment_receiver: {
          "period"       : "0x3",
          "duty"         : "0x3",
          "early_warning_window":{
-           "use_count": true,
-           "beam_signal_mask": "0x1",
-           "window_length": "0x410A"
+           "use_count": false,
+           "beam_signal_mask": "0x4",
+           "window_length": "0x1"
          },
          "pre_arrival_window":{
            "use_count": true,
-           "beam_signal_mask": "0x0",
+           "beam_signal_mask": "0x1",
            "window_length": "0x1F4"
          },
          "beam_acceptance_window":{
            "use_count": true,
            "beam_signal_mask": "0x0",
-           "window_length": "0x1"
+           "window_length": "0x1F4"
          },
          "post_arrival_window":{
            "beam_signal_mask": "0x0",
@@ -257,7 +257,7 @@ fragment_receiver: {
            },
            { "id":"LLT_13",
              "description": "DOWN 2 CRT channel AND-d layers (type=0x2 is ==count)",
-             "enable":false,
+             "enable":true,
              "mask" : "0x50",
              "type" : "0x2",
              "count" : "0x2"

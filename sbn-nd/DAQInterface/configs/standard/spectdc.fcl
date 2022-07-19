@@ -11,13 +11,13 @@ daq: {
      board_id: 0
 
      ## Pull mode parameters
-     receive_requests: false
+     receive_requests: true
      request_address:        "227.128.11.129" # -- multicast request address
      multicast_interface_ip: "10.226.36.0" # -- should match the private net
      request_port: 3001   # UDP request port
      request_mode: window # pull mode
-     request_window_width:    650 #650ns window
-     request_window_offset:   0   #0ns   offset
+     request_window_width:   100000000 #10msec window
+     request_window_offset:  30000000 #3msec offset
      request_windows_are_unique: true
      stale_request_timeout:   3000000
      window_close_timeout_us: 1500000 #1.5s
@@ -56,7 +56,7 @@ daq: {
              name:ch0
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 1
              name:ch1

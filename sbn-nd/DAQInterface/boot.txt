@@ -1,15 +1,15 @@
 DAQ setup script: $SETUP_FILE
-PMT host: sbnd-gateway01-daq
+PMT host: sbnd-evb04-daq
 
 # debug level can range from 0 to 3 (increasing order of verbosity)
 debug level: 4
 #manage processes: false
 Subsystem id: 1
 
-EventBuilder host: sbnd-gateway01-daq
+EventBuilder host: sbnd-evb04-daq
 EventBuilder label: EventBuilder1
 
-Dispatcher host: sbnd-gateway01-daq
-Dispatcher label: Dispatcher1
-Dispatcher port: 6020
+#Dispatcher host: sbnd-gateway01-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6020
 

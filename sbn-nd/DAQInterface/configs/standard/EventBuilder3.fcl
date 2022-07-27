@@ -1,5 +1,5 @@
 #include "EventBuilder_standard.fcl"
-#daq.metrics.graphite.namespace: "sbnd.evb03."
+daq.metrics.graphite.namespace: "sbnd.evb03."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb03_metrics.log"
 outputs.normalOutput.fileName: "/scratch/data/data_evb03_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/scratch/test_data/data_evb03_run%R_%#_%to.root"

@@ -18,6 +18,7 @@ monitor_volumes = [
 '/',
 '/daq/software',
 '/daq/scratch',
+'/scratch_local',
 '/daq/log',
 '/daq/run_records',
 '/home/nfs'

@@ -8,12 +8,14 @@ services: {
 
 daq: {
   event_builder: {
-    stale_buffer_timeout_usec: 5000000 #5s
+
+    stale_buffer_timeout_usec: 5000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 30
-    max_incomplete_events: 15 # Same as boardreader sync interval
+    buffer_count: 30 #100
+    max_incomplete_events: 15 #50 # Same as boardreader sync interval
+
     verbose: true
     send_requests: true
     request_address: "227.128.11.129"          # Multi-cast request address
@@ -100,6 +102,7 @@ outputs: {
 }
 
 physics: {
+
   analyzers: {
       fragWatcher: {
          module_type: "FragmentWatcher"
@@ -138,9 +141,9 @@ physics: {
   p1: [ ]
   p2: [ prescale1 ]
   pd: [ prescale5 ]
- 
+
   a1: [ fragWatcher ]
- 
+
   #my_output_modules: []
   my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]

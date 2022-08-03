@@ -1,14 +1,15 @@
 process_name: Dump
 
 services: {
-  TFileService: { fileName: "caenv1730dump_hist_test.root" }
+#output file
+  TFileService: { fileName: "berncrt_hist.root" }
 }
 
 #source is a root file
 source:
 {
   module_type: RootInput
-  maxEvents:   100        # Number of events to create
+  maxEvents:   100000000      # Number of events to create
 }
 
 outputs:
@@ -29,17 +30,15 @@ physics:
 
  analyzers:{
 
-   caenv1730dump: {
-     module_type: CAENV1730Dump
-     data_label: "daq:CAENV1730"
-     shift_fragment_id: 0 #??
+   berncrtana: {
+     module_type: BernCRTDumpV2
    }
 
  }
 
  #define the output stream, there could be more than one if using filters 
  stream1:  [ out1 ]
- ana: [ caenv1730dump ]
+ ana: [ berncrtana ]
 
  #end_paths is a keyword and contains the paths that do not modify the art::Event, 
  #ie analyzers and output streams.  these all run simultaneously

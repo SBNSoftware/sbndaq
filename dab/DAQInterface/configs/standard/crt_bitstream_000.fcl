@@ -1,5 +1,5 @@
 #Configuration of FEB, including MPPC HV, channel on/off status and more. Bitstream format:  0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
-SlowControlBitStream_id_000 : '
+SlowControlBitStream_id_000 : "
 0000 # Ch0 4-bit DAC_t ([0..3])#
 0000 # Ch1 4-bit DAC_t ([0..3])#
 0000 # Ch2 4-bit DAC_t ([0..3])#
@@ -195,4 +195,4 @@ SlowControlBitStream_id_000 : '
 0 # Trigger Polarity#
 0 # Enable digital OR32_T Open Collector output#
 1 # Enable 32 channels triggers outputs#
-'
+"

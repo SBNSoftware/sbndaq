@@ -1,0 +1,452 @@
+         HG_peak_detector_PP: false
+         HG_shaper_time_constant: 6
+         LG_peak_detector_PP: false
+         LG_preamp_bias: true
+         LG_shaper_time_constant: 6
+         SCA_high_bias: false
+         bypass_peak_sensing_cell: true
+         channel_configuration: [
+            [
+               0,
+               0,
+               1,
+               114,
+               0,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               0,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ],
+            [
+               0,
+               0,
+               1,
+               114,
+               1,
+               41,
+               47,
+               0,
+               0,
+               1
+            ]
+         ]
+         charge_threshold: 200
+         enable_32_channels_triggers_output: true
+         enable_32_input_8bit_DAC: true
+         enable_4bit_charge_DAC: true
+         enable_4bit_charge_DAC_PP: true
+         enable_4bit_time_DAC: true
+         enable_4bit_time_DAC_PP: true
+         enable_BandGap_sensor: true
+         enable_BandGap_sensor_PP: false
+         enable_HG_OTA: true
+         enable_HG_OTA_PP: false
+         enable_HG_SCA: false
+         enable_HG_SCA_PP: true
+         enable_HG_peak_detector: true
+         enable_HG_preamp: true
+         enable_HG_preamp_PP: false
+         enable_HG_slow_shaper: true
+         enable_HG_slow_shaper_PP: false
+         enable_LG_OTA: true
+         enable_LG_OTA_PP: false
+         enable_LG_SCA: false
+         enable_LG_SCA_PP: true
+         enable_LG_peak_detector: true
+         enable_LG_preamp: true
+         enable_LG_preamp_PP: false
+         enable_LG_slow_shaper: true
+         enable_LG_slow_shaper_PP: false
+         enable_OR32_open_collector_output: false
+         enable_OR32_output: true
+         enable_OTAQ_test_bit: false
+         enable_RAZ_CHN_OTA: false
+         enable_RAZ_CHN_OTA_PP: true
+         enable_VAL_EVT_OTA: false
+         enable_VAL_EVT_OTA_PP: true
+         enable_charge_DAC: true
+         enable_charge_DAC_PP: false
+         enable_charge_discriminator: true
+         enable_charge_discriminator_PP: false
+         enable_digital_OR32_T_open_collector_output: false
+         enable_digital_multiplexed_output: false
+         enable_fast_shaper: true
+         enable_fast_shaper_PP: false
+         enable_fast_shaper_follower_PP: false
+         enable_probe_OTA: true
+         enable_probe_OTA_PP: false
+         enable_temperature_sensor: true
+         enable_temperature_sensor_PP: false
+         enable_time_DAC: true
+         enable_time_DAC_PP: false
+         enable_time_discriminator: true
+         enable_time_discriminator_PP: false
+         input_DAC_voltage_reference: true
+         latched_output: false
+         peak_sensing_cell: false
+         preamp_connected_to_fast_shaper: false
+         select_HG_mode: true
+         select_LG_mode: true
+         time_threshold: 200
+         trigger_polarity: false

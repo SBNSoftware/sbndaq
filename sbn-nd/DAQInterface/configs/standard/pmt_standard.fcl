@@ -9,17 +9,9 @@ daq:
     GetNextFragmentBunchSize: 20
     separate_data_thread: true
 
-    ## Pull mode parameters
-#    request_address:        "227.128.9.129" # -- multicast request address
- #   multicast_interface_ip: "192.168.230.0" # -- should match the private net 
- #   request_port: 3501   # UDP request port
- #   request_mode: window # pull mode
- #   request_window_width:  50000000 #5ms window
- #   request_window_offset: 2500000 #1ms offset 
- #   request_windows_are_unique: true
- #   stale_request_timeout: 200000000
 
-# these don't exist as fcl parameters
+# these don't exist as fcl parameters?
+
     fragment_id: 0
     board_id:    1
 
@@ -93,7 +85,9 @@ daq:
     enableReadout: 1
     
     boardId: 0
-    recordLength:         5120
+
+    recordLength:         5000
+
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
@@ -221,7 +215,10 @@ daq:
     triggerThreshold15: 0
 
     CircularBufferSize: 500e6
-    UseTimeTagForTimeStamp: true
+
+    UseTimeTagForTimeStamp: false
+    fUseTimeTagForTimeStamp: false
+
 
 # added just because it's in the ICARUS config file
 #    TimeOffsetNanoSec: 0
@@ -242,6 +239,16 @@ daq:
       fileName: "/daq/log/metrics/pmtx00_metrics.log"
       uniquify: true
     }
+    send_system_metrics: true
+    send_process_metrics: true
+		      graphite:{
+	namespace: "sbnd.pmt00."
+	   host: "10.226.36.34"
+      level: 10
+       metricPluginType: "graphite"
+		  port: 2003
+      reporting_interval: 10
+		    }
     # redis_10s: {
     #       metricPluginType: "redis"
     #   level: 3

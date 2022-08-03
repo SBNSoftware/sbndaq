@@ -18,6 +18,7 @@ setdaqcomps.sh crt2x2upstrPULL crt2x2dwnstrPULL pmtx03
 #setdaqcomps.sh crt2x2upstrPULL crt2x2dwnstr
 #setdaqcomps.sh crt02 pmtx03
 
+
 send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]

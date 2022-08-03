@@ -9,7 +9,9 @@ daq:
     GetNextFragmentBunchSize: 20
     separate_data_thread: true
 
+
 # these don't exist as fcl parameters?
+
     fragment_id: 0
     board_id:    1
 
@@ -83,7 +85,9 @@ daq:
     enableReadout: 1
     
     boardId: 0
+
     recordLength:         5000
+
     maxEventsPerTransfer: 1
     runSyncMode:          0
     outputSignalMode:     0    
@@ -211,8 +215,10 @@ daq:
     triggerThreshold15: 0
 
     CircularBufferSize: 500e6
+
     UseTimeTagForTimeStamp: false
     fUseTimeTagForTimeStamp: false
+
 
 # added just because it's in the ICARUS config file
 #    TimeOffsetNanoSec: 0

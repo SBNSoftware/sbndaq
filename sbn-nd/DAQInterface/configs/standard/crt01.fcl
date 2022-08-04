@@ -5,6 +5,10 @@
 #  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
 #
 
+    daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
+    daq.metrics.graphite.namespace: "sbnd.crttest01."
+    
+
     #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
     #daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
     daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs

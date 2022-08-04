@@ -8,6 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
 
 setup mrb v5_19_05
@@ -91,18 +92,18 @@ toffM -N spectdc_RequestReceiver  DEBUG+34
 toffM -N spectdc_FragmentBuffer DEBUG+28
 fi
 
-if [[ "$(hostname -s)" =~ sbnd-evb[0-9]{2} ]]; then
-toffM -N *_SharedMemoryEventManager 0-63
-toffM -N ArtdaqSharedMemoryService 0-63
-toffM -N SharedMemoryEventReceiver 0-63
-toffM -N SharedMemoryManager 0-63
-toffM -N *RootDAQOut 0-63
-toffM -N MetricManager 0-63
-toffM -N TCPConnect 0-63
-toffM -N EventBuilder1_art1_FragmentWatcher 0-63
-tonM -N EventBuilder1_art1_FragmentWatcher DEBUG+1
-tonS -N EventBuilder1_art1_FragmentWatcher DEBUG+1
-fi
+#if [[ "$(hostname -s)" =~ sbnd-evb[0-9]{2} ]]; then
+#toffM -N *_SharedMemoryEventManager 0-63
+#toffM -N ArtdaqSharedMemoryService 0-63
+#toffM -N SharedMemoryEventReceiver 0-63
+#toffM -N SharedMemoryManager 0-63
+#toffM -N *RootDAQOut 0-63
+#toffM -N MetricManager 0-63
+#toffM -N TCPConnect 0-63
+#toffM -N EventBuilder1_art1_FragmentWatcher 0-63
+#tonM -N EventBuilder1_art1_FragmentWatcher DEBUG+1
+#tonS -N EventBuilder1_art1_FragmentWatcher DEBUG+1
+#fi
 
 if [[ "$(hostname -s)" =~ sbnd-pds[0-9]{2} ]]; then
 tonS -N *CAENV1730Readout  9

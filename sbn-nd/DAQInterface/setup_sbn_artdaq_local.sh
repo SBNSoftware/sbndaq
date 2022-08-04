@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_01_00"
+SBNDAQ_VERSION="v1_02_00"
 SBNDAQ_QUALS="e20:prof:s112"
 DAQINTERFACE_VERSION="v3_11_02"
 
@@ -23,7 +23,7 @@ LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 #  unset LOCAL_INSTALLED_PRODUCTS
 #  SBNDAQ_QUALS="e20:debug:s112"
 #fi
-
+#
 if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
    source $LOCAL_INSTALLED_PRODUCTS/setup
 elif [ -f $LOCAL_MRB_PRODUCTS/setup ]; then
@@ -46,7 +46,7 @@ setup artdaq_mfextensions  v1_07_02 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=3
+export DAQINTERFACE_PARTITION_NUMBER=1
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"

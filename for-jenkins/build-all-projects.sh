@@ -13,7 +13,7 @@ export PROJECT_SOURCE_GIT_PREFIX
 ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_11_02"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_01_00'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_02_00'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
@@ -26,7 +26,7 @@ export WORKSPACE
 
 #available configurations
 source_branchtages_testing=(
-   "wibtools:v1_01_00"
+   "wibtools:v1_02_00"
    "sbndaq_artdaq_core:${SBNDAQ_ARTDAQ_CORE_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq_artdaq:${SBNDAQ_ARTDAQ_BUILDTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq:${SBNDAQ_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"

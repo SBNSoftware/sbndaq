@@ -29,6 +29,12 @@ _complete_conftool(){
     return 0
 }
 
+function configdb_make_work_dir(){
+    tmpdir=${ARTDAQ_DATABASE_WORKDIR}/$( uuidgen )
+    mkdir -p $tmpdir
+    cd $tmpdir
+}
+
 complete -F _complete_conftool conftool.py
 echo
 echo

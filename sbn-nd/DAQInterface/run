@@ -19,6 +19,7 @@ getStatus "nil"
 #setdaqcomps.sh spectdc pmtx03
 setdaqcomps.sh spectdc pmtx03 crt01PULL
 
+
 send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]

@@ -8,6 +8,7 @@ unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
 
 setup mrb v5_19_05
@@ -64,33 +65,33 @@ tonMg 0-7
 #tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1
-#if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
-#tonM -N SPECTDCTimestampReader 0-63
-##enable read: TDCTimestamp:{ name=beam ... }
-#tonM -N TDCChan DEBUG+5
-##enable applyRequestsWindowMode: applyRequestsWindowMode
-#tonM -N spectdc_FragmentBuffer DEBUG+29
-##enable AddFragmentsToBuffer: Adding Fragment with Fragment
-#tonM -N spectdc_FragmentBuffer DEBUG+30
-##enable Request Packet: hdr=1414678855, seq=3036, ts=
-#tonM -N spectdc_RequestReceiver DEBUG+36
-##enable Stop / Start commands
-#tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
-#tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
-#tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
-#tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
-#
-##remove noise
-#toffM -N SPECTDCTimestampReader DEBUG+2
-#toffM -N spectdc_FragmentBuffer DEBUG+25
-#toffM -N spectdc_FragmentBuffer DEBUG+27
-#toffM -N spectdc_FragmentBuffer DEBUG+32
-#toffM -N spectdc_FragmentBuffer DEBUG+32
-#toffM -N spectdc_RequestReceiver  DEBUG+35
-#toffM -N spectdc_RequestReceiver  DEBUG+34
-#toffM -N spectdc_FragmentBuffer DEBUG+28
-#fi
-#
+if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
+tonM -N SPECTDCTimestampReader 0-63
+#enable read: TDCTimestamp:{ name=beam ... }
+tonM -N TDCChan DEBUG+5
+#enable applyRequestsWindowMode: applyRequestsWindowMode
+tonM -N spectdc_FragmentBuffer DEBUG+29
+#enable AddFragmentsToBuffer: Adding Fragment with Fragment
+tonM -N spectdc_FragmentBuffer DEBUG+30
+#enable Request Packet: hdr=1414678855, seq=3036, ts=
+tonM -N spectdc_RequestReceiver DEBUG+36
+#enable Stop / Start commands
+tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
+tonM -N spectdc_CommandableFragmentGenerator DEBUG+43
+tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
+tonS -N spectdc_CommandableFragmentGenerator DEBUG+44
+
+#remove noise
+toffM -N SPECTDCTimestampReader DEBUG+2
+toffM -N spectdc_FragmentBuffer DEBUG+25
+toffM -N spectdc_FragmentBuffer DEBUG+27
+toffM -N spectdc_FragmentBuffer DEBUG+32
+toffM -N spectdc_FragmentBuffer DEBUG+32
+toffM -N spectdc_RequestReceiver  DEBUG+35
+toffM -N spectdc_RequestReceiver  DEBUG+34
+toffM -N spectdc_FragmentBuffer DEBUG+28
+fi
+
 #if [[ "$(hostname -s)" =~ sbnd-evb[0-9]{2} ]]; then
 #toffM -N *_SharedMemoryEventManager 0-63
 #toffM -N ArtdaqSharedMemoryService 0-63
@@ -103,11 +104,11 @@ tmodeM 1
 #tonM -N EventBuilder1_art1_FragmentWatcher DEBUG+1
 #tonS -N EventBuilder1_art1_FragmentWatcher DEBUG+1
 #fi
-#
-#if [[ "$(hostname -s)" =~ sbnd-pds[0-9]{2} ]]; then
-#tonS -N *CAENV1730Readout  9
-#tonM -N *CAENV1730Readout  9
-#fi
+
+if [[ "$(hostname -s)" =~ sbnd-pds[0-9]{2} ]]; then
+tonS -N *CAENV1730Readout  9
+tonM -N *CAENV1730Readout  9
+fi
 #toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator

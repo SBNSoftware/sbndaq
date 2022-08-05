@@ -102,7 +102,6 @@ outputs: {
 }
 
 physics: {
-
   analyzers: {
       fragWatcher: {
          module_type: "FragmentWatcher"

@@ -186,7 +186,8 @@ daq:
     InterruptLevel: 0
     InterruptStatusID: 0
     InterruptEventNumber: 1
-    GetNextSleep: 100
+    GetNextSleep: 10
+    InterruptEnable: 1
 
 # below disappeared from ICARUS fcl file, lets try commenting it out
 #    GetNextFragmentsCount: 25

@@ -8,19 +8,21 @@ services: {
 
 daq: {
   event_builder: {
-    #stale_buffer_timeout_usec: 1000000
+
+    stale_buffer_timeout_usec: 5000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 100
-    #max_incomplete_events: 50 # Same as boardreader sync interval
+    buffer_count: 30 #100
+    max_incomplete_events: 15 #50 # Same as boardreader sync interval
+
     verbose: true
     send_requests: true
     request_address: "227.128.11.129"          # Multi-cast request address
     multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
     request_port: 3001
 
-    num_requests: 500
+    #num_requests: 500
 
     tcp_receive_buffer_size: 64000
     routing_token_config: {
@@ -41,14 +43,14 @@ daq: {
 send_system_metrics: true
 send_process_metrics: true
 
-#    graphite: {
-#      level:10
-#      metricPluginType: "graphite"
-#      reporting_interval: 10.0
-#      host:"192.168.191.18"
-#      port:2003
-#      namespace:"sbnd.evb00."
-#    }
+    graphite: {
+      level:10
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"10.226.36.34"
+      port:2003
+      namespace:"sbnd.evb00."
+    }
   }
 }
 
@@ -100,7 +102,11 @@ outputs: {
 }
 
 physics: {
-  analyzers: {}
+  analyzers: {
+      fragWatcher: {
+         module_type: "FragmentWatcher"
+      } 
+  }
 
   producers: {}
 
@@ -134,13 +140,15 @@ physics: {
   p1: [ ]
   p2: [ prescale1 ]
   pd: [ prescale5 ]
-  a1: [ ]
+
+  a1: [ fragWatcher ]
+
   #my_output_modules: []
   my_output_modules: [ rootNetOutput ]
   #my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
-  end_paths: [ my_output_modules ]
+  end_paths: [ a1, my_output_modules ]
 }
 source: {
   module_type: ArtdaqInput

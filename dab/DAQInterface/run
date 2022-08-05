@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 this_start=$(date +%s)
 
+rm /home/nfs/sbnd/DAQ_DevAreas/DAQ_29Jul2021/srcs/sbndaq/dab/DAQInterface/.setup_fhiclcpp
+
 function getStatus()
 {
   status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
@@ -12,9 +14,10 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 #setdaqcomps.sh wr
-setdaqcomps.sh pmtx02
+#setdaqcomps.sh pmtx02
 #setdaqcomps.sh pmtx02 ptb01 
 #setdaqcomps.sh tpc01
+setdaqcomps.sh crt01
 
 send_transition.sh boot boot.txt
 getStatus "booting"

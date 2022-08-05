@@ -13,7 +13,7 @@ bitstream: '
 0000 # Ch7 4-bit DAC_t ([0..3])#
 0000 # Ch8 4-bit DAC_t ([0..3])#
 0000 # Ch9 4-bit DAC_t ([0..3])#
-0CCCCCC000 # Ch10 4-bit DAC_t ([0..3])#
+0000 # Ch10 4-bit DAC_t ([0..3])#
 0000 # Ch11 4-bit DAC_t ([0..3])#
 0000 # Ch12 4-bit DAC_t ([0..3])#
 0000 # Ch13 4-bit DAC_t ([0..3])#
@@ -179,8 +179,8 @@ bitstream: '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-01 1000 0000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
-01 1000 0000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+00 1100 0000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+00 1100 0000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#
@@ -210,7 +210,7 @@ fragment_receiver: {
    board_id: 1
 
 #these are in fact MAC addresses of all FEB connected to given ethernet port... perhaps we should change the name
-   FEBIDs : [ 0xf0 ]
+   FEBIDs : [ 0x5c ]
 #Whether or not turn on bias HV on the individual FEBs
    TurnOnHV : [ false ] #I don't wan't to switch HV at D0, AA, 2019-10-03
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
@@ -221,7 +221,6 @@ fragment_receiver: {
    MaxTimeDiffs : [ 1e8 ]
 
    FEBBufferCapacity: 98789
-   ZMQBufferCapacity: 6543
    
    throttle_usecs:       100000
    throttle_usecs_check:  10000
@@ -266,7 +265,7 @@ art: {
 outputs:{
   rootout:{
     module_type: RootOutput
-    fileName: "/data1/crt04_%#.root"
+    fileName: "crt04_%#.root"
     compressionLevel: 5
     fileProperties: {
       maxEvents: 1000

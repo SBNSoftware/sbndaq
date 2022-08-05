@@ -1,0 +1,48 @@
+#include "crt01.fcl"
+
+## Pull mode parameters
+    daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
+    daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
+    daq.fragment_receiver.request_port: 3001   # UDP request port
+
+    daq.fragment_receiver.request_mode: window # pull mode
+    daq.fragment_receiver.request_window_width:   20000000 #20ms window
+    daq.fragment_receiver.request_window_offset:  10000000 #10ms offset (??)
+    daq.fragment_receiver.request_windows_are_unique: false
+    daq.fragment_receiver.window_close_timeout_us: 10e6 #500000 #4000000 #10000000
+
+    daq.fragment_receiver.separate_data_thread: true
+    daq.fragment_receiver.separate_monitoring_thread: true
+
+    daq.fragment_receiver.stale_request_timeout: 200000000
+    daq.fragment_receiver.stale_fragment_timeout: 10000000000 #20000000000 #20s #10000000000
+    daq.fragment_receiver.receive_requests: true
+    
+    daq.fragment_receiver.missing_request_window_timeout_us: 2000000 #2s
+
+    daq.fragment_receiver.sleep_on_no_data_us: 10000
+    
+    daq.fragment_receiver.buffer_mode_keep_latest: true
+    daq.fragment_receiver.circular_buffer_mode: false
+    
+    daq.fragment_receiver.max_fragment_size_bytes: 0x1000000
+    daq.fragment_receiver.feb_restart_period_s: 0
+##  end pull mode parameters
+    
+    #daq.fragment_receiver.fUseTimeTagForTimeStamp: false
+
+# crt poll specific settings that are defined in crt_feb_standard
+#   eventually we should change them there
+
+    #daq.fragment_receiver.hardware_poll_interval_us: 10000000
+    daq.fragment_receiver.feb_poll_ms: 40 #12    # default is 40 ms (ICARUS), 80 for ICARUS top
+    daq.fragment_receiver.fragment_period_ms: 10 #3     # default is 10 ms (ICARUS)
+
+## end poll specific settings
+
+
+
+
+
+
+

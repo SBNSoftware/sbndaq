@@ -16,8 +16,8 @@ daq: {
      multicast_interface_ip: "10.226.36.0" # -- should match the private net
      request_port: 3001   # UDP request port
      request_mode: window # pull mode
-     request_window_width:   3000 #ns window  
-     request_window_offset:  0 # ns offset
+     request_window_width:   500000 #ns window  
+     request_window_offset:  20000 # ns offset
      request_windows_are_unique: true
      stale_request_timeout:   3000000
      window_close_timeout_us: 1500000 #1.5s

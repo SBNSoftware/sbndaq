@@ -13,7 +13,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
    
 #List of FEBs in the daisy chain
     #daq.fragment_receiver.fragment_ids: [ 74, 85, 88, 87 ]
-    daq.fragment_receiver.fragment_ids: [ 193, 85, 88, 87 ]
+    daq.fragment_receiver.fragment_ids: [ 0xB1C1, 0xB157, 0xB158, 0xB155 ]
     daq.fragment_receiver.generated_fragments_per_event: 4 #number of FEBs
 # first board in the chain
     daq.fragment_receiver.ReaderID: 193
@@ -23,7 +23,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 #   daq.fragment_receiver.TurnOnHV : [ false, false, false, false ]
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
-   daq.fragment_receiver.PPS_offset_ns : [ 232, 240, 253, 266 ] # = dummy value
+   daq.fragment_receiver.PPS_offset_ns : [ 294, 302, 315, 328 ] # = dummy value
    #daq.fragment_receiver.PPS_offset_ns : [ 0, 240, 253, 266 ]
    
 daq.metrics.graphite.namespace: "sbnd.crtup01."

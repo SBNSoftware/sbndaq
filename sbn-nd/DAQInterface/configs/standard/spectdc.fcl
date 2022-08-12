@@ -62,13 +62,13 @@ daq: {
              name:crtpps1
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 2
              name:crtpps2
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 3
              name:crtbes1

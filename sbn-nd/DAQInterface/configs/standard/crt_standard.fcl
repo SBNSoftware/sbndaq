@@ -28,6 +28,12 @@ daq: {
     ethernet_port: "crt1"
     
     board_id: 1
+    
+#if a FEB registers no hits within the specified time, the boardreader prints a warning message. Default value: 1000, 0 = off
+    max_time_with_no_data_ms: 0
+
+#if value of ts0 counter exceeds the specified value, the boardreader prints a warning message. Default value: 1 000 100 000 ns.
+    max_tolerable_t0: 1000100000 
 
 #What is ReaderID? Another ID?
     ReaderID: 1

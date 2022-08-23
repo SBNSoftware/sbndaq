@@ -1,6 +1,5 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
-##include "icaruscrt_feb_standard.fcl"
 
 #
 #  do not use this fcl file for testing other CRT modules, use crt01.fcl instead

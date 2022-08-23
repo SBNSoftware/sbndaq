@@ -2,7 +2,7 @@ daq: {
   fragment_receiver: {
 #     events_to_generate: 6000
      max_fragment_size_bytes: 100000
-     data_buffer_depth_fragments:2048
+     data_buffer_depth_fragments: 2048
      sleep_on_no_data_us: 10000
  
      generator: SPECTDCTimestampReader
@@ -16,9 +16,9 @@ daq: {
      multicast_interface_ip: "10.226.36.0" # -- should match the private net
      request_port: 3001   # UDP request port
      request_mode: window # pull mode
-     request_window_width:   500000 #ns window  
-     request_window_offset:  20000 # ns offset
-     request_windows_are_unique: true
+     request_window_width:   10000000 #500000 #ns window  
+     request_window_offset:  5000000 #20000 # ns offset
+     request_windows_are_unique: false #true
      stale_request_timeout:   3000000
      window_close_timeout_us: 1500000 #1.5s
      buffer_mode_keep_latest: true
@@ -53,10 +53,10 @@ daq: {
          }
          channels: [
            { id : 0
-             name:ch0
+             name:ptbtrig1
              enabled: true
              time_offset_ps: 0
-             monitor_only: true
+             monitor_only: false
              terminated: true },
            { id : 1
              name:crtpps1

@@ -9,7 +9,7 @@ Subsystem id: 1
 
 #EventBuilder host: sbnd-gateway01-daq
 EventBuilder host: sbnd-evb04-daq
-EventBuilder label: EventBuilder3
+EventBuilder label: EventBuilder2
 
 #Dispatcher host: sbnd-gateway01-daq
 Dispatcher host: sbnd-evb04-daq

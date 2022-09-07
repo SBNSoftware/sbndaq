@@ -30,3 +30,6 @@ pmtx01 sbnd-pds03-daq -1 1 0-15
 pmtx02 sbnd-pds03-daq -1 1 0-15 
 pmtx03 sbnd-pds01-daq -1 1 0-15
 pmtx04 sbnd-pds01-daq -1 1 0-15
+dummygenerator sbnd-evb02-daq -1 1
+berncrtserial sbnd-evb02-daq -1 1 
+berncrtserialPULL sbnd-evb02-daq -1 1

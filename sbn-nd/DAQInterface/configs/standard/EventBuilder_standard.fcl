@@ -9,7 +9,7 @@ services: {
 daq: {
   event_builder: {
 
-    stale_buffer_timeout_usec: 5000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    stale_buffer_timeout_usec: 1000000 #5000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
@@ -43,14 +43,14 @@ daq: {
 send_system_metrics: true
 send_process_metrics: true
 
-    graphite: {
-      level:10
-      metricPluginType: "graphite"
-      reporting_interval: 10.0
-      host:"10.226.36.34"
-      port:2003
-      namespace:"sbnd.evb00."
-    }
+    #graphite: {
+    #  level:10
+    #  metricPluginType: "graphite"
+    #  reporting_interval: 10.0
+    #  host:"10.226.36.34"
+    #  port:2003
+    #  namespace:"sbnd.evb00."
+    #}
   }
 }
 

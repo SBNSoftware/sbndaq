@@ -19,7 +19,9 @@ getStatus "nil"
 #setdaqcomps.sh spectdc pmtx03
 #setdaqcomps.sh spectdc pmtx03 crt01PULL
 #setdaqcomps.sh berncrtserial
-setdaqcomps.sh dummygenerator berncrtserialPULL
+#setdaqcomps.sh dummygenerator berncrtserialPULL
+#setdaqcomps.sh caenserial
+setdaqcomps.sh dummygenerator caenserialPULL
 
 
 send_transition.sh boot boot.txt

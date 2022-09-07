@@ -33,3 +33,5 @@ pmtx04 sbnd-pds01-daq -1 1 0-15
 dummygenerator sbnd-evb02-daq -1 1
 berncrtserial sbnd-evb02-daq -1 1 
 berncrtserialPULL sbnd-evb02-daq -1 1
+caenserial sbnd-evb02-daq -1 1 
+caenserialPULL sbnd-evb02-daq -1 1 

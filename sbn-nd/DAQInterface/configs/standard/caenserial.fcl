@@ -1,0 +1,28 @@
+daq: {
+
+  fragment_receiver: { 
+    generator:                     CAENV1730SerialReader
+    fragment_type:                 "CAENV1730"
+    BinaryFilePath:                "/daq/scratch/siminputs/caen_binary.dat"
+    board_id:                      -1
+    max_fragment_size_bytes:       0x1000000
+    generated_fragments_per_event: 8
+    fragment_ids:                  [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+
+    destinations: { }
+    
+    routing_table_config: {
+      use_routing_master: false
+    }
+  }
+
+
+  metrics: {
+     brFile: {
+       metricPluginType: "file"
+       level:            3
+       fileName:         "/scratch/log/CAENV1730SerialReader_%UID%_metrics.log"
+       uniquify:         true
+     }
+  }
+}

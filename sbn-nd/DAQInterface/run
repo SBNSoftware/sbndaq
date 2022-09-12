@@ -21,7 +21,8 @@ getStatus "nil"
 #setdaqcomps.sh berncrtserial
 #setdaqcomps.sh dummygenerator berncrtserialPULL
 #setdaqcomps.sh caenserial
-setdaqcomps.sh dummygenerator caenserialPULL
+#setdaqcomps.sh dummygenerator caenserialPULL
+setdaqcomps.sh dummygenerator berncrtserialPULL caenserialPULL
 
 
 send_transition.sh boot boot.txt

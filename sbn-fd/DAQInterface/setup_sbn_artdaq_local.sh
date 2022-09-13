@@ -43,9 +43,19 @@ export TRACE_FILE=/tmp/trace_$(whoami)_p1
 
 echo "TRACE_FILE=$TRACE_FILE"
 
-toffSg 9-63   # suppress debug++ messages to Slow path
+#start with turning off everything
+toffSg 0-63
+toffMg 0-63
+
+#turn on what we need
 tonSg 0-8     # ton* does not suppress other levels
 tonMg 0-8
+
+#if you want to see debug++ messages, ton levels 9 and/or above
+#S - slow path and message viewer
+#M - memory trace
+
+#toffSg 9-63   # suppress debug++ messages to Slow path
 #toffM 1-63 -n PhysCrateData
 #toffS 1-63 -n PhysCrateData
 
@@ -60,6 +70,26 @@ tonMg 0-8
 #tonS 0-debug -n ICARUSTriggerUDP
 tmodeS 1
 tmodeM 1
+
+#Examples to turn on/off messages coming from specific machines and specific classes
+
+#if [[ "$(hostname -s)" =~ icarus-evb[0-9]{2} ]]; then
+#toffM -N *_SharedMemoryEventManager 0-63
+#toffM -N ArtdaqSharedMemoryService 0-63
+#toffM -N SharedMemoryEventReceiver 0-63
+#toffM -N SharedMemoryManager 0-63
+#toffM -N *RootDAQOut 0-63
+#toffM -N MetricManager 0-63
+#toffM -N TCPConnect 0-63
+#toffM -N EventBuilder1_art1_FragmentWatcher 0-63
+#tonM -N EventBuilder1_art1_FragmentWatcher DEBUG+1
+#tonS -N EventBuilder1_art1_FragmentWatcher DEBUG+1
+#fi
+#
+#if [[ "$(hostname -s)" =~ icarus-pmt[0-9]{2} ]]; then
+#tonS -N *CAENV1730Readout  9
+#tonM -N *CAENV1730Readout  9
+#fi
 
 
 #toffM 23 -n SharedMemoryManager

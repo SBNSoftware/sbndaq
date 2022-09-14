@@ -1,11 +1,11 @@
 #include "pmt_standard.fcl"
 
 # link is which port on the PCIe card it is connected, numbering starts at 0
-daq.fragment_receiver.link: 1
+daq.fragment_receiver.link: 2
 
 # boardId is the ID number that will be assigned to the board
-daq.fragment_receiver.boardId: 11
-daq.fragment_receiver.board_id: 11
+daq.fragment_receiver.boardId: 12
+daq.fragment_receiver.board_id: 12
 
 # record 1200 ticks = 2.4 us with 50% after the trigger
 # default is 5000 ticks/80%

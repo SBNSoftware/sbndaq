@@ -16,12 +16,12 @@
  PATH=/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin \
  /usr/bin/bash --noprofile --norc "$0" "$@"
 
-export daq_rel_tag=v1_02_00-release
+export daq_rel_tag=v1_02_01-release
 my_selected_build_config=develop
 my_build_variants=( "e20:prof:s112" )
 
 ##build settings
-my_release_version=${my_release_version:-"v1_02_00"}
+my_release_version=${my_release_version:-"v1_02_01"}
 my_project_name=${my_mrb_project_name:-"sbnd"}
 my_products_repo_dir=${my_products_repo_dir:-"/software/products"}
 my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER)}

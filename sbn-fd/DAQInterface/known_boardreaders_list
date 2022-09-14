@@ -83,10 +83,10 @@ icarustpcew01b icarus-tpc18-daq -1 1
 icarustpcew01m icarus-tpc18-daq -1 1
 icarustpcew01t icarus-tpc18-daq -1 1
 icarustpcew02 icarus-tpc18-daq -1 1
-icarustpcew03 icarus-tpc17-daq -1 1
-icarustpcew04 icarus-tpc17-daq -1 1
-icarustpcew05 icarus-tpc17-daq -1 1
-icarustpcew06 icarus-tpc17-daq -1 1
+icarustpcew03 icarus-tpc26-daq -1 1
+icarustpcew04 icarus-tpc26-daq -1 1
+icarustpcew05 icarus-tpc26-daq -1 1
+icarustpcew06 icarus-tpc26-daq -1 1
 icarustpcew07 icarus-tpc16-daq -1 1
 icarustpcew08 icarus-tpc16-daq -1 1
 icarustpcew09 icarus-tpc16-daq -1 1

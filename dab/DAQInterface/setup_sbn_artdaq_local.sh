@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_00_01"
+SBNDAQ_VERSION="v1_02_01"
 SBNDAQ_QUALS="e20:prof:s112"
 DAQINTERFACE_VERSION="v3_11_01"
 
@@ -11,7 +11,7 @@ source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
 
-setup mrb v5_12_00
+setup mrb v5_19_05
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
@@ -51,11 +51,11 @@ tonSg 0-7
 tonMg 0-7
 tmodeS 1
 tmodeM 1
-tonM 20 -N *RequestReceiver
-tonM 10 -N *DataSenderManager
-tonS 20 -N *RequestReceiver
-tonS 10 -N *DataSenderManager
-toffS 0-63 -n WhiteRabbitReadout_generator
+#tonM 20 -N *RequestReceiver
+#tonM 10 -N *DataSenderManager
+#tonS 20 -N *RequestReceiver
+#tonS 10 -N *DataSenderManager
+#toffS 0-63 -n WhiteRabbitReadout_generator
 
 #toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"

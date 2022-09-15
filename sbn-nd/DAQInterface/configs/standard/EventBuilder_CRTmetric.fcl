@@ -70,6 +70,21 @@ outputs: {
     SelectEvents: [ mode0 ]    
   }
 
+  nustreamOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/daq/data_nustream_%p_run%R_%#_%to.root"
+    
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 20 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: [ nustream ] 
+  }
+
   normalOutput: {
     module_type: RootDAQOut
     fileName: "/data/daq/data_%p_run%R_%#_%to.root"
@@ -159,6 +174,17 @@ physics: {
     		  prescaleFactor: 1
  		  prescaleOffset: 0
 		}
+
+    neutrinostream:
+    {
+	module_type: "NeutrinoStreamFilter"
+  	CRTInputModule: "crttriggerproducer"
+  	PMTInputModule: "pmttriggerproducer"
+  	NumCRTPlanes: 7
+  	ExcludeCRTPlanes: [2]
+  	NPMTHits: 0
+  	Verbose: true
+    }
   }
 
   mode0: [ prescale1, crttriggerproducer ]
@@ -166,6 +192,7 @@ physics: {
   p1: [ ]
   p2: [ prescale1 ]
   pd: [ prescale5 ]
+  nustream: [ prescale1, crttriggerproducer, neutrinostream ]
 
   t1: [ crttriggerproducer ]
 

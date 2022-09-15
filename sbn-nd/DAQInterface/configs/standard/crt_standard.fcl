@@ -53,7 +53,7 @@ daq: {
 
    #Restart febdrv periodically (febdrv issue workaround)
    feb_restart_period_s: 0
-   feb_poll_ms: 40
+   feb_poll_ms: 200
 
    destinations: { }
    routing_table_config:

@@ -21,8 +21,6 @@ getStatus "nil"
 #setdaqcomps.sh dummygenerator ptb01PULL pmtx01PULL #pmtx02PULL 
 setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL pmtx02PULL spectdc 
 
-
-
 send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]

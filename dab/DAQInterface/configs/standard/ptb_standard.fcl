@@ -18,6 +18,9 @@ fragment_receiver: {
    board_address: "sbnd-ptbmk2-01"
    #board_address: "192.168.230.77"
 
+   # Boardreader full host name or IP address
+   boardreader_address: "sbnd-daq34-priv.fnal.gov"
+   
    control_port  : 8991                               ## Default 8991 
    
    calibration_stream_output : "/data1/DebugStream"     ## this is the string that points to a writable directory if 

@@ -1,118 +1,140 @@
 #include "ptb_standard.fcl"
 
 daq.fragment_receiver.board_config : '{
-  "ctb":{
-    "sockets":{
-        "receiver":{
-            "rollover":500000,
-            "host":"sbnd-daq34-priv",
-            "port":8992
-      },
-      "monitor":{
-        "enable" : false,
-        "host": "localhost",
-        "port": 8993
-        },
-      "statistics": {
-        "enable":false,
-        "port":8994,
-        "updt_period": 1
-      }
-    },
-    "misc":{
-      "randomtrigger_1":{
-        "description":"Random trigger that can optionally be set to fire only during beam spill",
-        "enable":false,
-        "fixed_freq":true,
-        "beam_mode":true,
-        "period":3333333,
-        "seed":"0xACE2ACE1",
-        "thresh_lo":"0x00000001",
-        "thresh_hi":"0x000F00FF"
-      },
-      "randomtrigger_2":{
-        "description":"Random trigger that can optionally be set to fire only outside of beam spill",
-        "enable":false,
-        "fixed_freq":false,
-        "beam_mode":true,
-        "period":5000000,
-        "seed":"0x0000ACE1",
-        "thresh_lo":"0x00000001",
-        "thresh_hi":"0x000F00FF"
-      },
-      "pulser":{
-        "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
-        "enable":false,
-        "period":66666667,
-        "width" :26666667
-      },
-      "timing":{
-        "description":"Unbiased Trigger Control. 2ms lead time (0x1860A = 100k, 20ns ticks). 20.48 us beam acceptance window.",
-        "tap"          : "0x2",
-        "lead"         : "0x186A0",
-        "repeater_val" : "0x0",
-        "period"       : "0x3",
-        "duty"         : "0x3",
-        "beam_acc_window" : "0x400"
-      },
-      "ch_status":false,
-      "standalone_enable": true
-    },
-    "HLT":{
-      "command_mask" : {
-        "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
-        "A" : "0x3F",
-        "B" : "0x6",
-        "C" : "0x127",
-        "T" : "0x1"
+"ctb":{
+       "sockets":{
+           "receiver":{
+               "rollover":500000,
+               "host":"sbnd-daq34-priv",
+               "port":8992
+         },
+         "monitor":{
+           "enable" : false,
+           "host": "localhost",
+           "port": 8993
+           },
+         "statistics": {
+           "enable":false,
+           "port":8994,
+           "updt_period": 1
+         }
+       },
+       "misc":{
+         "randomtrigger_1":{
+           "description":"Random trigger that can optionally be set to fire only during beam spill. Period in 20ns ticks. Used as a fake source of beam triggers. 2Hz",
+           "enable":true,
+           "fixed_freq":true,
+           "beam_mode":false,
+           "period":25000000,
+           "seed":"0xACE2ACE1",
+           "thresh_lo":"0x00000001",
+           "thresh_hi":"0x000F00FF"
+         },
+         "randomtrigger_2":{
+           "description":"1Hz Random trigger that can optionally be set to fire only outside of beam spill. Period in 20ns ticks.",
+           "enable":false,
+           "fixed_freq":true,
+           "beam_mode":false,
+           "period":50000000,
+           "seed":"0x0CDFACE1",
+           "thresh_lo":"0x00000001",
+           "thresh_hi":"0x000F00FF"
+         },
+         "pulser":{
+           "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
+           "enable":false,
+           "period":66666667,
+           "width" :66666666
+         },
+         "timing":{
+           "description":"Unbiased Trigger Control.",
+           "tap"          : "0x2",
+           "repeater_val" : "0x0",
+           "period"       : "0x3",
+           "duty"         : "0x3",
+	   "early_warning_window":{
+             "use_count": true,
+             "beam_signal_mask": "0x2",
+             "window_length": "0x410A"
+           },
+           "pre_arrival_window":{
+             "use_count": true,
+             "beam_signal_mask": "0x0",
+             "window_length": "0x64"
+           },
+           "beam_acceptance_window":{
+            "use_count": true,
+            "beam_signal_mask": "0x0",
+            "window_length": "0x1"
+          },
+           "post_arrival_window":{
+             "beam_signal_mask": "0x0",
+             "window_length": "0x1"
+           }
+         },
+         "debug_outs":{
+           "description":"Masks for NIM debug outputs",
+           "debug_mask_1":"0x8",
+           "debug_mask_2":"0x8"
+         },
+         "ch_status":false,
+         "standalone_enable": true
+       },
+     "HLT":{
+       "command_mask" : {
+         "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
+         "A" : "0x3F",
+         "B" : "0x3",
+         "C" : "0x7F",
+         "T" : "0x0"
       },
       "trigger": [
         { "id":"HLT_1",
-          "description": "LLT1 and LLT11",
-          "enable":false,
-          "minc" : "0x1",
+          "description": "Beam Acceptance Window AND Top MTC/A Med. Threshold.",
+          "enable":true,
+          "minc" : "0x10004000",
           "mexc" : "0x0",
           "prescale" : "0x1"
         },
         { "id":"HLT_2",
-          "description": "LLT3, LLT11, LLT14, and LLT17",
+          "description": "Beam Acceptance AND downstream CRT (CRT layers AND-d).",
           "enable":false,
-          "minc" : "0x2",
+          "minc" : "0x20002000",
           "mexc" : "0x0",
           "prescale" : "0x1"
         },
         { "id":"HLT_3",
-          "description": "Beam input 2 and NIM coincidence. LLT4, LLT5, and LLT11",
+          "description": "Beam Acceptance AND (up && down) stream CRT (CRT layers AND-d).",
           "enable":true,
-          "minc" : "0x4",
+          "minc" : "0x20003000",
           "mexc" : "0x0",
           "prescale" : "0x1"
         },
         { "id":"HLT_4",
-          "description": "LLT6, LLT12, LLT13, and LLT15",
+          "description": "Reconstructable track beam trigger, no PDS selection, no CRT selection",
           "enable":false,
           "minc" : "0x2",
           "mexc" : "0xC",
           "prescale" : "0x1"
         },
         { "id":"HLT_5",
-          "description": "Pure Cosmic Trigger. LLT6, LLT14, LLT15, and LLT16",
-          "enable":false,
-          "minc" : "0x8",
-          "mexc" : "0x0",
-          "prescale" : "0xA"
-        },
-        { "id":"HLT_6",
-          "description": "Pure Cosmic trigger. LLT7 and LLT11",
+          "description": "Pure Cosmic trigger",
           "enable":false,
           "minc" : "0x2",
           "mexc" : "0x0",
           "prescale" : "0x1"
         },
-        { "id":"HLT_7",
-          "description": "Pure Cosmic trigger. LLT3, LLT8, and LLT11",
+        { "id":"HLT_6",
+          "description": "Pure Cosmic trigger",
           "enable":false,
-          "minc" : "0x4",
+          "minc" : "0x18",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_7",
+          "description": "Pure Cosmic trigger",
+          "enable":false,
+          "minc" : "0x3",
           "mexc" : "0x0",
           "prescale" : "0x1"
         }
@@ -126,67 +148,67 @@ daq.fragment_receiver.board_config : '{
         "triggers": [
           { "id":"LLT_14",
             "description": "Any CAEN input",
-            "enable":false,
-            "mask" : "0x3FF",
-            "type" : "0x1",
-            "count" : "0x0"
+            "enable":true,     
+            "mask" : "0x1000",
+            "type" : "0x2",
+            "count" : "0x1"
           },
           { "id":"LLT_17",                   
-            "description": "Any MTC/A input",
+            "description": "PDS include 2 SSPs near the beam plug",
             "enable":false,
-            "mask" : "0xFC00",
-            "type" : "0x1",
-            "count" : "0x0"
+            "mask" : "0x3FF",
+            "type" : "0x2",
+            "count" : "0x2"
           }
         ]
       },
       "crt":{
         "channel_mask": "0x3FFF",
         "pixelate": false,
-        "reshape_length" : 5,
+        "reshape_length" : 50,
         "delays":[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         "triggers": [
           { "id":"LLT_11",
-            "description": "NIM : NIM SPARE input 4",
+            "description": "CRT up/down stream all channels OR-d (type=0x1 is >Count)",
             "enable":true,
-            "mask" : "0x10000",
+            "mask" : "0x550",
             "type" : "0x1",
             "count" : "0x0"
           },
           { "id":"LLT_12",
-            "description": "NIM : coincidence of counter 1 and 6",
-            "enable":false,
-            "mask" : "0x30000",
+            "description": "CRT upstream XY layers AND-d",
+            "enable":true,
+            "mask" : "0x500",
             "type" : "0x2",
             "count" : "0x2"
           },
           { "id":"LLT_13",
-            "description": "NIM : coincidence of counter 1, 6, and 10",
-            "enable":false,
-            "mask" : "0x70000",
+            "description": "CRT downstream XY layers AND-d",
+            "enable":true,
+            "mask" : "0x50",
             "type" : "0x2",
-            "count" : "0x3"
+            "count" : "0x2"
           },
           { "id":"LLT_15",
-            "description": "NIM : SPARE CH2, TOP counter (1), bit 4",
+            "description": "Any upstream CRT Jura side",
             "enable":false,
-            "mask" : "0x20000",
-            "type" : "0x2",
-            "count" : "0x1"
+            "mask" : "0x9",
+            "type" : "0x1",
+            "count" : "0x0"
           },
           { "id":"LLT_16",
-            "description": "NIM : SPARE CH1, MIDDLE counter (10), bit 5",
+            "description": "Any downstream CRT Jura side",
             "enable":false,
-            "mask" : "0x80000",
-            "type" : "0x2",
-            "count" : "0x1"
+            "mask" : "0x6",
+            "type" : "0x1",
+            "count" : "0x0"
           },
           { "id":"LLT_18",
-            "description": "NIM : SPARE CH3, BOTTOM counter (6), bit 3",
+            "description": "Spare",
             "enable":false,
-            "mask" : "0x10000",
-            "type" : "0x2",
-            "count" : "0x1"
+            "mask" : "0x0",
+            "type" : "0x1",
+            "count" : "0x0"
           }
         ]
       },
@@ -212,7 +234,7 @@ daq.fragment_receiver.board_config : '{
           },
           { "id":"LLT_4",
             "description": "Beam input 3",
-            "enable":true,
+            "enable":false,
             "mask" : "0x4"
           },
           { "id":"LLT_5",
@@ -221,7 +243,7 @@ daq.fragment_receiver.board_config : '{
             "mask" : "0x5"
           },
           { "id":"LLT_6",
-            "description": "Spare",
+            "description": "Beam gate selection",
             "enable":false,
             "mask" : "0x6"
           },
@@ -248,7 +270,17 @@ daq.fragment_receiver.board_config : '{
         ]
       },
       "mtcas":{
-        "channel_mask": "0x8",
+        "mtca_thresh1": {
+          "hi": 2048,
+          "med": 3700,
+          "lo": 2048
+        },
+        "mtca_thresh2": {
+          "hi": 2048,
+          "med": 2048,
+          "lo": 2048
+        },
+        "channel_mask": "0x3F",
         "reshape_length" : 50,
         "delays": [0,0,0,0,0,0],
         "triggers": [
@@ -256,7 +288,7 @@ daq.fragment_receiver.board_config : '{
       }, 
       "nim":{
         "channel_mask": "0x3F",
-        "reshape_length" : 10,
+        "reshape_length" : 50,
         "delays": [0,0,0,0,0,0],
         "triggers": [
         ]

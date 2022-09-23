@@ -1,5 +1,8 @@
 #include "pmt_standard.fcl"
 
+#Set fragment id by slot number in vme crate
+daq.fragment_receiver.fragment_id: 9
+
 # link is which port on the PCIe card it is connected, numbering starts at 0
 daq.fragment_receiver.link: 2
 

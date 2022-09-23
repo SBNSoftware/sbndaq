@@ -56,7 +56,7 @@ daq: {
              name:crtt0
              enabled: true
              time_offset_ps: 0
-             monitor_only: true
+             monitor_only: false
              terminated: true },
            { id : 1
              name:crtt1

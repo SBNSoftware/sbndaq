@@ -1,32 +1,68 @@
 #include "pmt_standard.fcl"
-#daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
+
+#Set fragment id by slot number in vme crate
+daq.fragment_receiver.fragment_id: 15
 
 # link is which port on the PCIe card it is connected, numbering starts at 0
 daq.fragment_receiver.link: 0
+
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 10
+daq.fragment_receiver.board_id: 10
 
+# record 1200 ticks = 2.4 us with 50% after the trigger
+# default is 5000 ticks/80%
+daq.fragment_receiver.recordLength: 1200
+daq.fragment_receiver.postPercent:  50
+
+daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
+#daq.metrics.graphite.namespace: "sbnd.pmt03." 
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:"
 daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:"
 daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
 
-# put this board in pull mode
-
-    request_address:        "227.128.9.129" # -- multicast request address
-    multicast_interface_ip: "10.226.36.0" # -- should match the private net 
-    request_port: 3501   # UDP request port
-    request_mode: window # pull mode
-    request_window_width:  50000000 #5ms window
-    request_window_offset: 2500000 #1ms offset 
-    request_windows_are_unique: true
-    stale_request_timeout: 200000000
-
-
-
+# settings below are for CRT## running 
 #
 # set thresholds 
 #     default is 0, set in pmt_standard.fcl
 #
-#daq.fragment_receiver.triggerThreshold0:  7800
-#daq.fragment_receiver.triggerThreshold1:  7800
+daq.fragment_receiver.triggerThreshold0:  7800
+daq.fragment_receiver.triggerThreshold1:  7800
+daq.fragment_receiver.triggerThreshold2:  7800
+daq.fragment_receiver.triggerThreshold3:  7800
+daq.fragment_receiver.triggerThreshold4:  7800
+daq.fragment_receiver.triggerThreshold5:  7800
+daq.fragment_receiver.triggerThreshold6:  7800
+daq.fragment_receiver.triggerThreshold7:  7800
+daq.fragment_receiver.triggerThreshold8:  7800
+daq.fragment_receiver.triggerThreshold9:  7800
+daq.fragment_receiver.triggerThreshold10: 7800
+daq.fragment_receiver.triggerThreshold11: 7800
+daq.fragment_receiver.triggerThreshold12: 7800
+daq.fragment_receiver.triggerThreshold13: 7800
+daq.fragment_receiver.triggerThreshold14: 7800
+daq.fragment_receiver.triggerThreshold15: 7800
 #
+# set baselines for positive signals (attenuated TTL)
+#  default is 37628 set in pmt_standard.fcl
+#
+daq.fragment_receiver.channelPedestal1: 55000
+daq.fragment_receiver.channelPedestal3: 55000
+daq.fragment_receiver.channelPedestal5: 55000
+daq.fragment_receiver.channelPedestal7: 55000
+daq.fragment_receiver.channelPedestal9: 55000
+daq.fragment_receiver.channelPedestal11: 55000
+daq.fragment_receiver.channelPedestal13: 55000
+daq.fragment_receiver.channelPedestal15: 55000
+
+#testing whether this fixes problems - Michelle - 2022May20
+daq.fragment_receiver.UseTimeTagForTimeStamp: true
+#daq.fragment_receiver.fUseTimeTagForTimeStamp: true
+
+#Erin is testing things June 9th, 2022
+#daq.fragment_receiver.InterruptEnable: 0
+#daq.fragment_receiver.GetNextFragmentBunchSize: 1
+#daq.fragment_receiver.ModeLVDS: 1
+#daq.fragment_receiver.SelfTriggerMode: 0
+#daq.fragment_receiver.triggerPolarity: 1
+#daq.fragment_receiver.TimeOffsetNanoSec: 1000000000

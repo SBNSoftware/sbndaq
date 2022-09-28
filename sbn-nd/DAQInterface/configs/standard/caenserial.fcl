@@ -3,7 +3,7 @@ daq: {
   fragment_receiver: { 
     generator:                     CAENV1730SerialReader
     fragment_type:                 "CAENV1730"
-    BinaryFilePath:                "/daq/scratch/siminputs/caen_binary.dat"
+    BinaryFilePath:                "/daq/scratch/siminputs/caen_binary_henry_25.dat"
     board_id:                      -1
     max_fragment_size_bytes:       0x1000000
     generated_fragments_per_event: 8

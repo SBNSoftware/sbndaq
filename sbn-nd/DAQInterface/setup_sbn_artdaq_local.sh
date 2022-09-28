@@ -110,6 +110,6 @@ tonS -N *CAENV1730Readout  9
 tonM -N *CAENV1730Readout  9
 fi
 #toffM 23 -n SharedMemoryManager
-#export TRACE_LIMIT_MS="5,1000,2000"
+export TRACE_LIMIT_MS="1000000000,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
 # tonM 15 -n CommandableFragmentGenerator

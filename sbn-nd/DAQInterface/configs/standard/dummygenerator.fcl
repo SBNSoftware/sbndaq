@@ -1,6 +1,6 @@
 daq: {
   fragment_receiver: {
-    time_step_ms: 1000
+    time_step_ms: 200
     fragment_id: 0x3300
     generated_fragments_per_event: 1
 

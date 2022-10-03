@@ -2,7 +2,7 @@ daq:
 {
   fragment_receiver: 
   {
-    generator:   ˚WhiteRabbitReadout
+    generator:   WhiteRabbitReadout
     fragment_type: WhiteRabbitEvent
     max_fragment_size_bytes: 1000000
     fragment_ids: [0x5200]
@@ -24,4 +24,24 @@ daq:
       use_routing_master: false 
     }
   }
+
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/br_%UID%_metrics.log"
+      uniquify: true
+    }
+    graphite:{
+      namespace: "icarus.daq02."
+      host: "192.168.191.31"
+      level: 10
+      metricPluginType: "graphite"
+      port: 2003
+      reporting_interval: 10
+    }
+
+  }
+
 }

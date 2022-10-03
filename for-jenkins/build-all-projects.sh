@@ -5,15 +5,15 @@ PRODUCTS=${PRODUCTS:-'/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs
 #configure variables
 working_dir="${WORKSPACE:-$(pwd)}"
 selected_build_config=${1:-${BUILDCONFIG:-"testing"}}
-qual_set="${2:-${QUAL:-'s106:e19'}}"
+qual_set="${2:-${QUAL:-'s112:e20'}}"
 build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX
 
-ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_09_06"}
+ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_11_02"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v0_07_05'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_02_01'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS
@@ -26,7 +26,7 @@ export WORKSPACE
 
 #available configurations
 source_branchtages_testing=(
-   "wibtools:v0_03_08"
+   "wibtools:v1_02_01"
    "sbndaq_artdaq_core:${SBNDAQ_ARTDAQ_CORE_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq_artdaq:${SBNDAQ_ARTDAQ_BUILDTAG:-${DEFAULT_BRANCHTAG}}"
    "sbndaq:${SBNDAQ_BRANCHTAG:-${DEFAULT_BRANCHTAG}}"
@@ -61,7 +61,7 @@ Usage: $(basename ${0}) [-h]
 EOF
 }
 
-function main() 
+function main()
 {
 
   local source_branchtages_var=source_branchtages_$selected_build_config[@]

@@ -1,0 +1,1061 @@
+%MSG-i MF_INIT_OK:  Early 03-Feb-2022 17:34:46 CST JobSetup
+Messagelogger initialization complete.
+%MSG
+03-Feb-2022 17:34:46 CST  Initiating request to open input file "/scratch/data/data_evb01_run1000_2_20220203T233104.root"
+03-Feb-2022 17:34:46 CST  Opened input file "/scratch/data/data_evb01_run1000_2_20220203T233104.root"
+Begin processing the 1st record. run: 1000 subRun: 1 event: 20 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931064000109306
+ MD:  this_poll_end        1643931064001164756
+ MD:  last_poll_start      1643931063960109970
+ MD:  last_poll_end          1643931063960906265
+ MD:  system_clock_deviation 7172
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997760
+ts1                    357842256
+feb_hit_number         72
+timestamp              1643931063999997760
+last_accepted_timestamp1643931063642155501
+lost_hits              0
+channel 0 has adc value 176
+channel 1 has adc value 217
+channel 2 has adc value 201
+channel 3 has adc value 212
+channel 4 has adc value 194
+channel 5 has adc value 190
+channel 6 has adc value 219
+channel 7 has adc value 176
+channel 8 has adc value 197
+channel 9 has adc value 198
+channel 10 has adc value 202
+channel 11 has adc value 195
+channel 12 has adc value 210
+channel 13 has adc value 220
+channel 14 has adc value 220
+channel 15 has adc value 180
+channel 16 has adc value 217
+channel 17 has adc value 211
+channel 18 has adc value 207
+channel 19 has adc value 215
+channel 20 has adc value 205
+channel 21 has adc value 196
+channel 22 has adc value 202
+channel 23 has adc value 182
+channel 24 has adc value 193
+channel 25 has adc value 183
+channel 26 has adc value 205
+channel 27 has adc value 198
+channel 28 has adc value 180
+channel 29 has adc value 216
+channel 30 has adc value 204
+channel 31 has adc value 194
+Begin processing the 2nd record. run: 1000 subRun: 1 event: 21 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931064680113889
+ MD:  this_poll_end        1643931064681165981
+ MD:  last_poll_start      1643931064640114766
+ MD:  last_poll_end          1643931064640908062
+ MD:  system_clock_deviation 7161
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642156002
+ts1                    999998263
+feb_hit_number         73
+timestamp              1643931064642156002
+last_accepted_timestamp1643931063999997760
+lost_hits              0
+channel 0 has adc value 165
+channel 1 has adc value 205
+channel 2 has adc value 206
+channel 3 has adc value 211
+channel 4 has adc value 181
+channel 5 has adc value 207
+channel 6 has adc value 220
+channel 7 has adc value 198
+channel 8 has adc value 196
+channel 9 has adc value 202
+channel 10 has adc value 207
+channel 11 has adc value 204
+channel 12 has adc value 198
+channel 13 has adc value 222
+channel 14 has adc value 215
+channel 15 has adc value 207
+channel 16 has adc value 200
+channel 17 has adc value 200
+channel 18 has adc value 209
+channel 19 has adc value 216
+channel 20 has adc value 180
+channel 21 has adc value 199
+channel 22 has adc value 200
+channel 23 has adc value 212
+channel 24 has adc value 200
+channel 25 has adc value 185
+channel 26 has adc value 203
+channel 27 has adc value 205
+channel 28 has adc value 158
+channel 29 has adc value 222
+channel 30 has adc value 209
+channel 31 has adc value 216
+Begin processing the 3rd record. run: 1000 subRun: 1 event: 22 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931065000110498
+ MD:  this_poll_end        1643931065001166601
+ MD:  last_poll_start      1643931064960114876
+ MD:  last_poll_end          1643931064960906141
+ MD:  system_clock_deviation 7171
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997763
+ts1                    357841759
+feb_hit_number         74
+timestamp              1643931064999997763
+last_accepted_timestamp1643931064642156002
+lost_hits              0
+channel 0 has adc value 175
+channel 1 has adc value 184
+channel 2 has adc value 226
+channel 3 has adc value 234
+channel 4 has adc value 217
+channel 5 has adc value 215
+channel 6 has adc value 229
+channel 7 has adc value 208
+channel 8 has adc value 217
+channel 9 has adc value 186
+channel 10 has adc value 239
+channel 11 has adc value 219
+channel 12 has adc value 228
+channel 13 has adc value 249
+channel 14 has adc value 236
+channel 15 has adc value 216
+channel 16 has adc value 230
+channel 17 has adc value 183
+channel 18 has adc value 242
+channel 19 has adc value 233
+channel 20 has adc value 228
+channel 21 has adc value 229
+channel 22 has adc value 219
+channel 23 has adc value 219
+channel 24 has adc value 205
+channel 25 has adc value 168
+channel 26 has adc value 227
+channel 27 has adc value 207
+channel 28 has adc value 208
+channel 29 has adc value 236
+channel 30 has adc value 216
+channel 31 has adc value 222
+Begin processing the 4th record. run: 1000 subRun: 1 event: 23 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931065680108042
+ MD:  this_poll_end        1643931065681165768
+ MD:  last_poll_start      1643931065640106936
+ MD:  last_poll_end          1643931065640906244
+ MD:  system_clock_deviation 7163
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642156502
+ts1                    999998266
+feb_hit_number         75
+timestamp              1643931065642156502
+last_accepted_timestamp1643931064999997763
+lost_hits              0
+channel 0 has adc value 268
+channel 1 has adc value 258
+channel 2 has adc value 229
+channel 3 has adc value 224
+channel 4 has adc value 160
+channel 5 has adc value 187
+channel 6 has adc value 230
+channel 7 has adc value 209
+channel 8 has adc value 316
+channel 9 has adc value 240
+channel 10 has adc value 228
+channel 11 has adc value 216
+channel 12 has adc value 161
+channel 13 has adc value 209
+channel 14 has adc value 225
+channel 15 has adc value 215
+channel 16 has adc value 325
+channel 17 has adc value 247
+channel 18 has adc value 239
+channel 19 has adc value 229
+channel 20 has adc value 137
+channel 21 has adc value 181
+channel 22 has adc value 220
+channel 23 has adc value 210
+channel 24 has adc value 298
+channel 25 has adc value 223
+channel 26 has adc value 220
+channel 27 has adc value 205
+channel 28 has adc value 140
+channel 29 has adc value 195
+channel 30 has adc value 214
+channel 31 has adc value 218
+Begin processing the 5th record. run: 1000 subRun: 1 event: 24 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931066000062059
+ MD:  this_poll_end        1643931066001167045
+ MD:  last_poll_start      1643931065960060094
+ MD:  last_poll_end          1643931065960907502
+ MD:  system_clock_deviation 7082
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997760
+ts1                    357841256
+feb_hit_number         76
+timestamp              1643931065999997760
+last_accepted_timestamp1643931065642156502
+lost_hits              0
+channel 0 has adc value 188
+channel 1 has adc value 228
+channel 2 has adc value 196
+channel 3 has adc value 246
+channel 4 has adc value 225
+channel 5 has adc value 219
+channel 6 has adc value 250
+channel 7 has adc value 207
+channel 8 has adc value 225
+channel 9 has adc value 229
+channel 10 has adc value 196
+channel 11 has adc value 227
+channel 12 has adc value 241
+channel 13 has adc value 231
+channel 14 has adc value 234
+channel 15 has adc value 214
+channel 16 has adc value 233
+channel 17 has adc value 218
+channel 18 has adc value 200
+channel 19 has adc value 239
+channel 20 has adc value 236
+channel 21 has adc value 207
+channel 22 has adc value 228
+channel 23 has adc value 219
+channel 24 has adc value 215
+channel 25 has adc value 208
+channel 26 has adc value 190
+channel 27 has adc value 220
+channel 28 has adc value 204
+channel 29 has adc value 223
+channel 30 has adc value 234
+channel 31 has adc value 206
+Begin processing the 6th record. run: 1000 subRun: 1 event: 25 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931066680109890
+ MD:  this_poll_end        1643931066681166287
+ MD:  last_poll_start      1643931066640109419
+ MD:  last_poll_end          1643931066640906667
+ MD:  system_clock_deviation 7164
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642157005
+ts1                    999998265
+feb_hit_number         77
+timestamp              1643931066642157005
+last_accepted_timestamp1643931065999997760
+lost_hits              0
+channel 0 has adc value 187
+channel 1 has adc value 228
+channel 2 has adc value 257
+channel 3 has adc value 233
+channel 4 has adc value 229
+channel 5 has adc value 208
+channel 6 has adc value 203
+channel 7 has adc value 210
+channel 8 has adc value 220
+channel 9 has adc value 228
+channel 10 has adc value 260
+channel 11 has adc value 228
+channel 12 has adc value 239
+channel 13 has adc value 225
+channel 14 has adc value 201
+channel 15 has adc value 221
+channel 16 has adc value 233
+channel 17 has adc value 236
+channel 18 has adc value 276
+channel 19 has adc value 235
+channel 20 has adc value 231
+channel 21 has adc value 208
+channel 22 has adc value 190
+channel 23 has adc value 221
+channel 24 has adc value 212
+channel 25 has adc value 205
+channel 26 has adc value 256
+channel 27 has adc value 210
+channel 28 has adc value 220
+channel 29 has adc value 220
+channel 30 has adc value 182
+channel 31 has adc value 221
+Begin processing the 7th record. run: 1000 subRun: 1 event: 26 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931067000107749
+ MD:  this_poll_end        1643931067001165464
+ MD:  last_poll_start      1643931066960109031
+ MD:  last_poll_end          1643931066960906875
+ MD:  system_clock_deviation 7176
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997762
+ts1                    357840754
+feb_hit_number         78
+timestamp              1643931066999997762
+last_accepted_timestamp1643931066642157005
+lost_hits              0
+channel 0 has adc value 193
+channel 1 has adc value 224
+channel 2 has adc value 229
+channel 3 has adc value 220
+channel 4 has adc value 209
+channel 5 has adc value 211
+channel 6 has adc value 241
+channel 7 has adc value 215
+channel 8 has adc value 222
+channel 9 has adc value 217
+channel 10 has adc value 225
+channel 11 has adc value 196
+channel 12 has adc value 228
+channel 13 has adc value 220
+channel 14 has adc value 242
+channel 15 has adc value 199
+channel 16 has adc value 236
+channel 17 has adc value 226
+channel 18 has adc value 233
+channel 19 has adc value 230
+channel 20 has adc value 218
+channel 21 has adc value 203
+channel 22 has adc value 230
+channel 23 has adc value 202
+channel 24 has adc value 214
+channel 25 has adc value 199
+channel 26 has adc value 226
+channel 27 has adc value 212
+channel 28 has adc value 206
+channel 29 has adc value 227
+channel 30 has adc value 222
+channel 31 has adc value 211
+Begin processing the 8th record. run: 1000 subRun: 1 event: 27 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931067680064935
+ MD:  this_poll_end        1643931067681174365
+ MD:  last_poll_start      1643931067640115403
+ MD:  last_poll_end          1643931067640934751
+ MD:  system_clock_deviation 7150
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642157502
+ts1                    999998263
+feb_hit_number         79
+timestamp              1643931067642157502
+last_accepted_timestamp1643931066999997762
+lost_hits              0
+channel 0 has adc value 175
+channel 1 has adc value 169
+channel 2 has adc value 213
+channel 3 has adc value 208
+channel 4 has adc value 215
+channel 5 has adc value 234
+channel 6 has adc value 230
+channel 7 has adc value 191
+channel 8 has adc value 208
+channel 9 has adc value 162
+channel 10 has adc value 209
+channel 11 has adc value 186
+channel 12 has adc value 226
+channel 13 has adc value 246
+channel 14 has adc value 232
+channel 15 has adc value 195
+channel 16 has adc value 214
+channel 17 has adc value 170
+channel 18 has adc value 211
+channel 19 has adc value 206
+channel 20 has adc value 220
+channel 21 has adc value 225
+channel 22 has adc value 216
+channel 23 has adc value 198
+channel 24 has adc value 195
+channel 25 has adc value 146
+channel 26 has adc value 205
+channel 27 has adc value 196
+channel 28 has adc value 208
+channel 29 has adc value 252
+channel 30 has adc value 217
+channel 31 has adc value 207
+Begin processing the 9th record. run: 1000 subRun: 1 event: 28 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931068000109138
+ MD:  this_poll_end        1643931068001166090
+ MD:  last_poll_start      1643931067960110787
+ MD:  last_poll_end          1643931067960907361
+ MD:  system_clock_deviation 7176
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997760
+ts1                    357840256
+feb_hit_number         80
+timestamp              1643931067999997760
+last_accepted_timestamp1643931067642157502
+lost_hits              0
+channel 0 has adc value 166
+channel 1 has adc value 247
+channel 2 has adc value 203
+channel 3 has adc value 217
+channel 4 has adc value 197
+channel 5 has adc value 149
+channel 6 has adc value 215
+channel 7 has adc value 189
+channel 8 has adc value 194
+channel 9 has adc value 238
+channel 10 has adc value 198
+channel 11 has adc value 197
+channel 12 has adc value 216
+channel 13 has adc value 176
+channel 14 has adc value 215
+channel 15 has adc value 203
+channel 16 has adc value 199
+channel 17 has adc value 257
+channel 18 has adc value 218
+channel 19 has adc value 223
+channel 20 has adc value 197
+channel 21 has adc value 164
+channel 22 has adc value 197
+channel 23 has adc value 205
+channel 24 has adc value 192
+channel 25 has adc value 221
+channel 26 has adc value 211
+channel 27 has adc value 200
+channel 28 has adc value 200
+channel 29 has adc value 171
+channel 30 has adc value 191
+channel 31 has adc value 202
+Begin processing the 10th record. run: 1000 subRun: 1 event: 29 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931068680065088
+ MD:  this_poll_end        1643931068681168476
+ MD:  last_poll_start      1643931068640109453
+ MD:  last_poll_end          1643931068640906707
+ MD:  system_clock_deviation 7163
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642158004
+ts1                    999998264
+feb_hit_number         81
+timestamp              1643931068642158004
+last_accepted_timestamp1643931067999997760
+lost_hits              0
+channel 0 has adc value 180
+channel 1 has adc value 318
+channel 2 has adc value 252
+channel 3 has adc value 235
+channel 4 has adc value 223
+channel 5 has adc value 137
+channel 6 has adc value 218
+channel 7 has adc value 198
+channel 8 has adc value 209
+channel 9 has adc value 306
+channel 10 has adc value 250
+channel 11 has adc value 218
+channel 12 has adc value 232
+channel 13 has adc value 146
+channel 14 has adc value 231
+channel 15 has adc value 214
+channel 16 has adc value 223
+channel 17 has adc value 315
+channel 18 has adc value 254
+channel 19 has adc value 229
+channel 20 has adc value 234
+channel 21 has adc value 123
+channel 22 has adc value 214
+channel 23 has adc value 217
+channel 24 has adc value 209
+channel 25 has adc value 280
+channel 26 has adc value 253
+channel 27 has adc value 211
+channel 28 has adc value 209
+channel 29 has adc value 137
+channel 30 has adc value 209
+channel 31 has adc value 221
+Begin processing the 11th record. run: 1000 subRun: 1 event: 30 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931069000108172
+ MD:  this_poll_end        1643931069001165838
+ MD:  last_poll_start      1643931068960107006
+ MD:  last_poll_end          1643931068960906051
+ MD:  system_clock_deviation 7172
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997761
+ts1                    357839754
+feb_hit_number         82
+timestamp              1643931068999997761
+last_accepted_timestamp1643931068642158004
+lost_hits              0
+channel 0 has adc value 194
+channel 1 has adc value 230
+channel 2 has adc value 194
+channel 3 has adc value 227
+channel 4 has adc value 224
+channel 5 has adc value 213
+channel 6 has adc value 278
+channel 7 has adc value 215
+channel 8 has adc value 233
+channel 9 has adc value 217
+channel 10 has adc value 186
+channel 11 has adc value 214
+channel 12 has adc value 232
+channel 13 has adc value 241
+channel 14 has adc value 280
+channel 15 has adc value 228
+channel 16 has adc value 222
+channel 17 has adc value 229
+channel 18 has adc value 199
+channel 19 has adc value 224
+channel 20 has adc value 233
+channel 21 has adc value 208
+channel 22 has adc value 260
+channel 23 has adc value 226
+channel 24 has adc value 213
+channel 25 has adc value 199
+channel 26 has adc value 192
+channel 27 has adc value 220
+channel 28 has adc value 215
+channel 29 has adc value 228
+channel 30 has adc value 265
+channel 31 has adc value 226
+Begin processing the 12th record. run: 1000 subRun: 1 event: 31 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931069680064002
+ MD:  this_poll_end        1643931069681179285
+ MD:  last_poll_start      1643931069640110257
+ MD:  last_poll_end          1643931069640906992
+ MD:  system_clock_deviation 7163
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642158504
+ts1                    999998260
+feb_hit_number         83
+timestamp              1643931069642158504
+last_accepted_timestamp1643931068999997761
+lost_hits              0
+channel 0 has adc value 170
+channel 1 has adc value 223
+channel 2 has adc value 231
+channel 3 has adc value 292
+channel 4 has adc value 235
+channel 5 has adc value 213
+channel 6 has adc value 253
+channel 7 has adc value 141
+channel 8 has adc value 213
+channel 9 has adc value 225
+channel 10 has adc value 220
+channel 11 has adc value 259
+channel 12 has adc value 243
+channel 13 has adc value 229
+channel 14 has adc value 227
+channel 15 has adc value 157
+channel 16 has adc value 214
+channel 17 has adc value 216
+channel 18 has adc value 228
+channel 19 has adc value 272
+channel 20 has adc value 239
+channel 21 has adc value 200
+channel 22 has adc value 227
+channel 23 has adc value 150
+channel 24 has adc value 192
+channel 25 has adc value 194
+channel 26 has adc value 220
+channel 27 has adc value 258
+channel 28 has adc value 218
+channel 29 has adc value 226
+channel 30 has adc value 225
+channel 31 has adc value 167
+Begin processing the 13th record. run: 1000 subRun: 1 event: 32 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931070000113176
+ MD:  this_poll_end        1643931070001168363
+ MD:  last_poll_start      1643931069960108026
+ MD:  last_poll_end          1643931069960907486
+ MD:  system_clock_deviation 7174
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997763
+ts1                    357839255
+feb_hit_number         84
+timestamp              1643931069999997763
+last_accepted_timestamp1643931069642158504
+lost_hits              0
+channel 0 has adc value 191
+channel 1 has adc value 160
+channel 2 has adc value 215
+channel 3 has adc value 218
+channel 4 has adc value 217
+channel 5 has adc value 257
+channel 6 has adc value 244
+channel 7 has adc value 209
+channel 8 has adc value 228
+channel 9 has adc value 149
+channel 10 has adc value 202
+channel 11 has adc value 214
+channel 12 has adc value 233
+channel 13 has adc value 292
+channel 14 has adc value 249
+channel 15 has adc value 228
+channel 16 has adc value 231
+channel 17 has adc value 156
+channel 18 has adc value 220
+channel 19 has adc value 229
+channel 20 has adc value 229
+channel 21 has adc value 238
+channel 22 has adc value 238
+channel 23 has adc value 225
+channel 24 has adc value 210
+channel 25 has adc value 133
+channel 26 has adc value 212
+channel 27 has adc value 213
+channel 28 has adc value 207
+channel 29 has adc value 264
+channel 30 has adc value 237
+channel 31 has adc value 217
+Begin processing the 14th record. run: 1000 subRun: 1 event: 33 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931070680109609
+ MD:  this_poll_end        1643931070681165882
+ MD:  last_poll_start      1643931070640107656
+ MD:  last_poll_end          1643931070640907140
+ MD:  system_clock_deviation 7165
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642159001
+ts1                    999998262
+feb_hit_number         85
+timestamp              1643931070642159001
+last_accepted_timestamp1643931069999997763
+lost_hits              0
+channel 0 has adc value 176
+channel 1 has adc value 230
+channel 2 has adc value 186
+channel 3 has adc value 225
+channel 4 has adc value 216
+channel 5 has adc value 210
+channel 6 has adc value 282
+channel 7 has adc value 212
+channel 8 has adc value 225
+channel 9 has adc value 211
+channel 10 has adc value 189
+channel 11 has adc value 206
+channel 12 has adc value 231
+channel 13 has adc value 218
+channel 14 has adc value 282
+channel 15 has adc value 221
+channel 16 has adc value 226
+channel 17 has adc value 224
+channel 18 has adc value 202
+channel 19 has adc value 232
+channel 20 has adc value 218
+channel 21 has adc value 198
+channel 22 has adc value 258
+channel 23 has adc value 211
+channel 24 has adc value 207
+channel 25 has adc value 201
+channel 26 has adc value 200
+channel 27 has adc value 211
+channel 28 has adc value 208
+channel 29 has adc value 211
+channel 30 has adc value 273
+channel 31 has adc value 228
+Begin processing the 15th record. run: 1000 subRun: 1 event: 34 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931071000062374
+ MD:  this_poll_end        1643931071001168931
+ MD:  last_poll_start      1643931070960110561
+ MD:  last_poll_end          1643931070960924724
+ MD:  system_clock_deviation 7077
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997760
+ts1                    357838756
+feb_hit_number         86
+timestamp              1643931070999997760
+last_accepted_timestamp1643931070642159001
+lost_hits              0
+channel 0 has adc value 134
+channel 1 has adc value 215
+channel 2 has adc value 198
+channel 3 has adc value 214
+channel 4 has adc value 234
+channel 5 has adc value 201
+channel 6 has adc value 219
+channel 7 has adc value 210
+channel 8 has adc value 182
+channel 9 has adc value 198
+channel 10 has adc value 207
+channel 11 has adc value 191
+channel 12 has adc value 250
+channel 13 has adc value 219
+channel 14 has adc value 216
+channel 15 has adc value 209
+channel 16 has adc value 181
+channel 17 has adc value 206
+channel 18 has adc value 211
+channel 19 has adc value 220
+channel 20 has adc value 238
+channel 21 has adc value 189
+channel 22 has adc value 208
+channel 23 has adc value 199
+channel 24 has adc value 164
+channel 25 has adc value 186
+channel 26 has adc value 198
+channel 27 has adc value 197
+channel 28 has adc value 222
+channel 29 has adc value 213
+channel 30 has adc value 206
+channel 31 has adc value 207
+Begin processing the 16th record. run: 1000 subRun: 1 event: 35 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931071680110195
+ MD:  this_poll_end        1643931071681166837
+ MD:  last_poll_start      1643931071640109038
+ MD:  last_poll_end          1643931071640959638
+ MD:  system_clock_deviation 7163
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642159505
+ts1                    999998264
+feb_hit_number         87
+timestamp              1643931071642159505
+last_accepted_timestamp1643931070999997760
+lost_hits              0
+channel 0 has adc value 189
+channel 1 has adc value 207
+channel 2 has adc value 210
+channel 3 has adc value 118
+channel 4 has adc value 192
+channel 5 has adc value 177
+channel 6 has adc value 207
+channel 7 has adc value 251
+channel 8 has adc value 220
+channel 9 has adc value 198
+channel 10 has adc value 208
+channel 11 has adc value 116
+channel 12 has adc value 201
+channel 13 has adc value 192
+channel 14 has adc value 213
+channel 15 has adc value 264
+channel 16 has adc value 229
+channel 17 has adc value 201
+channel 18 has adc value 219
+channel 19 has adc value 130
+channel 20 has adc value 197
+channel 21 has adc value 182
+channel 22 has adc value 207
+channel 23 has adc value 267
+channel 24 has adc value 204
+channel 25 has adc value 176
+channel 26 has adc value 214
+channel 27 has adc value 124
+channel 28 has adc value 181
+channel 29 has adc value 197
+channel 30 has adc value 207
+channel 31 has adc value 263
+Begin processing the 17th record. run: 1000 subRun: 1 event: 36 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931072000107750
+ MD:  this_poll_end        1643931072001165556
+ MD:  last_poll_start      1643931071960108962
+ MD:  last_poll_end          1643931071960906399
+ MD:  system_clock_deviation 7176
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997761
+ts1                    357838254
+feb_hit_number         88
+timestamp              1643931071999997761
+last_accepted_timestamp1643931071642159505
+lost_hits              0
+channel 0 has adc value 110
+channel 1 has adc value 188
+channel 2 has adc value 205
+channel 3 has adc value 205
+channel 4 has adc value 306
+channel 5 has adc value 210
+channel 6 has adc value 233
+channel 7 has adc value 187
+channel 8 has adc value 133
+channel 9 has adc value 170
+channel 10 has adc value 209
+channel 11 has adc value 191
+channel 12 has adc value 308
+channel 13 has adc value 231
+channel 14 has adc value 232
+channel 15 has adc value 189
+channel 16 has adc value 135
+channel 17 has adc value 188
+channel 18 has adc value 213
+channel 19 has adc value 205
+channel 20 has adc value 308
+channel 21 has adc value 210
+channel 22 has adc value 212
+channel 23 has adc value 202
+channel 24 has adc value 115
+channel 25 has adc value 157
+channel 26 has adc value 212
+channel 27 has adc value 182
+channel 28 has adc value 288
+channel 29 has adc value 222
+channel 30 has adc value 214
+channel 31 has adc value 208
+Begin processing the 18th record. run: 1000 subRun: 1 event: 37 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931072680114810
+ MD:  this_poll_end        1643931072681005143
+ MD:  last_poll_start      1643931072640109486
+ MD:  last_poll_end          1643931072640950175
+ MD:  system_clock_deviation 7167
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642160004
+ts1                    999998260
+feb_hit_number         89
+timestamp              1643931072642160004
+last_accepted_timestamp1643931071999997761
+lost_hits              0
+channel 0 has adc value 131
+channel 1 has adc value 205
+channel 2 has adc value 208
+channel 3 has adc value 202
+channel 4 has adc value 242
+channel 5 has adc value 189
+channel 6 has adc value 224
+channel 7 has adc value 193
+channel 8 has adc value 180
+channel 9 has adc value 192
+channel 10 has adc value 205
+channel 11 has adc value 188
+channel 12 has adc value 258
+channel 13 has adc value 215
+channel 14 has adc value 226
+channel 15 has adc value 201
+channel 16 has adc value 188
+channel 17 has adc value 199
+channel 18 has adc value 211
+channel 19 has adc value 213
+channel 20 has adc value 258
+channel 21 has adc value 187
+channel 22 has adc value 212
+channel 23 has adc value 194
+channel 24 has adc value 175
+channel 25 has adc value 177
+channel 26 has adc value 203
+channel 27 has adc value 199
+channel 28 has adc value 237
+channel 29 has adc value 210
+channel 30 has adc value 208
+channel 31 has adc value 206
+Begin processing the 19th record. run: 1000 subRun: 1 event: 38 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931073000063453
+ MD:  this_poll_end        1643931073001171456
+ MD:  last_poll_start      1643931072960119440
+ MD:  last_poll_end          1643931072960921252
+ MD:  system_clock_deviation 7181
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  7
+lostcpu         0
+lostfpga    0
+ts0         999997763
+ts1                    357837755
+feb_hit_number         90
+timestamp              1643931072999997763
+last_accepted_timestamp1643931072642160004
+lost_hits              0
+channel 0 has adc value 136
+channel 1 has adc value 220
+channel 2 has adc value 222
+channel 3 has adc value 227
+channel 4 has adc value 260
+channel 5 has adc value 218
+channel 6 has adc value 244
+channel 7 has adc value 211
+channel 8 has adc value 164
+channel 9 has adc value 204
+channel 10 has adc value 220
+channel 11 has adc value 220
+channel 12 has adc value 270
+channel 13 has adc value 237
+channel 14 has adc value 244
+channel 15 has adc value 217
+channel 16 has adc value 203
+channel 17 has adc value 219
+channel 18 has adc value 231
+channel 19 has adc value 230
+channel 20 has adc value 248
+channel 21 has adc value 217
+channel 22 has adc value 232
+channel 23 has adc value 222
+channel 24 has adc value 165
+channel 25 has adc value 197
+channel 26 has adc value 221
+channel 27 has adc value 208
+channel 28 has adc value 238
+channel 29 has adc value 232
+channel 30 has adc value 227
+channel 31 has adc value 226
+Begin processing the 20th record. run: 1000 subRun: 1 event: 39 at 03-Feb-2022 17:34:47 CST
+ metadata . . .. 
+ MD:  mac5             89
+ MD:  run_start_time      1643931053707636620
+ MD:  this_poll_start     1643931073680108650
+ MD:  this_poll_end        1643931073681170350
+ MD:  last_poll_start      1643931073640108617
+ MD:  last_poll_end          1643931073640906711
+ MD:  system_clock_deviation 7162
+ MD:  feb_hits_in_poll       1
+ MD:  feb_hits_in_fragment  1
+  flags  11
+lostcpu         0
+lostfpga    0
+ts0         642160502
+ts1                    999998262
+feb_hit_number         91
+timestamp              1643931073642160502
+last_accepted_timestamp1643931072999997763
+lost_hits              0
+channel 0 has adc value 178
+channel 1 has adc value 224
+channel 2 has adc value 320
+channel 3 has adc value 253
+channel 4 has adc value 221
+channel 5 has adc value 209
+channel 6 has adc value 172
+channel 7 has adc value 190
+channel 8 has adc value 220
+channel 9 has adc value 213
+channel 10 has adc value 305
+channel 11 has adc value 237
+channel 12 has adc value 240
+channel 13 has adc value 222
+channel 14 has adc value 172
+channel 15 has adc value 207
+channel 16 has adc value 228
+channel 17 has adc value 227
+channel 18 has adc value 321
+channel 19 has adc value 252
+channel 20 has adc value 229
+channel 21 has adc value 206
+channel 22 has adc value 143
+channel 23 has adc value 194
+channel 24 has adc value 196
+channel 25 has adc value 195
+channel 26 has adc value 312
+channel 27 has adc value 230
+channel 28 has adc value 213
+channel 29 has adc value 225
+channel 30 has adc value 145
+channel 31 has adc value 203
+03-Feb-2022 17:34:47 CST  Closed input file "/scratch/data/data_evb01_run1000_2_20220203T233104.root"
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 20 passed = 20 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         20         20          0 berncrtana
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 0.012318 Real = 0.012912
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 871.17 VmHWM = 281.657
+
+Art has completed and will exit with status 0.

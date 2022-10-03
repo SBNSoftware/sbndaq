@@ -2,7 +2,7 @@
 
 source /grid/fermiapp/products/artdaq/setup
 setup artdaq v3_03_00 -qe15:s64:prof
-setup mrb
+setup mrb v5_12_00
 
 export MRB_PROJECT=sbndaq
 

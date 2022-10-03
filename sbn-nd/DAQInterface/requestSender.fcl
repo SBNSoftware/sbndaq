@@ -1,0 +1,27 @@
+   sender: {
+      send_requests: true
+      request_port: 3001
+      request_delay_ms: 10
+      request_shutdown_timeout_us: 100000
+      multicast_interface_ip: "10.226.36.0"
+      request_address: "227.128.2.129"
+      routing_token_config: {
+         use_routing_manager: false
+      }
+      use_receiver: true
+      recevier_timeout_ms: 1000
+      receiver_config: {
+         receive_requests: true
+         request_port: 3001
+         request_address: "227.128.2.129"
+         multicast_interface_ip: "10.226.36.0"
+         end_of_run_quiet_timeout_ms: 1000
+      }
+
+      recevier_timeout_ms: 1000
+      num_requests: 10
+      starting_sequence_id: 1
+      sequence_id_scale: 1
+      starting_timestamp: 1
+      timestamp_scale: 1
+   }

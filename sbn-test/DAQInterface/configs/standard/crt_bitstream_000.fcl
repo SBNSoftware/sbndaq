@@ -1,5 +1,4 @@
 #Configuration of FEB, including MPPC HV, channel on/off status and more. Bitstream format:  0s and 1s are accepted and whitespaces are ignored, until any different character is encountered. Then rest of the line is ignored (it serves as a human-readable comment)
-
 SlowControlBitStream_id_000 : '
 0000 # Ch0 4-bit DAC_t ([0..3])#
 0000 # Ch1 4-bit DAC_t ([0..3])#
@@ -71,18 +70,18 @@ SlowControlBitStream_id_000 : '
 1 # Enable Discriminator Two#
 1 # Disable trigger discriminator power pulsing mode (force ON)#
 1 # EN_4b_dac#
-1 #PP: 4b_dac#
+1 # PP: 4b_dac#
 1 # EN_4b_dac_t#
-1 #PP: 4b_dac_t#
-00111111111111111111111111111111 # Allows to Mask Discriminator (channel 0 to 31) [active low]#
+1 # PP: 4b_dac_t#
+00000000000000000000000000000000 # Allows to Mask Discriminator (channel 0 to 31) [active low]#
 1 # Disable High Gain Track & Hold power pulsing mode (force ON)#
 1 # Enable High Gain Track & Hold#
 1 # Disable Low Gain Track & Hold power pulsing mode (force ON)#
 1 # Enable Low Gain Track & Hold#
 0 # SCA bias ( 1 = weak bias, 0 = high bias 5MHz ReadOut Speed)#
-0 #PP: HG Pdet#
+0 # PP: HG Pdet#
 0 # EN_HG_Pdet#
-0 #PP: LG Pdet#
+0 # PP: LG Pdet#
 0 # EN_LG_Pdet#
 1 # Sel SCA or PeakD HG#
 1 # Sel SCA or PeakD LG#
@@ -105,25 +104,25 @@ SlowControlBitStream_id_000 : '
 0 # Select LG PA to send to Fast Shaper#
 1 # Enable 32 input 8-bit DACs#
 1 # 8-bit input DAC Voltage Reference (1 = external 4,5V , 0 = internal 2,5V)#
-01110010 0 # Input 8-bit DAC Data channel 0 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 0 # Input 8-bit DAC Data channel 1 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 2 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 3 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 4 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 5 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 6 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 7 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 8 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 9 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 10 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
-01110010 1 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 0 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 1 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 2 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 3 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 4 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 5 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 6 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 7 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 8 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 9 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 10 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 11 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 12 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 13 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 14 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 15 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 16 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 17 - (DAC7...DAC0 + DAC ON), higher-higher bias#
+01111111 0 # Input 8-bit DAC Data channel 18 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 19 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 20 - (DAC7...DAC0 + DAC ON), higher-higher bias#
 01110010 1 # Input 8-bit DAC Data channel 21 - (DAC7...DAC0 + DAC ON), higher-higher bias#
@@ -177,8 +176,8 @@ SlowControlBitStream_id_000 : '
 1 # Disable DAC1 power pulsing mode (force ON)#
 1 # Enable DAC2#
 1 # Disable DAC2 power pulsing mode (force ON)#
-01 0001 1000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
-01 0001 1000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC1 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
+01 1000 0000 # 10-bit DAC2 (MSB-LSB): 00 1100 0000 for 0.5 p.e.#
 1 # Enable High Gain OTA#  -- start byte 2
 1 # Disable High Gain OTA power pulsing mode (force ON)#
 1 # Enable Low Gain OTA#
@@ -191,10 +190,9 @@ SlowControlBitStream_id_000 : '
 0 # Enable Raz_Chn receiver#
 0 # Disable Raz Chn receiver power pulsing mode (force ON)#
 0 # Enable digital multiplexed output (hit mux out)#
-1 # Enable digital OR32 output#
+0 # Enable digital OR32 output#
 0 # Enable digital OR32 Open Collector output#
 0 # Trigger Polarity#
 0 # Enable digital OR32_T Open Collector output#
 1 # Enable 32 channels triggers outputs#
 '
-

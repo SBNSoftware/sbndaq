@@ -1,0 +1,222 @@
+
+artdaq_processes: [{
+
+collection: GPSs
+
+pattern: '(.*/)(gps(\d*|_standard))(\.fcl$)'
+
+}, {
+
+collection: TestComponents
+
+pattern: '(.*/)(component(_standard|\d+))(\.fcl$)'
+
+}, {
+
+collection: Triggers
+
+pattern: '(.*/)(trigger(|test))(\.fcl$)'
+
+}, {
+
+collection: WRs
+
+pattern: '(.*/)(wr(\d*|_pull|_standard))(\.fcl$)'
+
+}, {
+
+collection: XARAs
+
+pattern: '(.*/)(xara(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: MBBs
+
+pattern: '(.*/)(mbb(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: PMTs
+
+pattern: '(.*/)(pmt(\d+|_standard))(\.fcl$)'
+}, {
+
+collection: WIBs
+
+pattern: '(.*/)(wib(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: PTBs
+
+pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)'
+
+},{
+
+collection: TPCs
+
+pattern: '(.*/)(tpc(\d+|_standard))(\.fcl$)'
+
+},{
+
+collection: NevisTPCs
+
+pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)'
+
+},{
+
+collection: EventBuilders
+
+pattern: '(.*/)(EventBuilder(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: DataLoggers
+
+pattern: '(.*/)(DataLogger(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: Dispatchers
+
+pattern: '(.*/)(Dispatcher(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RoutingManager
+
+pattern: '(.*/)(RoutingManager(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: UserSettings
+
+pattern: '(.*/)(user_setings)(\.fcl$)'
+
+}, {
+
+collection: Boot
+
+pattern: '(.*/)(boot)(\.fcl$)'
+
+}, {
+
+collection: KnownBoardreasers
+
+pattern: '(.*/)(known_boardreaders_list)(\.fcl$)'
+
+}, {
+
+collection: CriticalProcesses
+
+pattern: '(.*/)(critical_process_list)(\.fcl$)'
+
+}, {
+
+collection: DataflowConfiguration
+
+pattern: '(.*/)(DataflowConfiguration)(\.fcl$)'
+
+}, {
+
+collection: Hashes
+
+pattern: '(.*/)(hashes)(\.fcl$)'
+
+}]
+
+artdaq_includes: []
+
+run_history: [{
+
+collection: RunHistory
+
+pattern: '(.*/)(trigger|triggertest|dummygenerator|sbnToySimulator)(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(component(_standard|\d+))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(gps(\d*|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(wr(\d*|_pull|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(xara(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(mbb(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(pmt(\d+|_standard))(\.fcl$)'
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(wib(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(tpc(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(ptb(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager)(\d+|_standard))(\.fcl$)'
+
+}, {
+
+collection: RunHistory
+
+pattern: '(.*/)(user_setings|metadata|boot|(known_boardreaders|critical_process)_list|DataflowConfiguration|RunHistory(|2))(\.fcl$)'
+
+}]
+
+system_layout: [{
+
+collection: SystemLayout
+
+pattern: '(.*)(schema)(\.fcl$)'
+
+}, {
+
+collection: Flags
+
+pattern: '(.*)(flags)(\.fcl$)'
+
+}]

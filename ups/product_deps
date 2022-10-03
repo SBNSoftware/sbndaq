@@ -2,8 +2,8 @@
 
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
-parent sbndaq v0_07_06
-defaultqual e19:s97:py2
+parent sbndaq
+defaultqual e20:s112
 define_pythonpath
 
 # These optional lines define the installed directories where headers,
@@ -32,40 +32,46 @@ flcdir  product_dir fcl
 # With "product  version" table below, we now define depdendencies
 # Add the dependent product and version
 
-product              version        optional
-sbndaq_artdaq        v0_07_06
-cetbuildtools        v7_17_01       -       only_for_build
+product              version      optional
+sbndaq_artdaq        v1_02_01
+cetmodules           v2_26_00     -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
 qualifier                sbndaq_artdaq              notes
-e19:py2:debug:s96        e19:py2:debug:s96		    
-e19:py2:prof:s96         e19:py2:prof:s96			
-e19:py2:debug:icarus:s96 e19:py2:debug:icarus:s96	
-e19:py2:prof:icarus:s96  e19:py2:prof:icarus:s96    
-e19:py2:debug:sbnd:s96   e19:py2:debug:sbnd:s96	    
-e19:py2:prof:sbnd:s96    e19:py2:prof:sbnd:s96      
-e19:py2:debug:s97        e19:py2:debug:s97          
-e19:py2:prof:s97         e19:py2:prof:s97
-e19:py2:debug:icarus:s97 e19:py2:debug:icarus:s97
-e19:py2:prof:icarus:s97  e19:py2:prof:icarus:s97
-e19:py2:debug:sbnd:s97   e19:py2:debug:sbnd:s97
-e19:py2:prof:sbnd:s97    e19:py2:prof:sbnd:s97
-e19:debug:s106           e19:debug:s106
-e19:prof:s106            e19:prof:s106
-e19:debug:icarus:s106    e19:debug:icarus:s106
-e19:prof:icarus:s106     e19:prof:icarus:s106
-e19:debug:sbnd:s106      e19:debug:sbnd:s106
-e19:prof:sbnd:s106       e19:prof:sbnd:s106
-e20:debug:s106           e20:debug:s106
-e20:prof:s106            e20:prof:s106
-e20:debug:icarus:s106    e20:debug:icarus:s106
-e20:prof:icarus:s106     e20:prof:icarus:s106
-e20:debug:sbnd:s106      e20:debug:sbnd:s106
-e20:prof:sbnd:s106       e20:prof:sbnd:s106
+e19:debug:s110           e19:debug:s110
+e19:prof:s110            e19:prof:s110
+e19:debug:icarus:s110    e19:debug:icarus:s110
+e19:prof:icarus:s110     e19:prof:icarus:s110
+e19:debug:sbnd:s110      e19:debug:sbnd:s110
+e19:prof:sbnd:s110       e19:prof:sbnd:s110
+e20:debug:s110           e20:debug:s110
+e20:prof:s110            e20:prof:s110
+e20:debug:icarus:s110    e20:debug:icarus:s110
+e20:prof:icarus:s110     e20:prof:icarus:s110
+e20:debug:sbnd:s110      e20:debug:sbnd:s110
+e20:prof:sbnd:s110       e20:prof:sbnd:s110
+e19:debug:s111           e19:debug:s111
+e19:prof:s111            e19:prof:s111
+e19:debug:s112           e19:debug:s112
+e19:prof:s112            e19:prof:s112
+e19:debug:icarus:s112    e19:debug:icarus:s112
+e19:prof:icarus:s112     e19:prof:icarus:s112
+e19:debug:sbnd:s112      e19:debug:sbnd:s112
+e19:prof:sbnd:s112       e19:prof:sbnd:s112
+e20:debug:s112           e20:debug:s112
+e20:prof:s112            e20:prof:s112
+e20:debug:icarus:s112    e20:debug:icarus:s112
+e20:prof:icarus:s112     e20:prof:icarus:s112
+e20:debug:sbnd:s112      e20:debug:sbnd:s112
+e20:prof:sbnd:s112       e20:prof:sbnd:s112
 end_qualifier_list
 
+table_fragment_begin
+envSet(CONFIGDB_TOOLS_PATH, ${UPS_PROD_DIR}/configDB_tools)
+pathPrepend(PATH, ${UPS_PROD_DIR}/configDB_tools)
+table_fragment_end
 # Preserve tabs and formatting in emacs and vi / vim:
 
 ### Local Variables:

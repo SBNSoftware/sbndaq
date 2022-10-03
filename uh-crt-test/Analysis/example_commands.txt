@@ -1,0 +1,2 @@
+lar -c verboseRawEventDump.fcl  -n 10 
+lar -c rawEventDump.fcl  -n 10 

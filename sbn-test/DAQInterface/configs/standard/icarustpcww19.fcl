@@ -1,9 +1,0 @@
-#include "icarustpc_standard.fcl"
-
-# Operating mode during fill
-#daq.fragment_receiver.fragment_id: 22
-daq.fragment_receiver.fragment_id: 0x1710
-daq.fragment_receiver.CrateID: 0x74
-
-daq.fragment_receiver.pcieLinks: [ 6, 7 ]
-daq.metrics.graphite.namespace: "icarus.tpcww19."

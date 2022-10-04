@@ -20,13 +20,13 @@ daq: {
 
  }
 
- metrics: {
-    brFile: {
-      metricPluginType: "file"
-      level: 3
-      fileName: "/scratch/log/BernCRTV2SerialReader_%UID%_metrics.log"
-      uniquify: true
-    }
-  }
+# metrics: {
+#    brFile: {
+#      metricPluginType: "file"
+#      level: 3
+#      fileName: "/scratch/log/BernCRTV2SerialReader_%UID%_metrics.log"
+#      uniquify: true
+#    }
+#  }
 
 }

@@ -6,3 +6,4 @@ outputs.normalOutput.fileProperties.maxEvents: 10
 outputs.testOutput.fileName: "/scratch/test_data/data_evb02_run%R_%#_%to.root"
 physics.my_output_modules: [ normalOutput, rootNetOutput ]
 process_name: DAQEVB02
+daq.metrics: @erase

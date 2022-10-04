@@ -21,12 +21,12 @@ daq: {
     }
   }
 
-  metrics: {
-    brFile: {
-      metricPluginType: "file"
-      level: 3
-      fileName: "/scratch/log/DummyGenerator_%UID%_metrics.log"
-      uniquify: true
-    }
-  }
+#  metrics: {
+#    brFile: {
+#      metricPluginType: "file"
+#      level: 3
+#      fileName: "/scratch/log/DummyGenerator_%UID%_metrics.log"
+#      uniquify: true
+#    }
+#  }
 }

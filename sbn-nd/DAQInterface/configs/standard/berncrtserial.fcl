@@ -4,7 +4,7 @@ daq: {
  fragment_receiver: { 
    generator:                     BernCRTV2SerialReader
    fragment_type:                 "BERNCRTV2"
-   binary_file_path:              "/daq/scratch/siminputs/berncrt_binary_henry_25.dat"
+   binary_file_path:              "/daq/scratch/siminputs/berncrt_binary_henry_100.dat"
    post_event_delay_ms:           2900
    board_id:                      -1
    max_fragment_size_bytes:       0x1000000

@@ -181,5 +181,6 @@ esac
 
 status=$?
 echo; echo "`date`: exiting with status $status"
+echo "`date`: exiting with status $status" >> ~/trace.log
 exit $status
 

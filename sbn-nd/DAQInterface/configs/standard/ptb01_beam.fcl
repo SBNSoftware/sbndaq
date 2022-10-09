@@ -343,6 +343,16 @@ fragment_receiver: {
          ]
        },
        "mtcas":{
+        "mtca_thresh1": {
+          "hi": 2048,
+          "med": 2048,
+          "lo": 2048
+        },
+        "mtca_thresh2": {
+          "hi": 2048,
+          "med": 2048,
+          "lo": 2048
+        },
          "channel_mask": "0x3F",
          "reshape_length" : 50,
          "delays": [0,0,0,0,0,0],

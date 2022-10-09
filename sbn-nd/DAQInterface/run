@@ -24,7 +24,6 @@ getStatus "nil"
 #setdaqcomps.sh dummygenerator caenserialPULL
 setdaqcomps.sh dummygenerator berncrtserialPULL caenserialPULL
 
-
 send_transition.sh boot boot.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]

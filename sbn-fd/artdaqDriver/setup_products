@@ -2,8 +2,8 @@
 #setup products to run artdaqDriver at icarus-crtXX servers on icarus account
 
 source /software/products/setup
-setup sbndaq v1_03_00 -qe20:prof:s112
-setup mrb v5_19_05
+setup sbndaq v1_04_00 -qe20:prof:s112
+setup mrb v6_07_03
 cd  /home/nfs/icarus/crt/sidetop/present
 source localProducts_*/setup
 mrbslp

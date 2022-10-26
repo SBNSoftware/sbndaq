@@ -34,8 +34,8 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-#setup artdaq_runcontrol_gui v1_03_00 -q e20:prof
-setup artdaq_mfextensions  v1_07_00 -q $SBNDAQ_QUALS
+#setup artdaq_runcontrol_gui v1_03_01 -q e20:prof
+setup artdaq_mfextensions  v1_08_01 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

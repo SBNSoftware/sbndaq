@@ -2,11 +2,11 @@
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
 
-setup mrb v5_19_05
+setup mrb v6_07_03
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v1_03_00"
+SBNDAQ_VERSION="v1_04_00"
 SBNDAQ_QUAL1="e20"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s112"

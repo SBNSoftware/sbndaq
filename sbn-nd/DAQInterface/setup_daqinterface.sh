@@ -24,6 +24,6 @@ fi
 #  $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 #fi
 
-setup artdaq_runcontrol_gui v1_03_00 -q e20:prof
+setup artdaq_runcontrol_gui v1_03_01 -q e20:prof
 
 export PYTHONUNBUFFERED=TRUE

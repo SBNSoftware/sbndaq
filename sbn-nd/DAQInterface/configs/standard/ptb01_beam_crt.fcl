@@ -1,0 +1,4 @@
+#include "ptb01.fcl"
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/ptbmk2_nd_21.fcl"
+
+daq.fragment_receiver.board_config: @local::board_config

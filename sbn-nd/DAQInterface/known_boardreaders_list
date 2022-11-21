@@ -14,7 +14,7 @@ tpc11 sbnd-tpc11-daq -1 1
 wib101 sbnd-wib01-daq -1 1
 mbb01 sbnd-mbb01-daq -1 1
 ptb01 sbnd-ptb01-daq -1 1
-spectdc sbnd-clk01-daq -1 1
+spectdcPULL sbnd-clk01-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
 gps sbnd-gps01-daq -1 1
 crt01 sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -31,5 +31,6 @@ pmtx01PULL sbnd-pds03-daq -1 1 0-15
 pmtx02 sbnd-pds03-daq -1 1 0-15 
 pmtx02PULL sbnd-pds03-daq -1 1 0-15 
 pmtx03 sbnd-pds02-daq -1 1 0-15
-pmtx04 sbnd-pds01-daq -1 1 0-15
+pmtx04 sbnd-pds03-daq -1 1 0-15
+pmtx04PULL sbnd-pds03-daq -1 1 0-15
 dummygenerator sbnd-evb04-daq -1 1

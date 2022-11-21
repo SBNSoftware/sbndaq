@@ -11,15 +11,19 @@ function getStatus()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 crt2x2dwnstrPULL ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
+#setdaqcomps.sh pmtx03 crt01PULL spectdcPULL ptb01PULL
+#setdaqcomps.sh pmtx03 ptb01PULL spectdcPULL
+#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdcPULL
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
-#setdaqcomps.sh pmtx03 crt01PULL spectdc
-#setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
-#setdaqcomps.sh dummygenerator ptb01PULL pmtx01PULL #pmtx02PULL 
-setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL pmtx02PULL spectdc 
+#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL spectdcPULL
+#setdaqcomps.sh crt2x2upstr crt2x2dwnstr
+#setdaqcomps.sh pmtx03 crt2x2upstrPULL ptb01PULL spectdcPULL
+#setdaqcomps.sh pmtx03 crt2x2dwnstrPULL ptb01PULL spectdcPULL
+#setdaqcomps.sh dummygenerator ptb01PULL pmtx01PULL 
+#setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL
+#setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL pmtx02PULL spectdcPULL
+setdaqcomps.sh pmtx03 ptb01PULL pmtx02PULL spectdcPULL crt2x2upstrPULL crt2x2dwnstrPULL
+#setdaqcomps.sh pmtx03 ptb01PULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

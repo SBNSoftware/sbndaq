@@ -33,17 +33,17 @@ daq.metrics.graphite.namespace: "sbnd.crtup01."
 #daq.fragment_receiver.FEBConfigurationMAC74.time_threshold: 300
 
 daq.fragment_receiver.FEBConfigurationMAC193: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC193.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC193.time_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC193.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC193.time_threshold: 220
 daq.fragment_receiver.FEBConfigurationMAC85: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC85.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC85.time_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC85.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC85.time_threshold: 220
 daq.fragment_receiver.FEBConfigurationMAC87: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC87.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC87.time_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC87.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC87.time_threshold: 220
 daq.fragment_receiver.FEBConfigurationMAC88: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC88.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC88.time_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC88.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC88.time_threshold: 220
 
 
 ##################

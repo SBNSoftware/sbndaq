@@ -12,8 +12,8 @@
     #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
     #daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
     daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
-    #daq.fragment_receiver.fragment_ids: [ 122, 76 ]
-    daq.fragment_receiver.fragment_ids: [ 0xB77A, 0xB74C ]
+    #daq.fragment_receiver.fragment_ids: [ 122, 75 ]
+    daq.fragment_receiver.fragment_ids: [ 0xB77A, 0xB74B ]
     
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
     daq.fragment_receiver.board_id: 1

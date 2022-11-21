@@ -29,29 +29,29 @@ daq.fragment_receiver.FEBConfigurationMAC80: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC81: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC89: @local::FEBConfigurationStandard
 
-daq.fragment_receiver.FEBConfigurationMAC79.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC79.time_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC80.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC80.time_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC81.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC81.time_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC89.charge_threshold: 300
-daq.fragment_receiver.FEBConfigurationMAC89.time_threshold: 300
+daq.fragment_receiver.FEBConfigurationMAC79.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC79.time_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC80.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC80.time_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC81.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC81.time_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC89.charge_threshold: 220
+daq.fragment_receiver.FEBConfigurationMAC89.time_threshold: 220
 
-daq.fragment_receiver.FEBConfigurationMAC79.enable_HG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC80.enable_HG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC81.enable_HG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC89.enable_HG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC79.enable_HG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC80.enable_HG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC81.enable_HG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC89.enable_HG_peak_detector: true
 
-daq.fragment_receiver.FEBConfigurationMAC79.enable_LG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC80.enable_LG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC81.enable_LG_peak_detector: true
-daq.fragment_receiver.FEBConfigurationMAC89.enable_LG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC79.enable_LG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC80.enable_LG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC81.enable_LG_peak_detector: true
+#daq.fragment_receiver.FEBConfigurationMAC89.enable_LG_peak_detector: true
 
-daq.fragment_receiver.FEBConfigurationMAC79.SCA_high_bias: false
-daq.fragment_receiver.FEBConfigurationMAC80.SCA_high_bias: false
-daq.fragment_receiver.FEBConfigurationMAC81.SCA_high_bias: false
-daq.fragment_receiver.FEBConfigurationMAC89.SCA_high_bias: false
+#daq.fragment_receiver.FEBConfigurationMAC79.SCA_high_bias: false
+#daq.fragment_receiver.FEBConfigurationMAC80.SCA_high_bias: false
+#daq.fragment_receiver.FEBConfigurationMAC81.SCA_high_bias: false
+#daq.fragment_receiver.FEBConfigurationMAC89.SCA_high_bias: false
 
 daq.fragment_receiver.FEBConfigurationMAC79.channel_configuration: [
                  [ 0, 0, 1, 134, 1, 35, 47, 0, 0, 1], # Channel 0

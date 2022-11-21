@@ -1,4 +1,4 @@
-#include "ptb01_offbeam_crt.fcl"
+#include "ptb01_beam_crt.fcl"
 
 ## Pull mode parameters
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address

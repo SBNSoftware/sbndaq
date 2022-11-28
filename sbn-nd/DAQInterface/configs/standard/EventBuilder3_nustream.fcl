@@ -1,8 +1,9 @@
-#include "EventBuilder_CRTmetric.fcl"
+#include "EventBuilder_trigger.fcl"
 
 daq.metrics.graphite.namespace: "sbnd.evb03."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb03_metrics.log"
-outputs.mode0Output.fileName: "/scratch/crtbeamoffdata/data_evb03_run%R_%#_%to.root"
+#outputs.mode0Output.fileName: "/scratch/crtbeamoffdata/data_evb03_run%R_%#_%to.root"
+outputs.mode0Output.fileName: "/scratch/crtbeamdata/data_evb03_run%R_%#_%to.root"
 outputs.nustreamOutput.fileName: "/scratch/nustream/data_evb03_run%R_%#_%to.root"
 outputs.testOutput.fileName: "/scratch/test_data/data_evb03_run%R_%#_%to.root"
 #physics.my_output_modules: [ normalOutput, rootNetOutput ]

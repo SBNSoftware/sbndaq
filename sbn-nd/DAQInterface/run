@@ -20,6 +20,7 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL ptb01PULL spectdcPULL
 #setdaqcomps.sh pmtx03 crt2x2dwnstrPULL ptb01PULL spectdcPULL
 #setdaqcomps.sh dummygenerator ptb01PULL pmtx01PULL 
+#setdaqcomps.sh spectdc crt2x2upstrPULL crt2x2dwnstrPULL 
 #setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL
 #setdaqcomps.sh pmtx03 ptb01PULL pmtx01PULL pmtx02PULL spectdcPULL
 setdaqcomps.sh pmtx03 ptb01PULL pmtx02PULL spectdcPULL crt2x2upstrPULL crt2x2dwnstrPULL

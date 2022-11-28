@@ -11,23 +11,23 @@ daq: {
      board_id: 0
 
      ## Pull mode parameters
-     receive_requests: true
-     request_address:        "227.128.11.129" # -- multicast request address
-     multicast_interface_ip: "10.226.36.0" # -- should match the private net
-     request_port: 3001   # UDP request port
-     request_mode: window # pull mode
-     request_window_width:  20000000 #5ms window 
-     request_window_offset: 10000000 #2.5ms offset
-     request_windows_are_unique: false #true
-     stale_request_timeout:   3000000
-     window_close_timeout_us: 1500000 #1.5s
-     buffer_mode_keep_latest: true
-     circular_buffer_mode: false
-     missing_request_window_timeout_us: 2000000 #2s
-     hardware_poll_interval_us: 30000000 #30s
-     stale_fragment_timeout: 20000000000 #20s
-     separate_monitoring_thread: true
-     separate_data_thread: true
+#     receive_requests: true
+#     request_address:        "227.128.11.129" # -- multicast request address
+#     multicast_interface_ip: "10.226.36.0" # -- should match the private net
+#     request_port: 3001   # UDP request port
+#     request_mode: window # pull mode
+#     request_window_width:  20000000 #5ms window 
+#     request_window_offset: 10000000 #2.5ms offset
+#     request_windows_are_unique: false #true
+#     stale_request_timeout:   3000000
+#     window_close_timeout_us: 1500000 #1.5s
+#     buffer_mode_keep_latest: true
+#     circular_buffer_mode: false
+#     missing_request_window_timeout_us: 2000000 #2s
+#     hardware_poll_interval_us: 30000000 #30s
+#     stale_fragment_timeout: 20000000000 #20s
+#     separate_monitoring_thread: true
+#     separate_data_thread: true
 
      destinations: { }
      routing_table_config: {
@@ -62,19 +62,19 @@ daq: {
              name:bes
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 2
              name:rwm
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 3
              name:ftrig
              enabled: true
              time_offset_ps: 0
-             monitor_only: false
+             monitor_only: true
              terminated: true },
            { id : 4
              name:empty

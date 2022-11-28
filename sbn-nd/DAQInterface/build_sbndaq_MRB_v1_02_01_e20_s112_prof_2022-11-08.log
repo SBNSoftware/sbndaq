@@ -1,0 +1,361 @@
+INFO: buildtool log started at Tue  8 Nov 17:58:43 CST 2022
+
+------------------------------------
+INFO: stage cmake for MRB project sbndaq v1_02_01
+------------------------------------
+
+COMMAND: cmake -DCET_PV_2844ad_ADD_ARCH_DIRS:INTERNAL=BIN_DIR;LIBRARY_DIR -DCET_PV_2844ad_ADD_NOARCH_DIRS:INTERNAL=INCLUDE_DIR -DCET_PV_2844ad_BIN_DIR=bin -DCET_PV_2844ad_EXEC_PREFIX:STRING=slf7.x86_64.e20.s112.prof -DCET_PV_2844ad_FHICL_DIR= -DCET_PV_2844ad_INCLUDE_DIR=include -DCET_PV_2844ad_LIBRARY_DIR=lib -DCET_PV_2844ad_UPS_BUILD_ONLY_DEPENDENCIES=cetmodules;smc_compiler -DCET_PV_2844ad_UPS_PRODUCT_FLAVOR:STRING=Linux64bit+3.10-2.17 -DCET_PV_2844ad_UPS_PRODUCT_NAME:STRING=sbndaq_artdaq -DCET_PV_2844ad_UPS_PRODUCT_VERSION:STRING=v1_02_01 -DCET_PV_2844ad_UPS_QUALIFIER_STRING:STRING=e20:s112:prof -DCET_PV_2844ad_UPS_USE_TIME_DEPENDENCIES=artdaq;caencomm;caendigitizer;caenvme;epics;jsoncpp;pqxx;redis;sbndaq_artdaq_core;wibtools;windriver;zmq -DCET_PV_48cb46_ADD_ARCH_DIRS:INTERNAL=BIN_DIR;LIBRARY_DIR -DCET_PV_48cb46_ADD_NOARCH_DIRS:INTERNAL=INCLUDE_DIR -DCET_PV_48cb46_BIN_DIR=bin -DCET_PV_48cb46_EXEC_PREFIX:STRING=slf7.x86_64.e20.s112.prof -DCET_PV_48cb46_FHICL_DIR= -DCET_PV_48cb46_INCLUDE_DIR=include -DCET_PV_48cb46_LIBRARY_DIR=lib -DCET_PV_48cb46_UPS_BUILD_ONLY_DEPENDENCIES=cetmodules -DCET_PV_48cb46_UPS_PRODUCT_FLAVOR:STRING=Linux64bit+3.10-2.17 -DCET_PV_48cb46_UPS_PRODUCT_NAME:STRING=sbndaq_artdaq_core -DCET_PV_48cb46_UPS_PRODUCT_VERSION:STRING=v1_02_01 -DCET_PV_48cb46_UPS_QUALIFIER_STRING:STRING=e20:s112:prof -DCET_PV_48cb46_UPS_USE_TIME_DEPENDENCIES=artdaq_core -DCET_PV_5b553e_ADD_ARCH_DIRS:INTERNAL=BIN_DIR;LIBRARY_DIR -DCET_PV_5b553e_ADD_NOARCH_DIRS:INTERNAL=INCLUDE_DIR -DCET_PV_5b553e_BIN_DIR=bin -DCET_PV_5b553e_DEFINE_PYTHONPATH:BOOL=ON -DCET_PV_5b553e_EXEC_PREFIX:STRING=slf7.x86_64.e20.s112.prof -DCET_PV_5b553e_INCLUDE_DIR=include -DCET_PV_5b553e_LIBRARY_DIR=lib -DCET_PV_5b553e_UPS_BUILD_ONLY_DEPENDENCIES=cetmodules -DCET_PV_5b553e_UPS_PRODUCT_FLAVOR:STRING=Linux64bit+3.10-2.17 -DCET_PV_5b553e_UPS_PRODUCT_NAME:STRING=sbndaq -DCET_PV_5b553e_UPS_PRODUCT_VERSION:STRING=v1_02_01 -DCET_PV_5b553e_UPS_QUALIFIER_STRING:STRING=e20:s112:prof -DCET_PV_5b553e_UPS_USE_TIME_DEPENDENCIES=sbndaq_artdaq -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DCMAKE_CXX_COMPILER:STRING=g++ -DCMAKE_CXX_EXTENSIONS:BOOL=OFF -DCMAKE_CXX_STANDARD:STRING=17 -DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON -DCMAKE_C_COMPILER:STRING=gcc -DCMAKE_Fortran_COMPILER:STRING=gfortran -DUPS_CXX_COMPILER_ID:STRING=GNU -DUPS_CXX_COMPILER_VERSION:STRING=9.3.0 -DUPS_C_COMPILER_ID:STRING=GNU -DUPS_C_COMPILER_VERSION:STRING=9.3.0 -DUPS_Fortran_COMPILER_ID:STRING=GNU -DUPS_Fortran_COMPILER_VERSION:STRING=9.3.0 -DWANT_UPS:BOOL=ON -DCET_PV_PREFIX:STRING=21ca37;5b553e;2844ad;48cb46 -DCMAKE_INSTALL_PREFIX=/home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/localProducts_sbndaq_v1_02_01_e20_prof_s112 -S /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/srcs -B /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/build_slf7.x86_64
+WD: /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/srcs/sbndaq/sbn-nd/DAQInterface
+DESCRIPTION: execute CMake
+No experiment-specific build specified. Building all.
+-- Found Boost: /daq/software/products/boost/v1_75_0/Linux64bit+3.10-2.17-e20-prof/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found version "1.75.0") found components: headers 
+CMake Deprecation Warning at /daq/software/products/cetmodules/v3_19_02/Modules/compat/FindRange.cmake:118 (message):
+  find_package(Range) is deprecated: please use find_package(Range-v3) and
+  target range-v3::range-v3
+Call Stack (most recent call first):
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/canvas/v3_12_04/slf7.x86_64.e20.prof/lib/canvas/cmake/canvasConfig.cmake:116 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/artdaq_core/v3_08_04/slf7.x86_64.e20.s112.prof/lib/artdaq_core/cmake/artdaq_coreConfig.cmake:112 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/CetFindPackage.cmake:18 (find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/Compatibility.cmake:234 (cet_find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/Compatibility.cmake:234 (cmake_language)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/FindUpsPackage.cmake:56 (cet_without_deprecation_warnings)
+  sbndaq_artdaq_core/CMakeLists.txt:91 (find_ups_product)
+
+
+-- Found Boost: /daq/software/products/boost/v1_75_0/Linux64bit+3.10-2.17-e20-prof/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found version "1.75.0") found components: filesystem program_options 
+-- Found SQLite3: /daq/software/products/sqlite/v3_34_01_00/Linux64bit+3.10-2.17/include (found version "3.34.1") 
+-- Found SQLite3: /daq/software/products/sqlite/v3_34_01_00/Linux64bit+3.10-2.17/include  
+CMake Warning (dev) at /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:50 (message):
+  anti-pattern use of CMAKE_MODULE_PATH for package canvas_root_io: use
+  find_package() instead.
+Call Stack (most recent call first):
+  sbndaq_artdaq_core/CMakeLists.txt:114 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+0: v1_02_01-7-gf2af0a0 || 
+No experiment-specific build specified. Building all.
+CMake Warning (dev) at /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:50 (message):
+  anti-pattern use of CMAKE_MODULE_PATH for package art: use find_package()
+  instead.
+Call Stack (most recent call first):
+  sbndaq_artdaq/CMakeLists.txt:100 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /daq/software/products/cetmodules/v3_19_02/Modules/compat/FindRange.cmake:118 (message):
+  find_package(Range) is deprecated: please use find_package(Range-v3) and
+  target range-v3::range-v3
+Call Stack (most recent call first):
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/canvas/v3_12_04/slf7.x86_64.e20.prof/lib/canvas/cmake/canvasConfig.cmake:116 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/art/v3_09_03/slf7.x86_64.e20.prof/lib/art/cmake/artConfig.cmake:131 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/BuildPlugins.cmake:47 (find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:69 (_include)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/ArtMake.cmake:111 (include)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:69 (_include)
+  sbndaq_artdaq/CMakeLists.txt:100 (include)
+
+
+-- Found Boost: /daq/software/products/boost/v1_75_0/Linux64bit+3.10-2.17-e20-prof/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found suitable version "1.75.0", minimum required is "1.73.0") found components: chrono date_time filesystem graph iostreams locale prg_exec_monitor program_options random regex serialization system thread timer unit_test_framework wave wserialization 
+-DART_HEX_VERSION=0x30903
+-DMESSAGEFACILITY_HEX_VERSION=0x20804
+-DCANVAS_HEX_VERSION=0x31204
+-DFHICLCPP_HEX_VERSION=0x41503
+0: v1_02_01-7-gb155027 || 
+No experiment-specific build specified. Building all.
+CMake Warning (dev) at /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:50 (message):
+  anti-pattern use of CMAKE_MODULE_PATH for package art: use find_package()
+  instead.
+Call Stack (most recent call first):
+  sbndaq/CMakeLists.txt:99 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /daq/software/products/cetmodules/v3_19_02/Modules/compat/FindRange.cmake:118 (message):
+  find_package(Range) is deprecated: please use find_package(Range-v3) and
+  target range-v3::range-v3
+Call Stack (most recent call first):
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/canvas/v3_12_04/slf7.x86_64.e20.prof/lib/canvas/cmake/canvasConfig.cmake:116 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cmake/v3_24_1/Linux64bit+3.10-2.17/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /daq/software/products/art/v3_09_03/slf7.x86_64.e20.prof/lib/art/cmake/artConfig.cmake:131 (find_dependency)
+  /daq/software/products/cetmodules/v3_19_02/Modules/private/CetOverrideFindPackage.cmake:174 (_find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/BuildPlugins.cmake:47 (find_package)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:69 (_include)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/ArtMake.cmake:111 (include)
+  /daq/software/products/cetmodules/v3_19_02/Modules/compat/art/CetCMPCleaner.cmake:69 (_include)
+  sbndaq/CMakeLists.txt:99 (include)
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/build_slf7.x86_64
+
+TIME ELAPSED: 0:10
+
+------------------------------------
+INFO: stage cmake SUCCESS for MRB project sbndaq v1_02_01
+------------------------------------
+
+INFO: MRB project sbndaq v1_02_01 configured
+
+------------------------------------
+INFO: stage build for MRB project sbndaq v1_02_01
+------------------------------------
+
+COMMAND: cmake --build /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/build_slf7.x86_64 --
+WD: /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/srcs/sbndaq/sbn-nd/DAQInterface
+DESCRIPTION: execute build
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_BuildInfo
+[  0%] Building CXX object sbndaq_artdaq_core/sbndaq-artdaq-core/BuildInfo/CMakeFiles/sbndaq-artdaq-core_BuildInfo.dir/GetPackageBuildInfo.cc.o
+[  1%] Linking CXX shared library ../../slf7.x86_64.e20.s112.prof/lib/libsbndaq-artdaq-core_BuildInfo.so
+[  1%] Built target sbndaq-artdaq-core_BuildInfo
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Trace
+[  2%] Built target sbndaq-artdaq-core_Trace
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays
+[  3%] Built target sbndaq-artdaq-core_Overlays
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays_Common_Utilities
+[  4%] Built target sbndaq-artdaq-core_Overlays_Common_Utilities
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays_Common
+[  7%] Built target sbndaq-artdaq-core_Overlays_Common
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays_ICARUS
+[  9%] Built target sbndaq-artdaq-core_Overlays_ICARUS
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays_SBND_NevisTPC
+[ 10%] Built target sbndaq-artdaq-core_Overlays_SBND_NevisTPC
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Overlays_SBND
+[ 12%] Built target sbndaq-artdaq-core_Overlays_SBND
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Obj_SBND
+[ 13%] Built target sbndaq-artdaq-core_Obj_SBND
+Scanning dependencies of target sbndaq-artdaq-core_Obj_SBND_dict
+Consolidate compiler generated dependencies of target sbndaq-artdaq-core_Obj_SBND_dict
+[ 14%] Built target sbndaq-artdaq-core_Obj_SBND_dict
+[ 14%] Built target BuildDictionary_AllDicts
+[ 14%] Built target checkClassVersion_sbndaq-artdaq-core_Obj_SBND
+Consolidate compiler generated dependencies of target sbndaq-artdaq_BuildInfo
+[ 14%] Building CXX object sbndaq_artdaq/sbndaq-artdaq/BuildInfo/CMakeFiles/sbndaq-artdaq_BuildInfo.dir/GetPackageBuildInfo.cc.o
+[ 15%] Linking CXX shared library ../../slf7.x86_64.e20.s112.prof/lib/libsbndaq-artdaq_BuildInfo.so
+[ 15%] Built target sbndaq-artdaq_BuildInfo
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_EventAna_module
+[ 15%] Built target sbndaq-artdaq_ArtModules_Common_EventAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_MultiDump_module
+[ 16%] Built target sbndaq-artdaq_ArtModules_Common_MultiDump_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_IncompleteEventAna_module
+[ 17%] Built target sbndaq-artdaq_ArtModules_Common_IncompleteEventAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_CAENV1730Dump_module
+[ 18%] Built target sbndaq-artdaq_ArtModules_Common_CAENV1730Dump_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_CAENV1730WaveformAna_module
+[ 19%] Built target sbndaq-artdaq_ArtModules_Common_CAENV1730WaveformAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_BernCRTZMQAna_module
+[ 20%] Built target sbndaq-artdaq_ArtModules_Common_BernCRTZMQAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_BernCRTAna_module
+[ 21%] Built target sbndaq-artdaq_ArtModules_Common_BernCRTAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_BernCRTAnaV2_module
+[ 22%] Built target sbndaq-artdaq_ArtModules_Common_BernCRTAnaV2_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_Common_BernCRTDumpV2_module
+[ 22%] Built target sbndaq-artdaq_ArtModules_Common_BernCRTDumpV2_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_IcarusArtdaqBuildInfo_module
+[ 22%] Linking CXX shared module ../../../slf7.x86_64.e20.s112.prof/lib/libsbndaq-artdaq_ArtModules_ICARUS_IcarusArtdaqBuildInfo_module.so
+[ 23%] Built target sbndaq-artdaq_ArtModules_ICARUS_IcarusArtdaqBuildInfo_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateDump_module
+[ 24%] Built target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateDump_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_ICARUSTriggerUDPDump_module
+[ 24%] Built target sbndaq-artdaq_ArtModules_ICARUS_ICARUSTriggerUDPDump_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_ICARUSGateFilter_module
+[ 25%] Built target sbndaq-artdaq_ArtModules_ICARUS_ICARUSGateFilter_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateWriteICARUSDataFile_module
+[ 26%] Built target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateWriteICARUSDataFile_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateViewer_module
+[ 27%] Built target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateViewer_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateSimpleAna_module
+[ 28%] Built target sbndaq-artdaq_ArtModules_ICARUS_PhysCrateSimpleAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_ICARUSTriggerUDPSimpleAna_module
+[ 29%] Built target sbndaq-artdaq_ArtModules_ICARUS_ICARUSTriggerUDPSimpleAna_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_Icarus_fragmentNameHelper
+[ 29%] Built target sbndaq-artdaq_ArtModules_ICARUS_Icarus_fragmentNameHelper
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_ICARUS_IcarusFragmentWatcher_module
+[ 30%] Built target sbndaq-artdaq_ArtModules_ICARUS_IcarusFragmentWatcher_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_SBNDArtdaqBuildInfo_module
+[ 30%] Linking CXX shared module ../../../slf7.x86_64.e20.s112.prof/lib/libsbndaq-artdaq_ArtModules_SBND_SBNDArtdaqBuildInfo_module.so
+[ 30%] Built target sbndaq-artdaq_ArtModules_SBND_SBNDArtdaqBuildInfo_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_SBND_fragmentNameHelper
+[ 31%] Built target sbndaq-artdaq_ArtModules_SBND_SBND_fragmentNameHelper
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_testStandTrigger_testStandCoincidenceFilter_module
+[ 31%] Built target sbndaq-artdaq_ArtModules_SBND_testStandTrigger_testStandCoincidenceFilter_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_testStandTrigger_testStandTriggerProducer_module
+[ 32%] Built target sbndaq-artdaq_ArtModules_SBND_testStandTrigger_testStandTriggerProducer_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_Utilities
+[ 33%] Built target sbndaq-artdaq_Common_Utilities
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_SoftwareTrigger_CRTMetricProducer_module
+[ 34%] Built target sbndaq-artdaq_ArtModules_SBND_SoftwareTrigger_CRTMetricProducer_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ArtModules_SBND_SoftwareTrigger_NeutrinoStreamFilter_module
+[ 35%] Built target sbndaq-artdaq_ArtModules_SBND_SoftwareTrigger_NeutrinoStreamFilter_module
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_CAENV1730_GeneratorBase
+[ 37%] Built target sbndaq-artdaq_Common_CAENV1730_GeneratorBase
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_SpectraTime_GeneratorBase
+[ 38%] Built target sbndaq-artdaq_Common_SpectraTime_GeneratorBase
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_WhiteRabbit_GeneratorBase
+[ 39%] Built target sbndaq-artdaq_Common_WhiteRabbit_GeneratorBase
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_BernCRTFEBConfiguration
+[ 40%] Built target sbndaq-artdaq_Common_BernCRTFEBConfiguration
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_BernCRTZMQ_GeneratorBase
+[ 40%] Built target sbndaq-artdaq_Common_BernCRTZMQ_GeneratorBase
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Common_BernCRT_GeneratorBase
+[ 41%] Built target sbndaq-artdaq_Common_BernCRT_GeneratorBase
+Consolidate compiler generated dependencies of target febdrv
+[ 42%] Built target febdrv
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_CAENV1730Readout_generator
+[ 42%] Built target sbndaq-artdaq_Generators_Common_CAENV1730Readout_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_SpectraTimeReadout_generator
+[ 43%] Built target sbndaq-artdaq_Generators_Common_SpectraTimeReadout_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_WhiteRabbitReadout_generator
+[ 44%] Built target sbndaq-artdaq_Generators_Common_WhiteRabbitReadout_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_BernCRTZMQData_generator
+[ 45%] Built target sbndaq-artdaq_Generators_Common_BernCRTZMQData_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_BernCRTData_generator
+[ 45%] Building CXX object sbndaq_artdaq/sbndaq-artdaq/Generators/Common/CMakeFiles/sbndaq-artdaq_Generators_Common_BernCRTData_generator.dir/BernCRTData_generator.cc.o
+[ 46%] Linking CXX shared module ../../../slf7.x86_64.e20.s112.prof/lib/libsbndaq-artdaq_Generators_Common_BernCRTData_generator.so
+[ 46%] Built target sbndaq-artdaq_Generators_Common_BernCRTData_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_Common_DummyGenerator_generator
+[ 47%] Built target sbndaq-artdaq_Generators_Common_DummyGenerator_generator
+Consolidate compiler generated dependencies of target ConvertCRTConfiguration
+[ 47%] Built target ConvertCRTConfiguration
+Consolidate compiler generated dependencies of target gps
+[ 49%] Built target gps
+Consolidate compiler generated dependencies of target gps-bcast
+[ 50%] Built target gps-bcast
+Consolidate compiler generated dependencies of target febdrv_standalone
+[ 51%] Built target febdrv_standalone
+Consolidate compiler generated dependencies of target febctl
+[ 51%] Built target febctl
+Consolidate compiler generated dependencies of target febconf
+[ 52%] Built target febconf
+Consolidate compiler generated dependencies of target febmon
+[ 53%] Built target febmon
+Consolidate compiler generated dependencies of target febpeek
+[ 53%] Built target febpeek
+Consolidate compiler generated dependencies of target confsetbias
+[ 54%] Built target confsetbias
+Consolidate compiler generated dependencies of target confsetgain
+[ 55%] Built target confsetgain
+Consolidate compiler generated dependencies of target sbndaq-artdaq_ICARUS_PhysCrate_GeneratorBase
+[ 56%] Built target sbndaq-artdaq_ICARUS_PhysCrate_GeneratorBase
+Consolidate compiler generated dependencies of target icarus-base_A2795Board
+[ 58%] Built target icarus-base_A2795Board
+Consolidate compiler generated dependencies of target icarus-base_PhysCrate
+[ 58%] Built target icarus-base_PhysCrate
+Consolidate compiler generated dependencies of target icarus-base_VetoUDP
+[ 59%] Built target icarus-base_VetoUDP
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_ICARUS_PhysCrateData_generator
+[ 60%] Built target sbndaq-artdaq_Generators_ICARUS_PhysCrateData_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_ICARUS_ICARUSTriggerUDP_generator
+[ 60%] Built target sbndaq-artdaq_Generators_ICARUS_ICARUSTriggerUDP_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_ICARUS_ICARUSTriggerV2_generator
+[ 61%] Built target sbndaq-artdaq_Generators_ICARUS_ICARUSTriggerV2_generator
+Consolidate compiler generated dependencies of target VetoUDP
+[ 62%] Built target VetoUDP
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_WIBReader
+[ 63%] Built target sbndaq-artdaq_Generators_SBND_WIBReader
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_MBBReader
+[ 64%] Built target sbndaq-artdaq_Generators_SBND_MBBReader
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_WIBReader_generator
+[ 64%] Built target sbndaq-artdaq_Generators_SBND_WIBReader_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_MBBReader_generator
+[ 65%] Built target sbndaq-artdaq_Generators_SBND_MBBReader_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_TriggerBoard
+[ 66%] Built target sbndaq-artdaq_Generators_SBND_TriggerBoard
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_TriggerBoardReader_generator
+[ 67%] Built target sbndaq-artdaq_Generators_SBND_TriggerBoardReader_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_fmctdclib
+[ 68%] Built target sbndaq-artdaq_fmctdclib
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_SPECTDC
+[ 72%] Built target sbndaq-artdaq_Generators_SBND_SPECTDC
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_SPECTDCTimestampReader_generator
+[ 73%] Built target sbndaq-artdaq_Generators_SBND_SPECTDCTimestampReader_generator
+Consolidate compiler generated dependencies of target SPECTDCTimestampReader_Test
+[ 74%] Built target SPECTDCTimestampReader_Test
+Consolidate compiler generated dependencies of target sbndaq-artdaq_nevishwutils
+[ 81%] Built target sbndaq-artdaq_nevishwutils
+Consolidate compiler generated dependencies of target sbndaq-artdaq_NevisTPCGeneratorBase
+[ 82%] Built target sbndaq-artdaq_NevisTPCGeneratorBase
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCData_generator
+[ 83%] Built target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCData_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPC2StreamNUandSNXMIT_generator
+[ 83%] Built target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPC2StreamNUandSNXMIT_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCNUXMIT_generator
+[ 83%] Built target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCNUXMIT_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCCALIB_generator
+[ 84%] Built target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCCALIB_generator
+Consolidate compiler generated dependencies of target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCFile_generator
+[ 85%] Built target sbndaq-artdaq_Generators_SBND_NevisTPC_NevisTPCFile_generator
+Consolidate compiler generated dependencies of target SPECTDC_Test
+[ 86%] Built target SPECTDC_Test
+[ 87%] Built target sbndaq+fcl+ICARUS_TPC_VST_driver.fcl
+[ 87%] Built target sbndaq+fcl+PhysCrate_Data_driver.fcl
+[ 87%] Built target sbndaq+fcl+crt-configuration-high_threshold.fcl
+[ 88%] Built target sbndaq+fcl+crt-configuration-noise.fcl
+[ 88%] Built target sbndaq+fcl+crt-configuration-standard.fcl
+[ 88%] Built target sbndaq+fcl+crt-north-inner-cal.fcl
+[ 89%] Built target sbndaq+fcl+crt-north-inner-high_threshold.fcl
+[ 89%] Built target sbndaq+fcl+crt-north-inner-noise.fcl
+[ 90%] Built target sbndaq+fcl+crt-north-inner-standard-new.fcl
+[ 90%] Built target sbndaq+fcl+crt-north-inner-standard.fcl
+[ 90%] Built target sbndaq+fcl+crt-north-outer-cal.fcl
+[ 91%] Built target sbndaq+fcl+crt-north-outer-high_threshold.fcl
+[ 91%] Built target sbndaq+fcl+crt-north-outer-noise.fcl
+[ 91%] Built target sbndaq+fcl+crt-north-outer-standard-new.fcl
+[ 92%] Built target sbndaq+fcl+crt-north-outer-standard.fcl
+[ 92%] Built target sbndaq+fcl+crt-north-test-inner.fcl
+[ 93%] Built target sbndaq+fcl+crt-north-test-outer.fcl
+[ 93%] Built target sbndaq+fcl+crt-west-inner-cal.fcl
+[ 93%] Built target sbndaq+fcl+crt-west-inner-high_threshold.fcl
+[ 94%] Built target sbndaq+fcl+crt-west-inner-noise.fcl
+[ 94%] Built target sbndaq+fcl+crt-west-inner-standard-new.fcl
+[ 95%] Built target sbndaq+fcl+crt-west-inner-standard.fcl
+[ 95%] Built target sbndaq+fcl+crt-west-outer-cal.fcl
+[ 95%] Built target sbndaq+fcl+crt-west-outer-high_threshold.fcl
+[ 96%] Built target sbndaq+fcl+crt-west-outer-noise.fcl
+[ 96%] Built target sbndaq+fcl+crt-west-outer-standard-new.fcl
+[ 96%] Built target sbndaq+fcl+crt-west-outer-standard.fcl
+[ 97%] Built target sbndaq+fcl+crt-west-test-inner.fcl
+[ 97%] Built target sbndaq+fcl+crt-west-test-outer.fcl
+[ 98%] Built target sbndaq+fcl+driver_example.fcl
+[ 98%] Built target sbndaq+fcl+icarustpc_debug_driver.fcl
+[ 98%] Built target sbndaq+fcl+icarustpc_standard.fcl
+[ 99%] Built target sbndaq+fcl+icarustpc_test_driver.fcl
+[ 99%] Built target sbndaq+fcl+icarustpcee06.fcl
+[100%] Built target sbndaq+fcl+trigger_driver_example.fcl
+[100%] Built target sbndaq+fcl+wr.fcl
+
+TIME ELAPSED: 0:23
+
+------------------------------------
+INFO: stage build SUCCESS for MRB project sbndaq v1_02_01
+------------------------------------
+
+
+------------------------------------
+INFO: stage test for MRB project sbndaq v1_02_01
+------------------------------------
+
+COMMAND: ctest
+WD: /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/build_slf7.x86_64
+DESCRIPTION: execute tests
+Test project /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/build_slf7.x86_64
+No tests were found!!!
+
+TIME ELAPSED: 0:00
+
+------------------------------------
+INFO: stage test SUCCESS for MRB project sbndaq v1_02_01
+------------------------------------
+
+INFO: buildtool finished at Tue  8 Nov 17:59:16 CST 2022; log written to /home/nfs/sbnd/DAQ_DevAreas/DAQ_12Aug2022CRT2x2/srcs/sbndaq/sbn-nd/DAQInterface/build_sbndaq_MRB_v1_02_01_e20_s112_prof_2022-11-08.log

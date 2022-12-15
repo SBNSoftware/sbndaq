@@ -1,9 +1,9 @@
 services: {
   ArtdaqSharedMemoryServiceInterface: {
-   service_provider: ArtdaqSharedMemoryService
+   service_provider: ArtdaqSharedMemoryService  
  }
 
-  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
 }
 
 daq: {
@@ -13,15 +13,13 @@ daq: {
     use_art: true
     print_event_store_stats: true
     buffer_count: 100
-    #max_incomplete_events: 50 # Same as boardreader sync interval
     verbose: true
     send_requests: false
     request_address: "227.128.1.129"
     request_port: 3501
-#    multicast_interface_ip: "131.225.224.0" # -- should match the private net
-     multicast_interface_ip: "192.168.230.0"
+    multicast_interface_ip: "192.168.230.0" # -- should match the private net 
     num_requests: 500
-    incomplete_event_report_interval_ms: 1000
+
     tcp_receive_buffer_size: 64000
     routing_token_config: {
       use_routing_master: false
@@ -44,55 +42,53 @@ send_process_metrics: true
 #    graphite: {
 #      level:10
 #      metricPluginType: "graphite"
-#      reporting_interval: 10.0
+#      reporting_interval: 5.0
 #      host:"192.168.191.18"
 #      port:2003
-#      namespace:"sbnd.evb00."
-#    }
+#      namespace:"icarus.evb00."
+#    } 
   }
-}
+} 
 
 outputs: {
   normalOutput: {
     module_type: RootDAQOut
-    fileName: "/daq/scratch/trigger_tests/data_%p_run%R_%#_%to.root"
+    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
 
-    fileProperties: {
-      maxSubRuns: 1
-      maxRuns: 1
-      maxEvents: 20 #close files out a little faster for the prescaled stream
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
     }
 
     fastCloning: true
-    compressionLevel: 0
-    SelectEvents: [p2]
+    compressionLevel: 1
+    SelectEvents: [pwrite]    
   }
-
   testOutput: {
     module_type: RootDAQOut
     fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
 
-    fileProperties: {
-      maxSubRuns: 1
-      maxRuns: 1
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
       maxEvents: 100
     }
 
     fastCloning: true
-    compressionLevel: 0
-    SelectEvents: []
+    compressionLevel: 1
+    SelectEvents: []    
   }
   rootNetOutput: {
     module_type: RootNetOutput
     broadcast_sends: true
     nonblocking_sends: true
   	destinations: { }
-    #SelectEvents: [p1]
-    host_map: [{
+    SelectEvents: [pdisp]
+    host_map: [{ 
       rank: -1
-      host: "sbnd-daq34-priv.fnal.gov"
-    }]
-
+      host: "sbn-daq01-priv"
+    }]   
   	routing_table_config: {
            use_routing_manager: false
        	}
@@ -130,17 +126,14 @@ physics: {
     		  prescaleFactor: 1
  		  prescaleOffset: 0
 		}
-    
-   }
+  }
 
   p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
   a1: [ ]
-  #my_output_modules: []
+  my_output_modules: []
   #my_output_modules: [ rootNetOutput ]
-  my_output_modules: [ normalOutput ]
-  #my_output_modules: [ normalOutput , rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ testOutput , rootNetOutput ]
 
   end_paths: [ my_output_modules ]
 }

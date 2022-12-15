@@ -120,8 +120,9 @@ daq:
     fragment_type: TPC 
     fragment_id: 400 
     board_id: 400 
-    destinations: {}
+    #destinations: {}
     sends_no_fragments: true 
+    #generated_fragments_per_event: 0
 
     # WIB configuration
     WIB: 
@@ -186,4 +187,12 @@ daq:
       stop_links_FELIX_run_stop: false 
     }
   }
+
+    destinations: { }
+
+    routing_table_config: 
+    {
+      use_routing_master: false 
+    }
+
 }

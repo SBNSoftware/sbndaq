@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source /daq/software/products/setup
 
-SBNDAQ_VERSION="v1_04_00"
+SBNDAQ_VERSION="v1_04_01"
 DAQINTERFACE_VERSION="v3_12_01" 
 MFEXTENSIONS_VERSION="v1_08_01"
 

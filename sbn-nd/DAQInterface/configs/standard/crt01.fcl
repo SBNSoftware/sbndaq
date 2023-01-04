@@ -13,13 +13,19 @@
     #daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
     daq.fragment_receiver.generated_fragments_per_event: 1 #number if FEBs
     #daq.fragment_receiver.fragment_ids: [ 76 ]
-    daq.fragment_receiver.fragment_ids: [ 0xB74C ]
+    #daq.fragment_receiver.fragment_ids: [ 0xB74C ]
+    #daq.fragment_receiver.fragment_ids: [ 73 ]
+    #daq.fragment_receiver.fragment_ids: [ 0xB749 ]
+    #daq.fragment_receiver.fragment_ids: [ 74 ]
+    daq.fragment_receiver.fragment_ids: [ 0xB74A ]
     
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
     daq.fragment_receiver.board_id: 1
 
 #What is ReaderID? Another ID?
-    daq.fragment_receiver.ReaderID: 76
+    #daq.fragment_receiver.ReaderID: 76
+    #daq.fragment_receiver.ReaderID: 73
+    daq.fragment_receiver.ReaderID: 74
 
 # the two ports on sbnd-pds05
 daq.fragment_receiver.ethernet_port: "enp23s0f0"
@@ -28,6 +34,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 # Whether or not turn on SiPM HV on each FEB
    #daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
    daq.fragment_receiver.TurnOnHV : [ true ]
+   #daq.fragment_receiver.TurnOnHV : [ false ]
 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    #daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
@@ -37,3 +44,4 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 
 daq.fragment_receiver.FEBConfigurationMAC73: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC76: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC74: @local::FEBConfigurationStandard

@@ -10,10 +10,10 @@ build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX
 
-ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_12_01"}
+ARTDAQ_VERSION=${ARTDAQ_VERSION:-"v3_12_02"}
 export ARTDAQ_VERSION
 
-DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_04_01'}
+DEFAULT_BRANCHTAG=${DEFAULT_BRANCHTAG:-'v1_05_00'}
 PRODUCTS=$(for d in $(echo $PRODUCTS | tr ":" " "); do [[ -d $d ]] && echo -n "$d:"; done)
 PRODUCTS=${PRODUCTS::-1}
 export PRODUCTS

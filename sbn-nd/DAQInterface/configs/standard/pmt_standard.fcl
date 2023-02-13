@@ -14,21 +14,26 @@ daq:
 
     fragment_id: 0
     board_id:    1
-
+    
     Verbosity: 1
     SWTrigger: false
 
     # begin run ADC calibration
     CalibrateOnConfig: true
+    
+    # read and write some calibration parameters
+    AdcCalibration: false
 
     # Turn on or off automatic mid-run temperature correction
     LockTempCalibration: false
 
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
+    # SBND: keep this parameter = 0
     ModeLVDS: 0
 
-# new fcl parameters added by ICARUS, copied here.  All the way thru ChargePedstalBitCh1
+    # new fcl parameters added by ICARUS, copied here.  All the way thru ChargePedstalBitCh1
     # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
+    # Exclusive for ICARUS
      LVDSLogicValueG1: 3
      LVDSLogicValueG2: 3
      LVDSLogicValueG3: 3
@@ -37,7 +42,9 @@ daq:
      LVDSLogicValueG6: 3
      LVDSLogicValueG7: 3
      LVDSLogicValueG8: 3
+     
      # Aiwu added here to set LVDS output width: N*8ns will be the width!
+     # Exclusive for ICARUS
      LVDSOutWidthC1: 20
      LVDSOutWidthC2: 20
      LVDSOutWidthC3: 20
@@ -54,30 +61,43 @@ daq:
      LVDSOutWidthC14: 20
      LVDSOutWidthC15: 20
      LVDSOutWidthC16: 20
+    
      # Aiwu added here: self trigger plority, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
+     # Exclusive for ICARUS
      SelfTrigBit: 16
 
-     # Aiwu add here: DPP algorithm feature, 0x1n80, bit[4]: 0 -> pedestal not used; 1-> pedestal used (add 1024 to ADC count), test
-     # as I read defaul is 0x3840 = 14400; changing only bit[4] get 14416 or 0x3850
-     ChargePedstalBitCh1: 14400
-# end copy of new fcl params added by ICARUS
 
+    # SelfTriggerMode: channel auto trigger settings. Since in x730 boards even and odd 
+    # channels are paired, their 'SelfTriggerMode' value will be equal to the 
+    # OR combination of the pair, unless one of the two channels of
+    # the pair is disabled (by 'SelfTriggerMask' parameter). 
+    # If so, the other one behaves as usual.
+    # SelfTriggerMode 0:DISABLED 1:ACQ_ONLY 2:TRGOUT_ONLY 3:ACQ_AND_TRGOUT
+    SelfTriggerMode: 1
 
-    # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
-    SelfTriggerMode: 2
-#    SelfTriggerMode: 0
-
-    # SelfTriggerMask One enable bit for each pair of channels
-    SelfTriggerMask: 255
+    # SelfTriggerMask: the channel mask (16bit-number) you will enable the 'SelfTriggerMode'
+    # Each bit enables/disables one channel
+    # 65535: all channels are enabled
+    SelfTriggerMask: 65535
 
     # Majority mode logic
     # For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
-    MajorityLevel: 0
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityLevel: 0
 
-    # Time window for the majority coincidence, in 8 nsec ticks (trigger clocks)
-    MajorityCoincidenceWindow: 1
-    # added the below because it's in the ICARUS config file 
-    MajorityTimeWindow: 4
+    # Sets the time window for the majority coincidence in units of the Trigger Clock (8 ns) 
+    # 'majorityLevel' must be set different from 0.
+    # min: 0, max: 15
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityCoincidenceWindow: 0
+    
+    # Set self trigger logic
+    # triggerLogic 0: AND, 1: ONLYA, 2: ONLYB, 3:OR
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 3
+    triggerLogic: 3
 
     allowTriggerOverlap: false
 
@@ -85,11 +105,10 @@ daq:
     enableReadout: 1
     
     boardId: 0
-
     recordLength:         5000
-
     maxEventsPerTransfer: 1
     runSyncMode:          0
+   
     outputSignalMode:     0    
     usePedestals:         false
     dacValue:             32768
@@ -98,16 +117,26 @@ daq:
     ioLevel:              1
     nChannels:            16
     
-    # extTrgMode: 0=no external triggers;   3=Front panel TRG input
-    extTrgMode:           3
+    # extTrgMode decides whether the external trigger should only be used to generate the
+    # acquisition trigger, only to generate the trigger output or both
+    # extTrgMode: 0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+    extTrgMode:           0
     
-    # swTrgMode:  0=no software generation; 3=software generated
-    swTrgMode:            0
+    # swTrgMode decides whether the trigger software should only be used to generate the 
+    # acquisition trigger, only to generate the trigger output or both. 
+    # you should set 'SWTrigger: true' to enable software triggers
+    # swTrgMode:  0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+    swTrgMode:            1
     
     # acqMode: 0=Software Controlled, 1=Front Panel S_IN
     acqMode:              0
     
-    triggerPolarity:      1   
+    # triggerPolarity: 0=positive (trigger on rising edge), 1= negative (trigger on falling edge)
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    triggerPolarity:      0 
+    
+       
     debugLevel:           7
     postPercent:          80
     eventsPerInterrupt:   1
@@ -116,9 +145,15 @@ daq:
     memoryAlmostFull:     2    
     
     readoutMode:          0
-    analogMode:           1
     testPattern:          0
-# 6554 in ICARUS  currently 32768
+    
+    # SBND: MTC/A input
+    # See CAEN User Manual UM2792, page 51
+    # trigger majority mode: 0; test mode (saw-tooth signal with 1V amplitude): 1 
+    # buffer ocuppancy mode: 3; voltage level mode: 4 
+    analogMode:           0
+    
+
     channelPedestal0:  32768
     channelPedestal1:  32768
     channelPedestal2:  32768
@@ -135,32 +170,6 @@ daq:
     channelPedestal13: 32768
     channelPedestal14: 32768
     channelPedestal15: 32768
-
-
-#  copied params below from ICARUS fcl file 
-    # baseline (dc offset). It is a 32 bit value, but bit[31:16] are reserved,
-    # we should only change the lower 16 bits bit[15:0]
-    # not to use yet, the pedestal settings above seem to work for this dc offset.
-
-# 14000 in ICARUS, was 8000
-    BaselineCh1:  14000
-    BaselineCh2:  14000
-    BaselineCh3:  14000
-    BaselineCh4:  14000
-    BaselineCh5:  14000
-    BaselineCh6:  14000
-    BaselineCh7:  14000
-    BaselineCh8:  14000
-    BaselineCh9:  14000
-    BaselineCh10:  14000
-    BaselineCh11:  14000
-    BaselineCh12:  14000
-    BaselineCh13:  14000
-    BaselineCh14:  14000
-    BaselineCh15:  14000
-    BaselineCh16:  14000
-
-#  end copied params from ICARUS fcl file
 
 
     channelEnable0:    true
@@ -180,18 +189,19 @@ daq:
     channelEnable14:   true
     channelEnable15:   true
 
-    triggerPulseWidth: 10
+    # Trigger pulse width for TRG_OUT and MON outputs
+    # Width will be (triggerPulseWidth)*8ns
+    # Exclusive for SBND
+    triggerPulseWidth: 5
     
     BoardChainNumber: 0
+    GetNextSleep: 10
+    InterruptEnable: 1
+    
     InterruptLevel: 0
     InterruptStatusID: 0
     InterruptEventNumber: 1
-    GetNextSleep: 10
-    InterruptEnable: 1
 
-# below disappeared from ICARUS fcl file, lets try commenting it out
-#    GetNextFragmentsCount: 25
-    
     CombineReadoutWindows: false
 
     # 0 = 2 V dynamic range, 1 = 0.5 V 
@@ -217,13 +227,11 @@ daq:
 
     CircularBufferSize: 500e6
 
+    # UseTimeTagForTimeStamp: false
     UseTimeTagForTimeStamp: false
-    fUseTimeTagForTimeStamp: false
-
-
-# added just because it's in the ICARUS config file
-#    TimeOffsetNanoSec: 0
-
+    # added just because it's in the ICARUS config file
+    TimeOffsetNanoSec: 0
+    
     destinations: { }
 
     routing_table_config: {

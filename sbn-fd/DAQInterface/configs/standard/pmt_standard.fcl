@@ -270,10 +270,10 @@ daq:
     separate_data_thread: true 
    
     # Max waiting time for new fragments (2 second, too large/small?!) also not sure and keep commented
-    stale_fragment_timeout: 2000000000 
+    stale_fragment_timeout: 10000000000 #Feb 22, 2023 AA, increased to 10s in hope to remove empty fragments
 
     # Max waiting time before the board reader sends the fragments in its buffer
-    window_close_timeout_us: 3000e3 
+    window_close_timeout_us: 10000e3
 
     data_buffer_depth_fragments: 20000 
 

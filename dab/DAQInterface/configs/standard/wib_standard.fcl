@@ -98,6 +98,15 @@ femb_config_default:
  # How much to step between phases
  phase_step: 1 
  }
+ 
+ # 12bit test pattern to insert into data stream
+ bit_test_pattern : 0x123
+ 
+ # phase selections for FPGA to sample SDOs of ADCs for 8 FEs
+ phase_sel_for_FEs: [0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000]
+ 
+ # Bit shifts for ADC data of FEs
+ bit_shtfs_for_ADC_data_of_FEs: [0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000]
 }
 
 # configuring 4 FEMBs attached to the WIB
@@ -120,13 +129,15 @@ daq:
     fragment_type: TPC 
     fragment_id: 400 
     board_id: 400 
-    #destinations: {}
+    destinations: {}
     sends_no_fragments: true 
     #generated_fragments_per_event: 0
 
     # WIB configuration
     WIB: 
     {
+      expected_wib_fw_version: 0x122
+      
       # WIB network address string
       address: "" # can be either IP address or DNS address
 
@@ -188,7 +199,7 @@ daq:
     }
   }
 
-    destinations: { }
+    #destinations: { }
 
     routing_table_config: 
     {

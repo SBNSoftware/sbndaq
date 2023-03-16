@@ -1,4 +1,4 @@
-#include "ptb01.fcl"
+#include "ptb01_ntb_1hz.fcl"
 
 ## Pull mode parameters
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
@@ -6,8 +6,8 @@
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width:  400000000 #400ms window
-    daq.fragment_receiver.request_window_offset: 200000000 #200 ms early offset
+    daq.fragment_receiver.request_window_width:  50000000  #50 ms window --> 15Hz ,  10ms window
+    daq.fragment_receiver.request_window_offset: 16000000  #16ms early offset, 3 ms early offset ~1/3rd of width
 
     daq.fragment_receiver.request_windows_are_unique: false
     #daq.fragment_receiver.request_windows_are_unique: true
@@ -15,6 +15,7 @@
     daq.fragment_receiver.stale_request_timeout: 2000000000
     daq.fragment_receiver.receive_requests: true
     daq.fragment_receiver.window_close_timeout_us: 400000000
+    daq.fragment_receiver.circular_buffer_mode: true
 ##  end pull mode parameters
 
 

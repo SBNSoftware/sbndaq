@@ -14,10 +14,13 @@ getStatus "nil"
 
 #setdaqcomps.sh crt01
 #setdaqcomps.sh crt01PULL pmtx03 
-#setdaqcomps.sh pmtx03
+setdaqcomps.sh  tpc05 tpc04 tpc03 tpc02 tpc01
+#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 
+#setdaqcomps.sh tpc02 tpc01 ptb01PULL
+#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01
 #setdaqcomps.sh pmtx04
 #setdaqcomps.sh spectdc pmtx03
-setdaqcomps.sh spectdc pmtx03 crt01PULL
+#setdaqcomps.sh spectdc pmtx03 crt01PULL
 
 
 send_transition.sh boot boot.txt

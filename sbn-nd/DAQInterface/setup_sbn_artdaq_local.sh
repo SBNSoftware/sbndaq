@@ -46,7 +46,7 @@ setup artdaq_mfextensions  v1_07_02 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=1
+export DAQINTERFACE_PARTITION_NUMBER=9
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"
@@ -57,6 +57,8 @@ tonSg 0-7
 tonMg 0-7
 #toffM 1-63 -n PhysCrateData
 #toffS 1-63 -n PhysCrateData
+
+#tonM 43 NevisTPCGenerator*
 
 #for event numbering checks
 #tonM 1-63 -n PhysCrate_GeneratorBase

@@ -9,7 +9,9 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
-  fragment_id: 0 
+  fragment_ids: [0x9103,0x9104,0x9105,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E,0x910F,0x9110,0x9111,0x9112]
+  max_fragment_size_bytes: 100000  # 2-32 bit xmit word , 6-16 bit fem words for 7675 samples*1 FEM
+  generated_fragments_per_event: 16
   board_id: 0
 
   SamplesPerChannel: 7675 # SBND drift time x 3
@@ -42,8 +44,8 @@ fragment_receiver: {
     # FEM settings
     zs_static_baseline: true
     fem_fake_data: true # (default is false)
-    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
-    nu_compress: true #false
+    fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
+    nu_compress: true
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
 
@@ -126,8 +128,8 @@ event_builder: {
   print_event_store_stats: false
   verbose: false
   events_expected_in_SimpleQueueReader: @local::events_to_generate
-  max_fragment_size_bytes: 0xb000000
-  buffer_count: 16
+  max_fragment_size_bytes: 100000
+  buffer_count: 60
 }
 
 art: {

@@ -3,16 +3,13 @@ record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 600
+boardreader timeout: 800 #1200
 eventbuilder timeout: 45
-aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
-
 max_launch_checks: 10
 launch_procs_wait_time: 60
-
 
 #max_fragment_size_bytes: 10000000
 advanced_memory_usage: true
@@ -24,3 +21,5 @@ disable_unique_rootfile_labels: true
 transfer_plugin_to_use: TCPSocket
 
 boardreader_priorities: pmt*.* spectdc .*
+board_reader_priorities_on_start  : tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01
+board_reader_priorities_on_stop   : tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11

@@ -3,3 +3,6 @@
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/tpc06_metrics.log"
 daq.fragment_receiver.fragment_ids: [0x9603,0x9604,0x9605,0x9606,0x9607,0x9608,0x9609,0x960A,0x960B,0x960C,0x960D,0x960E,0x960F,0x9610,0x9611,0x9612]
+
+#daq.fragment_receiver.generated_fragments_per_event: 3
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 5

@@ -6,23 +6,25 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
-  max_fragment_size_bytes: 16777216
+  max_fragment_size_bytes: 1000000  #251658240
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-  max_fragment_size_bytes: 10000000
+  max_fragment_size_bytes: 1000000  #10000000
   generated_fragments_per_event: 16
   board_id: 0
 
-  SamplesPerChannel: 7675 # SBND drift time x 3
+  SamplesPerChannel: 1200    #0.6ms*2MHz=1200 1200*3=3600,  7675 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
+  DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
+  DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
+
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -44,10 +46,11 @@ fragment_receiver: {
     # FEM settings
     zs_static_baseline: true
     fem_fake_data: true # (default is false)
-    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
-    nu_compress: true #false
-    timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+    fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
+    nu_compress: true
+    timesize: 1199 #1200-1    2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
+
 
   ### Configuration of the ControllerModule ###
   # Configuration of the Nevis Controller Module
@@ -108,6 +111,18 @@ fragment_receiver: {
     {
       use_routing_master: false 
     }
+
+#pull mode configuration
+ receive_requests: true
+ request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
+ multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net
+ request_port: 3001   ##3502   # UDP request port
+ request_mode: sequence #match sequenceID of request
+ data_buffer_depth_fragments: 500
+ data_buffer_depth_mb: 8000
+ #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
+
 }
 
   metrics: {

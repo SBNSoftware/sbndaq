@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_05_00"
+SBNDAQ_VERSION="v1_07_00"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_02"
+DAQINTERFACE_VERSION="v3_12_03"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -35,7 +35,7 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
 #setup artdaq_runcontrol_gui v1_03_01 -q e20:prof
-setup artdaq_mfextensions  v1_08_02 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

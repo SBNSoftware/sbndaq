@@ -11,7 +11,7 @@ source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
 
-setup mrb v6_07_09
+setup mrb v6_08_00
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 

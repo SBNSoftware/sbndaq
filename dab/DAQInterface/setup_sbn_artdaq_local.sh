@@ -1,38 +1,63 @@
-#!/bin/bash
-source /daq/software/products/setup
-setup mrb
+#!/usr/bin/env bash
 
-THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
-THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v0_02_02"
-SBNDAQ_QUAL1="e17"
-SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s82"
+SBNDAQ_VERSION="v1_05_00"
+SBNDAQ_QUALS="e20:prof:s112"
+DAQINTERFACE_VERSION="v3_12_02"
+
+unset PRODUCTS
+unset DAQINTERFACE_TRACE_SCRIPT
+
+source /daq/software/products/setup
+[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
+#[[ -f /daq/software/products_experimental/setup ]] && source /daq/software/products_experimental/setup
+
+setup mrb v6_07_09
+
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 # your own local products directory:
-export LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
-export LOCAL_PRODUCTS_TRY2="${HOME}/work/localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
+LOCAL_MRB_PRODUCTS=$(/bin/ls -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}localProducts*${SBNDAQ_VERSION}* |head -1)
+LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
-if   [ -e $LOCAL_PRODUCTS_TRY/ ]; then
-    LOCAL_PRODUCTS=$LOCAL_PRODUCTS_TRY
-elif [ -e $LOCAL_PRODUCTS_TRY2/ ]; then
-    LOCAL_PRODUCTS="$LOCAL_PRODUCTS_TRY2"
+if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
+   source $LOCAL_INSTALLED_PRODUCTS/setup
+elif [ -f $LOCAL_MRB_PRODUCTS/setup ]; then
+   source $LOCAL_MRB_PRODUCTS/setup
 else
-    echo "localProducts not found"
-    exit 0
+   echo "Warning: localProducts/products not found."
 fi
 
-source $LOCAL_PRODUCTS/setup
-#unsetup -j artdaq_daqinterface
-setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
+setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
+#setup artdaq_demo v3_09_06 -q ${SBNDAQ_QUALS}
 
-setup artdaq_daqinterface v3_05_00
+export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
+unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
+setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
+#setup artdaq_runcontrol_gui v1_03_01 -q e20:prof
+setup artdaq_mfextensions  v1_08_02 -q $SBNDAQ_QUALS
+
+alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export TRACE_FILE=/tmp/trace_`whoami`
-echo "TRACE_FILE=$TRACE_FILE"
-# export TRACE_LIMIT_MS="5,1000,2000" 
+export TRACE_FILE=/tmp/trace_$(whoami)_p1
 
+echo "TRACE_FILE=$TRACE_FILE"
+
+#suppress debug messages
+toffSg 8-63
+toffMg 8-63
+tonSg 0-7
+tonMg 0-7
+tmodeS 1
+tmodeM 1
+#tonM 20 -N *RequestReceiver
+#tonM 10 -N *DataSenderManager
+#tonS 20 -N *RequestReceiver
+#tonS 10 -N *DataSenderManager
+#toffS 0-63 -n WhiteRabbitReadout_generator
+
+#toffM 23 -n SharedMemoryManager
+#export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator
-# tonM 15 -n CommandableFragmentGenerator 
+# tonM 15 -n CommandableFragmentGenerator

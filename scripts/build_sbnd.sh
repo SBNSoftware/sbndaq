@@ -16,37 +16,32 @@
  PATH=/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin \
  /usr/bin/bash --noprofile --norc "$0" "$@"
 
-
-my_selected_build_config=tagged
-my_build_variants=( "e15:debug" "e15:prof" )
+export daq_rel_tag=v1_04_00-release
+my_selected_build_config=develop
+my_build_variants=( "e20:prof:s112" )
 
 ##build settings
-my_release_version=${my_release_version:-"v0_01_04"}
+my_release_version=${my_release_version:-"v1_04_00"}
 my_project_name=${my_mrb_project_name:-"sbnd"}
 my_products_repo_dir=${my_products_repo_dir:-"/software/products"}
 my_kerberos_principal=${my_kerberos_principal:-$(tmp=$(klist |grep "Default principal:") && (tmp=${tmp#*:} && tmp=${tmp%@*} &&  echo $tmp) || echo $USER)}
 
 #available build configurations
 source_branches_develop=(
-   "icarus-artdaq-base:v0_06_05"
+   "icarus-artdaq-base:develop"
    "sbndaq-artdaq-core:develop"
    "sbndaq-artdaq:develop"
    "sbndaq:develop"
-)
-
-source_branches_tagged=(
-   "icarus-artdaq-base:v0_06_05"
-   "sbndaq-artdaq-core:v0_01_04"
-   "sbndaq-artdaq:v0_01_04"
-   "sbndaq:v0_01_04"
 )
 
 source_branches_master=(
    "icarus-artdaq-base:master"
    "sbndaq-artdaq-core:master"
    "sbndaq-artdaq:master"
+   "sbndaq-redis-plugin:master"
    "sbndaq:master"
 )
+
 
 
 ##begin script
@@ -100,7 +95,7 @@ printf "\nSelected sources: ($source_branches)\n"
 [[ ! -d "${source_dir}" ]] && mkdir -p ${source_dir}
 [[ ! -d "${scratch_dir}" ]] && mkdir -p ${scratch_dir}
 
-setup mrb 
+setup mrb v6_07_09
 setup git 
 setup gitflow 
 
@@ -109,8 +104,8 @@ git config --global user.email ${this_user[0]}@fnal.gov
 
 function checkout_source() {
   #use defaults for getting source code git
-  local this_qual=e15
-  local this_rqual=prof  
+  local this_qual=e17
+  local this_rqual=prof
   local this_daq_rel_qual="$this_qual:$this_rqual"
 
   export PRODUCTS="${products_dir}:${PRODUCTS}";printf "\nPRODUCTS=$PRODUCTS\n"
@@ -157,6 +152,15 @@ function checkout_source() {
   printf "\nChecking-out \"sbndaq\""
   mrb gitCheckout -d sbndaq ssh://p-sbndaq@cdcvs.fnal.gov/cvs/projects/sbndaq >>${log_file} 2>&1
 
+#  printf "\nChecking-out \"sbndqm\""
+#  mrb gitCheckout -d sbndqm ssh://p-sbndqm@cdcvs.fnal.gov/cvs/projects/sbndqm >>${log_file} 2>&1
+
+#  printf "\nChecking-out \"sbndaq_decode\""
+#  mrb gitCheckout -d sbndaq_decode ssh://p-sbndaq@cdcvs.fnal.gov/cvs/projects/sbndaq-decode >>${log_file} 2>&1
+
+#  printf "\nChecking-out \"sbndaq_online\""
+#  mrb gitCheckout -d sbndaq_online ssh://p-sbndaq@cdcvs.fnal.gov/cvs/projects/sbndaq-online >>${log_file} 2>&1
+
   unset MRB_TOP
   unset MRB_PROJECT
   unset MRB_PROJECT_VERSION
@@ -166,7 +170,7 @@ function checkout_source() {
 
 function pull_source() {
   #use defaults for getting source code git
-  local this_qual=e15
+  local this_qual=e17
   local this_rqual=prof  
   local this_daq_rel_qual="$this_qual:$this_rqual"
   
@@ -232,13 +236,13 @@ function run_buildtool_build()
   [ ! -d "${products_dir}" ] && mkdir -p ${products_dir}
 
   cp -ra ${ups_repo_dir}/{ups,.upsfiles,setup*} ${products_dir}/
-  
+
   export PRODUCTS="${products_dir}:${PRODUCTS}";printf "\nPRODUCTS=$PRODUCTS\n"
-  
+
   for this_build_variant in ${my_build_variants[*]}; do
       unsetup_all >/dev/null 2>&1
-      
-      local daq_rel_bqual=e15
+
+      local daq_rel_bqual=e17
       local daq_rel_squal=""
       local daq_rel_oquals=""
       local daq_rel_rqual="-d"
@@ -254,11 +258,11 @@ function run_buildtool_build()
             *) echo "Error: Invalid qualifier \"$q\""
         esac
       done
-      
+
       cd ${work_dir}
 
       daq_rel_oquals="$daq_rel_squal $daq_rel_oquals"
-      
+
       for source_branch in ${source_branches[*]}; do
         unsetup_all >/dev/null 2>&1
 
@@ -278,15 +282,22 @@ function run_buildtool_build()
 
         #echo source ${source_dir}/${this_project_dir}/ups/setup_for_development ${daq_rel_rqual} ${daq_rel_bqual} ${daq_rel_oquals}
 
-        source ${source_dir}/${this_project_dir}/ups/setup_for_development ${daq_rel_rqual} ${daq_rel_bqual} ${daq_rel_oquals}
-        
-        #setup icarus_artdaq_base v0_06_05 -q e15:prof
+        local daq_rel_oquals_tmp=${daq_rel_oquals}
+        local this_build_variant_tmp=${this_build_variant}
+
+        if [[ "${this_project_name}" == "icarus-artdaq-base" ]]; then
+            printf "\n****** Warning: Removed the \"s\" qualifier for icarus_artdaq_base."
+            this_build_variant_tmp=${this_build_variant%:s*} 
+            daq_rel_oquals_tmp=""
+        fi
+
+        source ${source_dir}/${this_project_dir}/ups/setup_for_development ${daq_rel_rqual} ${daq_rel_bqual} ${daq_rel_oquals_tmp}
 
         printf "\n******* Active products......\n"
         ups active
 
         printf "\n******* Building......\n"
-        export MRB_QUALS="${this_build_variant}"
+        export MRB_QUALS="${this_build_variant_tmp}"
         buildtool -j$this_nproc 2>&1 |tee ${work_dir}/build-${this_project_name}/build_${this_project_name}.log
 
         printf "\n******* Packaging......\n"
@@ -322,4 +333,8 @@ function run_buildtool_build()
 checkout_source
 pull_source
 change_branches
+
+#export SANITIZE_ADDRESS="TRUE"
+
+
 run_buildtool_build

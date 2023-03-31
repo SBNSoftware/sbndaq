@@ -1,0 +1,89 @@
+
+daq: {
+
+fragment_receiver: {
+
+fragment_ids: [0x310a, 0x310b, 0x310d, 0x310e, 0x310f, 0x3110] 
+
+generated_fragments_per_event: 6 
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+TurnOnHV: [false, false, false, false, false, false] 
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+PPS_offset_ns: [134, 154, 174, 220, 240, 260] #values for JacksonLab GPS (Feb 17, 2020)
+
+ethernet_port: crt1 
+
+destinations: {
+
+}
+routing_table_config: {
+
+use_routing_master: false 
+
+}#FEB configuration
+FEBConfigurationMAC10: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC11: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC13: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC14: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC15: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC16: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 10 
+
+fileName: "/scratch/log/crt03wco_%UID%_metrics.log" 
+
+uniquify: true 
+
+}
+send_system_metrics: true 
+
+send_process_metrics: true 
+
+graphite: {
+
+level: 10 
+
+metricPluginType: "graphite" 
+
+reporting_interval: 10.0 
+
+host: "192.168.191.18" 
+
+port: 2003 
+
+namespace: "icarus.crt03wco." 
+
+}
+}
+} 
+#include "icarus_crt_common.fcl" 

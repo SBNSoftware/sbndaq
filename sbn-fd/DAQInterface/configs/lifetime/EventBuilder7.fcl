@@ -1,0 +1,12 @@
+ 
+#include "EventBuilder_standard.fcl" 
+
+daq.metrics.graphite.namespace: "icarus.evb07." 
+
+daq.metrics.evbFile.fileName: "/scratch/log/evb_%UID%_metrics.log" 
+
+process_name: DAQEVB07 
+
+outputs.normalOutput.fileName: "/data/daq/data_dl7_run%R_%#_%to.root" 
+
+outputs.testOutput.fileName: "/data/test_daq/data_dl7_run%R_%#_%to.root" 

@@ -2,26 +2,11 @@
 #include "metrics.fcl" 
 
 services: {
-
-scheduler: {
-
-errorOnFailureToPut: false 
-
+  scheduler: {}
+  ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
 }
-NetMonTransportServiceInterface: {
 
-service_provider: NetMonTransportService 
-
-destinations: {
-
-}
-routing_table_config: {
-
-use_routing_master: false 
-
-}
-}
-}
 daq: {
 
 event_builder: {
@@ -134,7 +119,7 @@ my_output_modules: [rootNetOutput, fileDumperOutput]
 }
 source: {
 
-module_type: IcarusInput 
+module_type: ArtdaqInput 
 
 waiting_time: 2500000 
 

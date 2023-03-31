@@ -1,0 +1,12 @@
+ 
+#include "icarustpc_standard.fcl" 
+
+daq.fragment_receiver.fragment_id: 0x1216 
+
+daq.fragment_receiver.CrateID: 0x6 
+
+daq.fragment_receiver.pcieLinks: [0, 1] 
+
+daq.metrics.graphite.namespace: "icarus.tpcew10." 
+
+daq.fragment_receiver.issueStart: false 

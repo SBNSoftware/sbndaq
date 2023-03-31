@@ -1,0 +1,14 @@
+
+#include "DataLogger_standard.fcl"
+
+process_name: DAQDL04
+
+daq.metrics.aggFile.fileName: "/daq/log/metrics/dl04_metrics.log"
+
+daq.metrics.graphite.namespace: "sbnd.dl04."
+
+outputs.normalOutput.fileName: "/data/daq/data_dl4_run%R_%#_%to.root"
+
+outputs.testOutput.fileName: "/data/test_daq/data_dl4_run%R_%#_%to.root"
+
+physics.my_output_modules: [rootNetOutput, testOutput]

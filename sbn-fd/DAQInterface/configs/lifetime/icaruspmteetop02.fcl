@@ -1,0 +1,10 @@
+ 
+#include "pmt_standard.fcl" 
+
+daq.fragment_receiver.fragment_id: 19 
+
+daq.fragment_receiver.link: 3 
+
+daq.fragment_receiver.board_id: 19 
+
+daq.metrics.graphite.namespace: "icarus.icaruspmteetop02." 

@@ -1,0 +1,149 @@
+# Test configuration of 2 streams and readout of Nevis XMIT NU stream with CALIB triggers using artdaq
+# and XMIT SN stream with a worker thread
+
+events_to_generate: 30
+run_number: 200
+nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
+sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
+
+fragment_receiver: {
+  generator: NevisTPC2StreamNUandSNXMIT
+  fragment_type: NevisTPC
+  max_fragment_size_bytes: 2097152	
+  fragment_ids: [0x9103,0x9104,0x9105,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E,0x910F,0x9110,0x9111,0x9112]
+  generated_fragments_per_event: 16 
+  board_id: 0
+
+  SamplesPerChannel: 7675 # SBND drift time x 3
+
+  ChunkSize: @local::nu_dma_buffer_size
+  MonitorPeriod: 12 # Period in seconds to read electronics status
+  CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
+  ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
+  DumpBinary: true # Write binary file before the artdaq back-end
+  DoSNReadout: true # Do continuous readout
+  SNChunkSize: @local::sn_dma_buffer_size
+
+  ### Configuration of the Nevis Crate ###
+  # Configuration of the Nevis Crate (location specific)
+
+  # Do not change block name
+  nevis_crate : { 
+    # Location of modules within crate
+    xmit_slot: 2 # Location of XMIT module
+    max_fem_slot: 18 # Location of leftmost FEM module
+    trigger_slot: 20 # Location of Trigger Board
+    # FPGA firmware
+    # With level-1 trigger blocking
+    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
+    # Two-stream (dynamic baseline)
+    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
+    # Two-stream (static baseline)
+    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
+    # FEM settings
+    zs_static_baseline: true
+    fem_fake_data: true # (default is false)
+    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
+    nu_compress: false #false
+    timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+  }
+
+  ### Configuration of the ControllerModule ###
+  # Configuration of the Nevis Controller Module
+
+  # Do not change block name
+  controller_module : { 
+    # Controller PCIe card settings
+    vendor_id : 0x1172 # Altera (Nevis PCIe card)
+    device_id : 0x4
+    bus : 0x66
+    device_name: neviscard_controller
+   }
+
+  ### Configuration of the TriggerModule ###
+  # Configuration of the Nevis Trigger Module
+
+  # Do not change block name
+  trigger_module : {
+  # Hardcoded in nevishwutils/Crate.cpp
+  # To do: move trigger configuration here
+}
+
+  ### Configuration of the XMITReader for the NU stream ###
+  # Configuration of the XMITReader for the Nevis XMIT NU stream
+
+  # The block name must match the name of the XMITReader instance of the FragmentGenerator
+  nu_xmit_reader : { 
+    # NU stream PCIe card settings
+    vendor_id : 0x1172 # Altera (Nevis PCIe card)
+    device_id : 0x4
+    bus : 0xb4
+    device_name: neviscard_nu
+    # DMA settings
+    dma_buffer_size : @local::nu_dma_buffer_size
+    # Theoretically could be as high as 9.6e7
+    maxpoll : 1e7  
+    profile_time : false
+}
+
+  ### Configuration of the XMITReader for the SN stream ###
+  # Configuration of the XMITReader for the Nevis XMIT SN stream
+
+  # The block name must match the name of the XMITReader instance of the FragmentGenerator
+  sn_xmit_reader : { 
+    # SN stream PCIe card settings
+    vendor_id : 0x1172 # Altera (Nevis PCIe card)
+    device_id : 0x4
+    bus : 0xb3
+    device_name: neviscard_sn
+    # DMA settings
+    dma_buffer_size : @local::sn_dma_buffer_size
+    maxpoll : 1e7
+    profile_time : false
+   }
+}
+
+event_builder: {
+  expected_fragments_per_event: 16
+  use_art: true
+  print_event_store_stats: false
+  verbose: false
+  events_expected_in_SimpleQueueReader: @local::events_to_generate
+ #max_fragment_size_bytes: 0xb000000
+  max_fragment_size_bytes:35e6 
+  buffer_count: 2
+}
+
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
+  }
+
+  physics: {
+    analyzers: {}
+    producers: {}
+    filters: {}
+
+    outstream: [ rootout ]
+    end_paths: [ outstream ]
+  }
+
+  source: {
+    module_type: ArtdaqInput
+    waiting_time: 900
+    resume_after_timeout: true
+   }
+
+  outputs: {
+    rootout: {
+      module_type: RootOutput
+      fileName: "nevistpc_2stream_nu_calib_test.root"
+      compressionLevel: 0
+     }
+   }
+
+  process_name: Driver
+}

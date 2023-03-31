@@ -1,0 +1,72 @@
+daq:
+{
+  fragment_receiver:
+  {
+    generator: MBBReader 
+    partition_number: 999 
+    fragment_type: MBB 
+    fragment_id: 401 
+    board_id: 401 
+    destinations: {}
+    sends_no_fragments: true 
+
+    MBB:
+    {
+      address: "sbnd-mbb01"
+      mbb_table: "MBB.adt"
+      expected_mbb_fw_version: 108
+      configuration_tries: 5
+      PULSE_SOURCE: 0
+      PULSE_PERIOD: 0
+
+      wib_pwr1400: 1
+      wib_pwr1401: 1
+      wib_pwr1402: 1
+      wib_pwr1403: 1
+      wib_pwr1404: 1
+      wib_pwr1405: 1
+      
+      wib_pwr000: 0
+      wib_pwr001: 0
+      wib_pwr002: 0
+      wib_pwr003: 0
+      wib_pwr004: 0
+      wib_pwr005: 0
+
+      wib_pwr100: 0
+      wib_pwr101: 0
+      wib_pwr102: 0
+      wib_pwr103: 0
+      wib_pwr104: 0
+      wib_pwr105: 0
+
+      wib_pwr200: 0
+      wib_pwr201: 0
+      wib_pwr202: 0
+      wib_pwr203: 0
+      wib_pwr204: 0
+      wib_pwr205: 0
+
+      wib_pwr300: 0
+      wib_pwr301: 0
+      wib_pwr302: 0
+      wib_pwr303: 0
+      wib_pwr304: 0
+      wib_pwr305: 0
+
+      wib_pwr400: 0
+      wib_pwr401: 0
+      wib_pwr402: 0
+      wib_pwr403: 0
+      wib_pwr404: 0
+      wib_pwr405: 0
+
+      ptc_14: 1
+      ptc_00: 0
+      ptc_01: 0
+      ptc_02: 0
+      ptc_03: 0
+      ptc_04: 0    
+    }
+  }
+}

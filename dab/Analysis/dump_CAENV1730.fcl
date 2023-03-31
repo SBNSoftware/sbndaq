@@ -1,7 +1,7 @@
 process_name: Dump
 
 services: {
-  TFileService: { fileName: "caenv1730dump_hist.root" }
+  TFileService: { fileName: "caenv1730dump_hist_test.root" }
 }
 
 #source is a root file
@@ -32,6 +32,7 @@ physics:
    caenv1730dump: {
      module_type: CAENV1730Dump
      data_label: "daq:CAENV1730"
+     shift_fragment_id: 0 #??
    }
 
  }

@@ -1,0 +1,146 @@
+services: {
+  ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "Icarus" }
+}
+
+daq: {
+  aggregator: {
+    expected_events_per_bunch: 1
+    print_event_store_stats: true
+    event_queue_wait_time: 5
+    #max_fragment_size_bytes: 0x10000000#400000
+#->>max_fragment_size_bytes: 51200000 #30MB --> OK for 8 TPC crates
+    # BH AZ JM: we're changing this to try a larger number... 22 Jan 2020
+    #max_fragment_size_bytes: 61440000 #60MB?
+    buffer_count: 10
+    onmon_event_prescal: 1
+    is_data_logger: true
+
+    broadcast_buffer_size: 0x10000000
+    auto_suppression_enabled: false
+
+	routing_token_config: {
+		use_routing_master: false
+	}
+
+  init_fragment_count: 10 # must match the number of running eventbuilders
+
+	sources: { }
+  }
+
+  metrics: {
+    aggFile: {
+      metricPluginType: "file"
+      level: 3
+
+      fileName : "/scratch/log/dl00_metrics.log"
+      uniquify: true
+    }
+
+    send_system_metrics: true
+    send_process_metrics: true
+
+    graphite: {
+      level:10
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"192.168.191.18"
+      port:2003
+      namespace: "icarus.dl00."
+    } 
+  }
+
+}
+
+source: {
+  module_type: ArtdaqInput
+  register_fragment_types: false
+  waiting_time: 250000000
+  resume_after_timeout: true
+}
+outputs: {
+  normalOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/daq/data_dl00_run%R_%#_%to.root"
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: [p2]    
+  }
+  testOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/test_daq/data_dl00_run%R_%#_%to.root"
+
+    fileProperties: { 
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 100
+    }
+
+    fastCloning: true
+    compressionLevel: 0
+    SelectEvents: []    
+  }
+  rootNetOutput: {
+    module_type: RootNetOutput
+    broadcast_sends: true
+    nonblocking_sends: true
+  	destinations: { }
+    SelectEvents: []
+    host_map: [{ 
+      rank: -1
+      host: "icarus-evb01"
+    }]   
+  }
+
+}
+physics: {
+  analyzers: { }
+
+  producers: {
+   }
+
+  filters: {
+    prescale50: { module_type: "Prescaler"
+    		  prescaleFactor: 50
+ 		  prescaleOffset: 0
+		}
+
+    prescale10: { module_type: "Prescaler"
+    		  prescaleFactor: 10
+ 		  prescaleOffset: 0
+		}
+
+    prescale25: { module_type: "Prescaler"
+    		  prescaleFactor: 25
+ 		  prescaleOffset: 0
+		}
+
+    prescale5: { module_type: "Prescaler"
+    		  prescaleFactor: 5
+ 		  prescaleOffset: 0
+		}
+
+    prescale1: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
+  }
+
+  p2: [ prescale1 ]
+  a1: [ ]
+  #my_output_modules: [ normalOutput , testOutput, rootNetOutput ]
+  #my_output_modules: [ testOutput, rootNetOutput ]
+  my_output_modules: [ rootNetOutput ]
+
+  #my_output_modules: [  ]
+  #my_output_modules: [  testOutput ]
+  end_paths: [ my_output_modules ]
+}
+process_name: DAQDL

@@ -1,0 +1,79 @@
+
+daq: {
+
+fragment_receiver: {
+#third and fourth digit - last 8 bits of the MAC address
+fragment_ids: [0x3103, 0x3101, 0x3106, 0x3107] 
+
+generated_fragments_per_event: 4 
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+TurnOnHV: [false, false, false, false] 
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+PPS_offset_ns: [131, 151, 208, 228] #values for JacksonLab GPS (Dec 4, 2019)
+
+ethernet_port: crt1 
+
+destinations: {
+
+}
+routing_table_config: {
+
+use_routing_master: false 
+
+}#FEB configuration
+FEBConfigurationMAC3: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC1: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC6: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC7: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 10 
+
+fileName: "/scratch/log/crt01nni_%UID%_metrics.log" 
+
+uniquify: true 
+
+}
+send_system_metrics: true 
+
+send_process_metrics: true 
+
+graphite: {
+
+level: 10 
+
+metricPluginType: "graphite" 
+
+reporting_interval: 10.0 
+
+host: "192.168.191.18" 
+
+port: 2003 
+
+namespace: "icarus.crt01nni." 
+
+}
+}
+} 
+#include "icarus_crt_common.fcl" 

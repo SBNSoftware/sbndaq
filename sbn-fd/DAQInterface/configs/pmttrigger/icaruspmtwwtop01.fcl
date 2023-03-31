@@ -1,0 +1,12 @@
+#include "pmt_standard_even.fcl"
+
+daq.fragment_receiver.fragment_id: 0 
+daq.fragment_receiver.link: 0 
+daq.fragment_receiver.board_id: 0
+
+daq.fragment_receiver.CalibrateOnConfig: false
+
+daq.metrics.graphite.namespace: "icarus.icaruspmtwwtop01."
+#daq.redis_10s.redis_key_prefix: "DABBoardReader:icaruspmtwwtop01:"
+#daq.redis_testing.redis_key_prefix: "DABBoardReader:icaruspmtwwtop01:"
+#daq.redis_5m.redis_key_prefix: "DABBoardReader:icaruspmtwwtop01:"

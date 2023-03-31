@@ -1,0 +1,60 @@
+DAQ setup script: $SETUP_FILE
+PMT host: localhost
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+debug level: 3
+
+
+# EVENT BUILDERS
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder1
+
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder2
+
+# Add 4 more event builders
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder3
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder4
+
+#EventBuilder host: icarus-evb03-daq
+#EventBuilder label: EventBuilder5
+
+#EventBuilder host: icarus-evb03-daq
+#EventBuilder label: EventBuilder6
+
+
+# DATA LOGGERS
+
+#DataLogger host: icarus-evb01-daq
+#DataLogger label: DataLogger1
+
+#DataLogger host: icarus-evb01-daq
+#DataLogger label: DataLogger2
+
+# Add 4 more data loggersu#DataLogger host: icarus-evb02-daq
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger3
+
+DataLogger host: icarus-evb02-daq
+DataLogger label: DataLogger4
+
+#DataLogger host: icarus-evb03-daq
+#DataLogger label: DataLogger5
+
+#DataLogger host: icarus-evb03-daq
+#DataLogger label: DataLogger6
+
+#DataLogger host: icarus-evb01-daq
+#DataLogger label: DataLogger3
+
+#DataLogger host: icarus-evb01-daq
+#DataLogger label: DataLogger4
+
+Dispatcher host: icarus-evb02-daq
+Dispatcher label: Dispatcher2
+# port number must be unique accros all partitions
+Dispatcher port: 6020

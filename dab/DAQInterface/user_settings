@@ -15,13 +15,28 @@
 
 log_directory: /home/nfs/gputnam/workshop/sbndaq/srcs/sbndaq/dab/DAQInterface/log
 record_directory: /home/nfs/gputnam/workshop/sbndaq/srcs/sbndaq/dab/DAQInterface/log/run_records
-package_hashes_to_save: [ ]
+package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 600
-eventbuilder timeout: 90
-aggregator timeout: 90
+boardreader timeout: 45
+eventbuilder timeout: 20
+aggregator timeout: 20
+dispatcher timeout: 20
+use_messageviewer: true
 
-max_fragment_size_bytes: 10000000
+max_launch_checks: 10
+launch_procs_wait_time: 50
+
+#max_fragment_size_bytes: 10000000
+advanced_memory_usage: true
 
 all_events_to_all_dispatchers: true
+
+disable_unique_rootfile_labels: true
+
+# -- D.R. set the priorities
+#boardreader_priorities: dummy pmtx02 ptb01 *
+
+board_reader_priorities_on_config : dummy ptb01  pmtx02 *
+board_reader_priorities_on_start  : dummy pmtx02 ptb01 *
+board_reader_priorities_on_stop   : dummy pmtx02 ptb01 *

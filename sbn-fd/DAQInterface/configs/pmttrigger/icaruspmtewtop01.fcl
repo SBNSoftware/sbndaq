@@ -1,0 +1,10 @@
+#include "pmt_standard_ewtop01.fcl"
+
+daq.fragment_receiver.fragment_id: 12
+daq.fragment_receiver.link: 4 
+daq.fragment_receiver.board_id: 12
+
+daq.metrics.graphite.namespace: "icarus.icaruspmtewtop01."
+#daq.redis_10s.redis_key_prefix: "DABBoardReader:icaruspmtewtop01:"
+#daq.redis_testing.redis_key_prefix: "DABBoardReader:icaruspmtewtop01:"
+#daq.redis_5m.redis_key_prefix: "DABBoardReader:icaruspmtewtop01:"

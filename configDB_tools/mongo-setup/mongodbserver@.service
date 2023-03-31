@@ -1,0 +1,36 @@
+# The mongodbserver service unit file
+#
+# Quick HowTo:
+# 1. Copy this file to /etc/systemd/system/mongodbserver@icarus_v4x_db.service
+# 2. Run "systemctl daemon-reload"
+# 3. Run "systemctl enable mongodbserver@icarus_v4x_db.service"
+# 5. Run "systemctl start mongodbserver@icarus_v4x_db.service"
+#
+# 6. Check status "systemctl status mongodbserver@icarus_v4x_db.service"
+# 7. Stop "systemctl stop mongodbserver@icarus_v4x_db.service"
+
+
+[Unit]
+Description=Mongo database service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=icarus
+Group=E-1052
+
+EnvironmentFile=/scratch_local/artdaq_database_new/%i/mongod.env
+ExecStart=/scratch_local/artdaq_database_new/mongod-ctrl.sh start
+ExecStop=/scratch_local/artdaq_database_new/mongod-ctrl.sh stop
+#PIDFile=/scratch_local/artdaq_database_new/%i/var/tmp/mongod-%H.pid
+
+TimeoutSec=60
+Restart=always
+StartLimitInterval=200
+StartLimitBurst=1
+RestartSec=300
+
+[Install]
+WantedBy=multi-user.target
+
+

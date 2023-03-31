@@ -1,0 +1,42 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+
+#
+#  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
+#
+
+    daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
+    daq.metrics.graphite.namespace: "sbnd.crttest01."
+    
+
+    #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
+    #daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
+    daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
+    #daq.fragment_receiver.fragment_ids: [ 122, 76 ]
+    daq.fragment_receiver.fragment_ids: [ 0xB77A, 0xB74C ]
+    
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+    daq.fragment_receiver.board_id: 1
+
+#What is ReaderID? Another ID?
+    daq.fragment_receiver.ReaderID: 122
+
+# the two ports on sbnd-pds05
+daq.fragment_receiver.ethernet_port: "enp23s0f0"
+#daq.fragment_receiver.ethernet_port: "enp23s0f1"
+   
+# Whether or not turn on SiPM HV on each FEB
+   #daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+   daq.fragment_receiver.TurnOnHV : [ false, false ]
+
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   #daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
+  daq.fragment_receiver.PPS_offset_ns : [ 0, 0 ] # = dummy value
+
+#need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
+
+daq.fragment_receiver.FEBConfigurationMAC71: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC72: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC73: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC76: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC122: @local::FEBConfigurationStandard

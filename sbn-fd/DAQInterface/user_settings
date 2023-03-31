@@ -13,15 +13,29 @@
 # directory containing the xmlrpc_c package (needed for DAQInterface
 # to receive commands)
 
-log_directory: ${HOME}/log
-record_directory: ${HOME}/run_records
-package_hashes_to_save: [ ]
-productsdir_for_bash_scripts: /software/products
+log_directory: /daq/log
+record_directory: /daq/run_records
+package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
+productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 45
+boardreader timeout: 180
 eventbuilder timeout: 45
-aggregator timeout: 45
+aggregator timeout: 15
+dispatcher timeout: 10
+use_messageviewer: true
 
-max_fragment_size_bytes: 10000000
 
+max_launch_checks: 10
+launch_procs_wait_time: 40
+
+#max_fragment_size_bytes: 10000000
+advanced_memory_usage: true
 all_events_to_all_dispatchers: true
+
+disable_unique_rootfile_labels: true
+
+#Force use of TCP sockets ... avoid shmem...
+transfer_plugin_to_use: TCPSocket
+
+#boardreader_priorities: .*
+boardreader_priorities: icaruscrt*.* icarustpc*.* icaruspmt*.* wr.* icarustrigger.* .* 

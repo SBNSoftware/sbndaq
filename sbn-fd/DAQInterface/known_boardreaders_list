@@ -1,39 +1,158 @@
-gps   localhost -1
-
-icarustpc01 localhost -1
-icarustpc02 localhost -1
-icarustpc03 localhost -1
-icarustpc04 localhost -1
-icarustpc05 localhost -1
-icarustpc06 localhost -1
-icarustpc07 localhost -1
-icarustpc08 localhost -1
-icarustpc09 localhost -1
-
-pmt01 localhost -1
-pmt02 localhost -1
-pmt03 localhost -1
-pmt04 localhost -1
-pmt05 localhost -1
-pmt06 localhost -1
-pmt07 localhost -1
-pmt08 localhost -1
-pmt09 localhost -1
-pmt10 localhost -1
-pmt11 localhost -1
-pmt12 localhost -1
-pmt13 localhost -1
-pmt14 localhost -1
-pmt15 localhost -1
-pmt16 localhost -1
-pmt17 localhost -1
-pmt18 localhost -1
-pmt19 localhost -1
-pmt20 localhost -1
-
-pmtx01 localhost -1
-pmtx02 localhost -1
-pmtx03 localhost -1
-pmtx04 localhost -1
-
-component01 localhost -1
+icarustpc01 icarus-vst01-daq -1 1
+icarustpc02 icarus-vst01-daq -1 1
+icarustpc03 icarus-vst01-daq -1 1
+icarustpc04 icarus-vst01-daq -1 1
+icarustpc05 icarus-vst01-daq -1 1
+icarustpc06 icarus-vst01-daq -1 1
+icarustpc07 icarus-vst01-daq -1 1
+icarustpc08 icarus-vst01-daq -1 1
+icarustpc09 icarus-vst01-daq -1 1
+icarustpcww01b icarus-tpc06-daq -1 1
+icarustpcww01m icarus-tpc06-daq -1 1
+icarustpcww01t icarus-tpc06-daq -1 1
+icarustpcww02 icarus-tpc06-daq -1 1
+icarustpcww03 icarus-tpc05-daq -1 1
+icarustpcww04 icarus-tpc05-daq -1 1
+icarustpcww05 icarus-tpc05-daq -1 1
+icarustpcww06 icarus-tpc05-daq -1 1
+icarustpcww07 icarus-tpc04-daq -1 1
+icarustpcww08 icarus-tpc04-daq -1 1
+icarustpcww09 icarus-tpc04-daq -1 1
+icarustpcww10 icarus-tpc04-daq -1 1
+icarustpcww11 icarus-tpc03-daq -1 1
+icarustpcww12 icarus-tpc03-daq -1 1
+icarustpcww13 icarus-tpc03-daq -1 1
+icarustpcww14 icarus-tpc03-daq -1 1
+icarustpcww15 icarus-tpc02-daq -1 1
+icarustpcww16 icarus-tpc02-daq -1 1
+icarustpcww17 icarus-tpc02-daq -1 1
+icarustpcww18 icarus-tpc02-daq -1 1
+icarustpcww19 icarus-tpc01-daq -1 1
+icarustpcww20b icarus-tpc01-daq -1 1
+icarustpcww20m icarus-tpc01-daq -1 1
+icarustpcww20t icarus-tpc01-daq -1 1
+icarustpcwe01b icarus-tpc12-daq -1 1
+icarustpcwe01m icarus-tpc12-daq -1 1
+icarustpcwe01t icarus-tpc12-daq -1 1
+icarustpcwe02 icarus-tpc12-daq -1 1
+icarustpcwe03 icarus-tpc11-daq -1 1
+icarustpcwe04 icarus-tpc11-daq -1 1
+icarustpcwe05 icarus-tpc11-daq -1 1
+icarustpcwe06 icarus-tpc11-daq -1 1
+icarustpcwe07 icarus-tpc10-daq -1 1
+icarustpcwe08 icarus-tpc10-daq -1 1
+icarustpcwe09 icarus-tpc10-daq -1 1
+icarustpcwe10 icarus-tpc10-daq -1 1
+icarustpcwe11 icarus-tpc09-daq -1 1
+icarustpcwe12 icarus-tpc09-daq -1 1
+icarustpcwe13 icarus-tpc09-daq -1 1
+icarustpcwe14 icarus-tpc09-daq -1 1
+icarustpcwe15 icarus-tpc08-daq -1 1
+icarustpcwe16 icarus-tpc08-daq -1 1
+icarustpcwe17 icarus-tpc08-daq -1 1
+icarustpcwe18 icarus-tpc08-daq -1 1
+icarustpcwe19 icarus-tpc07-daq -1 1
+icarustpcwe20b icarus-tpc07-daq -1 1
+icarustpcwe20m icarus-tpc07-daq -1 1
+icarustpcwe20t icarus-tpc07-daq -1 1
+icarustpcee01b icarus-tpc24-daq -1 1
+icarustpcee01m icarus-tpc24-daq -1 1
+icarustpcee01t icarus-tpc24-daq -1 1
+icarustpcee02 icarus-tpc24-daq -1 1
+icarustpcee03 icarus-tpc23-daq -1 1
+icarustpcee04 icarus-tpc23-daq -1 1
+icarustpcee05 icarus-tpc23-daq -1 1
+icarustpcee06 icarus-tpc23-daq -1 1
+icarustpcee07 icarus-tpc22-daq -1 1
+icarustpcee08 icarus-tpc22-daq -1 1
+icarustpcee09 icarus-tpc22-daq -1 1
+icarustpcee10 icarus-tpc22-daq -1 1
+icarustpcee11 icarus-tpc21-daq -1 1
+icarustpcee12 icarus-tpc21-daq -1 1
+icarustpcee13 icarus-tpc21-daq -1 1
+icarustpcee14 icarus-tpc21-daq -1 1
+icarustpcee15 icarus-tpc20-daq -1 1
+icarustpcee16 icarus-tpc20-daq -1 1
+icarustpcee17 icarus-tpc20-daq -1 1
+icarustpcee18 icarus-tpc20-daq -1 1
+icarustpcee19 icarus-tpc19-daq -1 1
+icarustpcee20b icarus-tpc19-daq -1 1
+icarustpcee20m icarus-tpc19-daq -1 1
+icarustpcee20t icarus-tpc19-daq -1 1
+icarustpcew01b icarus-tpc18-daq -1 1
+icarustpcew01m icarus-tpc18-daq -1 1
+icarustpcew01t icarus-tpc18-daq -1 1
+icarustpcew02 icarus-tpc18-daq -1 1
+icarustpcew03 icarus-tpc26-daq -1 1
+icarustpcew04 icarus-tpc26-daq -1 1
+icarustpcew05 icarus-tpc26-daq -1 1
+icarustpcew06 icarus-tpc26-daq -1 1
+icarustpcew07 icarus-tpc16-daq -1 1
+icarustpcew08 icarus-tpc16-daq -1 1
+icarustpcew09 icarus-tpc16-daq -1 1
+icarustpcew10 icarus-tpc16-daq -1 1
+icarustpcew11 icarus-tpc15-daq -1 1
+icarustpcew12 icarus-tpc15-daq -1 1
+icarustpcew13 icarus-tpc15-daq -1 1
+icarustpcew14 icarus-tpc15-daq -1 1
+icarustpcew15 icarus-tpc14-daq -1 1
+icarustpcew16 icarus-tpc14-daq -1 1
+icarustpcew17 icarus-tpc14-daq -1 1
+icarustpcew18 icarus-tpc14-daq -1 1
+icarustpcew19 icarus-tpc13-daq -1 1
+icarustpcew20b icarus-tpc13-daq -1 1
+icarustpcew20m icarus-tpc13-daq -1 1
+icarustpcew20t icarus-tpc13-daq -1 1
+icaruspmtwwtop01 icarus-pmt01-daq -1 1
+icaruspmtwwtop02 icarus-pmt01-daq -1 1
+icaruspmtwwtop03 icarus-pmt01-daq -1 1
+icaruspmtwwbot01 icarus-pmt01-daq -1 1
+icaruspmtwwbot02 icarus-pmt01-daq -1 1
+icaruspmtwwbot03 icarus-pmt01-daq -1 1
+icaruspmtwetop01 icarus-pmt01-daq -1 1
+icaruspmtwetop02 icarus-pmt01-daq -1 1
+icaruspmtwetop03 icarus-pmt02-daq -1 1
+icaruspmtwebot01 icarus-pmt02-daq -1 1
+icaruspmtwebot02 icarus-pmt02-daq -1 1
+icaruspmtwebot03 icarus-pmt02-daq -1 1
+icaruspmtewtop01 icarus-pmt02-daq -1 1
+icaruspmtewtop02 icarus-pmt02-daq -1 1
+icaruspmtewtop03 icarus-pmt02-daq -1 1
+icaruspmtewbot01 icarus-pmt02-daq -1 1
+icaruspmtewbot02 icarus-pmt03-daq -1 1
+icaruspmtewbot03 icarus-pmt03-daq -1 1
+icaruspmteetop01 icarus-pmt03-daq -1 1
+icaruspmteetop02 icarus-pmt03-daq -1 1
+icaruspmteetop03 icarus-pmt03-daq -1 1
+icaruspmteebot01 icarus-pmt03-daq -1 1
+icaruspmteebot02 icarus-pmt03-daq -1 1
+icaruspmteebot03 icarus-pmt03-daq -1 1
+component01 localhost -1 1
+icaruscrt01nni icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt01nno icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt03wci icarus-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt03wco icarus-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt04eci icarus-crt04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt04eco icarus-crt04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt05wni icarus-crt05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt05wno icarus-crt05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt06esi icarus-crt06-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt06eso icarus-crt06-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt07wsi icarus-crt07-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt07wso icarus-crt07-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt08eni icarus-crt08-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt08eno icarus-crt08-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt09ssi icarus-crt09-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrt09sso icarus-crt09-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop01L01 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop01L02 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop01L03 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop01L04 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L05 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L06 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L07 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L08 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+dummygenerator icarus-evb01-daq -1 1
+icarustrigger icarus-clk01-daq -1 1
+wr icarus-daq02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icarustriggertest icarus-clk01-daq -1 1

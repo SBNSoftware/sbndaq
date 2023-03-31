@@ -146,7 +146,7 @@ outputs:{
 }
 
 source:{
-  module_type: SBNDDAQInput
+  module_type: ArtdaqInput
   waiting_time: 900
   resume_after_timeout: true
 }

@@ -1,0 +1,63 @@
+daq: 
+{
+  fragment_receiver: 
+  {
+
+    generator: ICARUSTriggerUDP
+    #fragment_type: ICARUSTRIG
+    max_fragment_size_bytes: 100
+    max_fragment_size_bytes_pmt: 100
+    fragment_id: 0x4001
+    fragment_id_pmt: 0x4002
+
+    board_id: 1
+
+    ### configs for sending no fragment
+    request_mode: ignored
+    separate_data_thread: false
+    generated_fragments_per_event: 0
+    sends_no_fragments: true
+
+    ### trigger communication pieces
+    config_ip: "192.168.191.79"
+    config_port: 6342
+    data_ip: "192.168.191.79"
+    data_port: 6343
+
+    ### how many times to retry/wait for init
+    n_init_retries: 30
+    n_init_timeout: 10000 #ms
+
+  #}
+  
+  destinations: { }
+
+  routing_table_config: {
+    use_routing_master: false 
+  }
+
+}  
+
+
+metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/br_%UID%_metrics.log"
+      uniquify: true
+    }
+    
+    send_system_metrics: true
+    send_process_metrics: true
+
+    graphite: {
+     level:10
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.18"
+     port:2003
+     namespace:"icarus.trigger."
+    }
+
+  }
+}

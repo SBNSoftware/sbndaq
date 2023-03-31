@@ -1,0 +1,10 @@
+#include "EventBuilder_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.evb20."
+daq.metrics.evbFile.fileName : "/scratch/log/evb_%UID%_metrics.log"
+
+process_name: DAQEVB20
+
+outputs.normalOutput.fileName: "/data/daq/data_dl20_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl20_run%R_%#_%to.root"
+
+#physics.my_output_modules: [rootNetOutput, testOutput ] #non-standard configuration

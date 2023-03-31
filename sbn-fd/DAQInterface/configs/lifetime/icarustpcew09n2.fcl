@@ -1,0 +1,10 @@
+ 
+#include "icarustpc_standard_n2.fcl" 
+
+daq.fragment_receiver.fragment_id: 105 
+#55
+daq.fragment_receiver.CrateID: 0x56 
+
+daq.fragment_receiver.pcieLinks: [3] 
+
+daq.metrics.graphite.namespace: "icarus.tpcew09n2." 

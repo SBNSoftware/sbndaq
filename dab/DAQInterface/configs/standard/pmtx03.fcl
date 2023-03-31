@@ -1,7 +1,33 @@
 #include "pmt_standard.fcl"
+daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx03_metrics.log"
 
 daq.fragment_receiver.fragment_id: 2
 daq.fragment_receiver.link: 2
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx03:"
 daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx03:"
 daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx03:"
+
+
+daq.fragment_receiver.triggerThreshold0:  0x0000
+daq.fragment_receiver.triggerThreshold1:  0x0000
+daq.fragment_receiver.triggerThreshold2:  7800
+#    daq.fragment_receiver.triggerThreshold2:  0x0000
+daq.fragment_receiver.triggerThreshold3:  0x0000
+daq.fragment_receiver.triggerThreshold4:  7800
+#    daq.fragment_receiver.triggerThreshold4:  0x0000
+daq.fragment_receiver.triggerThreshold5:  0x0000
+daq.fragment_receiver.triggerThreshold6:  0x0000
+daq.fragment_receiver.triggerThreshold7:  0x0000
+daq.fragment_receiver.triggerThreshold8:  7800
+#    daq.fragment_receiver.triggerThreshold8:  0x0000
+daq.fragment_receiver.triggerThreshold9:  0x0000
+daq.fragment_receiver.triggerThreshold10: 7800
+#    daq.fragment_receiver.triggerThreshold10: 0x0000
+daq.fragment_receiver.triggerThreshold11: 0x0000
+daq.fragment_receiver.triggerThreshold12: 7800
+#    daq.fragment_receiver.triggerThreshold12: 0x0000
+daq.fragment_receiver.triggerThreshold13: 0x0000
+daq.fragment_receiver.triggerThreshold14: 0x0000
+#    daq.fragment_receiver.triggerThreshold15: 0x0000
+daq.fragment_receiver.triggerThreshold15: 0x7800
+

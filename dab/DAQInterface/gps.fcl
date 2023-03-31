@@ -42,6 +42,13 @@ event_builder: {
   send_requests: false
 }
 
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
+  }
+
 physics:
 {
   analyzers:{}
@@ -59,7 +66,7 @@ outputs:
   rootout:
   {
     module_type: RootOutput
-    fileName: "/data/gps.root"
+    fileName: "/data1/data/gps.root"
     fastCloning: false
     compressionLevel: 0
   }
@@ -73,7 +80,7 @@ outputs:
 
 source:
 {
-  module_type: SBNDDAQInput
+  module_type: ArtdaqInput
   waiting_time: 900
   resume_after_timeout: true
 }
@@ -84,13 +91,13 @@ metrics:
   {
     metricPluginType: "file"
     level: 3
-    fileName: "/data/gps_metrics.log"
+    fileName: "/daq/log/metrics/gps_metrics.log"
     uniquify: true
   }
 
 } 
 
 process_name: SpectraTimeDriver
-
+}
 
 

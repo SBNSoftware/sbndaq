@@ -1,0 +1,12 @@
+
+#include "EventBuilder_standard.fcl"
+
+daq.metrics.graphite.namespace: "sbnd.evb08."
+
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb08_metrics.log"
+
+process_name: DAQEVB08
+
+outputs.normalOutput.fileName: "/data/daq/data_dl8_run%R_%#_%to.root"
+
+outputs.testOutput.fileName: "/data/test_daq/data_dl8_run%R_%#_%to.root"

@@ -1,0 +1,89 @@
+
+daq: {
+
+fragment_receiver: {
+#Number of FEBs
+generated_fragments_per_event: 6 
+#See: https://sbn-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=16111
+fragment_ids: [0x3149, 0x314a, 0x314b, 0x314c, 0x314d, 0x314e] 
+#Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
+TurnOnHV: [false, false, false, false, false, false] 
+#PPS signal delay w.r.t. GPS due to signal propagation time (primarily cable length)
+PPS_offset_ns: [0, 0, 0, 0, 0, 0] #values need to be updated!!!
+
+ethernet_port: crt0 
+
+destinations: {
+
+}
+routing_table_config: {
+
+use_routing_master: false 
+
+}#FEB configuration
+FEBConfigurationMAC73: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC74: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC75: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC76: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC77: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+FEBConfigurationMAC78: {
+ 
+#include "icaruscrt_feb_noise.fcl" 
+
+}
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 10 
+
+fileName: "/daq/log/metrics/crt07wso_%UID%_metrics.log" 
+
+uniquify: true 
+
+}
+send_system_metrics: true 
+
+send_process_metrics: true 
+
+graphite: {
+
+level: 10 
+
+metricPluginType: "graphite" 
+
+reporting_interval: 10.0 
+
+host: "192.168.191.18" 
+
+port: 2003 
+
+namespace: "icarus.crt07wso." 
+
+}
+}
+} 
+#include "icarus_crt_common.fcl" 

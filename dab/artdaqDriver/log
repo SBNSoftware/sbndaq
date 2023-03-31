@@ -1,0 +1,121 @@
+01-14 14:52:10.231700                            UDP_mfPlugin    ERROR routePayload(...): Error sending message 2 to sbnd-daq32.fnal.gov, errno=17 (File exists)
+%MSG-i artdaqDriver_TCPConnect:  DAQ 14-Jan-2022 14:52:10 CST Booted TCPConnect.cc:344
+Resolving host sbnd-daq32.fnal.gov, on port 11005
+%MSG
+%MSG-i artdaqDriver_TCPConnect:  DAQ 14-Jan-2022 14:52:10 CST Booted TCPConnect.cc:371
+Host resolved as 131.225.224.6
+%MSG
+%MSG-i artdaqDriver_TCPConnect:  DAQ 14-Jan-2022 14:52:10 CST Booted TCPConnect.cc:247
+Resolving ip sbnd-daq32.fnal.gov
+%MSG
+%MSG-i configureMessageFacility:  Early 14-Jan-2022 14:52:10 CST pre-events configureMessageFacility.cc:283
+Message Facility Application artdaqDriver configured with: destinations:{console:{threshold:"DEBUG" type:"cout"} udp:{host:"sbnd-daq32.fnal.gov" port:11005 threshold:"DEBUG" type:"UDP"}}
+%MSG
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:29
+BernCRT_GeneratorBase() constructor called
+%MSG
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:38
+Initialize() called
+%MSG
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:63
+Initialize() completed ... starting GetData worker thread.
+%MSG
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:31
+BernCRT_GeneratorBase() constructor completed
+%MSG
+%MSG-i BernCRTData:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRTData_generator.cc:22
+BernCRTData() constructor called
+%MSG
+01-14 14:52:10.257085                                  febdrv     INFO initif(): Initialized Ethernet port enp4s0 with host MAC  0:13:3b:f:eb:d0
+01-14 14:52:10.257201                                  febdrv     INFO pingclients(): called
+01-14 14:52:10.258372                                  febdrv     INFO pingclients(): pingclients() Found FEB: 0:60:37:12:34:5c (decimal: 92) firmware: FEB_rev3_IAP7.006
+01-14 14:52:10.268046                                  febdrv     INFO pingclients(): In total 1 FEBs connected.
+01-14 14:52:10.268905                 BernCRTFEBConfiguration     INFO BernCRTFEBConfiguration(...): BernCRTFEBConfiguration Loading human-readable configuration for FEB92
+%MSG-i BernCRTData:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRTData_generator.cc:40
+BernCRTDataRead configuration for CRT FEB 92 PPS offset: 0 Turn on HV: no
+%MSG
+%MSG-i BernCRTData:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRTData_generator.cc:46
+BernCRTData() constructor completed
+%MSG
+%MSG-i artdaqDriver:  DAQ 14-Jan-2022 14:52:10 CST Booted driver.cc:87
+No metric plugins appear to be defined
+%MSG
+%MSG-i MetricManager:  DAQ 14-Jan-2022 14:52:10 CST Booted MetricManager.cc:40
+Configuring metrics with parameter set: 
+%MSG
+%MSG-i MetricManager:  DAQ 14-Jan-2022 14:52:10 CST Booted MetricManager.cc:459
+Starting Metric Sending Thread
+%MSG
+%MSG-i MetricManager:  DAQ 14-Jan-2022 14:52:10 CST Booted MetricManager.cc:478
+Metric Sending thread started
+%MSG
+%MSG-i MetricManager:  Early 14-Jan-2022 14:52:10 CST pre-events MetricManager.cc:536
+sendMetricLoop_ START
+%MSG
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:10 CST  Booted SharedMemoryEventManager.cc:82
+BEGIN SharedMemoryEventManager CONSTRUCTOR with use_art:true
+%MSG
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:10 CST  Booted SharedMemoryEventManager.hh:62
+Inserting Shared memory keys (0x0, 0x0) into source config
+%MSG
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:74
+start() called
+%MSG
+%MSG-i BernCRTData:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRTData_generator.cc:57
+ConfigureStart() called
+%MSG
+01-14 14:52:10.283589                                  febdrv     INFO biasOFF(...): biasOFF(255) called.
+01-14 14:52:10.396098                                  febdrv     INFO startDAQ(...): startDAQ(255) called
+%MSG-i BernCRTData:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRTData_generator.cc:68
+ConfigureStart() completed
+%MSG
+WorkerThread: Starting GetDataWorkerThread
+WorkerThread: Started GetDataWorkerThread
+%MSG-i BernCRT_GeneratorBase:  DAQ 14-Jan-2022 14:52:10 CST Booted BernCRT_GeneratorBase.cc:90
+start() completed
+%MSG
+WorkerThread: GetDataWorkerThread started running.
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:10 CST  Booted SharedMemoryEventManager.cc:410
+Starting art process with config file /tmp/partition_0/artConfig_0_1642193530282105.fcl
+%MSG
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:10 CST  Booted SharedMemoryEventManager.cc:474
+PID of new art process is 29737
+%MSG
+01-14 14:52:10.478137                            UDP_mfPlugin     INFO ResolveHost(...): Resolving host sbnd-daq32.fnal.gov, on port 11005
+01-14 14:52:10.478858                            UDP_mfPlugin     INFO GetInterfaceForNetwork(...): Resolving ip sbnd-daq32.fnal.gov
+%MSG-i MF_INIT_OK:  Early 14-Jan-2022 14:52:10 CST JobSetup
+Messagelogger initialization complete.
+%MSG
+%MSG-i MetricManager:  Early 14-Jan-2022 14:52:10 CST JobSetup MetricManager.cc:40
+Configuring metrics with parameter set: 
+%MSG
+%MSG-i MetricManager:  Early 14-Jan-2022 14:52:10 CST JobSetup MetricManager.cc:459
+Starting Metric Sending Thread
+%MSG
+%MSG-i MetricManager:  Early 14-Jan-2022 14:52:10 CST JobSetup MetricManager.cc:478
+Metric Sending thread started
+%MSG
+%MSG-i ArtdaqSharedMemoryService:  DAQ 14-Jan-2022 14:52:10 CST Booted ArtdaqSharedMemoryService_service.cc:65
+app_name is artdaqDriver_art1, rank 0
+%MSG
+%MSG-i MetricManager:  Early 14-Jan-2022 14:52:10 CST pre-events MetricManager.cc:536
+sendMetricLoop_ START
+%MSG
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:10 CST  Booted SharedMemoryEventManager.cc:587
+art initialization took 0.273448 seconds.
+%MSG
+%MSG-i FastCloning:  RootOutput:rootout@Construction 14-Jan-2022 14:52:11 CST  ModuleConstruction
+Initial fast cloning configuration (from default): true
+%MSG
+%MSG-w FastCloning:  RootOutput:rootout@Construction 14-Jan-2022 14:52:11 CST  ModuleConstruction
+Fast cloning deactivated due to request to allow
+output file switching at an Event, SubRun, or Run boundary.
+%MSG
+14-Jan-2022 14:52:11 CST  Opened output file with pattern "/data1/crt01_%#.root"
+%MSG-i artdaqDriver_SharedMemoryEventManager:  DAQ 14-Jan-2022 14:52:42 CST  Sequence ID 31 SharedMemoryEventManager.cc:1342
+artdaqDriver statistics:
+  Event statistics: 32 events released at 1.03414 events/sec, effective data rate = 0.000803783 MB/sec, monitor window = 30.9435 sec, min::max event size = 0.000236511::0.00739288 MB
+  Average time per event:  elapsed time = 0.966983 sec
+  Fragment statistics: 32 fragments received at 1.03414 fragments/sec, effective data rate = 0.000764334 MB/sec, monitor window = 30.9435 sec, min::max fragment size = 0.000198364::0.00735474 MB
+  Event counts: Run -- 32 Total, 0 Incomplete.  Subrun -- 0 Total, 0 Incomplete. 
+%MSG

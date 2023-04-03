@@ -3,7 +3,7 @@
 #ulimit -S -c unlimited
 ulimit -S -c 0
 
-export DAQINTERFACE_LOGDIR="/daq/log"
+export DAQINTERFACE_LOGDIR="/home/nfs/gputnam/workshop-0423/daq/srcs/sbndaq/dab/DAQInterface/log"
 
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 export DAQINTERFACE_SETTINGS=$THIS_SBN_DAQ_DAQINTERFACE_DIR/user_settings

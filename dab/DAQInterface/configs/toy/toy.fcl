@@ -9,6 +9,7 @@ fragment_receiver: {
    distribution_type: 1
    throttle_usecs: 1000000
    random_seed: 6514
+    max_fragment_size_bytes: 1000000
 
    # Parameters configuring the fragment generator's parent class
    # artdaq::CommandableFragmentGenerator

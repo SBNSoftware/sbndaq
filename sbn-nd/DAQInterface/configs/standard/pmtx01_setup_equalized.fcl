@@ -32,3 +32,24 @@ daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
 #daq.fragment_receiver.triggerThreshold0:  7800
 #daq.fragment_receiver.triggerThreshold1:  7800
 #
+
+ped_equal: {
+	   DCoffset: 32768
+}
+
+daq.fragment_receiver.channelPedestal0: 33644
+daq.fragment_receiver.channelPedestal1: 33291
+daq.fragment_receiver.channelPedestal2: 33172
+daq.fragment_receiver.channelPedestal3: 33238
+daq.fragment_receiver.channelPedestal4: 33093
+daq.fragment_receiver.channelPedestal5: 33313
+daq.fragment_receiver.channelPedestal6: 33607
+daq.fragment_receiver.channelPedestal7: 33163
+daq.fragment_receiver.channelPedestal8: 33399
+daq.fragment_receiver.channelPedestal9: 33190
+daq.fragment_receiver.channelPedestal10: 33180
+daq.fragment_receiver.channelPedestal11: 33388
+daq.fragment_receiver.channelPedestal12: 33334
+daq.fragment_receiver.channelPedestal13: 33207
+daq.fragment_receiver.channelPedestal14: 33204
+daq.fragment_receiver.channelPedestal15: 33306

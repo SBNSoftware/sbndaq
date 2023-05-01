@@ -24,8 +24,25 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
 #setdaqcomps.sh pmtx03 crt01PULL spectdc
-setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
+#setdaqcomps.sh pmtx01
 
+# runs for equalized pedestals
+#setdaqcomps.sh pmtx01_legacy
+#setdaqcomps.sh pmtx01_setupA
+#setdaqcomps.sh pmtx01_setupB
+#setdaqcomps.sh pmtx01_setupC
+#setdaqcomps.sh pmtx01_setupD
+#setdaqcomps.sh pmtx01_setup_equalized
+
+# runs for PDSR0
+#setdaqcomps.sh pmtx_pdsR0_01
+#setdaqcomps.sh pmtx_pdsR0_02
+#setdaqcomps.sh pmtx_pdsR0_03
+setdaqcomps.sh pmtx_pdsR0_04
+#setdaqcomps.sh pmtx_pdsR0_01 pmtx_pdsR0_02
+#setdaqcomps.sh pmtx_pdsR0_03 pmtx_pdsR0_04
+#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02 pmtx_pdsR0_03 #pmtx_pdsR0_04
+#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL #pmtx_pdsR0_04PULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

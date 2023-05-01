@@ -1,0 +1,55 @@
+#include "pmt_standard.fcl"
+#daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
+
+# link is which port on the PCIe card it is connected, numbering starts at 0
+daq.fragment_receiver.link: 0
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 10
+
+daq.fragment_receiver.fragment_id: 15
+
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:"
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:"
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
+
+# put this board in pull mode
+
+    request_address:        "227.128.9.129" # -- multicast request address
+    multicast_interface_ip: "10.226.36.0" # -- should match the private net 
+    request_port: 3501   # UDP request port
+    request_mode: window # pull mode
+    request_window_width:  50000000 #5ms window
+    request_window_offset: 2500000 #1ms offset 
+    request_windows_are_unique: true
+    stale_request_timeout: 200000000
+
+
+
+#
+# set thresholds 
+#     default is 0, set in pmt_standard.fcl
+#
+#daq.fragment_receiver.triggerThreshold0:  7800
+#daq.fragment_receiver.triggerThreshold1:  7800
+#
+
+ped_equal: {
+	   DCoffset: 30768
+}
+
+daq.fragment_receiver.channelPedestal0:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal1:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal2:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal3:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal4:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal5:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal6:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal7:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal8:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal9:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal10:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal11:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal12:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal13:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal14:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal15:  @local::ped_equal.DCoffset

@@ -30,3 +30,20 @@ pmtx01 sbnd-pds03-daq -1 1 0-15
 pmtx02 sbnd-pds03-daq -1 1 0-15 
 pmtx03 sbnd-pds02-daq -1 1 0-15
 pmtx04 sbnd-pds01-daq -1 1 0-15
+
+pmtx01_legacy sbnd-pds03-daq -1 1 0-15
+pmtx01_setupA sbnd-pds03-daq -1 1 0-15
+pmtx01_setupB sbnd-pds03-daq -1 1 0-15
+pmtx01_setupC sbnd-pds03-daq -1 1 0-15
+pmtx01_setupD sbnd-pds03-daq -1 1 0-15
+pmtx01_setup_equalized sbnd-pds03-daq -1 1 0-15
+
+pmtx_pdsR0_01 sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_02 sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_03 sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_04 sbnd-pds01-daq -1 1 0-15
+
+## Boards in pull mode
+pmtx_pdsR0_02PULL sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_03PULL sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_04PULL sbnd-pds01-daq -1 1 0-15

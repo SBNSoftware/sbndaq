@@ -2,15 +2,20 @@
 #daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
 
 # link is which port on the PCIe card it is connected, numbering starts at 0
-daq.fragment_receiver.link: 0
+# first board connected to link0 in PDSR0
+daq.fragment_receiver.link: 1
+
+#definitions: all boards in PDSR0 will be named as 10+link number
+
 # boardId is the ID number that will be assigned to the board
-daq.fragment_receiver.boardId: 10
+daq.fragment_receiver.boardId: 11
 
-daq.fragment_receiver.fragment_id: 15
+# fragment ID set to the name of the boardID
+daq.fragment_receiver.fragment_id: 11
 
-daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:"
-daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:"
-daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
+#Daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:"
+#daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:"
+#daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
 
 # put this board in pull mode
 
@@ -32,3 +37,10 @@ daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
 #daq.fragment_receiver.triggerThreshold0:  7800
 #daq.fragment_receiver.triggerThreshold1:  7800
 #
+
+daq.fragment_receiver.poll_hardware_status: true
+daq.fragment_receiver.hardware_poll_interval_us: 10000
+daq.fragment_receiver.separate_monitoring_thread: true
+
+##### WARNING!!! NIM trigger signal
+### daq.fragment_receiver.ioLevel: 0

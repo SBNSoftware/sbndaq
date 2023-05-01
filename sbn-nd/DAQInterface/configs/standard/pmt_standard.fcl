@@ -120,13 +120,13 @@ daq:
     # extTrgMode decides whether the external trigger should only be used to generate the
     # acquisition trigger, only to generate the trigger output or both
     # extTrgMode: 0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
-    extTrgMode:           0
+    extTrgMode:           3
     
     # swTrgMode decides whether the trigger software should only be used to generate the 
     # acquisition trigger, only to generate the trigger output or both. 
     # you should set 'SWTrigger: true' to enable software triggers
     # swTrgMode:  0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
-    swTrgMode:            1
+    swTrgMode:            0
     
     # acqMode: 0=Software Controlled, 1=Front Panel S_IN
     acqMode:              0
@@ -134,7 +134,7 @@ daq:
     # triggerPolarity: 0=positive (trigger on rising edge), 1= negative (trigger on falling edge)
     # Exclusive for SBND
     # ICARUS: (should not interfere but) keep this parameter = 0
-    triggerPolarity:      0 
+    triggerPolarity:      1#0
     
        
     debugLevel:           7

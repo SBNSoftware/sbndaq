@@ -28,6 +28,6 @@ export DAQINTERFACE_USER_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR
   $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
 }
 
-setup artdaq_runcontrol_gui v1_03_01 -q e20:prof
+setup artdaq_runcontrol_gui v1_03_02 -q e20:prof
 
 export PYTHONUNBUFFERED=TRUE

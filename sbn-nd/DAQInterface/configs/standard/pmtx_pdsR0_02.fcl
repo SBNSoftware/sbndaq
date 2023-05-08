@@ -39,8 +39,49 @@ daq.fragment_receiver.fragment_id: 11
 #
 
 daq.fragment_receiver.poll_hardware_status: true
-daq.fragment_receiver.hardware_poll_interval_us: 10000
-daq.fragment_receiver.separate_monitoring_thread: true
+daq.fragment_receiver.hardware_poll_interval_us: 1000000
+daq.fragment_receiver.separate_monitoring_thread: false
 
 ##### WARNING!!! NIM trigger signal
 ### daq.fragment_receiver.ioLevel: 0
+
+ped_equal: {
+           DCoffset: 6500
+}
+
+daq.fragment_receiver.channelPedestal0:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal1:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal2:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal3:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal4:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal5:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal6:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal7:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal8:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal9:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal10:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal11:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal12:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal13:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal14:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal15:  @local::ped_equal.DCoffset
+
+daq.fragment_receiver.recordLength:  10000
+
+#daq.fragment_receiver.channelPedestal0:  33000
+#daq.fragment_receiver.channelPedestal1:  36000
+#daq.fragment_receiver.channelPedestal2:  38000
+#daq.fragment_receiver.channelPedestal3:  40000
+#daq.fragment_receiver.channelPedestal4:  42000
+#daq.fragment_receiver.channelPedestal5:  44000
+#daq.fragment_receiver.channelPedestal6:  46000
+#daq.fragment_receiver.channelPedestal7:  48000
+#daq.fragment_receiver.channelPedestal8:  50000
+#daq.fragment_receiver.channelPedestal9:  52000
+#daq.fragment_receiver.channelPedestal10:  44000
+#daq.fragment_receiver.channelPedestal11:  30000
+#daq.fragment_receiver.channelPedestal12:  28000
+#daq.fragment_receiver.channelPedestal13:  26000
+#daq.fragment_receiver.channelPedestal14:  24000
+#daq.fragment_receiver.channelPedestal14:  20000
+#daq.fragment_receiver.channelPedestal14:  6500

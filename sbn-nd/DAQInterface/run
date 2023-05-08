@@ -38,11 +38,11 @@ getStatus "nil"
 #setdaqcomps.sh pmtx_pdsR0_01
 #setdaqcomps.sh pmtx_pdsR0_02
 #setdaqcomps.sh pmtx_pdsR0_03
-setdaqcomps.sh pmtx_pdsR0_04
+#setdaqcomps.sh pmtx_pdsR0_04
 #setdaqcomps.sh pmtx_pdsR0_01 pmtx_pdsR0_02
 #setdaqcomps.sh pmtx_pdsR0_03 pmtx_pdsR0_04
-#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02 pmtx_pdsR0_03 #pmtx_pdsR0_04
-#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL #pmtx_pdsR0_04PULL
+#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02 pmtx_pdsR0_03 #pmtx_pdsR0_043
+setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL pmtx_pdsR0_04PULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

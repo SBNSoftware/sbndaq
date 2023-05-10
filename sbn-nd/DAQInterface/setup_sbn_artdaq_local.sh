@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_05_00"
+SBNDAQ_VERSION="v1_07_01"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_02"
+DAQINTERFACE_VERSION="v3_12_03"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -11,7 +11,7 @@ source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 #[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
 
-setup mrb v6_07_09
+setup mrb v6_08_00
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
@@ -33,7 +33,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_02 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_12_03 -q ${SBNDAQ_QUALS}
 setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"
@@ -41,7 +41,7 @@ export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_08_02 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

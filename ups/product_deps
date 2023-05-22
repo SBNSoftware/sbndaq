@@ -33,39 +33,25 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version      optional
-sbndaq_artdaq        v1_02_01
-cetmodules           v2_26_00     -       only_for_build
+sbndaq_artdaq        v1_07_02
+cetmodules           v3_21_01     -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
 qualifier                sbndaq_artdaq              notes
-e19:debug:s110           e19:debug:s110
-e19:prof:s110            e19:prof:s110
-e19:debug:icarus:s110    e19:debug:icarus:s110
-e19:prof:icarus:s110     e19:prof:icarus:s110
-e19:debug:sbnd:s110      e19:debug:sbnd:s110
-e19:prof:sbnd:s110       e19:prof:sbnd:s110
-e20:debug:s110           e20:debug:s110
-e20:prof:s110            e20:prof:s110
-e20:debug:icarus:s110    e20:debug:icarus:s110
-e20:prof:icarus:s110     e20:prof:icarus:s110
-e20:debug:sbnd:s110      e20:debug:sbnd:s110
-e20:prof:sbnd:s110       e20:prof:sbnd:s110
-e19:debug:s111           e19:debug:s111
-e19:prof:s111            e19:prof:s111
-e19:debug:s112           e19:debug:s112
-e19:prof:s112            e19:prof:s112
-e19:debug:icarus:s112    e19:debug:icarus:s112
-e19:prof:icarus:s112     e19:prof:icarus:s112
-e19:debug:sbnd:s112      e19:debug:sbnd:s112
-e19:prof:sbnd:s112       e19:prof:sbnd:s112
 e20:debug:s112           e20:debug:s112
 e20:prof:s112            e20:prof:s112
 e20:debug:icarus:s112    e20:debug:icarus:s112
 e20:prof:icarus:s112     e20:prof:icarus:s112
 e20:debug:sbnd:s112      e20:debug:sbnd:s112
 e20:prof:sbnd:s112       e20:prof:sbnd:s112
+e20:debug:s117           e20:debug:s117
+e20:prof:s117            e20:prof:s117
+e20:debug:icarus:s117    e20:debug:icarus:s117
+e20:prof:icarus:s117     e20:prof:icarus:s117
+e20:debug:sbnd:s117      e20:debug:sbnd:s117
+e20:prof:sbnd:s117       e20:prof:sbnd:s117
 end_qualifier_list
 
 table_fragment_begin

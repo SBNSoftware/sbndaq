@@ -41,8 +41,11 @@ getStatus "nil"
 #setdaqcomps.sh pmtx_pdsR0_04
 #setdaqcomps.sh pmtx_pdsR0_01 pmtx_pdsR0_02
 #setdaqcomps.sh pmtx_pdsR0_03 pmtx_pdsR0_04
-#setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02 pmtx_pdsR0_03 #pmtx_pdsR0_043
-setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL pmtx_pdsR0_04PULL
+setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL pmtx_pdsR0_04PULL 
+
+# run for ped equalization script
+#setdaqcomps.sh pmtx_pdsR0_01_PedestalEqualization pmtx_pdsR0_02_PedestalEqualization pmtx_pdsR0_03_PedestalEqualization pmtx_pdsR0_04_PedestalEqualization
+
 
 send_transition.sh boot boot.txt
 getStatus "booting"

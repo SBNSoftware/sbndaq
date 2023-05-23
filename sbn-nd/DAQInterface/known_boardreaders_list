@@ -44,6 +44,13 @@ pmtx_pdsR0_03 sbnd-pds01-daq -1 1 0-15
 pmtx_pdsR0_04 sbnd-pds01-daq -1 1 0-15
 
 ## Boards in pull mode
+pmtx_pdsR0_01PULL sbnd-pds01-daq -1 1 0-15
 pmtx_pdsR0_02PULL sbnd-pds01-daq -1 1 0-15
 pmtx_pdsR0_03PULL sbnd-pds01-daq -1 1 0-15
 pmtx_pdsR0_04PULL sbnd-pds01-daq -1 1 0-15
+
+# Ped Equalization script
+pmtx_pdsR0_01_PedestalEqualization sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_02_PedestalEqualization sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_03_PedestalEqualization sbnd-pds01-daq -1 1 0-15
+pmtx_pdsR0_04_PedestalEqualization sbnd-pds01-daq -1 1 0-15

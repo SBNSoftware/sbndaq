@@ -1,0 +1,8 @@
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"

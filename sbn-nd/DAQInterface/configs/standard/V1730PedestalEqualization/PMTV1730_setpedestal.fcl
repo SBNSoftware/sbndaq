@@ -1,27 +1,4 @@
-#include "pmt_standard.fcl"
-
-# link is which port on the PCIe card it is connected, numbering starts at 0
-# first board connected to link0 in PDSR0
-daq.fragment_receiver.link: 2
-
-#definitions: all boards in PDSR0 will be named as 10+link number
-# boardId is the ID number that will be assigned to the board
-daq.fragment_receiver.boardId: 12
-
-# fragment ID set to the name of the boardID
-daq.fragment_receiver.fragment_id: 12
-
-# temperature monitoring
-daq.fragment_receiver.poll_hardware_status: true
-daq.fragment_receiver.hardware_poll_interval_us: 1000000
-daq.fragment_receiver.separate_monitoring_thread: false
-
-##### WARNING!!! NIM trigger signal
-### daq.fragment_receiver.ioLevel: 0
-
-ped_equal: {
-           DCoffset: 6500
-}
+#include "PMTV1730_DCOffset.fcl"
 
 daq.fragment_receiver.channelPedestal0:  @local::ped_equal.DCoffset
 daq.fragment_receiver.channelPedestal1:  @local::ped_equal.DCoffset
@@ -39,5 +16,3 @@ daq.fragment_receiver.channelPedestal12:  @local::ped_equal.DCoffset
 daq.fragment_receiver.channelPedestal13:  @local::ped_equal.DCoffset
 daq.fragment_receiver.channelPedestal14:  @local::ped_equal.DCoffset
 daq.fragment_receiver.channelPedestal15:  @local::ped_equal.DCoffset
-
-#daq.fragment_receiver.recordLength:  10000

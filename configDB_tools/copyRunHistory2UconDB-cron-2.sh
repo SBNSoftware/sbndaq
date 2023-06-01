@@ -1,5 +1,5 @@
 #!/bin/bash
-#Instructionshttps://sbnsoftware.github.io/sbn_online_wiki/CopyRunHistory2UconDB
+#Instructionshttps://sbnsoftware.github.io/sbn_online_wiki/CopyRunHistory2UconDB_cron
 
 printf '\033]2;Copying run records from ArtdaqDB to UconDB\a'
 
@@ -25,13 +25,14 @@ export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-di
 [[ -d ${ARTDAQ_DATABASE_WORKDIR} ]] ||  mkdir -p ${ARTDAQ_DATABASE_WORKDIR}
 export ARTDAQ_DATABASE_URI=${ARTDAQ_DATABASE_URI:-"filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"}
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
+export ARTDAQ_DATABASE_CONFTOOL=${ARTDAQ_DATABASE_CONFTOOL:-"conftool.py"}
 
+#echo "ARTDAQ_DATABASE_CONFTOOL=${ARTDAQ_DATABASE_CONFTOOL}"
 
 export BATCH_SIZE=${BATCH_SIZE:-50}
 export DAQ_RUN_RECORDS_DIR=${DAQ_RUN_RECORDS_DIR:-"/daq/run_records"}
 export DBTOOLS_LOG_DIR=${DBTOOLS_LOG_DIR:-"/daq/log/dbtools"}
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
-export ONLINE_UCONDB_CLIENT_SOFTWARE=${ONLINE_UCONDB_CLIENT_SOFTWARE:-"https://host/path-to-ucondb-client.tar"}
 export ONLINE_UCONDB_URI=${ONLINE_UCONDB_URI:-"https://host1:port1/test_on_ucon_prod/app/data/run_records/configuration/key="}
 
 my_xferarea="${ARTDAQ_DATABASE_WORKDIR}/xfers"
@@ -58,7 +59,7 @@ if [[ ! -d $my_pythonvenvdir ]]; then
   my_pythonbin=$(dirname $(which python3))
   $my_pythonbin/python3 -m pip install --upgrade pip --prefix=$my_pythonvenvdir
 
-cat > ${my_xferarea}/requirements.txt <<REQ_EOF
+  cat > ${my_xferarea}/requirements.txt <<REQ_EOF
 requests>=2.26.0
 psycopg2
 urllib3==1.26.15
@@ -90,7 +91,7 @@ def blobify(run_number):
     config_names = []
     try:
         print ('Getting a list of archived run configurations...')
-        output = subprocess.check_output(['conftool.py','getListOfArchivedRunConfigurations',run_number+'/','|','more'])
+        output = subprocess.check_output(["${ARTDAQ_DATABASE_CONFTOOL}",'getListOfArchivedRunConfigurations',run_number+'/','|','more'])
     except:
         print ('Error caught from conftool.py. Did you setup conftool.py?')
         exit(1)
@@ -123,7 +124,7 @@ def blobify(run_number):
     # Get run config files from database
     print ('Exporting run configuration files from database...')
     for config in config_names:
-        subprocess.call(['conftool.py','exportArchivedRunConfiguration',config],cwd=run_dir)
+        subprocess.call(["${ARTDAQ_DATABASE_CONFTOOL}",'exportArchivedRunConfiguration',config],cwd=run_dir)
 
     # Fill list of file names
     files = []
@@ -160,7 +161,7 @@ def blobify(run_number):
     # Copy the blob file to UconDB
     # TODO: Change 'test' (and maybe 'configuration') to proper name for production
     print ('Copying blob file to UconDB...')
-    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3,
+    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=10,
        username="${ONLINE_UCONDB_WRITER_AUTH%:*}",password="${ONLINE_UCONDB_WRITER_AUTH#*:}")
     print("Server version:", client.version())
 
@@ -176,7 +177,9 @@ def blobify(run_number):
           print ('Success loading ' + str(run_number) + ' to UconDB; version='+ str(ret_version))
           exit(0)
       except Exception as e:
-        print(e)
+        error_msg = str(e)
+        print(error_msg.split("Invalid value for Start")[0] + "Invalid value for Start\n <PAYLOAD> " + "\n </body>\n</html>")
+        #print(e)
         exit(1)
 
 if __name__ == '__main__':
@@ -189,47 +192,68 @@ BLOB_EOF
 export PYTHONPATH=$(dirname $(which conftool.py)):$(echo ${my_pythonpath} | awk -v RS=: -v ORS=: '/site-packages/ {next} {print}'| sed 's/:*$//' )
 # "${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)&object=configuration"
 
-xfer_log=${my_xferarea}/failed_runs_retry.txt
-touch ${xfer_log}
+first_run=0
+last_run=0
 
-xfer_counter=0
+# "${ONLINE_UCONDB_URI%%app*}app/versions?folder=ucon_prd.$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)&object=configuration"
 
-while read -r r ; do
-if [[ $r =~ ^[0-9]+$ ]]; then
-  (( xfer_counter < BATCH_SIZE )) || { echo "Info: Stopped copying run history records after reaching BATCH_SIZE=$BATCH_SIZE records."; break; }
-  (( xfer_counter++ ))
-
-  echo "Copying run $r"
-
-  rm -rf {exported_,}blob_${r}.txt ${r} >/dev/null 2>&1
-  python3 ${my_xferarea}/myblobify.py $r
-  curl -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
-  diff -q {exported_,}blob_${r}.txt
-  (( $? != 0 )) && { echo "Error: Failed copying $r."; echo $r >> ${xfer_log};continue;}
-  rm -rf {exported_,}blob_${r}.txt ${r}
-fi
+while read -r line ; do
+  [[ $line =~ ^first_run=.* ]] && first_run=${line#*=}
+  [[ $line =~ ^last_run=.* ]] && last_run=${line#*=}
+  #echo $line
 done < <(
 python3 <<PYQEOF
-import json
+import re
 import conftool
 import urllib3
+import time
 from ucondb.webapi import UConDBClient
+
+tr_since=time.time()-2629800
+#tr_since=time.time()-604800
 
 urllib3.disable_warnings()
 ucondb_runs = set()
-client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3)
+client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=10)
 print("Server version:", client.version())
+first_run=1
 try:
-  ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)")
-  ucondb_runs = set([int(o['key']) for o in ucondb_results])
+  ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)", tr_since=tr_since)
+
+  first_run=max(int(o['key']) for o in ucondb_results if o['key'] is not None)+1
 except Exception as e:
    print(e)
-artdaqdb_results = conftool.getListOfArchivedRunConfigurations()
-artdaqdb_runs = set([int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit()])
-print("\n".join(str(s) for s in sorted(artdaqdb_runs - ucondb_runs) ))
-
+print('first_run=%d' % first_run)
+artdaqdb_results=conftool.getListOfArchivedRunConfigurations()
+last_run=max(int(o.split('/')[0]) for o in artdaqdb_results if o[0].isdigit())-1
+if re.search(r'run_records_pending', "${ONLINE_UCONDB_URI}") is not None:
+  last_run+=1
+print('last_run=%d' % last_run)
 PYQEOF
 )
+
+echo "first_run=$(($first_run - 1))"
+echo "last_run=$last_run"
+
+#exit 1
+
+(( last_run == 0 )) && ( echo "Error: Failed querying artdaq_database."; exit 1;)
+(( first_run == 0 )) && { echo "Error: Failed querying UconDB." ; exit 1;}
+(( last_run < first_run )) && { echo "Info: UconDB is up to date.";  exit 0;}
+(( $((last_run - first_run)) > BATCH_SIZE )) && last_run=$((first_run + BATCH_SIZE))
+
+xfer_log=${my_xferarea}/failed_runs.txt
+
+touch ${xfer_log}
+
+for r in $(seq $first_run $last_run); do
+  rm -rf $r  blob_$r.txt exported_blob_$r.txt > /dev/null 2>&1
+  python3 ${my_xferarea}/myblobify.py $r
+  curl -s -o exported_blob_${r}.txt  "${ONLINE_UCONDB_URI%%app*}app/data/$(echo "${ONLINE_UCONDB_URI#*data/}" |cut -d"/" -f1)/configuration/key=$r"
+  diff -q {exported_,}blob_${r}.txt
+  (( $? != 0 )) && { echo "Error: Failed copying $r."; echo $r >> ${xfer_log};continue;}
+  rm -rf {exported_,}blob_${r}.txt ${r}
+done
 
 
 if (( $( stat -c %s ${xfer_log} ) > 0 )); then
@@ -242,6 +266,7 @@ From: artdaq@$(hostname -s).fnal.gov
 EMEOF
 fi
 
-cat ${xfer_log} >> ${my_xferarea}/failed_xfers_retry.log
+cat ${xfer_log} >> ${my_xferarea}/failed_xfers.log
 rm ${xfer_log}
+
 

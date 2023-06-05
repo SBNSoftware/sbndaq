@@ -26,9 +26,10 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 crt01PULL spectdc
 #setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
 #setdaqcomps.sh crtflat
-setdaqcomps.sh dummygenerator crtflatPULL 
+#setdaqcomps.sh dummygenerator crtflatPULL
 #setdaqcomps.sh crtflat_nw
 #setdaqcomps.sh dummygenerator crtflat_nwPULL
+setdaqcomps.sh dummygenerator crtflat_eastPULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

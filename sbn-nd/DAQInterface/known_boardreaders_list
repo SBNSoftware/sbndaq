@@ -30,6 +30,8 @@ crtflat sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_L
 crtflatPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtflat_nw sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtflat_nwPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtflat_east sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtflat_eastPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 pmtx01 sbnd-pds03-daq -1 1 0-15 
 pmtx02 sbnd-pds03-daq -1 1 0-15 
 pmtx03 sbnd-pds02-daq -1 1 0-15

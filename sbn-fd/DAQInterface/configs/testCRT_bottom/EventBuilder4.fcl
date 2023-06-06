@@ -1,0 +1,6 @@
+#include "EventBuilder_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.evb04."
+daq.metrics.evbFile.fileName : "/daq/log/metrics/evb04_metrics.log"
+outputs.normalOutput.fileName: "/data/daq/data_dl4_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl4_run%R_%#_%to.root"
+process_name: DAQEVB04

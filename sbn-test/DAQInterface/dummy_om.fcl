@@ -1,3 +1,5 @@
+services: { ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqGlobalsService }}
+
 outputs: {
   dumper: {
     module_type: FileDumperOutput
@@ -44,6 +46,7 @@ source:
 
   commanderPluginType: xmlrpc
   dispatcherHost: localhost
+
   dispatcherPort: 6020
 
   transfer_plugin: {

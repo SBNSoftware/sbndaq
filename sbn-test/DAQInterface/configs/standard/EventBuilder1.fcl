@@ -1,7 +1,7 @@
 
 #include "EventBuilder_standard.fcl"
 
-daq.metrics.graphite.namespace: "sbnd.evb01."
+#daq.metrics.graphite.namespace: "sbnd.evb01."
 
 daq.metrics.evbFile.fileName: "/daq/log/metrics/evb01_metrics.log"
 

@@ -6,7 +6,7 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
-  max_fragment_size_bytes: 16777216
+  max_fragment_size_bytes: 748390 #16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
@@ -19,7 +19,8 @@ fragment_receiver: {
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
+  DumpBinary: true # Write binary file before the artdaq back-end
+  DumpBinaryDir: "/data"
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
 
@@ -63,20 +64,24 @@ fragment_receiver: {
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
 
-  # Do not change block name
-  trigger_module : {
-  # Example from MicroBooNE -- NEEDS TO BE EDITED --
+trigger_module : {
+    #vendor_id : 0x1172 # Altera (Nevis  PCIe card)
+    #device_id : 0x4
+    #bus : 0x66
+    #device_name: neviscard_controller
+
+ # Example from MicroBooNE -- NEEDS TO BE EDITED --
     deadtime : 0xfa
     # Must satisfy framesize = timesize * 8 - 1
-    framesize : 20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
-    g1delay : 0x10
-    g1end : 0x1
-    g1start : 0x1
-    g1width : 0x20
-    g2delay : 0x10
-    g2end : 0x20
-    g2start : 0x1
-    g2width : 0x20
+    framesize: 28799 #for 1.8ms frame # 9592 # 1199*8  20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
+    g1delay : 0x0 # 0x10
+    g1end :   0x0 #0x1
+    g1start : 0x0 #0x1
+    g1width : 0x0 #0x20
+    g2delay : 0x0 #0x10
+    g2end :   0x0 #0x20
+    g2start : 0x0 #0x1
+    g2width : 0x0 #0x20
     prescale0 : 0
     prescale1 : 0
     prescale8 : 0
@@ -84,8 +89,11 @@ fragment_receiver: {
     timeinfo_directory : "/data/uboonedaq/metadata"
     trigmask0 : 0
     trigmask1 : 0
-    trigmask8 : 0x132
+    trigmask8 : 0x2 #EXT trigger
 }
+
+  # Do not change block name
+  #Trigger module settings moved to ntb01.fcl 
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -112,7 +120,7 @@ fragment_receiver: {
     # SN stream PCIe card settings
     vendor_id : 0x1172 # Altera (Nevis PCIe card)
     device_id : 0x4
-    bus : 0xb4
+    bus : 0xb3
     device_name: neviscard_sn
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size
@@ -125,6 +133,18 @@ fragment_receiver: {
     {
       use_routing_master: false 
     }
+
+#pull mode configuration
+ receive_requests: true
+ request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
+ multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net
+ request_port: 3001   ##3502   # UDP request port
+ request_mode: sequence #match sequenceID of request
+ data_buffer_depth_fragments: 100
+ data_buffer_depth_mb: 1000  #6000 # 1000 # 800
+ #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
+
 }
   metrics: {
     brFile: {

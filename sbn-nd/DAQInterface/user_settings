@@ -3,12 +3,14 @@ record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
 productsdir_for_bash_scripts: /daq/software/products
 max_configurations_to_list: 20
-boardreader timeout: 60
+boardreader timeout: 600
 eventbuilder timeout: 45
 aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
+board_reader_priorities_on_start  : tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01
+board_reader_priorities_on_stop   : ntb01 tpc01 ptb01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11
 
 max_launch_checks: 10
 launch_procs_wait_time: 60

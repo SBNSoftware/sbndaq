@@ -1,1 +1,1 @@
-#include "fake_NevisTPC2StreamCTRL_driver.fcl"
+#include "fake_NevisTPC2StreamEXT_driver.fcl"

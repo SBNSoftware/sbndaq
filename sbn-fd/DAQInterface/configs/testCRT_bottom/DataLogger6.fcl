@@ -1,0 +1,7 @@
+#include "DataLogger_standard.fcl"
+daq.metrics.graphite.namespace: "icarus.dl06."
+daq.metrics.aggFile.fileName : "/daq/log/metrics/dl06_metrics.log"
+outputs.normalOutput.fileName: "/data/daq/data_dl6_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl6_run%R_%#_%to.root"
+#physics.my_output_modules: [ testOutput, rootNetOutput ]
+process_name: DAQDL06

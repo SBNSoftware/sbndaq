@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source /daq/software/products/setup
 
-SBNDAQ_VERSION="v1_07_02"
+SBNDAQ_VERSION="v1_08_00"
 DAQINTERFACE_VERSION="v3_12_02" 
 MFEXTENSIONS_VERSION="v1_08_03"
 
@@ -14,6 +14,11 @@ export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 setup artdaq_mfextensions $MFEXTENSIONS_VERSION -q $SBNDAQ_QUALS
+
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 #configure trace levels
 export TRACE_FILE=/tmp/trace_$(whoami)_p1

@@ -1,0 +1,10 @@
+#include "pmt_standard.fcl"
+
+daq.fragment_receiver.fragment_id: 18
+daq.fragment_receiver.link: 2 
+daq.fragment_receiver.board_id: 18
+
+daq.metrics.graphite.namespace: "icarus.icaruspmteetop01."
+#daq.redis_10s.redis_key_prefix: "DABBoardReader:icaruspmteetop01:"
+#daq.redis_testing.redis_key_prefix: "DABBoardReader:icaruspmteetop01:"
+#daq.redis_5m.redis_key_prefix: "DABBoardReader:icaruspmteetop01:"

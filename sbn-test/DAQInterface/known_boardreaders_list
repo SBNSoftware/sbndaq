@@ -1,2 +1,2 @@
-component01 sbnd-tpc01-daq -1 1
-component02 sbnd-tpc02-daq -1 1
+component01 sbnd-daq32-priv -1 1
+component02 sbnd-daq32-priv -1 1

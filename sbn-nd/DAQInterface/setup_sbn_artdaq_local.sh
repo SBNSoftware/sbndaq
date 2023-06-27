@@ -45,6 +45,11 @@ setup artdaq_mfextensions  v1_08_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 #Trace setup for debugging:
 export DAQINTERFACE_PARTITION_NUMBER=1
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}

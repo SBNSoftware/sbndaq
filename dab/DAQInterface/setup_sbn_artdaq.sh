@@ -8,3 +8,7 @@ DAQINTERFACE_VERSION="v3_12_04"
 
 setup sbndaq $SBNDAQ_VERSION -q $SBNDAQ_QUALS
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
+
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'

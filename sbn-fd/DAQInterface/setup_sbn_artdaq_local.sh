@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v1_08_00"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_04"
+DAQINTERFACE_VERSION="v3_12_02"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -37,6 +37,11 @@ setup artdaq_daqinterface $DAQINTERFACE_VERSION
 setup artdaq_mfextensions   v1_08_03 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
+
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_$(whoami)_p1

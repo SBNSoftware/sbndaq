@@ -41,7 +41,7 @@ export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_08_03 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_04 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

@@ -1,0 +1,86 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+#include "crt_feb_voltage225.fcl"
+#include "feb071.fcl"
+#include "feb072.fcl"
+#include "feb075.fcl"
+#include "feb076.fcl"
+
+#
+#  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
+#
+
+daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
+daq.metrics.graphite.namespace: "sbnd.crttest01."
+
+daq.fragment_receiver.generated_fragments_per_event: 13 #number if FEBs
+
+#Aframe 2
+#daq.fragment_receiver.fragment_ids: [ 71, 72, 75, 76, 134, 135, 136, 149, 150, 151, 152 ]
+#daq.fragment_receiver.fragment_ids: [ 0xB747, 0xB748, 0xB74B, 0xB74C, 0xB786, 0xB787, 0xB788, 0xB795, 0xB796, 0xB797, 0xB798]
+
+#Aframe 1
+#daq.fragment_receiver.fragment_ids: [ 71, 72, 75, 76, 153, 238, 155, 156, 157, 158, 159, 181, 182 ]
+daq.fragment_receiver.fragment_ids: [ 0xB747, 0xB748, 0xB74B, 0xB74C, 0xB799, 0xB7EE, 0xB79B, 0xB79C, 0xB79D, 0xB79E, 0xB79F, 0xB7B5, 0xB7B6]
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+daq.fragment_receiver.board_id: 1
+
+#What is ReaderID? Another ID?
+daq.fragment_receiver.ReaderID: 73
+
+# the two ports on sbnd-pds05
+daq.fragment_receiver.ethernet_port: "enp23s0f0"
+#daq.fragment_receiver.ethernet_port: "enp23s0f1"
+
+# Whether or not turn on SiPM HV on each FEB
+daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true, true, true, true, true, true ]
+
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+#daq.fragment_receiver.PPS_offset_ns : [ 296, 303, 317, 330 ] # = dummy value
+daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0 ] # = dummy value
+
+#need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
+# vertical modules, do not need to voltage-scan again.
+daq.fragment_receiver.FEBConfigurationMAC71:  @local::FEB71Configuration
+daq.fragment_receiver.FEBConfigurationMAC72:  @local::FEB72Configuration
+daq.fragment_receiver.FEBConfigurationMAC75:  @local::FEB75Configuration
+daq.fragment_receiver.FEBConfigurationMAC76:  @local::FEB76Configuration
+#
+daq.fragment_receiver.FEBConfigurationMAC153: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC238: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC155: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC156: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC157: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC158: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC159: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC181: @local::FEBConfigurationVoltage225
+daq.fragment_receiver.FEBConfigurationMAC182: @local::FEBConfigurationVoltage225
+#
+daq.fragment_receiver.FEBConfigurationMAC71.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC71.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC72.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC72.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC75.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC75.time_threshold: 250 
+daq.fragment_receiver.FEBConfigurationMAC76.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC76.time_threshold: 250
+#
+daq.fragment_receiver.FEBConfigurationMAC153.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC153.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC238.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC238.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC155.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC155.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC156.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC156.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC157.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC157.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC158.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC158.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC159.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC159.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC181.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC181.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC182.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC182.time_threshold: 250

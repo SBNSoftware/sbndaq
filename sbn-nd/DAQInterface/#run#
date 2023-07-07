@@ -52,7 +52,7 @@ send_transition.sh start
 # getStatus "starting"
 sleep 2
 getStatus "starting"
-while [ "$status" != 'running' ]
+while [ "$status" !'running' ]
 do
   sleep 2
   getStatus "starting"

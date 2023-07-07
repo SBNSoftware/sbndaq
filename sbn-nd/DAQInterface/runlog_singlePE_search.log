@@ -1,0 +1,81 @@
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_154.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/5975}'
+running
+Wed 10 May 19:01:31 CDT 2023
+Ending the run....
+Wed 10 May 21:01:48 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_174.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/5977}'
+running
+Wed 10 May 21:02:51 CDT 2023
+Ending the run....
+Wed 10 May 23:03:08 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_194.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/5978}'
+running
+Wed 10 May 23:04:11 CDT 2023
+Ending the run....
+Thu 11 May 01:04:24 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_214.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/5979}'
+running
+Thu 11 May 08:39:01 CDT 2023
+Ending the run....
+Thu 11 May 10:39:21 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_234.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/5980}'
+running
+Thu 11 May 10:40:20 CDT 2023
+Ending the run....
+Thu 11 May 12:40:35 CDT 2023
+
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_154.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6031}'
+running
+Thu 11 May 17:52:14 CDT 2023
+Ending the run....
+Thu 11 May 19:52:27 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_174.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6032}'
+running
+Thu 11 May 19:53:32 CDT 2023
+Ending the run....
+Thu 11 May 21:53:51 CDT 2023
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_194.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6033}'
+running
+Thu 11 May 21:54:57 CDT 2023
+
+=============== This set of runs stops ===============
+
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_140.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6127}'
+running
+Mon 15 May 13:46:18 CDT 2023
+Ending the run....
+Mon 15 May 15:46:35 CDT 2023
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_170.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6137}'
+running
+Mon 15 May 15:47:36 CDT 2023
+Ending the run....
+Mon 15 May 17:47:51 CDT 2023
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_200.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6155}'
+running
+Mon 15 May 17:48:50 CDT 2023
+Ending the run....
+Mon 15 May 19:49:05 CDT 2023
+configs/standard/aframe_singlePE_voltage_scanning/crt01_aframe_singlePE_230.fcl
+xmlrpc http://localhost:12000/RPC2 state_change daqint starting 'struct/{run_number:i/6156}'
+running
+Mon 15 May 19:50:06 CDT 2023
+Ending the run....
+Mon 15 May 21:50:21 CDT 2023

@@ -12,7 +12,7 @@ daq.fragment_receiver.board_id: 12
 
 # record 1200 ticks = 2.4 us with 50% after the trigger
 # default is 5000 ticks/80%
-daq.fragment_receiver.recordLength: 200
+daq.fragment_receiver.recordLength: 20
 daq.fragment_receiver.postPercent:  50
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx03_metrics.log"

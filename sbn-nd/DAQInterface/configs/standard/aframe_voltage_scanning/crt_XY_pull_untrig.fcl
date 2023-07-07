@@ -1,0 +1,5 @@
+
+daq.fragment_receiver.request_window_width:  900000000 # 900 ms window in ns
+daq.fragment_receiver.request_window_offset: 450000000  # offset in ns 
+daq.fragment_receiver.fragment_period_ms: 10
+daq.fragment_receiver.feb_poll_ms: 40

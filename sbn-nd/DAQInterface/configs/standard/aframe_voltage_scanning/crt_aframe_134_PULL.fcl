@@ -1,4 +1,4 @@
-#include "aframe_voltage_scanning/crt_aframe_XY_v174.fcl"
+#include "aframe_voltage_scanning/crt_aframe_XY_v134.fcl"
 #include "crt_pull.fcl"
 
 #include "aframe_voltage_scanning/crt_XY_pull.fcl"

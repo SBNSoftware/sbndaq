@@ -1,0 +1,7 @@
+#include "crt01.fcl"
+#include "crt_pull.fcl"
+
+daq.fragment_receiver.request_window_width:  10000000 # 10 ms window in ns
+daq.fragment_receiver.request_window_offset: 5000000  # offset in ns 
+daq.fragment_receiver.fragment_period_ms: 2
+daq.fragment_receiver.feb_poll_ms: 20

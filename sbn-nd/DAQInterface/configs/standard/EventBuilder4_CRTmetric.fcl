@@ -1,0 +1,9 @@
+#include "EventBuilder_CRTmetric.fcl"
+
+daq.metrics.graphite.namespace: "sbnd.evb04."
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb04_metrics.log"
+outputs.mode0Output.fileName: "/data/crt_Aframe_temporary/data_evb04_crtmetrics_run%R_%#_%to.root"
+# outputs.testOutput.fileName : "/data/crt_Aframe_temporary/data_evb04_crtmetrics_run%R_%#_%to.root"
+# physics.my_output_modules: [ normalOutput, rootNetOutput ]
+physics.my_output_modules: [ mode0Output, rootNetOutput ]
+process_name: DAQEVB04

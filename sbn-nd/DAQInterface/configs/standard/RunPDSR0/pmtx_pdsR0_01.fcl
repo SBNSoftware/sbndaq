@@ -1,0 +1,36 @@
+#include "pmt_standard.fcl"
+
+# first board connected to link0 in PDSR0
+daq.fragment_receiver.link: 0
+
+#definitions: all boards in PDSR0 will be named as 10+link number
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 10
+
+# fragment ID set to the name of the boardID
+daq.fragment_receiver.fragment_id: 10
+
+# temperature monitoring
+daq.fragment_receiver.poll_hardware_status: true
+daq.fragment_receiver.hardware_poll_interval_us: 1000000
+daq.fragment_receiver.separate_monitoring_thread: false
+
+daq.fragment_receiver.channelPedestal0: 5523
+daq.fragment_receiver.channelPedestal1: 5778
+daq.fragment_receiver.channelPedestal2: 5117
+daq.fragment_receiver.channelPedestal3: 5173
+daq.fragment_receiver.channelPedestal4: 5547
+daq.fragment_receiver.channelPedestal5: 5284
+daq.fragment_receiver.channelPedestal6: 5346
+daq.fragment_receiver.channelPedestal7: 5037
+daq.fragment_receiver.channelPedestal8: 5363
+daq.fragment_receiver.channelPedestal9: 5505
+daq.fragment_receiver.channelPedestal10: 5551
+daq.fragment_receiver.channelPedestal11: 5184
+daq.fragment_receiver.channelPedestal12: 5569
+daq.fragment_receiver.channelPedestal13: 5624
+daq.fragment_receiver.channelPedestal14: 5318
+daq.fragment_receiver.channelPedestal15: 4996
+
+
+#include "set_commonDCoffset.fcl"

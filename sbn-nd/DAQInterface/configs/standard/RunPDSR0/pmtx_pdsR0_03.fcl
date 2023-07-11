@@ -1,0 +1,35 @@
+#include "pmt_standard.fcl"
+
+# link is which port on the PCIe card it is connected, numbering starts at 0
+# first board connected to link0 in PDSR0
+daq.fragment_receiver.link: 2
+
+#definitions: all boards in PDSR0 will be named as 10+link number
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 12
+
+# fragment ID set to the name of the boardID
+daq.fragment_receiver.fragment_id: 12
+
+# temperature monitoring
+daq.fragment_receiver.poll_hardware_status: true
+daq.fragment_receiver.hardware_poll_interval_us: 1000000
+daq.fragment_receiver.separate_monitoring_thread: false
+daq.fragment_receiver.channelPedestal0: 5453
+daq.fragment_receiver.channelPedestal1: 5972
+daq.fragment_receiver.channelPedestal2: 5610
+daq.fragment_receiver.channelPedestal3: 5213
+daq.fragment_receiver.channelPedestal4: 5588
+daq.fragment_receiver.channelPedestal5: 5545
+daq.fragment_receiver.channelPedestal6: 5542
+daq.fragment_receiver.channelPedestal7: 5215
+daq.fragment_receiver.channelPedestal8: 5347
+daq.fragment_receiver.channelPedestal9: 5398
+daq.fragment_receiver.channelPedestal10: 5352
+daq.fragment_receiver.channelPedestal11: 5784
+daq.fragment_receiver.channelPedestal12: 5205
+daq.fragment_receiver.channelPedestal13: 5028
+daq.fragment_receiver.channelPedestal14: 5476
+daq.fragment_receiver.channelPedestal15: 5545
+
+#include "set_commonDCoffset.fcl"

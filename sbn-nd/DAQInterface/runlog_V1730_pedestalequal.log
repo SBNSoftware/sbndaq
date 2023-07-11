@@ -1,0 +1,4179 @@
+DCoffset set to 10485
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6395}'
+running
+lun may 22 17:08:30 CDT 2023
+Ending the run....
+lun may 22 17:10:34 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6397}'
+running
+lun may 22 17:11:20 CDT 2023
+Ending the run....
+lun may 22 17:13:23 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6398}'
+running
+lun may 22 17:14:10 CDT 2023
+Ending the run....
+lun may 22 17:16:13 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6399}'
+running
+lun may 22 17:17:01 CDT 2023
+Ending the run....
+lun may 22 17:19:02 CDT 2023
+ 
+DCoffset set to 5242
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6400}'
+running
+lun may 22 17:19:53 CDT 2023
+Ending the run....
+lun may 22 17:21:56 CDT 2023
+ 
+DCoffset set to 3932
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6401}'
+running
+lun may 22 17:22:46 CDT 2023
+Ending the run....
+lun may 22 17:24:49 CDT 2023
+ 
+DCoffset set to 2621
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6402}'
+running
+lun may 22 17:25:40 CDT 2023
+Ending the run....
+lun may 22 17:27:43 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6519}'
+running
+jue jun  1 10:32:36 CDT 2023
+Ending the run....
+jue jun  1 10:34:39 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6520}'
+running
+jue jun  1 10:35:29 CDT 2023
+Ending the run....
+jue jun  1 10:37:30 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6521}'
+running
+jue jun  1 10:38:23 CDT 2023
+Ending the run....
+jue jun  1 10:40:22 CDT 2023
+ 
+DCoffset set to 5242
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6522}'
+running
+jue jun  1 10:41:11 CDT 2023
+Ending the run....
+jue jun  1 10:43:12 CDT 2023
+ 
+DCoffset set to 3932
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6523}'
+running
+jue jun  1 10:44:04 CDT 2023
+Ending the run....
+jue jun  1 10:46:08 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6525}'
+running
+jue jun  1 11:23:32 CDT 2023
+Ending the run....
+jue jun  1 11:25:35 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6526}'
+running
+jue jun  1 11:26:22 CDT 2023
+Ending the run....
+jue jun  1 11:28:25 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6527}'
+running
+jue jun  1 11:29:17 CDT 2023
+Ending the run....
+jue jun  1 11:31:21 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6528}'
+running
+jue jun  1 11:32:13 CDT 2023
+Ending the run....
+jue jun  1 11:34:14 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6529}'
+running
+jue jun  1 11:35:05 CDT 2023
+Ending the run....
+jue jun  1 11:37:02 CDT 2023
+ 
+DCoffset set to 4587
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6530}'
+running
+jue jun  1 11:37:54 CDT 2023
+Ending the run....
+jue jun  1 11:39:55 CDT 2023
+ 
+DCoffset set to 3276
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6531}'
+running
+jue jun  1 11:40:44 CDT 2023
+Ending the run....
+jue jun  1 11:42:45 CDT 2023
+ 
+DCoffset set to 14417
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6532}'
+running
+jue jun  1 13:36:19 CDT 2023
+Ending the run....
+jue jun  1 13:38:23 CDT 2023
+ 
+DCoffset set to 11796
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6533}'
+running
+jue jun  1 13:39:11 CDT 2023
+Ending the run....
+jue jun  1 13:41:12 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6534}'
+running
+jue jun  1 13:42:00 CDT 2023
+Ending the run....
+jue jun  1 13:44:02 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6535}'
+running
+jue jun  1 13:44:54 CDT 2023
+Ending the run....
+jue jun  1 13:46:57 CDT 2023
+ 
+DCoffset set to 3932
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6536}'
+running
+jue jun  1 13:47:48 CDT 2023
+Ending the run....
+jue jun  1 13:49:49 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6543}'
+running
+jue jun  1 15:20:43 CDT 2023
+Ending the run....
+jue jun  1 15:21:26 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6544}'
+running
+jue jun  1 15:22:14 CDT 2023
+Ending the run....
+jue jun  1 15:22:53 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6545}'
+running
+jue jun  1 15:23:39 CDT 2023
+Ending the run....
+jue jun  1 15:24:18 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6546}'
+running
+jue jun  1 15:25:07 CDT 2023
+Ending the run....
+jue jun  1 15:25:50 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6547}'
+running
+jue jun  1 15:26:40 CDT 2023
+Ending the run....
+jue jun  1 15:27:23 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6548}'
+running
+jue jun  1 15:28:14 CDT 2023
+Ending the run....
+jue jun  1 15:28:57 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6549}'
+running
+jue jun  1 15:29:45 CDT 2023
+Ending the run....
+jue jun  1 15:30:26 CDT 2023
+ 
+DCoffset set to 5242
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6550}'
+running
+jue jun  1 15:31:17 CDT 2023
+Ending the run....
+jue jun  1 15:32:00 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6611}'
+running
+lun jun  5 13:44:08 CDT 2023
+Ending the run....
+lun jun  5 13:44:39 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6612}'
+running
+lun jun  5 13:45:29 CDT 2023
+Ending the run....
+lun jun  5 13:46:00 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6613}'
+running
+lun jun  5 13:46:51 CDT 2023
+Ending the run....
+lun jun  5 13:47:22 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6614}'
+running
+lun jun  5 13:48:10 CDT 2023
+Ending the run....
+lun jun  5 13:48:43 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6615}'
+running
+lun jun  5 13:49:32 CDT 2023
+Ending the run....
+lun jun  5 13:50:05 CDT 2023
+ 
+DCoffset set to 26214
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6618}'
+running
+lun jun  5 14:27:29 CDT 2023
+Ending the run....
+lun jun  5 14:28:00 CDT 2023
+ 
+DCoffset set to 13107
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6619}'
+running
+lun jun  5 14:28:46 CDT 2023
+Ending the run....
+lun jun  5 14:29:20 CDT 2023
+ 
+DCoffset set to 58981
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6620}'
+running
+lun jun  5 14:30:08 CDT 2023
+Ending the run....
+lun jun  5 14:30:39 CDT 2023
+ 
+DCoffset set to 57670
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6621}'
+running
+lun jun  5 14:31:31 CDT 2023
+Ending the run....
+lun jun  5 14:32:03 CDT 2023
+ 
+DCoffset set to 56360
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6622}'
+running
+lun jun  5 14:32:53 CDT 2023
+Ending the run....
+lun jun  5 14:33:22 CDT 2023
+ 
+DCoffset set to 55049
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6624}'
+running
+lun jun  5 14:34:15 CDT 2023
+Ending the run....
+lun jun  5 14:34:48 CDT 2023
+ 
+DCoffset set to 34078
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6632}'
+running
+lun jun  5 15:17:04 CDT 2023
+Ending the run....
+lun jun  5 15:17:35 CDT 2023
+ 
+DCoffset set to 33422
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6633}'
+running
+lun jun  5 15:18:26 CDT 2023
+Ending the run....
+lun jun  5 15:18:57 CDT 2023
+ 
+DCoffset set to 32767
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6634}'
+running
+lun jun  5 15:19:49 CDT 2023
+Ending the run....
+lun jun  5 15:20:20 CDT 2023
+ 
+DCoffset set to 32112
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6635}'
+running
+lun jun  5 15:21:13 CDT 2023
+Ending the run....
+lun jun  5 15:21:44 CDT 2023
+ 
+DCoffset set to 31456
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6636}'
+running
+lun jun  5 15:22:37 CDT 2023
+Ending the run....
+lun jun  5 15:23:10 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6638}'
+running
+lun jun  5 16:19:32 CDT 2023
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6639}'
+running
+lun jun  5 16:21:08 CDT 2023
+Ending the run....
+lun jun  5 16:21:57 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6640}'
+running
+lun jun  5 16:22:50 CDT 2023
+Ending the run....
+lun jun  5 16:23:39 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6641}'
+running
+lun jun  5 16:25:55 CDT 2023
+Ending the run....
+lun jun  5 16:26:44 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6642}'
+running
+lun jun  5 16:27:35 CDT 2023
+Ending the run....
+lun jun  5 16:28:26 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6643}'
+running
+lun jun  5 16:29:18 CDT 2023
+Ending the run....
+lun jun  5 16:30:05 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6644}'
+running
+lun jun  5 16:30:55 CDT 2023
+Ending the run....
+lun jun  5 16:31:49 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6645}'
+running
+lun jun  5 16:32:39 CDT 2023
+Ending the run....
+lun jun  5 16:33:30 CDT 2023
+ 
+DCoffset set to 4587
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6646}'
+running
+lun jun  5 16:34:23 CDT 2023
+Ending the run....
+lun jun  5 16:35:14 CDT 2023
+ 
+DCoffset set to 3276
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6647}'
+running
+lun jun  5 16:36:06 CDT 2023
+Ending the run....
+lun jun  5 16:36:57 CDT 2023
+ 
+DCoffset set to 1966
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6648}'
+running
+lun jun  5 16:37:50 CDT 2023
+Ending the run....
+lun jun  5 16:38:41 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6653}'
+running
+mar jun  6 09:24:12 CDT 2023
+Ending the run....
+mar jun  6 09:25:31 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6654}'
+running
+mar jun  6 09:26:21 CDT 2023
+Ending the run....
+mar jun  6 09:27:40 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6655}'
+running
+mar jun  6 09:28:31 CDT 2023
+Ending the run....
+mar jun  6 09:29:50 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6656}'
+running
+mar jun  6 09:30:42 CDT 2023
+Ending the run....
+mar jun  6 09:32:05 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6657}'
+running
+mar jun  6 09:32:51 CDT 2023
+Ending the run....
+mar jun  6 09:34:13 CDT 2023
+ 
+DCoffset set to 4587
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6658}'
+running
+mar jun  6 09:35:03 CDT 2023
+Ending the run....
+mar jun  6 09:36:22 CDT 2023
+ 
+DCoffset set to 3276
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6659}'
+running
+mar jun  6 09:37:12 CDT 2023
+Ending the run....
+mar jun  6 09:38:31 CDT 2023
+ 
+DCoffset set to 1966
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+#include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+### #include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+### #include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+#include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6660}'
+running
+mar jun  6 09:39:22 CDT 2023
+Ending the run....
+mar jun  6 09:40:41 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6860}'
+running
+vie jun 23 16:26:30 CDT 2023
+Ending the run....
+vie jun 23 16:27:25 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6861}'
+running
+vie jun 23 16:28:16 CDT 2023
+Ending the run....
+vie jun 23 16:29:09 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6862}'
+running
+vie jun 23 16:30:03 CDT 2023
+Ending the run....
+vie jun 23 16:30:59 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6863}'
+running
+vie jun 23 16:31:53 CDT 2023
+Ending the run....
+vie jun 23 16:32:48 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6864}'
+running
+vie jun 23 16:33:39 CDT 2023
+Ending the run....
+vie jun 23 16:34:32 CDT 2023
+ 
+DCoffset set to 4587
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6865}'
+running
+vie jun 23 16:35:22 CDT 2023
+Ending the run....
+vie jun 23 16:36:16 CDT 2023
+ 
+DCoffset set to 3276
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6867}'
+running
+vie jun 23 16:37:15 CDT 2023
+Ending the run....
+vie jun 23 16:38:08 CDT 2023
+ 
+DCoffset set to 1966
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6868}'
+running
+vie jun 23 16:39:01 CDT 2023
+Ending the run....
+vie jun 23 16:39:56 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6872}'
+running
+vie jun 23 17:16:59 CDT 2023
+Ending the run....
+vie jun 23 17:17:48 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6873}'
+running
+vie jun 23 17:18:40 CDT 2023
+Ending the run....
+vie jun 23 17:19:29 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6874}'
+running
+vie jun 23 17:26:09 CDT 2023
+Ending the run....
+vie jun 23 17:26:58 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6875}'
+running
+vie jun 23 17:27:51 CDT 2023
+Ending the run....
+vie jun 23 17:28:46 CDT 2023
+ 
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6876}'
+running
+vie jun 23 17:36:02 CDT 2023
+Ending the run....
+vie jun 23 17:36:57 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6877}'
+running
+vie jun 23 17:37:51 CDT 2023
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6878}'
+running
+vie jun 23 17:43:55 CDT 2023
+Ending the run....
+vie jun 23 17:44:46 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6879}'
+running
+vie jun 23 17:45:37 CDT 2023
+DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 11140
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6881}'
+running
+vie jun 23 17:49:21 CDT 2023
+Ending the run....
+vie jun 23 17:50:14 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6882}'
+running
+vie jun 23 17:51:13 CDT 2023
+Ending the run....
+vie jun 23 17:52:08 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6883}'
+running
+vie jun 23 17:53:03 CDT 2023
+Ending the run....
+vie jun 23 17:53:58 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6884}'
+running
+vie jun 23 17:54:57 CDT 2023
+Ending the run....
+vie jun 23 17:55:52 CDT 2023
+ 
+DCoffset set to 5898
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6885}'
+running
+vie jun 23 17:56:43 CDT 2023
+Ending the run....
+vie jun 23 17:57:36 CDT 2023
+ 
+DCoffset set to 4587
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6886}'
+running
+vie jun 23 17:58:28 CDT 2023
+Ending the run....
+vie jun 23 17:59:23 CDT 2023
+ 
+DCoffset set to 3276
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/6887}'
+running
+vie jun 23 18:00:22 CDT 2023
+Ending the run....
+vie jun 23 18:01:18 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7190}'
+running
+jue jul  6 09:22:44 CDT 2023
+Ending the run....
+jue jul  6 09:23:19 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7191}'
+running
+jue jul  6 09:24:11 CDT 2023
+Ending the run....
+jue jul  6 09:24:49 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7192}'
+running
+jue jul  6 09:25:39 CDT 2023
+Ending the run....
+jue jul  6 09:26:14 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7193}'
+running
+jue jul  6 09:27:05 CDT 2023
+Ending the run....
+jue jul  6 09:27:42 CDT 2023
+ 
+DCoffset set to 6553
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7194}'
+running
+jue jul  6 09:28:39 CDT 2023
+Ending the run....
+jue jul  6 09:29:16 CDT 2023
+ 
+DCoffset set to 10485
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7195}'
+running
+jue jul  6 09:35:52 CDT 2023
+Ending the run....
+jue jul  6 09:36:27 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7196}'
+running
+jue jul  6 09:37:22 CDT 2023
+Ending the run....
+jue jul  6 09:38:01 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7197}'
+running
+jue jul  6 09:38:54 CDT 2023
+Ending the run....
+jue jul  6 09:39:31 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7198}'
+running
+jue jul  6 09:40:22 CDT 2023
+Ending the run....
+jue jul  6 09:40:57 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7199}'
+running
+jue jul  6 09:41:51 CDT 2023
+Ending the run....
+jue jul  6 09:42:27 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7200}'
+running
+jue jul  6 09:43:17 CDT 2023
+Ending the run....
+jue jul  6 09:43:52 CDT 2023
+ 
+DCoffset set to 10485
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7201}'
+running
+jue jul  6 09:45:49 CDT 2023
+Ending the run....
+jue jul  6 09:46:24 CDT 2023
+ 
+DCoffset set to 9830
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7202}'
+running
+jue jul  6 09:47:14 CDT 2023
+Ending the run....
+jue jul  6 09:47:51 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7203}'
+running
+jue jul  6 09:48:44 CDT 2023
+Ending the run....
+jue jul  6 09:49:19 CDT 2023
+ 
+DCoffset set to 8519
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7204}'
+running
+jue jul  6 09:50:14 CDT 2023
+Ending the run....
+jue jul  6 09:50:43 CDT 2023
+ 
+DCoffset set to 7864
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7205}'
+running
+jue jul  6 09:51:33 CDT 2023
+Ending the run....
+jue jul  6 09:52:08 CDT 2023
+ 
+DCoffset set to 7208
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7206}'
+running
+jue jul  6 09:52:59 CDT 2023
+Ending the run....
+jue jul  6 09:53:36 CDT 2023
+ 
+DCoffset set to 9174
+Running the following fhicl files: 
+configs/standard/V1730PedestalEqualization/pmtx_pdsR0_01_PedestalEqualization.fcl
+# board 1 pulling
+### #include "pmtx_pdsR0_01PULL.fcl"
+
+# board 1 pushing
+#include "pmtx_pdsR0_01.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_02_PedestalEqualization.fcl
+# board 2 pulling
+#include "pmtx_pdsR0_02PULL.fcl"
+
+# board 2 pushing
+### #include "pmtx_pdsR0_02.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_03_PedestalEqualization.fcl
+#include "pmtx_pdsR0_03PULL.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"configs/standard/V1730PedestalEqualization/pmtx_pdsR0_04_PedestalEqualization.fcl
+# board 4 pulling
+#include "pmtx_pdsR0_04PULL.fcl"
+
+# board 4 pushing
+### #include "pmtx_pdsR0_04.fcl"
+
+# set the pedestal
+#include "PMTV1730_setpedestal.fcl"xmlrpc http://localhost:11000/RPC2 state_change daqint starting 'struct/{run_number:i/7207}'
+running
+jue jul  6 10:10:58 CDT 2023
+Ending the run....
+jue jul  6 10:21:15 CDT 2023
+ 

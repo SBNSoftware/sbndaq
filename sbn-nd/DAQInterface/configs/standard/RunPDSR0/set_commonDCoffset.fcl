@@ -1,0 +1,20 @@
+ped_equal: {
+           DCoffset: 8800
+}
+
+daq.fragment_receiver.channelPedestal0:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal1:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal2:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal3:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal4:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal5:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal6:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal7:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal8:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal9:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal10:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal11:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal12:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal13:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal14:  @local::ped_equal.DCoffset
+daq.fragment_receiver.channelPedestal15:  @local::ped_equal.DCoffset

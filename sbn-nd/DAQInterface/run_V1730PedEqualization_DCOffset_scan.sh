@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script to run V1730 pedestal equalization (written by Fran Nicolas @fjnicolas@ugr.es)
 # Based on the great script done by the friendly CRT AFrame team (Jiaoyang Li)
 
 # Define start, end, and step values for the pedestal equalization range

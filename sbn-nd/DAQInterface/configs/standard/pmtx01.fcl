@@ -2,7 +2,7 @@
 #daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
 
 # link is which port on the PCIe card it is connected, numbering starts at 0
-daq.fragment_receiver.link: 3
+daq.fragment_receiver.link: 0
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 10
 

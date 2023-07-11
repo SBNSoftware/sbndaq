@@ -24,7 +24,7 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
 #setdaqcomps.sh pmtx03 crt01PULL spectdc
-#setdaqcomps.sh pmtx01
+#setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
 
 # runs for PDSR0 (rely on external trigger)
 #setdaqcomps.sh  pmtx_pdsR0_01 pmtx_pdsR0_02PULL pmtx_pdsR0_03PULL pmtx_pdsR0_04PULL pmtx_pdsR0_05PULL pmtx_pdsR0_06PULL pmtx_pdsR0_07PULL #pmtx_pdsR0_08PULL

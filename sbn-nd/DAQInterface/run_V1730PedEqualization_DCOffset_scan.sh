@@ -3,12 +3,12 @@
 # Based on the great script done by the friendly CRT AFrame team (Jiaoyang Li)
 
 # Define start, end, and step values for the pedestal equalization range
-fStart=86
-fEnd=86
-fStep=1
+fStart=90
+fEnd=96
+fStep=2
 
 # Define data taking period for each DCOffset (in s)
-fRunTime=600
+fRunTime=60
 
 # Define max DAC value for the SCOffset
 fMaxDAC=65535

@@ -1,7 +1,7 @@
 # Test configuration of 2 streams and readout of Nevis XMIT NU stream with external triggers using artdaq
 # and XMIT SN stream with a worker thread
 
-events_to_generate: 30
+events_to_generate: 5
 run_number: 200
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
@@ -9,7 +9,8 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
-  fragment_id: 0 
+  fragment_id: [0x9103]
+  generated_fragments_per_event: 1	 
   board_id: 0
 
   SamplesPerChannel: 7675 # SBND drift time x 3
@@ -29,7 +30,7 @@ fragment_receiver: {
   nevis_crate : { 
     # Location of modules within crate
     xmit_slot: 2 # Location of XMIT module
-    max_fem_slot: 18 # Location of leftmost FEM module
+    max_fem_slot: 3 # Location of leftmost FEM module
     trigger_slot: 20 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
@@ -61,30 +62,6 @@ fragment_receiver: {
 
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
-
-  # Do not change block name
-  trigger_module : {
-  # Example from MicroBooNE -- NEEDS TO BE EDITED --
-    deadtime : 0xfa
-    # Must satisfy framesize = timesize * 8 - 1
-    framesize : 20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
-    g1delay : 0x10
-    g1end : 0x1
-    g1start : 0x1
-    g1width : 0x20
-    g2delay : 0x10
-    g2end : 0x20
-    g2start : 0x1
-    g2width : 0x20
-    prescale0 : 0
-    prescale1 : 0
-    prescale8 : 0
-    prescale9 : 0
-    timeinfo_directory : "/data/uboonedaq/metadata"
-    trigmask0 : 0
-    trigmask1 : 0
-    trigmask8 : 0x132
-}
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -121,13 +98,13 @@ fragment_receiver: {
 }
 
 event_builder: {
-  expected_fragments_per_event: 16
+  expected_fragments_per_event: 1
   use_art: true
   print_event_store_stats: false
   verbose: false
   events_expected_in_SimpleQueueReader: @local::events_to_generate
-  max_fragment_size_bytes: 0xb000000
-  buffer_count: 16
+  max_fragment_size_bytes:35e6
+  buffer_count: 3
 }
 
 art: {

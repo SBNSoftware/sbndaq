@@ -17,8 +17,7 @@ BEGIN_PROLOG
 
 END_PROLOG
 
-
-services: { ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqGlobalsService }}
+services: { ArtdaqFragmentNamingServiceInterface : { service_provider: ArtdaqSharedMemoryService } }
 
 outputs: {
   dumper: {

@@ -2,7 +2,7 @@
 
 SBNDAQ_VERSION="v1_08_00"
 SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_04"
+DAQINTERFACE_VERSION="v3_12_05"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -33,7 +33,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_04 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_12_05 -q ${SBNDAQ_QUALS}
 setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"

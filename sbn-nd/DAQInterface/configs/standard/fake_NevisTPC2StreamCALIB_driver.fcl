@@ -24,6 +24,7 @@ fragment_receiver: {
   DoSNReadout: true # Do continuous readout
   DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
+  GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)

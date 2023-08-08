@@ -2,11 +2,11 @@
 source /software/products/setup
 [[ -f /software/products_dev/setup ]] && source /software/products_dev/setup
 
-setup mrb v6_08_00
+setup mrb v6_08_01
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v1_07_02"
+SBNDAQ_VERSION="v1_08_00"
 SBNDAQ_QUAL1="e20"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s112"
@@ -36,6 +36,10 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface v3_07_00
 
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_`whoami`

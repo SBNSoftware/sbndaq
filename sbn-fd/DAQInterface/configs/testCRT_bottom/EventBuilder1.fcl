@@ -1,0 +1,8 @@
+#include "EventBuilder_standard.fcl"
+daq.metrics.graphite.namespace: "icarus-test.evb01."
+daq.metrics.evbFile.fileName : "/daq/log/metrics/evb01_metrics-p7.log"
+outputs.normalOutput.fileName: "/data/daq/data_dl1_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl1_run%R_%#_%to.root"
+outputs.crtOutput.fileName: "/scratch_local/crt_tests/crtdata_%p_run%R_%#_%to.root"
+physics.my_output_modules: [ crtOutput ]
+process_name: DAQEVB01

@@ -15,7 +15,7 @@ set(CET_CETBUILDTOOLS_COMPAT TRUE)
 include(Compatibility)
 set(CET_WARN_DEPRECATED)
 
-project(sbndaq VERSION 1.07.02)
+project(sbndaq VERSION 1.08.00)
 
 set(CMAKE_MODULE_PATH
   ${CMAKE_MODULE_PATH})

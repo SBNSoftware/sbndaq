@@ -148,30 +148,12 @@ host_map: [{
 
 rank: -1
 
-host: "sbnd-evb01-daq"
+host: "localhost"
 
 }]
 
 routing_table_config: {
-## True if using the Routing Manager
 use_routing_manager: false
-
-route_on_request_mode: true
-## Port that table updates should arrive on
-table_update_port: 35556 # default
-## Address that table updates should arrive on
-table_update_address: "227.128.12.35"
-## Port that acknowledgements should be sent to
-table_acknowledge_port: 35557 # default
-## Host that acknowledgements should be sent to
-routing_manager_hostname: "sbnd-evb01-daq" # default
-# default
-table_update_multicast_interface: "0.0.0.0"
-## Time to wait (in ms) for a routing table update if the table is exhausted
-routing_timeout_ms: 1000 # default
-## Number of times to retry getting destination from routing table
-routing_retry_count: 5 # default
-
 }
 }
 }

@@ -221,7 +221,9 @@ client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3)
 print("Server version:", client.version())
 try:
   ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)")
-  ucondb_runs = set([int(o['key']) for o in ucondb_results])
+  #ucondb_runs = set([int(o['key']) for o in ucondb_results])
+  ucondb_runs = set([int(run) for run in [o['key'] for o in ucondb_results] if run is not None])
+
 except Exception as e:
    print(e)
 artdaqdb_results = conftool.getListOfArchivedRunConfigurations()

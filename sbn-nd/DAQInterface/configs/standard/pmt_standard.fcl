@@ -21,8 +21,14 @@ daq:
     # begin run ADC calibration
     CalibrateOnConfig: true
 
+    #read adn write some calibration parameters
+    AdcCalibration: false
+
     # Turn on or off automatic mid-run temperature correction
     LockTempCalibration: false
+
+    # Set up max temperature board can have before some messages appear
+    maxTempCelsius: 75
 
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     ModeLVDS: 0
@@ -80,6 +86,22 @@ daq:
     MajorityTimeWindow: 4
 
     allowTriggerOverlap: false
+
+    #Things that I seemed to need when running in the other northwall area
+  majorityLevel: 0                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                              
+    # Sets the time window for the majority coincidence in units of the Trigger Clock (8 ns)                                                                                                                                                  
+    # 'majorityLevel' must be set different from 0.
+    # min: 0, max: 15
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityCoincidenceWindow: 0                                                                                                                                                                                                              
+                                                                                                                                                                                                                                              
+    # Set self trigger logic
+    # triggerLogic 0: AND, 1: ONLYA, 2: ONLYB, 3:OR
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 3
+    triggerLogic: 3                                 
 
     link: 0
     enableReadout: 1

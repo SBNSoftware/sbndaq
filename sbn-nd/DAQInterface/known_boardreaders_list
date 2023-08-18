@@ -1,5 +1,6 @@
 component01 sbnd-tpc01-daq -1 1
 component02 sbnd-tpc02-daq -1 1
+ntb01 sbnd-tpc12-daq -1 1
 tpc01 sbnd-tpc01-daq -1 1
 tpc02 sbnd-tpc02-daq -1 1
 tpc03 sbnd-tpc03-daq -1 1
@@ -19,6 +20,7 @@ ptb01PULL sbnd-ptb01-daq -1 1
 gps sbnd-gps01-daq -1 1
 crt01 sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crt01PULL sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtNorthWallPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crt02 sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crttest sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crttestPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -28,5 +30,5 @@ crt2x2upstr sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env 
 crt2x2upstrPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 pmtx01 sbnd-pds03-daq -1 1 0-15 
 pmtx02 sbnd-pds03-daq -1 1 0-15 
-pmtx03 sbnd-pds02-daq -1 1 0-15
+pmtx03 sbnd-pds03-daq -1 1 0-15
 pmtx04 sbnd-pds01-daq -1 1 0-15

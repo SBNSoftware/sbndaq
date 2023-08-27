@@ -1,0 +1,81 @@
+daq:
+{
+  fragment_receiver:
+  {
+
+    generator: CRTFragGen
+    fragment_type: CRT
+    max_fragment_size_bytes: 1000000
+    data_buffer_depth_fragments: 2048
+    circular_buffer_mode: true
+    fragment_id: 0x0
+
+    generated_fragments_per_event: 1
+    board_id: 1
+
+    partition_number: 7
+    interface_type: 1
+
+    indir: "/home/nfs/icarus/DAQ_DevAreas/DAQ_12Dec2022_rhowell/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/ICARUS/BottomInterface/ICARUS_DAQ/readout/DataFolder/"
+
+    # Exactly one artdaq process needs to start up the backend, but then
+    # all four can read the results
+    startbackend: true
+
+    # valid number 39
+    usbnumber: 39
+
+    #configfile: "~/DAQ_DevAreas/DAQ_12Dec2022_rhowell/DAQInterface/configs/testCRT_bottom/crt_daq.fcl"
+    configfile: "/home/nfs/icarus/DAQ_DevAreas/DAQ_12Dec2022_rhowell/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/ICARUS/BottomInterface/Backend_DAQ/DAQ_CPP_v1/crt_daq.fcl"
+
+    separate_data_thread: true
+    ### configs for sending no fragment
+
+    #pull mode configuration	
+    receive_requests: true
+    request_address:        "227.128.12.35" # -- multicast request address
+    multicast_interface_ip: "192.168.191.0" # -- should match the private net 
+    request_port: 3502   # UDP request port
+    data_buffer_depth_fragments: 10000
+    data_buffer_depth_mb: 20000
+    stale_request_timeout: 2000000000 #3s #turn off to default to no timeout
+    #request_mode: "Buffer"    # the other interesting possibility which is discussed is the "Window" mode
+    request_mode: "Window"     # the other interesting possibility which is discussed is the "Buffer" mode
+   ## request_window_offset -- Request message contains tzero. Window will be from tzero - offset to tz-o + width
+   ## request_window_width: -- These settings correspond to "two before, two after"
+   request_window_width:  50000000  # 50ms of window width
+   request_window_offset: 25000000  # 25ms offset
+   request_window_are_unique: true
+   circular_buffer_mode: true
+
+  destinations: { }
+
+  routing_table_config: {
+    use_routing_master: false
+  }
+
+}
+
+
+metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/scratch/log/br_%UID%_metrics.log"
+      uniquify: true
+    }
+
+    send_system_metrics: true
+    send_process_metrics: true
+
+    graphite: {
+     level:10
+     metricPluginType: "graphite"
+     reporting_interval: 10.0
+     host:"192.168.191.31"
+     port:2003
+     namespace:"icarus.crtbottom00."
+    }
+
+  }
+}

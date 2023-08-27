@@ -20,8 +20,9 @@ fragment_receiver: {
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
+  DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
+  DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
 
   ### Configuration of the Nevis Crate ###
@@ -64,11 +65,11 @@ fragment_receiver: {
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
 
+
   # Do not change block name
-  trigger_module : {
-  # Hardcoded in nevishwutils/Crate.cpp
-  # To do: move trigger configuration here
-}
+ # trigger_module : {
+
+#}
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream

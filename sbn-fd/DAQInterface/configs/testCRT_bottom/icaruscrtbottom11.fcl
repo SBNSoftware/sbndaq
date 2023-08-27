@@ -1,0 +1,4 @@
+#include "icaruscrtbottom_standard.fcl"
+daq.fragment_receiver.fragment_id: 0x4000
+daq.metrics.graphite.namespace: "icarus-test.crt11."
+process_name: DAQCRT11

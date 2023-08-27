@@ -1,5 +1,6 @@
 component01 sbnd-tpc01-daq -1 1
 component02 sbnd-tpc02-daq -1 1
+ntb01 sbnd-tpc12-daq -1 1
 tpc01 sbnd-tpc01-daq -1 1
 tpc02 sbnd-tpc02-daq -1 1
 tpc03 sbnd-tpc03-daq -1 1

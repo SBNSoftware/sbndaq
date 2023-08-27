@@ -127,7 +127,7 @@ icaruspmteetop03 icarus-pmt03-daq -1 1
 icaruspmteebot01 icarus-pmt03-daq -1 1
 icaruspmteebot02 icarus-pmt03-daq -1 1
 icaruspmteebot03 icarus-pmt03-daq -1 1
-component01 localhost -1 1
+component01 icarus-crt11-daq -1 1
 icaruscrt01nni icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrt01nno icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrt03wci icarus-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -153,7 +153,9 @@ icaruscrttop02L06 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_ra
 icaruscrttop02L07 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrttop02L08 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrttop03et icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrtbottom11 icarus-crt11-daq -1 1
 dummygenerator icarus-evb01-daq -1 1
 icarustrigger icarus-clk01-daq -1 1
 wr icarus-daq02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icarustriggertest icarus-clk01-daq -1 1
+icaruscrtbottom11 icarus-crt11-daq -1 1

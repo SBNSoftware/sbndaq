@@ -60,7 +60,7 @@ femb_config_default:
 
 
  # Calibration pulser amplitude 
- pls_dac_val: 0 # 6 bits in internal mode, 5 bits in external
+ pls_dac_val: 60 # 6 bits in internal mode, 5 bits in external
 
 
  # Calibration pulser phase
@@ -107,6 +107,8 @@ femb_config_default:
  
  # Bit shifts for ADC data of FEs
  bit_shtfs_for_ADC_data_of_FEs: [0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000]
+ 
+ turn_off_femb: false
 }
 
 # configuring 4 FEMBs attached to the WIB
@@ -136,7 +138,7 @@ daq:
     # WIB configuration
     WIB: 
     {
-      expected_wib_fw_version: 0x122
+      expected_wib_fw_version: 0x123
       
       # WIB network address string
       address: "" # can be either IP address or DNS address
@@ -196,6 +198,12 @@ daq:
 
       #Stop FELIX links in stop transition, else don't stop
       stop_links_FELIX_run_stop: false 
+      
+      run_wib_fake_data_mode: false
+      
+      run_femb_scan: false
+      
+      wib_fake_data_mode: 2 # 1 saw-tooth, 2 channel-id
     }
   }
 

@@ -61,6 +61,7 @@ if [[ ! -d $my_pythonvenvdir ]]; then
   cat > ${my_xferarea}/requirements.txt <<REQ_EOF
 requests>=2.26.0
 psycopg2
+urllib3==1.26.15
 REQ_EOF
 
   $my_pythonbin/python3 -m pip install -r ${my_xferarea}/requirements.txt --prefix=$my_pythonvenvdir
@@ -159,7 +160,7 @@ def blobify(run_number):
     # Copy the blob file to UconDB
     # TODO: Change 'test' (and maybe 'configuration') to proper name for production
     print ('Copying blob file to UconDB...')
-    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3,
+    client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=10,
        username="${ONLINE_UCONDB_WRITER_AUTH%:*}",password="${ONLINE_UCONDB_WRITER_AUTH#*:}")
     print("Server version:", client.version())
 
@@ -175,7 +176,9 @@ def blobify(run_number):
           print ('Success loading ' + str(run_number) + ' to UconDB; version='+ str(ret_version))
           exit(0)
       except Exception as e:
-        print(e)
+        error_msg = str(e)
+        print(error_msg.split("Invalid value for Start")[0] + "Invalid value for Start\n <PAYLOAD> " + "\n </body>\n</html>")
+        #print(e)
         exit(1)
 
 if __name__ == '__main__':
@@ -202,16 +205,21 @@ python3 <<PYQEOF
 import re
 import conftool
 import urllib3
+import time
 from ucondb.webapi import UConDBClient
+
+tr_since=time.time()-2629800
+#tr_since=time.time()-604800
 
 urllib3.disable_warnings()
 ucondb_runs = set()
-client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=3)
+client = UConDBClient(server_url="${ONLINE_UCONDB_URI%/data*}",timeout=10)
 print("Server version:", client.version())
 first_run=1
 try:
-  ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)")
-  first_run=max(int(o['key']) for o in ucondb_results)+1
+  ucondb_results=client.lookup_versions(folder_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f2)",object_name="$(echo ${ONLINE_UCONDB_URI##*data}|cut -d'/' -f3)", tr_since=tr_since)
+
+  first_run=max(int(o['key']) for o in ucondb_results if o['key'] is not None)+1
 except Exception as e:
    print(e)
 print('first_run=%d' % first_run)
@@ -225,6 +233,8 @@ PYQEOF
 
 echo "first_run=$(($first_run - 1))"
 echo "last_run=$last_run"
+
+#exit 1
 
 (( last_run == 0 )) && ( echo "Error: Failed querying artdaq_database."; exit 1;)
 (( first_run == 0 )) && { echo "Error: Failed querying UconDB." ; exit 1;}

@@ -1,0 +1,60 @@
+BEGIN_PROLOG
+  unique_label: "ExampleOnlineMonitor3"
+  shm_key: 0x40471453
+
+  transfer_plugin: {
+//    transferPluginType: Shmem
+    unique_label: @local::unique_label
+//    physical_transfer_plugin: {
+      transferPluginType: Shmem
+      max_fragment_size_words: 2097152
+      shm_key: @local::shm_key
+      first_event_builder_rank: 0
+      source_rank: 555
+      destination_rank: 666
+//    }
+  }
+
+END_PROLOG
+
+services: { ArtdaqFragmentNamingServiceInterface : { service_provider: ArtdaqSharedMemoryService } }
+
+outputs: {
+  dumper: {
+    module_type: FileDumperOutput
+    wantProductFriendlyClassName: true
+    onlyIfPresent: true
+  }
+}
+
+physics: {
+  analyzers: { }
+  out1: [ dumper ]
+  end_paths: [ out1 ]
+}
+
+source: {
+  module_type: TransferInput
+  transfer_plugin: @local::transfer_plugin
+  
+  register_fragment_types: false
+  timeoutInUsecs: 10000000  
+
+  commanderPluginType: xmlrpc
+  dispatcherHost: localhost
+  dispatcherPort: 6020
+
+  dispatcher_config: {
+    unique_label: @local::unique_label
+    path: [ out ]
+    physics: { }
+    outputs: {
+        out: {
+        module_type: TransferOutput
+        transfer_plugin: @local::transfer_plugin
+      } 
+    }
+  }
+}
+
+process_name: TransferInputShmem

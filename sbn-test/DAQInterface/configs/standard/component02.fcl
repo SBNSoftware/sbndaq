@@ -2,8 +2,8 @@
   fragment_receiver: {
 
 	# CommandableFragmentGenerator Configuration:
-	fragment_ids: []
-	fragment_id: -99 # Please define only one of these
+	#fragment_ids: []
+	#fragment_id: -99 # Please define only one of these
 
 	sleep_on_stop_us: 0
 

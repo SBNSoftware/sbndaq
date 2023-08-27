@@ -26,8 +26,8 @@
 # it's execution to remote nodes
 #echo "$(hostname -s).hello.$(date) " >> ~/trace.log
 
-trace_control_tshow_outfile='/scratch_local/traces/r$run.$hostname.trc'
-trace_control_logfile='/scratch_local/traces/r$run.$transition'
+trace_control_tshow_outfile='/data/scratch_local/traces/r$run.$hostname.trc'
+trace_control_logfile='/data/scratch_local/traces/r$run.$transition'
 trace_control_nodelist='localhost'
 trace_control_upsdb=/daq/software/products
 trace_control_trace_version=v3_17_09

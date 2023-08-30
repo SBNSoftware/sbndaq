@@ -1,0 +1,69 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+
+#
+#  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
+#
+
+    
+# data ports on sbnd-pds05
+daq.fragment_receiver.ethernet_port: "enp23s0f0"
+#daq.fragment_receiver.ethernet_port: "enp23s0f1"
+   
+#List of FEBs in the daisy chain
+    #daq.fragment_receiver.fragment_ids: [ 96, 95, 94, 93, 86, 90, 91, 99, 100 ]
+    daq.fragment_receiver.fragment_ids: [ 0xB060, 0xB05F, 0xB05E, 0xB05D, 0xB052, 0xB056, 0xB05A , 0xB05B, 0xB063, 0xB064 ]
+    daq.fragment_receiver.generated_fragments_per_event: 10 #number of FEBs
+# first board in the chain
+    daq.fragment_receiver.ReaderID: 96
+
+# Whether or not turn on SiPM HV on each FEB
+   daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true, true, true, true, true ]
+#   daq.fragment_receiver.TurnOnHV : [ false, false, false, false ]
+
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   daq.fragment_receiver.PPS_offset_ns : [ 0, 16, 32, 48, 61, 77, 109, 125, 138, 154 ]
+   
+daq.metrics.graphite.namespace: "sbnd.crtflat01."
+
+
+daq.fragment_receiver.FEBConfigurationMAC96: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC96.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC96.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC95: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC95.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC95.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC94: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC94.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC94.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC93: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC93.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC93.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC82: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC82.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC82.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC86: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC86.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC86.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC90: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC90.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC90.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC91: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC91.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC91.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC99: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC99.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC99.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC100: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC100.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC100.time_threshold: 350
+

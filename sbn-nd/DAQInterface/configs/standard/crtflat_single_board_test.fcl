@@ -1,0 +1,17 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+
+daq.fragment_receiver.ethernet_port: "enp23s0f1"
+   
+daq.fragment_receiver.fragment_ids: [ 236 ]
+daq.fragment_receiver.fragment_ids: [ 0xB0EC ]
+daq.fragment_receiver.generated_fragments_per_event: 1
+daq.fragment_receiver.ReaderID: 236
+daq.fragment_receiver.TurnOnHV : [ true ]
+daq.fragment_receiver.PPS_offset_ns : [ 0 ]
+   
+daq.metrics.graphite.namespace: "sbnd.crtflat01."
+
+daq.fragment_receiver.FEBConfigurationMAC236: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC236.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC236.time_threshold: 250

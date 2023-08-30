@@ -1,0 +1,4 @@
+#include "crt_pull.fcl"
+
+daq.fragment_receiver.request_window_width:  900000000
+daq.fragment_receiver.request_window_offset: 450000000

@@ -10,12 +10,12 @@
 daq.fragment_receiver.ethernet_port: "ens8f1"
    
 #List of FEBs in the daisy chain
-    #daq.fragment_receiver.fragment_ids: [ 236, 95, 94, 93, 86, 90, 91, 99, 100 ]
-    # 236 was 96 (0xB060)
-    daq.fragment_receiver.fragment_ids: [ 0xB0EC, 0xB05F, 0xB05E, 0xB05D, 0xB052, 0xB056, 0xB05A , 0xB05B, 0xB063, 0xB064 ]
+    #daq.fragment_receiver.fragment_ids: [ 97, 95, 94, 93, 86, 90, 91, 99, 100 ]
+    # 97 was 96 (0xB060)
+    daq.fragment_receiver.fragment_ids: [ 0xB061, 0xB05F, 0xB05E, 0xB05D, 0xB052, 0xB056, 0xB05A , 0xB05B, 0xB063, 0xB064 ]
     daq.fragment_receiver.generated_fragments_per_event: 10 #number of FEBs
 # first board in the chain
-    daq.fragment_receiver.ReaderID: 236
+    daq.fragment_receiver.ReaderID: 97
 
 # Whether or not turn on SiPM HV on each FEB
    daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true, true, true, true, true ]
@@ -27,9 +27,9 @@ daq.fragment_receiver.ethernet_port: "ens8f1"
 daq.metrics.graphite.namespace: "sbnd.crtflat01."
 
 
-daq.fragment_receiver.FEBConfigurationMAC236: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC236.charge_threshold: 350
-daq.fragment_receiver.FEBConfigurationMAC236.time_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC97: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC97.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC97.time_threshold: 350
 
 daq.fragment_receiver.FEBConfigurationMAC95: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC95.charge_threshold: 350
@@ -84,39 +84,39 @@ daq.fragment_receiver.FEBConfigurationMAC100.time_threshold: 350
 # "enable_preamp" - 1 is enabled, 0 is disabled
 #  
 ###############################
-daq.fragment_receiver.FEBConfigurationMAC236.channel_configuration: [
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 0
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 1
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 2
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 3
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 4
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 5
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 6
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 7
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 8
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 9
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 10
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 11
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 12
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 13
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 14
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 15
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 16
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 17
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 18
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 19
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 20
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 21
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 22
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 23
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 24
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 25
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 26
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 27
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 28
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 29
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 30
-[ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1]  # Channel 31
+daq.fragment_receiver.FEBConfigurationMAC97.channel_configuration: [
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 0
+[ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 1
+[ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 2
+[ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 3
+[ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 4
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 5
+[ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 6
+[ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 7
+[ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 8
+[ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 9
+[ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 10
+[ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 11
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 12
+[ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 13
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 14
+[ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 15
+[ 0, 0, 1, 138, 1, 35, 47, 0, 0, 1], # Channel 16
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 17
+[ 0, 0, 1, 161, 1, 35, 47, 0, 0, 1], # Channel 18
+[ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 19
+[ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 20
+[ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 21
+[ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 22
+[ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 23
+[ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 24
+[ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 25
+[ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 26
+[ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 27
+[ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 28
+[ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 29
+[ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 30
+[ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1]  # Channel 31
 ]
 
 daq.fragment_receiver.FEBConfigurationMAC95.channel_configuration: [

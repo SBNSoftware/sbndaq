@@ -29,7 +29,12 @@ getStatus "nil"
 #setdaqcomps.sh dummygenerator crtflatPULL
 #setdaqcomps.sh crtflat_nw
 #setdaqcomps.sh dummygenerator crtflat_nwPULL
-setdaqcomps.sh dummygenerator crtflat_eastPULL
+#setdaqcomps.sh dummygenerator crtflat_eastPULL
+#setdaqcomps.sh dummygenerator crtflat_westPULL
+#setdaqcomps.sh dummygenerator crtflat_westPULL crtflat_eastPULL
+#setdaqcomps.sh dummygenerator crtflat_single_board_testPULL
+#setdaqcomps.sh crtflat_single_board_test
+setdaqcomps.sh pmtx03 crtflat_westPULL crtflat_eastPULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

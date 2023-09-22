@@ -105,13 +105,13 @@ fragment_receiver: {
   metrics: {
 	brFile: {
 	  metricPluginType: "file"
-	  level: 3
+	  level_string: "1,2,11-20"
 	  fileName: "/daq/log/metrics/pmt03_metrics.log"
 	  uniquify: true
 	}
         redis_10s: {
           metricPluginType: "redis"
-          level: 3
+          level_string: "1,2,11-20"
           reporting_interval: 10.0
           redis_key_postfix: ":10s" 
           maxlen: 10000
@@ -120,7 +120,7 @@ fragment_receiver: {
         }
         redis_5m: {
           metricPluginType: "redis"
-          level: 3
+          level_string: "1,2,11-20"
           reporting_interval: 300.0
           redis_key_postfix: ":5m" 
           maxlen: 10000

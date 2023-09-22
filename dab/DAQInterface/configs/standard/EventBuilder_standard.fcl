@@ -32,7 +32,7 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
@@ -42,7 +42,7 @@ send_system_metrics: true
 send_process_metrics: true
 
 #    graphite: {
-#      level:10
+#      level_string: "1,2,11-20"
 #      metricPluginType: "graphite"
 #      reporting_interval: 10.0
 #      host:"192.168.191.18"

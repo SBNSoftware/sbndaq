@@ -237,14 +237,14 @@ daq:
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/br_%UID%_metrics.log"
       uniquify: true
     }
     graphite:{
       namespace: "icarus.icaruspmt00."
       host: "192.168.191.18"
-      level: 10
+      level_string: "1,2,11-20"
       metricPluginType: "graphite"
       port: 2003
       reporting_interval: 10
@@ -252,7 +252,7 @@ daq:
 
     # redis_10s: {
     #       metricPluginType: "redis"
-    #   level: 3
+    #   level_string: "1,2,11-20"
     #   reporting_interval: 10.0
     #   redis_key_postfix: ":10s" 
     #   maxlen: 10000
@@ -261,7 +261,7 @@ daq:
     # }
     # redis_testing: {
     #   metricPluginType: "redis"
-    #   level: 3
+    #   level_string: "1,2,11-20"
     #   reporting_interval: 30.0
     #   redis_key_postfix: ":testing"
     #   maxlen: 10000
@@ -270,7 +270,7 @@ daq:
     # }
     # redis_5m: {
     #   metricPluginType: "redis"
-    #   level: 3
+    #   level_string: "1,2,11-20"
     #   reporting_interval: 300.0
     #   redis_key_postfix: ":5m" 
     #   maxlen: 10000

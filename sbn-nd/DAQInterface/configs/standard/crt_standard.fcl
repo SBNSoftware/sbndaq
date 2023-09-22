@@ -82,7 +82,7 @@ daq: {
 metrics: {
 brFile: {
 metricPluginType: "file"
-level: 3
+level_string: "1,2,11-20"
 fileName: "/daq/log/metrics/crt_%UID%_metrics.log"
 uniquify: true
 }
@@ -91,7 +91,7 @@ send_process_metrics: true
 graphite:{
 namespace: "sbnd.crt00."
 host: "10.226.36.34"
-level: 10
+level_string: "1,2,11-20"
 metricPluginType: "graphite"
 port: 2003
 reporting_interval: 10

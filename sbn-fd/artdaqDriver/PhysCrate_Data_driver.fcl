@@ -45,7 +45,7 @@ fragment_receiver: {
 
    metrics:{
      verbosefile: {
-       level: 3
+       level_string: "1,2,11-20"
        metricPluginType: "file"
        fileMode: "Overwrite"
        fileName: "metrics.out"

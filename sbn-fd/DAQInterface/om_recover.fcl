@@ -117,7 +117,7 @@ physics:
       metrics: {
 
 #      graphite: {
-#        level:5
+#        level_string: "1,2,11-20"
 #       metricPluginType: "graphite"
 #       reporting_interval: 10.0
 #       host:"192.168.191.18"
@@ -125,7 +125,7 @@ physics:
 #       namespace:"icarus.om."
 #      }
         redis_metric_archive: {
-          level: 3
+          level_string: "1,2,11-20"
           metricPluginType: "redis"
           reporting_interval: 60.0 # 60s
           verbose: true

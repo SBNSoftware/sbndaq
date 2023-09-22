@@ -34,7 +34,7 @@ daq: {
   metrics: {
 	evbFile: {
 	  metricPluginType: "file"
-	  level: 3
+	  level_string: "1,2,11-20"
 	  fileName: "/home/nfs/artdaq/icarus_artdaq/metrics/eventbuilder/evb_%UID%_metrics.log"
 	  uniquify: true
 	}

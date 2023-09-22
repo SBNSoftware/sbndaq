@@ -316,7 +316,7 @@ brFile: {
 
 metricPluginType: "file" 
 
-level: 3 
+level_string: "1,2,11-20" 
 
 fileName: "/daq/log/metrics/br_%UID%_metrics.log" 
 
@@ -329,7 +329,7 @@ namespace: "icarus.icaruspmt00."
 
 host: "192.168.191.18" 
 
-level: 10 
+level_string: "1,2,11-20" 
 
 metricPluginType: "graphite" 
 

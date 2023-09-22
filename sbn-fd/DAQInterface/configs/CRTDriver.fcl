@@ -32,14 +32,14 @@ fragment_receiver: {
   metrics: {
     aggFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       #fileName: "/daq/log/metrics/bottom_metrics.log"
       fileName: "/home/nfs/icarus/DAQ_DevAreas/DAQ_12Dec2022_rhowell/bottom_metrics.log"
       uniquify: true
     }
     
 #    graphite: {
-#      level:5
+#      level_string: "1,2,11-20"
 #      metricPluginType: "graphite"
 #      reporting_interval: 10.0
 #      host:"192.168.191.18"

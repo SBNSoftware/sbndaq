@@ -90,7 +90,7 @@ metrics:
   brFile: 
   {
     metricPluginType: "file"
-    level: 3
+    level_string: "1,2,11-20"
     fileName: "/daq/log/metrics/gps_metrics.log"
     uniquify: true
   }

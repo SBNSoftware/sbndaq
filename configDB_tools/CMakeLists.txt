@@ -3,7 +3,7 @@
 #install_python(SCRIPTS markConfigActive.py markConfigInactive.py markOlderConfigsInactive.py
 #	       MODULES configDB_Utilities
 #)
-install_scripts(
+install_scripts(LIST
   ./markConfigActive.py
   ./markConfigInactive.py
   ./markOlderConfigsInactive.py

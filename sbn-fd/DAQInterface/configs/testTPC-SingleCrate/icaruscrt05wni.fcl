@@ -43,7 +43,7 @@ daq: {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level: 10
+      level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/crt05wni_%UID%_metrics.log"
       uniquify: true
     }
@@ -51,7 +51,7 @@ daq: {
     send_process_metrics: true
 
     graphite: {
-     level:10
+     level_string: "1,2,11-20"
      metricPluginType: "graphite"
      reporting_interval: 10.0
      host:"192.168.191.18"

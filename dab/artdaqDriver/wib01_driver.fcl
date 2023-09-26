@@ -155,7 +155,7 @@ fragment_receiver:
     #dim: 
     #{
     #  metricPluginType: dim 
-    #  level: 5 
+    #  level_string: "1,2,11-20" 
     #  reporting_interval: 5.0 
     #  Verbose: false 
     #  DNSPort: 2505 

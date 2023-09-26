@@ -34,7 +34,7 @@ brFile: {
 
 metricPluginType: "file" 
 
-level: 3 
+level_string: "1,2,11-20" 
 
 fileName: "/scratch/log/DummyGenerator_%UID%_metrics.log" 
 

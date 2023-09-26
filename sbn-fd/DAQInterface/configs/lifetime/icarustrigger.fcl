@@ -50,7 +50,7 @@ brFile: {
 
 metricPluginType: "file" 
 
-level: 3 
+level_string: "1,2,11-20" 
 
 fileName: "/scratch/log/br_%UID%_metrics.log" 
 
@@ -63,7 +63,7 @@ send_process_metrics: true
 
 graphite: {
 
-level: 10 
+level_string: "1,2,11-20" 
 
 metricPluginType: "graphite" 
 

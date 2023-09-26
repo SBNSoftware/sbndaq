@@ -291,7 +291,7 @@ daq:
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
@@ -302,7 +302,7 @@ daq:
     graphite: {
       namespace: "icarus.icaruspmt00."
       host: "192.168.191.31"
-      level: 10
+      level_string: "1,2,11-20"
       metricPluginType: "graphite"
       port: 2003
       reporting_interval: 10

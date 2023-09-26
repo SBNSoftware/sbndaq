@@ -31,13 +31,13 @@ daq: {
   metrics: {
     aggFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/disp00_metrics.log"
       uniquify: true
     }
     
 #    graphite: {
-#      level:5
+#      level_string: "1,2,11-20"
 #      metricPluginType: "graphite"
 #      reporting_interval: 10.0
 #      host:"192.168.191.18"

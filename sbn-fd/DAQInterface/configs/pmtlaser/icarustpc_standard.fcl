@@ -61,7 +61,7 @@ fragment_receiver: {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/scratch/log/br_%UID%_metrics.log"
       uniquify: true
     }
@@ -69,7 +69,7 @@ send_system_metrics: true
 send_process_metrics: true
 
     graphite: {
-     level:10
+     level_string: "1,2,11-20"
      metricPluginType: "graphite"
      reporting_interval: 10.0
      host:"192.168.191.18"
@@ -79,7 +79,7 @@ send_process_metrics: true
 
 #    redis_10s: {
 #          metricPluginType: "redis"
-#      level: 3
+#      level_string: "1,2,11-20"
 #      reporting_interval: 10.0
 #      redis_key_postfix: ":10s" 
 #      maxlen: 10000
@@ -88,7 +88,7 @@ send_process_metrics: true
 #    }
 #    redis_testing: {
 #      metricPluginType: "redis"
-#      level: 3
+#      level_string: "1,2,11-20"
 #      reporting_interval: 30.0
 #      redis_key_postfix: ":testing"
 #      maxlen: 10000
@@ -97,7 +97,7 @@ send_process_metrics: true
 #    }
 #    redis_5m: {
 #      metricPluginType: "redis"
-#      level: 3
+#      level_string: "1,2,11-20"
 #      reporting_interval: 300.0
 #      redis_key_postfix: ":5m" 
 #      maxlen: 10000

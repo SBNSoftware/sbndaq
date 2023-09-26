@@ -345,7 +345,7 @@ fragment_receiver: {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level: 3
+      level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/ptb02_metrics.log"
       uniquify: true
     }

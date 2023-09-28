@@ -95,7 +95,7 @@ femb_config_default:
 
 
  # Calibration pulser amplitude 
- pls_dac_val: 25 # 6 bits in internal mode, 5 bits in external
+ pls_dac_val: 5 # 6 bits in internal mode, 5 bits in external
 
 
  # Calibration pulser phase
@@ -203,7 +203,8 @@ daq:
       partition_number: 0
 
       # if true, power up and configure FEMBs, else power down and don't configure
-      enable_FEMBs: [true,true,true,true] # list of 4 bools
+      #enable_FEMBs: [true,true,true,true] # list of 4 bools
+      enable_FEMBs: [true,true,false,false] # list of 4 bools
 
       # FEMB configuration documents
       FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations

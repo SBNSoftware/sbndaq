@@ -2,7 +2,8 @@
 
 #daq.fragment_receiver.WIB.fragment_id: 411 
 #daq.fragment_receiver.WIB.board_id: 11 
-daq.fragment_receiver.WIB.address: "192.168.230.50" 
+#daq.fragment_receiver.WIB.address: "192.168.230.50" 
+daq.fragment_receiver.WIB.address: "10.226.34.16"
 daq.fragment_receiver.WIB.FEMBs[0].FEMB_channel_map: 0
 daq.fragment_receiver.WIB.FEMBs[1].FEMB_channel_map: 0
 daq.fragment_receiver.WIB.FEMBs[2].FEMB_channel_map: 0

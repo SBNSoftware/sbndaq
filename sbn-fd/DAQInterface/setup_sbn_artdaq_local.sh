@@ -103,3 +103,16 @@ tmodeM 1
 # tonM 15 -n CommandableFragmentGenerator
 
 
+if [[ "$(hostname -s)" =~ icarus-crt11 ]]; then
+    echo Checking if the boardreader is running. If not, attempting to kill the Bottom CRT backend
+    if ! /usr/sbin/pidof boardreader ; then
+        if /usr/sbin/pidof bottomCRTreadout ; then
+            echo Attempting to kill the backend
+            /usr/bin/killall bottomCRTreadout
+        else
+            echo Backend not running, no need to kill it
+        fi
+    else
+        echo Boardreader is running, refraining from killing the backend
+    fi
+fi

@@ -92,7 +92,12 @@ femb_config_default:
 
  # Calibration pulser mode
  pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
-
+ 
+ # Confirm channel mapping by testing each channel
+ chnl_mapping_mode: false
+ 
+ # Channel number to be tested
+ test_chnl_number: 0
 
  # Calibration pulser amplitude 
  pls_dac_val: 5 # 6 bits in internal mode, 5 bits in external
@@ -143,7 +148,7 @@ femb_config_default:
  # Bit shifts for ADC data of FEs
  bit_shtfs_for_ADC_data_of_FEs: [0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000]
  
- turn_off_femb: false
+ turn_off_femb: true
  
  use_old_femb_config: false
 }
@@ -169,7 +174,9 @@ daq:
     fragment_id: 400 
     board_id: 400 
     destinations: {}
-    sends_no_fragments: true 
+    sends_no_fragments: true
+    semaphore_acquire_timeout_ms: 20000
+    calibration_mode: false 
     #generated_fragments_per_event: 0
 
     # WIB configuration
@@ -203,8 +210,7 @@ daq:
       partition_number: 0
 
       # if true, power up and configure FEMBs, else power down and don't configure
-      #enable_FEMBs: [true,true,true,true] # list of 4 bools
-      enable_FEMBs: [true,true,false,false] # list of 4 bools
+      enable_FEMBs: [true,true,true,true] # list of 4 bools
 
       # FEMB configuration documents
       FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations
@@ -239,7 +245,7 @@ daq:
       
       run_wib_fake_data_mode: false
       
-      run_femb_scan: false
+      run_femb_scan: true
       
       wib_fake_data_mode: 2 # 1 saw-tooth, 2 channel-id
       

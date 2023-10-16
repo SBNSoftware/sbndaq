@@ -1,21 +1,24 @@
-#include "ptb01_offbeam_crt.fcl"
+#include "ptb01.fcl"
+#include "ptbmk2_nd_pds_beam.fcl"
+daq.fragment_receiver.board_config: @local::board_config
+
 
 ## Pull mode parameters
-    daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
-    daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
-    daq.fragment_receiver.request_port: 3001   # UDP request port
-    daq.fragment_receiver.request_mode: window # pull mode buffer or window
+    daq.fragment_receiver.request_address:        "227.128.11.129" ## -- multicast request address
+    daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" ## -- should match the private net
+    daq.fragment_receiver.request_port: 3001   ## UDP request port
+    daq.fragment_receiver.request_mode: window ## pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width:  50000000 #400ms window
-    daq.fragment_receiver.request_window_offset: 25000000 #200 ms early offset
+    daq.fragment_receiver.request_window_width:   800000000  ##800ms and need to tune later(50 ms window --> 15Hz ,10ms window
+    daq.fragment_receiver.request_window_offset:  300000000  ##300ms and need to tune( 16ms early offset, 3 ms early offset ~1/3rd of width
 
-    daq.fragment_receiver.request_windows_are_unique: false
-    #daq.fragment_receiver.request_windows_are_unique: true
+    daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true
-    daq.fragment_receiver.stale_request_timeout: 2000000000
+    daq.fragment_receiver.stale_request_timeout: 3000000000 ## -- 3s
     daq.fragment_receiver.receive_requests: true
-    daq.fragment_receiver.window_close_timeout_us: 400000000
+    daq.fragment_receiver.window_close_timeout_us: 400000000 ## -- 40s
     daq.fragment_receiver.circular_buffer_mode: true
+
+    daq.fragment_receiver.data_buffer_depth_fragments: 2000
+    daq.fragment_receiver.data_buffer_depth_mb : 200 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
 ##  end pull mode parameters
-
-

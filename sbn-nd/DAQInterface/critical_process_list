@@ -25,6 +25,16 @@ crt2x2dwnstr
 crt2x2upstr
 crt2x2dwnstrPULL
 crt2x2upstrPULL
+crtNorthWallEastPULL
+crtNorthWallWestPULL
+pmt01
+pmt02
+pmt03
+pmt04
+pmt05
+pmt06
+pmt07
+pmt08
 pmtx01
 pmtx02
 pmtx03
@@ -34,5 +44,6 @@ EventBuilder2
 EventBuilder3
 EventBuilder3_CRTmetric
 EventBuilder4
+EventBuilder4_CRTmetric
 component01
 component02

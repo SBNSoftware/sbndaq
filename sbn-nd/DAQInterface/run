@@ -23,10 +23,11 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 ptb01PULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
-##setdaqcomps.sh pmtx03 crt01PULL spectdc
-#setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
+#setdaqcomps.sh pmtx03 crt01PULL spectdc
+#setdaqcomps.sh dummygenerator crt_nwallPULL
+#setdaqcomps.sh ptb01PULL pmt01 spectdc  crtNorthWallWestPULL crtNorthWallEastPULL 
+setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 spectdc  
 
-setdaqcomps.sh tpc01 ntb01
 
 send_transition.sh boot boot.txt
 getStatus "booting"

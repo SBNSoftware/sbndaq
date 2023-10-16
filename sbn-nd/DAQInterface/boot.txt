@@ -1,19 +1,48 @@
 DAQ setup script: $SETUP_FILE
 
-PMT host: sbnd-evb01-daq
+PMT host: sbnd-evb03-daq
 
 # debug level can range from 0 to 3 (increasing order of verbosity)
 debug level: 4
 #manage processes: false
 Subsystem id: 1
 
-EventBuilder host: sbnd-evb01-daq
-EventBuilder label: EventBuilder1
+EventBuilder host: sbnd-evb03-daq
+EventBuilder label: EventBuilder3
 
 #EventBuilder label: EventBuilder3_CRTmetric
 
-Dispatcher host: sbnd-evb01-daq
-Dispatcher label: Dispatcher1
+Dispatcher host: sbnd-evb03-daq
+Dispatcher label: Dispatcher3
 Dispatcher port: 6021
+#########################################################
+Need to check crt works not on evb04
+From merging:
+#########################################################
+#DAQ setup script: $SETUP_FILE
 
+#PMT host: sbnd-evb01-daq
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+#debug level: 4
+#manage processes: false
+#Subsystem id: 1
+
+#EventBuilder host: sbnd-evb01-daq
+#EventBuilder label: EventBuilder1
+
+#EventBuilder host: sbnd-evb04-daq
+#EventBuilder label: EventBuilder4
+#EventBuilder label: EventBuilder4_CRTmetric
+
+#EventBuilder label: EventBuilder3_CRTmetric
+#EventBuilder label: EventBuilder4_CRTmetric
+
+#Dispatcher host: sbnd-evb01-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6021
+
+#Dispatcher host: sbnd-evb04-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6020
 

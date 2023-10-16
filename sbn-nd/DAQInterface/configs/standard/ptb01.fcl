@@ -94,7 +94,7 @@ fragment_receiver: {
      "misc":{
        "randomtrigger_1":{
          "description":"Random trigger that can optionally be set to fire only during beam spill",
-         "enable":false,
+         "enable":true,
          "fixed_freq":true,
          "beam_mode":false,
          "period":25000000,
@@ -238,7 +238,7 @@ fragment_receiver: {
        "crt":{
          "channel_mask": "0x3FFF",
          "pixelate": false,
-         "reshape_length" : 50,
+         "reshape_length" : 12,
          "delays":[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
          "triggers": [
            { "id":"LLT_11",
@@ -392,6 +392,23 @@ fragment_receiver: {
 }                 
 
 ## -- add metrics stuff here:
-
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/ptb_%UID%_metrics.log"
+      uniquify: true
+    }
+    send_system_metrics: true
+    send_process_metrics: true
+    graphite:{
+      namespace: "sbnd.ptb."
+      host: "10.226.36.34"
+      level_string: "1,2,11-20"
+      metricPluginType: "graphite"
+      port: 2003
+      reporting_interval: 10
+    }
+  }
 }
 

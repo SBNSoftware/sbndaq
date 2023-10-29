@@ -13,7 +13,7 @@ daq: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 30 #100
+    buffer_count: 25 #30 #100
     max_incomplete_events: 15 #50 # Same as boardreader sync interval
 
     verbose: true

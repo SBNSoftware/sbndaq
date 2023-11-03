@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_08_03"
+SBNDAQ_VERSION="v1_08_04"
 SBNDAQ_QUALS="e20:prof:s112"
 DAQINTERFACE_VERSION="v3_12_05"
 
@@ -35,7 +35,7 @@ export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_08_03 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_04 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

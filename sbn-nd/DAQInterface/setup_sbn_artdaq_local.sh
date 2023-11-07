@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_08_04"
-SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_05"
+SBNDAQ_VERSION="v1_08_05"
+SBNDAQ_QUALS="e20:prof:s120a"
+DAQINTERFACE_VERSION="v3_12_06"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-#[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
+#[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s120a ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s120a
 
 setup mrb v6_08_01
 
@@ -21,7 +21,7 @@ LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
 #if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
 #  unset LOCAL_INSTALLED_PRODUCTS
-#  SBNDAQ_QUALS="e20:debug:s112"
+#  SBNDAQ_QUALS="e20:debug:s120a"
 #fi
 #
 if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
@@ -33,7 +33,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_05 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_12_06 -q ${SBNDAQ_QUALS}
 setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"
@@ -41,7 +41,7 @@ export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_08_04 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_05 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 

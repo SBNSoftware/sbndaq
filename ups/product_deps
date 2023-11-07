@@ -33,7 +33,7 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version      optional
-sbndaq_artdaq        v1_08_03
+sbndaq_artdaq        v1_08_04
 cetmodules           v3_21_02     -       only_for_build
 end_product_list
 
@@ -52,6 +52,12 @@ e20:debug:icarus:s117    e20:debug:icarus:s117
 e20:prof:icarus:s117     e20:prof:icarus:s117
 e20:debug:sbnd:s117      e20:debug:sbnd:s117
 e20:prof:sbnd:s117       e20:prof:sbnd:s117
+e20:debug:s120a           e20:debug:s120a
+e20:prof:s120a            e20:prof:s120a
+e20:debug:icarus:s120a    e20:debug:icarus:s120a
+e20:prof:icarus:s120a     e20:prof:icarus:s120a
+e20:debug:sbnd:s120a      e20:debug:sbnd:s120a
+e20:prof:sbnd:s120a       e20:prof:sbnd:s120a
 end_qualifier_list
 
 table_fragment_begin

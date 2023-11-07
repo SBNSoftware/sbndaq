@@ -26,7 +26,11 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 crt01PULL spectdc
 #setdaqcomps.sh dummygenerator crt_nwallPULL
 #setdaqcomps.sh ptb01PULL pmt01 spectdc  crtNorthWallWestPULL crtNorthWallEastPULL 
-setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 spectdc  
+#setdaqcomps.sh ptb01PULL pmt01 spectdc crtNorthWallEastPULLcorner
+#setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09PUSH spectdc  
+#setdaqcomps.sh ptb01PULL pmt01PUSH pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 spectdc  
+#setdaqcomps.sh ptb01PULL pmt01 pmt09PUSH spectdc  
+setdaqcomps.sh ptb01PULL pmt01PUSH pmt02 spectdc  
 
 
 send_transition.sh boot boot.txt
@@ -39,7 +43,8 @@ do
 done
 
 #send_transition.sh config $2
-send_transition.sh config standard
+#send_transition.sh config crt
+send_transition.sh config pds_beam
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

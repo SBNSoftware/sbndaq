@@ -197,22 +197,22 @@ daq:
     analogMode:           0
     
 
-    channelPedestal0:  32768
+    channelPedestal0:  6500
     channelPedestal1:  6500
     channelPedestal2:  6500
-    channelPedestal3:  32768
-    channelPedestal4:  32768
-    channelPedestal5:  32768
-    channelPedestal6:  32768
-    channelPedestal7:  32768
-    channelPedestal8:  32768
-    channelPedestal9:  32768
-    channelPedestal10: 32768
-    channelPedestal11: 32768
-    channelPedestal12: 32768
-    channelPedestal13: 32768
-    channelPedestal14: 32768
-    channelPedestal15: 32768
+    channelPedestal3:  6500
+    channelPedestal4:  6500
+    channelPedestal5:  6500
+    channelPedestal6:  6500
+    channelPedestal7:  6500
+    channelPedestal8:  6500
+    channelPedestal9:  6500
+    channelPedestal10: 6500
+    channelPedestal11: 6500
+    channelPedestal12: 6500
+    channelPedestal13: 6500
+    channelPedestal14: 6500
+    channelPedestal15: 6500
 
 
     channelEnable0:    true
@@ -253,8 +253,8 @@ daq:
     dynamicRange: 0 
 
     triggerThreshold0:  0
-    triggerThreshold1:  13100
-    triggerThreshold2:  13100
+    triggerThreshold1:  0
+    triggerThreshold2:  0
     triggerThreshold3:  0
     triggerThreshold4:  0
     triggerThreshold5:  0
@@ -267,7 +267,7 @@ daq:
     triggerThreshold12: 0
     triggerThreshold13: 0
     triggerThreshold14: 0
-    triggerThreshold15: 0
+    triggerThreshold15: 13100
 
     CircularBufferSize: 500e6
 

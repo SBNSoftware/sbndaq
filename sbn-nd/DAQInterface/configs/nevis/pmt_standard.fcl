@@ -1,0 +1,334 @@
+daq: 
+{
+  fragment_receiver: 
+  {
+
+    generator:   CAENV1730Readout
+    fragment_type: CAENV1730
+    max_fragment_size_bytes: 1000000
+    GetNextFragmentBunchSize: 20
+
+     ## Pull mode parameters - set board by board
+     ## request_address:        "227.128.11.129" # -- multicast request address
+     ## multicast_interface_ip: "10.226.36.0" # -- should match the private net
+     ## request_port: 3001   # UDP request port
+     ## request_mode: window # pull mode
+
+     ## request_window_width:  100000000 #100ms window 
+     ## request_window_offset:  30000000 #30ms offset
+
+     ## request_windows_are_unique: true #true
+     ## separate_data_thread: true
+     ## stale_request_timeout:   3000000000 ## -- 3s
+     ## receive_requests: false
+     ## window_close_timeout_us: 400000000 ## -- 40s
+     ## circular_buffer_mode: true
+    
+     ## data_buffer_depth_fragments: 200
+     ## data_buffer_depth_mb : 200 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
+
+     ## missing_request_window_timeout_us: 400000000 #400us
+     ## stale_fragment_timeout: 10000000000 #10s #3000000000 #3s
+     ## buffer_mode_keep_latest: true
+     ## end pull mode parameters
+
+    fragment_id: 0
+    board_id:    1
+    
+    Verbosity: 1
+    SWTrigger: false
+
+    # begin run ADC calibration
+    CalibrateOnConfig: true
+    
+    # read and write some calibration parameters
+    AdcCalibration: false
+
+    #read adn write some calibration parameters
+    AdcCalibration: false
+
+    # Turn on or off automatic mid-run temperature correction
+    LockTempCalibration: false
+
+    # Set up max temperature board can have before some messages appear
+    maxTempCelsius: 75
+
+    # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
+    # SBND: keep this parameter = 0
+    ModeLVDS: 0
+
+    # new fcl parameters added by ICARUS, copied here.  All the way thru ChargePedstalBitCh1
+    # Aiwu added here to set LVDS logic values: 3: logics OR, 0: logic AND; (not so clear about 1 and 2)
+    # Exclusive for ICARUS
+     LVDSLogicValueG1: 3
+     LVDSLogicValueG2: 3
+     LVDSLogicValueG3: 3
+     LVDSLogicValueG4: 3
+     LVDSLogicValueG5: 3
+     LVDSLogicValueG6: 3
+     LVDSLogicValueG7: 3
+     LVDSLogicValueG8: 3
+     
+     # Aiwu added here to set LVDS output width: N*8ns will be the width!
+     # Exclusive for ICARUS
+     LVDSOutWidthC1: 20
+     LVDSOutWidthC2: 20
+     LVDSOutWidthC3: 20
+     LVDSOutWidthC4: 20
+     LVDSOutWidthC5: 20
+     LVDSOutWidthC6: 20
+     LVDSOutWidthC7: 20
+     LVDSOutWidthC8: 20
+     LVDSOutWidthC9: 20
+     LVDSOutWidthC10: 20
+     LVDSOutWidthC11: 20
+     LVDSOutWidthC12: 20
+     LVDSOutWidthC13: 20
+     LVDSOutWidthC14: 20
+     LVDSOutWidthC15: 20
+     LVDSOutWidthC16: 20
+    
+     # Aiwu added here: self trigger plority, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
+     # Exclusive for ICARUS
+     SelfTrigBit: 16
+
+
+    # selfTrgMode: channel auto trigger settings. Since in x730 boards even and odd 
+    # channels are paired, their 'SelfTriggerMode' value will be equal to the 
+    # OR combination of the pair, unless one of the two channels of
+    # the pair is disabled (by 'SelfTriggerMask' parameter). 
+    # If so, the other one behaves as usual.
+    # SelfTriggerMode 0:DISABLED 1:ACQ_ONLY 2:TRGOUT_ONLY 3:ACQ_AND_TRGOUT
+    SelfTriggerMode: 2 
+
+    # SelfTriggerMask: the channel mask (16bit-number) you will enable the 'SelfTriggerMode'
+    # Each bit enables/disables one channel
+    # 65535: all channels are enabled
+    SelfTriggerMask: 65535
+
+    # Majority mode logic
+    # For level m, the trigger fires when at least m+1 of the enabled trigger pairs fire
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityLevel: 0
+
+    # Sets the time window for the majority coincidence in units of the Trigger Clock (8 ns) 
+    # 'majorityLevel' must be set different from 0.
+    # min: 0, max: 15
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityCoincidenceWindow: 0
+    
+    # Set self trigger logic
+    # triggerLogic 0: AND, 1: ONLYA, 2: ONLYB, 3:OR
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 3
+    triggerLogic: 3
+
+    allowTriggerOverlap: false
+
+    #Things that I seemed to need when running in the other northwall area
+  majorityLevel:0                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                              
+    # Sets the time window for the majority coincidence in units of the Trigger Clock (8 ns)                                                                                                                                                  
+    # 'majorityLevel' must be set different from 0.
+    # min: 0, max: 15
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    majorityCoincidenceWindow: 0                                                                                                                                                                                                              
+                                                                                                                                                                                                                                              
+    # Set self trigger logic
+    # triggerLogic 0: AND, 1: ONLYA, 2: ONLYB, 3:OR
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 3
+    triggerLogic: 3                                 
+
+    link: 0
+    enableReadout: 1
+    
+    boardId: 0
+    recordLength:         1200
+    maxEventsPerTransfer: 1
+    runSyncMode:          0
+   
+    outputSignalMode:     0    
+    usePedestals:         false
+    dacValue:             32768
+    
+    # ioLevel: 0=NIM, 1=TTL
+    ioLevel:              1
+    nChannels:            16
+    
+    # extTrgMode decides whether the external trigger should only be used to generate the
+    # acquisition trigger, only to generate the trigger output or both
+    # extTrgMode: 0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+    extTrgMode:          1 
+    
+    # swTrgMode decides whether the trigger software should only be used to generate the 
+    # acquisition trigger, only to generate the trigger output or both. 
+    # you should set 'SWTrigger: true' to enable software triggers
+    # swTrgMode:  0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+    swTrgMode:            0
+    
+    # acqMode: 0=Software Controlled, 1=Front Panel S_IN
+    acqMode:              0
+    
+    # triggerPolarity: 0=positive (trigger on rising edge), 1= negative (trigger on falling edge)
+    # Exclusive for SBND
+    # ICARUS: (should not interfere but) keep this parameter = 0
+    triggerPolarity: 1
+    
+       
+    debugLevel:           7
+    postPercent:          50
+    eventsPerInterrupt:   1
+    IRQTimeoutMS:         500
+    eventCounterWarning:  1       
+    memoryAlmostFull:     2    
+    
+    readoutMode:          0
+    testPattern:          0
+    irqWaitTime:          1 
+    
+    # SBND: MTC/A input
+    # See CAEN User Manual UM2792, page 51
+    # trigger majority mode: 0; test mode (saw-tooth signal with 1V amplitude): 1 
+    # buffer ocuppancy mode: 3; voltage level mode: 4 
+    analogMode:           0
+    
+
+    channelPedestal0:  6500
+    channelPedestal1:  6500
+    channelPedestal2:  6500
+    channelPedestal3:  6500
+    channelPedestal4:  6500
+    channelPedestal5:  6500
+    channelPedestal6:  6500
+    channelPedestal7:  6500
+    channelPedestal8:  6500
+    channelPedestal9:  6500
+    channelPedestal10: 6500
+    channelPedestal11: 6500
+    channelPedestal12: 6500
+    channelPedestal13: 6500
+    channelPedestal14: 6500
+    channelPedestal15: 6500
+
+
+    channelEnable0:    true
+    channelEnable1:    true
+    channelEnable2:    true
+    channelEnable3:    true
+    channelEnable4:    true
+    channelEnable5:    true
+    channelEnable6:    true
+    channelEnable7:    true
+    channelEnable8:    true
+    channelEnable9:    true
+    channelEnable10:   true
+    channelEnable11:   true
+    channelEnable12:   true
+    channelEnable13:   true
+    channelEnable14:   true
+    channelEnable15:   true
+
+    # Trigger pulse width for TRG_OUT and MON outputs
+    # Width will be (triggerPulseWidth)*8ns
+    # Exclusive for SBND
+    triggerPulseWidth: 5
+    
+    BoardChainNumber: 0
+    GetNextSleep: 10
+    InterruptEnable: 1
+    
+    InterruptLevel: 0
+    InterruptStatusID: 0
+    InterruptEventNumber: 1
+
+    ## Does not exist anymore in the BR 
+    ## CombineReadoutWindows: false
+
+    # 0 = 2 V dynamic range, 1 = 0.5 V 
+    # register 0x8028
+    dynamicRange: 0 
+
+    triggerThreshold0:  0
+    triggerThreshold1:  13100
+    triggerThreshold2:  13100
+    triggerThreshold3:  0
+    triggerThreshold4:  0
+    triggerThreshold5:  0
+    triggerThreshold6:  0
+    triggerThreshold7:  0
+    triggerThreshold8:  0
+    triggerThreshold9:  0
+    triggerThreshold10: 0
+    triggerThreshold11: 0
+    triggerThreshold12: 0
+    triggerThreshold13: 0
+    triggerThreshold14: 0
+    triggerThreshold15: 0
+
+    CircularBufferSize: 500e6
+
+    # UseTimeTagForTimeStamp: false
+    UseTimeTagForTimeStamp: true
+    # added just because it's in the ICARUS config file
+    TimeOffsetNanoSec: 1200
+    
+    destinations: { }
+
+    routing_table_config: {
+      use_routing_master: false 
+    }
+
+  }  
+
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/pmtx00_metrics.log"
+      uniquify: true
+    }
+    send_system_metrics: true
+    send_process_metrics: true
+		      graphite:{
+	namespace: "sbnd.pmt00."
+	   host: "10.226.36.34"
+      level: 10
+       metricPluginType: "graphite"
+		  port: 2003
+      reporting_interval: 10
+		    }
+    # redis_10s: {
+    #       metricPluginType: "redis"
+    #   level: 3
+    #   reporting_interval: 10.0
+    #   redis_key_postfix: ":10s" 
+    #   maxlen: 10000
+    #   redis_key_prefix: "DABBoardReader:pmtx01:"
+    #   redis_passfile: "/var/adm/krb5/redis_password"
+    # }
+    # redis_testing: {
+
+    #   metricPluginType: "redis"
+    #   level: 3
+    #   reporting_interval: 30.0
+    #   redis_key_postfix: ":testing"
+    #   maxlen: 10000
+    #   redis_key_prefix: "DABBoardReader:pmtx01:"
+    #   redis_passfile: "/var/adm/krb5/redis_password"
+    # }
+    # redis_5m: {
+    #   metricPluginType: "redis"
+    #   level: 3
+    #   reporting_interval: 300.0
+    #   redis_key_postfix: ":5m" 
+    #   maxlen: 10000
+    #   redis_key_prefix: "DABBoardReader:pmtx01:"
+    #   redis_passfile: "/var/adm/krb5/redis_password"
+    # }
+  }
+}

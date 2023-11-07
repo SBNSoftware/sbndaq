@@ -22,6 +22,7 @@ crt01 sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIB
 crt01PULL sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtNorthWallWestPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtNorthWallEastPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtNorthWallEastPULLcorner sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crt02 sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crttest sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crttestPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -34,6 +35,7 @@ pmtx02 sbnd-pds03-daq -1 1 0-15
 pmtx03 sbnd-pds03-daq -1 1 0-15
 pmtx04 sbnd-pds01-daq -1 1 0-15
 pmt01 sbnd-pds01-daq -1 1 0-15 
+pmt01PUSH sbnd-pds01-daq -1 1 0-15 
 pmt02 sbnd-pds01-daq -1 1 0-15 
 pmt03 sbnd-pds01-daq -1 1 0-15
 pmt04 sbnd-pds01-daq -1 1 0-15
@@ -41,3 +43,4 @@ pmt05 sbnd-pds02-daq -1 1 0-15
 pmt06 sbnd-pds02-daq -1 1 0-15 
 pmt07 sbnd-pds02-daq -1 1 0-15
 pmt08 sbnd-pds02-daq -1 1 0-15
+pmt09PUSH sbnd-pds05-daq -1 1 0-15

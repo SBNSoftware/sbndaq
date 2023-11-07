@@ -5,7 +5,7 @@ PRODUCTS=${PRODUCTS:-'/cvmfs/fermilab.opensciencegrid.org/products/artdaq:/cvmfs
 #configure variables
 working_dir="${WORKSPACE:-$(pwd)}"
 selected_build_config=${1:-${BUILDCONFIG:-"testing"}}
-qual_set="${2:-${QUAL:-'s112:e20'}}"
+qual_set="${2:-${QUAL:-'s120a:e20'}}"
 build_type="${3:-${BUILDTYPE:-'prof'}}"
 PROJECT_SOURCE_GIT_PREFIX="${4:-${PROJECT_SOURCE_GIT_PREFIX:-'https://github.com/sbnsoftware'}}"
 export PROJECT_SOURCE_GIT_PREFIX

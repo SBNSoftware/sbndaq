@@ -9,7 +9,7 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
 SBNDAQ_VERSION="v1_08_05"
 SBNDAQ_QUAL1="e20"
 SBNDAQ_QUAL2="prof"
-SBNDAQ_QUAL3="s112"
+SBNDAQ_QUAL3="s120a"
 
 # your own local products directory:
 LOCAL_PRODUCTS_TRY="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/../../../../localProducts_sbndaq_${SBNDAQ_VERSION}_${SBNDAQ_QUAL1}_${SBNDAQ_QUAL2}_${SBNDAQ_QUAL3}"
@@ -34,7 +34,7 @@ setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_07_00
+setup artdaq_daqinterface v3_12_06
 
 # reconfigure locale
 export LANG='en_US.UTF-8'

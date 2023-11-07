@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SBNDAQ_VERSION="v1_08_05"
-SBNDAQ_QUALS="e20:prof:s112"
+SBNDAQ_QUALS="e20:prof:s120a"
 DAQINTERFACE_VERSION="v3_12_06"
 
 unset PRODUCTS

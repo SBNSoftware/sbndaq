@@ -32,7 +32,7 @@ ntb_pciecard : {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level: 3 #level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/ntb_metrics.log"
       uniquify: true
     }

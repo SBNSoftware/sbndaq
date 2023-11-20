@@ -16,11 +16,11 @@ daq: {
      multicast_interface_ip: "10.226.36.0" # -- should match the private net
      request_port: 3001   # UDP request port
      request_mode: window # pull mode
-     request_window_width:  20000000 #5ms window 
-     request_window_offset: 10000000 #2.5ms offset
-     request_windows_are_unique: false #true
-     stale_request_timeout:   3000000
-     window_close_timeout_us: 1500000 #1.5s
+     request_window_width:   3000000 #3ms window 
+     request_window_offset:  1500000 #1.5ms offset
+     request_windows_are_unique: true #true
+     stale_request_timeout:   3000000000 ## -- 3s
+     window_close_timeout_us: 400000000 ## -- 40s
      buffer_mode_keep_latest: true
      circular_buffer_mode: false
      missing_request_window_timeout_us: 2000000 #2s
@@ -42,7 +42,7 @@ daq: {
          time_adjustment:{
            make_adjustment:true
            add_leap_seconds:37
-           next_leap_second_tai:1672531199
+           next_leap_second_tai:1704067199 ##31st December 2023
          }
          calibration_data:none
          polltime_ms: 10
@@ -56,7 +56,7 @@ daq: {
              name:crtt0
              enabled: true
              time_offset_ps: 0
-             monitor_only: true
+             monitor_only: false
              terminated: true },
            { id : 1
              name:crtt1
@@ -80,7 +80,7 @@ daq: {
              name:empty
              enabled: true
              time_offset_ps: 0
-             monitor_only: true
+             monitor_only: false
              terminated: true }
          ]
        }

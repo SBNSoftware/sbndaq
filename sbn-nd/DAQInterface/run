@@ -23,10 +23,12 @@ getStatus "nil"
 #setdaqcomps.sh pmtx03 ptb01PULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
 #setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
-##setdaqcomps.sh pmtx03 crt01PULL spectdc
-#setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
-
-setdaqcomps.sh tpc01 ntb01
+#setdaqcomps.sh pmtx03 crt01PULL spectdc
+#setdaqcomps.sh spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08
+#setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08
+#setdaqcomps.sh pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 ptb01PULL spectdc
+setdaqcomps.sh pmt01 pmt05 spectdc ptb01PULL
+#setdaqcomps.sh ptb01PULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

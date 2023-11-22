@@ -267,7 +267,7 @@ daq:
     triggerThreshold12: 0
     triggerThreshold13: 0
     triggerThreshold14: 0
-    triggerThreshold15: 15500
+    triggerThreshold15: 15300
 
     CircularBufferSize: 500e6
 

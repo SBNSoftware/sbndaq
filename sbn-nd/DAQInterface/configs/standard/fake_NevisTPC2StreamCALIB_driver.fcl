@@ -25,6 +25,7 @@ fragment_receiver: {
   DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
   GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
+  GPSZMQPortNTB: 11212
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
 

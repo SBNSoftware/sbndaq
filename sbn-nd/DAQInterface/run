@@ -31,7 +31,7 @@ getStatus "nil"
 #setdaqcomps.sh ptb01PULL pmt01PUSH pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 spectdc  
 #setdaqcomps.sh ptb01PULL pmt01 pmt09PUSH spectdc  
 setdaqcomps.sh ptb01PULL pmt01PUSH pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 spectdc  
-#setdaqcomps.sh ptb01PULL pmt01PUSH pmt02 pmt04 spectdc  
+#setdaqcomps.sh ptb01PULL pmt01PUSH spectdc  
 #setdaqcomps.sh ptb01PUSH pmt01 spectdc  
 
 

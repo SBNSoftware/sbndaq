@@ -212,7 +212,7 @@ daq:
     channelPedestal12: 6500
     channelPedestal13: 6500
     channelPedestal14: 6500
-    channelPedestal15: 6500
+    channelPedestal15: 32767
 
 
     channelEnable0:    true
@@ -267,14 +267,14 @@ daq:
     triggerThreshold12: 0
     triggerThreshold13: 0
     triggerThreshold14: 0
-    triggerThreshold15: 15300
+    triggerThreshold15: 9000
 
     CircularBufferSize: 500e6
 
     # UseTimeTagForTimeStamp: false
     UseTimeTagForTimeStamp: true
     # added just because it's in the ICARUS config file
-    TimeOffsetNanoSec: 1200
+    TimeOffsetNanoSec: 0
     
     destinations: { }
 

@@ -52,18 +52,18 @@ board_config : '{
         "period"       : "0x3",
         "duty"         : "0x3",
         "early_warning_window":{
-          "use_count": false,
+          "use_count": true,
           "beam_signal_mask": "0x2",
-          "window_length": "0x124F8"
+          "window_length": "0x14F5A"
         },
         "pre_arrival_window":{
-          "use_count": true,
-          "beam_signal_mask": "0x4",
-          "window_length": "0x410A"
+          "use_count": false,
+          "beam_signal_mask": "0x0",
+          "window_length": "0x124F8"
         },
         "beam_acceptance_window":{
           "use_count": true,
-          "beam_signal_mask": "0x0",
+          "beam_signal_mask": "0x4",
           "window_length": "0x96"
         },
         "post_arrival_window":{
@@ -103,7 +103,7 @@ board_config : '{
           "prescale" : "0x1"
         },
         { "id":"HLT_3",
-          "description": "Beam Acceptance + Light",
+          "description": "Beam Acc + Light",
           "enable": true,
           "minc" : "0x20020000",
           "mexc" : "0x0",

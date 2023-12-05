@@ -91,7 +91,7 @@ femb_config_default:
 
 
  # Calibration pulser mode
- pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
+ pls_mode: 2 # 0 off, 1 internal, 2 FPGA external
  
  # Confirm channel mapping by testing each channel
  chnl_mapping_mode: false
@@ -148,7 +148,7 @@ femb_config_default:
  # Bit shifts for ADC data of FEs
  bit_shtfs_for_ADC_data_of_FEs: [0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000]
  
- turn_off_femb: true
+ turn_off_femb: false
  
  use_old_femb_config: false
 }
@@ -245,7 +245,7 @@ daq:
       
       run_wib_fake_data_mode: false
       
-      run_femb_scan: true
+      run_femb_scan: false
       
       wib_fake_data_mode: 2 # 1 saw-tooth, 2 channel-id
       

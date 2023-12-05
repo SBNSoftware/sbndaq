@@ -1,7 +1,7 @@
 #include "EventBuilder_standard.fcl"
 #daq.metrics.graphite.namespace: "dab.evb01."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb01_metrics.log"
-outputs.normalOutput.fileName: "/daq/scratch/CRT_tests/data_evb01_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/daq/scratch/data_evb01_run%R_%#_%to.root"
-physics.my_output_modules: [ normalOutput, rootNetOutput ]
+outputs.normalOutput.fileName: "/data/daq/data_dl1_run%R_%#_%to.root"
+outputs.testOutput.fileName: "/data/test_daq/data_dl1_run%R_%#_%to.root"
+#physics.my_output_modules: [ normalOutput, rootNetOutput ]
 process_name: DAQEVB01

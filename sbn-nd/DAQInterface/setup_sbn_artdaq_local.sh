@@ -51,7 +51,7 @@ export LC_TIME='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=9
+export DAQINTERFACE_PARTITION_NUMBER=7
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"
@@ -114,6 +114,23 @@ if [[ "$(hostname -s)" =~ sbnd-pds[0-9]{2} ]]; then
 tonS -N *CAENV1730Readout  9
 tonM -N *CAENV1730Readout  9
 fi
+
+if [[ "$(hostname -s)" =~ sbnd-tpc[0-9]{2} ]]; then
+tonS -N XMITReader 0-63
+tonM -N XMITReader 0-63
+tonS -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
+tonM -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
+tonS -N NevisTPCGenerator 24
+tonM -N NevisTPCGenerator 24
+tonS -N NevisTPCGenerator 14
+tonM -N NevisTPCGenerator 14
+tonS -N XMITReader 0-63
+tonM -N XMITReader 0-63
+fi
+
+
+
+
 #toffM 23 -n SharedMemoryManager
 #export TRACE_LIMIT_MS="5,1000,2000"
 # toffM 15 -n CommandableFragmentGenerator

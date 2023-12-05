@@ -2,10 +2,10 @@ daq:
 {
   fragment_receiver:
   {
+    max_fragment_size_bytes: 1024
     generator: MBBReader 
     partition_number: 999 
     fragment_type: MBB 
-    #max_fragment_size_bytes: 1024
     fragment_id: 401 
     board_id: 401 
     destinations: {}
@@ -13,29 +13,39 @@ daq:
 
     MBB:
     {
-      #address: "192.168.230.51"
-      address: "sbnd-mbb01"
+      address: "10.226.34.50"
       mbb_table: "MBB.adt"
-      #expected_mbb_fw_version: 112
       expected_mbb_fw_version: 108
       configuration_tries: 5
+
+      # Parameter for mbb configuration.
+      config_mbb : 0      # 0 (No), 1 (Yes)
       PULSE_SOURCE: 0
       PULSE_PERIOD: 0
-
-      #wib_pwr1400: 0
-      #wib_pwr1401: 0
-      #wib_pwr1402: 0
-      #wib_pwr1403: 0
-      #wib_pwr1404: 0
-      #wib_pwr1405: 0
       
+      # start/ stop the femb daq (synchronous)
+      start_femb_daq : 0  # 0 (No), 1 (Yes)
+      stop_femb_daq: 0    # 0 (No), 1 (Yes)
+
+      # sleep time.
+      sleep_time : 20
+
+      # parameters for ptc configuration.
+      config_ptc : 1     # 0 (No), 1 (Yes)
+      ptc_14: 1
+      ptc_00: 0
+      ptc_01: 0
+      ptc_02: 0
+      ptc_03: 0
+      ptc_04: 0
+
       wib_pwr1400: 1
       wib_pwr1401: 1
       wib_pwr1402: 1
       wib_pwr1403: 1
       wib_pwr1404: 1
       wib_pwr1405: 1
-      
+
       wib_pwr000: 0
       wib_pwr001: 0
       wib_pwr002: 0
@@ -70,13 +80,6 @@ daq:
       wib_pwr403: 0
       wib_pwr404: 0
       wib_pwr405: 0
-
-      ptc_14: 1
-      ptc_00: 0
-      ptc_01: 0
-      ptc_02: 0
-      ptc_03: 0
-      ptc_04: 0    
     }
   }
 }

@@ -9,8 +9,11 @@ aggregator timeout: 20
 dispatcher timeout: 25
 use_messageviewer: true
 
-board_reader_priorities_on_start  : tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01
-board_reader_priorities_on_stop   : ntb01 tpc01 ptb01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11
+
+boardreader_priorities_on_config: mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01
+boardreader_priorities_on_start: mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01
+boardreader_priorities_on_stop: ptb01 ntb01 tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11 wib106 wib105 wib104 wib103 wib102 wib101 mbb02
+
 
 max_launch_checks: 10
 launch_procs_wait_time: 60
@@ -24,5 +27,3 @@ disable_unique_rootfile_labels: true
 
 #Force use of TCP sockets ... avoid shmem...
 transfer_plugin_to_use: TCPSocket
-
-boardreader_priorities: pmt*.* spectdc .*

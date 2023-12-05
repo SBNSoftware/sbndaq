@@ -26,7 +26,9 @@ getStatus "nil"
 ##setdaqcomps.sh pmtx03 crt01PULL spectdc
 #setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
 
-setdaqcomps.sh tpc01 ntb01
+setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 tpc01 tpc02 tpc05 ntb01
+#setdaqcomps.sh wib101
+#setdaqcomps.sh wib101 wib102
 
 send_transition.sh boot boot.txt
 getStatus "booting"

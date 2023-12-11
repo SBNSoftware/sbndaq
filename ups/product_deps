@@ -40,24 +40,18 @@ end_product_list
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes".
 qualifier                sbndaq_artdaq              notes
-e20:debug:s112           e20:debug:s112
-e20:prof:s112            e20:prof:s112
-e20:debug:icarus:s112    e20:debug:icarus:s112
-e20:prof:icarus:s112     e20:prof:icarus:s112
-e20:debug:sbnd:s112      e20:debug:sbnd:s112
-e20:prof:sbnd:s112       e20:prof:sbnd:s112
-e20:debug:s117           e20:debug:s117
-e20:prof:s117            e20:prof:s117
-e20:debug:icarus:s117    e20:debug:icarus:s117
-e20:prof:icarus:s117     e20:prof:icarus:s117
-e20:debug:sbnd:s117      e20:debug:sbnd:s117
-e20:prof:sbnd:s117       e20:prof:sbnd:s117
-e20:debug:s120a           e20:debug:s120a
-e20:prof:s120a            e20:prof:s120a
-e20:debug:icarus:s120a    e20:debug:icarus:s120a
-e20:prof:icarus:s120a     e20:prof:icarus:s120a
-e20:debug:sbnd:s120a      e20:debug:sbnd:s120a
-e20:prof:sbnd:s120a       e20:prof:sbnd:s120a
+e20:debug:s120a          e20:debug:s120a
+e20:prof:s120a           e20:prof:s120a
+e20:debug:icarus:s120a   e20:debug:icarus:s120a
+e20:prof:icarus:s120a    e20:prof:icarus:s120a
+e20:debug:sbnd:s120a     e20:debug:sbnd:s120a
+e20:prof:sbnd:s120a      e20:prof:sbnd:s120a
+e26:debug:s120a          e26:debug:s120a
+e26:prof:s120a           e26:prof:s120a
+e26:debug:icarus:s120a   e26:debug:icarus:s120a
+e26:prof:icarus:s120a    e26:prof:icarus:s120a
+e26:debug:sbnd:s120a     e26:debug:sbnd:s120a
+e26:prof:sbnd:s120a      e26:prof:sbnd:s120a
 end_qualifier_list
 
 table_fragment_begin

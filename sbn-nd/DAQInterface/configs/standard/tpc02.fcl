@@ -5,5 +5,5 @@ daq.metrics.brFile.fileName : "/daq/log/metrics/tpc02_metrics.log"
 
 
 daq.fragment_receiver.fragment_ids:[0x9203,0x9204,0x9205]
-daq.fragment_receiver.generated_fragments_per_event: 3
+#daq.fragment_receiver.generated_fragments_per_event: 3
 daq.fragment_receiver.nevis_crate.max_fem_slot: 5

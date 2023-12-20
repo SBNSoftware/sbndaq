@@ -2,7 +2,7 @@
 # and XMIT SN stream with a worker thread
 
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
-sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
+# sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
@@ -10,7 +10,6 @@ fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-  max_fragment_size_bytes: 10000000
   generated_fragments_per_event: 16
   board_id: 0
 
@@ -20,10 +19,9 @@ fragment_receiver: {
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
-  DumpBinary: true # Write binary file before the artdaq back-end
-  DoSNReadout: true # Do continuous readout
-  DumpBinaryDir: "/data"
-  SNChunkSize: @local::sn_dma_buffer_size
+  DumpBinary: false # Write binary file before the artdaq back-end
+  DoSNReadout: false # Do continuous readout
+  # SNChunkSize: @local::sn_dma_buffer_size
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -40,12 +38,12 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
-    zs_static_baseline: true
-    fem_fake_data: true # (default is false)
-    fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
+    # zs_static_baseline: true
+    # fem_fake_data: true # (default is false)
+    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
     timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
@@ -65,11 +63,11 @@ fragment_receiver: {
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
 
-
   # Do not change block name
- # trigger_module : {
-
-#}
+  trigger_module : {
+  # Hardcoded in nevishwutils/Crate.cpp
+  # To do: move trigger configuration here
+}
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -92,34 +90,26 @@ fragment_receiver: {
   # Configuration of the XMITReader for the Nevis XMIT SN stream
 
   # The block name must match the name of the XMITReader instance of the FragmentGenerator
-  sn_xmit_reader : { 
-    # SN stream PCIe card settings
-    vendor_id : 0x1172 # Altera (Nevis PCIe card)
-    device_id : 0x4
-    bus : 0xb3
-    device_name: neviscard_sn
-    # DMA settings
-    dma_buffer_size : @local::sn_dma_buffer_size
-    maxpoll : 1e7
-    profile_time : false
-   }
+  # sn_xmit_reader : { 
+  #   # SN stream PCIe card settings
+  #   vendor_id : 0x1172 # Altera (Nevis PCIe card)
+  #   device_id : 0x4
+  #   bus : 0xb3
+  #   device_name: neviscard_sn
+  #   # DMA settings
+  #   dma_buffer_size : @local::sn_dma_buffer_size
+  #   maxpoll : 1e7
+  #   profile_time : false
+  #  }
+
     destinations: { }
 
     routing_table_config: 
     {
       use_routing_master: false 
     }
-#pull mode configuration
-    receive_requests: true
-    request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
-    multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net  
-    request_port: 3001   ##3502   # UDP request port
-    request_mode: sequence #match sequenceID of request  
-    data_buffer_depth_fragments: 100 
-    data_buffer_depth_mb: 1000  #6000 # 1000 # 800
-    #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout                                                                                                                                        
-  }
 
+}
   metrics: {
     brFile: {
       metricPluginType: "file"
@@ -133,7 +123,5 @@ send_system_metrics: true
 send_process_metrics: true
 
   }
-
 process_name: Driver
 }
-

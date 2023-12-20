@@ -1,16 +1,15 @@
-# Test configuration of 2 streams and readout of Nevis XMIT NU stream with CALIB triggers using artdaq
+# Test configuration of 2 streams and readout of Nevis XMIT NU stream with Controller triggers using artdaq
 # and XMIT SN stream with a worker thread
 
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
-daq: {
+daq:{
 fragment_receiver: {
   max_fragment_size_bytes: 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-  max_fragment_size_bytes: 10000000
   generated_fragments_per_event: 16
   board_id: 0
 
@@ -18,11 +17,10 @@ fragment_receiver: {
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
-  CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
-  ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
+  CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
+  ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
-  DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
 
   ### Configuration of the Nevis Crate ###
@@ -62,15 +60,6 @@ fragment_receiver: {
     device_name: neviscard_controller
    }
 
-  ### Configuration of the TriggerModule ###
-  # Configuration of the Nevis Trigger Module
-
-
-  # Do not change block name
- # trigger_module : {
-
-#}
-
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
 
@@ -109,17 +98,7 @@ fragment_receiver: {
     {
       use_routing_master: false 
     }
-#pull mode configuration
-    receive_requests: true
-    request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
-    multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net  
-    request_port: 3001   ##3502   # UDP request port
-    request_mode: sequence #match sequenceID of request  
-    data_buffer_depth_fragments: 100 
-    data_buffer_depth_mb: 1000  #6000 # 1000 # 800
-    #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout                                                                                                                                        
-  }
-
+}
   metrics: {
     brFile: {
       metricPluginType: "file"
@@ -133,7 +112,5 @@ send_system_metrics: true
 send_process_metrics: true
 
   }
-
 process_name: Driver
 }
-

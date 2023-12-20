@@ -1,0 +1,39 @@
+#include "pmt_standard.fcl"
+#daq.metrics.brFile.fileName : "/daq/log/metrics/pmt02_metrics.log"
+
+#Set fragment id by slot number in vme crate
+daq.fragment_receiver.fragment_id: 0xA004
+
+# link is which port on the PCIe card it is connected, numbering starts at 0
+daq.fragment_receiver.link: 0
+
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 5
+
+## Pull mode parameters
+     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
+     daq.fragment_receiver.multicast_interface_ip: "10.226.36.0" # -- should match the private net
+     daq.fragment_receiver.request_port: 3001   # UDP request port
+     daq.fragment_receiver.request_mode: window # pull mode
+
+     daq.fragment_receiver.request_window_width:   30000000 #30ms window 
+     daq.fragment_receiver.request_window_offset:  15000000 #15ms offset
+
+     daq.fragment_receiver.request_windows_are_unique: true #true
+     daq.fragment_receiver.separate_data_thread: true
+     daq.fragment_receiver.stale_request_timeout:   3000000000 ## -- 3s
+     daq.fragment_receiver.receive_requests: true
+     daq.fragment_receiver.window_close_timeout_us: 400000000 ## -- 40s
+     daq.fragment_receiver.circular_buffer_mode: true
+    
+     daq.fragment_receiver.data_buffer_depth_fragments: 200
+     daq.fragment_receiver.data_buffer_depth_mb : 200 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
+
+     daq.fragment_receiver.missing_request_window_timeout_us: 400000000 #400us
+     daq.fragment_receiver.stale_fragment_timeout: 10000000000 #10s #3000000000 #3s
+     daq.fragment_receiver.buffer_mode_keep_latest: true
+     ## end pull mode parameters
+
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt02:"
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt02:"
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmt02:"

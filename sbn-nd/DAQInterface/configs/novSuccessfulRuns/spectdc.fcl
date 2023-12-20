@@ -1,0 +1,110 @@
+daq: {
+  fragment_receiver: {
+#     events_to_generate: 6000
+     max_fragment_size_bytes: 100000
+     data_buffer_depth_fragments: 2048
+     sleep_on_no_data_us: 10000
+ 
+     generator: SPECTDCTimestampReader
+     fragment_type: TDCTIMESTAMP
+     fragment_id: 99
+     board_id: 0
+
+     ## Pull mode parameters
+     receive_requests: true
+     request_address:        "227.128.11.129" # -- multicast request address
+     multicast_interface_ip: "10.226.36.0" # -- should match the private net
+     request_port: 3001   # UDP request port
+     request_mode: window # pull mode
+     request_window_width:  1000000000 #1s #20000000 #5ms window 
+     request_window_offset: 500000000 #0.5s #10000000 #2.5ms offset
+     request_windows_are_unique: false #true
+     stale_request_timeout:   3000000
+     window_close_timeout_us: 1500000 #1.5s
+     buffer_mode_keep_latest: true
+     circular_buffer_mode: false
+     missing_request_window_timeout_us: 2000000 #2s
+     hardware_poll_interval_us: 30000000 #30s
+     stale_fragment_timeout: 20000000000 #20s
+     separate_monitoring_thread: true
+     separate_data_thread: true
+
+     destinations: { }
+     routing_table_config: {
+       use_routing_master: false
+     }
+
+     spec: {
+       deviceid:auto
+       verbose: true
+       fmctdc: {
+         timesync_source:wr
+         time_adjustment:{
+           make_adjustment:true
+           add_leap_seconds:37
+           #next_leap_second_tai:1672531199
+	   next_leap_second_tai:1719809999
+         }
+         calibration_data:none
+         polltime_ms: 10
+         blocking_reads: true
+         monitor:{
+           temperature:true
+           timestamps:true
+         }
+         channels: [
+           { id : 0
+             name:crtt1
+             enabled: false #true
+             time_offset_ps: 0
+             monitor_only: true
+             terminated: true },
+           { id : 1
+             name:fakebes
+             enabled: true
+             time_offset_ps: 0
+             monitor_only: false
+             terminated: true },
+           { id : 2
+             name:fakerwm
+             enabled: true
+             time_offset_ps: 0
+             monitor_only: false
+             terminated: true },
+           { id : 3
+             name:ftrig
+             enabled: true
+             time_offset_ps: 0
+             monitor_only: false
+             terminated: true },
+           { id : 4
+             name:etrig
+             enabled: true
+             time_offset_ps: 0
+             monitor_only: true
+             terminated: true }
+         ]
+       }
+     }
+  }
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level_string: "1,2,11-20"
+      fileName: "/daq/log/metrics/spectdc_%UID%_metrics.log"
+      uniquify: true
+    }
+    send_system_metrics: true
+    send_process_metrics: true
+    graphite:{
+      namespace: "sbnd.tdc."
+      host: "10.226.36.34"
+      level_string: "1,2,11-20"
+      metricPluginType: "graphite"
+      port: 2003
+      reporting_interval: 10
+    }
+  }
+}
+

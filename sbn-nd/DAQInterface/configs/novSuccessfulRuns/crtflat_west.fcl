@@ -1,0 +1,431 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+
+# Data port is on sbnd-crt02
+daq.fragment_receiver.ethernet_port: "ens8f0"
+
+# List of FEBs in the daisy chain (readable, then hex)
+#daq.fragment_receiver.fragment_ids:                 [ 97, 98, 77, 78, 83, 84, 104, 103, 102, 101 ]
+daq.fragment_receiver.fragment_ids:                  [ 0xB061, 0xB062, 0xB04D, 0xB04E, 0xB053, 0xB054, 0xB068, 0xB067, 0xB066, 0xB065 ]
+# Number of FEBs
+daq.fragment_receiver.generated_fragments_per_event: 10
+# First board in the chain
+daq.fragment_receiver.ReaderID:                      101
+
+# SiPM HV On?
+daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true, true, true, true, true ]
+
+# How much the PPS signal coming to FEB is delayed due to cable length - currently all relative to first board
+daq.fragment_receiver.PPS_offset_ns : [ 0, 16, 32, 48, 64, 80, 112, 128, 144, 160 ]
+
+# Name for the grouping this will appear in on grafana
+daq.metrics.graphite.namespace: "sbnd.crtflat02."
+
+# Each FEB inherits the standard settings, thresholds can be set here
+daq.fragment_receiver.FEBConfigurationMAC97: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC97.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC97.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC98: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC98.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC98.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC77: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC77.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC77.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC78: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC78.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC78.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC83: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC83.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC83.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC84: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC84.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC84.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC104: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC104.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC104.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC103: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC103.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC103.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC102: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC102.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC102.time_threshold: 350
+
+daq.fragment_receiver.FEBConfigurationMAC101: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC101.charge_threshold: 350
+daq.fragment_receiver.FEBConfigurationMAC101.time_threshold: 350
+
+
+##################
+#
+#   individiual parameter definition 
+#
+# "time_threshold_adjustment"
+# "charge_threshold_adjustment"
+# "discriminator mask" 0 is masked, 1 is unmasked
+# "hv adjustment" - larger value more HV, more gain
+# "high_high_bias"
+# "HG_gain"
+# "LG_gain"
+# "test_HG"
+# "test_LG"
+# "enable_preamp" - 1 is enabled, 0 is disabled
+#  
+###############################
+
+daq.fragment_receiver.FEBConfigurationMAC97.channel_configuration: [
+                 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 138, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 161, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC98.channel_configuration: [
+                 [ 0, 0, 1, 134, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 134, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 138, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 137, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 143, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 137, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 148, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 137, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC77.channel_configuration: [
+                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC78.channel_configuration: [
+                 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 114, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC83.channel_configuration: [
+                 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 175, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 147, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 148, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 149, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 148, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 152, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 143, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 159, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC84.channel_configuration: [
+                 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 138, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 141, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 147, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC104.channel_configuration: [
+                 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 143, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC103.channel_configuration: [
+                 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 153, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 132, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 134, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 142, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 173, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 138, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC102.channel_configuration: [
+                 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 144, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 130, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 136, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 135, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 133, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 154, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 131, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 150, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 145, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 154, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 140, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 141, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 158, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 151, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 141, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 170, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 139, 1, 35, 47, 0, 0, 1]  # Channel 31
+]
+
+daq.fragment_receiver.FEBConfigurationMAC101.channel_configuration: [
+                 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 0
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 1
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 2
+		 [ 0, 0, 1, 124, 1, 35, 47, 0, 0, 1], # Channel 3
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 4
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 5
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 6
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 7
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 8
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 9
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 10
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 11
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 12
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 13
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 14
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 15
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 16
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 17
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 18
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 19
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 20
+		 [ 0, 0, 1, 125, 1, 35, 47, 0, 0, 1], # Channel 21
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 22
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 23
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 24
+		 [ 0, 0, 1, 129, 1, 35, 47, 0, 0, 1], # Channel 25
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 26
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1], # Channel 27
+		 [ 0, 0, 1, 127, 1, 35, 47, 0, 0, 1], # Channel 28
+		 [ 0, 0, 1, 128, 1, 35, 47, 0, 0, 1], # Channel 29
+		 [ 0, 0, 1, 123, 1, 35, 47, 0, 0, 1], # Channel 30
+		 [ 0, 0, 1, 126, 1, 35, 47, 0, 0, 1]  # Channel 31
+]

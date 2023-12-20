@@ -1,0 +1,47 @@
+daq: {
+fragment_receiver: {
+    max_fragment_size_bytes: 1000
+    generator: NevisTBStream
+    fragment_type: NevisTB
+    fragment_ids: [1]
+    generated_fragments_per_event: 1
+    board_id: 0
+
+    NTBChunkSize: 64
+    DumpNTBBinary: true
+    DumpNTBBinaryDir: "/data"
+
+
+ntb_pciecard : {
+    vendor_id : 0x1172 # Altera (Nevis  PCIe card)
+    device_id : 0x4
+    bus : 0x66
+    device_name: neviscard_controller
+ }
+
+ destinations: { }
+
+    routing_table_config:
+    {
+      use_routing_master: false
+    }
+
+
+}
+
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level_string: "1,2,11-20"
+      fileName: "/daq/log/metrics/ntb_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+  }
+process_name: Driver
+}
+

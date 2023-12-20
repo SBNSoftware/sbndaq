@@ -392,6 +392,23 @@ fragment_receiver: {
 }                 
 
 ## -- add metrics stuff here:
-
+  metrics: {
+    brFile: {
+      metricPluginType: "file"
+      level: 3
+      fileName: "/daq/log/metrics/ptb_%UID%_metrics.log"
+      uniquify: true
+    }
+    send_system_metrics: true
+    send_process_metrics: true
+    graphite:{
+      namespace: "sbnd.ptb."
+      host: "10.226.36.34"
+      level_string: "1,2,11-20"
+      metricPluginType: "graphite"
+      port: 2003
+      reporting_interval: 10
+    }
+  }
 }
 

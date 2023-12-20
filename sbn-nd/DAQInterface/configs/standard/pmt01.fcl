@@ -1,7 +1,23 @@
 #include "pmt_standard.fcl"
+#include "pmtPULL.fcl"
+#daq.metrics.brFile.fileName : "/daq/log/metrics/pmt02_metrics.log"
 
-daq.fragment_receiver.fragment_id: 0
+#Set fragment id by slot number in vme crate
+daq.fragment_receiver.fragment_id: 0xA000
+#1010 0 000  0000 0000
+
+# link is which port on the PCIe card it is connected, numbering starts at 0
 daq.fragment_receiver.link: 0
-daq.redis_10s.redis_key_prefix: "BoardReader:pmt01:"
-daq.redis_testing.redis_key_prefix: "BoardReader:pmt01:"
-daq.redis_5m.redis_key_prefix: "BoardReader:pmt01:"
+
+# boardId is the ID number that will be assigned to the board
+daq.fragment_receiver.boardId: 5
+
+#These three paramaters are related, if you chance one change of of the first two you need to change the timing offset
+daq.fragment_receiver.recordLength: 1200  #in ticks -> 1 tick=2ns
+daq.fragment_reciever.postPercent: 50 #units of percent 0-100
+daq.fragment_reciever.TimeOffsetNanoSec: 0 #
+
+
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt01:"
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt01:"
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmt01:"

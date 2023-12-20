@@ -3,7 +3,7 @@
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
 parent sbndaq
-defaultqual e20:s112
+defaultqual e20:s120a
 define_pythonpath
 
 # These optional lines define the installed directories where headers,
@@ -33,8 +33,8 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version      optional
-sbndaq_artdaq        v1_08_03
-cetmodules           v3_21_02     -       only_for_build
+sbndaq_artdaq        v1_08_05
+cetmodules           v3_22_02     -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
@@ -52,6 +52,12 @@ e20:debug:icarus:s117    e20:debug:icarus:s117
 e20:prof:icarus:s117     e20:prof:icarus:s117
 e20:debug:sbnd:s117      e20:debug:sbnd:s117
 e20:prof:sbnd:s117       e20:prof:sbnd:s117
+e20:debug:s120a           e20:debug:s120a
+e20:prof:s120a            e20:prof:s120a
+e20:debug:icarus:s120a    e20:debug:icarus:s120a
+e20:prof:icarus:s120a     e20:prof:icarus:s120a
+e20:debug:sbnd:s120a      e20:debug:sbnd:s120a
+e20:prof:sbnd:s120a       e20:prof:sbnd:s120a
 end_qualifier_list
 
 table_fragment_begin

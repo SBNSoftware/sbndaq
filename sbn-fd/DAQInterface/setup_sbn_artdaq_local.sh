@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SBNDAQ_VERSION="v1_08_03"
-SBNDAQ_QUALS="e20:prof:s112"
-DAQINTERFACE_VERSION="v3_12_05"
+SBNDAQ_VERSION="v1_08_05"
+SBNDAQ_QUALS="e20:prof:s120a"
+DAQINTERFACE_VERSION="v3_12_06"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
@@ -103,3 +103,16 @@ tmodeM 1
 # tonM 15 -n CommandableFragmentGenerator
 
 
+if [[ "$(hostname -s)" =~ icarus-crt11 ]]; then
+    echo Checking if the boardreader is running. If not, attempting to kill the Bottom CRT backend
+    if ! /usr/sbin/pidof boardreader ; then
+        if /usr/sbin/pidof bottomCRTreadout ; then
+            echo Attempting to kill the backend
+            /usr/bin/killall bottomCRTreadout
+        else
+            echo Backend not running, no need to kill it
+        fi
+    else
+        echo Boardreader is running, refraining from killing the backend
+    fi
+fi

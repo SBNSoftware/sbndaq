@@ -9,7 +9,7 @@ source ${PRODUCTS_DIR}/setup
 export ARTDAQ_DATABASE_TOOLS_ENV=${ARTDAQ_DATABASE_TOOLS_ENV:-"${HOME}/.artdaq_database_tools.env"}
 [[ -f ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_TOOLS_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_TOOLS_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
-export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_05_08 -q ${SBNDAQ_QUALS}"}
+export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_08_00 -q ${SBNDAQ_QUALS}"}
 eval "$ARTDAQ_DATABASE_SETUP_COMMAND"
 (( $? == 0 )) || { echo "Error: Failed running \"${ARTDAQ_DATABASE_SETUP_COMMAND}\""; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_TOOLS_ENV}; source ${ARTDAQ_DATABASE_TOOLS_ENV}; set +o allexport
@@ -18,7 +18,7 @@ export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-di
 export ARTDAQ_DATABASE_URI=${ARTDAQ_DATABASE_URI:-"filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"}
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
 
-export DAQINTERFACE_SETUP_COMMAND=${DAQINTERFACE_SETUP_COMMAND:-"setup artdaq_daqinterface v3_11_00"}
+export DAQINTERFACE_SETUP_COMMAND=${DAQINTERFACE_SETUP_COMMAND:-"setup artdaq_daqinterface v3_12_06"}
 eval "$DAQINTERFACE_SETUP_COMMAND"
 (( $? == 0 )) || { echo "Error: Failed running \"${DAQINTERFACE_SETUP_COMMAND}\""; exit 2; }
 

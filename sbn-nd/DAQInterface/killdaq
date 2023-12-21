@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo 'kill eventbuilder on evb01, evb 02, evb 03'
+
+ssh sbnd-evb01 -f 'killall -9 eventbuilder'
+ssh sbnd-evb02 -f 'killall -9 eventbuilder'
+ssh sbnd-evb03 -f 'killall -9 eventbuilder'
+
+echo 'kill dispatcher on evb01, evb02, evb03'
+
+ssh sbnd-evb01 -f 'killall -9 dispatcher'
+ssh sbnd-evb02 -f 'killall -9 dispatcher'
+ssh sbnd-evb03 -f 'killall -9 dispatcher'
+
+echo 'kill boardreader on wib01'
+
+ssh sbnd-wib01 -f 'killall -9 boardreader'
+
+echo 'well done'

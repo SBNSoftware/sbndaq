@@ -1,7 +1,7 @@
 # Test configuration of 2 streams and readout of Nevis XMIT NU stream with CALIB triggers using artdaq
 # and XMIT SN stream with a worker thread
 
-nu_dma_buffer_size: 1e4 # 1e4 # < 1e6
+nu_dma_buffer_size: 5e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
@@ -20,7 +20,7 @@ fragment_receiver: {
   CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
-  DoSNReadout: true# true # Do continuous readout
+  DoSNReadout: false# true # Do continuous readout
   DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
 

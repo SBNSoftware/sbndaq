@@ -116,14 +116,14 @@ tonM -N *CAENV1730Readout  9
 fi
 
 if [[ "$(hostname -s)" =~ sbnd-tpc[0-9]{2} ]]; then
-tonS -N XMITReader 0-63
-tonM -N XMITReader 0-63
 tonS -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
 tonM -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
-tonS -N NevisTPCGenerator 24
-tonM -N NevisTPCGenerator 24
-tonS -N NevisTPCGenerator 14
-tonM -N NevisTPCGenerator 14
+#tonS -N NevisTPCGenerator 24
+#tonM -N NevisTPCGenerator 24
+#tonS -N NevisTPCGenerator 14
+#tonM -N NevisTPCGenerator 14
+toffS -N NevisTPCGenerator 8-63
+toffM -N NevisTPCGenerator 8-63
 tonS -N XMITReader 0-63
 tonM -N XMITReader 0-63
 fi

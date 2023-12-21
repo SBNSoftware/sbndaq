@@ -24,8 +24,8 @@ daq:
       PULSE_PERIOD: 0
       
       # start/ stop the femb daq (synchronous)
-      start_femb_daq : 0  # 0 (No), 1 (Yes)
-      stop_femb_daq: 0    # 0 (No), 1 (Yes)
+      start_femb_daq : 1  # 0 (No), 1 (Yes)
+      stop_femb_daq: 1    # 0 (No), 1 (Yes)
 
       # sleep time (s).
       sleep_time : 20
@@ -35,9 +35,9 @@ daq:
       ptc_14: 0  #1 for DZero
       ptc_00: 0
       ptc_01: 1  #For Crate 1 (SW)
-      ptc_02: 0
-      ptc_03: 0
-      ptc_04: 0  
+      ptc_02: 1
+      ptc_03: 1
+      ptc_04: 1
 
       wib_pwr1400: 0
       wib_pwr1401: 0
@@ -60,26 +60,26 @@ daq:
       wib_pwr104: 1
       wib_pwr105: 1
 
-      wib_pwr200: 0
-      wib_pwr201: 0
-      wib_pwr202: 0
-      wib_pwr203: 0
-      wib_pwr204: 0
-      wib_pwr205: 0
+      wib_pwr200: 1
+      wib_pwr201: 1
+      wib_pwr202: 1
+      wib_pwr203: 1
+      wib_pwr204: 1
+      wib_pwr205: 1
 
-      wib_pwr300: 0
-      wib_pwr301: 0
-      wib_pwr302: 0
-      wib_pwr303: 0
-      wib_pwr304: 0
-      wib_pwr305: 0
+      wib_pwr300: 1
+      wib_pwr301: 1
+      wib_pwr302: 1
+      wib_pwr303: 1
+      wib_pwr304: 1
+      wib_pwr305: 1
 
-      wib_pwr400: 0
-      wib_pwr401: 0
-      wib_pwr402: 0
-      wib_pwr403: 0
-      wib_pwr404: 0
-      wib_pwr405: 0
+      wib_pwr400: 1
+      wib_pwr401: 1
+      wib_pwr402: 1
+      wib_pwr403: 1
+      wib_pwr404: 1
+      wib_pwr405: 1
     }
   }
 }

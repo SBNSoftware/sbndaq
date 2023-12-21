@@ -91,7 +91,7 @@ femb_config_default:
 
 
  # Calibration pulser mode
- pls_mode: 2 # 0 off, 1 internal, 2 FPGA external
+ pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
  
  # Confirm channel mapping by testing each channel
  chnl_mapping_mode: false

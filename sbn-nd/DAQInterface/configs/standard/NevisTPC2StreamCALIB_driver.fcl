@@ -22,6 +22,7 @@ fragment_receiver: {
   DumpBinary: false # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
+  GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)

@@ -24,7 +24,8 @@ fragment_receiver: {
   DoSNReadout: true # Do continuous readout
   DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
-
+  GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
+  GPSZMQPortNTB: 11212
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
 
@@ -123,7 +124,7 @@ fragment_receiver: {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level: 3 #level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/tpc00_metrics.log"
       uniquify: true
     }

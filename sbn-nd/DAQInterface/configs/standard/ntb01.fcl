@@ -10,7 +10,9 @@ fragment_receiver: {
     NTBChunkSize: 64
     DumpNTBBinary: true
     DumpNTBBinaryDir: "/data"
-    GPSZMQPortNTB: 11212
+    GPSZMQPortNTB: "tcp://10.226.36.6:11212"
+    framesize: 20479
+    NevisClockFrequency: 15999907
 
 ntb_pciecard : {
     vendor_id : 0x1172 # Altera (Nevis  PCIe card)

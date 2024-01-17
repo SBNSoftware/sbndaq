@@ -100,8 +100,9 @@ daq:
     UseTimeTagForTimeStamp: true #True is using the PPS information
     # adds an offset to the fragment timestamp, set to 0 for SBND
     TimeOffsetNanoSec: 0
-    # Add Lan's new parameters here
-    
+    # Shift time tag so timestamp reflects the trigger time and not the end of the waveform. 
+    #    default for SBND is true    
+    UseTimeTagShiftForTimeStamp: true    
 
     
     # extTrgMode decides whether the external trigger should only be used to generate the

@@ -12,10 +12,7 @@ daq.fragment_receiver.link: 0
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 5
 
-#These three paramaters are related, if you chance one change of of the first two you need to change the timing offset
-daq.fragment_receiver.recordLength: 1200  #in ticks -> 1 tick=2ns
-daq.fragment_reciever.postPercent: 50 #units of percent 0-100
-daq.fragment_reciever.TimeOffsetNanoSec: 0 #
+daq.fragment_receiver.UseTimeTagShiftForTimeStamp: true
 
 
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt01:"

@@ -1,19 +1,29 @@
 #!/usr/bin/env bash
 
-echo 'kill eventbuilder on evb01, evb 02, evb 03'
+if [ "$#" -ne 1 ]; then
+    echo "Please specify the partition number, e.g."
+    echo "./killdaq 7"
+    exit
+fi
 
-ssh sbnd-evb01 -f 'killall -9 eventbuilder'
-ssh sbnd-evb02 -f 'killall -9 eventbuilder'
-ssh sbnd-evb03 -f 'killall -9 eventbuilder'
+for i in {01..03}; do
+    echo "sbnd-evb$i: pkill -9 -f '^eventbuilder.*partition_number: $1$'"
+    ssh sbnd-evb$i -f "pkill -9 -f '^eventbuilder.*partition_number: $1$'"
+done
 
-echo 'kill dispatcher on evb01, evb02, evb03'
+#ssh sbnd-evb01 -f 'killall -9 dispatcher'
 
-ssh sbnd-evb01 -f 'killall -9 dispatcher'
-ssh sbnd-evb02 -f 'killall -9 dispatcher'
-ssh sbnd-evb03 -f 'killall -9 dispatcher'
+echo "sbnd-wib01: pkill -9 boardreader"
+ssh sbnd-wib01 -f 'pkill -9 boardreader'
 
-echo 'kill boardreader on wib01'
+for i in {01..12}; do
+    echo "sbnd-tpc$i: pkill -9 boardreader"
+    ssh sbnd-tpc$i -f 'pkill -9 boardreader'
+done
 
-ssh sbnd-wib01 -f 'killall -9 boardreader'
+for i in {01..03}; do
+    echo "sbnd-evb$i: ipcrm -a"
+    ssh sbnd-evb$i -f 'ipcrm -a'
+done
 
 echo 'well done'

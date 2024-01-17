@@ -91,7 +91,7 @@ femb_config_default:
 
 
  # Calibration pulser mode
- pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
+ pls_mode: 2 # 0 off, 1 internal, 2 FPGA external
  
  # Confirm channel mapping by testing each channel
  chnl_mapping_mode: false
@@ -100,7 +100,7 @@ femb_config_default:
  test_chnl_number: 0
 
  # Calibration pulser amplitude 
- pls_dac_val: 5 # 6 bits in internal mode, 5 bits in external
+ pls_dac_val: 8 # 6 bits in internal mode, 5 bits in external
 
 
  # Calibration pulser phase
@@ -196,6 +196,12 @@ daq:
 
       # If true, transmit fake data from WIB, if false data from FEMBs
       use_WIB_fake_data: [false,false,false,false] # list of 4 bools
+      
+      # if true, given FEMB is configured to transmit fake data
+      use_FEMB_fake_data: [false,false,false,false] # list of 4 bools
+      
+      # This provides selected FEMB fake data mode
+      femb_fake_data_mode: [0,0,0,0] 
 
       # if false, put a counters in the DAQ data frame, if true just transmit a raw counter
       use_WIB_fake_data_counter: false # only applies when use_WIB_fake_data is true for a FEMB

@@ -14,7 +14,7 @@ daq: {
     #separate_data_thread: true
     #stale_request_timeout: 200000000
 
-    generated_fragments_per_event: 1
+#    generated_fragments_per_event: 1
     initial_delay_s: 0
     fragment_period_ms: 10
     fragment_type: "BERNCRTV2"

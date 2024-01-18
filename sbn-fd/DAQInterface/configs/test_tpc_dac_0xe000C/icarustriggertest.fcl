@@ -12,7 +12,7 @@ daq:
     ### configs for sending no fragment
     request_mode: ignored
     separate_data_thread: false
-    generated_fragments_per_event: 0
+#    generated_fragments_per_event: 0
 
     ### trigger communication pieces
     port: 6343

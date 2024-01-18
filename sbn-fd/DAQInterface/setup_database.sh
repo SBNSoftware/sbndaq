@@ -4,7 +4,7 @@ source /daq/software/products/setup
 export ARTDAQ_DATABASE_ENV=${ARTDAQ_DATABASE_ENV:-"${HOME}/.artdaq_database.env"}
 [[ -f ${ARTDAQ_DATABASE_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; set +o allexport
-export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_06_01 -q ${SBNDAQ_QUALS}"}
+export ARTDAQ_DATABASE_SETUP_COMMAND=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_09_00 -q ${SBNDAQ_QUALS}"}
 eval "$ARTDAQ_DATABASE_SETUP_COMMAND"
 (( $? == 0 )) || { echo "Error: Failed running \"${ARTDAQ_DATABASE_SETUP_COMMAND}\""; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; set +o allexport

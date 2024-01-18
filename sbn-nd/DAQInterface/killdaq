@@ -13,12 +13,15 @@ done
 
 #ssh sbnd-evb01 -f 'killall -9 dispatcher'
 
-echo "sbnd-wib01: pkill -9 boardreader"
-ssh sbnd-wib01 -f 'pkill -9 boardreader'
+echo "sbnd-wib01: pkill -9 '^boardreader.*partition_number: $1$'"
+ssh sbnd-wib01 -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+
+echo "sbnd-evb04: pkill -9 '^boardreader.*partition_number: $1$'"
+ssh sbnd-evb04 -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 
 for i in {01..12}; do
-    echo "sbnd-tpc$i: pkill -9 boardreader"
-    ssh sbnd-tpc$i -f 'pkill -9 boardreader'
+    echo "sbnd-tpc$i: pkill -9 '^boardreader.*partition_number: $1$'"
+    ssh sbnd-tpc$i -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 done
 
 for i in {01..03}; do

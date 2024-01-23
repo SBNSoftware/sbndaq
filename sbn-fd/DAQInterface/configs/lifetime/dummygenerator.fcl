@@ -7,7 +7,7 @@ time_step_ms: 199
 
 fragment_id: 0x3300 
 
-generated_fragments_per_event: 1 
+#generated_fragments_per_event: 1 
 #advanced memory managment
 max_fragment_size_bytes: 128 
 

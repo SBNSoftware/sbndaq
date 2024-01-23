@@ -19,7 +19,7 @@ fragment_receiver: {
    #fragment_id: 0
    board_id: 1
    #board_id: 0
-   generated_fragments_per_event: 1
+#   generated_fragments_per_event: 1
    ### trigger communication pieces
    config_port: 63000
    #config_ip: "192.168.191.79" #for SPEXI

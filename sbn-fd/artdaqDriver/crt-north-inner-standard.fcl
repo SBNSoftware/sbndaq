@@ -222,7 +222,7 @@ fragment_receiver: {
 
    fragment_ids: [ 0x3103, 0x3101, 0x3106, 0x3107 ]
 
-   generated_fragments_per_event: 1
+#   generated_fragments_per_event: 1
 
 #Last 8 bits of the MAC addresses of all FEB connected to given ethernet port
    MAC5s : [ 3, 1, 6, 7 ]

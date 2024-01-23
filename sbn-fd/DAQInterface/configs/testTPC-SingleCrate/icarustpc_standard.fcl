@@ -5,7 +5,7 @@ fragment_receiver: {
    		    
    generator: PhysCrateData 
    max_fragment_size_bytes: 5000000
-   generated_fragments_per_event: 1
+#   generated_fragments_per_event: 1
    
    # Parameters configuring the fragment generator's parent class
    # artdaq::CommandableFragmentGenerator

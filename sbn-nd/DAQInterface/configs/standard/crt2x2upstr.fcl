@@ -13,7 +13,7 @@ daq.fragment_receiver.ethernet_port: "enp23s0f0"
 #List of FEBs in the daisy chain
     #daq.fragment_receiver.fragment_ids: [ 74, 85, 88, 87 ]
     daq.fragment_receiver.fragment_ids: [ 0xB1C1, 0xB157, 0xB158, 0xB155 ]
-    daq.fragment_receiver.generated_fragments_per_event: 4 #number of FEBs
+#    daq.fragment_receiver.generated_fragments_per_event: 4 #number of FEBs
 # first board in the chain
     daq.fragment_receiver.ReaderID: 193
 

@@ -1,0 +1,85 @@
+daq:
+{
+  fragment_receiver:
+  {
+    max_fragment_size_bytes: 1024
+    generator: MBBReader 
+    partition_number: 999 
+    fragment_type: MBB 
+    fragment_id: 401 
+    board_id: 401 
+    destinations: {}
+    sends_no_fragments: true 
+
+    MBB:
+    {
+      address: "10.226.34.50"
+      mbb_table: "MBB.adt"
+      expected_mbb_fw_version: 274 #108 #0x6c
+      configuration_tries: 5
+
+      # Parameter for mbb configuration.
+      config_mbb : 1      # 0 (No), 1 (Yes)
+      PULSE_SOURCE: 0 
+      PULSE_PERIOD: 0
+      
+      # start/ stop the femb daq (synchronous)
+      start_femb_daq : 1  # 0 (No), 1 (Yes)
+      stop_femb_daq: 1    # 0 (No), 1 (Yes)
+
+      # sleep time (s).
+      sleep_time : 20
+
+      # parameters for ptc configuration.
+      config_ptc : 1     # 0 (No), 1 (Yes)
+      ptc_14: 0  #1 for DZero
+      ptc_00: 0
+      ptc_01: 1  #For Crate 1 (SW)
+      ptc_02: 1
+      ptc_03: 1
+      ptc_04: 1
+
+      wib_pwr1400: 0
+      wib_pwr1401: 0
+      wib_pwr1402: 0
+      wib_pwr1403: 0
+      wib_pwr1404: 0
+      wib_pwr1405: 0
+
+      wib_pwr000: 0
+      wib_pwr001: 0
+      wib_pwr002: 0  #wIB number starts from 1
+      wib_pwr003: 0
+      wib_pwr004: 0
+      wib_pwr005: 0
+
+      wib_pwr100: 1
+      wib_pwr101: 1
+      wib_pwr102: 1
+      wib_pwr103: 1
+      wib_pwr104: 1
+      wib_pwr105: 1
+
+      wib_pwr200: 1
+      wib_pwr201: 1
+      wib_pwr202: 1
+      wib_pwr203: 1
+      wib_pwr204: 1
+      wib_pwr205: 1
+
+      wib_pwr300: 1
+      wib_pwr301: 1
+      wib_pwr302: 1
+      wib_pwr303: 1
+      wib_pwr304: 1
+      wib_pwr305: 1
+
+      wib_pwr400: 1
+      wib_pwr401: 1
+      wib_pwr402: 1
+      wib_pwr403: 1
+      wib_pwr404: 1
+      wib_pwr405: 1
+    }
+  }
+}

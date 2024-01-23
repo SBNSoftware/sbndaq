@@ -75,10 +75,10 @@ icarustpcee15 icarus-tpc20-daq -1 1
 icarustpcee16 icarus-tpc20-daq -1 1
 icarustpcee17 icarus-tpc20-daq -1 1
 icarustpcee18 icarus-tpc20-daq -1 1
-icarustpcee19 icarus-tpc19-daq -1 1
-icarustpcee20b icarus-tpc19-daq -1 1
-icarustpcee20m icarus-tpc19-daq -1 1
-icarustpcee20t icarus-tpc19-daq -1 1
+icarustpcee19 icarus-tpc21-daq -1 1
+icarustpcee20b icarus-tpc21-daq -1 1
+icarustpcee20m icarus-tpc21-daq -1 1
+icarustpcee20t icarus-tpc21-daq -1 1
 icarustpcew01b icarus-tpc27-daq -1 1
 icarustpcew01m icarus-tpc27-daq -1 1
 icarustpcew01t icarus-tpc27-daq -1 1

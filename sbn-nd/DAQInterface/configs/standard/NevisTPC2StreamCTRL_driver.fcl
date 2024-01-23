@@ -6,24 +6,24 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
-  max_fragment_size_bytes: 16777216
+  max_fragment_size_bytes: 667772 # 16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-  generated_fragments_per_event: 16
+#  generated_fragments_per_event: 16
   board_id: 0
 
-  SamplesPerChannel: 7675 # SBND drift time x 3
+  SamplesPerChannel: 3420 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
-  ControllerTriggerFrequency: 5 # Frequency in Hz of the Controller trigger
+  ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
   DumpBinaryDir: "/data"
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
-  max_fragment_size_bytes: 10E6
+  #max_fragment_size_bytes: 10E6
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -47,7 +47,7 @@ fragment_receiver: {
     # fem_fake_data: true # (default is false)
     # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
-    timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+    timesize: 1139 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
 
   ### Configuration of the ControllerModule ###
@@ -100,6 +100,17 @@ fragment_receiver: {
     {
       use_routing_master: false 
     }
+
+#pull mode configuration
+ receive_requests: true
+ request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
+ multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net
+ request_port: 3001   ##3502   # UDP request port
+ request_mode: sequence #match sequenceID of request
+ data_buffer_depth_fragments: 100
+ data_buffer_depth_mb: 500                                                                                                                                           
+ #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
 }
 metrics: {
     brFile: {

@@ -11,7 +11,7 @@ fragment_receiver: {
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
   max_fragment_size_bytes: 10000000
-  generated_fragments_per_event: 16
+#  generated_fragments_per_event: 16
   board_id: 0
 
   SamplesPerChannel: 7675 # SBND drift time x 3

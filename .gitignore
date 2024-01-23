@@ -1,6 +1,7 @@
 **/*~
 **/*.ipynb*
 **/.setup_fhiclcpp
+**/#*
 
 **/core.*
 **/trace.*

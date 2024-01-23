@@ -2,4 +2,21 @@
 #include "tpc_standard.fcl"
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/tpc05_metrics.log"
+
 daq.fragment_receiver.fragment_ids: [0x9503,0x9504,0x9505,0x9506,0x9507,0x9508,0x9509,0x950A,0x950B,0x950C,0x950D,0x950E,0x950F,0x9510,0x9511,0x9512]
+
+#daq.fragment_receiver.generated_fragments_per_event: 16
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 18
+
+#daq.fragment_receiver.fragment_ids: [0x9503,0x9504,0x9505,0x9506,0x9507,0x9508,0x9509,0x950A]
+#daq.fragment_receiver.generated_fragments_per_event: 8
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 10
+
+#daq.fragment_receiver.fragment_ids: [0x9503,0x9504,0x9505,0x9506,0x9507,0x9508,0x9509]
+#daq.fragment_receiver.generated_fragments_per_event: 7
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 9
+
+#daq.fragment_receiver.fragment_ids: [0x9503,0x9504,0x9505,0x9506]
+#daq.fragment_receiver.generated_fragments_per_event: 4
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 6
+

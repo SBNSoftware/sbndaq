@@ -5,7 +5,7 @@ fragment_receiver: {
 
 fragment_ids: [0x3105, 0x3104, 0x3108, 0x3109] 
 
-generated_fragments_per_event: 4 
+#generated_fragments_per_event: 4 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
 TurnOnHV: [false, false, false, false] 
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)

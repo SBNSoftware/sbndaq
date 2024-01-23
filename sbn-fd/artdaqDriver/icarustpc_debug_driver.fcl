@@ -12,7 +12,7 @@ generator: PhysCrateData
 
 max_fragment_size_bytes: 5000000 
 
-generated_fragments_per_event: 1 
+#generated_fragments_per_event: 1 
 
 fragment_id: 0 
 

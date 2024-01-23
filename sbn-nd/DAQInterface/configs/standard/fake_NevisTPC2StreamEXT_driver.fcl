@@ -6,7 +6,7 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
 daq: {
 fragment_receiver: {
-  max_fragment_size_bytes:  667772 # 748390 #16777216
+  max_fragment_size_bytes: 667772  #748390 #16777216
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
@@ -20,10 +20,12 @@ fragment_receiver: {
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
-  DumpBinaryDir: "/data"
+  DumpBinaryDir: "/data/isafa"
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
-
+  GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
+  GPSZMQPortNTB: "tcp://10.226.36.6:11212"
+  framesize: 20479
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
 
@@ -73,7 +75,7 @@ trigger_module : {
  # Example from MicroBooNE -- NEEDS TO BE EDITED --
     deadtime : 0x59 #0xfa
     # Must satisfy framesize = timesize * 8 - 1
-    framesize: 9119 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
+    framesize: 20479 #for 1.8ms frame # 9592 # 1199*8  20479 # SBND drift time. Number of samples (minus one) for the 16 MHz clock
     g1delay : 0x0 # 0x10
     g1end :   0x0 #0x1
     g1start : 0x0 #0x1
@@ -149,7 +151,7 @@ trigger_module : {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level: 3 #level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/tpc00_metrics.log"
       uniquify: true
     }

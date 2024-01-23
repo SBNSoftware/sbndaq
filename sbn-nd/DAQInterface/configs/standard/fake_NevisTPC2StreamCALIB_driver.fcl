@@ -17,13 +17,15 @@ fragment_receiver: {
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
-  CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
+  CALIBTriggerFrequency: 15 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
-  DoSNReadout: false# true # Do continuous readout
-  DumpBinaryDir: "/data"
+  DoSNReadout: true # Do continuous readout
+  DumpBinaryDir: "/data/isafa_TPC_NTB_tests"
   SNChunkSize: @local::sn_dma_buffer_size
-
+  GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
+  GPSZMQPortNTB: "tcp://10.226.36.6:11212"
+  framesize:     20479
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -127,7 +129,7 @@ fragment_receiver: {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level: 3 #level_string: "1,2,11-20"
       fileName: "/daq/log/metrics/tpc00_metrics.log"
       uniquify: true
     }

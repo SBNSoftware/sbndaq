@@ -3,7 +3,7 @@ daq: {
 
 fragment_receiver: {
 #Number of FEBs
-generated_fragments_per_event: 6 
+#generated_fragments_per_event: 6 
 #See: https://sbn-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=16111
 fragment_ids: [0x311f, 0x3120, 0x3121, 0x3122, 0x3123, 0x3124] 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs

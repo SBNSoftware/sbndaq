@@ -2,7 +2,7 @@ daq: {
 
   fragment_receiver: {
 #Number of FEBs
-   generated_fragments_per_event: 6
+#   generated_fragments_per_event: 6
 
 #See: https://sbn-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=16111
    fragment_ids: [ 0x312b, 0x312c, 0x312d, 0x312e, 0x312f, 0x3130 ]

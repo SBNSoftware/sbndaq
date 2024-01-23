@@ -5,14 +5,14 @@
 #  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
 #
 
-    daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
+#    daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
 #    daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
     daq.fragment_receiver.fragment_ids: [ 79, 80, 81, 89 ]
-#    daq.fragment_receiver.generated_fragments_per_event: 3 #number if FEBs
+##    daq.fragment_receiver.generated_fragments_per_event: 3 #number if FEBs
 #    daq.fragment_receiver.fragment_ids: [ 71, 76, 193 ]
 #    daq.fragment_receiver.fragment_ids: [ 71, 73, 76 ]
 #    daq.fragment_receiver.fragment_ids: [ 72, 73, 76 ]
-#     daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
+##     daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
 #     daq.fragment_receiver.fragment_ids: [ 73, 76 ]
     
 #What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?

@@ -8,7 +8,7 @@ database_work_dir=${artdaq_sw_dir}/database/work-db-dir
 [ -f  /grid/fermiapp/products/artdaq/setup ] source /grid/fermiapp/products/artdaq/setup
 [ -f  ${HOME}/icarus_artdaq/products/setup ] source ${HOME}/icarus_artdaq/products/setup
 
-setup artdaq_database v1_04_66 -q e15:prof:s64
+setup artdaq_database v1_09_00 -q e20:prof:s120a
 
 export ARTDAQ_DATABASE_URI="mongodb://127.0.0.1:27037/fnal_icarus_db"
 

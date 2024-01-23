@@ -10,7 +10,7 @@ daq:
     circular_buffer_mode: true
     fragment_id: 0x0
 
-    generated_fragments_per_event: 1
+#    generated_fragments_per_event: 1
     board_id: 1
 
     partition_number: 7

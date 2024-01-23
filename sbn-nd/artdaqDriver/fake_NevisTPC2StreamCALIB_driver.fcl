@@ -11,7 +11,7 @@ fragment_receiver: {
   fragment_type: NevisTPC
   max_fragment_size_bytes: 2097152	
   fragment_ids: [0x9103,0x9104,0x9105]#,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E,0x910F,0x9110,0x9111,0x9112]
-  generated_fragments_per_event: 3 
+#  generated_fragments_per_event: 3 
   board_id: 0
 
   SamplesPerChannel: 3420 # 7675 # SBND drift time x 3

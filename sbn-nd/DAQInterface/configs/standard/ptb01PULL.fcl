@@ -1,4 +1,9 @@
-#include "ptb01_offbeam_crt.fcl"
+#include "ptb01.fcl" 
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
+##include "ptbmk2_nd_2hz.fcl" 
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
+
+daq.fragment_receiver.board_config: @local::board_config
 
 ## Pull mode parameters
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address
@@ -6,16 +11,20 @@
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width:  50000000 #400ms window
-    daq.fragment_receiver.request_window_offset: 25000000 #200 ms early offset
+    daq.fragment_receiver.request_window_width: 600000  #600us #300us window#3ms window
+    daq.fragment_receiver.request_window_offset: 500000 #500us #400us early #1.5ms early offset
 
-    daq.fragment_receiver.request_windows_are_unique: false
-    #daq.fragment_receiver.request_windows_are_unique: true
+    #daq.fragment_receiver.request_windows_are_unique: false
+    daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true
     daq.fragment_receiver.stale_request_timeout: 2000000000
     daq.fragment_receiver.receive_requests: true
     daq.fragment_receiver.window_close_timeout_us: 400000000
     daq.fragment_receiver.circular_buffer_mode: true
+
+    daq.fragment_receiver.data_buffer_depth_fragments: 2000
+    daq.fragment_receiver.data_buffer_depth_mb : 200 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+
 ##  end pull mode parameters
 
 

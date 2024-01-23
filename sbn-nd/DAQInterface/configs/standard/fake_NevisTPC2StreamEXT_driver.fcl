@@ -20,7 +20,7 @@ fragment_receiver: {
   CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
-  DumpBinaryDir: "/data/isafa"
+  DumpBinaryDir: "/data"
   DoSNReadout: true # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
   GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 

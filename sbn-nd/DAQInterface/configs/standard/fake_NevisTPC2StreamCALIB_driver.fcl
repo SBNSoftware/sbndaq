@@ -21,7 +21,7 @@ fragment_receiver: {
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
   DoSNReadout: true # Do continuous readout
-  DumpBinaryDir: "/data/isafa_TPC_NTB_tests"
+  DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
   GPSTimeFrequency: 1 #setting pulse per second parameter for PPS 
   GPSZMQPortNTB: "tcp://10.226.36.6:11212"
@@ -112,6 +112,7 @@ fragment_receiver: {
     {
       use_routing_master: false 
     }
+
 
 #pull mode configuration
  receive_requests: true

@@ -1,0 +1,371 @@
+board_config : '{  
+  "ctb":{
+    "sockets":{
+      "receiver":{
+        "rollover":500000,
+        "host":"10.226.35.150",
+        "port":8992
+      },
+      "monitor":{
+        "enable" : false,
+        "host": "localhost",
+        "port": 8993
+      },
+      "statistics": {
+        "enable":false,
+        "port":8994,
+        "updt_period": 1
+      }
+    },
+    "misc":{
+      "randomtrigger_1":{
+        "description":"Random trigger that can optionally be set to fire only during beam spill",
+        "enable":true,
+        "fixed_freq":true,
+        "beam_mode":false,
+        "period":25000000,
+        "period_old":3333333,
+        "seed":"0xACE2ACE1",
+        "thresh_lo":"0x00000001",
+        "thresh_hi":"0x000F00FF"
+      },
+      "randomtrigger_2":{
+        "description":"Random trigger that can optionally be set to fire only outside of beam spill",
+        "enable":false,
+        "fixed_freq":true,
+        "beam_mode":false,
+        "period":25000000,
+        "seed":"0x0000ACE1",
+        "thresh_lo":"0x00000001",
+        "thresh_hi":"0x000F00FF"
+      },
+      "pulser":{
+        "description":"Used to generate a fake BNB cycle. Period and width are in 20ns clock ticks",
+        "enable": true,
+        "period":66666667,
+        "width" :66666666
+      },
+      "timing":{
+        "description":"Unbiased Trigger Control.",
+        "tap"          : "0x2",
+        "repeater_val" : "0x0",
+        "period"       : "0x3",
+        "duty"         : "0x3"
+      },
+      "debug_outs":{
+        "description":"Masks for debug outputs",
+        "debug_mask_1":"0x8",
+        "debug_mask_2":"0x8"
+      },
+      "ch_status":false,
+      "standalone_enable": true
+    },
+    "HLT":{
+      "command_mask" : {
+        "description":"Masks which HLTs correspond to each command. No overlaps are allowed.",
+        "event_mask" : "0x3F",
+        "flash_mask" : "0x70000000",
+        "reset_mask" : "0x300000"
+      },
+      "post_event_flash_window" : "0x124F8",
+      "inhibit_length" : "0x22CA4",
+      "trigger": [
+        { "id":"HLT_1",
+          "description": "Zero Bias BNB. Prescaled by 10",
+          "enable":false,
+          "minc" : "0x40000000",
+          "mexc" : "0x0",
+          "prescale" : "0x10"
+        },
+        { "id":"HLT_2",
+          "description": "BNB + Light",
+          "enable":false,
+          "minc" : "0x20020000",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_3",
+          "description": "Off-Beam Gate Zero Bias. Prescaled by 10",
+          "enable": false,
+          "minc" : "0x4000000",
+          "mexc" : "0xF0000000",
+          "prescale" : "0x10"
+        },
+        { "id":"HLT_4",
+          "description": "Off-Beam Gate + Light",
+          "enable":false,
+          "minc" : "0x4020000",
+          "mexc" : "0xF0000000",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_5",
+          "description": "Crossing Muon",
+          "enable":false,
+          "minc" : "0x2",
+          "mexc" : "0xFF000000",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_6",
+          "description": "Light",
+          "enable":false,
+          "minc" : "0x4000",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_20",
+          "description": "CRT T1 Reset before BNB",
+          "enable":false,
+          "minc" : "0x10",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_21",
+          "description": "CRT T1 Reset before Off-Beam gate (not in BNB)",
+          "enable":false,
+          "minc" : "0x20",
+          "mexc" : "0xF0000000",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_28",
+          "description": "Pre Arrival + Light",
+          "enable":false,
+          "minc" : "0x20020000",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_29",
+          "description": "Post Event Trigger + Light",
+          "enable":false,
+          "minc" : "0x20000",
+          "mexc" : "0x0",
+          "prescale" : "0x1"
+        },
+        { "id":"HLT_30",
+          "description": "Off-Beam gate Pre Arrival + Light",
+          "enable":false,
+          "minc" : "0x2020000",
+          "mexc" : "0xF0000000",
+          "prescale" : "0x1"
+        }
+      ]
+    },
+    "subsystems":{
+      "pds":{
+        "channel_mask":"0x3FF",
+        "reshape_length" : 50,
+        "reshape_flash_out_length" : 5,
+        "delays":[0,0,0,0,0,0,0,0,0,0],
+        "triggers": [
+          { "id":"LLT_14",
+            "description": "Any MTC/A input",
+            "enable":false,
+            "mask" : "0xFC00",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_15",
+            "description": "Any CAEN input",
+            "enable":false,
+            "mask" : "0x3FF",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_16",
+            "description": "Any CAEN input",
+            "enable":false,
+            "mask" : "0x3FF",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_17",
+            "description": "Any CAEN input",
+            "enable":false,
+            "mask" : "0x3FF",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_18",
+            "description": "MTCA TOP LO",
+            "enable":false,
+            "mask" : "0x400",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_19",
+            "description": "MTCA TOP MED",
+            "enable":false,
+            "mask" : "0x1000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_20",
+            "description": "MTCA TOP HI",
+            "enable":false,
+            "mask" : "0x4000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_21",
+            "description": "MTCA BOTTOM LO",
+            "enable":false,
+            "mask" : "0x800",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_22",
+            "description": "MTCA BOTTOM MED",
+            "enable":false,
+            "mask" : "0x2000",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_23",
+            "description": "MTCA BOTTOM HI",
+            "enable":false,
+            "mask" : "0x8000",
+            "type" : "0x1",
+            "count" : "0x0"
+          }
+        ]
+      },
+      "crt":{
+        "channel_mask": "0x3FFF",
+        "pixelate": false,
+        "reshape_reset_length" : 3,
+        "reshape_length" : 3,
+        "delays":[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "triggers": [
+          { "id":"LLT_6",
+            "description": "CRT northwall XY layers AND-d connector 2",
+            "enable":false,
+            "mask" : "0xC",
+            "type" : "0x2",
+            "count" : "0x2"
+          },
+          { "id":"LLT_7",
+            "description": "",
+            "enable":false,
+            "mask" : "0x3",
+            "type" : "0x2",
+            "count" : "0x2"
+          },
+          { "id":"LLT_8",
+            "description": "",
+            "enable":false,
+            "mask" : "0xC",
+            "type" : "0x2",
+            "count" : "0x2"
+          },
+          { "id":"LLT_9",
+            "description": "",
+            "enable":false,
+            "mask" : "0x9",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_10",
+            "description": "",
+            "enable":false,
+            "mask" : "0x6",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_11",
+            "description": "",
+            "enable":false,
+            "mask" : "0x0",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_12",
+            "description": "",
+            "enable":false,
+            "mask" : "0x0",
+            "type" : "0x1",
+            "count" : "0x0"
+          },
+          { "id":"LLT_13",
+            "description": "",
+            "enable":false,
+            "mask" : "0x0",
+            "type" : "0x1",
+            "count" : "0x0"
+          }
+        ]
+      },
+      "beam":{
+        "channel_mask": "0x7",
+        "reshape_length" : 50,
+        "delays": [0,0,0,0],
+        "gatekeeper_bnb":{
+	  "early_warning_window":{
+	    "use_count": true,
+	    "beam_signal_mask": "0x2",
+	    "window_length": "0x14F5A",
+            "reset_delay": "0x186A0"
+	  },
+	  "pre_arrival_window":{
+	    "use_count": false,
+	    "beam_signal_mask": "0x0",
+	    "window_length": "0x124F8"
+	  },
+	  "beam_acceptance_window":{
+	    "use_count": true,
+	    "beam_signal_mask": "0x4",
+	    "window_length": "0x96"
+	  },
+	  "post_arrival_window":{
+	    "beam_signal_mask": "0x0",
+	    "window_length": "0x0"
+	  }
+        },
+	"gatekeeper_ext":{
+	  "early_warning_window":{
+	    "use_count": true,
+	    "beam_signal_mask": "0x1",
+	    "window_length": "0x14F5A",
+	    "reset_delay": "0x186A0"
+	  },
+	  "pre_arrival_window":{
+	    "use_count": false,
+	    "beam_signal_mask": "0x0",
+	    "window_length": "0x124F8"
+	  },
+	  "beam_acceptance_window":{
+	    "use_count": true,
+	    "beam_signal_mask": "0x8",
+	    "window_length": "0x96"
+	  },
+	  "post_arrival_window":{
+            "beam_signal_mask": "0x0",
+	    "window_length": "0x0"
+	  }
+	}
+      },
+      "mtcas":{
+        "mtca_thresh1": {
+          "hi": 2048,
+          "med": 2048,
+          "lo": 2048
+        },
+        "mtca_thresh2": {
+          "hi": 2048,
+          "med": 2048,
+          "lo": 2048
+        },
+        "channel_mask": "0x3F",
+        "reshape_length" : 50,
+        "delays": [0,0,0,0,0,0],
+        "triggers": [
+        ]
+      }, 
+      "nevis":{
+        "reshape_trig_out_length" : 2,
+        "output_delay" : 18350
+      },
+       "wrtdc":{
+        "reshape_trig_out_length" : 4
+      }
+    }
+  }
+}'

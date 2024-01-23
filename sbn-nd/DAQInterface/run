@@ -26,7 +26,29 @@ getStatus "nil"
 ##setdaqcomps.sh pmtx03 crt01PULL spectdc
 #setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
 
-setdaqcomps.sh tpc01 ntb01
+#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 tpc01 tpc02 tpc05 ntb01
+
+#setdaqcomps.sh wib106 wib105 wib104 wib103 wib102 tpc02 tpc01 ntb01
+#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 tpc05 tpc02 tpc01 ntb01
+#setdaqcomps.sh wib104
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc05 tpc02 tpc01 ntb01
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
+#setdaqcomps.sh tpc01 ntb01
+#setdaqcomps.sh mbb02 tpc05 tpc02 tpc01 ntb01
+
+setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
+
+#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
+
+#setdaqcomps.sh mbb02 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
+#
+#setdaqcomps.sh mbb02 wib102 wib103 wib104 wib306 wib401 wib402 tpc09 tpc01 ntb01 
+#setdaqcomps.sh mbb02 wib401 wib402
+
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc02 tpc01 ntb01 
+#setdaqcomps.sh wib304 wib305
+
+#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -52,7 +74,7 @@ done
 # report_datafile_location
 
 send_transition.sh start
-# getStatus "starting"
+  getStatus "starting"
 sleep 2
 getStatus "starting"
 while [ "$status" != 'running' ]

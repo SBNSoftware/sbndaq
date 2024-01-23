@@ -14,7 +14,7 @@ fragment_receiver: {
 #  generated_fragments_per_event: 3 
   board_id: 0
 
-  SamplesPerChannel: 7675 # SBND drift time x 3
+  SamplesPerChannel: 3420 # 7675 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status

@@ -4,7 +4,7 @@ fragment_receiver: {
     generator: NevisTBStream
     fragment_type: NevisTB
     fragment_ids: [1]
-#    generated_fragments_per_event: 1
+    generated_fragments_per_event: 1
     board_id: 0
 
     NTBChunkSize: 64

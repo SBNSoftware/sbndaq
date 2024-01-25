@@ -37,8 +37,8 @@ getStatus "nil"
 #setdaqcomps.sh mbb02 tpc05 tpc02 tpc01 ntb01
 
 #setdaqcomps.sh tpc01 ntb01
-
-setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
+setdaqcomps.sh tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
 
 #setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
 

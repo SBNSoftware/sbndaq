@@ -2,8 +2,8 @@
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
-SBNDAQ_VERSION="v1_08_06"
-SBNDAQ_QUALS="e20:prof:s120a"
+SBNDAQ_VERSION="v1_09_00"
+SBNDAQ_QUALS="e26:prof:s120a"
 DAQINTERFACE_VERSION="v3_12_07"
 
 setup sbndaq $SBNDAQ_VERSION -q $SBNDAQ_QUALS

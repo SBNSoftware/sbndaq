@@ -19,7 +19,8 @@ use_messageviewer: true
 boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01
 #boardreader_priorities_on_config: wib10[1-6] wib20[1-6] wib30[1-6] wib40[1-6] mbb02 tpc* ntb01 ptb01
 #boardreader_priorities_on_config: wib[12]0[1-6] wib[34]0[1-6] mbb02 tpc* ntb01 ptb01
-boardreader_priorities_on_start: wib* mbb02 tpc* ntb01 ptb01
+#boardreader_priorities_on_start: wib* mbb02 tpc* ntb01 ptb01
+boardreader_priorities_on_start: mbb02 wib* tpc* ntb01 ptb01
 boardreader_priorities_on_stop: ptb01 ntb01 tpc* wib* mbb02 
 
 max_launch_checks: 10

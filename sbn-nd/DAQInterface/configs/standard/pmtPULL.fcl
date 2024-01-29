@@ -3,8 +3,8 @@
      daq.fragment_receiver.request_port: 3001   # UDP request port
      daq.fragment_receiver.request_mode: window # pull mode
 
-     daq.fragment_receiver.request_window_width:   1000000000 #500000000 #1s window #300ms window 
-     daq.fragment_receiver.request_window_offset:  5000000000 #250000000#15000000 #150ms offset
+     daq.fragment_receiver.request_window_width: 30000000 #30ms  #7000000 #700 us window
+     daq.fragment_receiver.request_window_offset: 15000000 #15ms #5000000 #500 us offset
 
      daq.fragment_receiver.request_windows_are_unique: true #true
      daq.fragment_receiver.separate_data_thread: true

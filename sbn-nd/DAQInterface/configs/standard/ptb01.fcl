@@ -7,7 +7,7 @@ fragment_receiver: {
    generator: TriggerBoardReader
    #fragment_type: TriggerBoard        # Make sure downstream modules know about this fragment_type!
    fragment_type: PTB        # Make sure downstream modules know about this fragment_type!
-   fragment_id: 8        # Make sure downstream modules know about this fragment_type!
+   fragment_id: 0xC008        # Make sure downstream modules know about this fragment_type!
 
    ##------------------------------------------------------------------------------
    ## Variable of interest for the new PTB Fragment Generator

@@ -7,6 +7,10 @@ daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105]#,0x9106]
 daq.fragment_receiver.generated_fragments_per_event: 3
 daq.fragment_receiver.nevis_crate.max_fem_slot: 5
 
+#from daisy -- should be needed configs for the new server
+daq.fragment_receiver.controller_module.bus: 0x51
+daq.fragment_receiver.nu_xmit_reader.bus: 0x8a
+daq.fragment_receiver.sn_xmit_reader.bus: 0x8b
 #run tpc01 in pull mode
 #daq.fragment_receiver.receive_requests: false
 #daq.fragment_receiver.request_mode: ignored

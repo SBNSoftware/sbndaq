@@ -219,7 +219,12 @@ daq:
       enable_FEMBs: [true,true,true,true] # list of 4 bools
 
       # FEMB configuration documents
-      FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations
+      FEMBs: {
+               femb0: @local::femb_config_default_femb1
+               femb1: @local::femb_config_default_femb2
+               femb2: @local::femb_config_default_femb3
+               femb3: @local::femb_config_default_femb4
+             } # list of 4 FEMB configurations
 
       # If these are true, then won't raise an exception--will keep going
       continueOnError: 

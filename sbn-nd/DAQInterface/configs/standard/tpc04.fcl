@@ -1,4 +1,3 @@
-
 #include "tpc_standard.fcl"
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/tpc04_metrics.log"

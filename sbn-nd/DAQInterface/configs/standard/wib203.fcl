@@ -5,6 +5,9 @@
 daq.fragment_receiver.WIB.address: "10.226.34.23"
 daq.fragment_receiver.WIB.enable_FEMBs: [true,true,true,true]
 #daq.fragment_receiver.WIB.enable_FEMBs: [true,true,false,false]
+#daq.fragment_receiver.WIB.enable_FEMBs: [false,false,false,false]
+#daq.fragment_receiver.WIB.use_FEMB_fake_data: [true,true,true,true]
+daq.fragment_receiver.WIB.femb_fake_data_mode: [3,3,3,3]
 daq.fragment_receiver.WIB.FEMBs[0].FEMB_channel_map: 2
 daq.fragment_receiver.WIB.FEMBs[1].FEMB_channel_map: 0
 daq.fragment_receiver.WIB.FEMBs[2].FEMB_channel_map: 0

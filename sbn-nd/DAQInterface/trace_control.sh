@@ -62,6 +62,9 @@ Options:          Note: \"run\" option is required.
 "
 VUSAGE=""
 
+echo "`date`: $0 $@" >> ~/trace.log
+echo "`date`: RGANG=$RGANG TRACE_VERSION=$TRACE_VERSION" >> ~/trace.log
+
 # Process script arguments and options
 op1chr='rest=`expr "$op" : "[^-]\(.*\)"`; test -n "$rest" && set -- "-$rest" "$@"'
 op1arg='rest=`expr "$op" : "[^-]\(.*\)"`; test -n "$rest" && set -- "$rest"  "$@"'
@@ -139,13 +142,18 @@ boot_txt="$trace_control_run_records_dir/$run/boot.txt"
 if [ -f "$boot_txt" ];then
     grep partition "$boot_txt"
 fi
+set -x
+type python
+printenv| egrep 'RGANG|LD_LIBRARY_PATH=|PY'
+pwd
+date
 
 #echo "$(hostname -s).$run.$transition.$(date) " >> ~/trace.log
 case $transition in
 start)  rgcmd=". $trace_control_upsdb/setup"
         rgcmd="$rgcmd; setup TRACE $trace_control_trace_version"
         rgcmd="$rgcmd; export TRACE_FILE=$trace_file"
-        rgcmd="$rgcmd; treset; tmodeM 1;true"
+        rgcmd="$rgcmd; tinfo|awk '/^trace.h rev/{rev1=\$5}/^revision/{rev2=\$4;exit rev1==rev2}'&&rm -f $trace_file||{ treset; tmodeM 1;true;}"
         test -n "${do_nothing-}" \
             && echo $RGANG $do_nodelist "$rgcmd" \
             || $RGANG $do_nodelist "$rgcmd"
@@ -172,5 +180,7 @@ status)
 esac
 
 status=$?
-echo; echo "exiting with status $status"
+echo; echo "`date`: exiting with status $status"
+echo "`date`: exiting with status $status" >> ~/trace.log
 exit $status
+

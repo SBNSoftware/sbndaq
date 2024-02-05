@@ -6,8 +6,11 @@ THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 export SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq.sh
 LOCAL_SETUP_FILE=$THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_sbn_artdaq_local.sh
 
-#if a local setup file exists, use that instead
-[[ -f $LOCAL_SETUP_FILE ]]  && export SETUP_FILE=$LOCAL_SETUP_FILE
+
+if [[ $THIS_SBN_DAQ_DAQINTERFACE_DIR != *"/DAQ_ProdAreas/"* ]]; then 
+  #if a local setup file exists, use that instead
+  [[ -f $LOCAL_SETUP_FILE ]] && export SETUP_FILE=$LOCAL_SETUP_FILE
+fi
 
 echo "Setting up with: $SETUP_FILE"
 source $SETUP_FILE

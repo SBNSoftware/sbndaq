@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+SBNDAQ_VERSION="v1_09_00"
+SBNDAQ_QUALS="e26:prof:s120a"
+DAQINTERFACE_VERSION="v3_12_07"
 
 # reconfigure locale
 export LANG='en_US.UTF-8'
@@ -7,14 +10,15 @@ export LC_ALL='en_US.UTF-8'
 
 unset PRODUCTS
 
+THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+EXTRA_PRODUCTS_DIR=$(echo $THIS_SBN_DAQ_DAQINTERFACE_DIR | awk -F'/srcs/' '{print $1}')/products
+
 source /daq/software/products/setup
+
+echo EXTRA_PRODUCTS_DIR=$EXTRA_PRODUCTS_DIR
+
+[[ -f ${EXTRA_PRODUCTS_DIR}/setup ]] && export PRODUCTS=${EXTRA_PRODUCTS_DIR}:$PRODUCTS
 #[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-
-[[ -f $(dirname $(pwd))/products/setup ]] && export PRODUCTS=$(dirname $(pwd))/products:$PRODUCTS
-
-SBNDAQ_VERSION="v1_09_00"
-SBNDAQ_QUALS="e26:prof:s120a"
-DAQINTERFACE_VERSION="v3_12_07"
 
 setup sbndaq $SBNDAQ_VERSION -q $SBNDAQ_QUALS
 setup artdaq_daqinterface $DAQINTERFACE_VERSION

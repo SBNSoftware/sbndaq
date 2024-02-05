@@ -1,6 +1,11 @@
 #!/bin/bash
 (return 0 2>/dev/null) || { echo "This script should be sourced from BASH!"; exit 1; }
 
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 #default setup file is:

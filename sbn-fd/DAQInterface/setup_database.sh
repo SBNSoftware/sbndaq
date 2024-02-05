@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 source /daq/software/products/setup
 
 export ARTDAQ_DATABASE_ENV=${ARTDAQ_DATABASE_ENV:-"${HOME}/.artdaq_database.env"}
@@ -37,4 +43,4 @@ function configdb_make_work_dir(){
 }
 
 complete -F _complete_conftool conftool.py
-echo;echo "Instructions: https://cdcvs.fnal.gov/redmine/projects/artdaq-utilities/wiki/Artdaq-config-conftool";echo;echo
+echo;echo "Instructions: https://sbnsoftware.github.io/sbn_online_wiki/ConfigDB.html";echo;echo

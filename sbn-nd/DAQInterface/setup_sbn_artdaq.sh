@@ -27,4 +27,4 @@ export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"
 
-ups active | grep  -E "(^sbn|^wib|^artdaq_runcontrol_gui)"
+ups active | grep  -E "(^sbn|^wib|^artdaq_runcontrol_gui|^caen)"

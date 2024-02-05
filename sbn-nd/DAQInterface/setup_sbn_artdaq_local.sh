@@ -51,7 +51,7 @@ export LC_TIME='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=7
+export DAQINTERFACE_PARTITION_NUMBER=9
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"

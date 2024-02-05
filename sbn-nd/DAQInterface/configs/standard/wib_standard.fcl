@@ -182,7 +182,7 @@ daq:
     # WIB configuration
     WIB: 
     {
-      expected_wib_fw_version: 0x123
+      expected_wib_fw_version: 0x124
       
       # WIB network address string
       address: "" # can be either IP address or DNS address

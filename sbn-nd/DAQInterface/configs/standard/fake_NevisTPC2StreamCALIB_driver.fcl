@@ -46,8 +46,8 @@ fragment_receiver: {
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
-    #fem_fake_data: true # (default is false)
-    #fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
+    fem_fake_data: true # (default is false)
+    fem_fake_data_pattern: "channel" #"+sample" # "channel", "sample" or "channel+sample"
     nu_compress: true
     timesize: 1139 #1133 #1199 #1200-1    2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }

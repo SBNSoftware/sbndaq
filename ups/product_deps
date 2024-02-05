@@ -33,7 +33,7 @@ flcdir  product_dir fcl
 # Add the dependent product and version
 
 product              version      optional
-sbndaq_artdaq        v1_08_06
+sbndaq_artdaq        v1_09_00
 cetmodules           v3_22_02     -       only_for_build
 end_product_list
 

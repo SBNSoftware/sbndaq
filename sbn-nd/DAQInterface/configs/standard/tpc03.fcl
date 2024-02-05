@@ -3,3 +3,13 @@
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/tpc03_metrics.log"
 daq.fragment_receiver.fragment_ids: [0x9303,0x9304,0x9305,0x9306,0x9307,0x9308,0x9309,0x930A,0x930B,0x930C,0x930D,0x930E,0x930F,0x9310,0x9311,0x9312]
+
+#daq.fragment_receiver.fragment_ids:[0x9303,0x9304,0x9305,0x9306]
+#daq.fragment_receiver.generated_fragments_per_event: 4
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 6
+
+
+#Use for configuring with 3 FEMS
+#daq.fragment_receiver.fragment_ids: [0x9303,0x9304,0x9305]
+#daq.fragment_receiver.generated_fragments_per_event: 3
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 5

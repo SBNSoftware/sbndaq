@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-
-SBNDAQ_VERSION="v1_08_06"
+SBNDAQ_VERSION="v1_09_00"
 SBNDAQ_QUALS="e26:prof:s120a"
 DAQINTERFACE_VERSION="v3_12_07"
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
+
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 source /daq/software/products/setup
 #[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
@@ -38,10 +42,6 @@ setup artdaq_mfextensions   v1_08_06 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
-# reconfigure locale
-export LANG='en_US.UTF-8'
-export LC_TIME='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
 
 #Trace setup for debugging:
 export TRACE_FILE=/tmp/trace_$(whoami)_p1

@@ -5,6 +5,7 @@ daq:
     generator: MBBReader 
     partition_number: 999 
     fragment_type: MBB 
+    #max_fragment_size_bytes: 1024
     fragment_id: 401 
     board_id: 401 
     destinations: {}
@@ -12,13 +13,22 @@ daq:
 
     MBB:
     {
+      #address: "192.168.230.51"
       address: "sbnd-mbb01"
       mbb_table: "MBB.adt"
+      #expected_mbb_fw_version: 112
       expected_mbb_fw_version: 108
       configuration_tries: 5
       PULSE_SOURCE: 0
       PULSE_PERIOD: 0
 
+      #wib_pwr1400: 0
+      #wib_pwr1401: 0
+      #wib_pwr1402: 0
+      #wib_pwr1403: 0
+      #wib_pwr1404: 0
+      #wib_pwr1405: 0
+      
       wib_pwr1400: 1
       wib_pwr1401: 1
       wib_pwr1402: 1

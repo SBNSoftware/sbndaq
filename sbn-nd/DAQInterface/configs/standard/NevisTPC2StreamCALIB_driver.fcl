@@ -1,27 +1,31 @@
 # Test configuration of 2 streams and readout of Nevis XMIT NU stream with CALIB triggers using artdaq
 # and XMIT SN stream with a worker thread
 
-nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
-sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
+nu_dma_buffer_size: 5e5 # 1e4 # < 1e6
+sn_dma_buffer_size: 3e6 # 1e5 # < 4e6
 
-daq:{
+daq: {
 fragment_receiver: {
-  max_fragment_size_bytes: 16777216
+  max_fragment_size_bytes: 667772 #16 #1000000  #251658240   #1306368
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
   fragment_ids: [] # Needs to be set in crate-specific FCL files
-#  generated_fragments_per_event: 16
+  generated_fragments_per_event: 16
   board_id: 0
 
-  SamplesPerChannel: 7675 # SBND drift time x 3
+  SamplesPerChannel: 3420 # 3402 # 3420 # 7675 # 3402    #0.6ms*2MHz=1200 1200*3=3600,  7675 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
   CALIBTriggerFrequency: 1 # Frequency in Hz of the CALIB trigger
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
-  DumpBinary: false # Write binary file before the artdaq back-end
-  DoSNReadout: true # Do continuous readout
+  DumpBinary: true # Write binary file before the artdaq back-end
+  DoSNReadout: false# true # Do continuous readout
+  DumpBinaryDir: "/data"
   SNChunkSize: @local::sn_dma_buffer_size
+  GPSTimeFrequency: 0 #setting pulse per second parameter for PPS 
+  GPSZMQPortNTB: "tcp://10.226.36.6:11212"
+  framesize:     20479
 
   ### Configuration of the Nevis Crate ###
   # Configuration of the Nevis Crate (location specific)
@@ -38,15 +42,16 @@ fragment_receiver: {
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
-    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
     fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
-    # fem_fake_data: true # (default is false)
-    # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
-    nu_compress: true #false
-    timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+    #fem_fake_data: true # (default is false)
+    #fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
+    nu_compress: true
+    timesize: 1139 #1133 #1199 #1200-1    2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
+
 
   ### Configuration of the ControllerModule ###
   # Configuration of the Nevis Controller Module
@@ -58,7 +63,7 @@ fragment_receiver: {
     device_id : 0x4
     bus : 0x66
     device_name: neviscard_controller
-  }
+   }
 
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
@@ -67,7 +72,7 @@ fragment_receiver: {
   trigger_module : {
   # Hardcoded in nevishwutils/Crate.cpp
   # To do: move trigger configuration here
-  }
+}
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream
@@ -83,8 +88,8 @@ fragment_receiver: {
     dma_buffer_size : @local::nu_dma_buffer_size
     # Theoretically could be as high as 9.6e7
     maxpoll : 1e7  
-    profile_time : false
-  }
+    profile_time : true
+}
 
   ### Configuration of the XMITReader for the SN stream ###
   # Configuration of the XMITReader for the Nevis XMIT SN stream
@@ -99,15 +104,29 @@ fragment_receiver: {
     # DMA settings
     dma_buffer_size : @local::sn_dma_buffer_size
     maxpoll : 1e7
-    profile_time : false
-  }
+    profile_time : true
+   }
     destinations: { }
 
     routing_table_config: 
     {
       use_routing_master: false 
     }
+
+
+#pull mode configuration
+ receive_requests: true
+ request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
+ multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net
+ request_port: 3001   ##3502   # UDP request port
+ request_mode: sequence #match sequenceID of request
+ data_buffer_depth_fragments: 100
+ data_buffer_depth_mb: 1000
+ #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+
+
 }
+
   metrics: {
     brFile: {
       metricPluginType: "file"
@@ -121,5 +140,6 @@ send_system_metrics: true
 send_process_metrics: true
 
   }
+
 process_name: Driver
 }

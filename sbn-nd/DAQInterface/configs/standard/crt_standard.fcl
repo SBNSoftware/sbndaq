@@ -16,7 +16,7 @@ daq: {
 #    receive_requests: true
 
 
-    generated_fragments_per_event: 1 #number of FEBs
+#    generated_fragments_per_event: 1 #number of FEBs
     initial_delay_s: 0
     fragment_period_ms: 10
     fragment_type: "BERNCRTV2"
@@ -39,7 +39,7 @@ daq: {
     ReaderID: 1
    
 # Whether or not turn on SiPM HV on each FEB
-   TurnOnHV : [ false ]
+   TurnOnHV : [ false]
 #How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
    PPS_offset_ns : [ 0 ] # = dummy value
 
@@ -50,6 +50,7 @@ daq: {
    #data_buffer_depth_fragments: 200000 #previous number being used
   
    firmware_flag: SBND #needs to be SBND or lots of missing events/crashes!        
+   #firmware_flag: ICARUS #needs to be SBND or lots of missing events/crashes!        
 
    #Restart febdrv periodically (febdrv issue workaround)
    feb_restart_period_s: 0
@@ -82,7 +83,7 @@ daq: {
 metrics: {
 brFile: {
 metricPluginType: "file"
-level_string: "1,2,11-20"
+level: 3
 fileName: "/daq/log/metrics/crt_%UID%_metrics.log"
 uniquify: true
 }
@@ -91,7 +92,7 @@ send_process_metrics: true
 graphite:{
 namespace: "sbnd.crt00."
 host: "10.226.36.34"
-level_string: "1,2,11-20"
+level: 10
 metricPluginType: "graphite"
 port: 2003
 reporting_interval: 10
@@ -99,4 +100,3 @@ reporting_interval: 10
 } 
 
 }
-

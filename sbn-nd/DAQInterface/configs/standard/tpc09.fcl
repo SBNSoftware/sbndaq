@@ -3,6 +3,9 @@
 daq.metrics.brFile.fileName : "/daq/log/metrics/tpc09_metrics.log"
 daq.fragment_receiver.fragment_ids: [0x9903,0x9904,0x9905,0x9906,0x9907,0x9908,0x9909,0x990A,0x990B,0x990C,0x990D,0x990E,0x990F,0x9910,0x9911,0x9912]
 
-#daq.fragment_receiver.fragment_ids: [0x9903,0x9904,0x9905,0x9906,0x9907,0x9908,0x9909,0x990A,0x990B,0x990C,0x990D,0x990E]
-#daq.fragment_receiver.generated_fragments_per_event: 12                                                                      
+#daq.fragment_receiver.fragment_ids: [0x9903,0x9904,0x9905]#,0x9906,0x9907,0x9908,0x9909,0x990A,0x990B,0x990C,0x990D,0x990E]
+#daq.fragment_receiver.generated_fragments_per_event: 3 
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 5
+
+#daq.fragment_receiver.generated_fragments_per_event: 12
 #daq.fragment_receiver.nevis_crate.max_fem_slot: 14

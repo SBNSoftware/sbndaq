@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
+SBNDAQ_VERSION="v1_09_00"
+SBNDAQ_QUALS="e26:prof:s120a"
+DAQINTERFACE_VERSION="v3_12_07"
 
-SBNDAQ_VERSION="v1_08_05"
-SBNDAQ_QUALS="e20:prof:s120a"
-DAQINTERFACE_VERSION="v3_12_05"
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 unset PRODUCTS
 unset DAQINTERFACE_TRACE_SCRIPT
 
 source /daq/software/products/setup
 [[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
-#[[ -f /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112 ]] && source /home/nfs/sbnd/DAQ_DevAreas/DAQ_28Apr2022REL/localProducts_sbndaq_v1_00_02_e20_debug_s112
 
 setup mrb v6_08_01
 
@@ -33,25 +36,20 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_05 -q ${SBNDAQ_QUALS}
-setup valgrind
+setup artdaq_demo v3_12_07 -q ${SBNDAQ_QUALS}
+#setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"
 
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 setup artdaq_daqinterface $DAQINTERFACE_VERSION
 
-setup artdaq_mfextensions  v1_08_04 -q $SBNDAQ_QUALS
+setup artdaq_mfextensions  v1_08_06 -q $SBNDAQ_QUALS
 
 alias rc='artdaqRunControl'
 
-# reconfigure locale
-export LANG='en_US.UTF-8'
-export LC_TIME='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
-
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=7
+export DAQINTERFACE_PARTITION_NUMBER=1
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"

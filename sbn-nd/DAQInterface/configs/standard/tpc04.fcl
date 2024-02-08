@@ -6,4 +6,10 @@ daq.fragment_receiver.fragment_ids: [0x9403,0x9404,0x9405,0x9406,0x9407,0x9408,0
 #daq.fragment_receiver.fragment_ids:[0x9403,0x9404,0x9405,0x9406]
 #daq.fragment_receiver.generated_fragments_per_event: 4
 #daq.fragment_receiver.nevis_crate.max_fem_slot: 6
+#
+
+#Use for configuring with 3 FEMS
+#daq.fragment_receiver.fragment_ids: [0x9403,0x9404,0x9405]
+#daq.fragment_receiver.generated_fragments_per_event: 3
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 5
 

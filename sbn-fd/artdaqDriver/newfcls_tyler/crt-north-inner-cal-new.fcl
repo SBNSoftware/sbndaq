@@ -22,7 +22,7 @@ fragment_receiver: {
 #third and fourth digit - last 8 bits of the MAC address
    fragment_ids: [ 0x3103, 0x3101, 0x3106, 0x3107 ]
 
-   generated_fragments_per_event: 1
+#   generated_fragments_per_event: 1
 
 #Whether or not turn on bias HV on the individual FEBs. Size must be the same as FEBIDs
    TurnOnHV : [ true, true, true, true ]

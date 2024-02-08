@@ -9,9 +9,9 @@
     daq.metrics.graphite.namespace: "sbnd.crttest01."
     
 
-    #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
+#    #daq.fragment_receiver.generated_fragments_per_event: 4 #number if FEBs
     #daq.fragment_receiver.fragment_ids: [ 71, 72, 73, 76 ]
-    daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
+#    daq.fragment_receiver.generated_fragments_per_event: 2 #number if FEBs
     #daq.fragment_receiver.fragment_ids: [ 122, 76 ]
     daq.fragment_receiver.fragment_ids: [ 0xB77A, 0xB74C ]
     

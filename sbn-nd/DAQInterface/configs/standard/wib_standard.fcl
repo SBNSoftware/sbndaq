@@ -182,8 +182,9 @@ daq:
     # WIB configuration
     WIB: 
     {
+      # WIB firm ware version
       expected_wib_fw_version: 0x125
-      
+
       # WIB network address string
       address: "" # can be either IP address or DNS address
 
@@ -225,7 +226,12 @@ daq:
       do_err_chk: true
 
       # FEMB configuration documents
-      FEMBs: [@local::femb_config_default_femb1,@local::femb_config_default_femb2,@local::femb_config_default_femb3,@local::femb_config_default_femb4] # list of 4 FEMB configurations
+      FEMBs: {
+               femb0: @local::femb_config_default_femb1
+               femb1: @local::femb_config_default_femb2
+               femb2: @local::femb_config_default_femb3
+               femb3: @local::femb_config_default_femb4
+             } # list of 4 FEMB configurations
 
       # If these are true, then won't raise an exception--will keep going
       continueOnError: 

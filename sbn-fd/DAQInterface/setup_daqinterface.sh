@@ -1,6 +1,11 @@
 #!/bin/bash
 (return 0 2>/dev/null) || { echo "This script should be sourced from BASH!"; exit 1; }
 
+# reconfigure locale
+export LANG='en_US.UTF-8'
+export LC_TIME='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 #default setup file is:
@@ -30,6 +35,6 @@ export DAQINTERFACE_USER_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR
 
 ups active |grep -vE "(/daq/software|setup_sbn_artdaq)"
 
-setup artdaq_runcontrol_gui v1_03_04 -q e20:prof
+setup artdaq_runcontrol_gui v1_03_05 -q e26:prof
 
 export PYTHONUNBUFFERED=TRUE

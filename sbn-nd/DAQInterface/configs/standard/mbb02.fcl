@@ -28,7 +28,7 @@ daq:
       stop_femb_daq: 1    # 0 (No), 1 (Yes)
 
       # sleep time (s).
-      sleep_time : 20
+      sleep_time : 2
 
       # parameters for ptc configuration.
       config_ptc : 1     # 0 (No), 1 (Yes)
@@ -80,6 +80,8 @@ daq:
       wib_pwr403: 1
       wib_pwr404: 1
       wib_pwr405: 1
+      
+      sync_fembs: false
     }
   }
 }

@@ -1,2 +1,2 @@
-component01 sbnd-daq32-priv -1 1
-component02 sbnd-daq32-priv -1 1
+component01 icarus-evb06-daq -1 1
+component02 icarus-evb06-daq -1 1

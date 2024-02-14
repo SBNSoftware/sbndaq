@@ -1,10 +1,9 @@
 #include "wib_standard.fcl"
 
-#daq.fragment_receiver.WIB.fragment_id: 411 
-#daq.fragment_receiver.WIB.board_id: 11  
 daq.fragment_receiver.WIB.address: "10.226.34.32"
 daq.fragment_receiver.WIB.enable_FEMBs: [true,true,true,true]
-#daq.fragment_receiver.WIB.enable_FEMBs: [false,false,false,false]
+#daq.fragment_receiver.WIB.use_FEMB_fake_data: [true,true,true,true]
+#daq.fragment_receiver.WIB.femb_fake_data_mode: [3,3,3,3]
 daq.fragment_receiver.WIB.FEMBs.femb0.FEMB_channel_map: 2
 daq.fragment_receiver.WIB.FEMBs.femb1.FEMB_channel_map: 2
 daq.fragment_receiver.WIB.FEMBs.femb2.FEMB_channel_map: 2
@@ -17,5 +16,4 @@ daq.fragment_receiver.WIB.FEMBs.femb0.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb1.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb2.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb3.test_chnl_number: 0
-#daq.fragment_receiver.WIB.metrics.dim.IDName: "wib101"
 

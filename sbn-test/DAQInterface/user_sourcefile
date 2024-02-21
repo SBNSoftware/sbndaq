@@ -29,13 +29,13 @@ export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/criti
 if [[ ! -e $DAQINTERFACE_SETTINGS ]]; then
    echo "Unable to find settings file \"$DAQINTERFACE_SETTINGS\"" >&2
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=1
-   return
+   return 
 fi
 
 if [[ ! -e $DAQINTERFACE_KNOWN_BOARDREADERS_LIST ]]; then
    echo "Unable to find boardreaders list file \"$DAQINTERFACE_KNOWN_BOARDREADERS_LIST\"" >&2
    export DAQINTERFACE_USER_SOURCEFILE_ERRNO=2
-   return
+   return 
 fi
 
 if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_DIRECTORY ]]; then
@@ -44,11 +44,10 @@ if [[ "$DAQINTERFACE_FHICL_DIRECTORY" != "IGNORED" && ! -e $DAQINTERFACE_FHICL_D
    return
 elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    #echo "Put code here which sets up the database environment"
-	 source ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_database.sh
+   source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_database.sh
 fi
 
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl
 export HOSTNAME=$(hostname -s )-daq.fnal.gov
-(( $(cat MessageFacility.fcl |grep -Eo '"localhost"' |wc -l) == 0 )) || export HOSTNAME=localhost
 
 export DAQINTERFACE_USER_SOURCEFILE_ERRNO=0

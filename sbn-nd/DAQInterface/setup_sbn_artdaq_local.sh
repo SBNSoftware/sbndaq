@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SBNDAQ_VERSION="v1_09_00"
 SBNDAQ_QUALS="e26:prof:s120a"
-DAQINTERFACE_VERSION="v3_12_07"
+DAQINTERFACE_VERSION="v3_12_08"
 
 # reconfigure locale
 export LANG='en_US.UTF-8'
@@ -49,7 +49,7 @@ setup artdaq_mfextensions  v1_08_06 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=1
+export DAQINTERFACE_PARTITION_NUMBER=8
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"

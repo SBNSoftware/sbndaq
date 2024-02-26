@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
+#
+#=====================================================================================
+#Run with argument of which directory in configs you want to use. Defaults to standard
+#=====================================================================================
+CONFIGDIR="standard"
+if [ ! -z "$1" ]
+    then
+    CONFIGDIR=$1
+fi
+
+if [ ! -d "$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs/$CONFIGDIR" ]; then #check that config directory actually exists
+    echo "ERROR: configs/$CONFIGDIR does not exist. Please use existing directory as an argument or use no arguments to default to configs/standard."
+    echo "Stopping run script before I do anything"
+    exit 1
+fi
+
 this_start=$(date +%s)
 
 function getStatus()
@@ -12,52 +28,17 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 
-#setdaqcomps.sh crt01
-#setdaqcomps.sh crt01PULL pmtx03 
-#setdaqcomps.sh pmtx03
-#setdaqcomps.sh pmtx04
-#setdaqcomps.sh spectdc pmtx03
-#setdaqcomps.sh spectdc pmtx03 crt01PULL
-#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 crt2x2dwnstrPULL ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 ptb01PULL spectdc
-#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL spectdc
-#setdaqcomps.sh pmtx03 crt2x2upstrPULL crt2x2dwnstrPULL ptb01PULL
-##setdaqcomps.sh pmtx03 crt01PULL spectdc
-#setdaqcomps.sh pmtx03 crt01PULL spectdc ptb01PULL
+#setdaqcomps.sh dummygenerator crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
+#setdaqcomps.sh tpc01 ntb01 ptb01PULL crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
+setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11 ntb01 ptb01PULL spectdc #crtNorthWallWestPULL crtNorthWallEastPULL #pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09  # crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
+#setdaqcomps.sh tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 mbb02 wib101 wib102 wib103 wib104 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
+#setdaqcomps.sh tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11  ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
+#setdaqcomps.sh ptb01PULL spectdc pmt01 pmtx03PUSH
+#setdaqcomps.sh ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09PUSH
+#pmtx03PUSH  #crtNorthWallWestPULL crtNorthWallEastPULL #
+#setdaqcomps.sh tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc07 tpc08 tpc09 tpc10 tpc11 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #
+#setdaqcomps.sh pmt01PUSH ptb01PULL spectdc
 
-#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 tpc01 tpc02 tpc05 ntb01
-
-#setdaqcomps.sh wib106 wib105 wib104 wib103 wib102 tpc02 tpc01 ntb01
-#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 tpc05 tpc02 tpc01 ntb01
-#setdaqcomps.sh wib104
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc05 tpc02 tpc01 ntb01
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
-#setdaqcomps.sh tpc01 ntb01
-#setdaqcomps.sh mbb02 tpc05 tpc02 tpc01 ntb01
-
-setdaqcomps.sh tpc01 ntb01 ptb01PULL
-#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09
-#setdaqcomps.sh tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09
-#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL
-#setdaqcomps.sh tpc01 ntb01 ptb01PULL 
-#setdaqcomps.sh ptb01PULL mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc06 tpc04 tpc03 tpc02 tpc01 ntb01
-
-#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
-
-#setdaqcomps.sh mbb02 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
-
-#setdaqcomps.sh tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
-
-#setdaqcomps.sh mbb02 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 
-#
-#setdaqcomps.sh mbb02 wib102 wib103 wib104 wib306 wib401 wib402 tpc09 tpc01 ntb01 
-#setdaqcomps.sh mbb02 wib401 wib402
-
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 tpc02 tpc01 ntb01 
-#setdaqcomps.sh wib304 wib305
-
-#setdaqcomps.sh wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -69,8 +50,8 @@ do
 done
 
 #send_transition.sh config $2
-#send_transition.sh config testGAL00018
-send_transition.sh config standard
+#send_transition.sh config standard
+send_transition.sh config $CONFIGDIR
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]
@@ -84,7 +65,7 @@ done
 # report_datafile_location
 
 send_transition.sh start
-  getStatus "starting"
+getStatus "starting"
 sleep 2
 getStatus "starting"
 while [ "$status" != 'running' ]

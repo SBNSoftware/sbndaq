@@ -80,6 +80,8 @@ daq:
       wib_pwr403: 1
       wib_pwr404: 1
       wib_pwr405: 1
+      
+      sync_fembs: false
     }
   }
 }

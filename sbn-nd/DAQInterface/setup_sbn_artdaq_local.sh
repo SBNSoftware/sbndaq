@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-SBNDAQ_VERSION="v1_09_00"
+SBNDAQ_VERSION="v1_09_01"
 SBNDAQ_QUALS="e26:prof:s120a"
 DAQINTERFACE_VERSION="v3_12_08"
 
@@ -24,7 +24,7 @@ LOCAL_INSTALLED_PRODUCTS=${THIS_SBN_DAQ_DAQINTERFACE_DIR%srcs*}products
 
 #if [[ "$(hostname -s)" =~ sbnd-clk[0-9]{2} ]]; then
 #  unset LOCAL_INSTALLED_PRODUCTS
-#  SBNDAQ_QUALS="e20:debug:s112"
+#  SBNDAQ_QUALS="e26:debug:s120a"
 #fi
 #
 if   [ -f $LOCAL_INSTALLED_PRODUCTS/setup ]; then
@@ -36,7 +36,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_07 -q ${SBNDAQ_QUALS}
+setup artdaq_demo v3_12_08 -q ${SBNDAQ_QUALS}
 #setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"

@@ -91,7 +91,7 @@ femb_config_default:
 
 
  # Calibration pulser mode
- pls_mode: 2 # 0 off, 1 internal, 2 FPGA external
+ pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
  
  # Confirm channel mapping by testing each channel
  chnl_mapping_mode: false
@@ -182,8 +182,9 @@ daq:
     # WIB configuration
     WIB: 
     {
-      expected_wib_fw_version: 0x124
-      
+      # WIB firm ware version
+      expected_wib_fw_version: 0x125
+
       # WIB network address string
       address: "" # can be either IP address or DNS address
 
@@ -217,6 +218,12 @@ daq:
 
       # if true, power up and configure FEMBs, else power down and don't configure
       enable_FEMBs: [true,true,true,true] # list of 4 bools
+      
+      # if true send a calibration pulse from MBB to check FEMB syncronization
+      use_mbb_cmd: false
+      
+      # if true check the register 43 of WIB for link errors
+      do_err_chk: true
 
       # FEMB configuration documents
       FEMBs: {

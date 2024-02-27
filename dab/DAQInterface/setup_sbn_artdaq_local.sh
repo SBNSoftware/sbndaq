@@ -28,7 +28,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-#setup artdaq_demo v3_09_06 -q ${SBNDAQ_QUALS}
+#setup artdaq_demo v3_12_07 -q ${SBNDAQ_QUALS}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED

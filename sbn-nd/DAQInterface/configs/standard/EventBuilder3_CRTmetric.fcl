@@ -1,4 +1,4 @@
-#include "EventBuilder_CRTmetric.fcl"
+#include "EventBuilder_CRTMetric.fcl"
 
 daq.metrics.graphite.namespace: "sbnd.evb03."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb03_metrics.log"

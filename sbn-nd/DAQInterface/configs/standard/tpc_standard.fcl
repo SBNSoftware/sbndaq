@@ -1,1 +1,4 @@
-#include "NevisTPC2StreamCALIB_driver.fcl"
+##include "fake_NevisTPC2StreamEXT_driver.fcl"
+#include "NevisTPC2StreamEXT_driver.fcl"
+##include "NevisTPC2StreamCALIB_driver.fcl"
+##include "fake_NevisTPC2StreamCALIB_driver.fcl"

@@ -1,8 +1,14 @@
 #include "ptb01.fcl" 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BES_zero_bias_only_noprescale.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
 ##include "ptbmk2_nd_2hz.fcl" 
-#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
-
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_5hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_0p38115998028hz.fcl"
 daq.fragment_receiver.board_config: @local::board_config
 
 ## Pull mode parameters
@@ -11,8 +17,8 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width: 600000  #600us #300us window#3ms window
-    daq.fragment_receiver.request_window_offset: 500000 #500us #400us early #1.5ms early offset
+    daq.fragment_receiver.request_window_width: 50000000 #5ms #600us #300us window#3ms window
+    daq.fragment_receiver.request_window_offset: 25000000 #2.5 ms #30000000 #500us #400us early #1.5ms early offset
 
     #daq.fragment_receiver.request_windows_are_unique: false
     daq.fragment_receiver.request_windows_are_unique: true

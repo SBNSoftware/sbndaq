@@ -16,10 +16,10 @@ daq.fragment_receiver.boardId: 9
 #
 #This is the timing CAEN, so set the readout window shorter
 #
-#daq.fragment_receiver.recordLength:     5056   # in samples where 1 sample=2 ns.  Keep an integer multiple of 16
-#daq.fragment_receiver.postPercent:       75     # make sure that postPercent*recordLength is an integer multiple of 16
-daq.fragment_receiver.recordLength:     1024   # in samples where 1 sample=2 ns.  Keep an integer multiple of 16
-daq.fragment_receiver.postPercent:       75     # make sure that postPercent*recordLength is an integer multiple of 16
+#daq.fragment_receiver.recordLength:     5000
+#daq.fragment_receiver.postPercent:       80 
+daq.fragment_receiver.recordLength:     1000 
+daq.fragment_receiver.postPercent:       80  
 daq.fragment_receiver.UseTimeTagShiftForTimeStamp: true
 
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt09:"

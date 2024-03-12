@@ -7,7 +7,7 @@ daq: {
  
      generator: SPECTDCTimestampReader
      fragment_type: TDCTIMESTAMP
-     fragment_id: 99
+     fragment_id: 0xD73B #55099#99
      board_id: 0
 
      ## Pull mode parameters
@@ -16,14 +16,14 @@ daq: {
      multicast_interface_ip: "10.226.36.0" # -- should match the private net
      request_port: 3001   # UDP request port
      request_mode: window # pull mode
-     request_window_width: 10000000 #5000000 #5ms window 
-     request_window_offset: 5000000 #2500000 #2.5ms offset
+     request_window_width: 5000000 #5ms window 
+     request_window_offset: 2500000 #2.5ms offset
      request_windows_are_unique: false #true
-     stale_request_timeout:   3000000
-     window_close_timeout_us: 1500000 #1.5s
+     stale_request_timeout:  6000000
+     window_close_timeout_us: 4000000 #1.5s
      buffer_mode_keep_latest: true
      circular_buffer_mode: false
-     missing_request_window_timeout_us: 2000000 #2s
+     missing_request_window_timeout_us: 4000000 #2s
      hardware_poll_interval_us: 30000000 #30s
      stale_fragment_timeout: 20000000000 #20s
      separate_monitoring_thread: true
@@ -55,7 +55,7 @@ daq: {
          channels: [
            { id : 0
              name:crtt1
-             enabled: false #true
+             enabled: true
              time_offset_ps: 0
              monitor_only: false
              terminated: true },

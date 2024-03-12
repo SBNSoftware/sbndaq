@@ -24,7 +24,7 @@ for i in {01..12}; do
     ssh sbnd-tpc${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 done
 
-for i in {01..03}; do
+for i in {01..04}; do
     echo "sbnd-evb${i}-daq: ipcrm -a"
     ssh sbnd-evb${i}-daq -f 'ipcrm -a'
 done

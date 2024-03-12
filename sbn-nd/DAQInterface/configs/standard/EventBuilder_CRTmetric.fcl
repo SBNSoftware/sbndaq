@@ -34,7 +34,7 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level: 3
       fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
@@ -44,7 +44,7 @@ send_system_metrics: true
 send_process_metrics: true
 
     graphite: {
-      level_string: "1,2,11-20"
+      level:10
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"10.226.36.34"
@@ -70,7 +70,7 @@ outputs: {
     SelectEvents: [ mode0 ]    
   }
 
-  normalOutput: {
+  Normaloutput: {
     module_type: RootDAQOut
     fileName: "/data/daq/data_%p_run%R_%#_%to.root"
 

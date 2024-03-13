@@ -16,4 +16,4 @@ daq.fragment_receiver.WIB.FEMBs.femb0.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb1.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb2.test_chnl_number: 0
 daq.fragment_receiver.WIB.FEMBs.femb3.test_chnl_number: 0
-
+daq.fragment_receiver.WIB.FEMBs.femb0.use_normal_check_procedure: false

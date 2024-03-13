@@ -107,6 +107,9 @@ femb_config_default:
  # Change the separation between negative and positive pulse
  tst_pls_separation: 2560 # 0 10 ns, 1 20 ns, 2 30 ns, ........, 2560 default
  
+ #Options call initial FEMB checks
+ use_normal_check_procedure: true
+ 
  # Calibration pulser phase
  pls_phase_val: 219 # times 10 ns
 

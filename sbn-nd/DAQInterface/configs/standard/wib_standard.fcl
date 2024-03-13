@@ -86,6 +86,9 @@ femb_config_default:
  # Confirm channel mapping by testing each channel
  chnl_mapping_mode: false
  
+ # if true configure FEMB to receive a calibration signal from MBB
+ mbb_clibration_mode: false
+ 
  # 1 st Channel number to be tested 
  test_chnl_number: 999 # set to something larger that 127, if no need to send test pulse
  

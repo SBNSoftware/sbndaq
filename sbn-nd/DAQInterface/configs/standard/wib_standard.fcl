@@ -101,6 +101,12 @@ femb_config_default:
  # Set the period of pulser
  tst_pls_gap: 500 # This is the period of pulser signals in unit of 0.5 us. Default value is 500 so it means we will have one pulse once every 250 us
 
+ # Call function to change the default setting of pulse separation
+ change_tst_pulse_separation: false
+ 
+ # Change the separation between negative and positive pulse
+ tst_pls_separation: 2560 # 0 10 ns, 1 20 ns, 2 30 ns, ........, 2560 default
+ 
  # Calibration pulser phase
  pls_phase_val: 219 # times 10 ns
 

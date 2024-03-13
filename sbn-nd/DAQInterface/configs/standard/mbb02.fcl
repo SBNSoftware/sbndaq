@@ -82,6 +82,10 @@ daq:
       wib_pwr405: 1
       
       sync_fembs: false
+      use_opt1: false
+      use_opt2: true
+      use_opt3: false
+      mbb_pls_prd: 20000
     }
   }
 }

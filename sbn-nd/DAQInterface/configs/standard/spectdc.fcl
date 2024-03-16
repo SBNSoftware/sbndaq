@@ -2,7 +2,8 @@ daq: {
   fragment_receiver: {
 #     events_to_generate: 6000
      max_fragment_size_bytes: 100000
-     data_buffer_depth_fragments: 2048
+     data_buffer_depth_fragments: 6048 #2048
+     data_buffer_depth_mb: 1000    #this parameter was aparently not included idk if that was like for a reason? 
      sleep_on_no_data_us: 10000
  
      generator: SPECTDCTimestampReader

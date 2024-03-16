@@ -95,7 +95,7 @@ daq:
     boardId: 0
 
 # default waveform length and postpercent
-    recordLength:         3000 #5000
+    recordLength:         5000   
     postPercent:          80  
     # UseTimeTagForTimeStamp: false
     UseTimeTagForTimeStamp: true #True is using the PPS information, should be true for SBND

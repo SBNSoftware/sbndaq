@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-SBNDAQ_VERSION="v1_09_00"
+SBNDAQ_VERSION="v1_09_02"
 SBNDAQ_QUALS="e26:prof:s120a"
-DAQINTERFACE_VERSION="v3_12_07"
+DAQINTERFACE_VERSION="v3_12_08"
 
 # reconfigure locale
 export LANG='en_US.UTF-8'

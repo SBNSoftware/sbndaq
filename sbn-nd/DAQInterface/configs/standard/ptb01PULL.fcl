@@ -3,8 +3,10 @@
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BES_zero_bias_only_noprescale.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
+
 #include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash_noprescale_noBNBinhibit.fcl"
+
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
 ##include "ptbmk2_nd_2hz.fcl" 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"

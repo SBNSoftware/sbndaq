@@ -404,7 +404,7 @@ fragment_receiver: {
     graphite:{
       namespace: "sbnd.ptb."
       host: "10.226.36.34"
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       metricPluginType: "graphite"
       port: 2003
       reporting_interval: 10

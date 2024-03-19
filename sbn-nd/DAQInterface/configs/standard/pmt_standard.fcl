@@ -25,7 +25,7 @@ daq:
 
     # Set up max temperature board can have before some messages appear
     maxTempCelsius: 75
-
+    temperatureCheckMask: 0xFFFF
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     # SBND: keep this parameter = 0
     ModeLVDS: 0
@@ -97,13 +97,11 @@ daq:
 # default waveform length and postpercent
     recordLength:         5000   
     postPercent:          80  
-    # UseTimeTagForTimeStamp: false
-    UseTimeTagForTimeStamp: true #True is using the PPS information, should be true for SBND
-    # adds an offset to the fragment timestamp, set to 0 for SBND
+    #Use Trigger Time Tag (TTT) from CAEN header, which is a PPS counter 8ns/tick, to construct fragment timestamp. Default: true for ICARUS, false for SBND
+    UseTimeTagForTimeStamp: false 
     TimeOffsetNanoSec: 0
-    # Shift time tag so timestamp reflects the trigger time and not the end of the waveform. 
-    #    default for SBND is true    
-    UseTimeTagShiftForTimeStamp: false #true    
+    # Same as above but with a shift  = TTT - record length * post percent to account for TTT pointing to the end of waveform. Default: false for ICARUS, true for SBND
+    UseTimeTagShiftForTimeStamp: true #true for SBND, false for ICARUS, add a shift = TTT - record length * post percent     
 
     
     # extTrgMode decides whether the external trigger should only be used to generate the

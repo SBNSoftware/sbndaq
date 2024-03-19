@@ -152,7 +152,7 @@ trigger_module : {
   metrics: {
     brFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       fileName: "/daq/log/metrics/tpc00_metrics.log"
       uniquify: true
     }

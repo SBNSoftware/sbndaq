@@ -7,8 +7,8 @@ debug level: 4
 #manage processes: false
 Subsystem id: 1
 
-EventBuilder host: sbnd-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: sbnd-evb01-daq
+#EventBuilder label: EventBuilder1
 
 EventBuilder host: sbnd-evb02-daq
 EventBuilder label: EventBuilder2

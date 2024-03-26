@@ -3,9 +3,12 @@
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BES_zero_bias_only_noprescale.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash.fcl"
 
 #include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash_noprescale_noBNBinhibit.fcl"
+
+##include "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2024-02-26_TK_trigger_menu/DAQInterface/configs/beam_input_tests/ptbmk2_nd_offbeam_1D_only.fcl"
 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
 ##include "ptbmk2_nd_2hz.fcl" 
@@ -31,9 +34,9 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.window_close_timeout_us: 400000000
     daq.fragment_receiver.circular_buffer_mode: true
 
-#I'm gonna use the values that are in ptb01.fcl here as a test. 
-    daq.fragment_receiver.data_buffer_depth_fragments: 2000000 #40000
-    daq.fragment_receiver.data_buffer_depth_mb : 10000 #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+
+    daq.fragment_receiver.data_buffer_depth_fragments: 200000#10000 #40000
+    daq.fragment_receiver.data_buffer_depth_mb : 100000 #200000 #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
 
 ##  end pull mode parameters
 

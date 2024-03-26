@@ -166,7 +166,7 @@ daq:
     channelPedestal12: 6500
     channelPedestal13: 6500
     channelPedestal14: 6500
-    channelPedestal15: 60000
+    channelPedestal15: 55000 #60000
 
     #Set to true to save the waveform
     channelEnable0:    true

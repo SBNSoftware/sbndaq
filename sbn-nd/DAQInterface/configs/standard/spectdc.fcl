@@ -2,8 +2,8 @@ daq: {
   fragment_receiver: {
 #     events_to_generate: 6000
      max_fragment_size_bytes: 100000
-     data_buffer_depth_fragments: 6048 #2048
-     data_buffer_depth_mb: 1000    #this parameter was aparently not included idk if that was like for a reason? 
+     data_buffer_depth_fragments: 50000 #6048 #2048
+     data_buffer_depth_mb: 1000 #1000    #this parameter was aparently not included idk if that was like for a reason? 
      sleep_on_no_data_us: 10000
  
      generator: SPECTDCTimestampReader
@@ -24,7 +24,7 @@ daq: {
      window_close_timeout_us: 4000000 #1.5s
      buffer_mode_keep_latest: true
      circular_buffer_mode: false
-     missing_request_window_timeout_us: 4000000 #2s
+     missing_request_window_timeout_us: 2000000 #4000000 #2s
      hardware_poll_interval_us: 30000000 #30s
      stale_fragment_timeout: 20000000000 #20s
      separate_monitoring_thread: true

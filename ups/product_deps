@@ -52,6 +52,8 @@ e26:debug:icarus:s120a   e26:debug:icarus:s120a
 e26:prof:icarus:s120a    e26:prof:icarus:s120a
 e26:debug:sbnd:s120a     e26:debug:sbnd:s120a
 e26:prof:sbnd:s120a      e26:prof:sbnd:s120a
+e26:debug:s120b          e26:debug:s120b
+e26:prof:s120b           e26:prof:s120b
 e26:debug:icbrus:s120b   e26:debug:icbrus:s120b
 e26:prof:icbrus:s120b    e26:prof:icbrus:s120b
 e26:debug:sbnd:s120b     e26:debug:sbnd:s120b

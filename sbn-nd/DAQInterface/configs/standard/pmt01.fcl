@@ -12,8 +12,6 @@ daq.fragment_receiver.link: 0
 # boardId is the ID number that will be assigned to the board
 daq.fragment_receiver.boardId: 5
 
-daq.fragment_receiver.UseTimeTagShiftForTimeStamp: true
-
 
 daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt01:"
 daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt01:"

@@ -3,10 +3,12 @@
 #=====================================================================================
 #Run with argument of which directory in configs you want to use. Defaults to standard
 #=====================================================================================
-CONFIGDIR="standard"
+CONFIGDIR="standard"  #"longpmtreadout" #
 if [ ! -z "$1" ]
     then
     CONFIGDIR=$1
+else
+    echo "Defaulting to configs/$CONFIGDIR"
 fi
 
 #if [ ! -d "$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs/$CONFIGDIR" ]; then #check that config directory actually exists #Doesn't work if you're using the database though
@@ -28,16 +30,20 @@ getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
 
-setdaqcomps.sh ptb01PULL pmtx03PUSH #spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09  #pmt08
-#setdaqcomps.sh tpc01FakeData ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 #PUSH #pmtx03PUSH #pmt08
+#setdaqcomps.sh ptb01PULL spectdc pmt01 pmt05 pmt09 pmtx03PUSH
+#setdaqcomps.sh ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 pmtx03PUSH
+#setdaqcomps.sh tpc01FakeData ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #PUSH #pmtx03PUSH
 
 
 #setdaqcomps.sh dummygenerator crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
 #setdaqcomps.sh tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #ptb01PULL crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
 #setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL
 
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt03 pmt04 pmt05 pmt06 #pmt07 pmt08 pmt09  # #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #
 
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 #pmt08 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #
+setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #
+
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc #pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 pmt08 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #
 
 #setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 tpc01 ntb01 ptb01PULL spectdc #pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 # pmt08 crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL
 

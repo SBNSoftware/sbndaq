@@ -8,7 +8,7 @@
 #include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash_noprescale_noBNBinhibit.fcl"
 
-##include "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2024-02-26_TK_trigger_menu/DAQInterface/configs/beam_input_tests/ptbmk2_nd_offbeam_1D_only.fcl"
+##include "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2024-02-26_TK_trigger_menu/DAQInterface/configs/beam_input_tests/ptbmk2_nd_BES_only.fcl"
 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
 ##include "ptbmk2_nd_2hz.fcl" 
@@ -23,20 +23,23 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width: 200000000 #50000000 #5ms #600us #300us window#3ms window
-    daq.fragment_receiver.request_window_offset: 100000000 #25000000 #2.5 ms #30000000 #500us #400us early #1.5ms early offset
+    daq.fragment_receiver.request_window_width: 15000000 #5000000 #5ms   #600us #300us window#3ms window
+    daq.fragment_receiver.request_window_offset: 7500000 #2500000 #2.5 ms # #30000000 #500us #400us early #1.5ms early offset
 
     #daq.fragment_receiver.request_windows_are_unique: false
     daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true
-    daq.fragment_receiver.stale_request_timeout: 2000000000
+    daq.fragment_receiver.stale_request_timeout: 2000000000 #2s? maybe
     daq.fragment_receiver.receive_requests: true
-    daq.fragment_receiver.window_close_timeout_us: 400000000
-    daq.fragment_receiver.circular_buffer_mode: true
+    daq.fragment_receiver.window_close_timeout_us: 400000000 #40s
+    daq.fragment_receiver.circular_buffer_mode: true #false #true
 
 
-    daq.fragment_receiver.data_buffer_depth_fragments: 200000#10000 #40000
-    daq.fragment_receiver.data_buffer_depth_mb : 100000 #200000 #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+    daq.fragment_receiver.data_buffer_depth_fragments: 5000000 #10000 #40000
+    daq.fragment_receiver.data_buffer_depth_mb : 1000000 #200000 #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+#adding more settings
+daq.fragment_receiver.max_fragment_size_bytes: 1000 #from grafana looks like averages 500B
+
 
 ##  end pull mode parameters
 

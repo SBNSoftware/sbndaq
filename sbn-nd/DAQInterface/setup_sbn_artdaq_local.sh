@@ -2,6 +2,7 @@
 SBNDAQ_VERSION="v1_10_01"
 SBNDAQ_QUALS="e26:prof:s120a"
 DAQINTERFACE_VERSION="v3_13_00"
+ARTDAQ_VERSION="v3_13_00"
 
 # reconfigure locale
 export LANG='en_US.UTF-8'
@@ -36,7 +37,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo v3_12_07 -q ${SBNDAQ_QUALS}
+setup artdaq_demo $ARTDAQ_VERSION -q ${SBNDAQ_QUALS}
 #setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"

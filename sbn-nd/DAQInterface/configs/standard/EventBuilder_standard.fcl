@@ -65,7 +65,7 @@ outputs: {
       maxEvents: 20 #close files out a little faster for the prescaled stream
     }
 
-    fastCloning: true
+    fastCloning: false
     compressionLevel: 0
     SelectEvents: [p2]
   }
@@ -79,7 +79,7 @@ outputs: {
       maxEvents: 100
     }
 
-    fastCloning: true
+    fastCloning: false
     compressionLevel: 0
     SelectEvents: []
   }

@@ -1,0 +1,37 @@
+##include "tpc_standard.fcl"
+#include "fake_NevisTPC2StreamEXT_driver.fcl" 
+##include "fake_NevisTPC2StreamCALIB_driver.fcl" 
+
+daq.metrics.brFile.fileName : "/daq/log/metrics/tpc01_metrics.log"
+
+daq.fragment_receiver.controller_module.bus: 0x51
+daq.fragment_receiver.nu_xmit_reader.bus: 0x8a
+daq.fragment_receiver.sn_xmit_reader.bus: 0x8b
+
+daq.fragment_receiver.GPSTimeFrequency: 1                        #setting pulse per second parameter for PPS 
+daq.fragment_receiver.GPSZMQPortNTB: "tcp://10.226.36.6:11212"
+daq.fragment_receiver.UseZMQ: true
+
+
+#daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E,0x910F,0x9110]
+#daq.fragment_receiver.generated_fragments_per_event: 14
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 16
+
+#daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E]
+#daq.fragment_receiver.generated_fragments_per_event: 12
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 14
+
+#Use for configuring with 2 FEMS
+daq.fragment_receiver.fragment_ids: [0x9103,0x9104]
+#daq.fragment_receiver.generated_fragments_per_event: 2
+daq.fragment_receiver.nevis_crate.max_fem_slot: 4
+
+#Use for configuring with 3 FEMS
+#daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105]
+#daq.fragment_receiver.generated_fragments_per_event: 3
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 5
+
+#Use for configuring with 16 FEMS
+#daq.fragment_receiver.fragment_ids: [0x9103,0x9104,0x9105,0x9106,0x9107,0x9108,0x9109,0x910A,0x910B,0x910C,0x910D,0x910E,0x910F,0x9110,0x9111,0x9112]
+#daq.fragment_receiver.generated_fragments_per_event: 16
+#daq.fragment_receiver.nevis_crate.max_fem_slot: 18

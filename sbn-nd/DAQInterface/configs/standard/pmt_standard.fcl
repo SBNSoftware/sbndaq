@@ -25,7 +25,7 @@ daq:
 
     # Set up max temperature board can have before some messages appear
     maxTempCelsius: 75
-
+    temperatureCheckMask: 0xFFFF
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     # SBND: keep this parameter = 0
     ModeLVDS: 0
@@ -36,7 +36,8 @@ daq:
     # the pair is disabled (by 'SelfTriggerMask' parameter). 
     # If so, the other one behaves as usual.
     # SelfTriggerMode 0:DISABLED 1:ACQ_ONLY 2:TRGOUT_ONLY 3:ACQ_AND_TRGOUT
-    SelfTriggerMode: 2 
+    SelfTriggerMode: 0
+
 
     # SelfTriggerMask: the channel mask (16bit-number) you will enable the 'SelfTriggerMode'
     # Each bit enables/disables one channel
@@ -94,15 +95,13 @@ daq:
     boardId: 0
 
 # default waveform length and postpercent
-    recordLength:         5056   # in samples where 1 sample=2 ns.  Keep an integer multiple of 16
-    postPercent:          75     # make sure that postPercent*recordLength is an integer multiple of 16
-    # UseTimeTagForTimeStamp: false
-    UseTimeTagForTimeStamp: true #True is using the PPS information
-    # adds an offset to the fragment timestamp, set to 0 for SBND
+    recordLength:         5000   
+    postPercent:          80  
+    #Use Trigger Time Tag (TTT) from CAEN header, which is a PPS counter 8ns/tick, to construct fragment timestamp. Default: true for ICARUS, false for SBND
+    UseTimeTagForTimeStamp: false 
     TimeOffsetNanoSec: 0
-    # Shift time tag so timestamp reflects the trigger time and not the end of the waveform. 
-    #    default for SBND is true    
-    UseTimeTagShiftForTimeStamp: true    
+    # Same as above but with a shift  = TTT - record length * post percent to account for TTT pointing to the end of waveform. Default: false for ICARUS, true for SBND
+    UseTimeTagShiftForTimeStamp: true #true for SBND, false for ICARUS, add a shift = TTT - record length * post percent     
 
     
     # extTrgMode decides whether the external trigger should only be used to generate the
@@ -167,7 +166,7 @@ daq:
     channelPedestal12: 6500
     channelPedestal13: 6500
     channelPedestal14: 6500
-    channelPedestal15: 60000
+    channelPedestal15: 55000 #60000
 
     #Set to true to save the waveform
     channelEnable0:    true
@@ -267,12 +266,13 @@ daq:
     }
     send_system_metrics: true
     send_process_metrics: true
-		      graphite:{
-	namespace: "sbnd.pmt00."
-	   host: "10.226.36.34"
-      level: 10
-       metricPluginType: "graphite"
-		  port: 2003
+    graphite:{
+      namespace: "sbnd.pmt00."
+      host: "10.226.36.34"
+      #level: 10
+      level_string: "1-10,11-20"
+      metricPluginType: "graphite"
+      port: 2003
       reporting_interval: 10
 		    }
     #       metricPluginType: "redis"

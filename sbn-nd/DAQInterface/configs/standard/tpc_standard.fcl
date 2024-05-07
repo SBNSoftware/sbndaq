@@ -1,1 +1,13 @@
-#include "NevisTPC2StreamCALIB_driver.fcl"
+##include "fake_NevisTPC2StreamEXT_driver.fcl"
+#include "NevisTPC2StreamEXT_driver.fcl"
+##include "NevisTPC2StreamCALIB_driver.fcl"
+##include "fake_NevisTPC2StreamCALIB_driver.fcl"
+
+
+#graphite paramters are the same for all tpc configs
+daq.metrics.graphite.level_string: "1-10,11-20"
+daq.metrics.graphite.metricPluginType: "graphite"
+daq.metrics.graphite.reporting_interval: 10.0
+daq.metrics.graphite.host: "10.226.36.34"
+daq.metrics.graphite.port: 2003
+daq.metrics.graphite.namespace: "sbnd.tpc00."

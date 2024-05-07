@@ -1,22 +1,8 @@
-#include "tpc_standard.fcl"
+ 
+#include "tpc_standard.fcl" 
 
-daq.metrics.brFile.fileName : "/daq/log/metrics/tpc02_metrics.log"
+daq.metrics.brFile.fileName: "/daq/log/metrics/tpc02_metrics.log" 
 
-daq.fragment_receiver.fragment_ids:[0x9203,0x9204,0x9205,0x9206,0x9207,0x9208,0x9209,0x920A,0x920B,0x920C,0x920D,0x920E,0x920F,0x9210,0x9211,0x9212]
-#daq.fragment_receiver.generated_fragments_per_event: 16
-#daq.fragment_receiver.nevis_crate.max_fem_slot: 18
+daq.metrics.graphite.namespace: "sbnd.tpc02." 
 
-#daq.fragment_receiver.fragment_ids:[0x9203,0x9204,0x9205,0x9206,0x9207,0x9208,0x9209,0x920A,0x920B,0x920C,0x920D,0x920E]
-#daq.fragment_receiver.generated_fragments_per_event: 12
-#daq.fragment_receiver.nevis_crate.max_fem_slot: 14
-
-#daq.fragment_receiver.fragment_ids:[0x9203,0x9204,0x9205,0x9206,0x9207,0x9208,0x9209,0x920A,0x920B,0x920C,0x920D,0x920E,0x920F,0x9210]
-#daq.fragment_receiver.generated_fragments_per_event: 14
-#daq.fragment_receiver.nevis_crate.max_fem_slot: 16
-
-#Use for configuring with 3 FEMS
-#daq.fragment_receiver.fragment_ids:[0x9203,0x9204,0x9205]
-#daq.fragment_receiver.generated_fragments_per_event: 3
-#daq.fragment_receiver.nevis_crate.max_fem_slot: 5
-
-
+daq.fragment_receiver.fragment_ids: [0x9203, 0x9204, 0x9205, 0x9206, 0x9207, 0x9208, 0x9209, 0x920A, 0x920B, 0x920C, 0x920D, 0x920E, 0x920F, 0x9210, 0x9211, 0x9212] 

@@ -15,16 +15,19 @@ daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
 daq.metrics.graphite.namespace: "sbnd.crtnw02."
 
 
-daq.fragment_receiver.generated_fragments_per_event: 9 #number of FEBs
-#daq.fragment_receiver.fragment_ids: [ 73, 153, 155, 159 ]
-#daq.fragment_receiver.fragment_ids: [  0xB249, 0xB299, 0xB29B, 0xB29F ] #old configuration. 
+#daq.fragment_receiver.generated_fragments_per_event: 9 #number of FEBs
+
 
 #daq.fragment_receiver.fragment_ids: [ 151, 150, 136, 157, 158, 182, 149, 73, 181]
-daq.fragment_receiver.fragment_ids: [ 0xB297, 0xB296, 0xB288, 0xB29D, 0xB29E, 0xB2B6, 0xB295, 0xB249 , 0xB2B5]
+#errors about missing febs with this: List of 9 FEBs declared in the FHiCL file (dec): 73 136 149 150 151 157 158 181 182 doesn't match list of 7 detected FEBs: 73 136 149 157 158 181 182 END
+#daq.fragment_receiver.fragment_ids: [ 0xB297, 0xB296, 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
+daq.fragment_receiver.fragment_ids: [ 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
+
+
 
 daq.fragment_receiver.ReaderID: 238
 
-daq.fragment_receiver.ethernet_port: "ens4f2"
+daq.fragment_receiver.ethernet_port: "ens8f1"
 
 daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true, true ]
 

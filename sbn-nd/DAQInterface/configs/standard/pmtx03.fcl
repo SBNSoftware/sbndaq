@@ -1,5 +1,6 @@
 #include "pmt_standard.fcl"
 
+
 # link is which port on the PCIe card it is connected, numbering starts at 0
 daq.fragment_receiver.link: 2
 
@@ -7,6 +8,7 @@ daq.fragment_receiver.link: 2
 daq.fragment_receiver.boardId: 12
 daq.fragment_receiver.board_id: 12
 
+daq.fragment_receiver.fragment_id: 0xA102
 # record 1200 ticks = 2.4 us with 50% after the trigger
 # default is 5000 ticks/80%
 daq.fragment_receiver.recordLength: 1200
@@ -53,7 +55,7 @@ daq.fragment_receiver.channelPedestal13: 55000
 daq.fragment_receiver.channelPedestal15: 55000
 
 #testing whether this fixes problems - Michelle - 2022May20
-daq.fragment_receiver.UseTimeTagForTimeStamp: true
+#daq.fragment_receiver.UseTimeTagForTimeStamp: true ...just using the default in standard
 #daq.fragment_receiver.fUseTimeTagForTimeStamp: true
 
 #Erin is testing things June 9th, 2022

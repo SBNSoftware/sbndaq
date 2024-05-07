@@ -3,8 +3,8 @@
      daq.fragment_receiver.request_port: 3001   # UDP request port
      daq.fragment_receiver.request_mode: window # pull mode
 
-     daq.fragment_receiver.request_window_width: 30000000 #30ms  #7000000 #700 us window
-     daq.fragment_receiver.request_window_offset: 15000000 #15ms #5000000 #500 us offset
+     daq.fragment_receiver.request_window_width: 3000000 #800000 #3000 00 #7ms #700 us window
+     daq.fragment_receiver.request_window_offset: 1500000 #400000 #2000000 #4ms #400 us offset
 
      daq.fragment_receiver.request_windows_are_unique: true #true
      daq.fragment_receiver.separate_data_thread: true
@@ -13,11 +13,13 @@
      daq.fragment_receiver.window_close_timeout_us: 400000000 ## -- 40s
      daq.fragment_receiver.circular_buffer_mode: true
     
-     daq.fragment_receiver.data_buffer_depth_fragments: 200
-     daq.fragment_receiver.data_buffer_depth_mb : 200 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
+     daq.fragment_receiver.data_buffer_depth_fragments: 10000 #600
+     daq.fragment_receiver.data_buffer_depth_mb : 10000 #30000 #20000 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
 
      daq.fragment_receiver.missing_request_window_timeout_us: 400000000 #400us
-     daq.fragment_receiver.stale_fragment_timeout: 10000000000 #10s #3000000000 #3s
+     daq.fragment_receiver.stale_fragment_timeout: 3000000000 #3s #10000000000 #10s #
      daq.fragment_receiver.buffer_mode_keep_latest: true
      ## end pull mode parameters
 
+ 
+   

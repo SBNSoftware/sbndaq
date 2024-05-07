@@ -1,4 +1,4 @@
-#include "../crt_feb_standard.fcl"<
+#include "crt_feb_standard.fcl"
 
 FEB181Configuration:  @local::FEBConfigurationStandard
 FEB181Configuration.channel_configuration: [

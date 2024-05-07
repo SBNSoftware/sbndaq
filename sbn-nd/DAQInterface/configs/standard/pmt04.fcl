@@ -1,16 +1,32 @@
-#include "pmt_standard.fcl"
-#include "pmtPULL.fcl"
-#daq.metrics.brFile.fileName : "/daq/log/metrics/pmt02_metrics.log"
-
+ 
+#include "pmt_standard.fcl" 
+ 
+#include "pmtPULL.fcl" 
 #Set fragment id by slot number in vme crate
-daq.fragment_receiver.fragment_id: 0xA003
-
+daq.fragment_receiver.fragment_id: 0xA003 
 # link is which port on the PCIe card it is connected, numbering starts at 0
-daq.fragment_receiver.link: 3
-
+daq.fragment_receiver.link: 3 
 # boardId is the ID number that will be assigned to the board
-daq.fragment_receiver.boardId: 5
+daq.fragment_receiver.boardId: 5 
 
-daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt02:"
-daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt02:"
-daq.redis_5m.redis_key_prefix: "DABBoardReader:pmt02:"
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt02:" 
+
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt02:" 
+
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmt02:" 
+
+daq.fragment_receiver.channelPedestal0: 10236 #10209 #8399
+daq.fragment_receiver.channelPedestal1: 10263 #10240 #8432
+daq.fragment_receiver.channelPedestal2: 10534 #10520 #8740
+daq.fragment_receiver.channelPedestal3: 10573 #10552 #8767
+daq.fragment_receiver.channelPedestal4: 10336 #10320 #8505
+daq.fragment_receiver.channelPedestal5: 10383 #10350 #8532
+daq.fragment_receiver.channelPedestal6: 10198 #10185 #8375
+daq.fragment_receiver.channelPedestal7: 10133 #10118 #8295
+daq.fragment_receiver.channelPedestal8: 10364 #10345  #8539
+daq.fragment_receiver.channelPedestal9: 9928 #9895 #8065
+daq.fragment_receiver.channelPedestal10: 9750 #9737 #7886
+daq.fragment_receiver.channelPedestal11: 9780 #9734 #7912
+daq.fragment_receiver.channelPedestal12: 10292 #10271 #8453
+daq.fragment_receiver.channelPedestal13: 10324 #10311 #8507
+daq.fragment_receiver.channelPedestal14: 10274 #10246 #8441

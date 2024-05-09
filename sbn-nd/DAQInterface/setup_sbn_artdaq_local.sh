@@ -49,7 +49,7 @@ setup artdaq_mfextensions  v1_08_06 -q $SBNDAQ_QUALS
 alias rc='artdaqRunControl'
 
 #Trace setup for debugging:
-export DAQINTERFACE_PARTITION_NUMBER=1
+export DAQINTERFACE_PARTITION_NUMBER=7
 export TRACE_FILE=/tmp/trace_$(whoami)_p${DAQINTERFACE_PARTITION_NUMBER}
 
 echo "TRACE_FILE=$TRACE_FILE"
@@ -116,14 +116,18 @@ fi
 if [[ "$(hostname -s)" =~ sbnd-tpc[0-9]{2} ]]; then
 tonS -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
 tonM -N NevisTPCGenerator2StreamNUandSNXMIT 0-63
-#tonS -N NevisTPCGenerator 24
-#tonM -N NevisTPCGenerator 24
-#tonS -N NevisTPCGenerator 14
-#tonM -N NevisTPCGenerator 14
-toffS -N NevisTPCGenerator 8-63
-toffM -N NevisTPCGenerator 8-63
-tonS -N XMITReader 0-63
-tonM -N XMITReader 0-63
+tonS -N NevisTBGenerator DEBUG+12
+tonM -N NevisTBGenerator DEBUG+12
+tonS -N NevisTPCGenerator 14
+tonM -N NevisTPCGenerator 14
+#toffS -N NevisTPCGenerator 8-63
+#toffM -N NevisTPCGenerator 8-63
+tonS -N NevisTPCGenerator DEBUG+12
+tonM -N NevisTPCGenerator DEBUG+12
+tonS -N Crate 0-63
+tonM -N Crate 0-63
+#tonS -N XMITReader 0-63
+#tonM -N XMITReader 0-63
 fi
 
 

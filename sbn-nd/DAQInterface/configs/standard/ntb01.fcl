@@ -11,7 +11,7 @@ fragment_receiver: {
     DumpNTBBinary: true
     DumpNTBBinaryDir: "/data"
     GPSZMQPortNTB: "tcp://10.226.36.6:11212"
-    framesize: 20479
+    framesize: 9119 # 20479
     NevisClockFrequency: 15999907
 
 ntb_pciecard : {

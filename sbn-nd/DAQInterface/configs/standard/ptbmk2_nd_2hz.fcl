@@ -1,4 +1,5 @@
-board_config : '{  
+
+board_config: '{  
   "ctb":{
     "sockets":{
       "receiver":{
@@ -368,4 +369,4 @@ board_config : '{
       }
     }
   }
-}'
+}' 

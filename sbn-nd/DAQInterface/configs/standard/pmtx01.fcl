@@ -1,32 +1,28 @@
-#include "pmt_standard.fcl"
-#daq.metrics.brFile.fileName : "/daq/log/metrics/pmtx01_metrics.log"
-
+ 
+#include "pmt_standard.fcl" 
 # link is which port on the PCIe card it is connected, numbering starts at 0
-daq.fragment_receiver.link: 0
+daq.fragment_receiver.link: 0 
 # boardId is the ID number that will be assigned to the board
-daq.fragment_receiver.boardId: 10
+daq.fragment_receiver.boardId: 10 
 
-daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:"
-daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:"
-daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:"
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmtx01:" 
 
-# put this board in pull mode
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmtx01:" 
 
-    request_address:        "227.128.9.129" # -- multicast request address
-    multicast_interface_ip: "10.226.36.0" # -- should match the private net 
-    request_port: 3501   # UDP request port
-    request_mode: window # pull mode
-    request_window_width:  50000000 #5ms window
-    request_window_offset: 2500000 #1ms offset 
-    request_windows_are_unique: true
-    stale_request_timeout: 200000000
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmtx01:" 
 
+request_address: "227.128.9.129" # -- multicast request address
+# -- multicast request address
+multicast_interface_ip: "10.226.36.0" # -- should match the private net 
+# -- should match the private net 
+request_port: 3501 # UDP request port
+# UDP request port
+request_mode: window # pull mode
+# pull mode
+request_window_width: 50000000 #5ms window
+#5ms window
+request_window_offset: 2500000 #1ms offset 
+#1ms offset 
+request_windows_are_unique: true 
 
-
-#
-# set thresholds 
-#     default is 0, set in pmt_standard.fcl
-#
-#daq.fragment_receiver.triggerThreshold0:  7800
-#daq.fragment_receiver.triggerThreshold1:  7800
-#
+stale_request_timeout: 200000000 

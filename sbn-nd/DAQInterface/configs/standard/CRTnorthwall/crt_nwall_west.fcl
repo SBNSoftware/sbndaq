@@ -20,8 +20,8 @@ daq.metrics.graphite.namespace: "sbnd.crtnw02."
 
 #daq.fragment_receiver.fragment_ids: [ 151, 150, 136, 157, 158, 182, 149, 73, 181]
 #errors about missing febs with this: List of 9 FEBs declared in the FHiCL file (dec): 73 136 149 150 151 157 158 181 182 doesn't match list of 7 detected FEBs: 73 136 149 157 158 181 182 END
-#daq.fragment_receiver.fragment_ids: [ 0xB297, 0xB296, 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
-daq.fragment_receiver.fragment_ids: [ 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
+daq.fragment_receiver.fragment_ids: [ 0xB297, 0xB296, 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
+#daq.fragment_receiver.fragment_ids: [ 0xB288, 0xB29d, 0xB29e, 0xB2b6, 0xB295, 0xB249 , 0xB2b5]
 
 
 

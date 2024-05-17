@@ -6,7 +6,7 @@ daq.metrics.graphite.namespace: "sbnd.evb02."
 daq.metrics.evbFile.fileName: "/daq/log/metrics/evb02_metrics.log" 
 
 #outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb02_run%R_%#_%to.root" 
-outputs.normalOutput.fileName: "/data/afilk/data_${app_name}_evb02_run%R_%#_%to.root" 
+outputs.normalOutput.fileName: "/data/afilk/data_evb02_${app_name}_run%R_%#_%to.root" 
 
 outputs.testOutput.fileName: "/scratch/test_data/data_evb02_run%R_%#_%to.root" 
 

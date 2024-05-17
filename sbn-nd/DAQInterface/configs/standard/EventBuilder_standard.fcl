@@ -149,8 +149,8 @@ physics: {
   a1: [ fragWatcher ]
 
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
-  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ rootNetOutput ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ a1, my_output_modules ]

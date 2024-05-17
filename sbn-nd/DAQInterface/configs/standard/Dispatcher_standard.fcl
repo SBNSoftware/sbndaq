@@ -35,15 +35,14 @@ daq: {
       fileName: "/daq/log/metrics/disp00_metrics.log"
       uniquify: true
     }
-    #were these commented out for a reason? unclear
-    #graphite: {
-     # level_string: "1-10,11-20"
-      #metricPluginType: "graphite"
-      #reporting_interval: 10.0
-      #host:"192.168.191.18"
-      #port:2003
-      #namespace:"sbnd.disp00."
-    #} 
+    graphite: {
+      level_string: "1-10,11-20"
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"10.226.36.34"
+      port:2003
+      namespace:"sbnd.disp00."
+    } 
   }
 
 }

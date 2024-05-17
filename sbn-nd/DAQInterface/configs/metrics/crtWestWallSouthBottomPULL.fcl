@@ -1,2 +1,3 @@
 #include "CRTwestwall/crt_wwall_sbottom.fcl"
-#include "CRTwestwall/crt_wwall_pull.fcl"
+#include "CRTwestwall/crt_wwall_pull_beam.fcl"
+##include "CRTwestwall/crt_wwall_pull.fcl"

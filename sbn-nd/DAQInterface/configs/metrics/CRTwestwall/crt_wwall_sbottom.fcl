@@ -1,9 +1,9 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
 
-#include "feb142.fcl"
+##include "feb142.fcl"
 #include "feb193.fcl"
-##include "feb042.fcl"
+#include "feb042.fcl"
 #include "feb138.fcl"
 #include "feb130.fcl"
 #include "feb019.fcl"
@@ -23,7 +23,7 @@ daq.fragment_receiver.generated_fragments_per_event: 9 #number of FEBs
 #daq.fragment_receiver.fragment_ids: [  0xB249, 0xB299, 0xB29B, 0xB29F ] #old configuration. 
 
 #daq.fragment_receiver.fragment_ids: [ 142, 42, 138, 130, 19, 202, 199, 197, 165 ]
-daq.fragment_receiver.fragment_ids: [ 0xB48e, 0xB4c1, 0xB48a, 0xB482, 0xB413, 0xB4ca, 0xB4c7, 0xB4c5, 0xB4a5 ]
+daq.fragment_receiver.fragment_ids: [ 0xB4c1, 0xB42a, 0xB48a, 0xB482, 0xB413, 0xB4ca, 0xB4c7, 0xB4c5, 0xB4a5 ]
 
 #daq.fragment_receiver.fragment_ids: [ 0xB48e, 0xB4c1, 0xB48a, 0xB413, 0xB4ca, 0xB4c7, 0xB4c5, 0xB4a5 ]
 
@@ -32,14 +32,14 @@ daq.fragment_receiver.ReaderID: 142
 
 daq.fragment_receiver.ethernet_port: "ens8f2"
 
-#daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true, true ]
-daq.fragment_receiver.TurnOnHV : [ true, true , false, false, false, true, true, true , true ]
+daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true, true ]
+#daq.fragment_receiver.TurnOnHV : [ true, true , false, false, false, true, true, true , true ]
 #daq.fragment_receiver.TurnOnHV : [ false, false, false ,false, false, false, false, false, false ] #, true, true ]#, true, true, true, true, true ]
 
 daq.fragment_receiver.PPS_offset_ns : [ 0, 16 , 32, 48, 64, 80, 96, 112, 128 ] # = dummy value **jiaoyang: need to be changed.**
 #daq.fragment_receiver.PPS_offset_ns : [ 0, 16, 32, 64, 80, 96, 112, 128 ] # = dummy value **jiaoyang: need to be changed.**
 
-daq.fragment_receiver.FEBConfigurationMAC142: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC42: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC193: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC138: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC130: @local::FEBConfigurationStandard
@@ -49,8 +49,8 @@ daq.fragment_receiver.FEBConfigurationMAC199: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC197: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC165: @local::FEBConfigurationStandard
 
-daq.fragment_receiver.FEBConfigurationMAC142.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC142.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC42.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC42.time_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC193.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC193.time_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC138.charge_threshold: 250

@@ -7,19 +7,22 @@ debug level: 4
 #manage processes: false
 Subsystem id: 1
 
-EventBuilder host: sbnd-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: sbnd-evb01-daq
+#EventBuilder label: EventBuilder1
 
-EventBuilder host: sbnd-evb02-daq
-EventBuilder label: EventBuilder2
+#EventBuilder host: sbnd-evb02-daq
+#EventBuilder label: EventBuilder2
 
-EventBuilder host: sbnd-evb03-daq
-EventBuilder label: EventBuilder3
+#EventBuilder host: sbnd-evb03-daq
+#EventBuilder label: EventBuilder3
 #
 #EventBuilder label: EventBuilder3_CRTmetric
 
-Dispatcher host: sbnd-evb01-daq
-Dispatcher label: Dispatcher1
-Dispatcher port: 6027
+EventBuilder host: sbnd-evb04-daq
+EventBuilder label: EventBuilder4
+
+#Dispatcher host: sbnd-evb01-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6027
 
 

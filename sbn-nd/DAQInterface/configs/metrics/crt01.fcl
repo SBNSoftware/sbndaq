@@ -1,0 +1,59 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+#include "crt_feb_voltage174.fcl"
+
+#include "crt_feb_voltages/feb073.fcl.copy"
+#include "crt_feb_voltages/feb0153.fcl.copy"
+#include "crt_feb_voltages/feb0155.fcl.copy"
+#include "crt_feb_voltages/feb0159.fcl.copy"
+
+#
+#  do not use this fcl file for testing other CRT modules, use crt01.fcl instead
+#
+
+daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
+daq.metrics.graphite.namespace: "sbnd.crttest01."
+
+#daq.fragment_receiver.generated_fragments_per_event: 13 #number if FEBs
+daq.fragment_receiver.generated_fragments_per_event: 4
+#daq.fragment_receiver.fragment_ids: [ 71, 72, 75, 76, 153, 73, 155, 156, 157, 158, 159, 181, 182 ]
+#daq.fragment_receiver.fragment_ids: [ 73, 153, 155, 159]
+#daq.fragment_receiver.fragment_ids: [ 0xB747, 0xB748, 0xB74B, 0xB74C, 0xB799, 0xB749, 0xB79B, 0xB79C, 0xB79D, 0xB79E, 0xB79F, 0xB7B5, 0xB7B6]
+daq.fragment_receiver.fragment_ids: [ 0xB749, 0xB799, 0xB79B, 0xB79F]
+
+#What is board id? What is a board? FEB? febdrv? And what is the id? unique id in ICARUS? In given machine? What do we need it for?
+daq.fragment_receiver.board_id: 1
+
+#What is ReaderID? Another ID?
+daq.fragment_receiver.ReaderID: 73
+
+# the two ports on sbnd-pds05
+#daq.fragment_receiver.ethernet_port: "enp23s0f0"
+daq.fragment_receiver.ethernet_port: "enp23s0f1"
+
+# Whether or not turn on SiPM HV on each FEB
+daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+
+
+# Whether or not turn on SiPM HV on each FEB
+#daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true, true, true, true, true, true ]
+daq.fragment_receiver.TurnOnHV : [ true, true, true, true ]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+#daq.fragment_receiver.PPS_offset_ns : [ 296, 303, 317, 330 ] # = dummy value
+daq.fragment_receiver.PPS_offset_ns : [ 0, 0, 0, 0 ] # = dummy value
+
+#need this for every connected board, number = last 8 bits of FEB MAC address in decimal (i.e. 92 = board with MAC 00:60:37:12:34:5c, where 5c = 92 in decimal)
+# vertical modules, do not need to voltage-scan again.
+daq.fragment_receiver.FEBConfigurationMAC73:  @local::FEB73Configuration
+daq.fragment_receiver.FEBConfigurationMAC153: @local::FEB153Configuration
+daq.fragment_receiver.FEBConfigurationMAC155: @local::FEB155Configuration
+daq.fragment_receiver.FEBConfigurationMAC159: @local::FEB159Configuration
+
+daq.fragment_receiver.FEBConfigurationMAC73.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC73.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC153.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC153.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC155.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC155.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC159.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC159.time_threshold: 250

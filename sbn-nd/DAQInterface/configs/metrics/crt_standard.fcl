@@ -1,0 +1,103 @@
+
+daq: {
+
+  fragment_receiver: {
+
+    ## Pull mode parameters
+#    request_address:        "227.128.1.129" # -- multicast request address
+#    multicast_interface_ip: "10.226.36.0" # -- should match the private net 
+#    request_port: 3501   # UDP request port
+#    request_mode: window # pull mode
+#    request_window_width:  50000000 #50ms window
+#    request_window_offset: 25000000 #25ms offset 
+#    request_windows_are_unique: false
+#    separate_data_thread: true
+#    stale_request_timeout: 200000000
+#    receive_requests: true
+
+
+    generated_fragments_per_event: 1 #number of FEBs
+    initial_delay_s: 0
+    fragment_period_ms: 10
+    fragment_type: "BERNCRTV2"
+    fragment_ids: [ 1 ] #last 8 bits of fragment ID are last 8 bits of FEB MAC5
+    generator: "BernCRTData"
+
+    max_fragment_size_bytes: 1000000
+
+    ethernet_port: "crt1"
+    
+    board_id: 1
+    
+#if a FEB registers no hits within the specified time, the boardreader prints a warning message. Default value: 1000, 0 = off
+    max_time_with_no_data_ms: 0
+
+#if value of ts0 counter exceeds the specified value, the boardreader prints a warning message. Default value: 1 000 100 000 ns.
+    max_tolerable_t0: 1000100000 
+
+#What is ReaderID? Another ID?
+    ReaderID: 1
+   
+# Whether or not turn on SiPM HV on each FEB
+   TurnOnHV : [ false]
+#How much the PPS signal coming to FEB is delayed due to cable length (normally should be > 0)
+   PPS_offset_ns : [ 0 ] # = dummy value
+
+  
+   FEBBufferCapacity: 10000
+
+   data_buffer_depth_fragments: 5000000 #ICARUS
+   #data_buffer_depth_fragments: 200000 #previous number being used
+  
+   firmware_flag: SBND #needs to be SBND or lots of missing events/crashes!        
+   #firmware_flag: ICARUS #needs to be SBND or lots of missing events/crashes!        
+
+   #Restart febdrv periodically (febdrv issue workaround)
+   feb_restart_period_s: 0
+   feb_poll_ms: 200
+
+   destinations: { }
+   routing_table_config:
+   {
+     use_routing_master: false
+   } 
+
+
+#
+##  ignore stuff below here
+#
+
+#PROBE register bitstream, monitoring configuration, not used for normal data taking but required to be loaded
+    ProbeBitStream : '
+00000000000000000000000000000000 # Out_fs From channel 0 to 31 Analog
+00000000000000000000000000000000 # Out_ssh_LG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_LG From channel 0 to 31 Digital
+00000000000000000000000000000000 # Out_ssh_HG From channel 0 to 31 Analog
+00000000000000000000000000000000 # PeakSensing_modeb_HG 32 From channel 0 to 31 Digital
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 0 to 15 Analog 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 # Out_PA_HG/Out_PA_LG 64 From channel 16 to 31 Analog
+'
+
+}
+
+metrics: {
+brFile: {
+metricPluginType: "file"
+level: 3
+fileName: "/daq/log/metrics/crt_%UID%_metrics.log"
+uniquify: true
+}
+send_system_metrics: true
+send_process_metrics: true
+graphite:{
+namespace: "sbnd.crt00."
+host: "10.226.36.34"
+#level: 10
+level_string: "1,2,11-20"
+metricPluginType: "graphite"
+port: 2003
+reporting_interval: 10
+}
+} 
+
+}

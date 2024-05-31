@@ -11,9 +11,9 @@ function getStatus()
 getStatus "nil"
 # [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
 
-#setdaqcomps.sh dummygenerator crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL
+setdaqcomps.sh dummygenerator crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
 
-setdaqcomps.sh pmt09PUSH ptb01PULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL
+#setdaqcomps.sh pmt09PUSH ptb01PULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"

@@ -6,7 +6,8 @@ daq.fragment_receiver.ethernet_port: "ens4f2"
 #daq.fragment_receiver.ethernet_port: "ens8f1"
 
 # List of FEBs in the daisy chain (readable, then hex)
-daq.fragment_receiver.fragment_ids:                 [ 93, 94, 95, 87, 97, 98, 77, 78 ]
+#daq.fragment_receiver.fragment_ids:                 [ 93, 94, 95, 87, 97, 98, 77, 78 ]
+daq.fragment_receiver.fragment_ids:                 [ 0xB05D, 0xB05E, 0xB05F, 0xB057, 0xB061, 0xB062, 0xB04D, 0xB04E ]
 #daq.fragment_receiver.fragment_ids:                 [ 97, 98, 77, 78, 83, 84, 104, 103, 102, 101 ]
 #daq.fragment_receiver.fragment_ids:                  [ 0xB061, 0xB062, 0xB04D, 0xB04E, 0xB053, 0xB054, 0xB068, 0xB067, 0xB066, 0xB065 ]
 # Number of FEBs

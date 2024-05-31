@@ -12,7 +12,7 @@
 #include "feb164.fcl"
 
 
-daq.metrics.brFile.fileName : "/daq/log/metrics/crt02_metrics.log"
+daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
 daq.metrics.graphite.namespace: "sbnd.crtwest01."
 
 

@@ -1,8 +1,23 @@
 #include "ptb01.fcl" 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BES_zero_bias_only_noprescale.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash.fcl"
+
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_3.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash_noprescale_noBNBinhibit.fcl"
+
+##include "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2024-02-26_TK_trigger_menu/DAQInterface/configs/beam_input_tests/ptbmk2_nd_offbeam_BES_only.fcl"
+
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
 ##include "ptbmk2_nd_2hz.fcl" 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
-#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_4.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_5hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_0p38115998028hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_4.fcl"
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_crossing_muon.fcl"
 
 daq.fragment_receiver.board_config: @local::board_config
 
@@ -12,19 +27,23 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width: 5000000  #600us #300us window#3ms window
-    daq.fragment_receiver.request_window_offset: 2500000 #500us #400us early #1.5ms early offset
+    daq.fragment_receiver.request_window_width: 5000000 # #5ms   #600us #300us window#3ms window
+    daq.fragment_receiver.request_window_offset: 2500000 #7500000 # #2.5 ms # #30000000 #500us #400us early #1.5ms early offset
 
-    #daq.fragment_receiver.request_windows_are_unique: false
-    daq.fragment_receiver.request_windows_are_unique: true
+    daq.fragment_receiver.request_windows_are_unique: false
+    #daq.fragment_receiver.request_windows_are_unique: true
     daq.fragment_receiver.separate_data_thread: true
-    daq.fragment_receiver.stale_request_timeout: 2000000000
+    daq.fragment_receiver.stale_request_timeout: 2000000000 #2s? maybe
     daq.fragment_receiver.receive_requests: true
-    daq.fragment_receiver.window_close_timeout_us: 400000000
-    daq.fragment_receiver.circular_buffer_mode: true
+    daq.fragment_receiver.window_close_timeout_us: 400000000 #40s
+    daq.fragment_receiver.circular_buffer_mode: true #false #true
 
-    daq.fragment_receiver.data_buffer_depth_fragments: 2000
-    daq.fragment_receiver.data_buffer_depth_mb : 200 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+
+    daq.fragment_receiver.data_buffer_depth_fragments:10000 #5000000 #  #40000
+    daq.fragment_receiver.data_buffer_depth_mb : 200000 #1000000 # #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]
+#adding more settings
+daq.fragment_receiver.max_fragment_size_bytes: 1000 #from grafana looks like averages 500B
+
 
 ##  end pull mode parameters
 

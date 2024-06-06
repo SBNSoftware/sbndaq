@@ -1,0 +1,50 @@
+daq: {
+   aggregator: {
+      auto_suppression_enabled: false
+      broadcast_buffer_size: 1e9
+      buffer_count: 20
+      event_queue_depth: 2
+      event_queue_wait_time: 1
+      expected_events_per_bunch: 1
+      is_dispatcher: true
+      maximum_oversize_fragment_count: 0
+      onmon_event_prescale: 1
+      overwrite_mode: true
+      print_event_store_stats: true
+
+      routing_token_config: {
+         use_routing_master: false
+      }
+
+      sources: {}
+}
+   metrics: {
+      aggFile: {
+         fileName: "/daq/log/metrics/disp_%UID%_metrics.log"
+         level_string: "1,2,11-20"
+         metricPluginType: "file"
+         uniquify: true
+      }
+   }
+}
+
+outputs: {}
+
+physics: {}
+
+services: {
+   ArtdaqFragmentNamingServiceInterface: {
+      service_provider: "ArtdaqFragmentNamingService"
+      helper_plugin: "ArtdaqDemo"
+   }
+   ArtdaqSharedMemoryServiceInterface: {
+      service_provider: "ArtdaqSharedMemoryService"
+   }
+}
+
+source: {
+   module_type: "ArtdaqInput"
+   register_fragment_types: false
+}
+
+process_name: "DAQDP"

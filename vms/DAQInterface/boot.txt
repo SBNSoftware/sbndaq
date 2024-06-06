@@ -1,0 +1,13 @@
+DAQ setup script: $SETUP_FILE
+PMT host: vm-60.vms.local
+
+# debug level can range from 0 to 4 (increasing order of verbosity)
+debug level: 4
+
+EventBuilder host: vm-60.vms.local
+EventBuilder label: EventBuilder1
+
+Dispatcher host: vm-60.vms.local
+Dispatcher label: Dispatcher1
+Dispatcher port: 6020
+

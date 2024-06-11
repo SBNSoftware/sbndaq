@@ -5,23 +5,22 @@
 daq.fragment_receiver.ethernet_port: "ens4f1"
 
 # List of FEBs in the daisy chain (readable, then hex)
-daq.fragment_receiver.fragment_ids:                  [ 0xB052, 0xB056, 0xB05A, 0xB05B, 0xB063, 0xB064 ]
 #daq.fragment_receiver.fragment_ids:                 [ 82, 86, 90, 91, 99, 100 ]
+daq.fragment_receiver.fragment_ids:                 [ 0xB052, 0xB056, 0xB05A, 0xB05B, 0xB063, 0xB064 ]
 
 # Number of FEBs
-#daq.fragment_receiver.generated_fragments_per_event: 6
+daq.fragment_receiver.generated_fragments_per_event: 6
+
 # First board in the chain
 daq.fragment_receiver.ReaderID:                      82
 
 # SiPM HV On?
 daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true ] 
 
-# How much the PPS signal coming to FEB is delayed due to cable length - currently all relative to first board
-daq.fragment_receiver.PPS_offset_ns : [  6, 22, 54, 71, 84, 100 ]
+daq.fragment_receiver.PPS_offset_ns : [ 453, 469, 501, 517, 530, 546 ]
 
 # Name for the grouping this will appear in on grafana
 daq.metrics.graphite.namespace: "sbnd.crtflat01."
-
 
 daq.fragment_receiver.FEBConfigurationMAC82: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC82.charge_threshold: 350

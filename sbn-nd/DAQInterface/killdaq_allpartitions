@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+for p in {1..9}; do
+    PART=p
+
+    for i in {01..04}; do
+	echo "sbnd-evb${i}-daq: pkill -9 -f '^eventbuilder.*partition_number: $PART$'"
+	ssh sbnd-evb${i}-daq -f "pkill -9 -f '^eventbuilder.*partition_number: $PART$'"
+    done
+
+    #ssh sbnd-evb01 -f 'killall -9 dispatcher'
+
+    echo "sbnd-wib01-daq: pkill -9 '^boardreader.*partition_number: $PART$'"
+    ssh sbnd-wib01-daq -f "pkill -9 -f '^boardreader.*partition_number: $PART$'"
+
+    echo "sbnd-evb04: pkill -9 '^boardreader.*partition_number: $PART$'"
+    ssh sbnd-evb04 -f "pkill -9 -f '^boardreader.*partition_number: $PART$'"
+
+    for i in {01..12}; do
+	echo "sbnd-tpc${i}-daq: pkill -9 '^boardreader.*partition_number: $PART$'"
+	ssh sbnd-tpc${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $PART$'"
+    done
+
+
+    for server in pds01 pds02 pds05 pds04 ptb01 ; do #crt01
+	echo "sbnd-${server}-daq: pkill -9 '^boardreader.*partition_number: $PART$'"
+	ssh sbnd-${server}-daq -f "pkill -9 -f '^boardreader.*partition_number: $PART$'"
+    done
+
+
+
+    for i in {01..04}; do
+	echo "sbnd-evb${i}: ipcrm -a"
+	ssh sbnd-evb${i}-daq -f 'ipcrm -a'
+    done
+
+    for i in 01 02; do
+	echo "sbnd-daq${i}: ipcrm -a"
+	ssh sbnd-daq${i}-daq -f 'ipcrm -a'
+    done
+
+    echo 'well done'
+done

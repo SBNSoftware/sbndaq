@@ -1,2 +1,2 @@
-#include "CRTeastwall/crt_ewall_sbottom.fcl"
-#include "CRTeastwall/crt_ewall_pull.fcl"
+#include "crt_ewall_sbottom.fcl"
+#include "crt_pull.fcl"

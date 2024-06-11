@@ -25,6 +25,8 @@ daq:
 
     # Set up max temperature board can have before some messages appear
     maxTempCelsius: 75
+    poll_hardware_status: true
+    hardware_poll_interval_us: 3e7 #us
     temperatureCheckMask: 0xFFFF
     # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
     # SBND: keep this parameter = 0

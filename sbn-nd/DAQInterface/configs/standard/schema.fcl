@@ -259,7 +259,7 @@ pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)'
 
 collection: RunHistory 
 
-pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager).*)(\.fcl$)' 
+pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager)(\d+(|_.*)|_standard))(\.fcl$)' 
 
 }, {
 

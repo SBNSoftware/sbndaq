@@ -20,8 +20,8 @@ boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01* pmt* spectdc .*
 #boardreader_priorities_on_config: wib10[1-6] wib20[1-6] wib30[1-6] wib40[1-6] mbb02 tpc* ntb01 ptb01
 #boardreader_priorities_on_config: wib[12]0[1-6] wib[34]0[1-6] mbb02 tpc* ntb01 ptb01
 #boardreader_priorities_on_start: wib* mbb02 tpc* ntb01 ptb01
-boardreader_priorities_on_start: mbb02 wib* tpc* ntb01 crt* ptb01* pmt* spectdc .*
-boardreader_priorities_on_stop: spectdc pmt* ptb01* crt* ntb01 tpc* wib* mbb02 
+boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb01* pmt* spectdc .*
+boardreader_priorities_on_stop: spectdc pmt* ptb01* ntb01 tpc* wib* mbb02 crt*
 
 max_launch_checks: 10
 launch_procs_wait_time: 60

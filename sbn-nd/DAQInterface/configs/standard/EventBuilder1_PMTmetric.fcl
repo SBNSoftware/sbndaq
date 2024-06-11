@@ -9,3 +9,9 @@ physics.my_output_modules: [ mode0Output, rootNetOutput ]
 process_name: DAQEVB01
 
 
+physics.producers.pmtmetricproducer.TimingType: 1
+physics.producers.pmtmetricproducer.SPECTDCTimingChannel: 1
+physics.producers.pmtmetricproducer.SPECTDCDelay: -1867
+
+physics.producers.pmtmetricproducer.CountPMTs: false
+physics.producers.pmtmetricproducer.CalculateBaseline: true

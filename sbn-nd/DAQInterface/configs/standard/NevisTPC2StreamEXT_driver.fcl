@@ -3,7 +3,7 @@
 
 nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
-framesize_16MHz_ticks: 9119  #number of 16MHz ticks that defines size of a tpc readout frame
+framesize_16MHz_ticks: 15999  #number of 16MHz ticks that defines size of a tpc readout frame
 
 daq:{
 fragment_receiver: {
@@ -14,7 +14,7 @@ fragment_receiver: {
   generated_fragments_per_event: 16
   board_id: 0
 
-  SamplesPerChannel: 3420 #7675 # SBND drift time x 3
+  SamplesPerChannel: 6000 #7675 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
@@ -22,7 +22,7 @@ fragment_receiver: {
   ControllerTriggerFrequency: -1 # Frequency in Hz of the Controller trigger
   DumpBinary: true # Write binary file before the artdaq back-end
   DumpBinaryDir: "/data"
-  DoSNReadout: true # Do continuous readout
+  DoSNReadout: false # Do continuous readout
   SNChunkSize: @local::sn_dma_buffer_size
   framesize: @local::framesize_16MHz_ticks
 
@@ -48,7 +48,7 @@ fragment_receiver: {
     # fem_fake_data: true # (default is false)
     # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
-    timesize: 1139 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+    timesize: 1999 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
 
   ### Configuration of the ControllerModule ###
@@ -69,7 +69,7 @@ fragment_receiver: {
   # Do not change block name
   trigger_module : {
   # Example from MicroBooNE -- NEEDS TO BE EDITED --
-    deadtime : 0x59 # 0xfa
+    deadtime : 0x9c # 0xfa
     # Must satisfy framesize = timesize * 8 - 1
     framesize : @local::framesize_16MHz_ticks #SBND drift time. Number of samples (minus one) for the 16 MHz clock
     g1delay : 0x0 #0x10

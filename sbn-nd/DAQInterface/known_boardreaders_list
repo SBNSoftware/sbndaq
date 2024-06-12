@@ -114,3 +114,6 @@ crtEastWallNorthTopPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_r
 
 crtWestWallSouthBottomPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtWestWallNorthTopPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+
+crtSouthWallWestPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtSouthWallEastPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "

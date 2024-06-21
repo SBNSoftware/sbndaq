@@ -1,7 +1,0 @@
-   receiver: {
-      receive_requests: true
-      request_port: 3501
-      request_address: "227.128.1.129"
-      multicast_interface_ip: "192.168.230.0"
-      end_of_run_quiet_timeout_ms: 1000
-   }

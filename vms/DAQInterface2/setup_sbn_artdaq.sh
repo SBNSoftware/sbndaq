@@ -9,6 +9,7 @@ export SPACK_DISABLE_LOCAL_CONFIG=true
 
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
+unset PYTHONPATH
 #export SPACK_INSTALL_DIR=$(echo "${THIS_SBN_DAQ_DAQINTERFACE_DIR}" | grep -Eo '(^.*Areas/[A-Za-z0-9_\-]+/)')/SPACK_ROOT
 
 export SPACK_INSTALL_DIR=/daq/software/spack_packages/spack/current/NULL
@@ -41,7 +42,7 @@ export DAQINTERFACE_USER_SOURCEFILE=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/user_source
 source package_setup.sh "sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"  2>/dev/null  
 
 export PYTHONPATH=$(echo "$PYTHONPATH" | awk -v RS=':' -v ORS=':' '!seen[$0]++' | sed 's/:$//')
-export ARTDAQ_DATABASE_VERSION=$(spack find artdaq-daqinterface|grep artdaq-daqinterface |grep -Eo 'v[0-9_]+')
+export ARTDAQ_DATABASE_VERSION=$(spack find artdaq-database arch=${SPACK_ARCH}| grep artdaq-database |grep -Eo 'v[0-9_]+')
 
 spack find -lf --loaded 2>&1 | grep -v 'Warning: Missing dependency not in database:' 
 

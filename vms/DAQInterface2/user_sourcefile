@@ -48,7 +48,9 @@ elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    #echo "Put code here which sets up the database environment"
    source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_database.sh
 fi
-export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -p artdaq-mfextensions |grep artdaq-mfextensions | grep -Eo '/.*$')
+
+export SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
+export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -p artdaq-mfextensions arch=${SPACK_ARCH} |grep artdaq-mfextensions | grep -Eo '/.*$')
 export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
 
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl

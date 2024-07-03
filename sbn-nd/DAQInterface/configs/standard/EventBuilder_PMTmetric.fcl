@@ -154,7 +154,7 @@ physics: {
 
       CAENInstanceLabels: [ "CAENV1730", "ContainerCAENV1730" ]
 
-      FragIDs: [41221] #40960, 40961, 40962, 40963, 40964, 40965, 40966, 40967]  # should have 8 modules
+      FragIDs: [40960, 40961, 40962, 40963, 40964, 40965, 40966, 40967]  # should have 8 modules
       Verbose: 1 # 0: no printout, 1: printout for each event, 2: printout for each fragment, 3: printout for each channel
 
       # turn on/off various metric calculations 

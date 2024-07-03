@@ -66,8 +66,8 @@ pmt04 sbnd-pds01-daq -1 1 0-15
 pmt05 sbnd-pds02-daq -1 1 0-15
 pmt06 sbnd-pds02-daq -1 1 0-15
 pmt07 sbnd-pds02-daq -1 1 0-15
-pmt08 sbnd-pds05-daq -1 1 0-15
-pmt09 sbnd-pds02-daq -1 1 0-15
+pmt08 sbnd-pds02-daq -1 1 0-15
+pmt09 sbnd-pds05-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
-pmt09PUSH sbnd-pds02-daq -1 1 0-15
+pmt09PUSH sbnd-pds05-daq -1 1 0-15
 dummygenerator sbnd-evb01-daq -1 1

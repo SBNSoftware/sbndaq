@@ -33,7 +33,7 @@ getStatus "nil"
 #setdaqcomps.sh  ptb01PULL spectdc pmtx06PUSH
 #setdaqcomps.sh pmt09PUSH ptb01PULL
 #setdaqcomps.sh ptb01PULL pmt01PUSH #pmtx03PUSH crtNorthWallEastPULL
-#setdaqcomps.sh ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09PUSH #pmtx06PUSH
+setdaqcomps.sh ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09PUSH crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL #pmtx06PUSH
 
 #setdaqcomps.sh tpc01FakeData ntb01 ptb01PULL spectdc #pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 crtNorthWallEastPULL #pmtx06PUSH #pmtx03 #PUSH #pmtx03PUSH
 #setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #PUSH #pmtx03PUSH
@@ -44,11 +44,11 @@ getStatus "nil"
 
 
 
-setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01
 
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 #ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 crtEastWallSouthBottomPULL #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
 
-#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 #ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 #pmt08 #crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #crtNorthWallWestPULL 
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt09 #pmt08 #crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL #crtNorthWallWestPULL 
 
 
 #setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 tpc01 ntb01 ptb01PULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 #crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL

@@ -1,0 +1,37 @@
+
+# JCF, Sep-16-2017
+
+# This file is an example of a settings file which would work with an
+# artdaq-demo installation, assuming the installation was performed
+# with artdaq-demo's quick-mrb-start.sh script. It is valid as of
+# artdaq-demo v2_10_02; more details on artdaq-demo installation can
+# be found in
+# https://cdcvs.fnal.gov/redmine/projects/artdaq-demo/wiki. Note that
+# the user will need to (A) make sure that a directory called
+# $HOME/run_records has been created and (B) make sure to set the
+# productsdir_for_bash_scripts variable, below, to a products
+# directory containing the xmlrpc_c package (needed for DAQInterface
+# to receive commands)
+
+log_directory: /daq/log
+record_directory: /daq/run_records
+packages_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
+spack_root_for_bash_scripts: /daq/software/spack_packages/spack/current/NULL
+max_configurations_to_list: 20
+boardreader timeout: 45
+eventbuilder timeout: 30
+aggregator timeout: 30
+dispatcher timeout: 30
+use_messageviewer: true
+
+max_launch_checks: 5
+launch_procs_wait_time: 50
+
+advanced_memory_usage: true
+
+all_events_to_all_dispatchers: true
+
+disable_unique_rootfile_labels: true
+
+transfer_plugin_to_use: TCPSocket
+

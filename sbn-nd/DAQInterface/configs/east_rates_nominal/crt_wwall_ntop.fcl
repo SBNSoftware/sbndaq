@@ -29,15 +29,15 @@ daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, tru
 
 daq.fragment_receiver.PPS_offset_ns : [ 447, 463, 479, 495, 511, 527, 543, 559, 575 ]
 
-daq.fragment_receiver.FEBConfigurationMAC80: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC207: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC203: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC45: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC198: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC174: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC148: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC163: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC164: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC80: @local::FEB080Configuration
+daq.fragment_receiver.FEBConfigurationMAC207: @local::FEB207Configuration
+daq.fragment_receiver.FEBConfigurationMAC203: @local::FEB203Configuration
+daq.fragment_receiver.FEBConfigurationMAC45: @local::FEB045Configuration
+daq.fragment_receiver.FEBConfigurationMAC198: @local::FEB198Configuration
+daq.fragment_receiver.FEBConfigurationMAC174: @local::FEB174Configuration
+daq.fragment_receiver.FEBConfigurationMAC148: @local::FEB148Configuration
+daq.fragment_receiver.FEBConfigurationMAC163: @local::FEB163Configuration
+daq.fragment_receiver.FEBConfigurationMAC164: @local::FEB164Configuration
 
 daq.fragment_receiver.FEBConfigurationMAC80.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC80.time_threshold: 250

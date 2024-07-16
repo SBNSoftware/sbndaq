@@ -15,7 +15,7 @@ getStatus "nil"
 
 #setdaqcomps.sh pmt09PUSH ptb01PULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
 
-#setdaqcomps.sh dummygenerator crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
+setdaqcomps.sh dummygenerator crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
 
 #setdaqcomps.sh dummygenerator crtNorthWallEastPULL crtNorthWallWestPULL
 
@@ -23,7 +23,9 @@ getStatus "nil"
 
 #setdaqcomps.sh dummygenerator crtSouthWallWestPULL crtSouthWallEastPULL
 
-setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL
+
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
 
 send_transition.sh boot boot.txt
 getStatus "booting"
@@ -38,8 +40,8 @@ done
 #send_transition.sh config "ceTpcNoiseRuns1-00009"
 #send_transition.sh config metrics
 #send_transition.sh config crossingmuon
-send_transition.sh config east_rates_nominal
-#send_transition.sh config east_rates_alex
+#send_transition.sh config east_rates_nominal
+send_transition.sh config east_rates_alex
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

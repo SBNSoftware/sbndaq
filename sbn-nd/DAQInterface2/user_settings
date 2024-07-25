@@ -1,0 +1,26 @@
+log_directory: /daq/log
+record_directory: /daq/run_records
+packages_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
+spack_root_for_bash_scripts: /daq/software/spack_packages/spack/current/NULL
+max_configurations_to_list: 20
+boardreader timeout: 600
+eventbuilder timeout: 45
+aggregator timeout: 20
+dispatcher timeout: 25
+use_messageviewer: true
+
+
+boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01*
+boardreader_priorities_on_start: wib* mbb02 tpc* ntb01 ptb01*
+boardreader_priorities_on_stop: ptb01* ntb01 tpc* wib* mbb02
+
+
+max_launch_checks: 6
+launch_procs_wait_time: 60
+
+advanced_memory_usage: true
+all_events_to_all_dispatchers: true
+
+disable_unique_rootfile_labels: true
+
+transfer_plugin_to_use: TCPSocket

@@ -1,0 +1,159 @@
+services: {
+  ArtdaqSharedMemoryServiceInterface: {
+   service_provider: ArtdaqSharedMemoryService
+ }
+
+  ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
+}
+
+daq: {
+  event_builder: {
+
+    stale_buffer_timeout_usec: 10000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    expected_fragments_per_event: 0  # Will be set by DAQInterface
+    use_art: true
+    print_event_store_stats: true
+    buffer_count: 30 #100
+    max_incomplete_events: 15 #50 # Same as boardreader sync interval
+
+    verbose: true
+    send_requests: true
+    request_address: "227.128.11.129"          # Multi-cast request address
+    multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
+    request_port: 3001
+
+    #num_requests: 500
+
+    tcp_receive_buffer_size: 64000
+    routing_token_config: {
+      use_routing_master: false
+    }
+
+    sources: { }
+  }
+  metrics: {
+    evbFile: {
+      metricPluginType: "file"
+      level_string: "1,2,11-20"
+      fileName: "/daq/log/metrics/evb00_metrics.log"
+      uniquify: true
+    }
+
+
+send_system_metrics: true
+send_process_metrics: true
+
+    graphite: {
+      level_string: "1,2,11-20"
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"10.226.36.34"
+      port:2003
+      namespace:"sbnd.evb00."
+    }
+  }
+}
+
+outputs: {
+  normalOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
+
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
+      maxEvents: 20 #close files out a little faster for the prescaled stream
+    }
+
+    fastCloning: false
+    compressionLevel: 0
+    SelectEvents: [p2]
+  }
+  testOutput: {
+    module_type: RootDAQOut
+    fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
+
+    fileProperties: {
+      maxSubRuns: 1
+      maxRuns: 1
+      maxEvents: 100
+    }
+
+    fastCloning: false
+    compressionLevel: 0
+    SelectEvents: []
+  }
+  rootNetOutput: {
+    module_type: RootNetOutput
+    broadcast_sends: true
+    nonblocking_sends: true
+  	destinations: { }
+    #SelectEvents: [p1]
+    host_map: [{
+      rank: -1
+      host: "localhost"
+    }]
+
+  	routing_table_config: {
+           use_routing_manager: false
+       	}
+
+  }
+}
+
+physics: {
+  analyzers: {
+      fragWatcher: {
+         module_type: "FragmentWatcher"
+         fragment_ids: []
+      } 
+  }
+
+  producers: {}
+
+  filters: {
+    prescale50: { module_type: "Prescaler"
+    		  prescaleFactor: 50
+ 		  prescaleOffset: 0
+		}
+
+    prescale10: { module_type: "Prescaler"
+    		  prescaleFactor: 10
+ 		  prescaleOffset: 0
+		}
+
+    prescale25: { module_type: "Prescaler"
+    		  prescaleFactor: 25
+ 		  prescaleOffset: 0
+		}
+
+    prescale5: { module_type: "Prescaler"
+    		  prescaleFactor: 5
+ 		  prescaleOffset: 0
+		}
+
+    prescale1: { module_type: "Prescaler"
+    		  prescaleFactor: 1
+ 		  prescaleOffset: 0
+		}
+  }
+
+  p1: [ ]
+  p2: [ prescale1 ]
+  pd: [ prescale5 ]
+
+  a1: [ fragWatcher ]
+
+  #my_output_modules: []
+  my_output_modules: [ rootNetOutput ]
+  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ normalOutput , rootNetOutput ]
+
+  end_paths: [ a1, my_output_modules ]
+}
+source: {
+  module_type: ArtdaqInput
+  waiting_time: 2500000
+  resume_after_timeout: true
+}
+process_name: DAQ

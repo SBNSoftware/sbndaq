@@ -33,11 +33,11 @@ EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder8
 
 # Add 2 more event builders on  icarus-evb05-daq
-EventBuilder host: icarus-evb05-daq
-EventBuilder label: EventBuilder5
+#EventBuilder host: icarus-evb05-daq
+#EventBuilder label: EventBuilder5
 
-EventBuilder host: icarus-evb05-daq
-EventBuilder label: EventBuilder9
+#EventBuilder host: icarus-evb05-daq
+#EventBuilder label: EventBuilder9
 
 # DATA LOGGERS
 

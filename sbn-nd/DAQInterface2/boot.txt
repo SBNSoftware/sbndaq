@@ -1,0 +1,25 @@
+DAQ setup script: $DAQ_SETUP_SCRIPT
+
+PMT host: sbnd-evb01-daq
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+debug level: 4
+#manage processes: false
+Subsystem id: 1
+
+EventBuilder host: sbnd-evb01-daq
+EventBuilder label: EventBuilder1
+
+EventBuilder host: sbnd-evb02-daq
+EventBuilder label: EventBuilder2
+
+EventBuilder host: sbnd-evb03-daq
+EventBuilder label: EventBuilder3
+#
+#EventBuilder label: EventBuilder3_CRTmetric
+
+Dispatcher host: sbnd-evb01-daq
+Dispatcher label: Dispatcher1
+Dispatcher port: 6027
+
+

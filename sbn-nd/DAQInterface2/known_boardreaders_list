@@ -1,5 +1,3 @@
-component01 sbnd-evb01-daq -1 1
-component02 sbnd-evb01-daq -1 1
 ntb01 sbnd-tpc12-daq -1 1
 tpc01 sbnd-tpc01-daq -1 1
 tpc02 sbnd-tpc02-daq -1 1
@@ -36,56 +34,29 @@ wib403 sbnd-wib01-daq -1 1
 wib404 sbnd-wib01-daq -1 1
 wib405 sbnd-wib01-daq -1 1
 wib406 sbnd-wib01-daq -1 1
-#wib101 sbnd-evb04-daq -1 1
-#wib102 sbnd-evb04-daq -1 1
-#wib103 sbnd-evb04-daq -1 1
-#wib104 sbnd-evb04-daq -1 1
-#wib105 sbnd-evb04-daq -1 1
-#wib106 sbnd-evb04-daq -1 1
-#wib201 sbnd-evb04-daq -1 1
-#wib202 sbnd-evb04-daq -1 1
-#wib203 sbnd-evb04-daq -1 1
-#wib204 sbnd-evb04-daq -1 1
-#wib205 sbnd-evb04-daq -1 1
-#wib206 sbnd-evb04-daq -1 1
-#wib301 sbnd-evb04-daq -1 1
-#wib302 sbnd-evb04-daq -1 1
-#wib303 sbnd-evb04-daq -1 1
-#wib304 sbnd-evb04-daq -1 1
-#wib305 sbnd-evb04-daq -1 1
-#wib306 sbnd-evb04-daq -1 1
-#wib401 sbnd-evb04-daq -1 1
-#wib402 sbnd-evb04-daq -1 1
-#wib403 sbnd-evb04-daq -1 1
-#wib404 sbnd-evb04-daq -1 1
-#wib405 sbnd-evb04-daq -1 1
-#wib406 sbnd-evb04-daq -1 1
-wibtest sbnd-evb04-daq -1 1
+tpc01FakeData sbnd-tpc01-daq -1 1    
 mbb02 sbnd-wib01-daq -1 1
-ptb01 sbnd-ptb01-daq -1 1
+#spectdc sbnd-clk01-daq -1 1
 spectdc sbnd-pds04-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
-gps sbnd-gps01-daq -1 1
-crt01 sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt01PULL sbnd-pds04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt02 sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crttest sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crttestPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt2x2dwnstr sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt2x2dwnstrPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt2x2upstr sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crt2x2upstrPULL sbnd-pds05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat_east sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat_eastPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat_west sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat_westPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-pmtx01 sbnd-pds03-daq -1 1 0-15 
+crtNorthWallWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtNorthWallEastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtflat3_eastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtflat3_southwestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtflat3_northPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtEastWallSouthBottomPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtEastWallNorthTopPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "   
+crtWestWallSouthBottomPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtWestWallNorthTopPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "  
+crtSouthWallWestPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtSouthWallEastPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+
 pmtx01 sbnd-pds03-daq -1 1 0-15
 pmtx02 sbnd-pds03-daq -1 1 0-15 
 pmtx03 sbnd-pds02-daq -1 1 0-15
 pmtx03PUSH sbnd-pds03-daq -1 1 0-15
+pmtx06PUSH sbnd-pds03-daq -1 1 0-15 
+pmtx06 sbnd-pds03-daq -1 1 0-15 
 pmtx04 sbnd-pds01-daq -1 1 0-15
 pmt01 sbnd-pds01-daq -1 1 0-15
 pmt02 sbnd-pds01-daq -1 1 0-15
@@ -97,5 +68,5 @@ pmt07 sbnd-pds02-daq -1 1 0-15
 pmt08 sbnd-pds02-daq -1 1 0-15
 pmt09 sbnd-pds05-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
-pmt09PUSH sbnd-pds05-daq -1 1 0-15
-dummygenerator sbnd-evb02-daq -1 1
+pmt09PUSH sbnd-pds02-daq -1 1 0-15
+dummygenerator sbnd-evb01-daq -1 1

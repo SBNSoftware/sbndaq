@@ -10,9 +10,9 @@ dispatcher timeout: 25
 use_messageviewer: true
 
 
-boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01*
-boardreader_priorities_on_start: wib* mbb02 tpc* ntb01 ptb01*
-boardreader_priorities_on_stop: ptb01* ntb01 tpc* wib* mbb02
+boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01* pmt* crt* spectdc .*
+boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb01* pmt* spectdc .*
+boardreader_priorities_on_stop: spectdc pmt* ptb01* ntb01 tpc* wib* mbb02 crt* .*
 
 
 max_launch_checks: 6
@@ -22,5 +22,5 @@ advanced_memory_usage: true
 all_events_to_all_dispatchers: true
 
 disable_unique_rootfile_labels: true
-
+disable_private_network_bookkeeping: true
 transfer_plugin_to_use: TCPSocket

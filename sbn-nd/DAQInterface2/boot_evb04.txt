@@ -16,13 +16,13 @@ EventBuilder label: EventBuilder2
 EventBuilder host: sbnd-evb03-daq
 EventBuilder label: EventBuilder3
 
-#EventBuilder host: sbnd-evb04-daq
-#EventBuilder label: EventBuilder4
+EventBuilder host: sbnd-evb04-daq
+EventBuilder label: EventBuilder4
 
 #
 #EventBuilder label: EventBuilder3_CRTmetric
 
-atcher host: sbnd-evb01-daq
+Dispatcher host: sbnd-evb01-daq
 Dispatcher label: Dispatcher1
 Dispatcher port: 6021
 

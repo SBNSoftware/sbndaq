@@ -1,33 +1,57 @@
 #!/usr/bin/env bash
-[[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename ${BASH_SOURCE}) should be sourced!"; exit 1; }
+echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+[[ "$0" != "${BASH_SOURCE[0]}" ]] || { echo "The script $(basename "${BASH_SOURCE[0]}") should be sourced!"; exit 1; }
 
-source ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh 
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+
+export DAQINTERFACE_CONFIGURE_STATUS_CHECK_QUIET_TIME=60
+
+SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
+SPACK_ENV_SCRIPT="${SPACK_INSTALL_DIR}/share/spack/setup-env.sh"
+
+export DAQ_SETUP_SCRIPT="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh"
+
+[[ -f "$SPACK_ENV_SCRIPT" ]] || { echo "Error: Not a Spack installation. This is a critical error with loading Spack packages."; return 10; }
+
+source "$SPACK_ENV_SCRIPT" 2>&1
+[[ $? -eq 0 ]] || { echo "Error: source setup-env.sh failed. This is a critical error with loading Spack packages."; return 10; }
+
+export SPACK_DISABLE_LOCAL_CONFIG=true
+
+echo "Info: sourcing setup_sbn_artdaq.sh"
+
+source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh"
+
+which DAQInterface.sh >/dev/null 2>&1 \
+  || { echo "Error: DAQInterface not setup. This is a critical error with loading Spack packages."; return 11; }
 
 echo "Loaded Spack packages:"
-spack find -dl --loaded |grep -E '(sbndaq|artdaq|wibtools)'
-echo; echo;
+spack find -dl --loaded | grep -E '(sbndaq|artdaq|wibtools)'
+echo
 
-#export SPACK_ARCH=${SPACK_ARCH:-"linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"}
-export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded |grep artdaq-mfextensions 2>/dev/null  | grep -Eo '/.*$')
-# export ARTDAQ_MFEXTENSIONS_DIR=$(sspack find -p artdaq-mfextensions@${MFEXTENSIONS_VERSION} arch=${SPACK_ARCH} |grep artdaq-mfextensions | grep -Eo '/.*$')
+export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensions | grep -Eo '/.*$')
 export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
+
+unset PYTHONPATH
+export ARTDAQ_DAQINTERFACE_DIR=$(dirname "$(dirname "$(which DAQInterface.sh 2>/dev/null)")")
+
+export PATH="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}"
+
+export DAQINTERFACE_SETTINGS="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/user_settings"
+export DAQINTERFACE_USER_SOURCEFILE="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/user_sourcefile"
+
+echo "ARTDAQ_DAQINTERFACE_DIR: $ARTDAQ_DAQINTERFACE_DIR"
+
+export PYTHONPATH=$(echo "$PYTHONPATH" | awk -v RS=':' -v ORS=':' '!seen[$0]++' | sed 's/:$//')
+
+export ARTDAQ_DATABASE_CONFDIR="/daq/software/database/config"
+
+export PYTHONUNBUFFERED=true
 
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
-if [ -f $ARTDAQ_DAQINTERFACE_DIR/source_me ]; then
-  echo "Sourcing " $ARTDAQ_DAQINTERFACE_DIR/source_me
-  source $ARTDAQ_DAQINTERFACE_DIR/source_me
-fi
+[[ -f "$ARTDAQ_DAQINTERFACE_DIR/source_me" ]] \
+  && { echo "Sourcing $ARTDAQ_DAQINTERFACE_DIR/source_me"; source "$ARTDAQ_DAQINTERFACE_DIR/source_me"; }
 
-#export PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}
-
-
-export DAQ_SETUP_SCRIPT=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh
-
-
-#if [ -x "$THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh" ]; then 
-#  $THIS_SBN_DAQ_DAQINTERFACE_DIR/fix_host_in_meassagefacility_fcl.sh
-#fi
-
+echo "*** Finished running $(basename "${BASH_SOURCE}") on $(hostname -s).";echo

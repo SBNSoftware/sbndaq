@@ -16,13 +16,17 @@ unset PYTHONPATH
 
 SPACK_INSTALL_DIR=/daq/software/spack_packages/spack/current/NULL
 
-[[ -f ${SPACK_INSTALL_DIR}/share/spack/setup-env.sh ]] || { echo "Error: Not a Spack installation"; return 10; }
+[[ -f ${SPACK_INSTALL_DIR}/share/spack/setup-env.sh ]] || { echo "Error: Not a Spack installation. This is a critical error with loading Spack packages."; return 10; }
 
-source ${SPACK_INSTALL_DIR}/share/spack/setup-env.sh >/dev/null 2>&1
+source ${SPACK_INSTALL_DIR}/share/spack/setup-env.sh 2>&1
+[[ $? == 0 ]] || {  echo "Error: source setup-env.sh failed. This is a critical error with loading Spack packages."; return 10; }
 
-which spack >/dev/null 2>&1 || { echo "Error: Spack not setup"; return 10; }
+export SPACK_DISABLE_LOCAL_CONFIG=true
 
-spack unload --all >/dev/null 2>&1 
+which spack >/dev/null 2>&1 || { echo "Error: Spack not setup. This is a critical error with loading Spack packages."; return 10; }
+
+spack unload --all 2>&1 
+[[ $? == 0 ]] || {  echo "Error: \"spack unload --all\" failed. This is a critical error with loading Spack packages."; return 10; }
 
 export SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
 
@@ -31,17 +35,54 @@ DAQINTERFACE_VERSION_FOUND=$(spack find -p artdaq-daqinterface%${BUILD_VARIANT} 
 
 export DAQINTERFACE_VERSION=${DAQINTERFACE_VERSION:-"${DAQINTERFACE_VERSION_FOUND}"}
 
-spack load artdaq-daqinterface@${DAQINTERFACE_VERSION}%${BUILD_VARIANT} arch=${SPACK_ARCH} 2>&1
+for i in {1..3}; do
+  echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} (try $i)"
+  spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} arch=${SPACK_ARCH} 2>&1
+  [[ $? == 0 ]] && { echo "Loaded sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"; break; } \
+    || echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\" failed. Retrying..."
+  sleep 5
+done
 
-which DAQInterface.sh >/dev/null 2>&1 || { echo "Error: DAQInterface not setup"; return 11; }
-which package_setup.sh >/dev/null 2>&1 || { echo "Error: package_setup.sh not found in PATH"; return 11; }
+#spack load artdaq-daqinterface@${DAQINTERFACE_VERSION}%${BUILD_VARIANT} arch=${SPACK_ARCH} 2>&1
+#[[ $? == 0 ]] && echo "Loaded artdaq-daqinterface@${DAQINTERFACE_VERSION}%${BUILD_VARIANT}" \
+#  || {  echo "Error: \"spack load artdaq-daqinterface@${DAQINTERFACE_VERSION}%${BUILD_VARIANT}\" failed. This is a critical error with loading Spack packages."; return 11; }
+#
+export PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}
+
+
+which DAQInterface.sh >/dev/null 2>&1 || { echo "Error: DAQInterface not setup. This is a critical error with loading Spack packages."; return 11; }
+
+#PACKAGE_SETUP_SCRIPT="not-set"
+#which package_setup.sh >/dev/null 2>&1 && PACKAGE_SETUP_SCRIPT=$(which package_setup.sh) \
+#  || { echo "Error: package_setup.sh not found in PATH. This is a critical error with loading Spack packages."; return 11; }
+#echo "PACKAGE_SETUP_SCRIPT: $PACKAGE_SETUP_SCRIPT" 
+
 
 export ARTDAQ_DAQINTERFACE_DIR=$(dirname $(dirname $( which DAQInterface.sh 2>/dev/null )))
 
 export DAQINTERFACE_SETTINGS=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/user_settings
 export DAQINTERFACE_USER_SOURCEFILE=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/user_sourcefile
 
-source package_setup.sh "sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"  2>/dev/null  
+#retry running the script if it fails up to 3 times with a 2 second delay
+echo "ARTDAQ_DAQINTERFACE_DIR: $ARTDAQ_DAQINTERFACE_DIR" 
+#for i in {1..3}; do
+#  echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} (try $i)"
+#  source ${PACKAGE_SETUP_SCRIPT} "sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"  2>&1 
+#  [[ $? == 0 ]] && { echo "Loaded sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"; break; } \
+#    || echo "Error: \"source package_setup.sh sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\" failed. Retrying..."
+#  sleep 5
+#done
+
+
+for i in {1..3}; do
+  echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} (try $i)"
+  spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} arch=${SPACK_ARCH} 2>&1
+  [[ $? == 0 ]] && { echo "Loaded sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"; break; } \
+    || echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\" failed. Retrying..."
+  sleep 5
+done
+
+which artdaqRunControl >/dev/null 2>&1 || { echo "Error: artdaqRunControl not set up. This is a critical error with loading Spack packages."; return 11; }
 
 export PYTHONPATH=$(echo "$PYTHONPATH" | awk -v RS=':' -v ORS=':' '!seen[$0]++' | sed 's/:$//')
 
@@ -49,7 +90,7 @@ export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 
 #Trace setup for debugging:
 which trace_functions.sh >/dev/null 2>&1 && source $(which trace_functions.sh 2>/dev/null) \
-  || { echo "Error: trace_functions.sh not found in PATH"; return 11; }
+  || { echo "Error: trace_functions.sh not found in PATH. This is a critical error with loading Spack packages."; return 11; }
 
 export TRACE_FILE=/tmp/trace_$(whoami)_p1
 

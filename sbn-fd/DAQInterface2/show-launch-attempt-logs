@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DIR}/user_sourcefile |cut -d"=" -f2)
+
+
+for f in /daq/log/pmt/launch_attempt*$(ls -r /daq/log/pmt/launch_attempt_icarus-evb*-daq_icarus_partition${partition}* |head -1 |awk -F'_' '{print $NF}'); do
+  echo "***** $f"
+  cat $f
+  echo "******"
+  echo;echo;
+done

@@ -23,6 +23,7 @@ fi
 
 #export PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}
 
+
 export DAQ_SETUP_SCRIPT=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh
 
 

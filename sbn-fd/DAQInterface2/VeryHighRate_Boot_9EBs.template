@@ -1,5 +1,5 @@
 DAQ setup script: $DAQ_SETUP_SCRIPT
-PMT host: localhost
+PMT host: icarus-evb01-daq
 
 # debug level can range from 0 to 3 (increasing order of verbosity)
 debug level: 4
@@ -8,7 +8,7 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb01-daq
+EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder1
 
 # Add 2 more event builders on  icarus-evb02-daq
@@ -104,8 +104,8 @@ EventBuilder label: EventBuilder8
 #DataLogger host: icarus-evb04-daq
 #DataLogger label: DataLogger20
 
-Dispatcher host: icarus-evb01-daq
-Dispatcher label: Dispatcher1
+#Dispatcher host: icarus-evb01-daq
+#Dispatcher label: Dispatcher1
 # port number must be unique accros all partitions
 Dispatcher port: 6020
 

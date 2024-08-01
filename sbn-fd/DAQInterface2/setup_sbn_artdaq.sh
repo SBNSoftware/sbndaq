@@ -16,14 +16,14 @@ fi
 SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
 echo "Spack arch: ${SPACK_ARCH}"
 
-for i in {1..3}; do
+for i in {1..10}; do
   echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} (try $i)"
   if spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} arch="${SPACK_ARCH}" 2>&1; then
-    echo "Loaded sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"
+    echo "Loaded  sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"
     break
   else
     echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\" failed. Retrying..."
-    sleep 10
+    sleep $((4 + RANDOM % 3))
   fi
 done
 

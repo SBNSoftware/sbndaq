@@ -1,25 +1,33 @@
 #!/usr/bin/env bash
 
-function getStatus()
-{
-    status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-#    [ $1 != "$status" ] && (echo $status)
-  echo $status
+timeout=20
+interval=2
+
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+function getStatus() {
+    status=$(status.sh | grep String | awk '{print $2}' | tr -d "'")
+    echo $status
 }
 
 send_transition.sh stop
-getStatus "nil"
-while [ "$status" != 'ready' ]
-do
-  sleep 2
-  getStatus "stopping"
+
+elapsed=0
+status=$(getStatus)
+while [ "$status" != 'ready' ] && [ $elapsed -lt $timeout ]; do
+    sleep $interval
+    elapsed=$((elapsed + interval))
+    status=$(getStatus)
 done
 
+if [ $elapsed -ge $timeout ] && [ -f "$THIS_SCRIPT_DIR/fast-stop" ]; then
+    "$THIS_SCRIPT_DIR/fast-stop"
+fi
+
 send_transition.sh terminate
-getStatus "nil"
-while [ "$status" != 'stopped' ]
-do
-  sleep 2
-  getStatus "terminating"
+status=$(getStatus)
+while [ "$status" != 'stopped' ]; do
+    sleep 2
+    status=$(getStatus)
 done
 

@@ -1,59 +1,66 @@
 #!/usr/bin/env bash
+good_run_number=12162
 this_start=$(date +%s)
 
-function getStatus()
-{
-  status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
-#  [ $1 != "$status" ] && (echo $status)
-  echo $status
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DIR}/user_sourcefile |cut -d"=" -f2)
+
+function getStatus() {
+  local current_status=$(status.sh | grep String | awk '{print $2}' | tr -d "'")
+  echo $current_status
 }
 
-getStatus "nil"
-# [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
+status=$(getStatus)
 
-#setdaqcomps.sh icarustrigger
-setdaqcomps.sh icaruscrt01nni icaruscrt01nno icaruscrt03wci icaruscrt03wco icaruscrt04eci icaruscrt04eco icaruscrt05wni icaruscrt05wno icaruscrt06esi icaruscrt06eso icaruscrt07wsi icaruscrt07wso icaruscrt08eni icaruscrt08eno icaruscrt09ssi icaruscrt09sso icaruscrttop01L01 icaruscrttop01L02 icaruscrttop01L03 icaruscrttop01L04 icaruscrttop02L05 icaruscrttop02L06 icaruscrttop02L07 icaruscrttop02L08 icaruscrttop03et icaruspmteebot01 icaruspmteebot02 icaruspmteebot03 icaruspmteetop01 icaruspmteetop02 icaruspmteetop03 icaruspmtewbot01 icaruspmtewbot02 icaruspmtewbot03 icaruspmtewtop01 icaruspmtewtop02 icaruspmtewtop03 icaruspmtwebot01 icaruspmtwebot02 icaruspmtwebot03 icaruspmtwetop01 icaruspmtwetop02 icaruspmtwetop03 icaruspmtwwbot01 icaruspmtwwbot02 icaruspmtwwbot03 icaruspmtwwtop01 icaruspmtwwtop02 icaruspmtwwtop03 icarustpcee01b icarustpcee01m icarustpcee01t icarustpcee02 icarustpcee03 icarustpcee04 icarustpcee05 icarustpcee06 icarustpcee07 icarustpcee08 icarustpcee09 icarustpcee10 icarustpcee11 icarustpcee12 icarustpcee13 icarustpcee14 icarustpcee15 icarustpcee16 icarustpcee17 icarustpcee18 icarustpcee19 icarustpcee20b icarustpcee20m icarustpcee20t icarustpcew01b icarustpcew01m icarustpcew01t icarustpcew02 icarustpcew03 icarustpcew04 icarustpcew05 icarustpcew06 icarustpcew07 icarustpcew08 icarustpcew09 icarustpcew10 icarustpcew11 icarustpcew12 icarustpcew13 icarustpcew14 icarustpcew15 icarustpcew16 icarustpcew17 icarustpcew18 icarustpcew19 icarustpcew20b icarustpcew20m icarustpcew20t icarustpcwe01b icarustpcwe01m icarustpcwe01t icarustpcwe02 icarustpcwe03 icarustpcwe04 icarustpcwe05 icarustpcwe06 icarustpcwe07 icarustpcwe08 icarustpcwe09 icarustpcwe10 icarustpcwe11 icarustpcwe12 icarustpcwe13 icarustpcwe14 icarustpcwe15 icarustpcwe16 icarustpcwe17 icarustpcwe18 icarustpcwe19 icarustpcwe20b icarustpcwe20m icarustpcwe20t icarustpcww01b icarustpcww01m icarustpcww01t icarustpcww02 icarustpcww03 icarustpcww04 icarustpcww05 icarustpcww06 icarustpcww07 icarustpcww08 icarustpcww09 icarustpcww10 icarustpcww11 icarustpcww12 icarustpcww13 icarustpcww14 icarustpcww15 icarustpcww16 icarustpcww17 icarustpcww18 icarustpcww19 icarustpcww20b icarustpcww20m icarustpcww20t icarustrigger
+exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.log \
+  | grep -Eo '/icarus.*' | cut -d"-" -f1 | tr -d '/' | awk '{ printf("%s|",$1); }')
+
+setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|trigger)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
 
 send_transition.sh boot boot_MinBias_VeryHighRate_multiple_art_processes.txt
-getStatus "booting"
-while [ "$status" != 'booted' ]
-do
+
+status=$(getStatus)
+while [ "$status" != 'booted' ]; do
   sleep 2
-  getStatus "booting"
-  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
 done
 
-send_transition.sh config Calibration_MINBIAS_Standard_4Hz_WithTPCCompression_Run3_00001
-
-#send_transition.sh config standard00001
-
+config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
+send_transition.sh config $config_name
 
 sleep 60
 
-
-getStatus "configuring"
-while [ "$status" != 'ready' ]
-do
-  sleep 5
-  getStatus "configuring"
-  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
-  # [ "$status" == 'stopped' ] && ( exit 1 )
+status=$(getStatus)
+while [ "$status" != 'ready' ]; do
+  sleep 10
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
 done
- 
-# report_datafile_location
+
+[[ -f $THIS_SCRIPT_DIR/show-launch-attempt-errors ]] && $THIS_SCRIPT_DIR/show-launch-attempt-errors
+
+sleep 10
 
 send_transition.sh start
-# getStatus "starting"
+
 sleep 2
-getStatus "starting"
-while [ "$status" != 'running' ]
-do
+status=$(getStatus)
+while [ "$status" != 'running' ]; do
   sleep 2
-  getStatus "starting"
-  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
 done
 
 this_stop=$(date +%s)
 echo "DAQ started in $(( this_stop - this_start )) seconds."
-
-

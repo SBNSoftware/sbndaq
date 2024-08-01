@@ -16,10 +16,9 @@ export DAQINTERFACE_MESSAGEFACILITY_FHICL=$THIS_SBN_DAQ_DAQINTERFACE_DIR/Message
 
 export DAQINTERFACE_PROCESS_MANAGEMENT_METHOD=direct
 
-export DAQINTERFACE_PARTITION_NUMBER=1
+export DAQINTERFACE_PARTITION_NUMBER=7
 
 echo "DAQINTERFACE_PARTITION_NUMBER=$DAQINTERFACE_PARTITION_NUMBER"
-# export DAQINTERFACE_PORT=$(( $ARTDAQ_BASE_PORT + $DAQINTERFACE_PARTITION_NUMBER * $ARTDAQ_PORTS_PER_PARTITION ))
 
 export DAQINTERFACE_CRITICAL_PROCESSES_LIST=$THIS_SBN_DAQ_DAQINTERFACE_DIR/critical_process_list
 
@@ -49,9 +48,9 @@ elif [[ "$DAQINTERFACE_FHICL_DIRECTORY" == "IGNORED" ]]; then
    source $THIS_SBN_DAQ_DAQINTERFACE_DIR/setup_database.sh
 fi
 
-export SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
-export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -p artdaq-mfextensions@${ARTDAQ_MFEXTENSIONS_VERSION} arch=${SPACK_ARCH} |grep artdaq-mfextensions | grep -Eo '/.*$')
-export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
+#export SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
+#export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -p artdaq-mfextensions@${MFEXTENSIONS_VERSION} arch=${SPACK_ARCH} |grep artdaq-mfextensions | grep -Eo '/.*$')
+#export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions@${MFEXTENSIONS_VERSION} arch=${SPACK_ARCH}"
 
 export ARTDAQ_LOG_FHICL=/tmp/messagefacility_partition${DAQINTERFACE_PARTITION_NUMBER}_$(whoami).fcl
 export HOSTNAME=$(hostname -s )-daq.fnal.gov

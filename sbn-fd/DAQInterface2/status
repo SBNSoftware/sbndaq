@@ -1,2 +1,6 @@
-#!/bin/bash
-while true; do sleep 2; status.sh | grep String | awk '{print $2}' | tr -d "'"; done
+#!/usr/bin/env bash
+
+while true; do
+  sleep 2
+  status.sh | awk '/String/ {gsub(/'\''/, "", $2); print $2}'
+done

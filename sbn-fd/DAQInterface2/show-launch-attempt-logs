@@ -6,8 +6,8 @@ partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DI
 
 
 for f in /daq/log/pmt/launch_attempt*$(ls -r /daq/log/pmt/launch_attempt_icarus-evb*-daq_icarus_partition${partition}* |head -1 |awk -F'_' '{print $NF}'); do
-  echo "***** $f"
+  echo "***** begin $f"
   cat $f
-  echo "******"
+  echo "***** end   $f"
   echo;echo;
 done

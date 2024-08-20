@@ -1,4 +1,5 @@
 #include "Dispatcher_standard.fcl"
-#daq.metrics.graphite.namespace: "sbnd.disp02."
+
+daq.metrics.graphite.namespace: "sbnd.disp02."
 daq.metrics.aggFile.fileName : "/daq/log/metrics/disp02_metrics.log"
 process_name: DAQDP02

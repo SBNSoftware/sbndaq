@@ -1,4 +1,0 @@
-#include "ptb01.fcl"
-#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
-
-daq.fragment_receiver.board_config: @local::board_config

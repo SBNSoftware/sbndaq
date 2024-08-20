@@ -1,3 +1,4 @@
+#daq.event_builder.
 services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
@@ -9,11 +10,11 @@ services: {
 daq: {
   event_builder: {
 
-    stale_buffer_timeout_usec: 10000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    stale_buffer_timeout_usec: 3000000 #1000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 30 #100
+    buffer_count: 35 #25  #40 #100
     max_incomplete_events: 15 #50 # Same as boardreader sync interval
 
     verbose: true
@@ -21,7 +22,8 @@ daq: {
     request_address: "227.128.11.129"          # Multi-cast request address
     multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
     request_port: 3001
-
+    
+    art_analyzer_count: 4 #5
     #num_requests: 500
 
     tcp_receive_buffer_size: 64000
@@ -34,7 +36,7 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
@@ -44,7 +46,7 @@ send_system_metrics: true
 send_process_metrics: true
 
     graphite: {
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"10.226.36.34"
@@ -66,8 +68,8 @@ outputs: {
     }
 
     fastCloning: false
-    compressionLevel: 0
-    SelectEvents: [p2]
+    compressionLevel: 501 #0
+    SelectEvents: [] #p1
   }
   testOutput: {
     module_type: RootDAQOut
@@ -89,6 +91,9 @@ outputs: {
     nonblocking_sends: true
   	destinations: { }
     #SelectEvents: [p1]
+    #configs from normal output that I was not realizing I wasn't running and am not entirely sure if are applicable here 
+    fastCloning: false #true
+    compressionLevel: 501 #0
     host_map: [{
       rank: -1
       host: "localhost"
@@ -105,7 +110,6 @@ physics: {
   analyzers: {
       fragWatcher: {
          module_type: "FragmentWatcher"
-         fragment_ids: []
       } 
   }
 
@@ -138,15 +142,15 @@ physics: {
 		}
   }
 
-  p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
+  p0: [ ]
+  p1: [ prescale1 ]
+  p5: [ prescale5 ]
 
   a1: [ fragWatcher ]
 
   #my_output_modules: []
-  my_output_modules: [ rootNetOutput ]
-  #my_output_modules: [ normalOutput ]
+  #my_output_modules: [ rootNetOutput ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ a1, my_output_modules ]

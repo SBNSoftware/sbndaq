@@ -16,7 +16,7 @@ daq: {
     is_dispatcher: true
     overwrite_mode: true
     #broadcast_buffer_size: 0x10000000
-    broadcast_buffer_size: 1e9
+    broadcast_buffer_size: 1e9 #1e9
 
 	routing_token_config: {
 		use_routing_master: false
@@ -31,19 +31,18 @@ daq: {
   metrics: {
     aggFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       fileName: "/daq/log/metrics/disp00_metrics.log"
       uniquify: true
     }
-    
-#    graphite: {
-#      level_string: "1,2,11-20"
-#      metricPluginType: "graphite"
-#      reporting_interval: 10.0
-#      host:"192.168.191.18"
-#      port:2003
-#      namespace:"sbnd.disp00."
-#    } 
+    graphite: {
+      level_string: "1-10,11-20"
+      metricPluginType: "graphite"
+      reporting_interval: 10.0
+      host:"10.226.36.34"
+      port:2003
+      namespace:"sbnd.disp00."
+    } 
   }
 
 }

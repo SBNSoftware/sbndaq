@@ -1,0 +1,8 @@
+ 
+#include "tpc_standard.fcl" 
+
+daq.metrics.brFile.fileName: "/daq/log/metrics/tpc02_metrics.log" 
+
+daq.metrics.graphite.namespace: "sbnd.tpc02." 
+
+daq.fragment_receiver.fragment_ids: [0x9203, 0x9204, 0x9205, 0x9206, 0x9207, 0x9208, 0x9209, 0x920A, 0x920B, 0x920C, 0x920D, 0x920E, 0x920F, 0x9210, 0x9211, 0x9212] 

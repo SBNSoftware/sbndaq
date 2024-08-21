@@ -1,5 +1,7 @@
 
 #include "ptb01.fcl" 
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_11.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_10.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_noprescale.fcl"
@@ -25,7 +27,7 @@
 #========================================================
 #Uncomment below if you are trying to directly run with this fcl (ie your not in fcl_configs_standard or using its soft link method)
 #========================================================
-#daq.fragment_receiver.board_config: @local::board_config
+daq.fragment_receiver.board_config: @local::board_config
 
 ## Pull mode parameters
     daq.fragment_receiver.request_address:        "227.128.11.129" # -- multicast request address

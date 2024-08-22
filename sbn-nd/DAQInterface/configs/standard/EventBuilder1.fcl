@@ -12,4 +12,4 @@ physics.my_output_modules: [normalOutput, rootNetOutput]
 
 process_name: DAQEVB01 
 
-#daq.event_builder.art_analyzer_count: 3
+#daq.event_builder.art_analyzer_count: 1

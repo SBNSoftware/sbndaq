@@ -1,0 +1,52 @@
+daq: {
+  fragment_receiver: {
+    max_fragment_size_bytes: 1000 
+    generator: NevisTBStream 
+    fragment_type: NevisTB 
+    fragment_ids: [1] 
+    board_id: 0 
+    NTBChunkSize: 64 
+
+    DumpNTBBinary: true 
+    DumpNTBBinaryDir: "/data" 
+    GPSZMQPortNTB: "tcp://10.226.36.6:11212" 
+
+    framesize: 9151 #20479 
+    NevisClockFrequency: 15999962 
+
+    ntb_pciecard: {
+      vendor_id: 0x1172 # Altera (Nevis  PCIe card)
+      # Altera (Nevis  PCIe card)
+      device_id: 0x4 
+      bus: 0x66 
+      device_name: neviscard_controller 
+    }
+    destinations: {
+
+    }
+    routing_table_config: {
+      use_routing_master: false 
+    }
+  }
+  metrics: {
+    brFile: {
+      metricPluginType: "file" 
+      level: 3 #level_string: "1-10,11-20"
+      #level_string: "1-10,11-20"
+      fileName: "/daq/log/metrics/ntb_metrics.log" 
+      uniquify: true 
+
+    }
+    send_system_metrics: true 
+    send_process_metrics: true 
+    graphite: {
+      level_string: "1-10,11-20" 
+      metricPluginType: "graphite" 
+      reporting_interval: 10.0 
+      host: "10.226.36.34" 
+      port: 2003 
+      namespace: "sbnd.ntb." 
+    }
+  }
+  process_name: Driver 
+}

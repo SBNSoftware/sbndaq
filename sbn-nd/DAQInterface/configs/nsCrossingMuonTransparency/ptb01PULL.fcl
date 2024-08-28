@@ -1,0 +1,47 @@
+
+#include "ptb01PULL_default.fcl" 
+
+#====================================================================
+#====================================================================
+##Uncomment whichever ptb run fcl you actually want. Details/other configs in ptb_sacred_configs folders where needed.
+#====================================================================
+#====================================================================
+
+
+#===================== Beam Zero Bias triggers =====================
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_noprescale.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
+
+#===================== Off beam triggers =====================
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash.fcl"
+
+#===================== Off beam triggers without BNB inhibits (for specific tests generally)  =====================
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_noprescale_noBNBinhibit.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash_noprescale_noBNBinhibit.fcl"
+
+
+#===================== Crossing Muon Triggers  =====================
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/bslater/ptbmk2_crt_5_prescale7.fcl" # W&E -- prescale 7 (generally default prescale)
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_10.fcl" #  #N&S -- prescale 10 (generally default prescale)
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/bslater/ptbmk2_crt_5_prescale10.fcl" # W&E -- prescale 7 
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_4.fcl" # N&E -- prescale 10
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/crt/ptbmk2_crt_5.fcl" # W&E -- prescale 1 (Really high rate with nominal FEB voltages)
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/bslater/ptbmk2_crt_5.fcl" # W&E -- prescale 2
+
+
+
+#===================== Strobe Triggers  =====================
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_1hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_5hz.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/nevis_fixed_freq/ptbmk2_nd_0p38115998028hz.fcl"
+
+
+
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_sunset_ntb_delay.fcl" # --no don't try to run sunset configs out of a standard area the pmts need special record lengths!
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_crossing_muon_allwalls.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_crossing_muon.fcl"
+
+daq.fragment_receiver.board_config: @local::board_config 

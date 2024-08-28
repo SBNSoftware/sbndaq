@@ -23,7 +23,7 @@ daq: {
     multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
     request_port: 3001
     
-    art_analyzer_count: 4 #5
+    art_analyzer_count: 2 #5
     #num_requests: 500
 
     tcp_receive_buffer_size: 64000

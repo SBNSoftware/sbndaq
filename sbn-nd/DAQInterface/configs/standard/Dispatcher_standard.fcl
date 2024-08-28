@@ -12,7 +12,7 @@ daq: {
     buffer_count: 10
     event_queue_depth: 2
     event_queue_wait_time: 1
-    onmon_event_prescale: 5
+    onmon_event_prescale: 1
     is_dispatcher: true
     overwrite_mode: true
     #broadcast_buffer_size: 0x10000000
@@ -24,6 +24,12 @@ daq: {
     tcp_receive_buffer_size: 64000
     init_fragment_count: 1 #0 #must match the number of running dataloggers
     auto_suppression_enabled: false
+    #icarus's 2022 conigs used these 3 lines... lets try adding them 
+    #Make sure Dispatcher doesn't crash on 'oversized' fragment
+    maximum_oversize_fragment_count: 0
+    #tells shmem event manager it can drop data on receive if buffers are full
+    non_reliable_mode: true
+    non_reliable_mode_retry_count: 1 
 
 	sources: { }
   }

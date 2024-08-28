@@ -3,7 +3,7 @@ nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 # 1e5 # < 4e6
-framesize_16MHz_ticks: 9119 #20479 #number of 16MHz ticks that defines size of a tpc readout frame
+framesize_16MHz_ticks: 9151 #20479 #number of 16MHz ticks that defines size of a tpc readout frame
 
 daq: {
   fragment_receiver: {
@@ -13,7 +13,7 @@ daq: {
     fragment_type: NevisTPC 
     fragment_ids: [] # Needs to be set in crate-specific FCL files
     board_id: 0 
-    SamplesPerChannel: 3420 #7675 # SBND drift time x 3
+    SamplesPerChannel: 3429 #7675 # SBND drift time x 3
     ChunkSize: @local::nu_dma_buffer_size 
     MonitorPeriod: 12 # Period in seconds to read electronics status
     # Period in seconds to read electronics status
@@ -47,7 +47,7 @@ daq: {
       #fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
       nu_compress: true #false
       #false
-      timesize: 1139 #2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+      timesize: 1143 #2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
     }# Do not change block name
     controller_module: {
       # Controller PCIe card settings

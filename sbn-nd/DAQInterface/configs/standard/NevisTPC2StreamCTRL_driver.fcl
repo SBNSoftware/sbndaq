@@ -17,7 +17,7 @@ fragment_ids: [] # Needs to be set in crate-specific FCL files
 
 board_id: 0 
 
-SamplesPerChannel: 3420 # SBND drift time x 3
+SamplesPerChannel: 3429 # SBND drift time x 3
 
 ChunkSize: @local::nu_dma_buffer_size 
 
@@ -51,7 +51,7 @@ zs_static_baseline: true
 # fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
 nu_compress: true #false
 #false
-timesize: 1139 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+timesize: 1143 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
 
 }# Do not change block name
 controller_module: {

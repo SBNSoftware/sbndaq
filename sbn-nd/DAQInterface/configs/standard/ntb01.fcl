@@ -11,7 +11,7 @@ daq: {
     DumpNTBBinaryDir: "/data" 
     GPSZMQPortNTB: "tcp://10.226.36.6:11212" 
 
-    framesize: 9119 #20479 
+    framesize: 9151 #20479 
     NevisClockFrequency: 15999962 
 
     ntb_pciecard: {

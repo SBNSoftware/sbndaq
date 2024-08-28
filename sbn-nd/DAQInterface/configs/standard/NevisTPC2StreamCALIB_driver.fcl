@@ -17,7 +17,7 @@ daq: {
 
     board_id: 0 
 
-    SamplesPerChannel: 3420 # 3402 # 3420 # 7675 # 3402    #0.6ms*2MHz=1200 1200*3=3600,  7675 # SBND drift time x 3
+    SamplesPerChannel: 3429 # 3402 # 3420 # 7675 # 3402    #0.6ms*2MHz=1200 1200*3=3600,  7675 # SBND drift time x 3
 
     ChunkSize: @local::nu_dma_buffer_size 
 
@@ -39,7 +39,7 @@ daq: {
     #setting pulse per second parameter for PPS 
     GPSZMQPortNTB: "tcp://10.226.36.6:11212" 
 
-    framesize: 9119 
+    framesize: 9151 
     # Do not change block name
     nevis_crate: {
       # Location of modules within crate
@@ -57,7 +57,7 @@ daq: {
       #fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
       nu_compress: true 
 
-      timesize: 1139  # 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+      timesize: 1143  # 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
 
     }# Do not change block name
     controller_module: {

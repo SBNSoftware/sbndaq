@@ -32,6 +32,9 @@ if ! command -v artdaqRunControl &>/dev/null; then
   return 3
 fi
 
+export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensions | grep -Eo '/.*$')
+export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
+
 [[ -f ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh ]] \
   && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh"
 

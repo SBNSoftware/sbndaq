@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-
-good_run_number=12162
+good_run_number=12406
 
 THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DIR}/user_sourcefile |cut -d"=" -f2)
+
+echo "partition ${partition}"
 
 hosts=$(awk '{print $1}' /daq/run_records/${good_run_number}/ranks.txt | sort -u | grep -vE "(^$|host|evb)")
 
@@ -16,12 +17,16 @@ for h in $hosts; do
 done
 
 echo
-for i in {01..04}; do
+for i in {01..05}; do
     echo -n "icarus-evb${i}-daq "
     ssh icarus-evb${i}-daq -f "
     pkill -9 -f '^eventbuilder.*partition_number: ${partition}$' 2>/dev/null
     pkill -9 -f '^dispatcher.*partition_number: ${partition}$' 2>/dev/null
     ipcrm -a 2>/dev/null"
 done
+
+sleep 3
+
+kill_daqinterface_on_partition.sh $partition --force
 
 echo;

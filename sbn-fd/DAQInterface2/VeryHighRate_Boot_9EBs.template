@@ -8,7 +8,7 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb02-daq
+EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder1
 
 # Add 2 more event builders on  icarus-evb02-daq
@@ -33,11 +33,11 @@ EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder8
 
 # Add 2 more event builders on  icarus-evb05-daq
-#EventBuilder host: icarus-evb05-daq
-#EventBuilder label: EventBuilder5
+EventBuilder host: icarus-evb05-daq
+EventBuilder label: EventBuilder5
 
-#EventBuilder host: icarus-evb05-daq
-#EventBuilder label: EventBuilder9
+EventBuilder host: icarus-evb05-daq
+EventBuilder label: EventBuilder9
 
 # DATA LOGGERS
 
@@ -104,8 +104,8 @@ EventBuilder label: EventBuilder8
 #DataLogger host: icarus-evb04-daq
 #DataLogger label: DataLogger20
 
-#Dispatcher host: icarus-evb01-daq
-#Dispatcher label: Dispatcher1
+Dispatcher host: icarus-evb01-daq
+Dispatcher label: Dispatcher1
 # port number must be unique accros all partitions
 Dispatcher port: 6020
 

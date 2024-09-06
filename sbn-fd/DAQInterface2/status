@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+export PATH=$THIS_SCRIPT_DIR/overrides:$PATH
+
 while true; do
   sleep 2
   status.sh | awk '/String/ {gsub(/'\''/, "", $2); print $2}'

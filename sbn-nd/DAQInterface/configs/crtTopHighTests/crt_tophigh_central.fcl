@@ -1,39 +1,39 @@
 #include "crt_standard.fcl"
 #include "crt_feb_standard.fcl"
 
-#include "feb123.fcl"
-#include "feb050.fcl"
-#include "feb125.fcl"
-#include "feb126.fcl"
-#include "feb129.fcl"
+#include "feb178.fcl"
+#include "feb144.fcl"
+#include "feb180.fcl"
+#include "feb141.fcl"
+#include "feb179.fcl"
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
-daq.metrics.graphite.namespace: "sbnd.crttoplow02."
+daq.metrics.graphite.namespace: "sbnd.crttophigh02."
 
-#daq.fragment_receiver.fragment_ids: [ 123, 50, 125, 126, 129 ]
-daq.fragment_receiver.fragment_ids: [ 0xB57B, 0xB532, 0xB57D, 0xB57E, 0xB581 ]
+#daq.fragment_receiver.fragment_ids: [ 178, 144, 180, 141, 179 ]
+daq.fragment_receiver.fragment_ids: [ 0xB6B2, 0xB690, 0xB6B4, 0xB68D, 0xB6B3 ]
 
-daq.fragment_receiver.ReaderID: 123
+daq.fragment_receiver.ReaderID: 178
 
-daq.fragment_receiver.ethernet_port: "ens4f1"
+daq.fragment_receiver.ethernet_port: "ens4f2"
 
 daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true ]
 
-daq.fragment_receiver.PPS_offset_ns : [ 490, 501, 512, 544, 533 ]
+daq.fragment_receiver.PPS_offset_ns : [ 490, 501, 512, 523, 512 ]
 
-daq.fragment_receiver.FEBConfigurationMAC123: @local::FEB123Configuration
-daq.fragment_receiver.FEBConfigurationMAC50: @local::FEB050Configuration
-daq.fragment_receiver.FEBConfigurationMAC125: @local::FEB125Configuration
-daq.fragment_receiver.FEBConfigurationMAC126: @local::FEB126Configuration
-daq.fragment_receiver.FEBConfigurationMAC129: @local::FEB129Configuration
+daq.fragment_receiver.FEBConfigurationMAC178: @local::FEB178Configuration
+daq.fragment_receiver.FEBConfigurationMAC144: @local::FEB144Configuration
+daq.fragment_receiver.FEBConfigurationMAC180: @local::FEB180Configuration
+daq.fragment_receiver.FEBConfigurationMAC141: @local::FEB141Configuration
+daq.fragment_receiver.FEBConfigurationMAC179: @local::FEB179Configuration
 
-daq.fragment_receiver.FEBConfigurationMAC123.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC123.time_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC50.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC50.time_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC125.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC125.time_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC126.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC126.time_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC129.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC129.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC178.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC178.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC144.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC144.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC180.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC180.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC141.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC141.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC179.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC179.time_threshold: 250

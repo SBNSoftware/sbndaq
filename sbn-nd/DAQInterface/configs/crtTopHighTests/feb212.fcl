@@ -1,7 +1,7 @@
 #include "crt_feb_standard.fcl"
 
-FEB044Configuration:  @local::FEBConfigurationStandard
-FEB044Configuration.channel_configuration: [
+FEB212Configuration:  @local::FEBConfigurationStandard
+FEB212Configuration.channel_configuration: [
                  [ 0, 0, 1, 170, 1, 35, 47, 0, 0, 1], # Channel 0
                  [ 0, 0, 1, 170, 1, 35, 47, 0, 0, 1], # Channel 1
                  [ 0, 0, 1, 170, 1, 35, 47, 0, 0, 1], # Channel 2

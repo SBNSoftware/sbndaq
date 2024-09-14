@@ -27,9 +27,28 @@ getStatus "nil"
 
 #setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
 
-setdaqcomps.sh pmt09PUSH crtSouthWallEastPULL crtNorthWallEastPULL ptb01PULL spectdc
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
+
+#setdaqcomps.sh pmt09PUSH crtSouthWallEastPULL crtNorthWallEastPULL ptb01PULL spectdc
+
+#setdaqcomps.sh pmt09PUSH crtSouthWallEastPULL crtSouthWallWestPULL crtNorthWallWestPULL crtNorthWallEastPULL ptb01PULL spectdc
+
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL
+
+#setdaqcomps.sh dummygenerator crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL
+
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL
+
+#setdaqcomps.sh pmt09PUSH crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL ptb01PULL spectdc
+
+#setdaqcomps.sh dummygenerator crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtSouthWallWestPULL crtSouthWallEastPULL crtNorthWallEastPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
+
+#setdaqcomps.sh mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01 ntb01 ptb01PULL crtNorthWallEastPULL crtflat3_southwestPULL crtflat3_eastPULL crtflat3_northPULL crtNorthWallWestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtSouthWallWestPULL crtSouthWallEastPULL spectdc pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 crtTopLowWallCentralPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallEastPULL crtTopLowWallWestPULL #crtWestWallNorthTopPULL crtWestWallSouthBottomPULL
+
+setdaqcomps.sh dummygenerator crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
 
 send_transition.sh boot boot.txt
+#send_transition.sh boot boot_evb04.txt
 getStatus "booting"
 while [ "$status" != 'booted' ]
 do
@@ -45,7 +64,13 @@ done
 #send_transition.sh config east_rates_nominal
 #send_transition.sh config east_rates_alex
 #send_transition.sh config standard
-send_transition.sh config transparency_trigger
+#send_transition.sh config transparency_trigger
+#send_transition.sh config transparency_trigger_west
+#send_transition.sh config transparency_trigger_east
+#send_transition.sh config transparency_trigger_both
+#send_transition.sh config crtTopLowTests
+#send_transition.sh config nsCrossingMuonTransparency2
+send_transition.sh config crtTopHighTests
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

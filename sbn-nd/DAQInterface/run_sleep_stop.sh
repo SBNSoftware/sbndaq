@@ -1,3 +1,3 @@
 ./run
-sleep 3600
+sleep 900
 ./stop

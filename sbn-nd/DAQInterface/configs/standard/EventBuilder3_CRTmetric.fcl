@@ -1,11 +1,11 @@
-#include "EventBuilder_CRTMetric.fcl"
+#include "EventBuilder_CRTmetric.fcl"
 
 daq.metrics.graphite.namespace: "sbnd.evb03."
 daq.metrics.evbFile.fileName : "/daq/log/metrics/evb03_metrics.log"
-outputs.mode0Output.fileName: "/scratch/crtbeamoffdata/data_evb03_crtmetrics_run%R_%#_%to.root"
-outputs.testOutput.fileName: "/scratch/test_data/data_evb03_crtmetrics_run%R_%#_%to.root"
-#physics.my_output_modules: [ normalOutput, rootNetOutput ]
-physics.my_output_modules: [ mode0Output, rootNetOutput ]
+
+outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb03_${app_name}_run%R_%#_%to.root"
+physics.my_output_modules: [ normalOutput, rootNetOutput ]
+
 process_name: DAQEVB03
 
 

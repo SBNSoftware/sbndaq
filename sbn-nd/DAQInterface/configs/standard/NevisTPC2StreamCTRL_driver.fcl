@@ -1,5 +1,5 @@
 
-nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
+nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 

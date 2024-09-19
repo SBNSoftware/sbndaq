@@ -13,8 +13,8 @@
      daq.fragment_receiver.window_close_timeout_us: 400000000 ## -- 40s
      daq.fragment_receiver.circular_buffer_mode: true
     
-     daq.fragment_receiver.data_buffer_depth_fragments: 10000 #600
-     daq.fragment_receiver.data_buffer_depth_mb : 10000 #30000 #20000 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
+     daq.fragment_receiver.data_buffer_depth_fragments: 20000 #600
+     daq.fragment_receiver.data_buffer_depth_mb : 30000 #30000 #20000 ## -- data_buffer_depth_fragments*max_fragment_size_bytes[MB]    
 
      daq.fragment_receiver.missing_request_window_timeout_us: 400000000 #400us
      daq.fragment_receiver.stale_fragment_timeout: 3000000000 #3s #10000000000 #10s #

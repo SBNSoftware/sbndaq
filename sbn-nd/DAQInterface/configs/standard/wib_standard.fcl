@@ -1,114 +1,114 @@
 
 femb_config_default: {
-# this must match the FEMB firmware version (hex)
-expected_femb_fw_version: 0x501 
-# if true, enables FEMB fake data mode, else real data
-enable_fake_data: false 
-# Select the fake data type
-fake_data_select: "fake_word" # options: fake_word, fake_waveform, femb_channel_id, or counter_channel_id
-# The fake data word for fake_word mode
-fake_word: 0xFEB # 12 bits
-# enable disable test capacitance according to shanshan's script
-BNL_enable_test_cap: 0 # 0 disable 1 enable
-# enable disable output monitor according to shanshan's script
-BNL_enable_output_mon: 0 # 0 disable 1 enable: channel output routed to Test pad
-# Buffer control configuraton according to shanshan's script
-BNL_buffter_ctrl: 1 # Check LArAsic P4 data sheet for possible configurations
-# Output coupleing configuraton according to shanshan's script
-BNL_output_coupl: 0 # 0 - dc coupling, 1 - ac coupling
-# Enable high filter in ch 15 (16 th channel) according to shanshan scirpt
-BNL_enable_high_filt: 0 # 0 disable, 1 enable
+  # this must match the FEMB firmware version (hex)
+  expected_femb_fw_version: 0x501 
+  # if true, enables FEMB fake data mode, else real data
+  enable_fake_data: false 
+  # Select the fake data type
+  fake_data_select: "fake_word" # options: fake_word, fake_waveform, femb_channel_id, or counter_channel_id
+  # The fake data word for fake_word mode
+  fake_word: 0xFEB # 12 bits
+  # enable disable test capacitance according to shanshan's script
+  BNL_enable_test_cap: 0 # 0 disable 1 enable
+  # enable disable output monitor according to shanshan's script
+  BNL_enable_output_mon: 0 # 0 disable 1 enable: channel output routed to Test pad
+  # Buffer control configuraton according to shanshan's script
+  BNL_buffter_ctrl: 1 # Check LArAsic P4 data sheet for possible configurations
+  # Output coupleing configuraton according to shanshan's script
+  BNL_output_coupl: 0 # 0 - dc coupling, 1 - ac coupling
+  # Enable high filter in ch 15 (16 th channel) according to shanshan scirpt
+  BNL_enable_high_filt: 0 # 0 disable, 1 enable
 
-BNL_mon_STB: 0 # 0 - Monitor analog channel signal, 1 - Monitor temperature of bandgap reference
+  BNL_mon_STB: 0 # 0 - Monitor analog channel signal, 1 - Monitor temperature of bandgap reference
 
-BNL_mon_STB1: 0 # 0 - Monitor temperature, 1 - Monitore bandgap reference
+  BNL_mon_STB1: 0 # 0 - Monitor temperature, 1 - Monitore bandgap reference
 
-BNL_sdacsw1: 0 # 0 - test input to chnls disconnected from the external test pin, 1 - .... chnls connected to external test pin
+  BNL_sdacsw1: 0 # 0 - test input to chnls disconnected from the external test pin, 1 - .... chnls connected to external test pin
 
-BNL_sdacsw2: 0 # 0 - test input to chnls disconnected from DAC output, 1 - .... chnls connected to DAC output
-# FE gain value select
-gain: 2 # 0 (4.7 mV/fC), 1 (7.8 mV/fC), 2 (14 mV/fC), 3 (25 mV/fC)
+  BNL_sdacsw2: 0 # 0 - test input to chnls disconnected from DAC output, 1 - .... chnls connected to DAC output
+  # FE gain value select
+  gain: 2 # 0 (4.7 mV/fC), 1 (7.8 mV/fC), 2 (14 mV/fC), 3 (25 mV/fC)
 
-BNLgain: [0, 1] # [0,0] 4.7 mV/fc, [1,0] 7.8 mV/fc, [0,1] 14 mV/fc, [1,1] 25 mV/fc
-# FE shaping time select
-shape: 2 # 0 (0.5 us), 1 (1 us), 2 (2 us), 3 (3 us)
+  BNLgain: [0, 1] # [0,0] 4.7 mV/fc, [1,0] 7.8 mV/fc, [0,1] 14 mV/fc, [1,1] 25 mV/fc
+  # FE shaping time select
+  shape: 2 # 0 (0.5 us), 1 (1 us), 2 (2 us), 3 (3 us)
 
-BNLshape: [1, 1] # [0,0] 1 us, [1,0] 0.5 us, [0,1] 3 us, [1,1] 2 us
+  BNLshape: [1, 1] # [0,0] 1 us, [1,0] 0.5 us, [0,1] 3 us, [1,1] 2 us
 
-FEMB_channel_map: 0 # there are 4 configurations 0, 1 and 2(you can use any number here except 0 and 1)
-# FE baseline select (don't need to change)
-baselineHigh: 2 # 0 (200 mV), 1 (900 mV), 2 (200 mV for collection and 900 mV for induction channels)
-# FE baseline select (don't need to change) according to shanshan's script
-BNLbaselineHigh: 0 # 0 (900 mV for non-collection mode), 1 (200 for collection mode)
-# 1 for 500 pA FE leakage current, 0 for 100 pA (don't need to change)
-leakHigh: 1 # 0 (100 pA), 1 (500 pA)
-# 1 for 10x FE leakage current, 0 for 1x
-leak10X: 0 # (if 1, multiply leakage by 10)
-# 1 for AC coupling between FE and ADC channels, 0 for DC coupling
-acCouple: 0 # 0 (DC coupling), 1 (AC coupling)
-# 1 to use FE output buffer, 0 to bypass
-buffer: 0 # 0 (bypass), 1 (use buffer)
-# 0 to use ADC ASIC internal clocking, 1 to use external FPGA clocking
-extClk: 1 # Almost always want 1
-# List of 32 bit ADC FIFO clock phases, will try each phase until header bits line up
-clk_phases: [0xFFFF, 0xFDFF, 0xEFEF, 0xBFBF, 0xBDFF] 
-# Calibration pulser mode
-pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
-# Confirm channel mapping by testing each channel
-chnl_mapping_mode: false 
-# if true configure FEMB to receive a calibration signal from MBB
-mbb_clibration_mode: false 
-# 1 st Channel number to be tested 
-test_chnl_number: 999 # set to something larger that 127, if no need to send test pulse
-# 2 ns Channel number to be tested
-test_chnl_lst_number: 999 # set to something larger that 127, if no need to send test pulse
-# Calibration pulser amplitude 
-pls_dac_val: 8 # 6 bits in internal mode, 5 bits in external
-# Change the separation between negative and positive pulse
-tst_pls_separation: 15000 # 0 10 ns, 1 20 ns, 2 30 ns, ........, 2560 default
-# Set the period of pulser
-tst_pls_gap: 500 # This is the period of pulser signals in unit of 0.5 us. Default value is 500 so it means we will have one pulse once every 250 us
-# Call function to change the default setting of pulse separation
-change_tst_pulse_separation: false 
-#Options call initial FEMB checks
-use_normal_check_procedure: true 
-# Calibration pulser phase
-pls_phase_val: 219 # times 10 ns
-# Calibration pulser period
-pls_period_val: 1500 # times 10 ns, default = 497
-# 1 to make FPGA to WIB header frame as BU WIB expects
-start_frame_mode_sel: 1 
-# 1 to swap bytes in header frame
-start_frame_swap: 1 
-# Config for stepping through calibration values
-calibration_stepping: {
-# master control for calibration stepping
-mode: "disabled" # disabled, amplitude, phase
-# time to run with a given setting
-step_time: 2.0 # float seconds
-# Amplitude step min
-amp_min: 3 
-# Amplitude step max
-amp_max: 9 
-# How much to step between amplitudes
-amp_step: 1 
-# Phase step min
-phase_min: 189 
-# Phase step max
-phase_max: 249 
-# How much to step between phases
-phase_step: 1 
+  FEMB_channel_map: 0 # there are 4 configurations 0, 1 and 2(you can use any number here except 0 and 1)
+  # FE baseline select (don't need to change)
+  baselineHigh: 2 # 0 (200 mV), 1 (900 mV), 2 (200 mV for collection and 900 mV for induction channels)
+  # FE baseline select (don't need to change) according to shanshan's script
+  BNLbaselineHigh: 0 # 0 (900 mV for non-collection mode), 1 (200 for collection mode)
+  # 1 for 500 pA FE leakage current, 0 for 100 pA (don't need to change)
+  leakHigh: 1 # 0 (100 pA), 1 (500 pA)
+  # 1 for 10x FE leakage current, 0 for 1x
+  leak10X: 0 # (if 1, multiply leakage by 10)
+  # 1 for AC coupling between FE and ADC channels, 0 for DC coupling
+  acCouple: 0 # 0 (DC coupling), 1 (AC coupling)
+  # 1 to use FE output buffer, 0 to bypass
+  buffer: 0 # 0 (bypass), 1 (use buffer)
+  # 0 to use ADC ASIC internal clocking, 1 to use external FPGA clocking
+  extClk: 1 # Almost always want 1
+  # List of 32 bit ADC FIFO clock phases, will try each phase until header bits line up
+  clk_phases: [0xFFFF, 0xFDFF, 0xEFEF, 0xBFBF, 0xBDFF] 
+  # Calibration pulser mode
+  pls_mode: 0 # 0 off, 1 internal, 2 FPGA external
+  # Confirm channel mapping by testing each channel
+  chnl_mapping_mode: false 
+  # if true configure FEMB to receive a calibration signal from MBB
+  mbb_clibration_mode: false 
+  # 1 st Channel number to be tested 
+  test_chnl_number: 999 # set to something larger that 127, if no need to send test pulse
+  # 2 ns Channel number to be tested
+  test_chnl_lst_number: 999 # set to something larger that 127, if no need to send test pulse
+  # Calibration pulser amplitude 
+  pls_dac_val: 8 # 6 bits in internal mode, 5 bits in external
+  # Change the separation between negative and positive pulse
+  tst_pls_separation: 15000 # 0 10 ns, 1 20 ns, 2 30 ns, ........, 2560 default
+  # Set the period of pulser
+  tst_pls_gap: 500 # This is the period of pulser signals in unit of 0.5 us. Default value is 500 so it means we will have one pulse once every 250 us
+  # Call function to change the default setting of pulse separation
+  change_tst_pulse_separation: false 
+  #Options call initial FEMB checks
+  use_normal_check_procedure: true 
+  # Calibration pulser phase
+  pls_phase_val: 219 # times 10 ns
+  # Calibration pulser period
+  pls_period_val: 1500 # times 10 ns, default = 497
+  # 1 to make FPGA to WIB header frame as BU WIB expects
+  start_frame_mode_sel: 1 
+  # 1 to swap bytes in header frame
+  start_frame_swap: 1 
+  # Config for stepping through calibration values
+  calibration_stepping: {
+    # master control for calibration stepping
+    mode: "disabled" # disabled, amplitude, phase
+    # time to run with a given setting
+    step_time: 2.0 # float seconds
+    # Amplitude step min
+    amp_min: 3 
+    # Amplitude step max
+    amp_max: 9 
+    # How much to step between amplitudes
+    amp_step: 1 
+    # Phase step min
+    phase_min: 189 
+    # Phase step max
+    phase_max: 249 
+    # How much to step between phases
+    phase_step: 1 
 
-}# 12bit test pattern to insert into data stream
-bit_test_pattern: 0x123 
-# phase selections for FPGA to sample SDOs of ADCs for 8 FEs
-phase_sel_for_FEs: [0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000] 
-# Bit shifts for ADC data of FEs
-bit_shtfs_for_ADC_data_of_FEs: [0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000] 
+  }# 12bit test pattern to insert into data stream
+  bit_test_pattern: 0x123 
+  # phase selections for FPGA to sample SDOs of ADCs for 8 FEs
+  phase_sel_for_FEs: [0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000] 
+  # Bit shifts for ADC data of FEs
+  bit_shtfs_for_ADC_data_of_FEs: [0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000] 
 
-turn_off_femb: false 
+  turn_off_femb: false 
 
-use_old_femb_config: false 
+  use_old_femb_config: false 
 
 }
 femb_config_default_femb1: @local::femb_config_default 
@@ -121,106 +121,104 @@ femb_config_default_femb4: @local::femb_config_default
 
 daq: {
 
-fragment_receiver: {
+  fragment_receiver: {
 
-max_fragment_size_bytes: 1024 
+    max_fragment_size_bytes: 1024 
 
-generator: WIBReader 
+    generator: WIBReader 
 
-partition_number: 999 
+    partition_number: 999 
 
-fragment_type: TPC 
+    fragment_type: TPC 
 
-fragment_id: 400 
+    fragment_id: 400 
 
-board_id: 400 
+    board_id: 400 
 
-destinations: {
+    destinations: {
 
-}
-sends_no_fragments: true 
+    }
+    sends_no_fragments: true 
 
-semaphore_acquire_timeout_ms: 20000 
+    semaphore_acquire_timeout_ms: 20000 
 
-calibration_mode: false 
+    calibration_mode: false 
 
-WIB: {
-# WIB firm ware version
-expected_wib_fw_version: 0x125 
-# WIB network address string
-address: "" # can be either IP address or DNS address
-# WIB register map
-wib_table: "WIB_SBND_REGS.adt" 
-# FEMB register map
-femb_table: "SBND_FEMB.adt" 
-# If true, transmit fake data from WIB, if false data from FEMBs
-use_WIB_fake_data: [false, false, false, false] # list of 4 bools
-# if true, given FEMB is configured to transmit fake data
-use_FEMB_fake_data: [false, false, false, false] # list of 4 bools
-# This provides selected FEMB fake data mode
-femb_fake_data_mode: [3, 3, 3, 3] 
-# if false, put a counters in the DAQ data frame, if true just transmit a raw counter
-use_WIB_fake_data_counter: false # only applies when use_WIB_fake_data is true for a FEMB
-# if true, generate the clock on the WIB, if false, use timing system clock
-local_clock: false 
-# Where to get the timing system input from
-DTS_source: 0 # 0 back plane, 1 front panel
-# Which timing system partion or "timing group" to use
-partition_number: 0 
-# if true, power up and configure FEMBs, else power down and don't configure
-enable_FEMBs: [true, true, true, true] # list of 4 bools
-# if true send a calibration pulse from MBB to check FEMB syncronization
-use_mbb_cmd: false 
-# if true check the register 43 of WIB for link errors
-do_err_chk: true 
-# if true reset wib qsfp
-reset_wib_qsfp: true 
-# FEMB configuration documents
-FEMBs: {
+    WIB: {
+      # WIB firm ware version
+      expected_wib_fw_version: 0x125 
+      # WIB network address string
+      address: "" # can be either IP address or DNS address
+      # WIB register map
+      wib_table: "WIB_SBND_REGS.adt" 
+      # FEMB register map
+      femb_table: "SBND_FEMB.adt" 
+      # If true, transmit fake data from WIB, if false data from FEMBs
+      use_WIB_fake_data: [false, false, false, false] # list of 4 bools
+      # if true, given FEMB is configured to transmit fake data
+      use_FEMB_fake_data: [false, false, false, false] # list of 4 bools
+      # This provides selected FEMB fake data mode
+      femb_fake_data_mode: [3, 3, 3, 3] 
+      # if false, put a counters in the DAQ data frame, if true just transmit a raw counter
+      use_WIB_fake_data_counter: false # only applies when use_WIB_fake_data is true for a FEMB
+      # if true, generate the clock on the WIB, if false, use timing system clock
+      local_clock: false 
+      # Where to get the timing system input from
+      DTS_source: 0 # 0 back plane, 1 front panel
+      # Which timing system partion or "timing group" to use
+      partition_number: 0 
+      # if true, power up and configure FEMBs, else power down and don't configure
+      enable_FEMBs: [true, true, true, true] # list of 4 bools
+      # if true send a calibration pulse from MBB to check FEMB syncronization
+      use_mbb_cmd: false 
+      # if true check the register 43 of WIB for link errors
+      do_err_chk: true 
+      # if true reset wib qsfp
+      reset_wib_qsfp: true 
+      # FEMB configuration documents
+      FEMBs: {
 
-femb0: @local::femb_config_default_femb1 
+	femb0: @local::femb_config_default_femb1 
 
-femb1: @local::femb_config_default_femb2 
+	femb1: @local::femb_config_default_femb2 
 
-femb2: @local::femb_config_default_femb3 
+	femb2: @local::femb_config_default_femb3 
 
-femb3: @local::femb_config_default_femb4 
+	femb3: @local::femb_config_default_femb4 
 
-}
-continueOnError: {
-# if true, continue on to the next FEMB
-FEMBRegReadError: false # if you can't seem to control an FEMB
-# if true, continue on to the next FEMB
-FEMBSPIError: false # if you can't program the FE and ADC ASICs
-# if true, continue on to the next FEMB
-FEMBSyncError: false # if you can't get the ADC-FPGA data path sync'd
-# if true, continue on to the next FEMB
-ListOfFEMBClockPhasesDontSync: true # if true, will try to hunt for the proper phase, else error
+      }
+      continueOnError: {
+	# if true, continue on to the next FEMB
+	FEMBRegReadError: false # if you can't seem to control an FEMB
+	# if true, continue on to the next FEMB
+	FEMBSPIError: false # if you can't program the FE and ADC ASICs
+	# if true, continue on to the next FEMB
+	FEMBSyncError: false # if you can't get the ADC-FPGA data path sync'd
+	# if true, continue on to the next FEMB
+	ListOfFEMBClockPhasesDontSync: true # if true, will try to hunt for the proper phase, else error
 
-}#Use full reset over checked
-force_full_reset: false 
-#Time to wait after setting do-not-disturb (unsigned int seconds)
-dnd_wait_time: 10 
-#Number of times to try configuring before giving up
-configuration_tries: 3 
-#Start FELIX links in start transition, else during configure transition
-start_links_FELIX_run_start: false 
-#Stop FELIX links in stop transition, else don't stop
-stop_links_FELIX_run_stop: false 
+      }#Use full reset over checked
+      force_full_reset: false 
+      #Time to wait after setting do-not-disturb (unsigned int seconds)
+      dnd_wait_time: 10 
+      #Number of times to try configuring before giving up
+      configuration_tries: 3 
+      #Start FELIX links in start transition, else during configure transition
+      start_links_FELIX_run_start: false 
+      #Stop FELIX links in stop transition, else don't stop
+      stop_links_FELIX_run_stop: false 
 
-run_wib_fake_data_mode: false 
+      run_wib_fake_data_mode: false 
 
-run_femb_scan: false 
+      run_femb_scan: false 
 
-wib_fake_data_mode: 2 # 1 saw-tooth, 2 channel-id
+      wib_fake_data_mode: 2 # 1 saw-tooth, 2 channel-id
 
-use_old_wib_config: false 
+      use_old_wib_config: false 
 
-}
-}
-routing_table_config: {
-
-use_routing_master: false 
-
-}
+    }
+  }
+  routing_table_config: {
+    use_routing_master: false 
+  }
 }

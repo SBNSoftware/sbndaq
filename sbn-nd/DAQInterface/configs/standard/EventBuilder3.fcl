@@ -10,7 +10,7 @@ outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb03_${app_name}
 
 outputs.testOutput.fileName: "/scratch/test_data/data_evb03_run%R_%#_%to.root" 
 
-physics.my_output_modules: [normalOutput, rootNetOutput] 
+#physics.my_output_modules: [normalOutput, rootNetOutput] 
 
 process_name: DAQEVB03 
 

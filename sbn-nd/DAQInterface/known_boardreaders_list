@@ -38,8 +38,8 @@ wib405 sbnd-wib01-daq -1 1
 wib406 sbnd-wib01-daq -1 1
 tpc01FakeData sbnd-tpc01-daq -1 1    
 mbb02 sbnd-wib01-daq -1 1
-#spectdc sbnd-clk01-daq -1 1
-spectdc sbnd-pds04-daq -1 1
+spectdc sbnd-clk01-daq -1 1
+#spectdc sbnd-pds04-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
 gps sbnd-gps01-daq -1 1
 crtNorthWallWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -70,4 +70,5 @@ pmt08 sbnd-pds02-daq -1 1 0-15
 pmt09 sbnd-pds05-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
 pmt09PUSH sbnd-pds05-daq -1 1 0-15
+pmt05PUSH sbnd-pds02-daq -1 1 0-15
 dummygenerator sbnd-evb01-daq -1 1

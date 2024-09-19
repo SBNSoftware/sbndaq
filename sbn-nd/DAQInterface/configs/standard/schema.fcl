@@ -1,284 +1,284 @@
 
 artdaq_processes: [{
 
-collection: GPSs 
+    collection: GPSs 
 
-pattern: '(.*/)(gps.*)(\.fcl$)' 
+    pattern: '(.*/)(gps.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: TestComponents 
+    collection: TestComponents 
 
-pattern: '(.*/)(component(_standard|\d+))(\.fcl$)' 
+    pattern: '(.*/)(component(_standard|\d+))(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: TDCs 
+    collection: TDCs 
 
-pattern: '(.*/)(spectdc.*)(\.fcl$)' 
+    pattern: '(.*/)(spectdc.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: Triggers 
+    collection: Triggers 
 
-pattern: '(.*/)(trigger(|test))(\.fcl$)' 
+    pattern: '(.*/)(trigger(|test))(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: FEBs 
+    collection: FEBs 
 
-pattern: '(.*/)(feb.*)(\.fcl$)' 
+    pattern: '(.*/)(feb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: CRTs 
+    collection: CRTs 
 
-pattern: '(.*/)(crt.*)(\.fcl$)' 
+    pattern: '(.*/)(crt.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: CAENs 
+    collection: CAENs 
 
-pattern: '(.*/)(caen.*)(\.fcl$)' 
+    pattern: '(.*/)(caen.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: BERNs 
+    collection: BERNs 
 
-pattern: '(.*/)(bern.*)(\.fcl$)' 
+    pattern: '(.*/)(bern.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: PMTs 
+    collection: PMTs 
 
-pattern: '(.*/)(pmt.*)(\.fcl$)' 
+    pattern: '(.*/)(pmt.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: WRs 
+    collection: WRs 
 
-pattern: '(.*/)(wr.*)(\.fcl$)' 
+    pattern: '(.*/)(wr.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: XARAs 
+    collection: XARAs 
 
-pattern: '(.*/)(xara.*)(\.fcl$)' 
+    pattern: '(.*/)(xara.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: MBBs 
+    collection: MBBs 
 
-pattern: '(.*/)(mbb.*)(\.fcl$)' 
+    pattern: '(.*/)(mbb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: NTBs 
+    collection: NTBs 
 
-pattern: '(.*/)(ntb.*)(\.fcl$)' 
+    pattern: '(.*/)(ntb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: WIBs 
+    collection: WIBs 
 
-pattern: '(.*/)(wib.*)(\.fcl$)' 
+    pattern: '(.*/)(wib.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: PTBs 
+    collection: PTBs 
 
-pattern: '(.*/)(ptb.*)(\.fcl$)' 
+    pattern: '(.*/)(ptb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: TPCs 
+    collection: TPCs 
 
-pattern: '(.*/)(tpc.*)(\.fcl$)' 
+    pattern: '(.*/)(tpc.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: NevisTPCs 
+    collection: NevisTPCs 
 
-pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)' 
+    pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: EventBuilders 
+    collection: EventBuilders 
 
-pattern: '(.*/)(EventBuilder.*)(\.fcl$)' 
+    pattern: '(.*/)(EventBuilder.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: DataLoggers 
+    collection: DataLoggers 
 
-pattern: '(.*/)(DataLogger.*)(\.fcl$)' 
+    pattern: '(.*/)(DataLogger.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: Dispatchers 
+    collection: Dispatchers 
 
-pattern: '(.*/)(Dispatcher.*)(\.fcl$)' 
+    pattern: '(.*/)(Dispatcher.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RoutingManager 
+    collection: RoutingManager 
 
-pattern: '(.*/)(RoutingManager.*)(\.fcl$)' 
+    pattern: '(.*/)(RoutingManager.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: UserSettings 
+    collection: UserSettings 
 
-pattern: '(.*/)(user_setings)(\.fcl$)' 
+    pattern: '(.*/)(user_setings)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: Boot 
+    collection: Boot 
 
-pattern: '(.*/)(boot)(\.fcl$)' 
+    pattern: '(.*/)(boot)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: KnownBoardreasers 
+    collection: KnownBoardreasers 
 
-pattern: '(.*/)(known_boardreaders_list)(\.fcl$)' 
+    pattern: '(.*/)(known_boardreaders_list)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: CriticalProcesses 
+    collection: CriticalProcesses 
 
-pattern: '(.*/)(critical_process_list)(\.fcl$)' 
+    pattern: '(.*/)(critical_process_list)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: DataflowConfiguration 
+    collection: DataflowConfiguration 
 
-pattern: '(.*/)(DataflowConfiguration)(\.fcl$)' 
+    pattern: '(.*/)(DataflowConfiguration)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: Hashes 
+    collection: Hashes 
 
-pattern: '(.*/)(hashes)(\.fcl$)' 
+    pattern: '(.*/)(hashes)(\.fcl$)' 
 
-}] 
+  }] 
 
 artdaq_includes: [] 
 
 run_history: [{
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(trigger|triggertest|dummygenerator|sbnToySimulator)(\.fcl$)' 
+    pattern: '(.*/)(trigger|triggertest|dummygenerator|sbnToySimulator)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(component(_standard|\d+))(\.fcl$)' 
+    pattern: '(.*/)(component(_standard|\d+))(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(spectdc.*)(\.fcl$)' 
+    pattern: '(.*/)(spectdc.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(gps.*)(\.fcl$)' 
+    pattern: '(.*/)(gps.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(crt.*)(\.fcl$)' 
+    pattern: '(.*/)(crt.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(wr.*)(\.fcl$)' 
+    pattern: '(.*/)(wr.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(xara.*)(\.fcl$)' 
+    pattern: '(.*/)(xara.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(mbb.*)(\.fcl$)' 
+    pattern: '(.*/)(mbb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(ntb.*)(\.fcl$)' 
+    pattern: '(.*/)(ntb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(wib.*)(\.fcl$)' 
+    pattern: '(.*/)(wib.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)((bern|caen).*)(\.fcl$)' 
+    pattern: '(.*/)((bern|caen).*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(pmt.*)(\.fcl$)' 
+    pattern: '(.*/)(pmt.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(tpc.*)(\.fcl$)' 
+    pattern: '(.*/)(tpc.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(ptb.*)(\.fcl$)' 
+    pattern: '(.*/)(ptb.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver)(\.fcl$)' 
+    pattern: '(.*/)((fake_|)NevisTPC(2|NU)Stream(CALIB|CTRL|EXT)_driver.*)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager)(\d+(|_.*)|_standard))(\.fcl$)' 
+    pattern: '(.*/)((EventBuilder|DataLogger|Dispatcher|RoutingManager)(\d+(|_.*)|_standard))(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: RunHistory 
+    collection: RunHistory 
 
-pattern: '(.*/)(user_setings|metadata|boot|(known_boardreaders|critical_process)_list|DataflowConfiguration|RunHistory(|2))(\.fcl$)' 
+    pattern: '(.*/)(user_setings|metadata|boot|(known_boardreaders|critical_process)_list|DataflowConfiguration|RunHistory(|2))(\.fcl$)' 
 
-}] 
+  }] 
 
 system_layout: [{
 
-collection: SystemLayout 
+    collection: SystemLayout 
 
-pattern: '(.*)(schema)(\.fcl$)' 
+    pattern: '(.*)(schema)(\.fcl$)' 
 
-}, {
+  }, {
 
-collection: Flags 
+    collection: Flags 
 
-pattern: '(.*)(flags)(\.fcl$)' 
+    pattern: '(.*)(flags)(\.fcl$)' 
 
-}] 
+  }] 

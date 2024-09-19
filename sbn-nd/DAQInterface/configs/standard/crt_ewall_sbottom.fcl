@@ -15,8 +15,6 @@
 daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
 daq.metrics.graphite.namespace: "sbnd.crteast02."
 
-daq.fragment_receiver.generated_fragments_per_event: 9 #number of FEBs
-
 #daq.fragment_receiver.fragment_ids: [ 44, 147, 146, 131, 79, 206, 204, 200, 18 ]
 daq.fragment_receiver.fragment_ids: [ 0xB42c, 0xB493, 0xB492, 0xB483, 0xB44f, 0xB4ce, 0xB4cc, 0xB4c8 , 0xB412]
 
@@ -28,15 +26,15 @@ daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, tru
 
 daq.fragment_receiver.PPS_offset_ns : [ 447, 463, 479, 495, 511, 527, 543, 559, 575 ]
 
-daq.fragment_receiver.FEBConfigurationMAC44: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC147: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC146: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC131: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC79: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC206: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC204: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC200: @local::FEBConfigurationStandard
-daq.fragment_receiver.FEBConfigurationMAC18: @local::FEBConfigurationStandard
+daq.fragment_receiver.FEBConfigurationMAC44: @local::FEB044Configuration
+daq.fragment_receiver.FEBConfigurationMAC147: @local::FEB147Configuration
+daq.fragment_receiver.FEBConfigurationMAC146: @local::FEB146Configuration
+daq.fragment_receiver.FEBConfigurationMAC131: @local::FEB131Configuration
+daq.fragment_receiver.FEBConfigurationMAC79: @local::FEB079Configuration
+daq.fragment_receiver.FEBConfigurationMAC206: @local::FEB206Configuration
+daq.fragment_receiver.FEBConfigurationMAC204: @local::FEB204Configuration
+daq.fragment_receiver.FEBConfigurationMAC200: @local::FEB200Configuration
+daq.fragment_receiver.FEBConfigurationMAC18: @local::FEB018Configuration
 
 daq.fragment_receiver.FEBConfigurationMAC44.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC44.time_threshold: 250

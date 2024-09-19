@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 for p in {1..9}; do
-    PART=p
+    PART=$p
 
     for i in {01..04}; do
 	echo "sbnd-evb${i}-daq: pkill -9 -f '^eventbuilder.*partition_number: $PART$'"

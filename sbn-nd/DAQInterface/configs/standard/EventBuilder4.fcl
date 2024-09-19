@@ -7,5 +7,5 @@ daq.metrics.evbFile.fileName : "/daq/log/metrics/evb04_metrics.log"
 outputs.normalOutput.fileName: "/data/afilk/data_evb04_${app_name}_run%R_%#_%to.root"   
 
 outputs.testOutput.fileName: "/scratch/test_data/data_evb04_run%R_%#_%to.root"
-physics.my_output_modules: [ normalOutput, rootNetOutput ]
+#physics.my_output_modules: [ normalOutput, rootNetOutput ]
 process_name: DAQEVB04

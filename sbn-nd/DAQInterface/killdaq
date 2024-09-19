@@ -11,7 +11,7 @@ for i in {01..04}; do
     ssh sbnd-evb${i}-daq -f "pkill -9 -f '^eventbuilder.*partition_number: $1$'"
 done
 
-#ssh sbnd-evb01 -f 'killall -9 dispatcher'
+ssh sbnd-evb01 -f 'killall -9 dispatcher'
 
 echo "sbnd-wib01-daq: pkill -9 '^boardreader.*partition_number: $1$'"
 ssh sbnd-wib01-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"

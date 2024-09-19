@@ -1,8 +1,8 @@
 
 #include "ptb01.fcl" 
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_flash.fcl"
-#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
-##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_noprescale.fcl"
+##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias.fcl"
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_BNB_zero_bias_noprescale.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias.fcl"
 ##include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_off_beam_zero_bias_flash.fcl"
 
@@ -29,8 +29,8 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.request_port: 3001   # UDP request port
     daq.fragment_receiver.request_mode: window # pull mode buffer or window
 
-    daq.fragment_receiver.request_window_width: 5000000 # #5ms   #600us #300us window#3ms window
-    daq.fragment_receiver.request_window_offset: 2500000 #7500000 # #2.5 ms # #30000000 #500us #400us early #1.5ms early offset
+    daq.fragment_receiver.request_window_width: 20000000 #20ms #3ms window
+    daq.fragment_receiver.request_window_offset: 10000000 #10 ms #1.5ms early offset
 
     daq.fragment_receiver.request_windows_are_unique: false
     #daq.fragment_receiver.request_windows_are_unique: true
@@ -39,7 +39,7 @@ daq.fragment_receiver.board_config: @local::board_config
     daq.fragment_receiver.receive_requests: true
     daq.fragment_receiver.window_close_timeout_us: 400000000 #40s
     daq.fragment_receiver.circular_buffer_mode: true #false #true
-    daq.fragment_receiver.stale_fragment_timeout: 10000000000
+    daq.fragment_receiver.stale_fragment_timeout: 1763234123 #1000000000 #1second
 
     daq.fragment_receiver.data_buffer_depth_fragments: 5000000 #10000 #5000000 #  #40000
     daq.fragment_receiver.data_buffer_depth_mb : 1000000 #200000 #1000000 # #1000 ## --data_buffer_depth_fragments*max_fragment_size_bytes[MB]

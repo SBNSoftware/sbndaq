@@ -1,130 +1,149 @@
-# Test configuration of 2 streams and readout of Nevis XMIT NU stream with Controller triggers using artdaq
-# and XMIT SN stream with a worker thread
 
-nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
+nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
+# 1e4 # < 1e6
 sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 
-daq:{
-fragment_receiver: {
-  max_fragment_size_bytes:   667772 #16777216
-  generator: NevisTPC2StreamNUandSNXMIT
-  fragment_type: NevisTPC
-  fragment_ids: [] # Needs to be set in crate-specific FCL files
-  generated_fragments_per_event: 16
-  board_id: 0
+daq: {
 
-  SamplesPerChannel: 3420 # 0.57*3*2  SBND drift time x 3
+  fragment_receiver: {
 
-  ChunkSize: @local::nu_dma_buffer_size
-  MonitorPeriod: 12 # Period in seconds to read electronics status
-  CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
-  ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
-  DumpBinary: true # Write binary file before the artdaq back-end
-  DoSNReadout: true # Do continuous readout
-  DumpBinaryDir: "/data"
-  SNChunkSize: @local::sn_dma_buffer_size
+    max_fragment_size_bytes: 667772 #16777216
+    #16777216
+    generator: NevisTPC2StreamNUandSNXMIT 
 
-  ### Configuration of the Nevis Crate ###
-  # Configuration of the Nevis Crate (location specific)
+    fragment_type: NevisTPC 
 
-  # Do not change block name
-  nevis_crate : { 
-    # Location of modules within crate
-    xmit_slot: 2 # Location of XMIT module
-    max_fem_slot: 18 # Location of leftmost FEM module
-    trigger_slot: 20 # Location of Trigger Board
-    # FPGA firmware
-    # With level-1 trigger blocking
-    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
-    # Two-stream (dynamic baseline)
-    # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
-    # Two-stream (static baseline)
-    #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
-    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
-    # FEM settings
-    zs_static_baseline: true
-    fem_fake_data: true # (default is false)
-    fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
-    nu_compress: true #false
-    timesize: 1139 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
-  }
+    fragment_ids: [] # Needs to be set in crate-specific FCL files
 
-  ### Configuration of the ControllerModule ###
-  # Configuration of the Nevis Controller Module
+    board_id: 0 
 
-  # Do not change block name
-  controller_module : { 
-    # Controller PCIe card settings
-    vendor_id : 0x1172 # Altera (Nevis PCIe card)
-    device_id : 0x4
-    bus : 0x66
-    device_name: neviscard_controller
-   }
+    SamplesPerChannel: 3420 # 0.57*3*2  SBND drift time x 3
 
-  ### Configuration of the XMITReader for the NU stream ###
-  # Configuration of the XMITReader for the Nevis XMIT NU stream
+    ChunkSize: @local::nu_dma_buffer_size 
 
-  # The block name must match the name of the XMITReader instance of the FragmentGenerator
-  nu_xmit_reader : { 
-    # NU stream PCIe card settings
-    vendor_id : 0x1172 # Altera (Nevis PCIe card)
-    device_id : 0x4
-    bus : 0xb4
-    device_name: neviscard_nu
-    # DMA settings
-    dma_buffer_size : @local::nu_dma_buffer_size
-    # Theoretically could be as high as 9.6e7
-    maxpoll : 1e7  
-    profile_time : false
-}
+    MonitorPeriod: 12 # Period in seconds to read electronics status
+    # Period in seconds to read electronics status
+    CALIBTriggerFrequency: -1 # Frequency in Hz of the CALIB trigger
+    # Frequency in Hz of the CALIB trigger
+    ControllerTriggerFrequency: 1 # Frequency in Hz of the Controller trigger
+    # Frequency in Hz of the Controller trigger
+    DumpBinary: true # Write binary file before the artdaq back-end
+    # Write binary file before the artdaq back-end
+    DoSNReadout: true # Do continuous readout
+    # Do continuous readout
+    DumpBinaryDir: "/data" 
 
-  ### Configuration of the XMITReader for the SN stream ###
-  # Configuration of the XMITReader for the Nevis XMIT SN stream
+    SNChunkSize: @local::sn_dma_buffer_size 
+    # Do not change block name
+    nevis_crate: {
+      # Location of modules within crate
+      xmit_slot: 2 # Location of XMIT module
+      # Location of XMIT module
+      max_fem_slot: 18 # Location of leftmost FEM module
+      # Location of leftmost FEM module
+      trigger_slot: 20 # Location of Trigger Board
+      # With level-1 trigger blocking
+      xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf" 
+      #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
+      fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf" 
+      # FEM settings
+      zs_static_baseline: true 
 
-  # The block name must match the name of the XMITReader instance of the FragmentGenerator
-  sn_xmit_reader : { 
-    # SN stream PCIe card settings
-    vendor_id : 0x1172 # Altera (Nevis PCIe card)
-    device_id : 0x4
-    bus : 0xb3
-    device_name: neviscard_sn
-    # DMA settings
-    dma_buffer_size : @local::sn_dma_buffer_size
-    maxpoll : 1e7
-    profile_time : false
-   }
-    destinations: { }
+      fem_fake_data: true # (default is false)
+      # (default is false)
+      fem_fake_data_pattern: "channel+sample" # "channel", "sample" or "channel+sample"
+      # "channel", "sample" or "channel+sample"
+      nu_compress: true #false
+      #false
+      timesize: 1139 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
 
-    routing_table_config: 
-    {
+    }# Do not change block name
+    controller_module: {
+      # Controller PCIe card settings
+      vendor_id: 0x1172 # Altera (Nevis PCIe card)
+      # Altera (Nevis PCIe card)
+      device_id: 0x4 
+
+      bus: 0x66 
+
+      device_name: neviscard_controller 
+
+    }# The block name must match the name of the XMITReader instance of the FragmentGenerator
+    nu_xmit_reader: {
+      # NU stream PCIe card settings
+      vendor_id: 0x1172 # Altera (Nevis PCIe card)
+      # Altera (Nevis PCIe card)
+      device_id: 0x4 
+
+      bus: 0xb4 
+
+      device_name: neviscard_nu 
+      # DMA settings
+      dma_buffer_size: @local::nu_dma_buffer_size 
+      # Theoretically could be as high as 9.6e7
+      maxpoll: 1e7 
+
+      profile_time: false 
+
+    }# The block name must match the name of the XMITReader instance of the FragmentGenerator
+    sn_xmit_reader: {
+      # SN stream PCIe card settings
+      vendor_id: 0x1172 # Altera (Nevis PCIe card)
+      # Altera (Nevis PCIe card)
+      device_id: 0x4 
+
+      bus: 0xb3 
+
+      device_name: neviscard_sn 
+      # DMA settings
+      dma_buffer_size: @local::sn_dma_buffer_size 
+
+      maxpoll: 1e7 
+
+      profile_time: false 
+
+    }
+    destinations: {
+
+    }
+    routing_table_config: {
+
       use_routing_master: false 
-    }
 
-#pull mode configuration
- receive_requests: true
- request_address:       "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
- multicast_interface_ip: "10.226.36.0"  ####"192.168.191.0"(icarus) # -- should match the private net
- request_port: 3001   ##3502   # UDP request port
- request_mode: sequence #match sequenceID of request
- data_buffer_depth_fragments: 100
- data_buffer_depth_mb: 500                                                                                                                                            
- #stale_request_timeout: 100000000000 #100s #turn off to default to no timeout
+    }#pull mode configuration
+    receive_requests: true 
 
+    request_address: "227.128.11.129" #### "227.128.12.35"(icarus) # -- multicast request address
+    #### "227.128.12.35"(icarus) # -- multicast request address
+    multicast_interface_ip: "10.226.36.0" ####"192.168.191.0"(icarus) # -- should match the private net
+    ####"192.168.191.0"(icarus) # -- should match the private net
+    request_port: 3001 ##3502   # UDP request port
+    ##3502   # UDP request port
+    request_mode: sequence #match sequenceID of request
+    #match sequenceID of request
+    data_buffer_depth_fragments: 100 
 
-
-}
-  metrics: {
-    brFile: {
-      metricPluginType: "file"
-      level_string: "1-10,11-20"
-      fileName: "/daq/log/metrics/tpc00_metrics.log"
-      uniquify: true
-    }
-
-
-send_system_metrics: true
-send_process_metrics: true
+    data_buffer_depth_mb: 500 
 
   }
-process_name: Driver
+  metrics: {
+
+    brFile: {
+
+      metricPluginType: "file" 
+
+      level_string: "1-10,11-20" 
+
+      fileName: "/daq/log/metrics/tpc00_metrics.log" 
+
+      uniquify: true 
+
+    }
+    send_system_metrics: true 
+
+    send_process_metrics: true 
+
+  }
+  process_name: Driver 
+
 }

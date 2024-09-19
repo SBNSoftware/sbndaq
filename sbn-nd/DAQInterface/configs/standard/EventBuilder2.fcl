@@ -10,7 +10,7 @@ outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb02_${app_name}
 
 outputs.testOutput.fileName: "/scratch/test_data/data_evb02_run%R_%#_%to.root" 
 
-physics.my_output_modules: [normalOutput, rootNetOutput] 
+#physics.my_output_modules: [normalOutput] 
 
 process_name: DAQEVB02 
 #daq.event_builder.art_analyzer_count: 3 

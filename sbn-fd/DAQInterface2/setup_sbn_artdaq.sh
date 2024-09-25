@@ -2,8 +2,13 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v1_10_01'
+SBNDAQ_VERSION='v1_10_02'
 BUILD_VARIANT='gcc@12.2.0'
+
+declare -A build_hash_map=(
+    [scientific7]="/akilgoc"
+    [almalinux9]="/fbbhhry"
+)
 
 export SPACK_DISABLE_LOCAL_CONFIG=true
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
@@ -16,13 +21,16 @@ fi
 SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
 echo "Spack arch: ${SPACK_ARCH}"
 
+BUILD_HASH="${build_hash_map[$(spack arch --operating-system 2>/dev/null)]:-}"
+[[ -z $BUILD_HASH ]] && BUILD_HASH=""
+
 for i in {1..10}; do
-  echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} (try $i)"
-  if spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} arch="${SPACK_ARCH}" 2>&1; then
-    echo "Loaded  sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}"
+  echo "Loading sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH} (try $i)"
+  if spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} arch="${SPACK_ARCH}" ${BUILD_HASH} 2>&1; then
+    echo "Loaded  sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH}"
     break
   else
-    echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\" failed. Retrying..."
+    echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\ ${BUILD_HASH} \" failed. Retrying..."
     sleep $((4 + RANDOM % 3))
   fi
 done
@@ -37,6 +45,9 @@ export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
 
 [[ -f ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh ]] \
   && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh"
+
+[[ -f ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_coredumps.sh ]] \
+  && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_coredumps.sh"
 
 if [[ -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra ]]; then
   for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"*.sh; do

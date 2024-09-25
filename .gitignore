@@ -7,6 +7,6 @@
 **/trace.*
 **/MessageFacility.*
 **/*.bak
-
+**/known_boardreaders_list_save*
 configDB_tools/__pycache__/
 

@@ -6,7 +6,7 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 #source $(realpath "$(dirname "${BASH_SOURCE[0]}")")/unset_all.sh
 
 SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
-SPACK_ENV_SCRIPT="${SPACK_INSTALL_DIR}/share/spack/setup-env-ext.sh"
+SPACK_ENV_SCRIPT="${SPACK_INSTALL_DIR}/share/spack/setup-env.sh"
 
 [[ -f "$SPACK_ENV_SCRIPT" ]] || { echo "Error: Not a Spack installation. This is a critical error with loading Spack packages."; return 10; }
 

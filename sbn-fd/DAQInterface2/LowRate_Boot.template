@@ -1,4 +1,4 @@
-DAQ setup script: $SETUP_FILE
+DAQ setup script: $DAQ_SETUP_SCRIPT
 PMT host: localhost
 
 # debug level can range from 0 to 3 (increasing order of verbosity)

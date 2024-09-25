@@ -55,10 +55,10 @@ icarustpcwe19 icarus-tpc07-daq -1 1
 icarustpcwe20b icarus-tpc07-daq -1 1
 icarustpcwe20m icarus-tpc07-daq -1 1
 icarustpcwe20t icarus-tpc07-daq -1 1
-icarustpcee01b icarus-tpc24-daq -1 1
-icarustpcee01m icarus-tpc24-daq -1 1
-icarustpcee01t icarus-tpc24-daq -1 1
-icarustpcee02 icarus-tpc24-daq -1 1
+icarustpcee01b icarus-tpc25-daq -1 1
+icarustpcee01m icarus-tpc25-daq -1 1
+icarustpcee01t icarus-tpc25-daq -1 1
+icarustpcee02 icarus-tpc25-daq -1 1
 icarustpcee03 icarus-tpc23-daq -1 1
 icarustpcee04 icarus-tpc23-daq -1 1
 icarustpcee05 icarus-tpc23-daq -1 1
@@ -123,10 +123,10 @@ icaruspmtewbot02 icarus-pmt03-daq -1 1
 icaruspmtewbot03 icarus-pmt03-daq -1 1
 icaruspmteetop01 icarus-pmt03-daq -1 1
 icaruspmteetop02 icarus-pmt03-daq -1 1
-icaruspmteetop03 icarus-pmt03-daq -1 1
-icaruspmteebot01 icarus-pmt03-daq -1 1
-icaruspmteebot02 icarus-pmt03-daq -1 1
-icaruspmteebot03 icarus-pmt03-daq -1 1
+icaruspmteetop03 icarus-pmt04-daq -1 1
+icaruspmteebot01 icarus-pmt04-daq -1 1
+icaruspmteebot02 icarus-pmt04-daq -1 1
+icaruspmteebot03 icarus-pmt04-daq -1 1
 component01 icarus-crt11-daq -1 1
 icaruscrt01nni icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrt01nno icarus-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -156,5 +156,5 @@ icaruscrttop03et icarus-pmt04-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /b
 icaruscrtbottom11 icarus-crt11-daq -1 1
 dummygenerator icarus-evb01-daq -1 1
 icarustrigger icarus-clk01-daq -1 1
-wr icarus-daq02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+wr icarus-clk05-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icarustriggertest icarus-clk01-daq -1 1

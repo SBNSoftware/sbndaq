@@ -1,0 +1,238 @@
+events_to_generate: 100
+run_number: 100
+
+fragment_receiver: {
+
+  generator:   CAENV1740Readout
+  fragment_type: CAENV1740
+  max_fragment_size_bytes: 1000000
+  GetNextFragmentBunchSize: 20
+
+  fragment_id: 0
+  board_id:    0
+
+  # link is which port on the PCIe card it is connected, numbering starts at 0 
+  link: 0
+  enableReadout: 1
+
+  Verbosity: 1
+  SWTrigger: false
+
+  # ModeLVDS 0=REGISTER, 1=TRIGGER, 2=nBUSY/nVETO, 3=LEGACY
+  ModeLVDS: 0
+
+  # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
+  SelfTriggerMode: 1
+
+  # if a second trigger arrives before the readout is finished, set to false to ignore and true to extend readout
+  allowTriggerOverlap: true
+
+  # Moved up
+  #link: 0
+  #enableReadout: 1
+
+  debugLevel:           7
+  eventsPerInterrupt:   1
+  IRQTimeoutMS:         500
+  eventCounterWarning:  1       
+  memoryAlmostFull:     2    
+  maxEventsPerTransfer: 1
+  runSyncMode:          0
+    
+  readoutMode:          0
+  testPattern:          0
+  irqWaitTime:          1 
+   
+  outputSignalMode:     0    
+  usePedestals:         false
+  dacValue:             32768 # jcrespo: useless?
+
+  # ioLevel: 0=NIM, 1=TTL
+  ioLevel:              0 # NIM for CIEMAT teststand <---
+  #ioLevel:             1 # TTL for SBN-ND
+  nChannels:            64
+  nGroups:              8
+
+  boardId: 0
+
+  # default waveform length and postpercent
+  recordLength:         636   # Good: 636 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
+  postPercent:         0 # Good 0; Bad: 50,75,76,80,90,100 # For V1740 make sure that postPercent*recordLength is an integer multiple of 3??????
+  #UseTimeTagForTimeStamp: false # CIEMAT case without a PPS
+  UseTimeTagForTimeStamp: true #True is using the PPS information
+  # adds an offset to the fragment timestamp, set to 0 for SBND
+  TimeOffsetNanoSec: 0
+  # Shift time tag so timestamp reflects the trigger time and not the end of the waveform. Also uses the PPS information
+  #    default for SBND is true    
+  #UseTimeTagShiftForTimeStamp: false # CIEMAT case without a PPS
+  UseTimeTagShiftForTimeStamp: true #True is using the PPS information    
+
+  # extTrgMode decides whether the external trigger should only be used to generate the
+  # acquisition trigger, only to generate the trigger output or both
+  # SBND: set to 1
+  # extTrgMode: 0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+  extTrgMode:           1
+
+  # swTrgMode decides whether the trigger software should only be used to generate the 
+  # acquisition trigger, only to generate the trigger output or both. 
+  # you should set 'SWTrigger: true' to enable software triggers
+  # SBND: set to 0
+  # swTrgMode:  0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+  swTrgMode:            0
+    
+  # acqMode: 0=Software Controlled, 1=Front Panel S_IN
+  # SBND: set to 0
+  acqMode:              0
+
+  # triggerPolarity: 0=positive (trigger on rising edge), 1= negative (trigger on falling edge)
+  triggerPolarity:      1   
+
+  CircularBufferSize: 500e6
+
+  # unit of Pedestals are NOT ADC counts.  From the CAEN manual
+  # The ADC scale ranges from 0 to 2NBit - 1, where NBit is the number of bits of the on-board ADC. The DAC controlling 
+  # the DC Offset has 16 bits, i.e. it goes from 0 to 65535 independently from the NBit value and the board type.
+  # Typically a DC Offset value of 32K (DAC mid-scale) corresponds to about the ADC mid-scale. Increasing values of DC
+  # Offset make the baseline decrease. The range of the DAC is about 5% (typ.) larger than the ADC range, hence DAC
+  #  settings close to 0 and 64K correspond to ADC respectively over and under range.
+  #
+  groupPedestal0:  2048
+  groupPedestal1:  2048
+  groupPedestal2:  2048
+  groupPedestal3:  2048
+  groupPedestal4:  2048
+  groupPedestal5:  2048
+  groupPedestal6:  2048
+  groupPedestal7:  2048
+
+  # Set to true to save the waveform
+  groupEnable0:    true
+  groupEnable1:    true
+  groupEnable2:    true
+  groupEnable3:    true
+  groupEnable4:    true
+  groupEnable5:    true
+  groupEnable6:    true
+  groupEnable7:    true
+
+
+  BoardChainNumber: 0
+  GetNextSleep: 10
+  InterruptEnable: 1
+    
+  InterruptLevel: 0
+  InterruptStatusID: 0
+  InterruptEventNumber: 1
+
+#------------------------------------------------------------------
+#  Everything here is exclusive for ICARUS, but must be defined // jcrespo: remove then?
+     LVDSLogicValueG1: 3
+     LVDSLogicValueG2: 3
+     LVDSLogicValueG3: 3
+     LVDSLogicValueG4: 3
+     LVDSLogicValueG5: 3
+     LVDSLogicValueG6: 3
+     LVDSLogicValueG7: 3
+     LVDSLogicValueG8: 3
+#     
+     LVDSOutWidthC1: 20
+     LVDSOutWidthC2: 20
+     LVDSOutWidthC3: 20
+     LVDSOutWidthC4: 20
+     LVDSOutWidthC5: 20
+     LVDSOutWidthC6: 20
+     LVDSOutWidthC7: 20
+     LVDSOutWidthC8: 20
+     LVDSOutWidthC9: 20
+     LVDSOutWidthC10: 20
+     LVDSOutWidthC11: 20
+     LVDSOutWidthC12: 20
+     LVDSOutWidthC13: 20
+     LVDSOutWidthC14: 20
+     LVDSOutWidthC15: 20
+     LVDSOutWidthC16: 20
+    
+     # Aiwu added here: self trigger plority, it is 0x10 (or 16 in decimal, or 0010000) by default, we want to change bit[6] from 0 to 1, so 0x30 (or 80 in decimal, or 1010000)
+     # Exclusive for ICARUS
+     SelfTrigBit: 16
+#  End ICARUS exclusive parameters
+#--------------------------------------------------------------------
+
+}
+
+event_builder: {
+
+  expected_fragments_per_event: 1
+  max_fragment_size_bytes: 10000000
+  buffer_count: 20
+  use_art: true
+  print_event_store_stats: false
+  verbose: false
+  events_expected_in_SimpleQueueReader: @local::events_to_generate
+  #how many init fragments we expect
+  init_fragment_count: 0
+}
+
+art: {
+  services: {
+    ArtdaqSharedMemoryServiceInterface: { service_provider: ArtdaqSharedMemoryService }
+    TimeTracker: {}
+    ArtdaqFragmentNamingServiceInterface: { service_provider: ArtdaqFragmentNamingService helper_plugin: "SBND" }
+  }
+
+  physics: {
+    analyzers: {}
+    producers: {}
+    filters: {}
+
+    outstream: [ rootout ]
+    end_paths: [ outstream ]
+  }
+
+  source: {
+    module_type: ArtdaqInput
+    waiting_time: 900
+    resume_after_timeout: true
+   }
+
+  outputs: {
+    rootout: {
+      module_type: RootOutput
+      fileName: "caenv1740_driver_test.root"
+      compressionLevel: 0
+     }
+   }
+
+   process_name: Driver
+}
+
+# OLD LINES BELOW
+# physics:{
+
+#   analyzers: {}
+#   producers: {}
+#   filters:   {}
+
+#   outstream: [ rootout ]
+#   end_paths: [ outstream ]
+
+# }
+
+# outputs:{
+
+#   rootout:{
+#     module_type: RootOutput
+#     fileName: "/scratch/jcrespo/v1740_driver_test.root"
+#     compressionLevel: 0
+#   }
+
+# }
+
+# source:{
+#   module_type: ArtdaqInput
+#   waiting_time: 900
+#   resume_after_timeout: true
+# }
+
+# process_name: Driver
+

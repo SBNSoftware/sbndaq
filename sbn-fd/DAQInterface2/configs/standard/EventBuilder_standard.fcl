@@ -1,0 +1,146 @@
+daq: {
+   event_builder: {
+      buffer_count: 30
+      expected_fragments_per_event: 0
+      multicast_interface_ip: "192.168.200.60"
+      num_requests: 500
+      print_event_store_stats: true
+      request_address: "227.128.1.26"
+      request_port: 3001
+      routing_token_config: {
+         use_routing_master: false
+      }
+      send_requests: true
+      sources: {}
+      stale_buffer_timeout_usec: 1e7
+      tcp_receive_buffer_size: 64000
+      use_art: true
+      verbose: true
+}
+   metrics: {
+      evbFile: {
+         fileName: "/daq/log/metrics/evb_%UID%_metrics.log"
+         level_string: "1,2,11-20"
+         metricPluginType: "file"
+         uniquify: true
+      }
+      send_process_metrics: true
+      send_system_metrics: true
+   }
+}
+
+outputs: {
+   normalOutput: {
+      SelectEvents: [
+         "pwrite"
+      ]
+      compressionLevel: 1
+      fastCloning: true
+      fileName: "/data/daq/data_%p_run%R_%#_%to.root"
+      fileProperties: {
+         maxEvents: 50
+         maxRuns: 1
+         maxSubRuns: 1
+      }
+      module_type: "RootDAQOut"
+   }
+   rootNetOutput: {
+      SelectEvents: [
+         "pdisp"
+      ]
+      broadcast_sends: true
+      destinations: {}
+      host_map: [
+         {
+            host: "localhost"
+            rank: -1
+         }
+      ]
+      module_type: "RootNetOutput"
+      nonblocking_sends: true
+      routing_table_config: {
+         use_routing_manager: false
+      }
+   }
+   testOutput: {
+      SelectEvents: []
+      compressionLevel: 1
+      fastCloning: true
+      fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
+      fileProperties: {
+         maxEvents: 100
+         maxRuns: 1
+         maxSubRuns: 1
+      }
+      module_type: "RootDAQOut"
+   }
+}
+
+physics: {
+   a1: []
+   analyzers: {}
+   end_paths: [
+      "my_output_modules"
+   ]
+   filters: {
+      prescale1: {
+         module_type: "Prescaler"
+         prescaleFactor: 1
+         prescaleOffset: 0
+      }
+      prescale10: {
+         module_type: "Prescaler"
+         prescaleFactor: 10
+         prescaleOffset: 0
+      }
+      prescale25: {
+         module_type: "Prescaler"
+         prescaleFactor: 25
+         prescaleOffset: 0
+      }
+      prescale5: {
+         module_type: "Prescaler"
+         prescaleFactor: 5
+         prescaleOffset: 0
+      }
+      prescale50: {
+         module_type: "Prescaler"
+         prescaleFactor: 50
+         prescaleOffset: 0
+      }
+   }
+   my_output_modules: [
+      "normalOutput",
+      "rootNetOutput"
+   ]
+   p1: []
+   pdisp: [
+      "prescale5"
+   ]
+   producers: {}
+   pwrite: [
+      "prescale1"
+   ]
+   trigger_paths: [
+      "pwrite",
+      "pdisp"
+   ]
+}
+
+services: {
+   ArtdaqFragmentNamingServiceInterface: {
+      service_provider: "ArtdaqFragmentNamingService"
+      helper_plugin: "ArtdaqDemo"
+   }
+   ArtdaqSharedMemoryServiceInterface: {
+      service_provider: "ArtdaqSharedMemoryService"
+   }
+}
+
+source: {
+   module_type: "ArtdaqInput"
+   resume_after_timeout: true
+   waiting_time: 2.5e6
+}
+
+process_name: "DAQ"

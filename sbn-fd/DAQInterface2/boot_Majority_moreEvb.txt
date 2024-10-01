@@ -1,0 +1,60 @@
+DAQ setup script: $DAQ_SETUP_SCRIPT
+PMT host: icarus-evb01-daq
+
+# debug level can range from 0 to 3 (increasing order of verbosity)
+debug level: 4
+#manage processes: false
+Subsystem id: 1
+
+# EVENT BUILDERS
+
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder1
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder2
+
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder3
+
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder4
+
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder5
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder6
+
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder7
+
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder8
+
+EventBuilder host: icarus-evb01-daq
+EventBuilder label: EventBuilder9
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder10
+
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder11
+
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder12
+
+# DATA LOGGERS
+
+#DataLogger host: icarus-evb01-daq
+#DataLogger label: DataLogger1
+
+Dispatcher host: icarus-evb01-daq
+Dispatcher label: Dispatcher1
+# port number must be unique accros all partitions
+Dispatcher port: 6020
+
+#RoutingManager host:  icarus-evb01-daq
+#RoutingManager label: RoutingManager1
+#RoutingManager target: DataLogger
+

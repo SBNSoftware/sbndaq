@@ -10,6 +10,8 @@ SPACK_ENV_SCRIPT="${SPACK_INSTALL_DIR}/share/spack/setup-env.sh"
 
 [[ -f "$SPACK_ENV_SCRIPT" ]] || { echo "Error: Not a Spack installation. This is a critical error with loading Spack packages."; return 10; }
 
+unalias -a
+
 source "$SPACK_ENV_SCRIPT" 2>&1
 [[ $? -eq 0 ]] || { echo "Error: source setup-env.sh failed. This is a critical error with loading Spack packages."; return 10; }
 

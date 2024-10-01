@@ -16,7 +16,7 @@
 log_directory: /daq/log
 record_directory: /daq/run_records
 package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
-spack_root_for_bash_scripts: /daq/software/spack_packages/spack/overrides
+spack_root_for_bash_scripts: /home/nfs/icarus/DAQ_SPACK_DevAreas/DAQ_2024-09-30_GAL_v1_10_02/DAQInterface/overrides/spack
 max_configurations_to_list: 20
 boardreader timeout: 60
 eventbuilder timeout: 30

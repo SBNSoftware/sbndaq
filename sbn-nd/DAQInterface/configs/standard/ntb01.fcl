@@ -1,6 +1,6 @@
 daq: {
   fragment_receiver: {
-    max_fragment_size_bytes: 1000 
+    max_fragment_size_bytes: 10000 
     generator: NevisTBStream 
     fragment_type: NevisTB 
     fragment_ids: [1] 

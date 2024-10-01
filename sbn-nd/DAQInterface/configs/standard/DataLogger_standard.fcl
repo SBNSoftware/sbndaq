@@ -9,7 +9,7 @@ daq: {
     print_event_store_stats: true
     event_queue_wait_time: 5
     buffer_count: 10
-    onmon_event_prescal: 1
+    onmon_event_prescale: 1
     is_data_logger: true
 
     broadcast_buffer_size: 0x10000000

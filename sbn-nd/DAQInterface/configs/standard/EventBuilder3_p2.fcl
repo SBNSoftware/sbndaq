@@ -8,7 +8,7 @@ outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb03_process2_${
 #outputs.normalOutput.fileName: "/data/afilk/data_evb03_${app_name}_run%R_%#_%to.root" 
 #outputs.testOutput.fileName: "/data/afilk/test_data/data_evb03_run%R_%#_%to.root" 
 
-physics.my_output_modules: [normalOutput, rootNetOutput] 
+#physics.my_output_modules: [normalOutput] 
 
 process_name: DAQEVB03P2 
 

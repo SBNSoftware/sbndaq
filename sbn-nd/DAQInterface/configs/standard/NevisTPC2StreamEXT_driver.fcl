@@ -1,7 +1,7 @@
 
-nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
+nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
 # 1e4 # < 1e6
-sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
+sn_dma_buffer_size: 1e5 #1e6 # 1e5 # < 4e6
 # 1e5 # < 4e6
 framesize_16MHz_ticks: 9151 #20479 #number of 16MHz ticks that defines size of a tpc readout frame
 
@@ -121,7 +121,7 @@ daq: {
     ##3502   # UDP request port
     request_mode: sequence #match sequenceID of request
     #match sequenceID of request
-    data_buffer_depth_fragments: 200 
+    data_buffer_depth_fragments: 10000 #200 
     data_buffer_depth_mb: 2000 #6000 # 1000 # 800
 
   }

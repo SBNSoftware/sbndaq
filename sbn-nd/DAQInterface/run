@@ -68,6 +68,7 @@ done
 #send_transition.sh config east_rates_nominal
 #send_transition.sh config east_rates_alex
 send_transition.sh config standard
+#send_transition.sh config henry_gain_tests
 #send_transition.sh config transparency_trigger
 #send_transition.sh config transparency_trigger_west
 #send_transition.sh config transparency_trigger_east

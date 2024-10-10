@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+timeout=20
+interval=2
+
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+export PATH=$THIS_SCRIPT_DIR/overrides:$PATH
+
+function getStatus() {
+    status=$(status.sh | grep String | awk '{print $2}' | tr -d "'")
+    echo $status
+}
+
+send_transition.sh stop
+
+elapsed=0
+status=$(getStatus)
+while [ "$status" != 'ready' ] && [ $elapsed -lt $timeout ]; do
+    sleep $interval
+    elapsed=$((elapsed + interval))
+    status=$(getStatus)
+done
+
+#if [ $elapsed -ge $timeout ] && [ -f "$THIS_SCRIPT_DIR/fast-stop" ]; then
+#    "$THIS_SCRIPT_DIR/fast-stop"
+#fi
+
+send_transition.sh terminate
+status=$(getStatus)
+while [ "$status" != 'stopped' ]; do
+    sleep 2
+    status=$(getStatus)
+done
+

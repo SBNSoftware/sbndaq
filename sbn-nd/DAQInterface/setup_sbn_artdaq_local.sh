@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-SBNDAQ_VERSION="v1_10_01"
-SBNDAQ_QUALS="e26:prof:s120a"
+SBNDAQ_VERSION="v1_10_02"
+SBNDAQ_QUALS="e26:prof:s131"
 DAQINTERFACE_VERSION="v3_13_00"
 ARTDAQ_VERSION="v3_13_00"
 
@@ -37,7 +37,7 @@ else
 fi
 
 setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUALS}
-setup artdaq_demo $ARTDAQ_VERSION -q ${SBNDAQ_QUALS}
+#setup artdaq_demo $ARTDAQ_VERSION -q ${SBNDAQ_QUALS}
 #setup valgrind
 
 export ARTDAQ_DATABASE_ENV="${HOME}/.artdaq_database-sbndaq${SBNDAQ_VERSION}.env"

@@ -18,7 +18,7 @@ export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-di
 export ARTDAQ_DATABASE_URI=${ARTDAQ_DATABASE_URI:-"filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"}
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
 
-export DAQINTERFACE_SETUP_COMMAND=${DAQINTERFACE_SETUP_COMMAND:-"setup artdaq_daqinterface v3_12_08"}
+export DAQINTERFACE_SETUP_COMMAND=${DAQINTERFACE_SETUP_COMMAND:-"setup artdaq_daqinterface v3_13_00"}
 eval "$DAQINTERFACE_SETUP_COMMAND"
 (( $? == 0 )) || { echo "Error: Failed running \"${DAQINTERFACE_SETUP_COMMAND}\""; exit 2; }
 

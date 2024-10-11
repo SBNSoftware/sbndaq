@@ -8,7 +8,7 @@ my_artdaq_database_env=${ARTDAQ_DATABASE_ENV:-${HOME}/.artdaq_database.env}
 set -o allexport; source ${my_artdaq_database_env}; source ${my_artdaq_database_env}; set +o allexport
 
 #defaults
-my_artdaq_database_setup_command=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_09_00 -q e20:prof:s120a"}
+my_artdaq_database_setup_command=${ARTDAQ_DATABASE_SETUP_COMMAND:-"setup artdaq_database v1_10_00 -q e20:prof:s120a"}
 my_workarea=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/CONFIG_MigrationArea"}
 my_artdaqdb_uri=${ARTDAQ_DATABASE_URI:-"filesystemdb://${my_workarea}/filesystemdb/test_db"}
 my_script_dir=$(unset CDPATH && cd "$(dirname "$0")" && echo $PWD)/config-migration-scripts

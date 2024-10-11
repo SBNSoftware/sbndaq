@@ -6,7 +6,7 @@ setup mrb v6_08_01
 
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(dirname "${BASH_SOURCE[0]}")
 THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "${THIS_SBN_DAQ_DAQINTERFACE_DIR}")
-SBNDAQ_VERSION="v1_09_02"
+SBNDAQ_VERSION="v1_10_02"
 SBNDAQ_QUAL1="e20"
 SBNDAQ_QUAL2="prof"
 SBNDAQ_QUAL3="s120a"
@@ -34,7 +34,7 @@ setup sbndaq $SBNDAQ_VERSION -q ${SBNDAQ_QUAL1}:${SBNDAQ_QUAL2}:${SBNDAQ_QUAL3}
 
 export ARTDAQ_DATABASE_CONFDIR=/daq/software/database/config
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
-setup artdaq_daqinterface v3_12_08
+setup artdaq_daqinterface v3_13_00
 
 # reconfigure locale
 export LANG='en_US.UTF-8'

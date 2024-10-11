@@ -1,0 +1,1 @@
+HighRate_Boot.template

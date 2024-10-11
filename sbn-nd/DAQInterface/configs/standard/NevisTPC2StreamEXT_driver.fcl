@@ -1,5 +1,5 @@
 
-nu_dma_buffer_size: 1e5 # 1e4 # < 1e6
+nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
 # 1e4 # < 1e6
 sn_dma_buffer_size: 1e5 #1e6 # 1e5 # < 4e6
 # 1e5 # < 4e6
@@ -23,7 +23,7 @@ daq: {
     # Frequency in Hz of the Controller trigger
     DumpBinary: false # Write binary file before the artdaq back-end
     # Write binary file before the artdaq back-end
-    DumpBinaryDir: "/data" 
+    DumpBinaryDir: "/data/NevisDebugging" 
 
     DoSNReadout: false # Do continuous readout
     # Do continuous readout

@@ -14,7 +14,7 @@ daq: {
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 35 #25  #40 #100
+    buffer_count: 25 #35 #25  #40 #100
     max_incomplete_events: 15 #50 # Same as boardreader sync interval
 
     verbose: true
@@ -66,6 +66,8 @@ outputs: {
       maxRuns: 1
       maxEvents: 20 #close files out a little faster for the prescaled stream
     }
+    freePercent: 20
+    freeMB: 20000
 
     fastCloning: false
     compressionLevel: 501 #0
@@ -74,6 +76,8 @@ outputs: {
   testOutput: {
     module_type: RootDAQOut
     fileName: "/data/test_daq/data_%p_run%R_%#_%to.root"
+    freePercent: 20
+    freeMB: 20000
 
     fileProperties: {
       maxSubRuns: 1

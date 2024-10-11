@@ -8,6 +8,8 @@ fragment_receiver: {
   max_fragment_size_bytes: 1000000
   GetNextFragmentBunchSize: 20
 
+  DumpBinary: true # Dump binary before artdaq back-end
+
   fragment_id: 0
   board_id:    0
 
@@ -37,14 +39,15 @@ fragment_receiver: {
   eventCounterWarning:  1       
   memoryAlmostFull:     2    
   maxEventsPerTransfer: 1
-  runSyncMode:          0
+  runSyncMode:          0 # Run synchronization mode: 0=disabled 
     
-  readoutMode:          0
-  testPattern:          0
+  readoutMode:          0 # jcrespo: useless?
+  #testPattern:         0
+  testPattern:          1 # Triangular waveform from 0 to 1023
   irqWaitTime:          1 
    
-  outputSignalMode:     0    
-  usePedestals:         false
+  outputSignalMode:     0 # jcrespo: useless?    
+  usePedestals:         false # jcrespo: useless?
   dacValue:             32768 # jcrespo: useless?
 
   # ioLevel: 0=NIM, 1=TTL
@@ -53,10 +56,10 @@ fragment_receiver: {
   nChannels:            64
   nGroups:              8
 
-  boardId: 0
+  boardId: 0 # jcrespo: useless?
 
   # default waveform length and postpercent
-  recordLength:         636   # Good: 636 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
+  recordLength:         768 # Good: 636, 768, 1536 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
   postPercent:         0 # Good 0; Bad: 50,75,76,80,90,100 # For V1740 make sure that postPercent*recordLength is an integer multiple of 3??????
   #UseTimeTagForTimeStamp: false # CIEMAT case without a PPS
   UseTimeTagForTimeStamp: true #True is using the PPS information
@@ -116,7 +119,7 @@ fragment_receiver: {
   groupEnable7:    true
 
 
-  BoardChainNumber: 0
+  BoardChainNumber: 0 # For daisy chaining boards
   GetNextSleep: 10
   InterruptEnable: 1
     

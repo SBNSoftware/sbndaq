@@ -4,14 +4,14 @@
 #include "feb114.fcl"
 #include "feb118.fcl"
 #include "feb048.fcl"
-#include "feb108.fcl"
+#include "feb145.fcl"
 #include "feb119.fcl"
 
 daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
 daq.metrics.graphite.namespace: "sbnd.crttoplow03."
 
-#daq.fragment_receiver.fragment_ids: [ 114, 118, 48, 108, 119 ]
-daq.fragment_receiver.fragment_ids: [ 0xB572, 0xB576, 0xB530, 0xB56C, 0xB577 ]
+#daq.fragment_receiver.fragment_ids: [ 114, 118, 48, 145, 119 ]
+daq.fragment_receiver.fragment_ids: [ 0xB572, 0xB576, 0xB530, 0xB591, 0xB577 ]
 
 daq.fragment_receiver.ReaderID: 114
 
@@ -24,7 +24,7 @@ daq.fragment_receiver.PPS_offset_ns : [ 458, 447, 447, 458, 469 ]
 daq.fragment_receiver.FEBConfigurationMAC114: @local::FEB114Configuration
 daq.fragment_receiver.FEBConfigurationMAC118: @local::FEB118Configuration
 daq.fragment_receiver.FEBConfigurationMAC48: @local::FEB048Configuration
-daq.fragment_receiver.FEBConfigurationMAC108: @local::FEB108Configuration
+daq.fragment_receiver.FEBConfigurationMAC145: @local::FEB145Configuration
 daq.fragment_receiver.FEBConfigurationMAC119: @local::FEB119Configuration
 
 daq.fragment_receiver.FEBConfigurationMAC114.charge_threshold: 250
@@ -33,7 +33,7 @@ daq.fragment_receiver.FEBConfigurationMAC118.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC118.time_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC48.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC48.time_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC108.charge_threshold: 250
-daq.fragment_receiver.FEBConfigurationMAC108.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC145.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC145.time_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC119.charge_threshold: 250
 daq.fragment_receiver.FEBConfigurationMAC119.time_threshold: 250

@@ -1,4 +1,4 @@
-events_to_generate: 10
+events_to_generate: 100
 run_number: 100
 
 fragment_receiver: {
@@ -14,10 +14,10 @@ fragment_receiver: {
   board_id:    0
 
   # link is which port on the PCIe card it is connected, numbering starts at 0 
-  link: 0 # Slot 7
+  #link: 0 # Slot 7
   #link: 1 # Slot 13
   #link: 2 # Slot 16
-  #link: 3 # Slot 19
+  link: 3 # Slot 19
   enableReadout: 1
 
   Verbosity: 1
@@ -27,7 +27,7 @@ fragment_receiver: {
   ModeLVDS: 0
 
   # SelfTriggerMode 0:Disabled 1:ACQ_ONLY 2:EXTOUT_ONLY 3:ACQ_AND_EXTOUT
-  SelfTriggerMode: 1
+  # SelfTriggerMode: 0 # SBND V1740s do not make triggers
 
   # if a second trigger arrives before the readout is finished, set to false to ignore and true to extend readout
   allowTriggerOverlap: true
@@ -45,8 +45,8 @@ fragment_receiver: {
   runSyncMode:          0 # Run synchronization mode: 0=disabled 
     
   readoutMode:          0 # jcrespo: useless?
-  #testPattern:         0
-  testPattern:          1 # Triangular waveform from 0 to 1023
+  testPattern:         0
+  #testPattern:          1 # Triangular waveform from 0 to 1023
   irqWaitTime:          1 
    
   outputSignalMode:     0 # jcrespo: useless?    
@@ -59,11 +59,11 @@ fragment_receiver: {
   nChannels:            64
   nGroups:              8
 
-  boardId: 0 # jcrespo: useless?
+  boardId: 0 # jcrespo: used by artdaq?
 
   # default waveform length and postpercent
   recordLength:         768 # Good: 636, 768, 1536 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
-  postPercent:         0 # Good 0; Bad: 50,75,76,80,90,100 # For V1740 make sure that postPercent*recordLength is an integer multiple of 3??????
+  postPercent:         90 # Any number between 0 and 100
   #UseTimeTagForTimeStamp: false # CIEMAT case without a PPS
   UseTimeTagForTimeStamp: true #True is using the PPS information
   # adds an offset to the fragment timestamp, set to 0 for SBND
@@ -91,7 +91,7 @@ fragment_receiver: {
   acqMode:              0
 
   # triggerPolarity: 0=positive (trigger on rising edge), 1= negative (trigger on falling edge)
-  triggerPolarity:      1   
+  # triggerPolarity:      1   # SBND V1740s do not make triggers
 
   CircularBufferSize: 500e6
 
@@ -102,14 +102,14 @@ fragment_receiver: {
   # Offset make the baseline decrease. The range of the DAC is about 5% (typ.) larger than the ADC range, hence DAC
   #  settings close to 0 and 64K correspond to ADC respectively over and under range.
   #
-  groupPedestal0:  2048
-  groupPedestal1:  2048
-  groupPedestal2:  2048
-  groupPedestal3:  2048
-  groupPedestal4:  2048
-  groupPedestal5:  2048
-  groupPedestal6:  2048
-  groupPedestal7:  2048
+  groupPedestal0:  57343
+  groupPedestal1:  57343
+  groupPedestal2:  57343
+  groupPedestal3:  57343
+  groupPedestal4:  57343
+  groupPedestal5:  57343
+  groupPedestal6:  57343
+  groupPedestal7:  57343
 
   # Set to true to save the waveform
   groupEnable0:    true

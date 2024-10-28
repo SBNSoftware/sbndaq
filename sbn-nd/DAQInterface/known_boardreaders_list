@@ -99,3 +99,9 @@ pmt09 sbnd-pds05-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
 pmt09PUSH sbnd-pds05-daq -1 1 0-15
 dummygenerator sbnd-evb02-daq -1 1
+dummy1730PUSH sbnd-pds05-daq -1 1 0-15
+xarapuca01PUSH sbnd-pds04-daq -1 1 0-15
+xarapuca01 sbnd-pds04-daq -1 1 0-15
+xarapuca02 sbnd-pds04-daq -1 1 0-15
+xarapuca03 sbnd-pds04-daq -1 1 0-15
+xarapuca04 sbnd-pds04-daq -1 1 0-15

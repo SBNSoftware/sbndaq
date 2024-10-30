@@ -1,0 +1,86 @@
+ 
+#include "pmt02_default.fcl" 
+#Baseline value is around 14250 ADC, so to set a 30 ADC threshold set the value to 14220
+daq.fragment_receiver.triggerThreshold0: 14205 
+
+daq.fragment_receiver.triggerThreshold1: 14205 
+
+daq.fragment_receiver.triggerThreshold2: 14205 
+
+daq.fragment_receiver.triggerThreshold3: 14205 
+
+daq.fragment_receiver.triggerThreshold4: 14205 
+
+daq.fragment_receiver.triggerThreshold5: 14205 
+
+daq.fragment_receiver.triggerThreshold6: 14205 
+
+daq.fragment_receiver.triggerThreshold7: 14205 
+
+daq.fragment_receiver.triggerThreshold8: 14205 
+
+daq.fragment_receiver.triggerThreshold9: 14205 
+
+daq.fragment_receiver.triggerThreshold10: 14205 
+
+daq.fragment_receiver.triggerThreshold11: 14205 
+
+daq.fragment_receiver.triggerThreshold12: 14205 
+
+daq.fragment_receiver.triggerThreshold13: 14205 
+
+daq.fragment_receiver.triggerThreshold14: 14205 
+
+daq.fragment_receiver.triggerThreshold15: 2000 #set this back to 2000 to prevent weird ghost MON out
+#May just change waveform saving rather than actual outputs
+daq.fragment_receiver.channelEnable0: true 
+
+daq.fragment_receiver.channelEnable1: true 
+
+daq.fragment_receiver.channelEnable2: true 
+
+daq.fragment_receiver.channelEnable3: true 
+
+daq.fragment_receiver.channelEnable4: true 
+
+daq.fragment_receiver.channelEnable5: true 
+
+daq.fragment_receiver.channelEnable6: true 
+
+daq.fragment_receiver.channelEnable7: true 
+
+daq.fragment_receiver.channelEnable8: true 
+
+daq.fragment_receiver.channelEnable9: true 
+
+daq.fragment_receiver.channelEnable10: true 
+
+daq.fragment_receiver.channelEnable11: true 
+
+daq.fragment_receiver.channelEnable12: true 
+
+daq.fragment_receiver.channelEnable13: true 
+
+daq.fragment_receiver.channelEnable14: true 
+
+daq.fragment_receiver.channelEnable15: true 
+#Per pair trigger logics for the MON output
+daq.fragment_receiver.Pair_0_1_Logic: 3 
+
+daq.fragment_receiver.Pair_2_3_Logic: 3 
+
+daq.fragment_receiver.Pair_4_5_Logic: 3 
+
+daq.fragment_receiver.Pair_6_7_Logic: 3 
+
+daq.fragment_receiver.Pair_8_9_Logic: 3 
+
+daq.fragment_receiver.Pair_10_11_Logic: 3 
+
+daq.fragment_receiver.Pair_12_13_Logic: 3 
+
+daq.fragment_receiver.Pair_14_15_Logic: 1 
+
+daq.fragment_receiver.ovthValue: 1 
+
+daq.fragment_receiver.triggerPulseWidth: 12 

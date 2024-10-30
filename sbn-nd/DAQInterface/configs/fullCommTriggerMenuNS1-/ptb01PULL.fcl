@@ -1,0 +1,6 @@
+ 
+#include "ptb01PULL_default.fcl" 
+ 
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/commissioning_trigger_menu/ptbmk2_nd_full_menu_ns_flash_20pairs.fcl" 
+
+daq.fragment_receiver.board_config: @local::board_config 

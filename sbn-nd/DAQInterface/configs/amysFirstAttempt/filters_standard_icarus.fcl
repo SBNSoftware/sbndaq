@@ -1,0 +1,615 @@
+
+bnbmajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+numimajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+offbeambnbmajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffBeamBNB
+#OffBeamBNB
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+offbeamnumimajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffBeamNUMI
+#OffBeamNUMI
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+bnbminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+numiminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+offbeambnbminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffBeamBNB
+#OffBeamBNB
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+offbeamnumiminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffBeamNUMI
+#OffBeamNUMI
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+bnbfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: -1 #all
+#all
+trigger_location: -1 
+
+}
+bnbmajeastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 1 
+
+}
+bnbmajwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 2 
+
+}
+bnbmajbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 
+
+trigger_type: 0 
+
+trigger_location: 7 
+
+}
+bnbmineastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 1 
+
+}
+bnbminwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 2 
+
+}
+bnbminbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 
+
+trigger_type: 1 
+
+trigger_location: 7 
+
+}
+numifilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: -1 
+
+trigger_location: -1 
+
+}
+numimajeastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI                                                                                                       
+#NUMI                                                                                                       
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 1 
+
+}
+numimajwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 2 
+
+}
+numimajbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 7 
+
+}
+numimineastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 1 
+
+}
+numiminwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 2 
+
+}
+numiminbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 7 
+
+}
+
+
+///////-----------------these seem to all repeat now?-------------------------------------------------
+bnbmajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+numimajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+offbeambnbmajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffBeamBNB
+#OffBeamBNB
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+offbeamnumimajorityfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffBeamNUMI
+#OffBeamNUMI
+trigger_type: 0 #majority
+#majority
+trigger_location: -1 
+
+}
+bnbminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 1 #BNB
+#BNB
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+numiminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 2 #NUMI
+#NUMI
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+offbeambnbminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffBeamBNB
+#OffBeamBNB
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+offbeamnumiminbiasfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffBeamNUMI
+#OffBeamNUMI
+trigger_type: 1 #minbias
+#minbias
+trigger_location: -1 
+
+}
+offbeambnbfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: -1 #all
+#all
+trigger_location: -1 
+
+}
+offbeambnbmajeastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 1 
+
+}
+offbeambnbmajwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 2 
+
+}
+offbeambnbmajbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB 
+#OffbeamBNB 
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 7 
+
+}
+offbeambnbmineastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: 1 #Minbias
+#Minbias
+trigger_location: 1 
+
+}
+offbeambnbminwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 2 
+
+}
+offbeambnbminbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 3 #OffbeamBNB
+#OffbeamBNB
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 7 
+
+}
+offbeamnumifilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: -1 #all
+#all
+trigger_location: -1 
+
+}
+offbeamnumimajeastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 1 
+
+}
+offbeamnumimajwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 2 
+
+}
+offbeamnumimajbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 0 #Majority
+#Majority
+trigger_location: 7 
+
+}
+offbeamnumimineastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 1 #Majority
+#Majority
+trigger_location: 1 
+
+}
+offbeamnumiminwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 1 #Majority
+#Majority
+trigger_location: 2 
+
+}
+offbeamnumiminbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 4 #OffbeamNUMI
+#OffbeamNUMI
+trigger_type: 1 #Majority
+#Majority
+trigger_location: 7 
+
+}
+calibeastfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 5 #Calib
+#Calib
+trigger_type: 1 # Minbias
+# Minbias
+trigger_location: 1 
+
+}
+calibwestfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 5 #Calib
+#Calib
+trigger_type: 1 # Minbias
+# Minbias
+trigger_location: 2 
+
+}
+calibbothfilter: {
+
+module_type: "ICARUSGateFilter" 
+
+raw_data_label: "daq" 
+
+gate_type: 5 #Calib
+#Calib
+trigger_type: 1 # Minbias
+# Minbias
+trigger_location: 7 
+
+}

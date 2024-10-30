@@ -1,0 +1,6 @@
+ 
+#include "pmt09_default.fcl" 
+#======Place override parameters below=========
+daq.fragment_receiver.recordLength: 5000 
+
+daq.fragment_receiver.postPercent: 80 

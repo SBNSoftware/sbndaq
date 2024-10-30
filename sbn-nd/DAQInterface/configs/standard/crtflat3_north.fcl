@@ -6,22 +6,19 @@ daq.fragment_receiver.ethernet_port: "ens4f2"
 #daq.fragment_receiver.ethernet_port: "ens8f1"
 
 # List of FEBs in the daisy chain (readable, then hex)
-daq.fragment_receiver.fragment_ids:                 [ 93, 94, 95, 87, 97, 98, 77, 78 ]
-#daq.fragment_receiver.fragment_ids:                 [ 97, 98, 77, 78, 83, 84, 104, 103, 102, 101 ]
-#daq.fragment_receiver.fragment_ids:                  [ 0xB061, 0xB062, 0xB04D, 0xB04E, 0xB053, 0xB054, 0xB068, 0xB067, 0xB066, 0xB065 ]
+#daq.fragment_receiver.fragment_ids:                 [ 93, 94, 95, 87, 97, 98, 77, 78 ]
+daq.fragment_receiver.fragment_ids:                 [ 0xB05D, 0xB05E, 0xB05F, 0xB057, 0xB061, 0xB062, 0xB04D, 0xB04E ]
+
 # Number of FEBs
-daq.fragment_receiver.generated_fragments_per_event: 8
+
 # First board in the chain
 daq.fragment_receiver.ReaderID:                      93
-#daq.fragment_receiver.ReaderID:                      101
 
 # SiPM HV On?
 daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true, true, true]
 #daq.fragment_receiver.TurnOnHV : [ true , true, true, true, true, true, true, true, true, true ]
 
-# How much the PPS signal coming to FEB is delayed due to cable length - currently all relative to first board
-daq.fragment_receiver.PPS_offset_ns : [ 0, 16, 32, 48, 64, 80, 112, 128]
-#daq.fragment_receiver.PPS_offset_ns : [ 0, 16, 32, 48, 64, 80, 112, 128, 144, 160 ]
+daq.fragment_receiver.PPS_offset_ns : [ 453, 469, 485, 501, 517, 533, 549, 565]
 
 # Name for the grouping this will appear in on grafana
 daq.metrics.graphite.namespace: "sbnd.crtflat02."
@@ -58,19 +55,6 @@ daq.fragment_receiver.FEBConfigurationMAC77.time_threshold: 350
 daq.fragment_receiver.FEBConfigurationMAC78: @local::FEBConfigurationStandard
 daq.fragment_receiver.FEBConfigurationMAC78.charge_threshold: 350
 daq.fragment_receiver.FEBConfigurationMAC78.time_threshold: 350
-
-#daq.fragment_receiver.FEBConfigurationMAC103: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC103.charge_threshold: 350
-#daq.fragment_receiver.FEBConfigurationMAC103.time_threshold: 350
-
-#daq.fragment_receiver.FEBConfigurationMAC102: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC102.charge_threshold: 350
-#daq.fragment_receiver.FEBConfigurationMAC102.time_threshold: 350
-
-#daq.fragment_receiver.FEBConfigurationMAC101: @local::FEBConfigurationStandard
-#daq.fragment_receiver.FEBConfigurationMAC101.charge_threshold: 350
-#daq.fragment_receiver.FEBConfigurationMAC101.time_threshold: 350
-
 
 ##################
 #

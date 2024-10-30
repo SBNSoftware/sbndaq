@@ -1,3 +1,4 @@
+#daq.event_builder.
 services: {
   ArtdaqSharedMemoryServiceInterface: {
    service_provider: ArtdaqSharedMemoryService
@@ -9,11 +10,11 @@ services: {
 daq: {
   event_builder: {
 
-    stale_buffer_timeout_usec: 5000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    stale_buffer_timeout_usec: 3000000 #1000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
     expected_fragments_per_event: 0  # Will be set by DAQInterface
     use_art: true
     print_event_store_stats: true
-    buffer_count: 30 #100
+    buffer_count: 35 #25  #40 #100
     max_incomplete_events: 15 #50 # Same as boardreader sync interval
 
     verbose: true
@@ -21,7 +22,8 @@ daq: {
     request_address: "227.128.11.129"          # Multi-cast request address
     multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
     request_port: 3001
-
+    
+    art_analyzer_count: 4 #5
     #num_requests: 500
 
     tcp_receive_buffer_size: 64000
@@ -34,7 +36,7 @@ daq: {
   metrics: {
     evbFile: {
       metricPluginType: "file"
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       fileName: "/daq/log/metrics/evb00_metrics.log"
       uniquify: true
     }
@@ -44,7 +46,7 @@ send_system_metrics: true
 send_process_metrics: true
 
     graphite: {
-      level_string: "1,2,11-20"
+      level_string: "1-10,11-20"
       metricPluginType: "graphite"
       reporting_interval: 10.0
       host:"10.226.36.34"
@@ -55,24 +57,9 @@ send_process_metrics: true
 }
 
 outputs: {
-  mode0Output: {
-    module_type: RootDAQOut
-    fileName: "/data/daq/data_mode0_%p_run%R_%#_%to.root"
-
-    fileProperties: { 
-      maxSubRuns: 1 
-      maxRuns: 1 
-      maxEvents: 20 #close files out a little faster for the prescaled stream
-    }
-
-    fastCloning: true
-    compressionLevel: 0
-    SelectEvents: [ mode0 ]    
-  }
-
   normalOutput: {
     module_type: RootDAQOut
-    fileName: "/data/daq/data_%p_run%R_%#_%to.root"
+    fileName: "/data/daq/data_%p_${app_name}_run%R_%#_%to.root"
 
     fileProperties: {
       maxSubRuns: 1
@@ -80,9 +67,9 @@ outputs: {
       maxEvents: 20 #close files out a little faster for the prescaled stream
     }
 
-    fastCloning: true
-    compressionLevel: 0
-    SelectEvents: [p2]
+    fastCloning: false
+    compressionLevel: 501 #0
+    SelectEvents: [ mode0 ] #p1
   }
   testOutput: {
     module_type: RootDAQOut
@@ -94,7 +81,7 @@ outputs: {
       maxEvents: 100
     }
 
-    fastCloning: true
+    fastCloning: false
     compressionLevel: 0
     SelectEvents: []
   }
@@ -104,6 +91,9 @@ outputs: {
     nonblocking_sends: true
   	destinations: { }
     #SelectEvents: [p1]
+    #configs from normal output that I was not realizing I wasn't running and am not entirely sure if are applicable here 
+    fastCloning: false #true
+    compressionLevel: 501 #0
     host_map: [{
       rank: -1
       host: "localhost"
@@ -124,12 +114,11 @@ physics: {
   }
 
   producers: {
-
       crttriggerproducer: {
        module_type: "CRTMetricProducer"
        is_persistable: false
-       BeamWindowStart: 333000 #320000
-       BeamWindowEnd: 3333000 #350000
+       BeamWindowStart: 320000
+       BeamWindowEnd: 350000
        Verbose: true  
       }
   }
@@ -163,18 +152,17 @@ physics: {
 
   mode0: [ prescale1, crttriggerproducer ]
 
-  p1: [ ]
-  p2: [ prescale1 ]
-  pd: [ prescale5 ]
+  p0: [ ]
+  p1: [ prescale1 ]
+  p5: [ prescale5 ]
 
-  t1: [ crttriggerproducer ]
+  t1: [crttriggerproducer ]
 
   a1: [ fragWatcher ]
 
   #my_output_modules: []
-  my_output_modules: [ mode0Output ]
   #my_output_modules: [ rootNetOutput ]
-  #my_output_modules: [ normalOutput ]
+  my_output_modules: [ normalOutput ]
   #my_output_modules: [ normalOutput , rootNetOutput ]
 
   end_paths: [ a1, my_output_modules ]

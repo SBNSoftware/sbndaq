@@ -31,8 +31,8 @@ export BUILD_VARIANT="gcc@12.1.0"
 
 export CC="/daq/software/spack_packages/llvm/17.0.6/linux-scientific7-x86_64_v2-gcc-12.1.0-cxiefdsy6tgjwnvratpxwnydfl3mgtid/bin/clang"
 
-export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/lib:\
-/daq/software/spack_packages/sbndaq-artdaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/lib:\
+export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/lib:\
+/daq/software/spack_packages/sbndaq-artdaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/lib:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-scientific7-x86_64_v2-gcc-12.1.0-ucdbmchqivtxs5gkcuftoyoj4i2hr2lz/lib:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-scientific7-x86_64_v2-gcc-12.1.0-k7b6uwrt6inosl7ngyuy24dnwmhikhdg/lib:\
 /daq/software/spack_packages/artdaq-core-demo/v1_11_00/linux-scientific7-x86_64_v2-gcc-12.1.0-wdm56kqxcs7bazfmmeszlzpjao4avi54/lib:\
@@ -47,12 +47,12 @@ export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v1_10_02/linux-scient
 
 export CLING_STANDARD_PCH="none"
 
-export CMAKE_PREFIX_PATH=/daq/software/spack_packages/sbndaq-suite/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-mtdko6yfsrk2roge5trpwc47g6ggfftv:\
-/daq/software/spack_packages/sbndaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5:\
-/daq/software/spack_packages/sbndaq-artdaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj:\
+export CMAKE_PREFIX_PATH=/daq/software/spack_packages/sbndaq-suite/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-mtdko6yfsrk2roge5trpwc47g6ggfftv:\
+/daq/software/spack_packages/sbndaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5:\
+/daq/software/spack_packages/sbndaq-artdaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj:\
 /daq/software/spack_packages/windriver/v12_06_00/linux-scientific7-x86_64_v2-gcc-12.1.0-kwkgb3djemip5uhmlgpabhbp4f2au6c7:\
-/daq/software/spack_packages/wibtools/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w:\
-/daq/software/spack_packages/sbndaq-artdaq-core/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-rsiojwkkslij6rf2qduyysaoc5apdsfm:\
+/daq/software/spack_packages/wibtools/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w:\
+/daq/software/spack_packages/sbndaq-artdaq-core/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-rsiojwkkslij6rf2qduyysaoc5apdsfm:\
 /daq/software/spack_packages/redis/7.0.5/linux-scientific7-x86_64_v2-gcc-12.1.0-4upkrlnhprbjbi3tl4iyazvz3j3zhieh:\
 /daq/software/spack_packages/libpqxx/7.6.0/linux-scientific7-x86_64_v2-gcc-12.1.0-cugqcnob2who6p3mt3uoljfxulrweidb:\
 /daq/software/spack_packages/jsoncpp/1.9.5/linux-scientific7-x86_64_v2-gcc-12.1.0-touqunzsbrejo5bkcgd5tlffcnt54g2h:\
@@ -222,18 +222,18 @@ export CXX="/daq/software/spack_packages/llvm/17.0.6/linux-scientific7-x86_64_v2
 
 export DAQINTERFACE_CONFIGURE_STATUS_CHECK_QUIET_TIME="60"
 
-export DAQ_SETUP_SCRIPT="/home/nfs/icarus/DAQ_SPACK_DevAreas/DAQ_2024-09-30_GAL_v1_10_02/srcs/sbndaq/sbn-fd/DAQInterface2/setup_sbn_artdaq.sh"
+export DAQ_SETUP_SCRIPT="/home/nfs/icarus/DAQ_SPACK_DevAreas/DAQ_2024-09-30_GAL_v1_10_03/srcs/sbndaq/sbn-fd/DAQInterface2/setup_sbn_artdaq.sh"
 
 export DISABLE_SPACK_SETUP="True"
 
-export EIB_CONFIG_PATH="/daq/software/spack_packages/wibtools/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/config"
+export EIB_CONFIG_PATH="/daq/software/spack_packages/wibtools/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/config"
 
 export EPICS_BASE="/daq/software/spack_packages/epics-base/7.0.6.1/linux-scientific7-x86_64_v2-gcc-12.1.0-im4exal6z2e6zc7qlqnpp5vitzxp6zfx"
 
 export EPICS_HOST_ARCH="linux-x86_64"
 
-export FHICL_FILE_PATH=/daq/software/spack_packages/sbndaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/fcl:\
-/daq/software/spack_packages/sbndaq-artdaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/fcl:\
+export FHICL_FILE_PATH=/daq/software/spack_packages/sbndaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/fcl:\
+/daq/software/spack_packages/sbndaq-artdaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/fcl:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-scientific7-x86_64_v2-gcc-12.1.0-ucdbmchqivtxs5gkcuftoyoj4i2hr2lz/fcl:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-scientific7-x86_64_v2-gcc-12.1.0-k7b6uwrt6inosl7ngyuy24dnwmhikhdg/fcl:\
 /daq/software/spack_packages/artdaq-core-demo/v1_11_00/linux-scientific7-x86_64_v2-gcc-12.1.0-wdm56kqxcs7bazfmmeszlzpjao4avi54/fcl:\
@@ -365,9 +365,9 @@ export PATH=/daq/software/spack_packages/epics-base/7.0.6.1/linux-scientific7-x8
 /daq/software/spack_packages/pigz/2.8/linux-scientific7-x86_64_v2-gcc-12.1.0-wjfsbc3sbgsvxwr5iajmmtblgajssu2k/bin:\
 /daq/software/spack_packages/xz/5.4.6/linux-scientific7-x86_64_v2-gcc-12.1.0-63uqskev6ph3q52qegolmbx44i5ixlzo/bin:\
 /daq/software/spack_packages/bzip2/1.0.8/linux-scientific7-x86_64_v2-gcc-12.1.0-qrfia4en6qnnqqzbtped72hd35v7wj3o/bin:\
-/daq/software/spack_packages/sbndaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/bin:\
-/daq/software/spack_packages/sbndaq-artdaq/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/bin:\
-/daq/software/spack_packages/wibtools/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/bin:\
+/daq/software/spack_packages/sbndaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-j7n3ntis4g3rld4uwzc5kc5rrsgwwvw5/bin:\
+/daq/software/spack_packages/sbndaq-artdaq/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-5ip7ufm375t5nceuowi7zjdgwidxw4mj/bin:\
+/daq/software/spack_packages/wibtools/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/bin:\
 /daq/software/spack_packages/redis/7.0.5/linux-scientific7-x86_64_v2-gcc-12.1.0-4upkrlnhprbjbi3tl4iyazvz3j3zhieh/bin:\
 /daq/software/spack_packages/libzmq/4.3.5/linux-scientific7-x86_64_v2-gcc-12.1.0-riyrk4qj5ht2gdifl2z4drqxqpqcws4a/bin:\
 /daq/software/spack_packages/gdb/14.2/linux-scientific7-x86_64_v2-gcc-12.1.0-n3m5lfs3o3ovdu7fi6yips46elt2znwn/bin:\
@@ -664,7 +664,7 @@ export ROOT_INCLUDE_PATH=/daq/software/spack_packages/canvas-root-io/1.13.06/lin
 /daq/software/spack_packages/xz/5.4.6/linux-scientific7-x86_64_v2-gcc-12.1.0-63uqskev6ph3q52qegolmbx44i5ixlzo/include:\
 /daq/software/spack_packages/bzip2/1.0.8/linux-scientific7-x86_64_v2-gcc-12.1.0-qrfia4en6qnnqqzbtped72hd35v7wj3o/include:\
 /daq/software/spack_packages/gcc-runtime/12.1.0/linux-scientific7-x86_64_v2-gcc-12.1.0-5q6qhr6zztifbsml5e6xqm6fpjnnsm5g/include:\
-/daq/software/spack_packages/sbndaq-suite/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-mtdko6yfsrk2roge5trpwc47g6ggfftv/include:\
+/daq/software/spack_packages/sbndaq-suite/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-mtdko6yfsrk2roge5trpwc47g6ggfftv/include:\
 /daq/software/spack_packages/art-suite/s131/linux-scientific7-x86_64_v2-gcc-12.1.0-i55h3z2c2dlv2wqx5xvnte3277h64nhi/include:\
 /daq/software/spack_packages/art-root-io/1.13.06/linux-scientific7-x86_64_v2-gcc-12.1.0-mbefczr5drn3dqzk2xhbctrc5bayzari/include:\
 /usr/include
@@ -674,7 +674,7 @@ export ROOT_LIBRARY_PATH=/daq/software/spack_packages/art-root-io/1.13.06/linux-
 
 export ROOT_VERSION="v6"
 
-export SBNDAQ_VERSION="v1_10_02"
+export SBNDAQ_VERSION="v1_10_03"
 
 export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
 
@@ -694,15 +694,15 @@ export SPACK_PYTHON="/usr/bin/python3"
 
 export SPACK_ROOT="/daq/software/spack_packages/spack/current/NULL"
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/icarus/DAQ_SPACK_DevAreas/DAQ_2024-09-30_GAL_v1_10_02/srcs/sbndaq/sbn-fd/DAQInterface2"
+export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/icarus/DAQ_SPACK_DevAreas/DAQ_2024-09-30_GAL_v1_10_03/srcs/sbndaq/sbn-fd/DAQInterface2"
 
-export WIBTOOLS_BIN="/daq/software/spack_packages/wibtools/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/bin"
+export WIBTOOLS_BIN="/daq/software/spack_packages/wibtools/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/bin"
 
-export WIB_ADDRESS_TABLE_PATH="/daq/software/spack_packages/wibtools/v1_10_02/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/tables"
+export WIB_ADDRESS_TABLE_PATH="/daq/software/spack_packages/wibtools/v1_10_03/linux-scientific7-x86_64_v2-gcc-12.1.0-4aoqas6ds4fztr6hvgkdsw5q54jejw2w/tables"
 
 export XLOCALEDIR=/daq/software/spack_packages/libx11/1.8.10/linux-scientific7-x86_64_v2-gcc-12.1.0-aa7aeodujtslhhjy7mdvllk33rm46n7q/share/X11/locale
 
-export _a="sbndaq-suite@v1_10_02%gcc@12.1.0 arch=linux-scientific7-x86_64_v2 /mtdko6y"
+export _a="sbndaq-suite@v1_10_03%gcc@12.1.0 arch=linux-scientific7-x86_64_v2 /mtdko6y"
 
 export _pa_canonical=":"
 

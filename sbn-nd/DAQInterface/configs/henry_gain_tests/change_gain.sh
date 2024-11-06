@@ -1,4 +1,4 @@
-CHANGE="s/15, 47/45, 47/g"
+CHANGE="s/15, 3/58, 3/g"
 
 for FEB in `ls feb*.fcl`
 do

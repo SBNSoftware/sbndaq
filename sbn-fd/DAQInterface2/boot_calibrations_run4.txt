@@ -8,41 +8,28 @@ Subsystem id: 1
 
 # EVENT BUILDERS
 
-EventBuilder host: icarus-evb01-daq
-EventBuilder label: EventBuilder1
+#EventBuilder host: icarus-evb01-daq
+#EventBuilder label: EventBuilder1
 
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder2
-
-EventBuilder host: icarus-evb03-daq
-EventBuilder label: EventBuilder3
-
-EventBuilder host: icarus-evb04-daq
-EventBuilder label: EventBuilder4
-
-EventBuilder host: icarus-evb05-daq
-EventBuilder label: EventBuilder5
-
-EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder6
-
-EventBuilder host: icarus-evb03-daq
-EventBuilder label: EventBuilder7
-
-EventBuilder host: icarus-evb04-daq
-EventBuilder label: EventBuilder8
-
-EventBuilder host: icarus-evb05-daq
-EventBuilder label: EventBuilder9
-
-EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder10
 
 EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder3
+EventBuilder label: EventBuilder7
 EventBuilder label: EventBuilder11
 
 EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder4
+EventBuilder label: EventBuilder8
 EventBuilder label: EventBuilder12
+
+EventBuilder host: icarus-evb05-daq
+EventBuilder label: EventBuilder1
+EventBuilder label: EventBuilder5
+EventBuilder label: EventBuilder9
 
 # DATA LOGGERS
 

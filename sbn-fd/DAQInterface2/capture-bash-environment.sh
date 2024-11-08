@@ -24,7 +24,8 @@ excluded_env_vars=("env_vars" "excluded_env_vars" "excluded_functions" "excluded
   "HISTFILESIZE" "HISTSIZE" "HOME" "HOSTNAME" "HOSTTYPE" "IFS" "KDEDIRS" "LANG" "LESSOPEN" "LINENO" "LINES" \
   "LOGNAME" "LS_COLORS" "MACHTYPE" "MAIL" "MAILCHECK" "OPTERR" "OPTIND" "OSTYPE" "PIPESTATUS" "PPID" "PS1" \
   "PS2" "PS4" "PWD" "RANDOM" "SECONDS" "SHELL" "SHELLOPTS" "SHLVL" "SSH_ASKPASS" "SSH_CLIENT" "SSH_CONNECTION" \
-  "SSH_TTY" "TERM" "UID" "USER" "XDG_DATA_DIRS" "XDG_RUNTIME_DIR" "XDG_SESSION_ID" "_" "var" )
+  "BASH_COMPLETION_COMPAT_DIR" "PROMPT_COMMAND" "SSH_TTY" "TERM" "UID" "USER" \
+  "XDG_DATA_DIRS" "XDG_RUNTIME_DIR" "XDG_SESSION_ID" "_" "var" )
 
 excluded_functions=("export_environment_vars" "export_functions" "export_aliases" "filter_unique_paths")
 
@@ -109,6 +110,7 @@ echo "#!/usr/bin/env bash" > $output_file
 echo "# Captured environment: $(date +%Y%m%d_%H%M%S)" >> $output_file
 echo >> $output_file
 echo '[[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename ${BASH_SOURCE}) should be sourced!"; exit 1; }' >> $output_file
+echo 'shopt -s extglob'  >> $output_file
 export_environment_vars
 export_functions
 #export_aliases

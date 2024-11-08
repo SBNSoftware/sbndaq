@@ -13,6 +13,8 @@ export PYTHONPATH=$(dirname $(dirname $(which conftool.py)))/python/:$PYTHONPATH
 export ARTDAQ_DATABASE_VERSION=$(spack find -d  --loaded |grep 'artdaq-database' 2>/dev/null | grep "artdaq-database" |grep -Eo 'v[0-9_]+')
 
 echo;echo
+
+#export  ARTDAQ_DATABASE_URI="filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"
 conftool.py
 
 _complete_conftool(){

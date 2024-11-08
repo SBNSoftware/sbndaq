@@ -35,4 +35,6 @@ disable_unique_rootfile_labels: true
 
 transfer_plugin_to_use: TCPSocket
 
-boardreader_priorities: icaruscrt*.* icarustpc*.* icaruspmt*.* wr.* icarustrigger.* .*
+boardreader_priorities_on_config: icarustrigger icaruscrt* icarustpc* icaruspmt* wr
+boardreader_priorities_on_start: icaruscrt* icarustpc* icaruspmt* wr icarustrigger
+boardreader_priorities_on_stop: icarustrigger icaruscrt* icarustpc* icaruspmt* wr

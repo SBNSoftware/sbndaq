@@ -6,11 +6,11 @@ SBNDAQ_VERSION='v1_10_02'
 BUILD_VARIANT='gcc@12.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/mtdko6y"
-    [almalinux9]="/clnglb4"
+    [scientific7]="/zvbmgig"
+    [almalinux9]="/se7z5bo"
 )
 
-USE_CACHED_BASH_ENV=False
+USE_CACHED_BASH_ENV=True
 
 SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
 

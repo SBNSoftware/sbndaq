@@ -31,7 +31,7 @@ daq.fragment_receiver.FEBConfigurationMAC157: @local::FEB157Configuration
 daq.fragment_receiver.FEBConfigurationMAC158: @local::FEB158Configuration
 daq.fragment_receiver.FEBConfigurationMAC182: @local::FEB182Configuration
 daq.fragment_receiver.FEBConfigurationMAC73: @local::FEB073Configuration
-daq.fragment_receiver.FEBConfigurationMAC58: @local::FEB58Configuration
+daq.fragment_receiver.FEBConfigurationMAC58: @local::FEB058Configuration
 daq.fragment_receiver.FEBConfigurationMAC149: @local::FEB149Configuration
 daq.fragment_receiver.FEBConfigurationMAC151: @local::FEB151Configuration
 daq.fragment_receiver.FEBConfigurationMAC150: @local::FEB150Configuration

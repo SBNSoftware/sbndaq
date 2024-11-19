@@ -4,11 +4,7 @@
 daq.metrics.graphite.namespace: "sbnd.evb01." 
 
 daq.metrics.evbFile.fileName: "/daq/log/metrics/evb01_p2_metrics.log" 
-outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb01_process2_${app_name}_run%R_%#_%to.root" 
-#outputs.normalOutput.fileName: "/data/afilk/data_evb01_${app_name}_run%R_%#_%to.root" 
-#outputs.testOutput.fileName: "/data/afilk/test_data/data_evb01_run%R_%#_%to.root" 
-
-physics.my_output_modules: [normalOutput, rootNetOutput] 
+#outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb01_process2_${app_name}_run%R_%#_%to.root" 
 
 process_name: DAQEVB01P2 
 

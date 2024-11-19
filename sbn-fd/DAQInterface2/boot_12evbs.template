@@ -7,37 +7,53 @@ debug level: 4
 Subsystem id: 1
 
 # EVENT BUILDERS
-
-#EventBuilder host: icarus-evb01-daq
-#EventBuilder label: EventBuilder1
-
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder2
+
+EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder6
+
+EventBuilder host: icarus-evb02-daq
+EventBuilder label: EventBuilder10
 
 EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder3
+
+EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder7
+
+EventBuilder host: icarus-evb03-daq
+EventBuilder label: EventBuilder11
 
 EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder4
+
+EventBuilder host: icarus-evb04-daq
 EventBuilder label: EventBuilder8
 
-EventBuilder host: icarus-evb05-daq
+EventBuilder host: icarus-evb04-daq
+EventBuilder label: EventBuilder12
+
+EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder1
+
+EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder5
+
+EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder9
 
 # DATA LOGGERS
-
 #DataLogger host: icarus-evb01-daq
 #DataLogger label: DataLogger1
 
+# DISPATCHER
 Dispatcher host: icarus-evb01-daq
 Dispatcher label: Dispatcher1
 # port number must be unique accros all partitions
 Dispatcher port: 6020
 
+# ROUTING MANAGER
 #RoutingManager host:  icarus-evb01-daq
 #RoutingManager label: RoutingManager1
 #RoutingManager target: DataLogger

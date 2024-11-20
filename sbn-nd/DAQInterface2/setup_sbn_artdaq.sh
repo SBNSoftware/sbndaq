@@ -6,11 +6,11 @@ SBNDAQ_VERSION='v1_10_03'
 BUILD_VARIANT='gcc@12.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/zvbmgig"
-    [almalinux9]="/se7z5bo"
+    [scientific7]="/j2ysbgc"
+    [almalinux9]="/l4ohdjv"
 )
 
-USE_CACHED_BASH_ENV=False
+USE_CACHED_BASH_ENV=True
 
 SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
 
@@ -74,7 +74,7 @@ else
       echo "Info: running capture-bash-environment.sh"
       source ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/capture-bash-environment.sh 2>&1
       if [[ -n "$ENV_OUTPUT_FILE" && -f "$ENV_OUTPUT_FILE" ]]; then
-        cp "$ENV_OUTPUT_FILE" "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh1"
+        cp "$ENV_OUTPUT_FILE" "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh"
         echo "Info: saved bash environment to ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh"
       fi
       echo "Info: finished running capture-bash-environment.sh"

@@ -7,6 +7,7 @@ CONFIGDIR="standard"
 if [ ! -z "$1" ]
     then
     CONFIGDIR=$1
+    echo "Using configs/$CONFIGDIR"
 else
     echo "Defaulting to configs/$CONFIGDIR"
 fi
@@ -73,9 +74,9 @@ getStatus "nil"
 
 #setdaqcomps.sh pmt09PUSH ptb01PULL spectdc crtSouthWallEastPULL crtSouthWallWestPULL crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
 
-#setdaqcomps.sh dummygenerator crtSouthWallEastPULL crtSouthWallWestPULL crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
+setdaqcomps.sh dummygenerator crtSouthWallEastPULL crtSouthWallWestPULL crtNorthWallWestPULL crtNorthWallEastPULL crtflat3_eastPULL crtflat3_northPULL crtflat3_southwestPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
 
-setdaqcomps.sh dummygenerator crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
+#setdaqcomps.sh dummygenerator crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL
 
 #setdaqcomps.sh dummygenerator crtTopLowWallCentralPULL
 
@@ -98,7 +99,7 @@ done
 #send_transition.sh config crossingmuon
 #send_transition.sh config east_rates_nominal
 #send_transition.sh config east_rates_alex
-send_transition.sh config standard
+#send_transition.sh config standard
 #send_transition.sh config henry_gain_tests
 #send_transition.sh config transparency_trigger
 #send_transition.sh config transparency_trigger_west
@@ -109,6 +110,7 @@ send_transition.sh config standard
 #send_transition.sh config crtTopHighTests
 #send_transition.sh config alex_strip_voltages_scan
 #send_transition.sh config alex_strip_voltages_south_fix_scan
+send_transition.sh config $CONFIGDIR
 
 getStatus "configuring"
 while [ "$status" != 'ready' ]

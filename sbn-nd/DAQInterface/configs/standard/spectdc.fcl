@@ -24,9 +24,9 @@ daq: {
     # UDP request port
     request_mode: window # pull mode
     # pull mode
-    request_window_width: 20e6 #5ms window 
+    request_window_width: 4e6 #4ms window 
     #5ms window 
-    request_window_offset: 10e6 #2.5ms offset
+    request_window_offset: 2e6 #2ms offset
     #2.5ms offset
     request_windows_are_unique: false #true
     #true

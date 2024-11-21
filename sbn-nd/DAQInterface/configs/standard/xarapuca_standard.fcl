@@ -62,12 +62,13 @@ daq:
     # default waveform length and postpercent
     recordLength:         768 # Good: 636, 768, 1536 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
     postPercent:         80 # Any number between 0 and 100
-    UseTimeTagForTimeStamp: false # True is using the PPS information. Set to False for SBND
+    #Use Trigger Time Tag (TTT) from CAEN header, which is a PPS counter 8ns/tick, to construct fragment timestamp. Default: true for ICARUS, false for SBND
+    UseTimeTagForTimeStamp: false #True is using the PPS information
     # adds an offset to the fragment timestamp, set to 0 for SBND
     TimeOffsetNanoSec: 0
     # Shift time tag so timestamp reflects the trigger time and not the end of the waveform. Also uses the PPS information
     #    default for SBND is true    
-    UseTimeTagShiftForTimeStamp: true # True is using the PPS information    
+    UseTimeTagShiftForTimeStamp: true #True is using the PPS information    
 
     # extTrgMode decides whether the external trigger should only be used to generate the
     # acquisition trigger, only to generate the trigger output or both

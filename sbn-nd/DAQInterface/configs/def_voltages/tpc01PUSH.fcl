@@ -1,0 +1,15 @@
+ 
+#include "tpc_standard.fcl" 
+
+daq.metrics.brFile.fileName: "/daq/log/metrics/tpc01_metrics.log" 
+
+daq.metrics.graphite.namespace: "sbnd.tpc01." 
+
+daq.fragment_receiver.fragment_ids: [0x9103, 0x9104, 0x9105] #,0x9106]
+#,0x9106]
+
+daq.fragment_receiver.nevis_crate.max_fem_slot: 5 
+#run tpc01 in pull mode
+daq.fragment_receiver.receive_requests: false 
+
+daq.fragment_receiver.request_mode: ignored 

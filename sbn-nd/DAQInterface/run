@@ -1,4 +1,22 @@
-#!/bin/bash +x
+#!/usr/bin/env bash
+#
+#=====================================================================================
+#Run with argument of which directory in configs you want to use. Defaults to standard
+#=====================================================================================
+CONFIGDIR="standard" 
+if [ ! -z "$1" ]
+    then
+    CONFIGDIR=$1
+else
+    echo "Defaulting to configs/$CONFIGDIR"
+fi
+
+#if [ ! -d "$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs/$CONFIGDIR" ]; then #check that config directory actually exists #Doesn't work if you're using the database though
+#    echo "ERROR: configs/$CONFIGDIR does not exist. Please use existing directory as an argument or use no arguments to default to configs/standard."
+#    echo "Stopping run script before I do anything"
+#    exit 1
+#fi
+
 this_start=$(date +%s)
 
 function getStatus()
@@ -64,8 +82,9 @@ setdaqcomps.sh dummygenerator crtTopLowWallEastPULL crtTopLowWallCentralPULL crt
 #setdaqcomps.sh dummygenerator crtWestWallNorthTopPULL crtWestWallSouthBottomPULL 
 
 send_transition.sh boot boot.txt
-#send_transition.sh boot boot_evb04.txt
+
 getStatus "booting"
+
 while [ "$status" != 'booted' ]
 do
   sleep 2
@@ -103,7 +122,7 @@ done
 # report_datafile_location
 
 send_transition.sh start
-  getStatus "starting"
+getStatus "starting"
 sleep 2
 getStatus "starting"
 while [ "$status" != 'running' ]

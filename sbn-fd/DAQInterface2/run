@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+good_run_number=12406
+this_start=$(date +%s)
+
+
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+export PATH=$THIS_SCRIPT_DIR/overrides:$PATH
+
+partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DIR}/user_sourcefile |cut -d"=" -f2)
+
+echo "Partition: $partition"
+
+function getStatus() {
+  local current_status=$(status.sh | grep String | awk '{print $2}' | tr -d "'")
+  echo $current_status
+}
+
+status=$(getStatus)
+
+exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.log \
+  | grep -Eo '/icarus.*' | cut -d"-" -f1 | tr -d '/' | awk '{ printf("%s|",$1); }')
+
+echo "Excluding: $exclude_list"
+
+setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|tpcww02)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
+
+send_transition.sh boot boot_MinBias_VeryHighRate_multiple_art_processes.txt
+
+status=$(getStatus)
+while [ "$status" != 'booted' ]; do
+  sleep 2
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
+done
+
+config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
+
+echo "Config name: $config_name"
+
+send_transition.sh config $config_name
+
+sleep 10
+
+status=$(getStatus)
+while [ "$status" != 'ready' ]; do
+  sleep 10
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
+done
+
+[[ -f $THIS_SCRIPT_DIR/show-launch-attempt-errors ]] && $THIS_SCRIPT_DIR/show-launch-attempt-errors
+
+sleep 10
+
+send_transition.sh start
+
+sleep 2
+status=$(getStatus)
+while [ "$status" != 'running' ]; do
+  sleep 2
+  status=$(getStatus)
+  if [ "$status" == 'stopped' ]; then
+    kill_daqinterface_on_partition.sh $partition
+    exit 1
+  fi
+done
+
+this_stop=$(date +%s)
+echo "DAQ started in $(( this_stop - this_start )) seconds."

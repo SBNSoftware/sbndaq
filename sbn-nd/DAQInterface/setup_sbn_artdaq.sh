@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-SBNDAQ_VERSION="v1_10_01"
-SBNDAQ_QUALS="e26:prof:s130"
+SBNDAQ_VERSION="v1_10_03"
+SBNDAQ_QUALS="e26:prof:s131"
 DAQINTERFACE_VERSION="v3_13_00"
 
 # reconfigure locale

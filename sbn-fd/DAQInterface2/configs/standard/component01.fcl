@@ -1,0 +1,43 @@
+daq: {
+   fragment_receiver: {
+      fragment_ids: []
+      
+      data_buffer_depth_fragments: 1000
+      data_buffer_depth_mb: 1000
+      
+      #generator
+      generator: "ToySimulator"
+      fragment_id: 0
+      board_id: 0
+      fragment_type: "TOY1"
+      distribution_type: 2
+      hardware_poll_interval_us: 0
+      max_fragment_size_bytes: 200
+      nADCcounts: 40
+      random_seed: 8250
+      starting_fragment_id: 0
+      throttle_usecs: 100000
+      timestamp_scale_factor: 1
+      sleep_on_stop_us: 500000
+     
+      #requests 
+      request_address: "227.128.1.26"
+      request_mode: "Ignored"
+      request_port: 3001
+      request_window_offset: 0
+      request_window_width: 0
+      request_windows_are_unique: true
+      stale_request_timeout: "0xFFFFFFFF"
+      
+      separate_data_thread: false
+      separate_monitoring_thread: false
+      
+      
+      destinations: {}
+      
+      routing_table_config: {
+         use_routing_manager: false
+      }
+   }
+   metrics: {}
+}

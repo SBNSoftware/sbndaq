@@ -1,0 +1,14 @@
+
+#include "EventBuilder_standard.fcl"
+
+daq.metrics.graphite.namespace: "sbnd.evb03."
+
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb03_metrics.log"
+
+process_name: DAQEVB03
+
+outputs.normalOutput.fileName: "/daq/data/data_dl3_run%R_%#_%to.root"
+
+outputs.testOutput.fileName: "/daq/data/test_data_dl3_run%R_%#_%to.root"
+
+physics.my_output_modules: [rootNetOutput, normalOutput]

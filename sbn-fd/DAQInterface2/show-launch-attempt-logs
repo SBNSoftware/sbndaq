@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+
+partition=$(grep -Eo "export.*DAQINTERFACE_PARTITION_NUMBER=.*" ${THIS_SCRIPT_DIR}/user_sourcefile |cut -d"=" -f2)
+
+print_contents_until() {
+  if [[ ! -s "$1" ]]; then
+    echo "File is empty or does not exist."
+    return 1
+  elif [[ $(wc -l < "$1") -eq 1 && $(head -n 1 "$1") == "" ]]; then
+    echo "File contains only a newline."
+    return 1
+  fi  
+
+  local match_str="$2"
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && echo "<empty line>" || echo "$line"
+    [[ "$line" == *"$match_str"* ]] && break
+  done < "$1"
+}
+
+for f in /daq/log/pmt/launch_attempt*$(ls -r /daq/log/pmt/launch_attempt_icarus-evb*-daq_icarus_partition${partition}* |head -1 |awk -F'_' '{print $NF}'); do
+  echo "***** begin $f"
+  print_contents_until $f "Finished"
+  echo "***** end   $f"
+  echo;echo;
+done

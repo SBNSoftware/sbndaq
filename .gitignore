@@ -9,4 +9,7 @@
 **/*.bak
 
 configDB_tools/__pycache__/
-
+*.original
+*.wrong
+*.save
+*.pmt02

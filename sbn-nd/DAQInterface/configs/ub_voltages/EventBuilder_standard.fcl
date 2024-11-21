@@ -1,0 +1,332 @@
+#include "filters_standard.fcl" 
+services: {
+  ArtdaqSharedMemoryServiceInterface: {
+    service_provider: ArtdaqSharedMemoryService 
+  }
+  ArtdaqFragmentNamingServiceInterface: {
+    service_provider: ArtdaqFragmentNamingService 
+    helper_plugin: "SBND" 
+  }
+}
+
+daq: {
+  event_builder: {
+    stale_buffer_timeout_usec: 3000000 #1000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    #1000000 #was commented out and 1000000, Gennadiy said to set high (5s) for debugging
+    expected_fragments_per_event: 0 # Will be set by DAQInterface
+    # Will be set by DAQInterface
+    use_art: true 
+    print_event_store_stats: true 
+    buffer_count: 25 #25  #40 #100
+    #25  #40 #100
+    max_incomplete_events: 15 #50 # Same as boardreader sync interval
+    verbose: true 
+    send_requests: true 
+    request_address: "227.128.11.129" # Multi-cast request address
+    # Multi-cast request address
+    multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
+    # needed to send requests successfully through the private network
+    request_port: 3001 
+    art_analyzer_count: 2 #5
+    tcp_receive_buffer_size: 64000 
+    routing_token_config: {
+      use_routing_master: false 
+    }
+    sources: {
+    }
+  }
+  metrics: {
+    evbFile: {
+      metricPluginType: "file" 
+      level_string: "1-10,11-20" 
+      fileName: "/daq/log/metrics/evb00_metrics.log" 
+      uniquify: true 
+    }
+
+    send_system_metrics: true 
+    send_process_metrics: true 
+
+    graphite: {
+      level_string: "1-10,11-20" 
+      metricPluginType: "graphite" 
+      reporting_interval: 10.0 
+      host: "10.226.36.34" 
+      port: 2003 
+      namespace: "sbnd.evb00." 
+    }
+  }
+}
+
+outputs: {
+  normalOutput: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 20 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [] #p1
+  }
+
+  normalOutputBNBZeroBias: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBZeroBias_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [bnbzerobias] 
+  }
+
+  normalOutputOffBeamZeroBias: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmOffBeamZeroBias_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [offbeamzerobias] 
+  }
+
+  normalOutputBNBLight: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBLight_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [bnblight] 
+  }
+
+  normalOutputOffBeamLight: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmOffBeamLight_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [offbeamlight] 
+  }
+
+  normalOutputNSCrossingMuon: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmNSCrossingMuon_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [nscrossingmuon] 
+  }
+
+  normalOutputCrossingMuon: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmCrossingMuon_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [crossingmuon] 
+  } 
+  normalOutputFilterFail: {
+    module_type: RootDAQOut 
+    fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmUnknown_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 50 #close files out a little faster for the prescaled stream
+    }
+    fastCloning: false 
+    compressionLevel: 501 #0
+    #0
+    SelectEvents: [filterfail] 
+  }
+
+  testOutput: {
+    module_type: RootDAQOut 
+    fileName: "/data/test_daq/data_${app_name}_run%R_%#_%to.root" 
+    fileProperties: {
+      maxSubRuns: 1 
+      maxRuns: 1 
+      maxEvents: 100 
+    }
+    fastCloning: false 
+    compressionLevel: 0 
+    SelectEvents: [] 
+  }
+  rootNetOutput: {
+    module_type: RootNetOutput 
+    broadcast_sends: true 
+    nonblocking_sends: true 
+    destinations: {
+    }
+    SelectEvents: [p5] 
+    fastCloning: false #true
+    #true
+    compressionLevel: 501 #0
+    #0
+    host_map: [{
+	rank: -1 
+	host: "sbnd-evb01-daq" 
+      }] 
+    routing_table_config: {
+      use_routing_manager: false 
+      route_on_request_mode: true 
+      ## Port that table updates should arrive on
+      table_update_port: 35556 # default 
+      ## Address that table updates should arrive on         
+      table_update_address: "227.128.12.35" 
+      ## Port that acknowledgements should be sent to        
+      table_acknowledge_port: 35557 # default                
+      ## Host that acknowledgements should be sent to        
+      routing_manager_hostname: "sbnd-evb01-daq" # default 
+      # default                                              
+      table_update_multicast_interface: "0.0.0.0" 
+      ## Time to wait (in ms) for a routing table update if the table is exhausted
+      routing_timeout_ms: 1000 # default
+      ## Number of times to retry getting destination from routing table
+      routing_retry_count: 5 # default    
+    }
+  }
+}
+
+physics: {
+  analyzers: {
+    fragWatcher: {
+      module_type: "FragmentWatcher" 
+    }
+  }
+
+  producers: {
+
+    crttriggerproducer: {
+      module_type: "CRTMetricProducer" 
+      is_persistable: true
+      BeamWindowStart: 1530000 
+      BeamWindowEnd: 1550000 
+      Verbose: false 
+    }
+
+    pmtmetricproducer: {
+      is_persistable: true #false 
+      module_type: "PMTMetricProducer" 
+      CAENInstanceLabels: ["ContainerCAENV1730"] 
+      ## debug mode is Verbose = 3 
+      Verbose: 1 
+      
+      # fcl parameters to debug for memory usage
+      
+      ## skip basically everything... should doing this should produce empty metrics off the bat
+      ## any value >= 4 will skip everything
+      ## default fcl param: 
+      # TimingType: 0
+      ## low memory fcl param: 
+      TimingType: 0
+
+      ## remove FragIDs to see if number of CAENs/waveforms is the issue
+      ## add them back and see if it makes a difference
+      ## default fcl param:
+      # FragIDs: [40960,40961,40962,40963,40964,40965,40966,40967]
+      ## low memory fcl param: 
+      FragIDs: [40960,40961,40962,40963,40964,40965,40966,40967]
+
+      ## turn off all algos (all others are off by default) 
+      ## default fcl param:
+      # FindFlashInfo: true
+      ## low memory fcl param:
+      FindFlashInfo: true
+
+    }
+  }
+  filters: {
+    prescale50: {
+      module_type: "Prescaler" 
+      prescaleFactor: 50 
+      prescaleOffset: 0 
+    }
+    prescale10: {
+      module_type: "Prescaler" 
+      prescaleFactor: 10 
+      prescaleOffset: 0 
+    }
+    prescale25: {
+      module_type: "Prescaler" 
+      prescaleFactor: 25 
+      prescaleOffset: 0 
+    }
+    prescale5: {
+      module_type: "Prescaler" 
+      prescaleFactor: 5 
+      prescaleOffset: 0 
+    }
+    prescale1: {
+      module_type: "Prescaler" 
+      prescaleFactor: 1 
+      prescaleOffset: 0 
+    }
+    bnbzerobiasfilter: @local::bnbzerobiasfilter 
+    offbeamzerobiasfilter: @local::offbeamzerobiasfilter 
+    bnblightfilter: @local::bnblightfilter 
+    offbeamlightfilter: @local::offbeamlightfilter 
+    #nscrossingmuonfilter: @local::nscrossingmuonfilter 
+    crossingmuonfilter: @local::crossingmuonfilter 
+  }
+  
+  p0: [] 
+  p1: [prescale1] 
+  p5: [prescale5] 
+
+  softwaretrig: [prescale1, crttriggerproducer, pmtmetricproducer] 
+  bnbzerobias: [bnbzerobiasfilter, crttriggerproducer, pmtmetricproducer] 
+  offbeamzerobias: [offbeamzerobiasfilter, crttriggerproducer, pmtmetricproducer] 
+  bnblight: [bnblightfilter, crttriggerproducer, pmtmetricproducer] 
+  offbeamlight: [offbeamlightfilter, crttriggerproducer, pmtmetricproducer] 
+  crossingmuon: [crossingmuonfilter, crttriggerproducer, pmtmetricproducer] 
+  #nscrossingmuon: [nscrossingmuonfilter, crttriggerproducer, pmtmetricproducer] 
+  filterfail: ["!crossingmuonfilter", "!bnbzerobiasfilter", "!offbeamzerobiasfilter", "!bnblightfilter", "!offbeamlightfilter"] 
+
+
+  trigger_paths: [p5, bnbzerobias, offbeamzerobias, bnblight, offbeamlight, crossingmuon, filterfail] #pdisp -- a prescale of 2?
+  a1: [fragWatcher] 
+
+
+  #my_output_modules: [ normalOutput , rootNetOutput ]
+  my_output_modules: [rootNetOutput, normalOutputBNBZeroBias, normalOutputOffBeamZeroBias, normalOutputBNBLight, normalOutputOffBeamLight, normalOutputCrossingMuon, normalOutputFilterFail ]
+
+  end_paths: [a1, my_output_modules] 
+}
+
+source: {
+  module_type: ArtdaqInput 
+  waiting_time: 2500000 
+  resume_after_timeout: true 
+}
+
+process_name: DAQ 

@@ -1,0 +1,10 @@
+ 
+#include "EventBuilder_standard.fcl" 
+
+daq.metrics.graphite.namespace: "sbnd.evb01." 
+
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb01_metrics.log" 
+
+process_name: DAQEVB01 
+
+#daq.event_builder.art_analyzer_count: 1

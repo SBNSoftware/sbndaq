@@ -2,12 +2,12 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v1_10_03'
+SBNDAQ_VERSION='v1_10_04'
 BUILD_VARIANT='gcc@12.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/j2ysbgc"
-    [almalinux9]="/l4ohdjv"
+    [scientific7]="/tb2im3k"
+    [almalinux9]="/ff6vm2r"
 )
 
 USE_CACHED_BASH_ENV=True
@@ -23,6 +23,9 @@ esac
 
 BUILD_HASH="${build_hash_map[${OS_NAME}]}"
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+
+export SPACK_DISABLE_LOCAL_CONFIG=true
+export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
 
 if [[ $USE_CACHED_BASH_ENV == True && -f $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh ]]; then
   echo "Info: Loading the Spack environment from the cache: sbndaq-${BUILD_HASH#/}.sh" 
@@ -56,9 +59,10 @@ else
       echo "Loaded  sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH}"
       break
     else
-      echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\ ${BUILD_HASH} \" failed. Retrying..."
+      echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH} \" failed. Retrying..."
       sleep $((4 + RANDOM % 3))
     fi
+    (( i == 5 )) && { unset SPACK_DISABLE_LOCAL_CONFIG; echo "Info: Enableing Spack local configuration."; }
   done
   
   if ! command -v artdaqRunControl &>/dev/null; then

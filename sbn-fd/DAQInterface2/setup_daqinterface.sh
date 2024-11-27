@@ -18,6 +18,7 @@ source "$SPACK_ENV_SCRIPT" 2>&1
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
 export DAQ_SETUP_SCRIPT="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh"
+export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
 
 export DAQINTERFACE_CONFIGURE_STATUS_CHECK_QUIET_TIME=60
 
@@ -34,7 +35,7 @@ which DAQInterface.sh >/dev/null 2>&1 \
   || { echo "Error: DAQInterface not setup. This is a critical error with loading Spack packages."; return 11; }
 
 echo "Loaded Spack packages:"
-spack find -dl --loaded | grep -E '(sbndaq|artdaq|wibtools)'
+spack --config-scope ${SPACK_USER_CONFIG_PATH} find -dl --loaded | grep -E '(sbndaq|artdaq|wibtools)'
 echo
 
 export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensions | grep -Eo '/.*$')

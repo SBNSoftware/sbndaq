@@ -16,9 +16,6 @@ EventBuilder label: EventBuilder6
 EventBuilder host: icarus-evb02-daq
 EventBuilder label: EventBuilder10
 
-EventBuilder host: icarus-evb02-daq
-EventBuilder label: EventBuilder9
-
 EventBuilder host: icarus-evb03-daq
 EventBuilder label: EventBuilder3
 
@@ -42,6 +39,9 @@ EventBuilder label: EventBuilder1
 
 EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder5
+
+EventBuilder host: icarus-evb06-daq
+EventBuilder label: EventBuilder9
 
 # DATA LOGGERS
 #DataLogger host: icarus-evb01-daq

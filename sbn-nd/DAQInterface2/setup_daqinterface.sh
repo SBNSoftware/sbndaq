@@ -64,4 +64,6 @@ unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 [[ -f "$ARTDAQ_DAQINTERFACE_DIR/source_me" ]] \
   && { echo "Sourcing $ARTDAQ_DAQINTERFACE_DIR/source_me"; source "$ARTDAQ_DAQINTERFACE_DIR/source_me"; }
 
+export PATH="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}"
+
 echo "*** Finished running $(basename "${BASH_SOURCE}") on $(hostname -s).";echo

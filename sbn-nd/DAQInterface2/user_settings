@@ -37,7 +37,8 @@ transfer_plugin_to_use: TCPSocket
 
 
 
-boardreader_priorities_on_config: wib* mbb02 tpc* ntb01 ptb01* pmt* spectdc .*
-boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb01* pmt* spectdc .* 
-boardreader_priorities_on_stop: spectdc pmt* ptb01* ntb01 tpc* wib* mbb02 crt*
+boardreader_priorities_on_config: crt* wib* mbb02 tpc* ntb01 ptb* pmt* xarapuca* spectdc* .*
+boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb* pmt* xarapuca* spectdc* .*
+boardreader_priorities_on_stop: ptb* ntb01 tpc* wib* mbb02 spectdc* xarapuca* pmt*  crt* .* 
+
 

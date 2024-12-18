@@ -41,9 +41,9 @@ spectdc sbnd-clk01-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
 crtNorthWallWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtNorthWallEastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_eastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_southwestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_northPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatEastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatSouthWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatNorthPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtEastWallSouthBottomPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtEastWallNorthTopPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "   
 crtWestWallSouthBottomPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "

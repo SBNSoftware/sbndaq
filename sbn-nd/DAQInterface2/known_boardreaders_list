@@ -41,9 +41,9 @@ spectdc sbnd-clk01-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
 crtNorthWallWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtNorthWallEastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_eastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_southwestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-crtflat3_northPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatEastPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatSouthWestPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+crtFlatNorthPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtEastWallSouthBottomPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtEastWallNorthTopPULL sbnd-crt01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "   
 crtWestWallSouthBottomPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
@@ -60,22 +60,24 @@ crtTopHighWallCentralPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net
 crtTopHighWallWestPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtTopHighWallNorthPULL sbnd-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtTopHighWallSouthPULL sbnd-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-pmtx01 sbnd-pds03-daq -1 1 0-15
-pmtx02 sbnd-pds03-daq -1 1 0-15 
-pmtx03 sbnd-pds02-daq -1 1 0-15
-pmtx03PUSH sbnd-pds03-daq -1 1 0-15
-pmtx06PUSH sbnd-pds03-daq -1 1 0-15 
-pmtx06 sbnd-pds03-daq -1 1 0-15 
-pmtx04 sbnd-pds01-daq -1 1 0-15
+pmtx03 sbnd-pds05-daq -1 1 0-15
+pmtx03PUSH sbnd-pds05-daq -1 1 0-15
+pmtx06PUSH sbnd-pds05-daq -1 1 0-15 
 pmt01 sbnd-pds01-daq -1 1 0-15
 pmt02 sbnd-pds01-daq -1 1 0-15
 pmt03 sbnd-pds01-daq -1 1 0-15
-pmt04 sbnd-pds01-daq -1 1 0-15
+pmt04 sbnd-pds03-daq -1 1 0-15
 pmt05 sbnd-pds02-daq -1 1 0-15
 pmt06 sbnd-pds02-daq -1 1 0-15
-pmt07 sbnd-pds02-daq -1 1 0-15
+pmt07 sbnd-pds03-daq -1 1 0-15
 pmt08 sbnd-pds02-daq -1 1 0-15
-pmt09 sbnd-pds05-daq -1 1 0-15
+pmt09 sbnd-pds03-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
-pmt09PUSH sbnd-pds02-daq -1 1 0-15
+pmt09PUSH sbnd-pds03-daq -1 1 0-15
 dummygenerator sbnd-evb01-daq -1 1
+xarapuca01PUSH sbnd-pds04-daq -1 1 0-15
+xarapuca01 sbnd-pds04-daq -1 1 0-15
+xarapuca02 sbnd-pds04-daq -1 1 0-15
+xarapuca03 sbnd-pds04-daq -1 1 0-15
+xarapuca04 sbnd-pds04-daq -1 1 0-15
+

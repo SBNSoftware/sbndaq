@@ -6,7 +6,7 @@ if [ "$#" -ne 1 ]; then
     exit
 fi
 
-for i in {01..03}; do
+for i in {01..07}; do
     echo "sbnd-evb${i}-daq: pkill -9 -f '^eventbuilder.*partition_number: $1$'"
     ssh sbnd-evb${i}-daq -f "pkill -9 -f '^eventbuilder.*partition_number: $1$'"
 done
@@ -16,15 +16,33 @@ done
 echo "sbnd-wib01-daq: pkill -9 '^boardreader.*partition_number: $1$'"
 ssh sbnd-wib01-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 
-echo "sbnd-evb04-daq: pkill -9 '^boardreader.*partition_number: $1$'"
-ssh sbnd-evb04-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+#echo "sbnd-evb04-daq: pkill -9 '^boardreader.*partition_number: $1$'"
+#ssh sbnd-evb04-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 
-for i in {01..12}; do
+for i in {01..13}; do
     echo "sbnd-tpc${i}-daq: pkill -9 '^boardreader.*partition_number: $1$'"
     ssh sbnd-tpc${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
 done
 
-for i in {01..03}; do
+for i in {01..05}; do
+    echo "sbnd-pds${i}-daq: pkill -9 '^boardreader.*partition_number: $1$'"
+    ssh sbnd-pds${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+done
+
+for i in {01..04}; do
+    echo "sbnd-crt${i}-daq: pkill -9 '^boardreader.*partition_number: $1$'"
+    ssh sbnd-crt${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+done
+
+echo "sbnd-ptb01-daq: pkill -9 '^boardreader.*partition_number: $1$'"
+ssh sbnd-ptb01-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+
+for i in {01..02}; do
+echo "sbnd-clk${i}-daq: pkill -9 '^boardreader.*partition_number: $1$'"
+ssh sbnd-clk${i}-daq -f "pkill -9 -f '^boardreader.*partition_number: $1$'"
+done
+
+for i in {01..07}; do
     echo "sbnd-evb${i}-daq: ipcrm -a"
     ssh sbnd-evb${i}-daq -f 'ipcrm -a'
 done

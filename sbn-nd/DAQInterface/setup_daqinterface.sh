@@ -35,6 +35,6 @@ export DAQINTERFACE_USER_DIR=$THIS_SBN_DAQ_DAQINTERFACE_DIR
 
 ups active |grep -vE "(/daq/software|setup_sbn_artdaq)"
 
-setup artdaq_runcontrol_gui v1_03_05 -q e26:prof
+setup artdaq_runcontrol_gui v1_03_06 -q e26:prof
 
 export PYTHONUNBUFFERED=TRUE

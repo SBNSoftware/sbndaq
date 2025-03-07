@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-if [[ "$(hostname -s)" =~ icarus-crt11 ]]; then
+if [[ "$(hostname -s)" =~ icarus-crt10 ]]; then
     echo Checking if the boardreader is running. If not, attempting to kill the Bottom CRT backend
     if ! /usr/sbin/pidof boardreader ; then
         if /usr/sbin/pidof bottomCRTreadout ; then

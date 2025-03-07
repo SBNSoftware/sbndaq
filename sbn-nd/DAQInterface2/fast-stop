@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-good_run_number=12406
+good_run_number=17756
 
 THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
@@ -17,7 +17,7 @@ for h in $hosts; do
 done
 
 echo
-for i in {01..05}; do
+for i in {01..07}; do
     echo -n "sbnd-evb${i}-daq "
     ssh sbnd-evb${i}-daq -f "
     pkill -9 -f '^eventbuilder.*partition_number: ${partition}$' 2>/dev/null

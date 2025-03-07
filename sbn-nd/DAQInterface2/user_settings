@@ -29,7 +29,7 @@ launch_procs_wait_time: 50
 
 advanced_memory_usage: true
 
-all_events_to_all_dispatchers: false #true
+all_events_to_all_dispatchers: false
 
 disable_unique_rootfile_labels: true
 

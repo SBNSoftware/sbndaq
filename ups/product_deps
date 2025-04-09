@@ -3,7 +3,7 @@
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
 parent sbndaq
-defaultqual e26:s131
+defaultqual e28:s130
 define_pythonpath
 
 # These optional lines define the installed directories where headers,
@@ -64,6 +64,12 @@ e26:debug:icbrus:s130   e26:debug:icbrus:s130
 e26:prof:icbrus:s130    e26:prof:icbrus:s130
 e26:debug:sbnd:s130     e26:debug:sbnd:s130
 e26:prof:sbnd:s130      e26:prof:sbnd:s130
+e28:debug:s130          e28:debug:s130
+e28:prof:s130           e28:prof:s130
+e28:debug:icbrus:s130   e28:debug:icbrus:s130
+e28:prof:icbrus:s130    e28:prof:icbrus:s130
+e28:debug:sbnd:s130     e28:debug:sbnd:s130
+e28:prof:sbnd:s130      e28:prof:sbnd:s130
 e26:debug:s131          e26:debug:s131
 e26:prof:s131           e26:prof:s131
 e26:debug:icbrus:s131   e26:debug:icbrus:s131

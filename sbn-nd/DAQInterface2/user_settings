@@ -15,7 +15,7 @@
 
 log_directory: /daq/log
 record_directory: /daq/run_records
-package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq_core, sbndaq_artdaq, sbndaq ]
+package_hashes_to_save: [ artdaq, artdaq-core, artdaq-mfextensions, artdaq-utilities, wibtools, sbndaq-artdaq-core, sbndaq-artdaq, sbndaq ]
 spack_root_for_bash_scripts: /home/nfs/sbnd/DAQ_SPACK_DevAreas/DAQ_2024-11-20_GAL_v1_10_03/DAQInterface/overrides/spack
 max_configurations_to_list: 20
 boardreader timeout: 600

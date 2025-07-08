@@ -21,30 +21,52 @@ SPACK_RELEASE=v1.0.1.sbnd
 #------------------------------------------------------------------------------
 # Spack installation
 #------------------------------------------------------------------------------
-SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/${SPACK_RELEASE}/NULL"
+SPACK_HOME_DIR="/daq/software/spack_packages/spack/${SPACK_RELEASE}"
+SPACK_INSTALL_DIR="${SPACK_HOME_DIR}/NULL"
+echo "Spack installation directory: ${SPACK_INSTALL_DIR}"
+export PATH=${SPACK_HOME_DIR}/sbndaq-spack-tools:${PATH}
+#------------------------------------------------------------------------------
+# Helper functions
+#------------------------------------------------------------------------------
+get_os_name() {
+  local os_info os_match
+  os_info=$(grep "PRETTY_NAME" /etc/os-release) || { echo "Error reading OS information"; return 1; }
+  os_match=$(echo "$os_info" | grep -o "Scientific\|AlmaLinux")
+  case $os_match in
+    "Scientific") export OS_NAME=scientific7 ;;
+    "AlmaLinux") export OS_NAME=almalinux9 ;;
+    *) echo "Warning: Unknown OS detected, exiting." && return 1 ;;
+  esac
+}
+
+get_parent_dir() {
+    local nlevels="${1:-1}" 
+    local path="${2:-$(pwd)}"
+    [[ $nlevels =~ ^[0-9]+$ && -n "$path" ]] || return 1
+    for ((i=0; i<nlevels; i++)); do
+        path=$(dirname "$path")
+        [[ "$path" == "/" ]] && break
+    done
+    echo "$path"
+}
 
 #------------------------------------------------------------------------------
 # Operating system detection
 #------------------------------------------------------------------------------
-THIS_OS=$(cat /etc/os-release | grep "PRETTY_NAME")
-if [[ $THIS_OS =~ "Scientific" ]]; then
-  export OS_NAME=scientific7
-elif [[ $THIS_OS =~ "AlmaLinux" ]]; then
-  export OS_NAME=almalinux9
-else
-  echo "Warning: Unknown OS detected. Using default configuration."
-  export OS_NAME=scientific7  # Default fallback
-fi
+get_os_name
+[[ $? -ne 0 ]] && return 1
 
 #------------------------------------------------------------------------------
 # Directory setup
 #------------------------------------------------------------------------------
-export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath --physical "$(dirname "${BASH_SOURCE[0]}")")
-export THIS_SPACK_DEV_TOP_DIR=$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)
+export THIS_SPACK_DEV_TOP_DIR=$(get_parent_dir 5 "$(realpath --physical "${BASH_SOURCE[0]}")")
 export THIS_SPACK_ENV_TOP_DIR=${THIS_SPACK_DEV_TOP_DIR}/${OS_NAME}-${BUILD_VARIANT//@/}-${CXXSTD}-${QUALIFIER//=/}
+export THIS_SBN_DAQ_DAQINTERFACE_DIR=${THIS_SBN_DAQ_DAQINTERFACE_DIR:-${THIS_SPACK_DEV_TOP_DIR}/DAQInterface}
 
 echo "Spack dev area: $THIS_SPACK_DEV_TOP_DIR"
 echo "Spack environment: $THIS_SPACK_ENV_TOP_DIR"
+echo "DAQInterface directory: $THIS_SBN_DAQ_DAQINTERFACE_DIR"
+echo "Operating system: $OS_NAME"
 
 #------------------------------------------------------------------------------
 # Environment validation
@@ -97,14 +119,22 @@ spack find -lpd --loaded | grep sbndaq-suite
 SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_${SPACK_MICRO_ARCH}"
 echo "Spack architecture: ${SPACK_ARCH}"
 
-if ! command -v artdaqRunControl &>/dev/null; then
-  echo "Warning: artdaqRunControl not found in path."
-fi
+need_binaries="artdaqRunControl boardreader eventbuilder msgviewer"
+for i in $need_binaries; do
+  if ! command -v $i &>/dev/null; then
+    echo "Warning: $i not found in path."
+    read -p "Continue? [y/N] " yn
+    case $yn in
+      Y|y) ;;
+      *) echo "Error: Missing binaries. Failed to load Spack environment, exiting." && return 4 ;;
+    esac
+  fi
+done
 
 #------------------------------------------------------------------------------
 # Environment variable setup
 #------------------------------------------------------------------------------
-export THIS_SPACK_ENV_VIEW_DIR=${THIS_SPACK_DEV_TOP_DIR}/.spack-env/view
+export THIS_SPACK_ENV_VIEW_DIR=${THIS_SPACK_ENV_TOP_DIR}/.spack-env/view
 export LD_LIBRARY_PATH=${THIS_SPACK_ENV_VIEW_DIR}/lib64:${THIS_SPACK_ENV_VIEW_DIR}/lib
 export WIB_ADDRESS_TABLE_PATH=${THIS_SPACK_ENV_VIEW_DIR}/tables
 export WIB_CONFIG_PATH=${THIS_SPACK_ENV_VIEW_DIR}/config

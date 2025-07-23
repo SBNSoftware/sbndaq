@@ -1,0 +1,8 @@
+slot3.ch0 6
+slot3.ch1 6
+slot3.ch2 6
+slot3.ch3 6
+slot3.ped0 209
+slot3.ped1 21
+slot3.ped2 10
+slot3.ped3 22

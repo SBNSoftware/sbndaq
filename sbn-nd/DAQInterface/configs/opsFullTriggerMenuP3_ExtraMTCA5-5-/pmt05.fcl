@@ -1,0 +1,68 @@
+ 
+#include "pmt05_default.fcl" 
+#Baseline value is around 14250 ADC, so to set a 30 ADC threshold set the value to 14220
+daq.fragment_receiver.triggerThreshold0: 14200 
+
+daq.fragment_receiver.triggerThreshold1: 14200 
+
+daq.fragment_receiver.triggerThreshold2: 14200 
+
+daq.fragment_receiver.triggerThreshold3: 14200 
+
+daq.fragment_receiver.triggerThreshold4: 14200 
+
+daq.fragment_receiver.triggerThreshold5: 14200 
+
+daq.fragment_receiver.triggerThreshold6: 14200 
+
+daq.fragment_receiver.triggerThreshold7: 14200 
+
+daq.fragment_receiver.triggerThreshold8: 14200 
+
+daq.fragment_receiver.triggerThreshold9: 14200 
+
+daq.fragment_receiver.triggerThreshold10: 14200 
+
+daq.fragment_receiver.triggerThreshold11: 14200 
+
+daq.fragment_receiver.triggerThreshold12: 14200 
+
+daq.fragment_receiver.triggerThreshold13: 14200 
+
+daq.fragment_receiver.triggerThreshold14: 14200 
+
+daq.fragment_receiver.triggerThreshold15: 500 #Lowered to 500 to prevent channel 15 from participating in trigger decisions
+#May just change waveform saving rather than actual outputs
+daq.fragment_receiver.channelEnable0: true 
+
+daq.fragment_receiver.channelEnable1: true 
+
+daq.fragment_receiver.channelEnable2: true 
+
+daq.fragment_receiver.channelEnable3: true 
+
+daq.fragment_receiver.channelEnable4: true 
+
+daq.fragment_receiver.channelEnable5: true 
+
+daq.fragment_receiver.channelEnable6: true 
+
+daq.fragment_receiver.channelEnable7: true 
+
+daq.fragment_receiver.channelEnable8: true 
+
+daq.fragment_receiver.channelEnable9: true 
+
+daq.fragment_receiver.channelEnable10: true 
+
+daq.fragment_receiver.channelEnable11: true 
+
+daq.fragment_receiver.channelEnable12: true 
+
+daq.fragment_receiver.channelEnable13: true 
+
+daq.fragment_receiver.channelEnable14: true 
+
+daq.fragment_receiver.channelEnable15: true 
+
+daq.fragment_receiver.triggerPulseWidth: 12 

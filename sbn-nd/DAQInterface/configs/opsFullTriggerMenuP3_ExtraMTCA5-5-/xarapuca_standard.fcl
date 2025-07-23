@@ -1,0 +1,222 @@
+
+daq: {
+
+fragment_receiver: {
+
+generator: CAENV1740Readout 
+
+fragment_type: CAENV1740 
+
+max_fragment_size_bytes: 1000000 
+
+GetNextFragmentBunchSize: 20 
+
+DumpBinary: false # Dump binary before artdaq back-end
+# Dump binary before artdaq back-end
+DumpBinaryDir: "" 
+
+fragment_id: 0 
+
+board_id: 0 
+
+Verbosity: 1 
+
+SWTrigger: false #false disable the internal trigger of the caen, setting this parameter to true is not enough to activate the internal trigger. by internal trigger we mean that the caen readout is started by tbd conditions in the caen itself
+# SBND: keep this parameter = 0
+ModeLVDS: 0 
+# if a second trigger arrives before the readout is finished, set to false to ignore and true to extend readout
+allowTriggerOverlap: true 
+# link is which port on the PCIe card it is connected, numbering starts at 0 
+link: 0 # Slot 7
+#link: 3 # Slot 19
+enableReadout: 1 
+
+debugLevel: 7 
+
+eventsPerInterrupt: 1 
+
+IRQTimeoutMS: 500 
+
+eventCounterWarning: 1 
+
+memoryAlmostFull: 2 
+
+maxEventsPerTransfer: 1 
+
+runSyncMode: 0 # Run synchronization mode: 0=disabled 
+
+readoutMode: 0 # jcrespo: useless?
+# jcrespo: useless?
+testPattern: 0 
+#testPattern:          1 # Triangular waveform from 0 to 1023
+irqWaitTime: 1 
+
+outputSignalMode: 0 # jcrespo: useless?    
+# jcrespo: useless?    
+usePedestals: false # jcrespo: useless?
+# jcrespo: useless?
+dacValue: 32768 # jcrespo: useless?
+#ioLevel:              0 # NIM for CIEMAT teststand
+ioLevel: 1 # TTL for SBN-ND
+# TTL for SBN-ND
+nChannels: 64 
+
+nGroups: 8 
+
+boardId: 0 # jcrespo: used by artdaq?
+# default waveform length and postpercent
+recordLength: 768 # Good: 636, 768, 1536 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
+# Good: 636, 768, 1536 # In samples where 1 sample=16 ns. For V1740 it must be an integer multiple of 3
+postPercent: 80 # Any number between 0 and 100
+#Use Trigger Time Tag (TTT) from CAEN header, which is a PPS counter 8ns/tick, to construct fragment timestamp. Default: true for ICARUS, false for SBND
+UseTimeTagForTimeStamp: false #True is using the PPS information
+# adds an offset to the fragment timestamp, set to 0 for SBND
+TimeOffsetNanoSec: 0 
+#    default for SBND is true    
+UseTimeTagShiftForTimeStamp: true #True is using the PPS information    
+# extTrgMode: 0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+extTrgMode: 1 
+# swTrgMode:  0=DISABLED; 1=ACQ_ONLY; 2=TRGOUT_ONLY; 3=ACQ_AND_TRGOUT
+swTrgMode: 0 
+# SBND: set to 0
+acqMode: 0 
+
+CircularBufferSize: 500e6 
+
+destinations: {
+
+}
+routing_table_config: {
+
+use_routing_master: false 
+
+}#
+groupPedestal0: 54394 
+
+groupPedestal1: 54394 
+
+groupPedestal2: 54394 
+
+groupPedestal3: 54394 
+
+groupPedestal4: 54394 
+
+groupPedestal5: 54394 
+
+groupPedestal6: 54394 
+
+groupPedestal7: 54394 
+# Set to true to save the waveform
+groupEnable0: true 
+
+groupEnable1: true 
+
+groupEnable2: true 
+
+groupEnable3: true 
+
+groupEnable4: true 
+
+groupEnable5: true 
+
+groupEnable6: true 
+
+groupEnable7: true 
+
+BoardChainNumber: 0 # For daisy chaining boards
+# For daisy chaining boards
+GetNextSleep: 10 
+
+InterruptEnable: 1 
+
+InterruptLevel: 0 
+
+InterruptStatusID: 0 
+
+InterruptEventNumber: 1 
+#  Everything here is exclusive for ICARUS, but must be defined // jcrespo: remove then?
+LVDSLogicValueG1: 3 
+
+LVDSLogicValueG2: 3 
+
+LVDSLogicValueG3: 3 
+
+LVDSLogicValueG4: 3 
+
+LVDSLogicValueG5: 3 
+
+LVDSLogicValueG6: 3 
+
+LVDSLogicValueG7: 3 
+
+LVDSLogicValueG8: 3 
+#     
+LVDSOutWidthC1: 20 
+
+LVDSOutWidthC2: 20 
+
+LVDSOutWidthC3: 20 
+
+LVDSOutWidthC4: 20 
+
+LVDSOutWidthC5: 20 
+
+LVDSOutWidthC6: 20 
+
+LVDSOutWidthC7: 20 
+
+LVDSOutWidthC8: 20 
+
+LVDSOutWidthC9: 20 
+
+LVDSOutWidthC10: 20 
+
+LVDSOutWidthC11: 20 
+
+LVDSOutWidthC12: 20 
+
+LVDSOutWidthC13: 20 
+
+LVDSOutWidthC14: 20 
+
+LVDSOutWidthC15: 20 
+
+LVDSOutWidthC16: 20 
+# Exclusive for ICARUS
+SelfTrigBit: 16 
+
+}
+metrics: {
+
+brFile: {
+
+metricPluginType: "file" 
+
+level: 3 
+
+fileName: "/daq/log/metrics/xarapuca00_metrics.log" 
+
+uniquify: true 
+
+}
+send_system_metrics: true 
+
+send_process_metrics: true 
+
+graphite: {
+
+namespace: "sbnd.xarapuca00." 
+
+host: "10.226.36.45" 
+
+level: 10 
+
+metricPluginType: "graphite" 
+
+port: 2003 
+
+reporting_interval: 10 
+
+}
+}
+}

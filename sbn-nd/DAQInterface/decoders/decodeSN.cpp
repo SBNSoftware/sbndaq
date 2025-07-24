@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
   cout << "Input file: " << inputFilePath << endl;
   cout << "Output file: " << outputFilePath << endl;
 
-
+  
   while( binFile.peek() != EOF ){
     uint32_t word32b;
     binFile.read( reinterpret_cast<char*>(&word32b), sizeof(word32b) );
@@ -266,7 +266,7 @@ int main(int argc, char* argv[]) {
 
             else {
                 if (first16b != 0){
-                    std::cout << "Warning: I don't know what to do with this word (in channel ROI) "  << std::hex << first16b << std::endl;
+                    //std::cout << "Warning: I don't know what to do with this word (in channel ROI) "  << std::hex << first16b << std::endl;
                     wordcount += 1;
                 }
             } 
@@ -274,7 +274,7 @@ int main(int argc, char* argv[]) {
 
         else {
           if (first16b != 0){ // I think we get these extra 0 words when the first word is the 0000 part of a channel start or end word                   
-            std::cout << "Warning: I don't know what to do with this word " << std::hex << first16b << std::endl;
+            //std::cout << "Warning: I don't know what to do with this word " << std::hex << first16b << std::endl;
             wordcount += 1;
           }
         }
@@ -374,7 +374,7 @@ int main(int argc, char* argv[]) {
 
             else {
                 if (last16b != 0){
-                    std::cout << "Warning: I don't know what to do with this word (in channel ROI) "  << std::hex << last16b << std::endl;
+                    //std::cout << "Warning: I don't know what to do with this word (in channel ROI) "  << std::hex << last16b << std::endl;
                 wordcount += 1;
                 }
             } 
@@ -382,7 +382,7 @@ int main(int argc, char* argv[]) {
       
       else {
         if (last16b != 0){
-            std::cout << "Warning: I don't know what to do with this word " << std::hex << last16b << std::endl;
+            //std::cout << "Warning: I don't know what to do with this word " << std::hex << last16b << std::endl;
             wordcount += 1;
         }
       }

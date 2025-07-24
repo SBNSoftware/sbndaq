@@ -47,6 +47,8 @@ def get_volume_metrics(volumes):
 
         print(f"[INFO] Volume: {v}, Used: {percent_used*100:.1f}%, Free: {free_space_gb:.2f} GB")
         print(f"[INFO] Delete Threshold: {delete_threshold*100:.0f}%, Lower Threshold: {delete_lower_threshold*100:.0f}%")
+        # print(f"Total space: {st.f_blocks * st.f_frsize / 1024 / 1024 / 1024} GB")      
+  
         if percent_used >= delete_threshold:
             print(f"[WARNING] Disk usage {percent_used*100:.1f}% exceeds threshold {delete_threshold*100:.0f}% on {v}")
             cleanup_old_files(v)
@@ -67,7 +69,7 @@ def cleanup_old_files(volume):
         for f in files:
             if os.path.isfile(f):
                 try:
-                    # os.remove(f)
+                    # os.remove(f) # Uncomment for actual deletion
                     print(f"[DELETE] Remove old file: {f}")
                     
                     # Re-check disk usage
@@ -83,4 +85,5 @@ def cleanup_old_files(volume):
             # optional: handle directories, but be careful with recursive deletion!
 
 
-get_volume_metrics(monitor_volumes)
+metrics = get_volume_metrics(monitor_volumes)
+print(metrics)

@@ -8,8 +8,8 @@ REMOTE_SCRIPT=$(cat <<'EOF'
 
 # --- Remote Variables ---
 DECODER_BASE="/home/nfs/sbnd/DAQ_DevAreas/DAQ_2025-07-11_nevis_sn_production_dev_v1_10_07/srcs/sbndaq/sbn-nd/DAQInterface/decoders"
-BINNU_DECODER="${DECODER_BASE}/binnu"
-BINSN_DECODER="${DECODER_BASE}/binsn"
+BINNU_DECODER="${DECODER_BASE}/decode_nu"
+BINSN_DECODER="${DECODER_BASE}/decode_sn"
 DATA_DIR="/data/SNCommissioning"
 
 # Exit gracefully if the target directory doesn't exist.
@@ -49,20 +49,25 @@ EOF
 # --- Main Execution Loop ---
 # Loop through each host defined by the 'tpc' variable and the sbnd range.
 for t in tpc; do
-    for h in sbnd-${t}01; do
-        # First, check if the host is reachable to avoid long timeouts.
-        if ping -c 1 -W 1 "$h" > /dev/null 2>&1; then
-            echo "--- ✅ Processing on host: $h ---"
-            # SSH into the host, and pipe the REMOTE_SCRIPT to a new bash shell for execution.
-            # -o ConnectTimeout=2 prevents long hangs on unresponsive SSH sessions.
-            ssh sbnd@"$h" -o ConnectTimeout=2 "bash -s" <<< "$REMOTE_SCRIPT"
-            echo "--- Finished processing on $h ---"
-            echo
-        else
-            echo "--- ❌ Host unreachable: $h ---"
-            echo
-        fi
+    for h in sbnd-${t}{01..11}; do
+        # Group commands in a subshell and run in the background with '&'.
+        (
+            # First, check if the host is reachable to avoid long timeouts.
+            if ping -c 1 -W 1 "$h" > /dev/null 2>&1; then
+                echo "--- ✅ Processing on host: $h ---"
+                # SSH into the host, and pipe the REMOTE_SCRIPT to a new bash shell for execution.
+                # -o ConnectTimeout=2 prevents long hangs on unresponsive SSH sessions.
+                ssh sbnd@"$h" -o ConnectTimeout=2 "bash -s" <<< "$REMOTE_SCRIPT"
+                echo "--- Finished processing on $h ---"
+            else
+                echo "--- ❌ Host unreachable: $h ---"
+            fi
+        ) & # The '&' sends the subshell to the background.
     done
 done
 
+# Wait for all background jobs to complete before continuing.
+wait
+
+echo
 echo "All hosts have been processed."

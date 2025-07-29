@@ -1,7 +1,7 @@
 
 nu_dma_buffer_size: 1e6 # 1e4 # < 1e6
 # 1e4 # < 1e6
-sn_dma_buffer_size: 2e6 #1e6 # 1e5 # < 4e6
+sn_dma_buffer_size: 1e6 #1e6 # 1e5 # < 4e6
 # 1e5 # < 4e6
 framesize_16MHz_ticks: 9151 #20479 #number of 16MHz ticks that defines size of a tpc readout frame
 

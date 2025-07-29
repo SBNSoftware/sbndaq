@@ -69,7 +69,7 @@ def cleanup_old_files(volume):
         for f in files:
             if os.path.isfile(f):
                 try:
-                    # os.remove(f) # Uncomment for actual deletion
+                    os.remove(f) # Uncomment for actual deletion
                     print(f"[DELETE] Remove old file: {f}")
                     
                     # Re-check disk usage

@@ -23,9 +23,15 @@ exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.l
 
 echo "Excluding: $exclude_list"
 
-setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|tpcww02)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
+#setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|tpcww02)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
+setdaqcomps.sh ptb01PULL pmt09PUSH pmt01
+#setdaqcomps.sh ptb01PULL
 
-send_transition.sh boot boot_MinBias_VeryHighRate_multiple_art_processes.txt
+echo "Booting up now...."
+send_transition.sh boot boot_evb06.txt
+#send_transition.sh boot boot_nodqm.txt
+
+echo "Finish booting...."
 
 status=$(getStatus)
 while [ "$status" != 'booted' ]; do
@@ -37,11 +43,23 @@ while [ "$status" != 'booted' ]; do
   fi
 done
 
-config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
+CONFIGDIR="standard"
+if [ ! -z "$1" ]
+    then
+    CONFIGDIR=$1
+else
+    echo "Defaulting to configs/$CONFIGDIR"
+fi
 
-echo "Config name: $config_name"
+echo "Config name: $CONFIGDIR"
 
-send_transition.sh config $config_name
+send_transition.sh config $CONFIGDIR
+
+#config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
+
+#echo "Config name: $config_name"
+
+#send_transition.sh config $config_name
 
 sleep 10
 

@@ -2,15 +2,15 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v1_10_07'
+SBNDAQ_VERSION='v1_10_06'
 BUILD_VARIANT='gcc@12.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/hdpl3ix"
-    [almalinux9]="/ywqagzl"
+    [scientific7]="/jrrkdkd"
+    [almalinux9]="/iz77lz6"
 )
 
-USE_CACHED_BASH_ENV=True
+USE_CACHED_BASH_ENV=False
 
 SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
 

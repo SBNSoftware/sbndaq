@@ -5,7 +5,7 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 #------------------------------------------------------------------------------
 # Configuration variables
 #------------------------------------------------------------------------------
-SBNDAQ_VERSION='migration_artdaqv3_13_02'
+SBNDAQ_VERSION='v1_10_08'
 
 #------------------------------------------------------------------------------
 # Release specific variables

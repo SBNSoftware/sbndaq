@@ -254,7 +254,7 @@ export DAQINTERFACE_SETUP_COMMAND="setup artdaq_daqinterface v3_13_00"
 
 export DAQ_RUN_RECORDS_DIR="/daq/run_records"
 
-export DAQ_SETUP_SCRIPT="/home/nfs/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-06-18_GAL_migration_artdaqv3_13_02/srcs/sbndaq/sbn-nd/DAQInterface2/setup_sbn_artdaq.sh"
+export DAQ_SETUP_SCRIPT="/home/nfs/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-06-18_GAL_v1_10_08/srcs/sbndaq/sbn-nd/DAQInterface2/setup_sbn_artdaq.sh"
 
 export DBTOOLS_LOG_DIR="/daq/log/dbtools"
 
@@ -720,7 +720,7 @@ export SRANDOM="992308678"
 
 export S_COLORS="auto"
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-06-18_GAL_migration_artdaqv3_13_02/srcs/sbndaq/sbn-nd/DAQInterface2"
+export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-06-18_GAL_v1_10_08/srcs/sbndaq/sbn-nd/DAQInterface2"
 
 export UPS_DIR="/daq/software/products/ups/v6_1_1/Linux64bit+3.10-2.17"
 

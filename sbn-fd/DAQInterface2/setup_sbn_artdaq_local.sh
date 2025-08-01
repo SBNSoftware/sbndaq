@@ -3,7 +3,7 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
 SBNDAQ_VERSION='v1_10_08'
-BUILD_VARIANT='gcc@12.1.0'
+BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
     [scientific7]="/iz77lz6"

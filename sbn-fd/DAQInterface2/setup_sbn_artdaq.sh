@@ -5,10 +5,24 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 SBNDAQ_VERSION='v1_10_07'
 BUILD_VARIANT='gcc@12.1.0'
 
+# ORIGINAL v10_07_00
+#declare -A build_hash_map=(
+#    [scientific7]="/hdpl3ix"
+#     [almalinux9]="/ywqagzl"
+#)
+
+# 2025-07-26 MVIC: pointing to new area with interrupt support for A5818
+# change in code is only 1 line to add RearmInterrupt()
 declare -A build_hash_map=(
-    [scientific7]="/hdpl3ix"
-     [almalinux9]="/ywqagzl"
+    [scientific7]="/gvo37in"
+     [almalinux9]="/wpacitv"
 )
+
+## TEMP PMT TESTING
+#declare -A build_hash_map=(
+#    [scientific7]="/gvo37in"
+#     [almalinux9]="/52ng43s"
+#)
 
 USE_CACHED_BASH_ENV=True
 

@@ -25,6 +25,7 @@ excluded_env_vars=("env_vars" "excluded_env_vars" "excluded_functions" "excluded
   "LOGNAME" "LS_COLORS" "MACHTYPE" "MAIL" "MAILCHECK" "OPTERR" "OPTIND" "OSTYPE" "PIPESTATUS" "PPID" "PS1" \
   "PS2" "PS4" "PWD" "RANDOM" "SECONDS" "SHELL" "SHELLOPTS" "SHLVL" "SSH_ASKPASS" "SSH_CLIENT" "SSH_CONNECTION" \
   "BASH_COMPLETION_COMPAT_DIR" "PROMPT_COMMAND" "SSH_TTY" "TERM" "UID" "USER" \
+  "ARTDAQ_DATABASE_CA_CERT" "ARTDAQ_DATABASE_CLIENT_CERT" "ARTDAQ_DATABASE_CONFDIR" "ARTDAQ_DATABASE_URI" \
   "XDG_DATA_DIRS" "XDG_RUNTIME_DIR" "XDG_SESSION_ID" "_" "var" )
 
 excluded_functions=("export_environment_vars" "export_functions" "export_aliases" "filter_unique_paths")
@@ -60,7 +61,7 @@ export_environment_vars() {
             local value
             local filtered_value
             value=$(eval echo \$$name)
-           
+
             if [[ -z $value ]]; then
                 echo -e "export $name\n" >> "$output_file"
             elif [[ $value == *:* ]] && [[ $value =~ "/daq/" ]]; then
@@ -92,18 +93,18 @@ export_functions() {
 
 export_aliases() {
     echo "#Aliases" >> $output_file
-    
+
     [[ "$0" != "${BASH_SOURCE}" ]] || \
       { echo "#The script $(basename ${BASH_SOURCE}) should be sourced to capture aliases" >> $output_file; return 1; }
 
-    local alias_list=$(compgen -a) 
+    local alias_list=$(compgen -a)
     : >> $output_file
     for name in $alias_list; do
         if [[ ! " ${excluded_aliases[@]} " =~ " ${name} " ]]; then
             echo "alias $name='$(alias $name)'" >> $output_file
             echo >> $output_file
         fi
-    done 
+    done
 }
 
 echo "#!/usr/bin/env bash" > $output_file

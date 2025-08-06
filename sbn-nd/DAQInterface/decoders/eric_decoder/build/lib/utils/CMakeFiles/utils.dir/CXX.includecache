@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/utils/include/utility.hh
+iostream
+-
+iomanip
+-
+fstream
+-
+unistd.h
+-
+cstdlib
+-
+cstdint
+-
+string
+-
+vector
+-
+map
+-
+utility
+-
+
+/data/SNCommissioning/eric_decoder/lib/utils/src/utility.cc
+utility.hh
+/data/SNCommissioning/eric_decoder/lib/utils/src/utility.hh
+

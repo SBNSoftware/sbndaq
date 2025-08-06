@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-11/root/usr/bin/c++ -fPIC  -O2 -g -pipe -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches   -m64 -mtune=generic -std=c++11 -pipe -fsigned-char -pthread  -shared -Wl,-soname,libutils.so -o libutils.so CMakeFiles/utils.dir/src/utility.cc.o   -L/usr/lib64/root 

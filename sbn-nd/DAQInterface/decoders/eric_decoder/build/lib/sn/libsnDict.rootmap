@@ -1,0 +1,6 @@
+[ libsnDict.so ]
+# List of selected classes
+class channelSN
+class femSN
+header include/channelSN.hh
+header include/femSN.hh

@@ -1,0 +1,6 @@
+[ libnuDict.so ]
+# List of selected classes
+class channelNU
+class femNU
+header include/channelNU.hh
+header include/femNU.hh

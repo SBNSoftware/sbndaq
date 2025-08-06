@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+
+Exec=/home/nfs/sbnd/Desktop/Scripts/startRCSpackDevNew.sh DAQ_2025-06-18_GAL_migration_artdaqv3_13_02
+
+Name=startSpackDevAreaRC
+GenericName=startSpackDevAreaRC
+Comment="Launches the artdaq Run Control in Spack Dev Area"
+Icon=/home/nfs/sbnd/Desktop/icons/startRC.png
+Terminal=true
+Type=Application

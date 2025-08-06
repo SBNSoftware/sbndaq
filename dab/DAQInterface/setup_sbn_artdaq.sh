@@ -2,7 +2,7 @@
 source /daq/software/products/setup
 #[[ -f /daq/software/products_dev/setup ]] && source /daq/software/products_dev/setup
 
-SBNDAQ_VERSION="v1_10_07"
+SBNDAQ_VERSION="v1_10_08"
 SBNDAQ_QUALS="e26:prof:s131"
 DAQINTERFACE_VERSION="v3_13_00"
 

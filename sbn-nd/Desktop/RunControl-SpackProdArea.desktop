@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+
+Exec=/home/nfs/sbnd/Desktop/Scripts/startRCSpackProd.sh DAQ_2025-04-11_GAL_v1_10_07
+
+Name=startSpackProdAreaRC
+GenericName=startSpackProdAreaRC
+Comment="Launches the artdaq Run Control in Spack Prod Area"
+Icon=/home/nfs/sbnd/Desktop/icons/startRC.png
+Terminal=true
+Type=Application

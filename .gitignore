@@ -13,3 +13,7 @@ configDB_tools/__pycache__/
 *.wrong
 *.save
 *.pmt02
+build-linux-*
+*debug
+*.bak
+

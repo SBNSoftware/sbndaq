@@ -2,12 +2,13 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v1_10_07'
-BUILD_VARIANT='gcc@12.1.0'
+SBNDAQ_VERSION='v1_10_08'
+#ulimit -c unlimited
+BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/hdpl3ix"
-     [almalinux9]="/ywqagzl"
+    [scientific7]="/ovwxtpz"
+    [almalinux9]="/lqtb5oa"
 )
 
 USE_CACHED_BASH_ENV=True
@@ -28,7 +29,7 @@ export SPACK_DISABLE_LOCAL_CONFIG=true
 export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
 
 if [[ $USE_CACHED_BASH_ENV == True && -f $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh ]]; then
-  echo "Info: Loading the Spack environment from the cache: sbndaq-${BUILD_HASH#/}.sh" 
+  echo "Info: Loading the Spack environment from the cache: sbndaq-${BUILD_HASH#/}.sh"
   source $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh
   [[ $? -eq 0 ]] || { echo "Error: Failed to load the Spack environment from the cache. Try disabling the USE_CACHED_BASH_ENV option, by setting it to False. This is a critical error with loading Spack packages."; return 1; }
   echo "Info: Finished loading the Spack environment from the cache."
@@ -46,10 +47,10 @@ else
     echo "Error: Spack not setup. This is a critical error with loading Spack packages."
     return 2
   fi
-  
+
   SPACK_ARCH="linux-$(spack arch --operating-system 2>/dev/null)-x86_64_v2"
   echo "Spack arch: ${SPACK_ARCH}"
-  
+
   BUILD_HASH="${build_hash_map[$(spack arch --operating-system 2>/dev/null)]:-}"
   [[ -z $BUILD_HASH ]] && BUILD_HASH=""
 
@@ -64,12 +65,12 @@ else
     fi
     (( i == 5 )) && { unset SPACK_DISABLE_LOCAL_CONFIG; echo "Info: Enableing Spack local configuration."; }
   done
-  
+
   if ! command -v artdaqRunControl &>/dev/null; then
     echo "Error: artdaqRunControl not set up. This is a critical error with loading Spack packages."
     return 3
   fi
-  
+
   export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensions | grep -Eo '/.*$')
   export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
 
@@ -86,6 +87,9 @@ else
   fi
 
 fi
+
+[[ -f ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/prepend_paths_for_art_modules.sh ]] \
+  && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/prepend_paths_for_art_modules.sh"
 
 [[ -f ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh ]] \
   && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_trace_levels.sh"

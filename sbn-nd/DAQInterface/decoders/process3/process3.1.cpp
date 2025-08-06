@@ -43,8 +43,8 @@ int main(int argc, char* argv[]) {
   int firstframe;
   bool foundfirstframe = false;
 
-  if (argc < 4) {
-        std::cerr << "Usage: " << argv[0] << " inputfile run_number tpc_number" << std::endl;
+  if (argc < 5) {
+        std::cerr << "Usage: " << argv[0] << " inputfile run_number tpc_number subfile_number" << std::endl;
         return 1;
   }
 
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
-  std::string outfilename = "run" + std::string(argv[2]) + "_tpc" + std::string(argv[3]) + "_dataformat_metrics.txt";
+  std::string outfilename = "run_" + std::string(argv[2]) + "_subfile_" + std::string(argv[4]) + "_tpc_" + std::string(argv[3]) + "_dataformat_metrics.txt";
   bool new_file = !std::filesystem::exists(outfilename) || std::filesystem::file_size(filename) == 0;
   std::ofstream outfile(outfilename, std::ios::app);
   if (new_file) {
@@ -303,7 +303,7 @@ int main(int argc, char* argv[]) {
 
   }
   }//end of while loop
-  std::ofstream outfile2("run" + std::string(argv[2]) + "_tpc" + std::string(argv[3]) + "_fem_metrics_frame"+ std::to_string(firstframe) + ".txt");
+  std::ofstream outfile2("run_" + std::string(argv[2]) + "_subfile_" + std::string(argv[4]) + "_tpc_" + std::string(argv[3]) + "_fem_metrics_frame"+ std::to_string(firstframe) + ".txt");
   outfile2 << "FEM\tMissedFEMHeaders\tMissedFrames\tMissedChannelStarts\tMissedROIStarts\tMissedROIEnds\tWordcountFails\tChecksumFails\n";
   for (int fem = 0; fem < nfems; ++fem) {
     outfile2 << fem+3 << "\t" << missed_femheaders[fem] << "\t" << missed_frames[fem]<< "\t" << missed_channelstart[fem] << "\t" << missed_ROIstart[fem] << "\t" << missed_ROIend[fem] << "\t" << wordcount_fail[fem] << "\t" << checksum_fail[fem] << "\n";

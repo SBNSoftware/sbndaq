@@ -23,7 +23,7 @@ find "$DATA_DIR" -maxdepth 1 -name "*.dat" -print0 | while IFS= read -r -d $'\0'
     base_name="${dat_file%.dat}" # Removes the .dat extension (e.g., /path/to/file_NU)
 
     # --- Logic for NU files ---
-    if [[ "$dat_file" == *_NU.dat ]]; then
+    if [[ "$dat_file" == *REMOVETHISTEXT_NU.dat ]]; then
         waveform_file="${base_name}_waveform.txt"
         log_file="${dat_file}.log"
 
@@ -33,7 +33,7 @@ find "$DATA_DIR" -maxdepth 1 -name "*.dat" -print0 | while IFS= read -r -d $'\0'
         fi
 
     # --- Logic for SN files ---
-    elif [[ "$dat_file" == *_SN.dat ]]; then
+    elif [[ "$dat_file" == *subfile*_SN.dat ]]; then
         waveform_file="${base_name}_waveform.txt"
         log_file="${dat_file}.log"
 

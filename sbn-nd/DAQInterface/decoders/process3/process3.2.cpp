@@ -50,8 +50,8 @@ int main(int argc, char* argv[]) {
     {"0000001", 3}
   };
 
-  if (argc < 4) {
-    std::cerr << "Usage: " << argv[0] << " inputfile run_number tpc_number" << std::endl;
+  if (argc < 5) {
+    std::cerr << "Usage: " << argv[0] << " inputfile run_number tpc_number subfile_number" << std::endl;
     return 1;
   }
 
@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
-  std::string outfilename = "run" + std::string(argv[2]) + "_tpc" + std::string(argv[3]) + "_dataquality_metrics.txt";
+  std::string outfilename = "run_" + std::string(argv[2]) + "_subfile_" + std::string(argv[4]) + "_tpc_" + std::string(argv[3]) + "_dataquality_metrics.txt";
   bool new_file = !std::filesystem::exists(outfilename) || std::filesystem::file_size(filename) == 0;
   std::ofstream outfile(outfilename, std::ios::app);
   if (new_file) {
@@ -324,7 +324,7 @@ int main(int argc, char* argv[]) {
   std::array<double, nfems> amplitude_avg_per_fem = {};
 
 
-  std::ofstream outfile2("run" + std::string(argv[2]) + "_tpc" + std::string(argv[3]) + "_channel_metrics_frame" + std::to_string(firstframe) + ".txt");
+  std::ofstream outfile2("run_" + std::string(argv[2]) + "_subfile_" + std::string(argv[4]) + "_tpc_" + std::string(argv[3]) + "_channel_metrics_frame"+ std::to_string(firstframe) + ".txt");
   outfile2 << "FEM\tChannel\tAvgNROIs\tAvgBaseline\tAvgAmplitude\n";
 
   for (int fem = 0; fem < nfems; ++fem) {

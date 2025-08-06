@@ -12,6 +12,7 @@ import socket
 
 monitor_volumes = [
     '/data',
+    '/data/SNCommissioning'
     # '/', 
     # '/daq/software',
     # '/daq/scratch',
@@ -28,7 +29,7 @@ delete_threshold = 0.75   # 75% usage
 delete_lower_threshold = 0.50 # delete down to 50%
 
 # CONFIG: directories to clean up if threshold exceeded
-cleanup_dirs = ['/data']
+cleanup_dirs = ['/data', '/data/SNCommissioning']
 
 def get_volume_metrics(volumes):
     now = int(time.time())
@@ -86,4 +87,4 @@ def cleanup_old_files(volume):
 
 
 metrics = get_volume_metrics(monitor_volumes)
-print(metrics)
+grint(metrics)

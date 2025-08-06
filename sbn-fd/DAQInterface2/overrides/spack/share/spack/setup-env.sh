@@ -2,7 +2,7 @@
 
 return 0;
 
-source_this_file="/daq/software/spack_packages/spack/v1.0.1.sbnd/NULL/share/spack/setup-env.sh"
+source_this_file="/daq/software/spack_packages/spack/current/NULL/share/spack/setup-env.sh"
 
 attempt=0
 max_attempts=3

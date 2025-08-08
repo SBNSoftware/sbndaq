@@ -9,11 +9,11 @@ sn_dma_buffer_size: 1e6 # 1e5 # < 4e6
 fragment_receiver: {
   generator: NevisTPC2StreamNUandSNXMIT
   fragment_type: NevisTPC
-  fragment_id: [0x9103]
-#  generated_fragments_per_event: 1	 
+  fragment_id: [0x9B03]
+  generated_fragments_per_event: 1	 
   board_id: 0
 
-  SamplesPerChannel: 7675 # SBND drift time x 3
+  SamplesPerChannel: 3429 # SBND drift time x 3
 
   ChunkSize: @local::nu_dma_buffer_size
   MonitorPeriod: 12 # Period in seconds to read electronics status
@@ -34,18 +34,23 @@ fragment_receiver: {
     trigger_slot: 20 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
-    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
+xmit_fpga: "/home/nfs/isafa/FPGA_firmware/readcontrol_110601_v3_play_header_hist_09282017.rbf"                  
+#fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga\module1x_static_baseline.rbf"
+fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"         
+
+
+#    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"
     # Two-stream (dynamic baseline)
     # fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x.rbf"
     # Two-stream (static baseline)
     #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline.rbf"
-    fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
+ #   fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/module1x_static_baseline_fake_data.rbf"
     # FEM settings
     zs_static_baseline: true
     fem_fake_data: true # (default is false)
     fem_fake_data_pattern: "channel" # "channel", "sample" or "channel+sample"
     nu_compress: true #false
-    timesize: 2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
+    timesize: 1143 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
   }
 
   ### Configuration of the ControllerModule ###
@@ -62,6 +67,46 @@ fragment_receiver: {
 
   ### Configuration of the TriggerModule ###
   # Configuration of the Nevis Trigger Module
+
+trigger_module: {                                                                                                
+# Example from MicroBooNE -- NEEDS TO BE EDITED --
+deadtime: 0x24 #0x96 #units of 128 microseconds?   #0x24 = ~4.5ms                                                
+# Must satisfy framesize = timesize * 8 - 1
+framesize: @local::framesize_16MHz_ticks # SBND drift time. Number of samples (minus one) for the 16 MHz clock   
+# SBND drift time. Number of samples (minus one) for the 16 MHz clock
+g1delay: 0x0 # 0x10                                                                                              
+# 0x10
+g1end: 0x0 #0x1                                                                                                  
+#0x1
+g1start: 0x0 #0x1                                                                                                
+#0x1
+g1width: 0x0 #0x20                                                                                               
+#0x20
+g2delay: 0x0 #0x10                                                                                               
+#0x10
+g2end: 0x0 #0x20                                                                                                 
+#0x20
+g2start: 0x0 #0x1                                                                                                
+#0x1
+g2width: 0x0 #0x20   
+prescale0: 0
+
+prescale1: 0
+
+prescale8: 0
+
+prescale9: 0
+
+timeinfo_directory: "/data/uboonedaq/metadata"
+
+trigmask0: 0
+
+trigmask1: 0
+trigmask8: 0x2 #EXT trigger
+
+}# The
+
+
 
   ### Configuration of the XMITReader for the NU stream ###
   # Configuration of the XMITReader for the Nevis XMIT NU stream

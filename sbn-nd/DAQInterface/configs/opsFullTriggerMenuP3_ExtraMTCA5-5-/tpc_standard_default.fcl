@@ -1,5 +1,5 @@
  
-#include "fake_NevisTPC2StreamEXT_driver.fcl" 
+#include "NevisTPC2StreamEXT_driver.fcl" 
 #graphite paramters are the same for all tpc configs
 daq.metrics.graphite.level_string: "1-10,11-20" 
 

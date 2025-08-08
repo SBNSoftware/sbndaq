@@ -47,8 +47,9 @@ EventBuilder label: EventBuilder3_p2
 #
 #EventBuilder label: EventBuilder3_CRTmetric
 
-Dispatcher host: sbnd-evb01-daq
-Dispatcher label: Dispatcher1
-Dispatcher port: 6021
+### DISAPLE DISPATCHER AS PER HENRY'S REQUEST ###
+#Dispatcher host: sbnd-evb01-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6021
 
 

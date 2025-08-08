@@ -59,6 +59,18 @@ sn_compress: true
 #false
 timesize: 1143 #2559 # SBND drift time. Number of samples (minus one) for the 2 MHz clock
 
+channel_threshold : true
+load_threshold_mean : 2
+load_threshold_variance : 3
+postsample : 7
+presample : 7
+
+zero_suppression_params: {                                                                                                          
+#config_file: "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2025-07-11_nevis_sn_production_dev_v1_10_07/DAQInterface/configs/opsFullTriggerMenuP3_ExtraMTCA5-5-/crate1.txt"
+config_file: "/home/nfs/sbnd/DAQ_DevAreas/DAQ_2025-07-11_nevis_sn_production_dev_v1_10_07/DAQInterface/configs/opsFullTriggerMenuP3_ExtraMTCA5-5-/crate1.txt"
+}
+
+
 }# Do not change block name
 controller_module: {
 # Controller PCIe card settings

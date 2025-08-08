@@ -194,7 +194,8 @@ int main(int argc, char* argv[]) {
             if (first16b>>12 == 0x2){
                 adcval = (first16b & 0xfff);
                 outfile << frame << "\t" << fem  << "\t" << channel << "\t" << timetick+samplecount << "\t" << adcval <<  "\n";
-                outfile.flush();
+                //TODO: separate timetick and samplecount
+		outfile.flush();
                 samplecount += 1;
                 wordcount += 1;
                 //std::cout << "non-huffman " << adc << " : " << wordcount << std::endl;

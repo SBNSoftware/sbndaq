@@ -25,6 +25,9 @@ esac
 BUILD_HASH="${build_hash_map[${OS_NAME}]}"
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
+export SPACK_DISABLE_LOCAL_CONFIG=true
+export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
+
 if [[ $USE_CACHED_BASH_ENV == True && -f $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh ]]; then
   echo "Info: Loading the Spack environment from the cache: sbndaq-${BUILD_HASH#/}.sh"
   source $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh

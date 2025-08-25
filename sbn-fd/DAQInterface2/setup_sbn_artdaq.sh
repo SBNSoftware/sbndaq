@@ -60,6 +60,7 @@ else
       echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH} \" failed. Retrying..."
       sleep $((4 + RANDOM % 3))
     fi
+    (( i == 5 )) && { unset SPACK_DISABLE_LOCAL_CONFIG; echo "Info: Enableing Spack local configuration."; }
   done
 
   if ! command -v artdaqRunControl &>/dev/null; then

@@ -2,7 +2,7 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v1_10_08'
+SBNDAQ_VERSION='v1_10_09'
 #ulimit -c unlimited
 BUILD_VARIANT='gcc@13.1.0'
 
@@ -98,9 +98,16 @@ fi
   && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_coredumps.sh"
 
 if [[ -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra ]]; then
-  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"*.sh; do
+  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"exec*.sh; do
     echo "Running $(basename "$i")"
     [[ -f $i ]] && /usr/bin/bash "$i"
+  done
+fi
+
+if [[ -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra ]]; then
+  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"source*.sh; do
+    echo "Sourceing $(basename "$i")"
+    [[ -f $i ]] && source "$i"
   done
 fi
 

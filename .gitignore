@@ -1,11 +1,11 @@
 **/*~
 **/*.ipynb*
-**/.setup_fhiclcpp
+#**/.setup_fhiclcpp
 **/#*
 
 **/core.*
 **/trace.*
-**/MessageFacility.*
+#**/MessageFacility.*
 **/*.bak
 
 configDB_tools/__pycache__/
@@ -16,4 +16,4 @@ configDB_tools/__pycache__/
 build-linux-*
 *debug
 *.bak
-
+*.dat*

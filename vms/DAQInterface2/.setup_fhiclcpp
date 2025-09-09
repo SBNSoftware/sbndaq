@@ -1,0 +1,7 @@
+export SPACK_DISABLE_LOCAL_CONFIG=true
+source /daq/software/spack_packages/spack/current/NULL/share/spack/setup-env.sh 
+spack unload > /dev/null 2>&1
+
+spack load --first fhicl-cpp
+export FHICL_FILE_PATH="."
+export FHICLCPP_VERSION=v4_18_03

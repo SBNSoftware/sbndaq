@@ -36,9 +36,9 @@ fragment_receiver: {
     trigger_slot: 20 # Location of Trigger Board
     # FPGA firmware
     # With level-1 trigger blocking
-xmit_fpga: "/media/nvme/home/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-08-19_GAL_v1_10_09/firmware/readcontrol_110601_v3_play_header_hist_09282017.rbf"                  
+xmit_fpga: "/home/nfs/sbnd/DAQ_SPACK_ProdAreas/firmware/readcontrol_110601_v3_play_header_hist_09282017.rbf"                  
 #fem_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga\module1x_static_baseline.rbf"
-fem_fpga: "/media/nvme/home/sbnd/DAQ_SPACK_DevAreas/DAQ_2025-08-19_GAL_v1_10_09/firmware/module1x_static_baseline_fake_data.rbf"         
+fem_fpga: "/home/nfs/sbnd/DAQ_SPACK_ProdAreas/firmware/module1x_static_baseline_fake_data.rbf"         
 
 
 #    xmit_fpga: "/home/nfs/jcrespo/sbndaq/srcs/sbndaq_artdaq/sbndaq-artdaq/Generators/SBND/NevisTPC/nevishwutils/fpga/readcontrol_110601_v3_play_header_hist_l1block_10_10_2017.rbf"

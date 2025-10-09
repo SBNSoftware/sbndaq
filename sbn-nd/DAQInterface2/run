@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-good_run_number=12406
 this_start=$(date +%s)
-
 
 THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
@@ -28,7 +26,7 @@ setdaqcomps.sh ptb01PULL pmt09PUSH pmt01
 #setdaqcomps.sh ptb01PULL
 
 echo "Booting up now...."
-send_transition.sh boot boot_evb06.txt
+send_transition.sh boot boot_summer2025_nodqm.txt
 #send_transition.sh boot boot_nodqm.txt
 
 echo "Finish booting...."
@@ -54,12 +52,6 @@ fi
 echo "Config name: $CONFIGDIR"
 
 send_transition.sh config $CONFIGDIR
-
-#config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
-
-#echo "Config name: $config_name"
-
-#send_transition.sh config $config_name
 
 sleep 10
 

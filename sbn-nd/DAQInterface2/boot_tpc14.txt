@@ -25,8 +25,11 @@ EventBuilder label: EventBuilder5
 EventBuilder host: sbnd-evb06-daq
 EventBuilder label: EventBuilder6
 
-EventBuilder host: sbnd-evb07-daq
-EventBuilder label: EventBuilder7
+#EventBuilder host: sbnd-evb07-daq
+#EventBuilder label: EventBuilder7
+
+EventBuilder host: sbnd-tpc14-daq
+EventBuilder label: EventBuilderTpc14
 
 #EventBuilder host: sbnd-evb01-daq
 #EventBuilder label: EventBuilder1_p2

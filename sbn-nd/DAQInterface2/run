@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+good_run_number=19591
 this_start=$(date +%s)
 
 THIS_SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
@@ -16,20 +17,14 @@ function getStatus() {
 
 status=$(getStatus)
 
-exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.log \
-  | grep -Eo '/sbnd.*' | cut -d"-" -f1 | tr -d '/' | awk '{ printf("%s|",$1); }')
+exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.log 2>/dev/null |\
+  grep -Eo "/.*sbnd.*" | cut -d"-" -f1 |cut -d"/" -f4 | awk '{ printf("%s|",$1); }')
 
 echo "Excluding: $exclude_list"
 
-#setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|tpcww02)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
-setdaqcomps.sh ptb01PULL pmt09PUSH pmt01
-#setdaqcomps.sh ptb01PULL
+setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
 
-echo "Booting up now...."
-send_transition.sh boot boot_summer2025_nodqm.txt
-#send_transition.sh boot boot_nodqm.txt
-
-echo "Finish booting...."
+send_transition.sh boot boot_tpc_test.txt
 
 status=$(getStatus)
 while [ "$status" != 'booted' ]; do
@@ -41,17 +36,11 @@ while [ "$status" != 'booted' ]; do
   fi
 done
 
-CONFIGDIR="standard"
-if [ ! -z "$1" ]
-    then
-    CONFIGDIR=$1
-else
-    echo "Defaulting to configs/$CONFIGDIR"
-fi
+config_name=$(grep "Config name:" /daq/run_records/${good_run_number}/metadata.txt | cut -d":" -f2)
 
-echo "Config name: $CONFIGDIR"
+echo "Config name: $config_name"
 
-send_transition.sh config $CONFIGDIR
+send_transition.sh config $config_name
 
 sleep 10
 

@@ -5,7 +5,7 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 #------------------------------------------------------------------------------
 # Configuration variables
 #------------------------------------------------------------------------------
-SBNDAQ_VERSION='v1_10_08'
+SBNDAQ_VERSION='v2_00_00'
 
 #------------------------------------------------------------------------------
 # Release specific variables
@@ -141,6 +141,8 @@ export WIB_CONFIG_PATH=${THIS_SPACK_ENV_VIEW_DIR}/config
 export ARTDAQ_MFEXTENSIONS_DIR=${THIS_SPACK_ENV_VIEW_DIR}
 export SETUP_ARTDAQ_MFEXTENSIONS="echo artdaq-mfextensions is loaded"
 export ARTDAQ_DAQINTERFACE_VERSION=v3_13_02
+export ROOT_INCLUDE_PATH=${THIS_SPACK_ENV_VIEW_DIR}/include:${ROOT_INCLUDE_PATH}
+export ROOT_LIBRARY_PATH=${THIS_SPACK_ENV_VIEW_DIR}/lib64:${THIS_SPACK_ENV_VIEW_DIR}/lib
 
 if command -v jq >/dev/null 2>&1; then
   export ARTDAQ_DAQINTERFACE_VERSION=$(/bin/cat ${THIS_SPACK_ENV_TOP_DIR}/spack.lock | \

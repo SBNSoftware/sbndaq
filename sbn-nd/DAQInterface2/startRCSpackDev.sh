@@ -5,7 +5,7 @@ if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
     return 1
 fi
 
-THIS_RELEASE_DIR="${HOME}/DAQ_SPACK_DevAreas/${1:-"DAQ_TESTING_CURRENT"}/DAQInterface"
+THIS_RELEASE_DIR="${HOME}/DAQ_SPACK_DevAreas/${1:-"DAQ_SHIFTER_CURRENT"}/DAQInterface"
 if [ -d "$THIS_RELEASE_DIR" ]; then
     cd "$THIS_RELEASE_DIR" || { echo "Error: Failed to change directory to $THIS_RELEASE_DIR"; exit 1; }
 else

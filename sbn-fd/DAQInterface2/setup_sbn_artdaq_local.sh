@@ -11,7 +11,7 @@ declare -A build_hash_map=(
     [almalinux9]="/3kxwfjd"
 )
 
-USE_CACHED_BASH_ENV=True
+USE_CACHED_BASH_ENV=False
 
 SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
 
@@ -24,9 +24,6 @@ esac
 
 BUILD_HASH="${build_hash_map[${OS_NAME}]}"
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
-
-export SPACK_DISABLE_LOCAL_CONFIG=true
-export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
 
 if [[ $USE_CACHED_BASH_ENV == True && -f $THIS_SBN_DAQ_DAQINTERFACE_DIR/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh ]]; then
   echo "Info: Loading the Spack environment from the cache: sbndaq-${BUILD_HASH#/}.sh"
@@ -60,10 +57,9 @@ else
       echo "Loaded  sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH}"
       break
     else
-      echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT} ${BUILD_HASH} \" failed. Retrying..."
+      echo "Error: \"spack load sbndaq-suite@${SBNDAQ_VERSION}%${BUILD_VARIANT}\ ${BUILD_HASH} \" failed. Retrying..."
       sleep $((4 + RANDOM % 3))
     fi
-    (( i == 5 )) && { unset SPACK_DISABLE_LOCAL_CONFIG; echo "Info: Enableing Spack local configuration."; }
   done
 
   if ! command -v artdaqRunControl &>/dev/null; then
@@ -79,7 +75,7 @@ else
       echo "Info: running capture-bash-environment.sh"
       source ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/capture-bash-environment.sh 2>&1
       if [[ -n "$ENV_OUTPUT_FILE" && -f "$ENV_OUTPUT_FILE" ]]; then
-        cp "$ENV_OUTPUT_FILE" "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh"
+        cp "$ENV_OUTPUT_FILE" "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh1"
         echo "Info: saved bash environment to ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack/bash_environment/sbndaq-${BUILD_HASH#/}.sh"
       fi
       echo "Info: finished running capture-bash-environment.sh"
@@ -98,16 +94,9 @@ fi
   && source "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_coredumps.sh"
 
 if [[ -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra ]]; then
-  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"exec*.sh; do
+  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"*.sh; do
     echo "Running $(basename "$i")"
     [[ -f $i ]] && /usr/bin/bash "$i"
-  done
-fi
-
-if [[ -d ${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra ]]; then
-  for i in "${THIS_SBN_DAQ_DAQINTERFACE_DIR}/extra/"source*.sh; do
-    echo "Sourceing $(basename "$i")"
-    [[ -f $i ]] && source "$i"
   done
 fi
 

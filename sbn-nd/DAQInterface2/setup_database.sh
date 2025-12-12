@@ -8,8 +8,6 @@ set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; 
 export ARTDAQ_DATABASE_WORKDIR=${ARTDAQ_DATABASE_WORKDIR:-"${HOME}/work-db-v4-dir"}
 [[ -d ${ARTDAQ_DATABASE_WORKDIR} ]] ||  mkdir -p ${ARTDAQ_DATABASE_WORKDIR}
 export ARTDAQ_DATABASE_URI=${ARTDAQ_DATABASE_URI:-"filesystemdb://${ARTDAQ_DATABASE_WORKDIR}/filesystemdb/test_db"}
-
-echo $ARTDAQ_DATABASE_URI
 export ARTDAQ_DATABASE_CONFDIR=${ARTDAQ_DATABASE_CONFDIR:-"/daq/software/database/config"}
 export PYTHONPATH=$(dirname $(dirname $(which conftool.py)))/python/:$PYTHONPATH
 export ARTDAQ_DATABASE_VERSION=$(spack find -d  --loaded |grep 'artdaq-database' 2>/dev/null | grep "artdaq-database" |grep -Eo 'v[0-9_]+')

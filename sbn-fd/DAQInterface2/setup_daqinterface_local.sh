@@ -42,7 +42,7 @@ export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensi
 
 echo "ARTDAQ_MFEXTENSIONS_DIR: $ARTDAQ_MFEXTENSIONS_DIR"
 
-export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
+export SETUP_ARTDAQ_MFEXTENSIONS="echo artdaq-mfextensions is loaded"
 
 unset PYTHONPATH
 export ARTDAQ_DAQINTERFACE_DIR=$(dirname "$(dirname "$(which DAQInterface.sh 2>/dev/null)")")

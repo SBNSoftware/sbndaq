@@ -7,24 +7,20 @@ debug level: 4
 Subsystem id: 1
 
 # EVENT BUILDERS
-EventBuilder host: icarus-evb07-daq
+EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder1
 
-EventBuilder host: icarus-evb08-daq
+EventBuilder host: icarus-evb01-daq
 EventBuilder label: EventBuilder2
 
-EventBuilder host: icarus-evb09-daq
+EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder3
 
-EventBuilder host: icarus-evb10-daq
+EventBuilder host: icarus-evb06-daq
 EventBuilder label: EventBuilder4
-
-EventBuilder host: icarus-evb11-daq
-EventBuilder label: EventBuilder5
 
 # DISPATCHER
 Dispatcher host: icarus-evb12-daq
 Dispatcher label: Dispatcher1
 # port number must be unique accros all partitions
 Dispatcher port: 6020
-

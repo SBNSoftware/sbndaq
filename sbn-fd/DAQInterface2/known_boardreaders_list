@@ -55,10 +55,10 @@ icarustpcwe19 icarus-tpc07-daq -1 1
 icarustpcwe20b icarus-tpc07-daq -1 1
 icarustpcwe20m icarus-tpc07-daq -1 1
 icarustpcwe20t icarus-tpc07-daq -1 1
-icarustpcee01b icarus-tpc25-daq -1 1
-icarustpcee01m icarus-tpc25-daq -1 1
-icarustpcee01t icarus-tpc25-daq -1 1
-icarustpcee02 icarus-tpc25-daq -1 1
+icarustpcee01b icarus-tpc24-daq -1 1
+icarustpcee01m icarus-tpc24-daq -1 1
+icarustpcee01t icarus-tpc24-daq -1 1
+icarustpcee02 icarus-tpc24-daq -1 1
 icarustpcee03 icarus-tpc23-daq -1 1
 icarustpcee04 icarus-tpc23-daq -1 1
 icarustpcee05 icarus-tpc23-daq -1 1
@@ -103,18 +103,18 @@ icarustpcew19 icarus-tpc13-daq -1 1
 icarustpcew20b icarus-tpc13-daq -1 1
 icarustpcew20m icarus-tpc13-daq -1 1
 icarustpcew20t icarus-tpc13-daq -1 1
-icaruspmtwwtop01 icarus-pmt01-daq -1 1
-icaruspmtwwtop02 icarus-pmt01-daq -1 1
-icaruspmtwwtop03 icarus-pmt01-daq -1 1
-icaruspmtwwbot01 icarus-pmt01-daq -1 1
-icaruspmtwwbot02 icarus-pmt01-daq -1 1
-icaruspmtwwbot03 icarus-pmt01-daq -1 1
-icaruspmtwetop01 icarus-tpc27-daq -1 1
-icaruspmtwetop02 icarus-tpc27-daq -1 1
-icaruspmtwetop03 icarus-tpc27-daq -1 1
-icaruspmtwebot01 icarus-tpc27-daq -1 1
-icaruspmtwebot02 icarus-tpc27-daq -1 1
-icaruspmtwebot03 icarus-tpc27-daq -1 1
+icaruspmtwwtop01 icarus-pmt05-daq -1 1
+icaruspmtwwtop02 icarus-pmt05-daq -1 1
+icaruspmtwwtop03 icarus-pmt05-daq -1 1
+icaruspmtwwbot01 icarus-pmt05-daq -1 1
+icaruspmtwwbot02 icarus-pmt05-daq -1 1
+icaruspmtwwbot03 icarus-pmt05-daq -1 1
+icaruspmtwetop01 icarus-pmt02-daq -1 1
+icaruspmtwetop02 icarus-pmt02-daq -1 1
+icaruspmtwetop03 icarus-pmt02-daq -1 1
+icaruspmtwebot01 icarus-pmt02-daq -1 1
+icaruspmtwebot02 icarus-pmt02-daq -1 1
+icaruspmtwebot03 icarus-pmt02-daq -1 1
 icaruspmtewtop01 icarus-pmt03-daq -1 1
 icaruspmtewtop02 icarus-pmt03-daq -1 1
 icaruspmtewtop03 icarus-pmt03-daq -1 1
@@ -148,10 +148,10 @@ icaruscrttop01L01 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_ra
 icaruscrttop01L02 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrttop01L03 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrttop01L04 icarus-crttop01-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-icaruscrttop02L05 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-icaruscrttop02L06 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-icaruscrttop02L07 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-icaruscrttop02L08 icarus-crttop02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L05 icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L06 icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L07 icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
+icaruscrttop02L08 icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrttop03et icarus-crttop03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 icaruscrtbottom11 icarus-crt10-daq -1 1
 dummygenerator icarus-evb01-daq -1 1

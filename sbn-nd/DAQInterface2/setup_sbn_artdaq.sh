@@ -2,13 +2,13 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v2_00_00'
+SBNDAQ_VERSION='v2_01_00'
 #ulimit -c unlimited
 BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/2r3ncfq"
-    [almalinux9]="/ixgi7sh"
+    [scientific7]="/6d4rvf2"
+    [almalinux9]="/t3nduhk"
 )
 
 USE_CACHED_BASH_ENV=True

@@ -43,7 +43,6 @@ EventBuilder label: EventBuilder1
 #EventBuilder host: sbnd-evb07-daq
 #EventBuilder label: EventBuilder7_p2
 
-
 #
 #EventBuilder label: EventBuilder3_CRTmetric
 
@@ -52,3 +51,11 @@ EventBuilder label: EventBuilder1
 #Dispatcher port: 6021
 
 
+=======
+#EventBuilder host: sbnd-evb08-daq
+#EventBuilder label: EventBuilder8_p2
+
+#Dispatcher host: sbnd-evb08-daq
+#Dispatcher label: Dispatcher1
+#Dispatcher port: 6021
+>>>>>>> work/v2_01_00

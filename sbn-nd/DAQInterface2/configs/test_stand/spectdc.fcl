@@ -1,0 +1,119 @@
+
+daq: {
+  fragment_receiver: {
+    #     events_to_generate: 6000
+    data_buffer_depth_mb: 20 #1kb * buffer depth fragments
+    max_fragment_size_bytes: 50000 #container fragment
+    data_buffer_depth_fragments: 20000
+    sleep_on_no_data_us: 10000
+    generator: SPECTDCTimestampReader
+    fragment_type: TDCTIMESTAMP
+    fragment_id: 0xD73B #55099
+    board_id: 0
+    ## Pull mode parameters
+    receive_requests: true
+    request_address: "227.128.11.129" # -- multicast request address
+    multicast_interface_ip: "10.226.36.0" # -- should match the private net
+    request_port: 3001 # UDP request port
+    request_mode: window # pull mode
+    request_window_width: 5e6 #10ms window
+    request_window_offset: 2.5e6 #5ms offset
+    request_windows_are_unique: true #false
+    stale_request_timeout: 3000000000 #3s
+    window_close_timeout_us: 2000000 #2s
+    missing_request_window_timeout_us: 2500000 #2.5s
+    buffer_mode_keep_latest: true
+    circular_buffer_mode: true #false
+    poll_hardware_status: true
+    hardware_poll_interval_us: 300000000 #30s
+    stale_fragment_timeout: 25000000000 #25s
+    separate_monitoring_thread: true
+    separate_data_thread: true
+    preprocessor_verbose_processing: false
+    preprocessor_nodata_timeout_us: 1250000 #1.25s
+    destinations: {
+
+    }
+    routing_table_config: {
+      use_routing_master: false 
+    }
+    spec: {
+      deviceid: auto 
+      verbose: true 
+      fmctdc: {
+	timesync_source: wr 
+	time_adjustment: {
+	  make_adjustment: true 
+	  add_leap_seconds: 37 
+	  next_leap_second_tai: 1814417999 #July 1 2027 #1719809999 
+	}
+	calibration_data: none 
+	polltime_ms: 10 
+	blocking_reads: true 
+	monitor: {
+	  temperature: true 
+	  timestamps: true 
+	}#note changing the channel names will have an effect on the DQM which looks for specific names
+	channels: [{
+	    id: 0 
+	    name: crtt1 
+	    enabled: true 
+	    time_offset_ps: 0 
+	    monitor_only: false 
+	    terminated: true 
+	    buffer_length: 1024 #expected rate 8Hz
+	  }, {
+	    id: 1 
+	    name: bes 
+	    enabled: true 
+	    time_offset_ps: 0 
+	    monitor_only: false 
+	    terminated: true 
+	    buffer_length: 1024 #64 #expected rate 5Hz
+	  }, {
+	    id: 2 
+	    name: rwm 
+	    enabled: true 
+	    time_offset_ps: 0 
+	    monitor_only: false 
+	    terminated: true 
+	    buffer_length: 1024 #expected rate 5Hz
+	  }, {
+	    id: 3 
+	    name: ftrig 
+	    enabled: true 
+	    time_offset_ps: 0 
+	    monitor_only: false 
+	    terminated: true 
+	    buffer_length: 1024 #expected rate 100Hz
+	  }, {
+	    id: 4 
+	    name: etrig 
+	    enabled: true 
+	    time_offset_ps: 0 
+	    monitor_only: false 
+	    terminated: true 
+	    buffer_length: 1024 #expected rate 5~10Hz
+	  }] 
+      }
+    }
+  }
+  metrics: {
+    brFile: {
+      metricPluginType: "file" 
+      level_string: "1-10,11-20" 
+      fileName: "/daq/log/metrics/spectdc_%UID%_metrics.log" 
+      uniquify: true 
+    }
+    send_system_metrics: true 
+    send_process_metrics: true 
+    graphite: {
+      namespace: "sbnd.tdc." 
+      host: "10.226.36.45" 
+      level_string: "1-10,11-20" 
+      metricPluginType: "graphite" 
+      port: 2003 
+      reporting_interval: 10 
+    }
+  }
+}

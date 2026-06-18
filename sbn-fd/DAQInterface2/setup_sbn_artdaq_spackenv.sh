@@ -23,19 +23,25 @@ SPACK_RELEASE=v1.0.1.sbnd
 #------------------------------------------------------------------------------
 SPACK_HOME_DIR="/daq/software/spack_packages/spack/${SPACK_RELEASE}"
 SPACK_INSTALL_DIR="${SPACK_HOME_DIR}/NULL"
+OS_NAME=""
+
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export PATH="/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export LD_LIBRARY_PATH=""
+
 echo "Spack installation directory: ${SPACK_INSTALL_DIR}"
 export PATH=${SPACK_HOME_DIR}/sbndaq-spack-tools:${PATH}
 #------------------------------------------------------------------------------
 # Helper functions
 #------------------------------------------------------------------------------
 get_os_name() {
-  local os_info os_match
-  os_info=$(grep "PRETTY_NAME" /etc/os-release) || { echo "Error reading OS information"; return 1; }
-  os_match=$(echo "$os_info" | grep -o "Scientific\|AlmaLinux")
-  case $os_match in
-    "Scientific") export OS_NAME=scientific7 ;;
-    "AlmaLinux") export OS_NAME=almalinux9 ;;
-    *) echo "Warning: Unknown OS detected, exiting." && return 1 ;;
+  case $(uname -r) in
+    3.10*) OS_NAME="scientific7" ;;
+    5.14*) OS_NAME="almalinux9" ;;
+    *) echo "Error: Unsupported OS version"; return 1 ;;
   esac
 }
 

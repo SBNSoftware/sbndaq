@@ -1,0 +1,98 @@
+
+bnbzerobiasfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#BNB  #zero bias
+trigger_type: [1] 
+
+excluded_triggers: [3, 4, 17, 14, 15] 
+
+}
+bnblightfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#BNB #light
+trigger_type: [2] 
+
+excluded_triggers: [3, 4, 17, 14, 15] 
+
+}
+bnbminbiasfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#BNB #min bias
+trigger_type: [6] 
+
+excluded_triggers: [3, 4, 17, 14, 15] 
+
+}
+bnbpostlightfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#BNB #post light
+trigger_type: [16] 
+
+excluded_triggers: [3, 4, 17, 14, 15] 
+
+}
+offbeamzerobiasfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#OffBeam #zero bias
+trigger_type: [3] 
+
+excluded_triggers: [1, 2, 6, 16, 14, 15] 
+
+}
+offbeamlightfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#OffBeam #light
+trigger_type: [4, 22] #light
+#light
+excluded_triggers: [1, 2, 6, 16, 14, 15] 
+
+}
+offbeampostlightfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#OffBeam #post light
+trigger_type: [17, 23] 
+
+excluded_triggers: [1, 2, 6, 16, 14, 15] 
+
+}
+crossingmuonfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+#crossing muon... might need more of these for different subsets of crossing muon
+trigger_type: [14, 15] 
+
+excluded_triggers: [1, 2, 6, 16, 3, 4, 17, 22, 23] 
+
+}
+randomtriggerfilter: {
+
+module_type: SBNDGateFilter 
+
+raw_data_label: "daq" 
+
+trigger_type: [0] 
+
+}

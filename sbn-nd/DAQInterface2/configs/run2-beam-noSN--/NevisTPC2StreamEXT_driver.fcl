@@ -1,0 +1,6 @@
+ 
+#include "NevisTPC2StreamEXT_driver_default.fcl" 
+#======Place override parameters below=========
+daq.fragment_receiver.DumpSNBinary: false # Write binary file for SN continuous readout
+# Write binary file for SN continuous readout
+daq.fragment_receiver.DoSNReadout: false # Do continuous readout

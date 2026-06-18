@@ -1,0 +1,55 @@
+#include "crt_standard.fcl"
+#include "crt_feb_standard.fcl"
+
+#include "feb027.fcl"
+#include "feb076.fcl"
+#include "feb015.fcl"
+#include "feb043.fcl"
+#include "feb052.fcl"
+#include "feb031.fcl"
+#include "feb028.fcl"
+#include "feb017.fcl"
+
+
+daq.metrics.brFile.fileName : "/daq/log/metrics/crt01_metrics.log"
+daq.metrics.graphite.namespace: "sbnd.crtteststand."
+
+#daq.fragment_receiver.fragment_ids: [ 027, 076, 015, 043, 052, 031, 028, 017 ]
+daq.fragment_receiver.fragment_ids: [ 0xB61B, 0xB64C, 0xB60F, 0xB62B, 0xB634, 0xB61F, 0xB61C, 0xB611 ]
+
+daq.fragment_receiver.ReaderID: 27
+
+daq.fragment_receiver.ethernet_port: "ens8f3"
+
+daq.fragment_receiver.TurnOnHV : [ true, true, true, true, true, true, true, true]
+
+daq.fragment_receiver.PPS_offset_ns : [ 490, 501, 512, 523, 512, 512, 512, 512]
+
+
+daq.fragment_receiver.FEBConfigurationMAC27: @local::FEB027Configuration
+daq.fragment_receiver.FEBConfigurationMAC76: @local::FEB076Configuration
+daq.fragment_receiver.FEBConfigurationMAC15: @local::FEB015Configuration
+daq.fragment_receiver.FEBConfigurationMAC43: @local::FEB043Configuration
+daq.fragment_receiver.FEBConfigurationMAC52: @local::FEB052Configuration
+daq.fragment_receiver.FEBConfigurationMAC31: @local::FEB031Configuration
+daq.fragment_receiver.FEBConfigurationMAC28: @local::FEB028Configuration
+daq.fragment_receiver.FEBConfigurationMAC17: @local::FEB017Configuration
+
+daq.fragment_receiver.FEBConfigurationMAC27.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC27.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC76.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC76.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC15.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC15.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC43.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC43.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC52.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC52.time_threshold: 250
+
+daq.fragment_receiver.FEBConfigurationMAC31.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC31.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC28.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC28.time_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC17.charge_threshold: 250
+daq.fragment_receiver.FEBConfigurationMAC17.time_threshold: 250
+

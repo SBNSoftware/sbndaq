@@ -1,0 +1,8 @@
+ 
+#include "EventBuilder_standard.fcl" 
+
+daq.metrics.graphite.namespace: "sbnd.evb03." 
+
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb03_metrics.log" 
+
+process_name: DAQEVB03 

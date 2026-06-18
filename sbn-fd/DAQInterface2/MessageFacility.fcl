@@ -10,5 +10,6 @@
 # the environment variable DAQINTERFACE_MESSAGEFACILITY_FHICL to the
 # name of the other file.
 #console : { threshold : "DEBUG" type: "cout"}
-udp : { type : "UDP" threshold : "DEBUG"  port : DAQINTERFACE_WILL_OVERWRITE_THIS_WITH_AN_INTEGER_VALUE host : "icarus-evb01-daq.fnal.gov" } 
+udp : { type : "UDP" threshold : "DEBUG"  port : DAQINTERFACE_WILL_OVERWRITE_THIS_WITH_AN_INTEGER_VALUE host : "icarus-ops01-daq.fnal.gov" } 
+
 

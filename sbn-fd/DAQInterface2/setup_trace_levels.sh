@@ -47,5 +47,10 @@ if [[ "$(hostname -s)" =~ icarus-tpc[0-9]{2}$ ]]; then
   # https://github.com/SBNSoftware/sbndaq-artdaq/blob/develop/sbndaq-artdaq/Generators/ICARUS/PhysCrateData_generator.cc
   tonM -n PhysCrateData   DEBUG+13
   # https://github.com/SBNSoftware/sbndaq-artdaq/blob/develop/sbndaq-artdaq/Generators/ICARUS/PhysCrate_GeneratorBase.cc
-  tonM -n PhysCrate_GeneratorBase DEBUG+19
+  tonM -n PhysCrate_GeneratorBase DEBUG+4
+  tonS -n PhysCrate_GeneratorBase DEBUG+4
+
+  tonM -n WhiteRabbitReadout DEBUG+1
+  tonS -n WhiteRabbitReadout  DEBUG+1
+
 fi

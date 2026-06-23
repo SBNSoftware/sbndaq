@@ -61,13 +61,13 @@ export PYTHONUNBUFFERED=true
 
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
-_cf_so="$(find -L "$(dirname "$(dirname "$(command -v conftool.py 2>/dev/null)")")/lib" -name '_conftoolp*.so' 2>/dev/null | head -1)"
-
-[[ -n "$_cf_so" ]] && export PYTHONPATH="$(dirname "$_cf_so")${PYTHONPATH:+:$PYTHONPATH}"
-unset _cf_so
 
 [[ -f "$ARTDAQ_DAQINTERFACE_DIR/source_me" ]] \
   && { echo "Sourcing $ARTDAQ_DAQINTERFACE_DIR/source_me"; source "$ARTDAQ_DAQINTERFACE_DIR/source_me"; }
+
+# artdaq-database doesn't export its version in this setup flow; derive it from
+# conftool.py's install path so daqinterface's version check sees a real value.
+export ARTDAQ_DATABASE_VERSION=$(command -v conftool.py 2>/dev/null | grep -oE '/artdaq-database/v[0-9_]+/' | grep -oE 'v[0-9_]+' | head -1)
 
 export PATH="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}"
 

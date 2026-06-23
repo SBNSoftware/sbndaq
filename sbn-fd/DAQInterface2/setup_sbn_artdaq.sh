@@ -8,7 +8,7 @@ BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
     [scientific7]="/none"
-     [almalinux9]="/dxjscrs"
+     [almalinux9]="/wkl7e6s"
 )
 
 USE_CACHED_BASH_ENV=True

@@ -7,8 +7,8 @@ SBNDAQ_VERSION='v2_02_00'
 BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/xt4epv"
-     [almalinux9]="/ymgzem"
+    [scientific7]="/none"
+     [almalinux9]="/dxjscrs"
 )
 
 USE_CACHED_BASH_ENV=True

@@ -61,6 +61,11 @@ export PYTHONUNBUFFERED=true
 
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
+_cf_so="$(find -L "$(dirname "$(dirname "$(command -v conftool.py 2>/dev/null)")")/lib" -name '_conftoolp*.so' 2>/dev/null | head -1)"
+
+[[ -n "$_cf_so" ]] && export PYTHONPATH="$(dirname "$_cf_so")${PYTHONPATH:+:$PYTHONPATH}"
+unset _cf_so
+
 [[ -f "$ARTDAQ_DAQINTERFACE_DIR/source_me" ]] \
   && { echo "Sourcing $ARTDAQ_DAQINTERFACE_DIR/source_me"; source "$ARTDAQ_DAQINTERFACE_DIR/source_me"; }
 

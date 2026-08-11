@@ -1,0 +1,11 @@
+ 
+#include "EventBuilder_standard.fcl" 
+
+daq.metrics.graphite.namespace: "sbnd.evb01." 
+
+daq.metrics.evbFile.fileName: "/daq/log/metrics/evb01_p2_metrics.log" 
+#outputs.normalOutput.fileName: "/data/sbndraw/fts_dropbox/data_evb01_process2_${app_name}_run%R_%#_%to.root" 
+
+process_name: DAQEVB01P2 
+
+#daq.event_builder.art_analyzer_count: 1

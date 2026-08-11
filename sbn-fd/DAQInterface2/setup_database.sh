@@ -2,6 +2,7 @@
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename ${BASH_SOURCE}) should be sourced!"; exit 1; }
 
 export ARTDAQ_DATABASE_ENV=${ARTDAQ_DATABASE_ENV:-"${HOME}/.artdaq_database.env"}
+
 #[[ -f ${ARTDAQ_DATABASE_ENV} ]] || { [[ -L ${ARTDAQ_DATABASE_ENV} ]] || echo "Error: ${ARTDAQ_DATABASE_ENV} is missing."; exit 2; }
 set -o allexport; source ${ARTDAQ_DATABASE_ENV}; source ${ARTDAQ_DATABASE_ENV}; set +o allexport
 

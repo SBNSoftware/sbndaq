@@ -1,0 +1,29 @@
+daq:
+{
+  fragment_receiver: 
+  {
+    generator:   SpectraTimeReadout
+    fragment_type: SpectratimeEvent
+    max_fragment_size_bytes: 1000000
+
+    // GPS always sends last status message, even if it has no new ones
+    request_mode: Buffer
+    buffer_mode_keep_latest: true
+    separate_data_thread: true
+    fragment_id: 3
+    board_id:    0
+    Verbosity:   1
+
+    # statusMode: 1=full, 2=minimal  We have 2 flavors of GPS receivers
+    statusMode:  1
+    dataSleep: 100
+
+    destinations: { }
+
+    routing_table_config: 
+    {  
+      use_routing_master: false 
+    }
+    
+  }
+}

@@ -22,13 +22,13 @@ exclude_list=$(grep "See logfile " /daq/log/DAQInterface_partition${partition}.l
 echo "Excluding: $exclude_list"
 
 #setdaqcomps.sh $(grep -vE "(${exclude_list}Event|Disp|label|tpcww02)" /daq/run_records/${good_run_number}/ranks.txt | awk '{printf("%s ", $3);}')
-setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 spectdc ntb01 mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01
+#setdaqcomps.sh ptb01PULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 spectdc ntb01 mbb02 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 tpc11 tpc10 tpc09 tpc08 tpc07 tpc06 tpc05 tpc04 tpc03 tpc02 tpc01
+setdaqcomps.sh ntb01 tpc01 tpc02 tpc03 tpc04 tpc05 tpc06 tpc08 tpc09 tpc10 tpc11 tpc12 wib101 wib102 wib103 wib104 wib105 wib106 wib201 wib202 wib203 wib204 wib205 wib206 wib301 wib302 wib303 wib304 wib305 wib306 wib401 wib402 wib403 wib404 wib405 wib406 mbb02 spectdc ptb01PULL crtNorthWallWestPULL crtNorthWallEastPULL crtFlatEastPULL crtFlatSouthWestPULL crtFlatNorthPULL crtEastWallSouthBottomPULL crtEastWallNorthTopPULL crtWestWallSouthBottomPULL crtWestWallNorthTopPULL crtSouthWallWestPULL crtSouthWallEastPULL crtTopLowWallEastPULL crtTopLowWallCentralPULL crtTopLowWallWestPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopHighWallEastPULL crtTopHighWallCentralPULL crtTopHighWallWestPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL crtMINOSPULL pmt01 pmt02 pmt03 pmt04 pmt05 pmt06 pmt07 pmt08 pmt09 xarapuca01 xarapuca02 xarapuca03 xarapuca04
 
-#setdaqcomps.sh ptb01PULL
+#setdaqcomps.sh ptb01PULL ntb01 pmt01
 
 echo "Booting up now...."
-send_transition.sh boot boot_nodispatcher.txt
-#send_transition.sh boot boot_nodqm.txt
+send_transition.sh boot boot.txt
 
 echo "Finish booting...."
 

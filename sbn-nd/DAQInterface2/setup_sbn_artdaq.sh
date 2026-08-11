@@ -2,13 +2,13 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v2_01_00'
+SBNDAQ_VERSION='v2_02_00'
 #ulimit -c unlimited
 BUILD_VARIANT='gcc@13.1.0'
 
 declare -A build_hash_map=(
-    [scientific7]="/6d4rvf2"
-    [almalinux9]="/t3nduhk"
+    [scientific7]="/none"
+    [almalinux9]="/uoi5z7e"
 )
 
 USE_CACHED_BASH_ENV=True
@@ -19,8 +19,16 @@ OS_NAME=""
 case $(uname -r) in
     3.10*) OS_NAME="scientific7" ;;
     5.14*) OS_NAME="almalinux9" ;;
+    6.1*) OS_NAME="almalinux9" ;;
     *) echo "Error: Unsupported OS version"; return 1 ;;
 esac
+
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export PATH="/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export LD_LIBRARY_PATH=""
 
 BUILD_HASH="${build_hash_map[${OS_NAME}]}"
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")

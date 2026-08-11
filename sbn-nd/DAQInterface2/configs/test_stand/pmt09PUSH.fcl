@@ -1,0 +1,16 @@
+ 
+#include "pmt_standard.fcl" 
+
+daq.metrics.brFile.fileName: "/daq/log/metrics/pmt09_metrics.log" 
+
+daq.metrics.graphite.namespace: "sbnd.pmt09." 
+#Set fragment id by slot number in vme crate
+daq.fragment_receiver.fragment_id: 0xA008 
+# link is which port on the PCIe card it is connected, numbering starts at 0
+daq.fragment_receiver.link: 0
+
+daq.redis_10s.redis_key_prefix: "DABBoardReader:pmt09:" 
+
+daq.redis_testing.redis_key_prefix: "DABBoardReader:pmt09:" 
+
+daq.redis_5m.redis_key_prefix: "DABBoardReader:pmt09:" 

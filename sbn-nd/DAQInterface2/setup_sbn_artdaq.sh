@@ -2,7 +2,7 @@
 echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE}" ]] || { echo "The script $(basename "${BASH_SOURCE}") should be sourced!"; exit 1; }
 
-SBNDAQ_VERSION='v2_02_00'
+SBNDAQ_VERSION='v2_03_00'
 #ulimit -c unlimited
 BUILD_VARIANT='gcc@13.1.0'
 

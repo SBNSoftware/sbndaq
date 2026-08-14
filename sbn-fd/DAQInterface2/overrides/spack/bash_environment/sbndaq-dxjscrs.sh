@@ -40,9 +40,9 @@ export BUILD_VARIANT="gcc@13.1.0"
 
 export CC="/daq/software/spack_packages/llvm/17.0.6/linux-almalinux9-x86_64_v2-gcc-13.1.0-q7cxacolietx7cwnliirvqwcm4szctzd/bin/clang"
 
-export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/lib:\
+export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/lib:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-n6nbgfxwkuak3loo3zomewiju6onhv7x/lib:\
-/daq/software/spack_packages/sbndaq-artdaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/lib:\
+/daq/software/spack_packages/sbndaq-artdaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/lib:\
 /daq/software/spack_packages/artdaq-core-demo/v1_11_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-inxqmzn3ydwmbuwzeferdqldvdzzsztk/lib:\
 /daq/software/spack_packages/artdaq/v3_13_02/linux-almalinux9-x86_64_v2-gcc-13.1.0-zk2lhujfdiwwk2tw3elrgcn5ybrocj23/lib:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-av7zve2api4t33psbpwc4cy6yjuyvphy/lib:\
@@ -56,14 +56,14 @@ export CET_PLUGIN_PATH=/daq/software/spack_packages/sbndaq/v2_02_00/linux-almali
 
 export CLING_STANDARD_PCH="none"
 
-export CMAKE_PREFIX_PATH=/daq/software/spack_packages/sbndaq-suite/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-dxjscrsy4rkvsa3nnu6xajvxh4vzrnsb:\
+export CMAKE_PREFIX_PATH=/daq/software/spack_packages/sbndaq-suite/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-dxjscrsy4rkvsa3nnu6xajvxh4vzrnsb:\
 /daq/software/spack_packages/artdaq-runcontrol-gui/v1_03_06/linux-almalinux9-x86_64_v2-gcc-13.1.0-33lewgj4opxnnoiatl7x4jsiowiek3rf:\
 /daq/software/spack_packages/artdaq-suite/v3_13_02/linux-almalinux9-x86_64_v2-gcc-13.1.0-mt55k6h6wleuuq74cl74ramlqwjgsajz:\
-/daq/software/spack_packages/sbndaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt:\
+/daq/software/spack_packages/sbndaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt:\
 /daq/software/spack_packages/artdaq-daqinterface/v4_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-w4enww3ege4rds327duyqzbl7r6hiakq:\
 /daq/software/spack_packages/artdaq-database/v3_05_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-sww6vadnb6nfdguokx4yowl4fsy235ev:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-n6nbgfxwkuak3loo3zomewiju6onhv7x:\
-/daq/software/spack_packages/sbndaq-artdaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov:\
+/daq/software/spack_packages/sbndaq-artdaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov:\
 /daq/software/spack_packages/artdaq-core-demo/v1_11_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-inxqmzn3ydwmbuwzeferdqldvdzzsztk:\
 /daq/software/spack_packages/artdaq/v3_13_02/linux-almalinux9-x86_64_v2-gcc-13.1.0-zk2lhujfdiwwk2tw3elrgcn5ybrocj23:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-av7zve2api4t33psbpwc4cy6yjuyvphy:\
@@ -73,8 +73,8 @@ export CMAKE_PREFIX_PATH=/daq/software/spack_packages/sbndaq-suite/v2_02_00/linu
 /daq/software/spack_packages/jsoncpp/1.9.6/linux-almalinux9-x86_64_v2-gcc-13.1.0-elivv26k454cfirocgskzrffm5r6uz7e:\
 /daq/software/spack_packages/libpqxx/7.10.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-7435uyulbkxwktp6sf5ysp6tqhajrv5z:\
 /daq/software/spack_packages/redis/7.4.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-ru3c2nhcuevnmopejyridyyuuxxhvrvu:\
-/daq/software/spack_packages/sbndaq-artdaq-core/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-aindlkuu2rgl3wja4eoicv7obbbisw3x:\
-/daq/software/spack_packages/wibtools/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh:\
+/daq/software/spack_packages/sbndaq-artdaq-core/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-aindlkuu2rgl3wja4eoicv7obbbisw3x:\
+/daq/software/spack_packages/wibtools/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh:\
 /daq/software/spack_packages/windriver/v16_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-i22hrolklcou6qpskgsuyed6g453x555:\
 /daq/software/spack_packages/artdaq-mfextensions/v1_09_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-zs7ihueevgrxnikftyivcoa43lvxdlxl:\
 /daq/software/spack_packages/xmlrpc-c/1.51.06/linux-almalinux9-x86_64_v2-gcc-13.1.0-uzm6f4ybn324xpevfkfy3csmr3vqx26n:\
@@ -276,9 +276,9 @@ export EPOCHREALTIME="1782232394.294095"
 
 export EPOCHSECONDS="1782232394"
 
-export FHICL_FILE_PATH=/daq/software/spack_packages/sbndaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/fcl:\
+export FHICL_FILE_PATH=/daq/software/spack_packages/sbndaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/fcl:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-n6nbgfxwkuak3loo3zomewiju6onhv7x/fcl:\
-/daq/software/spack_packages/sbndaq-artdaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/fcl:\
+/daq/software/spack_packages/sbndaq-artdaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/fcl:\
 /daq/software/spack_packages/artdaq-core-demo/v1_11_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-inxqmzn3ydwmbuwzeferdqldvdzzsztk/fcl:\
 /daq/software/spack_packages/artdaq/v3_13_02/linux-almalinux9-x86_64_v2-gcc-13.1.0-zk2lhujfdiwwk2tw3elrgcn5ybrocj23/fcl:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-av7zve2api4t33psbpwc4cy6yjuyvphy/fcl:\
@@ -365,15 +365,15 @@ export PATH=/daq/software/spack_packages/epics-base/7.0.6.1/linux-almalinux9-x86
 /daq/software/spack_packages/unzip/6.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-hqbpdqt4nvsokwwkmolvjfyqqgmhohhe/bin:\
 /daq/software/spack_packages/xz/5.4.6/linux-almalinux9-x86_64_v2-gcc-13.1.0-cqcfhk7vboytfj2esd3y53mrhxxtqbaz/bin:\
 /daq/software/spack_packages/artdaq-runcontrol-gui/v1_03_06/linux-almalinux9-x86_64_v2-gcc-13.1.0-33lewgj4opxnnoiatl7x4jsiowiek3rf/bin:\
-/daq/software/spack_packages/sbndaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/bin:\
+/daq/software/spack_packages/sbndaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-ntjklrs7cc3t7kicaq3ndcpy4umv5yjt/bin:\
 /daq/software/spack_packages/artdaq-daqinterface/v4_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-w4enww3ege4rds327duyqzbl7r6hiakq/bin:\
 /daq/software/spack_packages/artdaq-database/v3_05_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-sww6vadnb6nfdguokx4yowl4fsy235ev/bin:\
 /daq/software/spack_packages/artdaq-demo/v3_13_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-n6nbgfxwkuak3loo3zomewiju6onhv7x/bin:\
-/daq/software/spack_packages/sbndaq-artdaq/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/bin:\
+/daq/software/spack_packages/sbndaq-artdaq/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-wfbk3xwjuv4kralw5urigcnvyms2xvov/bin:\
 /daq/software/spack_packages/artdaq/v3_13_02/linux-almalinux9-x86_64_v2-gcc-13.1.0-zk2lhujfdiwwk2tw3elrgcn5ybrocj23/bin:\
 /daq/software/spack_packages/artdaq-epics-plugin/v1_06_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-av7zve2api4t33psbpwc4cy6yjuyvphy/bin:\
 /daq/software/spack_packages/redis/7.4.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-ru3c2nhcuevnmopejyridyyuuxxhvrvu/bin:\
-/daq/software/spack_packages/wibtools/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/bin:\
+/daq/software/spack_packages/wibtools/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/bin:\
 /daq/software/spack_packages/artdaq-mfextensions/v1_09_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-zs7ihueevgrxnikftyivcoa43lvxdlxl/bin:\
 /daq/software/spack_packages/xmlrpc-c/1.51.06/linux-almalinux9-x86_64_v2-gcc-13.1.0-uzm6f4ybn324xpevfkfy3csmr3vqx26n/bin:\
 /daq/software/spack_packages/artdaq-utilities/v1_09_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-yzrw7xxezfdr3o5hn53pxxf6aph6i7ac/bin:\
@@ -684,7 +684,7 @@ export ROOT_INCLUDE_PATH=/daq/software/spack_packages/canvas-root-io/1.13.06/lin
 /daq/software/spack_packages/gcc-runtime/13.1.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-gvqla437weejy7ohjtesa75uxougga7a/include:\
 /daq/software/spack_packages/art-root-io/1.13.06/linux-almalinux9-x86_64_v2-gcc-13.1.0-jv5taeiuqk6ohar4voxtyxarpc3ceynj/include:\
 /daq/software/spack_packages/art-suite/s131/linux-almalinux9-x86_64_v2-gcc-13.1.0-fkll2llcrty6qk4se6xlk543na7l3x5a/include:\
-/daq/software/spack_packages/sbndaq-suite/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-dxjscrsy4rkvsa3nnu6xajvxh4vzrnsb/include:\
+/daq/software/spack_packages/sbndaq-suite/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-dxjscrsy4rkvsa3nnu6xajvxh4vzrnsb/include:\
 /usr/include
 
 export ROOT_LIBRARY_PATH=/daq/software/spack_packages/art-root-io/1.13.06/linux-almalinux9-x86_64_v2-gcc-13.1.0-jv5taeiuqk6ohar4voxtyxarpc3ceynj/lib:\
@@ -692,7 +692,7 @@ export ROOT_LIBRARY_PATH=/daq/software/spack_packages/art-root-io/1.13.06/linux-
 
 export ROOT_VERSION="v6"
 
-export SBNDAQ_VERSION="v2_02_00"
+export SBNDAQ_VERSION="v2_03_00"
 
 export SETUP_ARTDAQ_MFEXTENSIONS="spack load artdaq-mfextensions"
 
@@ -712,7 +712,7 @@ export SPACK_PYTHON="/usr/bin/python3"
 
 export SPACK_ROOT="/daq/software/spack_packages/spack/current/NULL"
 
-export SPACK_USER_CONFIG_PATH="/home/nfs/icarus/DAQ_SPACK_ProdAreas/DAQ_2026-06-18_GAL_v2_02_00/srcs/sbndaq/sbn-fd/DAQInterface2/overrides/spack"
+export SPACK_USER_CONFIG_PATH="/home/nfs/icarus/DAQ_SPACK_ProdAreas/DAQ_2026-06-18_GAL_v2_03_00/srcs/sbndaq/sbn-fd/DAQInterface2/overrides/spack"
 
 export SRANDOM="3222464107"
 
@@ -720,15 +720,15 @@ export S_COLORS="auto"
 
 export TBB_INC="/daq/software/spack_packages/intel-tbb-oneapi/2021.9.0/linux-almalinux9-x86_64_v2-gcc-13.1.0-7jfp34ifkisohmp4g2tursbgykyzitwy/include"
 
-export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/icarus/DAQ_SPACK_ProdAreas/DAQ_2026-06-18_GAL_v2_02_00/srcs/sbndaq/sbn-fd/DAQInterface2"
+export THIS_SBN_DAQ_DAQINTERFACE_DIR="/home/nfs/icarus/DAQ_SPACK_ProdAreas/DAQ_2026-06-18_GAL_v2_03_00/srcs/sbndaq/sbn-fd/DAQInterface2"
 
 export USE_CACHED_BASH_ENV="True"
 
-export WIBTOOLS_BIN="/daq/software/spack_packages/wibtools/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/bin"
+export WIBTOOLS_BIN="/daq/software/spack_packages/wibtools/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/bin"
 
-export WIB_ADDRESS_TABLE_PATH="/daq/software/spack_packages/wibtools/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/tables"
+export WIB_ADDRESS_TABLE_PATH="/daq/software/spack_packages/wibtools/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/tables"
 
-export WIB_CONFIG_PATH="/daq/software/spack_packages/wibtools/v2_02_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/config"
+export WIB_CONFIG_PATH="/daq/software/spack_packages/wibtools/v2_03_00/linux-almalinux9-x86_64_v2-gcc-13.1.0-46y63burlpqe7qbbj7tr3edzc7jwhtvh/config"
 
 export XDG_SESSION_CLASS="user"
 
@@ -740,7 +740,7 @@ export XLOCALEDIR=/daq/software/spack_packages/libx11/1.8.10/linux-almalinux9-x8
 
 export __MODULES_LMINIT="module use --append /usr/share/Modules/modulefiles:module use --append /etc/modulefiles:module use --append /usr/share/modulefiles"
 
-export _a="sbndaq-suite@v2_02_00%gcc@13.1.0 arch=linux-almalinux9-x86_64_v2 /dxjscrs"
+export _a="sbndaq-suite@v2_03_00%gcc@13.1.0 arch=linux-almalinux9-x86_64_v2 /dxjscrs"
 
 export _backup_glob="boot_Calibrations.new~ boot_Physics.new~"
 

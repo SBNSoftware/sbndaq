@@ -15,8 +15,8 @@
 
 log_directory: /daq/log
 record_directory: /daq/run_records
-package_hashes_to_save: [ artdaq, artdaq_core, artdaq_mfextensions, artdaq_utilities, wibtools, sbndaq_artdaq-core, sbndaq_artdaq, sbndaq ]
-spack_root_for_bash_scripts: /home/nfs/sbnd/DAQ_SPACK_ProdAreas/DAQ_2026-04-03_GAL_v2_01_00/DAQInterface/overrides/spack
+package_hashes_to_save: [ artdaq, artdaq-core, artdaq-mfextensions, artdaq-utilities, wibtools, sbndaq-artdaq-core, sbndaq-artdaq, sbndaq ]
+spack_root_for_bash_scripts: /home/nfs/sbnd/DAQ_SPACK_ProdAreas/DAQ_2026-08-17_GAL_v2_03_00/DAQInterface/overrides/spack
 max_configurations_to_list: 20
 boardreader timeout: 600
 eventbuilder timeout: 45
@@ -35,8 +35,6 @@ disable_unique_rootfile_labels: true
 
 transfer_plugin_to_use: TCPSocket
 
-
-
-boardreader_priorities_on_config: crt* wib* mbb02 tpc* ntb01 ptb* pmt* xarapuca* spectdc* .*
-boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb* pmt* xarapuca* spectdc* .*
-boardreader_priorities_on_stop: ptb* ntb01 tpc* wib* mbb02 spectdc* xarapuca* pmt*  crt* . 
+boardreader_priorities_on_config: crt* wib* mbb02 tpc* ntb01 ptb01* pmt* xarapuca* spectdc .*
+boardreader_priorities_on_start: crt* mbb02 wib* tpc* ntb01 ptb01* pmt* xarapuca* spectdc .* 
+boardreader_priorities_on_stop: spectdc xarapuca* pmt* ptb01* ntb01 tpc* wib* mbb02 crt* .*

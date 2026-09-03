@@ -4,8 +4,8 @@ echo "*** Running $(basename "${BASH_SOURCE}") on $(hostname -s)."
 [[ "$0" != "${BASH_SOURCE[0]}" ]] || { echo "The script $(basename "${BASH_SOURCE[0]}") should be sourced!"; exit 1; }
 
 #source $(realpath "$(dirname "${BASH_SOURCE[0]}")")/unset_all.sh
-
-SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/current/NULL"
+SPACK_VERSION=current
+SPACK_INSTALL_DIR="/daq/software/spack_packages/spack/${SPACK_VERSION}/NULL"
 SPACK_ENV_SCRIPT="${SPACK_INSTALL_DIR}/share/spack/setup-env.sh"
 
 [[ -f "$SPACK_ENV_SCRIPT" ]] || { echo "Error: Not a Spack installation. This is a critical error with loading Spack packages."; return 10; }
@@ -18,7 +18,6 @@ source "$SPACK_ENV_SCRIPT" 2>&1
 export THIS_SBN_DAQ_DAQINTERFACE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 
 export DAQ_SETUP_SCRIPT="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/setup_sbn_artdaq.sh"
-export SPACK_USER_CONFIG_PATH=${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides/spack
 
 export DAQINTERFACE_CONFIGURE_STATUS_CHECK_QUIET_TIME=60
 
@@ -35,7 +34,7 @@ which DAQInterface.sh >/dev/null 2>&1 \
   || { echo "Error: DAQInterface not setup. This is a critical error with loading Spack packages."; return 11; }
 
 echo "Loaded Spack packages:"
-spack --config-scope ${SPACK_USER_CONFIG_PATH} find -dl --loaded | grep -E '(sbndaq|artdaq|wibtools)'
+spack find -dl --loaded | grep -E '(sbndaq|artdaq|wibtools)'
 echo
 
 export ARTDAQ_MFEXTENSIONS_DIR=$(spack find -pd --loaded | grep artdaq-mfextensions | grep -Eo '/.*$')
@@ -62,7 +61,14 @@ export PYTHONUNBUFFERED=true
 
 unset DAQINTERFACE_STANDARD_SOURCEFILE_SOURCED
 
+
 [[ -f "$ARTDAQ_DAQINTERFACE_DIR/source_me" ]] \
   && { echo "Sourcing $ARTDAQ_DAQINTERFACE_DIR/source_me"; source "$ARTDAQ_DAQINTERFACE_DIR/source_me"; }
+
+# artdaq-database doesn't export its version in this setup flow; derive it from
+# conftool.py's install path so daqinterface's version check sees a real value.
+export ARTDAQ_DATABASE_VERSION=$(command -v conftool.py 2>/dev/null | grep -oE '/artdaq-database/v[0-9_]+/' | grep -oE 'v[0-9_]+' | head -1)
+
+export PATH="${THIS_SBN_DAQ_DAQINTERFACE_DIR}/overrides:${PATH}"
 
 echo "*** Finished running $(basename "${BASH_SOURCE}") on $(hostname -s).";echo

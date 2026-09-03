@@ -1,0 +1,66 @@
+ 
+#include "crt_standard.fcl" 
+ 
+#include "crt_feb_standard.fcl" 
+ 
+#include "feb083.fcl" 
+ 
+#include "feb084.fcl" 
+ 
+#include "feb104.fcl" 
+ 
+#include "feb103.fcl" 
+ 
+#include "feb102.fcl" 
+ 
+#include "feb101.fcl" 
+
+daq.metrics.brFile.fileName: "/daq/log/metrics/crt01_metrics.log" 
+
+daq.metrics.graphite.namespace: "sbnd.crtflat03." 
+
+daq.fragment_receiver.ethernet_port: "ens4f0" 
+#daq.fragment_receiver.fragment_ids: [ 101, 102, 103, 104, 84, 83 ]
+daq.fragment_receiver.fragment_ids: [0xB065, 0xB066, 0xB067, 0xB068, 0xB054, 0xB053] 
+
+daq.fragment_receiver.ReaderID: 101 
+
+daq.fragment_receiver.TurnOnHV: [true, true, true, true, true, true] 
+
+daq.fragment_receiver.PPS_offset_ns: [453, 469, 485, 501, 517, 533] 
+
+daq.fragment_receiver.FEBConfigurationMAC83: @local::FEB083Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC84: @local::FEB084Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC104: @local::FEB104Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC103: @local::FEB103Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC102: @local::FEB102Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC101: @local::FEB101Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC83.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC83.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC84.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC84.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC104.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC104.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC103.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC103.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC102.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC102.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC101.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC101.time_threshold: 320 

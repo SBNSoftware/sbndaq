@@ -23,7 +23,7 @@ spackdir=$( sed -r -n 's/^\s*spack[_ ]root[_ ]for[_ ]bash[_ ]scripts\s*:\s*(\S+)
 if [[ -n $spackdir ]]; then
 
     cmd_save=$cmd
-    . $spackdir/share/spack/setup-env-ext.sh
+    . $spackdir/share/spack/setup-env.sh
     cmd=$cmd_save
 
     if [[ "$?" != "0" ]]; then

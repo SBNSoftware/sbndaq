@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-return 0;
+#return 0;
 
 source_this_file="/daq/software/spack_packages/spack/current/NULL/share/spack/setup-env.sh"
 

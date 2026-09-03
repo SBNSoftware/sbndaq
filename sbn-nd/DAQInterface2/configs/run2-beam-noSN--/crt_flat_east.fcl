@@ -1,0 +1,66 @@
+ 
+#include "crt_standard.fcl" 
+ 
+#include "crt_feb_standard.fcl" 
+ 
+#include "feb082.fcl" 
+ 
+#include "feb086.fcl" 
+ 
+#include "feb090.fcl" 
+ 
+#include "feb091.fcl" 
+ 
+#include "feb099.fcl" 
+ 
+#include "feb100.fcl" 
+
+daq.metrics.brFile.fileName: "/daq/log/metrics/crt01_metrics.log" 
+
+daq.metrics.graphite.namespace: "sbnd.crtflat01." 
+#daq.fragment_receiver.fragment_ids: [ 82, 86, 90, 91, 99, 100 ]
+daq.fragment_receiver.fragment_ids: [0xB052, 0xB056, 0xB05A, 0xB05B, 0xB063, 0xB064] 
+
+daq.fragment_receiver.ReaderID: 82 
+
+daq.fragment_receiver.ethernet_port: "ens4f1" 
+
+daq.fragment_receiver.TurnOnHV: [true, true, true, true, true, true] 
+
+daq.fragment_receiver.PPS_offset_ns: [453, 469, 501, 517, 530, 546] 
+
+daq.fragment_receiver.FEBConfigurationMAC82: @local::FEB082Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC86: @local::FEB086Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC90: @local::FEB090Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC91: @local::FEB091Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC99: @local::FEB099Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC100: @local::FEB100Configuration 
+
+daq.fragment_receiver.FEBConfigurationMAC82.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC82.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC86.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC86.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC90.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC90.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC91.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC91.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC99.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC99.time_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC100.charge_threshold: 320 
+
+daq.fragment_receiver.FEBConfigurationMAC100.time_threshold: 320 

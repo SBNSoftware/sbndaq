@@ -1,5 +1,3 @@
-#ntb01 sbnd-tpc12-daq -1 1
-#ntb01 sbnd-tpc16-daq -1 1
 ntb01 sbnd-tpc18-daq -1 1
 tpc01 sbnd-tpc01-daq -1 1
 tpc02 sbnd-tpc02-daq -1 1
@@ -39,7 +37,6 @@ wib403 sbnd-wib01-daq -1 1
 wib404 sbnd-wib01-daq -1 1
 wib405 sbnd-wib01-daq -1 1
 wib406 sbnd-wib01-daq -1 1
-tpc01FakeData sbnd-tpc01-daq -1 1    
 mbb02 sbnd-wib01-daq -1 1
 spectdc sbnd-clk01-daq -1 1
 ptb01PULL sbnd-ptb01-daq -1 1
@@ -65,9 +62,6 @@ crtTopHighWallWestPULL sbnd-crt02-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_ra
 crtTopHighWallNorthPULL sbnd-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtTopHighWallSouthPULL sbnd-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
 crtMINOSPULL sbnd-crt03-daq -1 1 0-15 "/usr/libexec/ambient_cap_net_raw /bin/env LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-pmtx03 sbnd-pds05-daq -1 1 0-15
-pmtx03PUSH sbnd-pds05-daq -1 1 0-15
-pmtx06PUSH sbnd-pds05-daq -1 1 0-15 
 pmt01 sbnd-pds01-daq -1 1 0-15
 pmt02 sbnd-pds01-daq -1 1 0-15
 pmt03 sbnd-pds01-daq -1 1 0-15
@@ -80,9 +74,7 @@ pmt09 sbnd-pds03-daq -1 1 0-15
 pmt01PUSH sbnd-pds01-daq -1 1 0-15
 pmt09PUSH sbnd-pds03-daq -1 1 0-15
 dummygenerator sbnd-evb01-daq -1 1
-xarapuca01PUSH sbnd-pds04-daq -1 1 0-15
 xarapuca01 sbnd-pds04-daq -1 1 0-15
 xarapuca02 sbnd-pds04-daq -1 1 0-15
 xarapuca03 sbnd-pds04-daq -1 1 0-15
 xarapuca04 sbnd-pds04-daq -1 1 0-15
-

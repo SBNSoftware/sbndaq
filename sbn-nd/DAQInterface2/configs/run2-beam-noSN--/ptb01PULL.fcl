@@ -1,0 +1,6 @@
+ 
+#include "ptb01PULL_default.fcl" 
+ 
+#include "/home/nfs/sbnd/ptb_sacred_configs/sbnd_config/run2_operations_trigger_menu/ptbmk2_nd_phase3_minbias2_event3_flash4_run2_postbeam7p3us_run1MTCAbaseline.fcl" 
+
+daq.fragment_receiver.board_config: @local::board_config 

@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+#
+#=====================================================================================
+#Run with argument of which directory in configs you want to use. Defaults to standard
+#=====================================================================================
+CONFIGDIR="standard" 
+if [ ! -z "$1" ]
+    then
+    CONFIGDIR=$1
+else
+    echo "Defaulting to configs/$CONFIGDIR"
+fi
+
+if [ ! -d "$THIS_SBN_DAQ_DAQINTERFACE_DIR/configs/$CONFIGDIR" ]; then #check that config directory actually exists #Doesn't work if you're using the database though
+    echo "ERROR: configs/$CONFIGDIR does not exist. Please use existing directory as an argument or use no arguments to default to configs/standard."
+    echo "Stopping run script before I do anything"
+    exit 1
+fi
+
+this_start=$(date +%s)
+
+function getStatus()
+{
+  status=`status.sh | grep String | awk '{print $2}' | tr -d "'"`
+#  [ $1 != "$status" ] && (echo $status)
+  echo $status
+}
+
+getStatus "nil"
+# [ $status == 'Existing'] && (kill_daqinterface_on_partition.sh 0; exit 0 )
+
+#setdaqcomps.sh dummygenerator crtSouthWallEastPULL
+
+#setdaqcomps.sh dummygenerator crtTopHighWallNorthPULL crtTopHighWallSouthPULL crtTopLowWallCentralPULL crtTopLowWallEastPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallWestPULL
+
+#setdaqcomps.sh dummygenerator crtTopLowWallCentralPULL crtTopLowWallEastPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallWestPULL
+
+#setdaqcomps.sh dummygenerator crtNorthWallWestPULL crtNorthWallEastPULL crtFlatSouthWestPULL crtFlatEastPULL crtFlatNorthPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtSouthWallWestPULL crtSouthWallEastPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallCentralPULL crtTopHighWallEastPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL crtTopHighWallWestPULL crtTopLowWallCentralPULL crtTopLowWallEastPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallWestPULL
+
+#setdaqcomps.sh dummygenerator crtNorthWallWestPULL crtNorthWallEastPULL crtFlatSouthWestPULL crtFlatEastPULL crtFlatNorthPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtSouthWallWestPULL crtSouthWallEastPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallCentralPULL crtTopHighWallEastPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL crtTopHighWallWestPULL crtTopLowWallCentralPULL crtTopLowWallEastPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallWestPULL crtMinosPULL
+
+setdaqcomps.sh dummygenerator crtMinosPULL
+
+#setdaqcomps.sh dummygenerator crtFlatSouthWestPULL crtFlatEastPULL crtFlatNorthPULL crtMinosPULL
+#setdaqcomps.sh dummygenerator crtFlatEastPULL crtMinosPULL
+
+#setdaqcomps.sh dummygenerator crtTestStandPULL
+
+#setdaqcomps.sh dummygenerator crtNorthWallWestPULL crtNorthWallEastPULL crtFlatSouthWestPULL crtFlatEastPULL crtFlatNorthPULL crtEastWallNorthTopPULL crtEastWallSouthBottomPULL crtSouthWallWestPULL crtSouthWallEastPULL crtWestWallNorthTopPULL crtWestWallSouthBottomPULL crtTopHighWallCentralPULL crtTopHighWallEastPULL crtTopHighWallNorthPULL crtTopHighWallSouthPULL crtTopHighWallWestPULL crtTopLowWallCentralPULL crtTopLowWallEastPULL crtTopLowWallNorthPULL crtTopLowWallSouthPULL crtTopLowWallWestPULL crtTestStandPULL
+
+send_transition.sh boot boot_summer2025_CRT.txt
+
+getStatus "booting"
+
+while [ "$status" != 'booted' ]
+do
+  sleep 2
+  getStatus "booting"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+done
+
+send_transition.sh config $CONFIGDIR
+getStatus "configuring"
+while [ "$status" != 'ready' ]
+do
+  sleep 2
+  getStatus "configuring"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+  # [ "$status" == 'stopped' ] && ( exit 1 )
+done
+
+# report_datafile_location
+
+send_transition.sh start
+getStatus "starting"
+sleep 2
+getStatus "starting"
+while [ "$status" != 'running' ]
+do
+  sleep 2
+  getStatus "starting"
+  [ "$status" == 'stopped' ] && (kill_daqinterface_on_partition.sh $DAQINTERFACE_PARTITION_NUMBER; exit 1 )
+done
+
+this_stop=$(date +%s)
+echo "DAQ started in $(( this_stop - this_start )) seconds."

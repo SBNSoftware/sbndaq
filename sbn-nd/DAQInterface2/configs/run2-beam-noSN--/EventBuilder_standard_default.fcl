@@ -1,0 +1,666 @@
+ 
+#include "filters_standard.fcl" 
+
+services: {
+
+ArtdaqSharedMemoryServiceInterface: {
+
+service_provider: ArtdaqSharedMemoryService 
+
+}
+ArtdaqFragmentNamingServiceInterface: {
+
+service_provider: ArtdaqFragmentNamingService 
+
+helper_plugin: "SBND" 
+
+}
+}
+daq: {
+
+event_builder: {
+
+stale_buffer_timeout_usec: 5000000 #5s, run 1: 3000000 #1000000 1s #was commented out, Gennadiy said to set high (5s) for debugging
+#5s, run 1: 3000000 #1000000 1s #was commented out, Gennadiy said to set high (5s) for debugging
+expected_fragments_per_event: 0 # Will be set by DAQInterface
+# Will be set by DAQInterface
+use_art: true 
+
+print_event_store_stats: true 
+
+buffer_count: 25 #25  #40 #100
+#25  #40 #100
+max_incomplete_events: 15 #50 # Same as boardreader sync interval
+#50 # Same as boardreader sync interval
+verbose: true 
+
+send_requests: true 
+
+request_address: "227.128.11.129" # Multi-cast request address
+# Multi-cast request address
+multicast_interface_ip: "10.226.36.0" # needed to send requests successfully through the private network
+# needed to send requests successfully through the private network
+request_port: 3001 
+
+art_analyzer_count: 1 #2 #4 #5
+#2 #4 #5
+tcp_receive_buffer_size: 64000 
+
+routing_token_config: {
+
+use_routing_master: false 
+
+}
+sources: {
+
+}
+}
+metrics: {
+
+evbFile: {
+
+metricPluginType: "file" 
+
+level_string: "1-10,11-20" 
+
+fileName: "/daq/log/metrics/evb00_metrics.log" 
+
+uniquify: true 
+
+}
+send_system_metrics: true 
+
+send_process_metrics: true 
+
+graphite: {
+
+level_string: "1-10,11-20" 
+
+metricPluginType: "graphite" 
+
+reporting_interval: 10.0 
+
+host: "10.226.36.45" 
+
+port: 2003 
+
+namespace: "sbnd.evb00." 
+
+}
+}
+}
+outputs: {
+
+normalOutput: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 20 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [] #p1
+
+}
+normalOutputBNBZeroBias: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmBNBZeroBias_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBZeroBias_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [bnbzerobias] 
+
+}
+normalOutputBNBLight: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmBNBLight_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBLight_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [bnblight] 
+
+}
+normalOutputBNBMinBias: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmBNBMinBias_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBMinBias_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [bnbminbias] 
+
+}
+normalOutputBNBPostLight: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmBNBPostLight_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmBNBPostLight_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [bnbpostlight] 
+
+}
+normalOutputOffBeamZeroBias: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmOffBeamZeroBias_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmOffBeamZeroBias_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [offbeamzerobias] 
+
+}
+normalOutputOffBeamLight: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmOffBeamLight_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmOffBeamLight_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [offbeamlight] 
+
+}
+normalOutputOffBeamPostLight: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmOffBeamPostLight_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmOffBeamPostLight_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [offbeampostlight] 
+
+}
+normalOutputCrossingMuon: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmCrossingMuon_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmCrossingMuon_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [crossingmuon] 
+
+}
+normalOutputFilterFail: {
+
+module_type: RootDAQOut 
+#fileName: "/data/spack_test/data_${app_name}_run%R_%#_strmUnknown_%to.root" 
+fileName: "/data/sbndraw/fts_dropbox/data_${app_name}_run%R_%#_strmUnknown_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 #0
+#0
+SelectEvents: [filterfail] 
+
+}
+nustreamOutput: {
+
+module_type: RootDAQOut 
+
+fileName: "/data/neutrino_stream/data_${app_name}_run%R_%#_nustream_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 50 #close files out a little faster for the prescaled stream
+
+}
+freePercent: 20 
+
+freeMB: 20000 
+
+fastCloning: false 
+
+compressionLevel: 501 
+
+SelectEvents: [nustream] 
+
+}
+testOutput: {
+
+module_type: RootDAQOut 
+
+fileName: "/data/test_daq/data_${app_name}_run%R_%#_%to.root" 
+
+fileProperties: {
+
+maxSubRuns: 1 
+
+maxRuns: 1 
+
+maxEvents: 100 
+
+}
+fastCloning: false 
+
+compressionLevel: 0 
+
+SelectEvents: [] 
+
+}
+rootNetOutput: {
+
+module_type: RootNetOutput 
+
+broadcast_sends: true 
+
+nonblocking_sends: true 
+
+destinations: {
+
+}
+SelectEvents: [p5] 
+
+fastCloning: false #true
+#true
+compressionLevel: 501 #0
+#0
+host_map: [{
+
+rank: -1 
+
+host: "sbnd-evb01-daq" 
+
+}] 
+
+routing_table_config: {
+
+use_routing_manager: false 
+
+route_on_request_mode: true 
+## Port that table updates should arrive on
+table_update_port: 35556 # default 
+## Address that table updates should arrive on         
+table_update_address: "227.128.12.35" 
+## Port that acknowledgements should be sent to        
+table_acknowledge_port: 35557 # default                
+## Host that acknowledgements should be sent to        
+routing_manager_hostname: "sbnd-evb01-daq" # default 
+# default                                              
+table_update_multicast_interface: "0.0.0.0" 
+## Time to wait (in ms) for a routing table update if the table is exhausted
+routing_timeout_ms: 1000 # default
+## Number of times to retry getting destination from routing table
+routing_retry_count: 5 # default    
+
+}
+}
+}
+physics: {
+
+analyzers: {
+
+fragWatcher: {
+
+module_type: "FragmentWatcher" 
+
+}
+TPCmetricanalyzer: {
+
+module_type: "TPCMetricAnalyzer" 
+
+tpc_data_label: "daq:NEVISTPC" 
+
+ntb_data_label: "daq:NEVISTB" 
+
+}
+}
+producers: {
+
+crttriggerproducer: {
+
+module_type: "CRTMetricProducer" 
+
+is_persistable: true 
+
+BeamWindowStart: 1530000 #number for 2025 run #1000000 #huge window to find the right one #1530000 #number for 2024  
+#number for 2025 run #1000000 #huge window to find the right one #1530000 #number for 2024  
+BeamWindowEnd: 1580000 #number for 2025 run #2000000 #huge window to find the right one #1550000 #number for 2024
+#number for 2025 run #2000000 #huge window to find the right one #1550000 #number for 2024
+Verbose: false 
+
+}
+pmtmetricproducer: {
+
+module_type: "PMTMetricProducer" 
+
+is_persistable: true 
+
+IncludeExtensions: true 
+
+Verbose: 1 
+
+StreamType: 1 
+
+}
+pmtmetricbnb: {
+
+module_type: "PMTMetricProducer" 
+
+is_persistable: true 
+
+IncludeExtensions: true 
+
+Verbose: 1 
+
+StreamType: 2 
+
+}
+pmtmetricoffbeam: {
+
+module_type: "PMTMetricProducer" 
+
+is_persistable: true 
+
+IncludeExtensions: true 
+
+Verbose: 1 
+
+StreamType: 4 
+
+}
+pmtmetriccrossingmuon: {
+
+module_type: "PMTMetricProducer" 
+
+is_persistable: true 
+
+IncludeExtensions: true 
+
+Verbose: 1 
+
+StreamType: 5 
+
+}
+}
+filters: {
+
+prescale50: {
+
+module_type: "Prescaler" 
+
+prescaleFactor: 50 
+
+prescaleOffset: 0 
+
+}
+prescale10: {
+
+module_type: "Prescaler" 
+
+prescaleFactor: 10 
+
+prescaleOffset: 0 
+
+}
+prescale25: {
+
+module_type: "Prescaler" 
+
+prescaleFactor: 25 
+
+prescaleOffset: 0 
+
+}
+prescale5: {
+
+module_type: "Prescaler" 
+
+prescaleFactor: 5 
+
+prescaleOffset: 0 
+
+}
+prescale1: {
+
+module_type: "Prescaler" 
+
+prescaleFactor: 1 
+
+prescaleOffset: 0 
+
+}
+bnbzerobiasfilter: @local::bnbzerobiasfilter 
+
+bnblightfilter: @local::bnblightfilter 
+
+bnbminbiasfilter: @local::bnbminbiasfilter 
+
+bnbpostlightfilter: @local::bnbpostlightfilter 
+
+offbeamzerobiasfilter: @local::offbeamzerobiasfilter 
+
+offbeamlightfilter: @local::offbeamlightfilter 
+
+offbeampostlightfilter: @local::offbeampostlightfilter 
+
+crossingmuonfilter: @local::crossingmuonfilter 
+
+neutrinostream: {
+
+module_type: "NeutrinoStreamFilter" 
+
+CRTInputModule: "crttriggerproducer" 
+
+PMTInputModule: "pmtmetricproducer" 
+
+NumCRTPlanes: 7 
+
+ExcludeCRTPlanes: [2] 
+#UseCRT: true
+UsePMT: false 
+
+NPMTHits: 200 
+
+Verbose: true 
+
+}
+}
+p0: [] 
+
+p1: [prescale1] 
+
+p5: [prescale5] 
+
+softwaretrig: [prescale1, crttriggerproducer, pmtmetricproducer] 
+
+nustream: [bnblightfilter, crttriggerproducer, pmtmetricbnb, neutrinostream] 
+
+bnbzerobias: [bnbzerobiasfilter, crttriggerproducer, pmtmetricbnb] 
+
+bnblight: [bnblightfilter, crttriggerproducer, pmtmetricbnb] 
+
+bnbminbias: [bnbminbiasfilter, crttriggerproducer, pmtmetricbnb] 
+
+bnbpostlight: [bnbpostlightfilter, crttriggerproducer, pmtmetricbnb] 
+
+offbeamzerobias: [offbeamzerobiasfilter, crttriggerproducer, pmtmetricoffbeam] 
+
+offbeamlight: [offbeamlightfilter, crttriggerproducer, pmtmetricoffbeam] 
+
+offbeampostlight: [offbeampostlightfilter, crttriggerproducer, pmtmetricoffbeam] 
+
+crossingmuon: [crossingmuonfilter, crttriggerproducer, pmtmetriccrossingmuon] 
+
+filterfail: ["!crossingmuonfilter", "!bnbzerobiasfilter", "!bnblightfilter", "!bnbminbiasfilter", "!bnbpostlightfilter", "!offbeamzerobiasfilter", "!offbeamlightfilter", "!offbeampostlightfilter"] 
+
+trigger_paths: [p5, bnbzerobias, bnblight, bnbminbias, bnbpostlight, offbeamzerobias, offbeamlight, offbeampostlight, crossingmuon, filterfail, nustream] 
+
+a1: [fragWatcher, TPCmetricanalyzer] 
+#my_output_modules: [ normalOutput , rootNetOutput ]
+my_output_modules: [rootNetOutput, normalOutputBNBZeroBias, normalOutputBNBLight, normalOutputBNBMinBias, normalOutputBNBPostLight, normalOutputOffBeamZeroBias, normalOutputOffBeamLight, normalOutputOffBeamPostLight, normalOutputCrossingMuon, normalOutputFilterFail, nustreamOutput] 
+
+end_paths: [a1, my_output_modules] 
+
+}
+source: {
+
+module_type: ArtdaqInput 
+
+waiting_time: 2500000 
+
+resume_after_timeout: true 
+
+}
+process_name: DAQ 

@@ -41,6 +41,7 @@ get_os_name() {
   case $(uname -r) in
     3.10*) OS_NAME="scientific7" ;;
     5.14*) OS_NAME="almalinux9" ;;
+    6.1*) OS_NAME="almalinux9" ;;
     *) echo "Error: Unsupported OS version"; return 1 ;;
   esac
 }
